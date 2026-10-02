@@ -1,5 +1,8 @@
 # OptiTron PS4 PKG Store
 
+
+EDIT: ADDED EXAMPLE JSON SO YOU KNOW THE FORMAT FOR ADDING YOUR OWN LIBRARY
+
 <a href="https://postimg.cc/LYMhyR24" target="_blank"><img src="https://i.postimg.cc/wv1JjTrN/Screenshot-2026-10-02-23-13-36.png" alt="Screenshot-2026-10-02-23-13-36"></a><br><br>
 <a href="https://postimg.cc/G819Mrd9" target="_blank"><img src="https://i.postimg.cc/261vS8td/Screenshot-2026-10-02-23-13-15.png" alt="Screenshot-2026-10-02-23-13-15"></a><br><br>
 
