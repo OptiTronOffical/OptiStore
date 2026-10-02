@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OptiTron PS4 PKG Store</title>
+<style>
+  /* Base Layout */
+  * { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #0b0e14; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    color: #e6edf3;
+    padding: 20px 24px 80px;
+  }
+  .app { max-width: 1700px; margin: 0 auto; }
+
+  /* Header */
+  .header { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; }
+  h1 span { color: #8a2be2; }
+  .subtitle { font-size: 13px; color: #8b949e; margin-top: 4px; }
+
+  /* Panels */
+  .panel {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  .panel label { font-size: 13px; color: #8b949e; margin-right: 8px; font-weight: 600; }
+
+  input[type=text], select {
+    padding: 9px 12px; background: #0d1117; border: 1px solid #30363d;
+    border-radius: 6px; color: #c9d1d9; font-size: 14px; outline: none;
+    font-family: inherit;
+  }
+  input[type=text]:focus, select:focus { border-color: #8a2be2; }
+
+  button, a.btn-link { font-family: inherit; font-size: 14px; font-weight: 600; border: 0; border-radius: 6px; cursor: pointer; outline: none; transition: 0.15s; text-decoration: none; }
+  button:hover, a.btn-link:hover { opacity: 0.9; }
+  .btn { padding: 9px 16px; background: #8a2be2; color: #fff; }
+  .btn.alt { background: transparent; color: #a29bfe; border: 1px solid #8a2be2; }
+  .btn.success { background: #238636; color: #fff; }
+  .btn[disabled] { opacity: 0.4; cursor: not-allowed; }
+  .hint { font-size: 11px; color: #6e7681; line-height: 1.4; }
+
+  /* PS4 Remote Install Panel */
+  .ps4-panel { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+  .ps4-panel input { width: 170px; font-family: monospace; letter-spacing: 1px; }
+  #ps4Status { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; color: #8b949e; }
+  .ps4-dot { width: 9px; height: 9px; border-radius: 50%; background: #6e7681; display: inline-block; transition: 0.2s; flex: 0 0 auto; }
+  .ps4-dot.ok { background: #3fb950; box-shadow: 0 0 8px rgba(63,185,80,0.85); }
+  .ps4-dot.bad { background: #f85149; }
+
+  /* Toolbar */
+  .toolbar { margin-bottom: 16px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+  .toolbar .search { flex-grow: 1; min-width: 200px; }
+  #count { font-size: 13px; font-weight: 600; color: #8b949e; margin-left: auto; }
+
+  /* Card Grid */
+  #grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+
+  .card {
+    background: #161b22; border: 1px solid #30363d; border-radius: 10px;
+    overflow: hidden; cursor: pointer; position: relative; transition: transform 0.15s, border-color 0.15s;
+    display: flex; flex-direction: column;
+  }
+  .card:hover { transform: translateY(-3px); border-color: #8a2be2; }
+  .cover { position: relative; width: 100%; padding-bottom: 130%; background: #0d1117; }
+  .cover img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
+
+  .info { padding: 12px; display: flex; flex-direction: column; flex-grow: 1; }
+  .info h3 { font-size: 14px; font-weight: 600; line-height: 1.3; height: 2.6em; overflow: hidden; margin-bottom: 8px; color: #f0f6fc; }
+  .meta { font-size: 11px; color: #8b949e; font-family: monospace; display: flex; justify-content: space-between; margin-top: auto; gap: 8px; }
+  .badge { background: #21262d; padding: 2px 6px; border-radius: 4px; color: #a29bfe; font-size: 10px; }
+  .badge.direct { color: #56d364; }
+
+  .empty { grid-column: 1 / -1; text-align: center; padding: 60px 20px; color: #8b949e; }
+
+  /* Modals */
+  .overlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.85); z-index: 1000; padding: 20px; overflow-y: auto; }
+  .overlay.open { display: flex; align-items: center; justify-content: center; }
+
+  .modal {
+    background: #161b22; border: 1px solid #30363d; border-radius: 12px;
+    width: 100%; max-width: 780px; padding: 24px; position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+  }
+  .modal-close { position: absolute; top: 16px; right: 16px; background: transparent; color: #8b949e; font-size: 20px; border: 0; }
+  .modal-close:hover { color: #fff; }
+
+  .modal h2 { font-size: 20px; margin-bottom: 4px; color: #fff; padding-right: 30px; }
+  .modal .sub { font-size: 13px; color: #8b949e; margin-bottom: 12px; }
+  .modal-actions { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin: 14px 0 12px; }
+
+  /* File list layout in Modal */
+  .file-list { margin-top: 4px; max-height: 400px; overflow-y: auto; display: flex; flex-direction: column; gap: 8px; }
+  .file-item {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-left: 3px solid #30363d;
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .file-item.direct { border-left-color: #238636; }
+  .file-item.redirect { border-left-color: #8a2be2; }
+
+  .file-details { display: flex; flex-direction: column; gap: 3px; min-width: 0; flex: 1 1 240px; }
+  .file-name { font-size: 13px; font-weight: bold; color: #f0f6fc; word-break: break-word; }
+  .file-meta { font-size: 11px; color: #8b949e; font-family: monospace; }
+  .file-hosts { margin-top: 5px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .host-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #161b22; border: 1px solid #30363d; color: #79c0ff;
+    font-size: 10px; padding: 2px 8px; border-radius: 20px;
+    font-family: monospace; text-transform: lowercase;
+  }
+  .link-chip {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 10px; padding: 2px 8px; border-radius: 20px;
+    font-family: monospace; text-transform: uppercase; letter-spacing: 0.4px;
+    border: 1px solid;
+  }
+  .link-chip.direct { color: #56d364; border-color: rgba(35,134,54,0.6); background: rgba(35,134,54,0.1); }
+  .link-chip.redirect { color: #a29bfe; border-color: rgba(138,43,226,0.6); background: rgba(138,43,226,0.1); }
+
+  .action-group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; }
+
+  .btn-send {
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+    background: #238636;
+    color: #fff;
+  }
+  .btn-download {
+    background: #8a2be2;
+    color: #fff;
+    padding: 8px 12px;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+  .btn-copy {
+    background: #21262d; color: #c9d1d9; border: 1px solid #30363d;
+    padding: 8px 10px; border-radius: 6px; font-size: 12px; font-weight: bold;
+  }
+  .btn-copy:hover { border-color: #8a2be2; color: #fff; opacity: 1; }
+
+  #toast { display: none; position: fixed; bottom: 20px; right: 20px; padding: 12px 20px; border-radius: 8px; font-size: 14px; z-index: 2000; max-width: 380px; line-height: 1.4; }
+  #toast.info { display: block; background: #1f293d; color: #79c0ff; border: 1px solid #388bfd; }
+  #toast.success { display: block; background: #122e17; color: #56d364; border: 1px solid #238636; }
+  #toast.warning { display: block; background: #2d2206; color: #e3b341; border: 1px solid #9e6a03; }
+
+  /* Access Badge */
+  #accessBadge {
+    padding: 6px 12px; font-size: 12px; font-weight: bold; border-radius: 20px;
+    color: #56d364; border: 1px solid #238636; background: rgba(35,134,54,0.1);
+  }
+</style>
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Top Navigation & Status -->
+  <div class="header">
+    <div>
+      <h1>OptiTron <span>PKG Store</span></h1>
+      <div class="subtitle">Direct PS4 Package Library · All Downloads Unlocked</div>
+    </div>
+    <div id="accessBadge">🔓 Full Access</div>
+  </div>
+
+  <!-- PS4 Remote Install Panel -->
+  <div class="panel ps4-panel">
+    <label for="ps4ip">PS4 IP:</label>
+    <input type="text" id="ps4ip" placeholder="192.168.1.50" autocomplete="off" spellcheck="false">
+    <button class="btn" id="saveIpBtn">Save</button>
+    <button class="btn alt" id="testPs4Btn">Test Connection</button>
+    <span id="ps4Status"><span class="ps4-dot"></span> Not configured</span>
+    <span class="hint">Requires <b>Remote Package Installer (RPI)</b> running on your PS4 (port 12800). Keep this page on the same network — it must not be loaded over HTTPS, or the browser will block the request.</span>
+  </div>
+
+  <!-- Search & Filter Controls -->
+  <div class="toolbar">
+    <input type="text" class="search" id="search" placeholder="Search game title..." autocomplete="off">
+    <select id="regionSel"><option value="all">All Regions</option></select>
+    <select id="typeSel"><option value="all">All Types</option></select>
+    <span id="count">Loading catalog...</span>
+  </div>
+
+  <!-- Catalog Grid -->
+  <div id="grid">
+    <div class="empty">Loading games catalog...</div>
+  </div>
+
+</div>
+
+<!-- Game Details & Files Modal -->
+<div class="overlay" id="gameModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">×</button>
+    <h2 id="modalTitle">Game Title</h2>
+    <div class="sub" id="modalSub">ID · Region · Source</div>
+
+    <div class="modal-actions">
+      <button class="btn success" id="sendAllBtn">🚀 Send All Direct PKG to PS4</button>
+      <span class="hint" id="modalHint"></span>
+    </div>
+
+    <div style="font-size: 13px; font-weight: bold; color: #8b949e; margin-bottom: 8px;">AVAILABLE PACKAGE FILES:</div>
+    <div class="file-list" id="modalFileList"></div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  var CATALOG_URL = 'export_with_covers.json';
+  var LS_PS4IP = 'optitron_ps4_ip';
+  var RPI_PORT = 12800;
+
+  var PLACEHOLDER_COVER = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="390">' +
+    '<rect width="100%" height="100%" fill="#0d1117"/>' +
+    '<text x="50%" y="50%" fill="#30363d" font-family="sans-serif" font-size="18" text-anchor="middle">No Cover</text>' +
+    '</svg>'
+  );
+
+  var catalog = [], filtered = [];
+  var query = '', region = 'all', type = 'all';
+  var currentGame = null;
+
+  function $(id) { return document.getElementById(id); }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function say(msg, kind) {
+    var t = $('toast');
+    t.className = kind || 'info';
+    t.textContent = msg;
+    clearTimeout(say._t);
+    say._t = setTimeout(function () { t.className = ''; }, 5200);
+  }
+
+  /* ---------------- Link classification ---------------- */
+
+  /**
+   * A link is considered "direct" only when it points straight at a .pkg file.
+   * Everything else (host landing pages, filecrypt, forums, shorteners…) is a
+   * redirect link and can only be opened in a browser tab.
+   */
+  function isDirectPkg(url) {
+    if (!url) return false;
+    var s = String(url).trim();
+    if (!s) return false;
+
+    try {
+      var u = new URL(s, location.href);
+      if (u.protocol !== 'http:' && u.protocol !== 'https:') return false;
+      return /\.pkg$/i.test(u.pathname);
+    } catch (e) {
+      // Fallback for malformed URLs — strip query/hash and test the tail.
+      return /\.pkg(\?[^#]*)?(#.*)?$/i.test(s);
+    }
+  }
+
+  function linkType(l) {
+    return isDirectPkg(l && l.url) ? 'direct' : 'redirect';
+  }
+
+  /* ---------------- PS4 connection helpers ---------------- */
+
+  function getPs4Ip() {
+    return (localStorage.getItem(LS_PS4IP) || '').trim();
+  }
+
+  function setPs4Status(state, text) {
+    $('ps4Status').innerHTML =
+      '<span class="ps4-dot' + (state ? ' ' + state : '') + '"></span> ' + esc(text);
+  }
+
+  function refreshPs4Status() {
+    var ip = getPs4Ip();
+    setPs4Status('', ip ? 'Saved: ' + ip : 'Not configured');
+  }
+
+  function ps4Endpoint(ip, path) {
+    return 'http://' + ip + ':' + RPI_PORT + path;
+  }
+
+  /**
+   * Send a direct PKG URL to the PS4's Remote Package Installer.
+   * RPI expects: POST /api/install  {"type":"direct","packages":["http://...pkg"]}
+   */
+  function sendToPS4(pkgUrl, label, silent) {
+    var ip = getPs4Ip();
+    if (!ip) {
+      say('Set your PS4 IP address first.', 'warning');
+      $('ps4ip').focus();
+      return Promise.resolve(false);
+    }
+    if (!isDirectPkg(pkgUrl)) {
+      say('Only direct .pkg links can be pushed to the PS4.', 'warning');
+      return Promise.resolve(false);
+    }
+
+    if (!silent) say('Sending "' + label + '" to PS4 (' + ip + ')…', 'info');
+
+    return fetch(ps4Endpoint(ip, '/api/install'), {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ type: 'direct', packages: [pkgUrl] })
+    })
+    .then(function (res) {
+      return res.text().then(function (txt) { return { ok: res.ok, status: res.status, body: txt }; });
+    })
+    .then(function (r) {
+      if (!r.ok) {
+        say('PS4 rejected the request (HTTP ' + r.status + ').', 'warning');
+        return false;
+      }
+      var data = null;
+      try { data = JSON.parse(r.body); } catch (e) { /* non-JSON response */ }
+
+      if (data && data.status && String(data.status).toLowerCase() !== 'success') {
+        say('PS4 error: ' + (data.error || data.status), 'warning');
+        return false;
+      }
+      say('✅ "' + label + '" queued on PS4. Check the console notification.', 'success');
+      setPs4Status('ok', 'Connected: ' + ip);
+      return true;
+    })
+    .catch(function () {
+      setPs4Status('bad', 'Unreachable: ' + ip);
+      say('Could not reach PS4 at ' + ip + '. Is Remote Package Installer running?', 'warning');
+      return false;
+    });
+  }
+
+  function sendAllToPS4(links) {
+    var ip = getPs4Ip();
+    if (!ip) {
+      say('Set your PS4 IP address first.', 'warning');
+      $('ps4ip').focus();
+      return;
+    }
+    if (!links.length) return;
+
+    say('Queuing ' + links.length + ' direct PKG file(s) to PS4…', 'info');
+    links.forEach(function (l, i) {
+      setTimeout(function () {
+        sendToPS4(l.url, l.source_label || (l.kind ? l.kind.toUpperCase() : 'PKG'), true);
+      }, i * 900);
+    });
+  }
+
+  function testPs4Connection() {
+    var ip = getPs4Ip() || $('ps4ip').value.trim();
+    if (!ip) {
+      say('Enter your PS4 IP address first.', 'warning');
+      $('ps4ip').focus();
+      return;
+    }
+    setPs4Status('', 'Testing ' + ip + '…');
+
+    var done = false;
+    var timer = setTimeout(function () {
+      if (done) return;
+      done = true;
+      setPs4Status('bad', 'Timed out: ' + ip);
+      say('No response from ' + ip + '. Check the IP and that RPI is running.', 'warning');
+    }, 6000);
+
+    fetch(ps4Endpoint(ip, '/'), { mode: 'no-cors', cache: 'no-store' })
+      .then(function () {
+        if (done) return;
+        done = true; clearTimeout(timer);
+        setPs4Status('ok', 'Reachable: ' + ip);
+        say('PS4 reachable at ' + ip + ':' + RPI_PORT + '.', 'success');
+      })
+      .catch(function () {
+        if (done) return;
+        done = true; clearTimeout(timer);
+        setPs4Status('bad', 'Unreachable: ' + ip);
+        say('Could not reach ' + ip + '. Verify the IP / RPI / mixed-content blocking.', 'warning');
+      });
+  }
+
+  /* ---------------- Catalog ---------------- */
+
+  function linkHost(l) {
+    if (l.host) return String(l.host);
+    if (l.hostname) return String(l.hostname);
+    if (!l.url) return 'unknown';
+    try {
+      return new URL(l.url, location.href).hostname.replace(/^www\./, '') || 'unknown';
+    } catch (e) {
+      var m = String(l.url).match(/^[a-z]+:\/\/([^\/]+)/i);
+      return m ? m[1].replace(/^www\./, '') : 'unknown';
+    }
+  }
+
+  function loadCatalog() {
+    var x = new XMLHttpRequest();
+    x.open('GET', CATALOG_URL + '?t=' + Date.now(), true);
+    x.onload = function () {
+      if (x.status >= 200 && x.status < 300) {
+        try {
+          var data = JSON.parse(x.responseText);
+          catalog = data.records || [];
+          populateFilters();
+          applyFilter();
+        } catch (e) {
+          $('grid').innerHTML = '<div class="empty">Failed parsing catalog data.</div>';
+        }
+      } else {
+        $('grid').innerHTML = '<div class="empty">Could not load catalog file.</div>';
+      }
+    };
+    x.onerror = function () {
+      $('grid').innerHTML = '<div class="empty">Error fetching catalog dataset.</div>';
+    };
+    x.send();
+  }
+
+  function populateFilters() {
+    var regSel = $('regionSel'), typeSel = $('typeSel');
+    var regions = {}, types = {};
+
+    catalog.forEach(function (item) {
+      (item.release_links || []).forEach(function (l) {
+        if (l.region) regions[l.region] = true;
+        if (l.kind) types[l.kind] = true;
+      });
+    });
+
+    Object.keys(regions).sort().forEach(function (r) {
+      var o = document.createElement('option'); o.value = r; o.textContent = r; regSel.appendChild(o);
+    });
+    Object.keys(types).sort().forEach(function (t) {
+      var o = document.createElement('option'); o.value = t; o.textContent = t.toUpperCase(); typeSel.appendChild(o);
+    });
+  }
+
+  function applyFilter() {
+    filtered = catalog.filter(function (g) {
+      var links = g.release_links || [];
+      if (!links.length) return false;
+      if (query && (g.name || '').toLowerCase().indexOf(query) < 0) return false;
+      if (region !== 'all' && !links.some(function (l) { return l.region === region; })) return false;
+      if (type !== 'all' && !links.some(function (l) { return l.kind === type; })) return false;
+      return true;
+    });
+
+    renderGrid();
+  }
+
+  function renderGrid() {
+    var grid = $('grid');
+    grid.innerHTML = '';
+    $('count').textContent = filtered.length + ' Title(s)';
+
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="empty">No games found matching the current filters.</div>';
+      return;
+    }
+
+    filtered.forEach(function (g) {
+      var links = g.release_links || [];
+
+      var card = document.createElement('div');
+      card.className = 'card';
+
+      var cover = document.createElement('div');
+      cover.className = 'cover';
+      var img = document.createElement('img');
+      img.src = g.cover_image || PLACEHOLDER_COVER;
+      img.alt = g.name || 'Game Cover';
+      img.loading = 'lazy';
+      img.onerror = function () { this.onerror = null; this.src = PLACEHOLDER_COVER; };
+      cover.appendChild(img);
+
+      var hosts = {};
+      links.forEach(function (l) { hosts[linkHost(l)] = true; });
+      var hostCount = Object.keys(hosts).length;
+      var directCount = links.filter(function (l) { return isDirectPkg(l.url); }).length;
+
+      var info = document.createElement('div');
+      info.className = 'info';
+
+      var badge = directCount
+        ? '<span class="badge direct">' + directCount + ' DIRECT</span>'
+        : '<span class="badge">' + hostCount + ' HOST' + (hostCount === 1 ? '' : 'S') + '</span>';
+
+      info.innerHTML =
+        '<h3>' + esc(g.name || 'Untitled') + '</h3>' +
+        '<div class="meta">' +
+          '<span>' + links.length + ' File(s)</span>' +
+          badge +
+        '</div>';
+
+      card.appendChild(cover);
+      card.appendChild(info);
+      card.onclick = function () { openGameModal(g); };
+      grid.appendChild(card);
+    });
+  }
+
+  /* ---------------- Modal ---------------- */
+
+  function openGameModal(g) {
+    currentGame = g;
+    var links = (g.release_links || []).filter(function (l) { return l && (l.url || l.source_label); });
+    var directLinks = links.filter(function (l) { return isDirectPkg(l.url); });
+
+    $('modalTitle').textContent = g.name || 'Game Details';
+    $('modalSub').textContent =
+      'Source: ' + (g.source || 'SuperPSX') +
+      ' · Total Files: ' + links.length +
+      (g.title_id ? ' · Title ID: ' + g.title_id : '');
+
+    // "Send All" is only useful when there is at least one direct .pkg link
+    var sendAllBtn = $('sendAllBtn');
+    if (directLinks.length) {
+      sendAllBtn.style.display = '';
+      sendAllBtn.disabled = false;
+      sendAllBtn.textContent = '🚀 Send All Direct PKG (' + directLinks.length + ') to PS4';
+    } else {
+      sendAllBtn.style.display = 'none';
+    }
+
+    var ip = getPs4Ip();
+    $('modalHint').textContent = directLinks.length
+      ? (ip ? 'Target: ' + ip + ':' + RPI_PORT : 'Set your PS4 IP above to enable remote install.')
+      : 'No direct .pkg links for this title — use Download to open the file host page.';
+
+    var fileList = $('modalFileList');
+    fileList.innerHTML = '';
+
+    if (links.length) {
+      links.forEach(function (l) {
+        var direct = isDirectPkg(l.url);
+
+        var item = document.createElement('div');
+        item.className = 'file-item ' + (direct ? 'direct' : 'redirect');
+
+        /* --- Left side: name, meta, host + link-type chips --- */
+        var details = document.createElement('div');
+        details.className = 'file-details';
+
+        var name = document.createElement('div');
+        name.className = 'file-name';
+        name.textContent = l.source_label ||
+          (l.kind ? l.kind.toUpperCase() + ' Package' : (direct ? 'PKG File' : 'Download Link'));
+
+        var meta = document.createElement('div');
+        meta.className = 'file-meta';
+        meta.textContent = 'Type: ' + (l.kind || 'PKG').toUpperCase() +
+                           (l.size ? ' · Size: ' + l.size : '') +
+                           (l.region ? ' · Region: ' + l.region : '');
+
+        var hostRow = document.createElement('div');
+        hostRow.className = 'file-hosts';
+
+        var hostChip = document.createElement('span');
+        hostChip.className = 'host-chip';
+        hostChip.textContent = '🌐 ' + linkHost(l);
+        hostChip.title = l.url || '';
+        hostRow.appendChild(hostChip);
+
+        var typeChip = document.createElement('span');
+        typeChip.className = 'link-chip ' + (direct ? 'direct' : 'redirect');
+        typeChip.textContent = direct ? 'Direct .pkg' : 'Host page';
+        hostRow.appendChild(typeChip);
+
+        details.appendChild(name);
+        details.appendChild(meta);
+        details.appendChild(hostRow);
+
+        /* --- Right side: action depends on the URL itself --- */
+        var actions = document.createElement('div');
+        actions.className = 'action-group';
+
+        if (direct) {
+          // URL ends in .pkg → push straight to the console
+          var sendBtn = document.createElement('button');
+          sendBtn.className = 'btn-send';
+          sendBtn.innerHTML = '🚀 Send to PS4';
+          sendBtn.title = 'Install directly on your PS4 via Remote Package Installer';
+          sendBtn.onclick = function (e) {
+            e.stopPropagation();
+            sendToPS4(l.url, l.source_label || (l.kind ? l.kind.toUpperCase() : 'PKG'));
+          };
+          actions.appendChild(sendBtn);
+        } else {
+          // Landing page / shortener / mirror → just open it
+          var downloadBtn = document.createElement('a');
+          downloadBtn.className = 'btn-download';
+          downloadBtn.href = l.url || '#';
+          downloadBtn.target = '_blank';
+          downloadBtn.rel = 'noopener noreferrer';
+          downloadBtn.innerHTML = '📥 Download';
+          downloadBtn.title = l.url || '';
+          if (!l.url) {
+            downloadBtn.style.opacity = '0.4';
+            downloadBtn.style.pointerEvents = 'none';
+          }
+          actions.appendChild(downloadBtn);
+        }
+
+        var copyBtn = document.createElement('button');
+        copyBtn.className = 'btn-copy';
+        copyBtn.textContent = '🔗';
+        copyBtn.title = 'Copy direct link';
+        copyBtn.onclick = function (e) {
+          e.stopPropagation();
+          copyText(l.url || '');
+        };
+        actions.appendChild(copyBtn);
+
+        item.appendChild(details);
+        item.appendChild(actions);
+        fileList.appendChild(item);
+      });
+    } else {
+      fileList.innerHTML = '<div style="color:#8b949e; font-size:13px; text-align:center; padding:20px;">No package details found for this title.</div>';
+    }
+
+    $('gameModal').className = 'overlay open';
+  }
+
+  function copyText(text) {
+    if (!text) { say('Nothing to copy.', 'warning'); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(function () {
+        say('Link copied to clipboard.', 'success');
+      }).catch(function () { fallbackCopy(text); });
+    } else {
+      fallbackCopy(text);
+    }
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); say('Link copied to clipboard.', 'success'); }
+    catch (e) { say('Copy failed — select the link manually.', 'warning'); }
+    document.body.removeChild(ta);
+  }
+
+  /* ---------------- Events ---------------- */
+
+  $('search').oninput = function () {
+    query = this.value.toLowerCase().trim();
+    applyFilter();
+  };
+
+  $('regionSel').onchange = function () { region = this.value; applyFilter(); };
+  $('typeSel').onchange = function () { type = this.value; applyFilter(); };
+
+  $('saveIpBtn').onclick = function () {
+    var ip = $('ps4ip').value.trim().replace(/^https?:\/\//i, '').replace(/\/.*$/, '');
+    if (!ip) {
+      localStorage.removeItem(LS_PS4IP);
+      refreshPs4Status();
+      say('PS4 IP cleared.', 'info');
+      return;
+    }
+    localStorage.setItem(LS_PS4IP, ip);
+    refreshPs4Status();
+    say('PS4 IP saved: ' + ip, 'success');
+  };
+
+  $('testPs4Btn').onclick = testPs4Connection;
+
+  $('ps4ip').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') $('saveIpBtn').click();
+  });
+
+  $('sendAllBtn').onclick = function () {
+    if (!currentGame) return;
+    var directLinks = (currentGame.release_links || []).filter(function (l) { return isDirectPkg(l.url); });
+    sendAllToPS4(directLinks);
+  };
+
+  $('modalClose').onclick = function () { $('gameModal').className = 'overlay'; };
+  $('gameModal').addEventListener('click', function (e) {
+    if (e.target === this) this.className = 'overlay';
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') $('gameModal').className = 'overlay';
+  });
+
+  /* ---------------- Init ---------------- */
+
+  $('ps4ip').value = getPs4Ip();
+  refreshPs4Status();
+  loadCatalog();
+
+})();
+</script>
+</body>
+</html>
