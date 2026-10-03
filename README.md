@@ -218,7 +218,7 @@ location — in the case of `ps4.html`, directly to the **Internet Archive**.
 
 **No copyrighted material is provided here.** The author has not supplied any
 material that is not already public domain. The catalogs
-(`export_with_covers.json`, `games.json`) are supplied by **you** or by third
+(`export_with_covers.json`, `games.json`) are supplied by **Public Scrapes** or by third
 parties; OptiStore simply reads and displays them.
 
 **You are responsible for your library.** What you load into the catalog, what
