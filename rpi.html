@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OptiStore — PS4 RPI Sender</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>RPI Sender — Send PKG to PS4</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,17 +32,21 @@ body{
     radial-gradient(800px 400px at 95% 5%, rgba(34,211,238,.07), transparent 60%);
   background-attachment:fixed;
 }
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
+::selection{background:var(--accent);color:#fff}
 
-/* topbar */
 .topbar{
   position:sticky;top:0;z-index:100;height:64px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
   padding:0 clamp(16px,3vw,34px);
   background:rgba(6,7,12,.82);
   backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid var(--line);
 }
-.brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:inherit}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
 .brand-mark{
   width:36px;height:36px;border-radius:11px;flex:none;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
@@ -62,65 +66,165 @@ body{
 
 .btn-nav{
   display:inline-flex;align-items:center;gap:8px;
-  padding:8px 14px;border-radius:9px;
-  font-family:inherit;font-size:12px;font-weight:700;
+  padding:9px 16px;border-radius:9px;
+  font-family:inherit;font-size:12.5px;font-weight:800;
   color:var(--tx-2);text-decoration:none;
-  background:rgba(255,255,255,.035);border:1px solid var(--line);
-  transition:.18s;white-space:nowrap;
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--line);
+  transition:.18s;letter-spacing:.01em;cursor:pointer;
 }
 .btn-nav:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+.btn-nav svg{width:14px;height:14px;flex:none}
 
-.wrap{max-width:800px;margin:0 auto;padding:40px clamp(16px,3vw,34px) 100px}
+.wrap{max-width:780px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 100px}
 
-.card{
-  border-radius:20px;border:1px solid var(--line);
-  background:var(--card);padding:28px;
-  display:flex;flex-direction:column;gap:20px;
-  box-shadow:0 20px 50px -20px rgba(0,0,0,.6);
+.hero{padding:52px 0 26px;text-align:center}
+.hero h1{
+  font-size:clamp(30px,5vw,46px);font-weight:900;
+  letter-spacing:-.04em;line-height:1.05;
 }
-.card h1{font-size:24px;font-weight:800;letter-spacing:-.02em}
-.card p{font-size:13.5px;color:var(--tx-2);line-height:1.6}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{margin:15px auto 0;max-width:540px;font-size:14.5px;color:var(--tx-2)}
 
-.field{display:flex;flex-direction:column;gap:8px}
+.panel{
+  display:flex;flex-direction:column;gap:16px;
+  padding:22px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.7);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  margin-bottom:16px;
+}
+
+.field{display:flex;flex-direction:column;gap:6px}
 .field label{
-  font-size:11px;font-weight:800;letter-spacing:.08em;
+  font-size:10.5px;font-weight:800;letter-spacing:.1em;
   text-transform:uppercase;color:var(--tx-3);
 }
-.field input, .field textarea{
-  width:100%;padding:12px 14px;
-  font-family:var(--m);font-size:13px;
-  background:rgba(0,0,0,.32);border:1px solid var(--line);
-  border-radius:10px;color:var(--tx);outline:none;
-  transition:.18s;
+.field input{
+  width:100%;padding:13px 15px;
+  font-family:var(--m);font-size:14px;
+  color:var(--tx);background:rgba(0,0,0,.36);
+  border:1px solid var(--line);border-radius:9px;
+  outline:none;transition:.18s;
+  -webkit-appearance:none;appearance:none;
 }
-.field textarea{min-height:120px;resize:vertical}
-.field input:focus, .field textarea:focus{
+.field input:focus{
   border-color:var(--accent);
   box-shadow:0 0 0 3px var(--accent-soft);
+  background:rgba(0,0,0,.5);
+}
+.field input::placeholder{color:var(--tx-3)}
+
+.ip-row{display:flex;gap:10px;align-items:stretch}
+.ip-row input{flex:1;min-width:0}
+
+.hint{
+  font-size:11.5px;color:var(--tx-3);line-height:1.55;
+  padding:10px 12px;border-radius:9px;
+  background:rgba(0,0,0,.24);border:1px solid var(--line);
+}
+.hint code{
+  font-family:var(--m);font-size:11px;
+  background:rgba(0,0,0,.4);padding:2px 6px;
+  border-radius:4px;color:var(--accent-2);
 }
 
-.row{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+.row-actions{display:flex;gap:10px;flex-wrap:wrap}
 
-.btn-send{
+.btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:14px 20px;border-radius:11px;border:0;
-  font-family:inherit;font-size:14px;font-weight:800;
-  background:linear-gradient(135deg,var(--accent),var(--accent-3));
-  color:#fff;cursor:pointer;transition:.18s;
-  box-shadow:0 10px 26px -10px var(--accent-glow);
+  padding:12px 20px;border-radius:9px;border:1px solid transparent;
+  font-family:inherit;font-size:13.5px;font-weight:700;
+  cursor:pointer;text-decoration:none;transition:.18s;
+  white-space:nowrap;line-height:1;
 }
-.btn-send:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.btn-send[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+.btn svg{width:15px;height:15px;flex:none}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none!important}
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;box-shadow:0 10px 26px -10px var(--accent-glow);
+}
+.btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ok{
+  background:linear-gradient(135deg,var(--ok-2),var(--ok));
+  color:#04231a;box-shadow:0 10px 26px -12px rgba(16,185,129,.5);
+  flex:1;
+}
+.btn.ok:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--tx-2)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+
+.dot{
+  display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--tx-3);flex:none;transition:.25s;
+}
+.dot.ok{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
+.dot.err{background:var(--err);box-shadow:0 0 10px var(--err)}
+.dot.run{background:var(--accent-3);box-shadow:0 0 10px var(--accent-3)}
+
+.conn-line{
+  display:flex;align-items:center;gap:10px;
+  font-size:12.5px;color:var(--tx-2);
+  padding:0 4px;
+}
 
 .status{
-  display:none;padding:14px 16px;border-radius:10px;
-  font-size:13px;font-weight:600;border:1px solid var(--line);
-  line-height:1.5;word-break:break-all;
+  display:none;align-items:flex-start;gap:12px;
+  padding:14px 16px;border-radius:11px;
+  font-size:13px;font-weight:500;line-height:1.55;
+  border:1px solid var(--line);background:rgba(0,0,0,.3);
 }
-.status.show{display:block}
-.status.ok{border-color:rgba(16,185,129,.35);background:var(--ok-soft);color:#6ee7c0}
-.status.err{border-color:rgba(244,63,94,.35);background:var(--err-soft);color:#fca5a5}
-.status.busy{border-color:rgba(34,211,238,.35);background:rgba(34,211,238,.08);color:#67e8f9}
+.status.show{display:flex}
+.status.ok{border-color:rgba(16,185,129,.4);background:var(--ok-soft);color:#6ee7c0}
+.status.err{border-color:rgba(244,63,94,.4);background:var(--err-soft);color:#fda4af}
+.status.run{border-color:rgba(124,92,255,.4);background:var(--accent-soft);color:#c4b5fd}
+.status .ico{flex:none;font-size:17px;line-height:1.3}
+.status .body{flex:1;min-width:0;word-break:break-word}
+.status .body b{display:block;margin-bottom:2px;font-weight:800;font-size:13.5px}
+.status .body .detail{
+  font-family:var(--m);font-size:11.5px;
+  opacity:.85;margin-top:4px;
+  word-break:break-all;
+}
+
+.recent{
+  padding:22px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.5);
+  margin-top:16px;
+}
+.recent h3{
+  font-size:11px;font-weight:800;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--tx-3);margin-bottom:12px;
+}
+.recent .empty-small{
+  font-size:12.5px;color:var(--tx-3);padding:10px 0;
+}
+.recent-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:9px;
+  border:1px solid var(--line);background:rgba(0,0,0,.24);
+  margin-bottom:8px;font-size:12px;
+}
+.recent-item:last-child{margin-bottom:0}
+.recent-item .st{
+  width:8px;height:8px;border-radius:50%;flex:none;
+}
+.recent-item .st.ok{background:var(--ok-2)}
+.recent-item .st.err{background:var(--err)}
+.recent-item .st.unk{background:#f5a524}
+.recent-item .url{
+  flex:1;min-width:0;
+  font-family:var(--m);font-size:11px;
+  color:var(--tx-2);word-break:break-all;
+}
+.recent-item .when{
+  font-family:var(--m);font-size:10.5px;
+  color:var(--tx-3);flex:none;
+}
 
 #toasts{
   position:fixed;right:20px;bottom:20px;z-index:2000;
@@ -133,160 +237,383 @@ body{
   border:1px solid var(--line);
   background:rgba(16,21,34,.97);
   backdrop-filter:blur(14px);
-  font-size:13px;font-weight:500;
+  box-shadow:0 14px 34px -14px rgba(0,0,0,.7);
+  font-size:13px;font-weight:500;line-height:1.5;
+  animation:slideIn .3s cubic-bezier(.16,1,.3,1);
+  pointer-events:auto;
 }
+.toast.out{animation:slideOut .24s ease forwards}
 .toast.ok{border-color:rgba(16,185,129,.4);background:rgba(6,38,30,.97)}
 .toast.err{border-color:rgba(244,63,94,.4);background:rgba(44,12,18,.97)}
+.toast.info{border-color:rgba(34,211,238,.4);background:rgba(5,26,34,.97)}
+@keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
 
-@media(max-width:520px){
-  .row{grid-template-columns:1fr}
+@media (max-width:460px){
+  .hero h1{font-size:26px}
+  .btn-nav span{display:none}
+  .panel{padding:16px}
+  .recent{padding:16px}
 }
 </style>
 </head>
 <body>
 
 <header class="topbar">
-  <a class="brand" href="index.html">
+  <div class="brand">
     <div class="brand-mark">O</div>
     <div class="brand-txt">
       <div class="n">OptiTron <em>Store</em></div>
-      <div class="s">RPI Direct Link Sender</div>
+      <div class="s">RPI Sender</div>
     </div>
-  </a>
+  </div>
   <div class="topbar-right">
-    <a class="btn-nav" href="index.html">Library</a>
-    <a class="btn-nav" href="ps4.html">PS4 Portal</a>
+    <a class="btn-nav" href="ps4.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="6" width="20" height="12" rx="2"/>
+        <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
+      </svg>
+      <span>Catalog</span>
+    </a>
+    <a class="btn-nav" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10z"/>
+        <path d="M9 22V12h6v10"/>
+      </svg>
+      <span>Library</span>
+    </a>
   </div>
 </header>
 
 <main class="wrap">
-  <div class="card">
-    <div>
-      <h1>PS4 RPI Direct Package Sender</h1>
-      <p>Send direct <code>.pkg</code> URLs to Remote Package Installer running on your console (port 12800).</p>
-    </div>
 
-    <div class="row">
-      <div class="field">
-        <label>PS4 Console IP Address</label>
-        <input type="text" id="ps4Ip" placeholder="192.168.1.X or 127.0.0.1">
-      </div>
-      <div class="field">
-        <label>RPI Port</label>
-        <input type="number" id="ps4Port" value="12800" placeholder="12800">
-      </div>
-    </div>
+  <section class="hero">
+    <h1>Send a <em>.pkg</em> straight<br>to your PS4.</h1>
+    <p>Paste any direct <b>.pkg</b> link and push it to the console's Remote Package Installer — one tap, no PC needed.</p>
+  </section>
 
+  <div class="panel">
     <div class="field">
-      <label>Package URLs (one per line or single link)</label>
-      <textarea id="pkgUrls" placeholder="http://example.com/game.pkg"></textarea>
+      <label for="ipInput">PS4 IP address</label>
+      <div class="ip-row">
+        <input type="text" id="ipInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="127.0.0.1">
+        <button class="btn ghost" id="testBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+          Test
+        </button>
+      </div>
     </div>
-
-    <button class="btn-send" id="sendBtn" type="button">📡 Send to PS4 RPI</button>
-
-    <div class="status" id="statusBox"></div>
+    <div class="conn-line">
+      <span class="dot" id="connDot"></span>
+      <span id="connMsg">Not tested</span>
+    </div>
+    <div class="hint">
+      Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Requests go to <code>http://&lt;ip&gt;:12800/api/install</code>.
+    </div>
   </div>
+
+  <div class="panel">
+    <div class="field">
+      <label for="urlInput">Direct PKG URL</label>
+      <input type="text" id="urlInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="http://your-server/game.pkg">
+    </div>
+    <div class="row-actions">
+      <button class="btn ok" id="sendBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12l16-8-6 18-3-7-7-3z"/>
+        </svg>
+        Send to PS4
+      </button>
+      <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+    </div>
+  </div>
+
+  <div class="status" id="status">
+    <span class="ico" id="statusIco">ℹ️</span>
+    <div class="body">
+      <b id="statusTitle">Ready</b>
+      <span id="statusMsg">Paste a direct .pkg URL above and tap Send.</span>
+      <div class="detail" id="statusDetail" style="display:none;"></div>
+    </div>
+  </div>
+
+  <div class="recent" id="recentBox" style="display:none;">
+    <h3>Recent sends</h3>
+    <div id="recentList"></div>
+  </div>
+
 </main>
 
 <div id="toasts"></div>
 
 <script>
-(function() {
+(function () {
   'use strict';
 
+  /* =====================================================================
+     CONFIG
+     ===================================================================== */
+  var LS_IP = 'opti_rpi_ip';
+  var LS_RECENT = 'opti_rpi_recent';
   var DEFAULT_IP = '127.0.0.1';
-  var DEFAULT_PORT = '12800';
+  var RPI_PORT = 12800;
+  var RPI_TIMEOUT = 20000;
+  var MAX_RECENT = 8;
 
-  var $ = function(id) { return document.getElementById(id); };
+  var $ = function (id) { return document.getElementById(id); };
 
-  var savedIp = localStorage.getItem('opti_ps4_ip') || DEFAULT_IP;
-  var savedPort = localStorage.getItem('opti_ps4_port') || DEFAULT_PORT;
-
-  $('ps4Ip').value = savedIp;
-  $('ps4Port').value = savedPort;
-
-  // Pre-fill URL if passed via query string (?url=...)
-  var urlParams = new URLSearchParams(window.location.search);
-  var initialUrl = urlParams.get('url');
-  if (initialUrl) {
-    $('pkgUrls').value = initialUrl;
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  function setStatus(msg, kind) {
-    var box = $('statusBox');
-    if (!msg) {
-      box.className = 'status';
-      box.textContent = '';
+  /* ---------------- toasts ---------------- */
+  function toast(msg, kind) {
+    kind = kind || 'info';
+    var box = $('toasts');
+    var el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : 'ℹ️';
+    el.innerHTML = '<div style="flex:none;font-size:15px">' + icon + '</div><div>' + esc(msg) + '</div>';
+    box.appendChild(el);
+    setTimeout(function () {
+      el.classList.add('out');
+      setTimeout(function () { el.remove(); }, 250);
+    }, 3600);
+  }
+
+  /* ---------------- IP ---------------- */
+  function getIp() {
+    try { return localStorage.getItem(LS_IP) || DEFAULT_IP; }
+    catch (e) { return DEFAULT_IP; }
+  }
+  function setIp(v) {
+    try { localStorage.setItem(LS_IP, v); } catch (e) {}
+  }
+  function cleanIp(v) {
+    var s = String(v == null ? '' : v).replace(/^\s+|\s+$/g, '');
+    s = s.replace(/^https?:\/\//, '');
+    s = s.replace(/[:\/].*$/, '');
+    return s || DEFAULT_IP;
+  }
+
+  /* ---------------- recent ---------------- */
+  function loadRecent() {
+    try {
+      var v = JSON.parse(localStorage.getItem(LS_RECENT) || '[]');
+      return Array.isArray(v) ? v : [];
+    } catch (e) { return []; }
+  }
+  function saveRecent(list) {
+    try { localStorage.setItem(LS_RECENT, JSON.stringify(list.slice(0, MAX_RECENT))); } catch (e) {}
+  }
+  function pushRecent(entry) {
+    var list = loadRecent();
+    list.unshift(entry);
+    saveRecent(list);
+    renderRecent();
+  }
+  function renderRecent() {
+    var list = loadRecent();
+    var box = $('recentBox');
+    var out = $('recentList');
+    if (!list.length) { box.style.display = 'none'; return; }
+    box.style.display = 'block';
+    var html = '';
+    for (var i = 0; i < list.length; i++) {
+      var r = list[i];
+      var stClass = r.state === 'ok' ? 'ok' : r.state === 'unknown' ? 'unk' : 'err';
+      var when = new Date(r.ts).toLocaleTimeString();
+      var name = (r.url || '').split('?')[0].split('/').pop() || r.url;
+      html += '<div class="recent-item">'
+        + '<span class="st ' + stClass + '"></span>'
+        + '<span class="url" title="' + esc(r.url) + '">' + esc(name) + '</span>'
+        + '<span class="when">' + esc(when) + '</span>'
+        + '</div>';
+    }
+    out.innerHTML = html;
+  }
+
+  /* =====================================================================
+     RPI INSTALL  (uses the exact implementation from the reference file)
+     ===================================================================== */
+  function rpiInstall(ip, packages, cb) {
+    var x = new XMLHttpRequest();
+    var done = false;
+    function finish(r) { if (!done) { done = true; cb(r); } }
+    try {
+      x.open('POST', 'http://' + ip + ':' + RPI_PORT + '/api/install', true);
+      x.timeout = RPI_TIMEOUT;
+      x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+      x.onload = function () {
+        if (x.status >= 200 && x.status < 300) finish({ state: 'ok', status: x.status, text: x.responseText });
+        else finish({ state: 'rejected', status: x.status, text: x.responseText });
+      };
+      x.onerror   = function () { finish({ state: 'unknown' }); };
+      x.ontimeout = function () { finish({ state: 'timeout' }); };
+      x.send(JSON.stringify({ type: 'direct', packages: packages }));
+    } catch (e) {
+      finish({ state: 'unknown' });
+    }
+  }
+
+  /* ---------------- UI helpers ---------------- */
+  function setConn(cls, msg) {
+    var d = $('connDot');
+    d.className = 'dot ' + (cls || '');
+    $('connMsg').textContent = msg || 'Not tested';
+  }
+
+  function showStatus(kind, title, msg, detail) {
+    var el = $('status');
+    el.className = 'status show ' + kind;
+    $('statusIco').textContent = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'run' ? '⏳' : 'ℹ️';
+    $('statusTitle').textContent = title;
+    $('statusMsg').textContent = msg;
+    var d = $('statusDetail');
+    if (detail) {
+      d.style.display = 'block';
+      d.textContent = detail;
+    } else {
+      d.style.display = 'none';
+      d.textContent = '';
+    }
+  }
+
+  function validUrl(u) { return /^https?:\/\/[^\s]+$/i.test(u); }
+  function isPkgUrl(u) {
+    var p = String(u).split('?')[0].split('#')[0];
+    return /\.pkg$/i.test(p);
+  }
+
+  /* ---------------- actions ---------------- */
+  function testConnection() {
+    var ip = cleanIp($('ipInput').value);
+    setIp(ip);
+    $('ipInput').value = ip;
+    setConn('run', 'Testing ' + ip + ':' + RPI_PORT + ' …');
+    rpiInstall(ip, [], function (r) {
+      if (r.state === 'ok' || r.state === 'rejected') {
+        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
+        toast('Remote Package Installer is answering.', 'ok');
+      } else if (r.state === 'timeout') {
+        setConn('err', 'Timed out — is RPI open?');
+        toast('No answer from ' + ip + ':' + RPI_PORT + '.', 'err');
+      } else {
+        setConn('run', 'Request sent — no readable reply');
+        toast('Sent, but couldn\'t read a reply. Try sending a package.', 'info');
+      }
+    });
+  }
+
+  function sendCurrent() {
+    var ip = cleanIp($('ipInput').value);
+    var url = String($('urlInput').value || '').replace(/^\s+|\s+$/g, '');
+
+    setIp(ip);
+    $('ipInput').value = ip;
+
+    if (!url) {
+      showStatus('err', 'Missing URL', 'Paste a direct .pkg link first.');
+      toast('Paste a .pkg URL first', 'err');
       return;
     }
-    box.className = 'status show ' + (kind || '');
-    box.textContent = msg;
-  }
-
-  function sendRpi(ip, port, urls, onResult) {
-    var endpoint = 'http://' + ip + ':' + port + '/server/task';
-    var payload = JSON.stringify({
-      type: 'direct',
-      packages: urls
-    });
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', endpoint, true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.timeout = 10000;
-
-    xhr.onload = function() {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        try {
-          var res = JSON.parse(xhr.responseText);
-          onResult(null, res);
-        } catch(e) {
-          onResult(null, { status: 'sent', raw: xhr.responseText });
-        }
-      } else {
-        onResult(new Error('HTTP ' + xhr.status + ' response from PS4 RPI'));
-      }
-    };
-
-    xhr.onerror = function() {
-      onResult(new Error('Could not connect to PS4 RPI at ' + ip + ':' + port));
-    };
-
-    xhr.ontimeout = function() {
-      onResult(new Error('Request timed out connecting to ' + ip + ':' + port));
-    };
-
-    xhr.send(payload);
-  }
-
-  $('sendBtn').onclick = function() {
-    var ip = ($('ps4Ip').value || '').trim() || DEFAULT_IP;
-    var port = ($('ps4Port').value || '').trim() || DEFAULT_PORT;
-    var rawText = ($('pkgUrls').value || '').trim();
-
-    if (!rawText) {
-      setStatus('Please enter at least one package URL.', 'err');
+    if (!validUrl(url)) {
+      showStatus('err', 'Invalid URL', 'The URL must start with http:// or https://');
+      toast('Invalid URL', 'err');
+      return;
+    }
+    if (!isPkgUrl(url)) {
+      showStatus('err', 'Not a .pkg link', 'The URL must end in .pkg (before any ?query or #fragment).');
+      toast('Only .pkg URLs can be sent', 'err');
       return;
     }
 
-    var urls = rawText.split('\n').map(function(s) { return s.trim(); }).filter(Boolean);
+    var sendBtn = $('sendBtn');
+    sendBtn.disabled = true;
+    showStatus('run', 'Sending…', 'Posting to http://' + ip + ':' + RPI_PORT + '/api/install', url);
 
-    localStorage.setItem('opti_ps4_ip', ip);
-    localStorage.setItem('opti_ps4_port', port);
+    var fileName = url.split('?')[0].split('/').pop() || 'package.pkg';
 
-    var btn = this;
-    btn.disabled = true;
-    setStatus('Sending ' + urls.length + ' package link(s) to http://' + ip + ':' + port + '…', 'busy');
+    rpiInstall(ip, [url], function (r) {
+      sendBtn.disabled = false;
+      var rec = { url: url, ts: Date.now(), state: 'unknown' };
 
-    sendRpi(ip, port, urls, function(err, res) {
-      btn.disabled = false;
-      if (err) {
-        setStatus('Error: ' + err.message, 'err');
+      if (r.state === 'ok') {
+        rec.state = 'ok';
+        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
+        showStatus('ok', 'Sent to PS4', 'Queued on the console — check the notification area.', 'HTTP ' + r.status + (r.text ? ' — ' + r.text.substring(0, 200) : ''));
+        toast('Sent: ' + fileName, 'ok');
+      } else if (r.state === 'rejected') {
+        rec.state = 'rejected';
+        setConn('run', 'RPI replied with an error');
+        showStatus('err', 'RPI rejected the request', 'HTTP ' + r.status + '. The console refused this URL.', r.text ? r.text.substring(0, 300) : '');
+        toast('RPI rejected the request', 'err');
+      } else if (r.state === 'timeout') {
+        rec.state = 'timeout';
+        setConn('err', 'Timed out');
+        showStatus('err', 'Timed out', 'No reply from ' + ip + ':' + RPI_PORT + ' after ' + (RPI_TIMEOUT / 1000) + 's. Is Remote Package Installer running on the PS4?');
+        toast('Timed out', 'err');
       } else {
-        setStatus('Successfully sent task to PS4 RPI! Response: ' + JSON.stringify(res), 'ok');
+        setConn('run', 'Sent — reply unreadable');
+        showStatus('run', 'Sent (unconfirmed)', 'The request went out but the console\'s reply couldn\'t be read. If a download starts on the PS4, it worked.', url);
+        toast('Sent — check the PS4', 'info');
+      }
+
+      pushRecent(rec);
+    });
+  }
+
+  /* ---------------- wire ---------------- */
+  function wire() {
+    $('ipInput').value = getIp();
+
+    $('testBtn').onclick = testConnection;
+    $('sendBtn').onclick = sendCurrent;
+    $('clearBtn').onclick = function () {
+      $('urlInput').value = '';
+      $('status').className = 'status';
+      $('urlInput').focus();
+    };
+
+    $('ipInput').onchange = function () {
+      var v = cleanIp(this.value);
+      this.value = v;
+      setIp(v);
+    };
+
+    $('urlInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendCurrent(); }
+    });
+
+    $('ipInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); testConnection(); }
+    });
+
+    document.addEventListener('keydown', function (e) {
+      var tag = (e.target && e.target.tagName) || '';
+      if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        e.preventDefault();
+        $('urlInput').focus();
+        $('urlInput').select();
       }
     });
-  };
+  }
+
+  wire();
+  renderRecent();
+
+  /* Optional: pre-fill URL from ?url= query param (handy for deep links from index/ps4) */
+  try {
+    var m = window.location.search.match(/[?&]url=([^&]+)/);
+    if (m) {
+      $('urlInput').value = decodeURIComponent(m[1]);
+      $('urlInput').focus();
+    }
+  } catch (e) {}
 
 })();
 </script>

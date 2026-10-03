@@ -20,7 +20,6 @@
   --tx:#eef1f8; --tx-2:#98a1b8; --tx-3:#5a6379;
   --f:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   --m:'JetBrains Mono',ui-monospace,monospace;
-  /* kind colors */
   --k-base:#10b981;   --k-base-soft:rgba(16,185,129,.12);   --k-base-line:rgba(16,185,129,.4);
   --k-update:#f59e0b; --k-update-soft:rgba(245,158,11,.12); --k-update-line:rgba(245,158,11,.4);
   --k-dlc:#a855f7;    --k-dlc-soft:rgba(168,85,247,.12);    --k-dlc-line:rgba(168,85,247,.4);
@@ -47,7 +46,6 @@ body{
 ::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
 ::selection{background:var(--accent);color:#fff}
 
-/* topbar */
 .topbar{
   position:sticky;top:0;z-index:100;height:64px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
@@ -75,21 +73,28 @@ body{
 .brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 .topbar-right{display:flex;align-items:center;gap:10px}
 
-.btn-nav{
+.btn-ps4{
   display:inline-flex;align-items:center;gap:8px;
   padding:9px 16px;border-radius:9px;
   font-family:inherit;font-size:12.5px;font-weight:800;
   color:#fff;text-decoration:none;
-  background:rgba(255,255,255,.05);border:1px solid var(--line);
-  transition:.18s;letter-spacing:.01em;cursor:pointer;
-}
-.btn-nav:hover{border-color:var(--accent);background:var(--accent-soft)}
-.btn-nav.primary{
   background:linear-gradient(135deg,var(--accent),var(--accent-3));
-  border:0;box-shadow:0 10px 26px -10px var(--accent-glow);
+  box-shadow:0 10px 26px -10px var(--accent-glow);
+  transition:.18s;letter-spacing:.01em;border:0;cursor:pointer;
 }
-.btn-nav.primary:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn-nav svg{width:14px;height:14px;flex:none}
+.btn-ps4:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn-ps4 svg{width:14px;height:14px;flex:none}
+.btn-rpi{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:9px;
+  font-family:inherit;font-size:12.5px;font-weight:800;
+  color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,#0ea5e9,#06b6d4);
+  box-shadow:0 10px 26px -10px rgba(6,182,212,.4);
+  transition:.18s;letter-spacing:.01em;border:0;cursor:pointer;
+}
+.btn-rpi:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn-rpi svg{width:14px;height:14px;flex:none}
 .help-btn{
   width:36px;height:36px;border-radius:11px;
   border:1px solid var(--line);background:rgba(255,255,255,.035);
@@ -101,7 +106,6 @@ body{
 
 .wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 100px}
 
-/* hero */
 .hero{padding:52px 0 30px;text-align:center}
 .hero h1{
   font-size:clamp(32px,5.4vw,54px);font-weight:900;
@@ -127,7 +131,6 @@ body{
 }
 .stat .k{font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--tx-3)}
 
-/* kind pills */
 .kind{
   display:inline-flex;align-items:center;gap:4px;
   font-family:var(--m);font-size:9.5px;font-weight:800;
@@ -147,7 +150,6 @@ body{
 .kind.pkg   { color:#c4b5fd; background:var(--k-pkg-soft);    border-color:var(--k-pkg-line); }
 .kind .e{font-size:10px;line-height:1}
 
-/* toolbar */
 .toolbar{
   display:flex;flex-wrap:wrap;align-items:center;gap:10px;
   padding:14px;margin-bottom:24px;border-radius:18px;
@@ -195,7 +197,6 @@ select option{background:#0d1019;color:var(--tx)}
   white-space:nowrap;
 }
 
-/* kind filter row */
 .kinds-bar{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px;
   width:100%;padding-top:11px;margin-top:2px;
@@ -231,7 +232,6 @@ select option{background:#0d1019;color:var(--tx)}
 .kind-btn.on[data-kind="pkg"]   { background:var(--k-pkg);    color:#fff; }
 .kind-btn .e{font-size:11px;line-height:1}
 
-/* grid */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
@@ -293,14 +293,12 @@ select option{background:#0d1019;color:var(--tx)}
   color:var(--tx-3);font-weight:600;
 }
 
-/* skeletons */
 .sk{border-radius:13px;border:1px solid var(--line);background:var(--card);overflow:hidden}
 .sk .sk-c{aspect-ratio:3/4;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
 .sk .sk-l{height:11px;margin:14px 14px 0;border-radius:4px;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
 .sk .sk-l.short{width:55%;margin-bottom:16px}
 @keyframes shim{0%{background-position:120% 0}100%{background-position:-120% 0}}
 
-/* empty */
 .empty{
   grid-column:1/-1;text-align:center;padding:90px 24px;
   border-radius:18px;border:1px dashed var(--line-2);
@@ -316,7 +314,6 @@ select option{background:#0d1019;color:var(--tx)}
   font-family:inherit;
 }
 
-/* modal */
 .overlay{
   display:none;position:fixed;inset:0;z-index:900;
   padding:24px 16px;overflow-y:auto;
@@ -386,7 +383,6 @@ select option{background:#0d1019;color:var(--tx)}
   font-weight:600;font-size:10.5px;color:var(--tx-3);
 }
 
-/* file list */
 .files{display:flex;flex-direction:column;gap:9px;max-height:min(52vh,520px);overflow-y:auto;padding-right:4px}
 .frow{
   display:flex;align-items:center;justify-content:space-between;
@@ -428,7 +424,6 @@ select option{background:#0d1019;color:var(--tx)}
 .tag.direct{color:#6ee7c0;background:var(--ok-soft);border:1px solid rgba(16,185,129,.32)}
 .tag.redirect{color:#fcd34d;background:var(--warn-soft);border:1px solid rgba(245,165,36,.32)}
 
-/* buttons */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:11px 18px;border-radius:9px;border:1px solid transparent;
@@ -450,7 +445,6 @@ select option{background:#0d1019;color:var(--tx)}
 
 .btn-group{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 
-/* tip callout */
 .tip{
   display:flex;align-items:flex-start;gap:11px;
   padding:12px 14px;border-radius:11px;
@@ -466,7 +460,6 @@ select option{background:#0d1019;color:var(--tx)}
   color:var(--accent-2);
 }
 
-/* help modal */
 .set-head{
   padding:24px 24px 20px;
   border-bottom:1px solid var(--line);
@@ -494,7 +487,6 @@ select option{background:#0d1019;color:var(--tx)}
   color:var(--accent-2);
 }
 
-/* toasts */
 #toasts{
   position:fixed;right:20px;bottom:20px;z-index:2000;
   display:flex;flex-direction:column;gap:10px;
@@ -518,7 +510,6 @@ select option{background:#0d1019;color:var(--tx)}
 @keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
 @keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
 
-/* footer */
 .foot{
   border-top:1px solid var(--line);margin-top:48px;padding:26px 0 0;
   display:flex;flex-wrap:wrap;gap:14px;align-items:center;
@@ -541,6 +532,8 @@ select option{background:#0d1019;color:var(--tx)}
   .gm-cover{max-width:150px}
   .hero h1{font-size:28px}
   .toolbar{top:64px;padding:10px}
+  .btn-ps4 span{display:none}
+  .btn-rpi span{display:none}
 }
 </style>
 </head>
@@ -555,19 +548,18 @@ select option{background:#0d1019;color:var(--tx)}
     </div>
   </div>
   <div class="topbar-right">
-    <a class="btn-nav" href="rpi.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
-        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
-      </svg>
-      <span>Direct RPI Linker</span>
-    </a>
-    <a class="btn-nav primary" href="ps4.html">
+    <a class="btn-ps4" href="ps4.html">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="6" width="20" height="12" rx="2"/>
         <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
       </svg>
-      <span>PS4 Install</span>
+      <span>Install on PS4</span>
+    </a>
+    <a class="btn-rpi" href="rpi.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 17l4-4M20 17l-4-4M12 13v6"/>
+      </svg>
+      <span>RPI Sender</span>
     </a>
     <button class="help-btn" id="helpBtn" type="button" title="How it works">?</button>
   </div>
@@ -609,7 +601,6 @@ select option{background:#0d1019;color:var(--tx)}
 
     <div class="kinds-bar" id="kindsBar">
       <span class="kb-label">Kind</span>
-      <!-- populated by JS -->
     </div>
   </section>
 
@@ -618,13 +609,12 @@ select option{background:#0d1019;color:var(--tx)}
   <footer class="foot">
     <div>OptiStore · unofficial fan library</div>
     <div>
-      <a href="ps4.html">ps4.html</a> · <a href="rpi.html">rpi.html</a>
+      <a href="ps4.html">ps4.html</a> · <a href="rpi.html">rpi.html</a> · open on your console to install
     </div>
   </footer>
 
 </main>
 
-<!-- game detail modal -->
 <div class="overlay" id="gameModal">
   <div class="modal">
     <button class="modal-close" id="modalClose" type="button">✕</button>
@@ -642,6 +632,12 @@ select option{background:#0d1019;color:var(--tx)}
             </svg>
             Open PS4 Installer
           </a>
+          <a class="btn ghost" href="rpi.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 17l4-4M20 17l-4-4M12 13v6"/>
+            </svg>
+            Open RPI Sender
+          </a>
           <button class="btn ghost" id="gmCopyAll" type="button">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
@@ -656,7 +652,7 @@ select option{background:#0d1019;color:var(--tx)}
         <span class="ico">💡</span>
         <span>
           Install one file at a time — you'll usually want the <b>Base</b> package first, then the latest <b>Update</b>, then any <b>DLC</b>.
-          Open <b>ps4.html</b> on the console's browser or use <b>rpi.html</b> to send direct package links to Remote Package Installer (port 12800).
+          Open <b>ps4.html</b> or <b>rpi.html</b> on the console's browser to actually send them.
         </span>
       </div>
       <div class="sec-title">
@@ -668,13 +664,12 @@ select option{background:#0d1019;color:var(--tx)}
   </div>
 </div>
 
-<!-- help modal -->
 <div class="overlay" id="helpModal">
   <div class="modal slim">
     <button class="modal-close" id="helpClose" type="button">✕</button>
     <div class="set-head">
       <h2>How it works</h2>
-      <p>Three tools, one library</p>
+      <p>Three pages, one library</p>
     </div>
     <div class="set-body">
 
@@ -689,8 +684,9 @@ select option{background:#0d1019;color:var(--tx)}
       <div class="step">
         <div class="num">2</div>
         <div class="txt">
-          <b>Open <code>ps4.html</code> or <code>rpi.html</code></b>
-          Use <code>ps4.html</code> directly on your console or open <code>rpi.html</code> on your PC/phone to send direct package links to your PS4 over local network.
+          <b>Open <code>ps4.html</code> or <code>rpi.html</code> on your PS4</b>
+          In the console's web browser, navigate to the same address but end with <code>ps4.html</code> or <code>rpi.html</code>.
+          <b>ps4.html</b> is the full catalog with a send button on every game. <b>rpi.html</b> is a lightweight sender for pasting any direct .pkg link.
         </div>
       </div>
 
@@ -698,7 +694,7 @@ select option{background:#0d1019;color:var(--tx)}
         <div class="num">3</div>
         <div class="txt">
           <b>Make sure Remote Package Installer (RPI) is running</b>
-          Launch <code>Remote Package Installer</code> on the PS4. It listens on port <code>12800</code> to receive installation requests.
+          Launch <code>Remote Package Installer</code> on the PS4. It listens on port <code>12800</code> and accepts a <code>POST</code> to <code>/api/install</code> with a JSON body.
         </div>
       </div>
 
@@ -713,7 +709,7 @@ select option{background:#0d1019;color:var(--tx)}
       <div class="tip" style="margin:0">
         <span class="ico">⚠️</span>
         <span>
-          Served over <b>plain HTTP</b> for local console communication to work smoothly.
+          Both pages must be served over <b>plain HTTP</b> for the install to work. HTTPS will block the request to <code>127.0.0.1</code> due to mixed-content rules.
         </span>
       </div>
 
@@ -727,9 +723,6 @@ select option{background:#0d1019;color:var(--tx)}
 (function () {
   'use strict';
 
-  /* =====================================================================
-     CONFIG
-     ===================================================================== */
   var CATALOG_URL = 'export_with_covers.json';
 
   var catalog = [];
@@ -748,7 +741,6 @@ select option{background:#0d1019;color:var(--tx)}
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  /* ---------------- toasts ---------------- */
   function toast(msg, kindT) {
     kindT = kindT || 'info';
     var box = $('toasts');
@@ -763,7 +755,6 @@ select option{background:#0d1019;color:var(--tx)}
     }, 3600);
   }
 
-  /* ---------------- size helpers ---------------- */
   function parseSizeToBytes(s) {
     if (s == null) return 0;
     if (typeof s === 'number') return s;
@@ -785,14 +776,12 @@ select option{background:#0d1019;color:var(--tx)}
     var mb = bytes / (1024 * 1024);
     return mb.toFixed(0) + ' MB';
   }
-  /* If the string is already human-readable ("45.2 GB"), return it as-is. */
   function sizeLabel(size) {
     if (size == null || size === '') return '—';
     if (typeof size === 'string') return size;
     return fmtBytes(size);
   }
 
-  /* ---------------- copy ---------------- */
   function copyText(t) {
     if (!t) { toast('Nothing to copy', 'err'); return; }
     if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -811,7 +800,6 @@ select option{background:#0d1019;color:var(--tx)}
     document.body.removeChild(ta);
   }
 
-  /* ---------------- kind metadata ---------------- */
   var KIND_META = {
     base:   { label: 'Base',   emoji: '🎮' },
     update: { label: 'Update', emoji: '⬆️' },
@@ -838,7 +826,6 @@ select option{background:#0d1019;color:var(--tx)}
   }
   function kindMeta(k) { return KIND_META[k] || KIND_META.pkg; }
 
-  /* ---------------- host + link helpers ---------------- */
   var REDIRECT_HOSTS = [
     'filekeeper.net','filekeeper.io','filekeeper.org','filekeeper.co',
     'filecrypt.cc','filecrypt.co','filecrypt.to','filecrypt.link','linkcrypt.ws',
@@ -868,14 +855,6 @@ select option{background:#0d1019;color:var(--tx)}
     if (isRedirectHost(hostOf(cleaned))) return false;
     return true;
   }
-
-  /* =====================================================================
-     CATALOG PARSER
-     ---------------------------------------------------------------------
-     Reads export_with_covers.json's { records: [ ... ] } shape and turns
-     each record into a game with a full `files` array. Also accepts the
-     { DATA: {...} } shape from games.json as a fallback.
-     ===================================================================== */
 
   function pick(obj, keys) {
     if (!obj) return '';
@@ -925,8 +904,6 @@ select option{background:#0d1019;color:var(--tx)}
     }
     if (!files.length) return null;
 
-    /* Base game details come from the record, plus any missing bits from
-       the primary (base) file when available. */
     var primary = null;
     for (var b = 0; b < files.length; b++) {
       if (files[b].kind === 'base') { primary = files[b]; break; }
@@ -950,7 +927,6 @@ select option{background:#0d1019;color:var(--tx)}
     var out = [];
     if (!raw) return out;
 
-    /* ---- A: { records: [...] } ---- */
     if (Array.isArray(raw.records)) {
       for (var i = 0; i < raw.records.length; i++) {
         var g = makeGameFromRecord(raw.records[i], i);
@@ -959,7 +935,6 @@ select option{background:#0d1019;color:var(--tx)}
       return out;
     }
 
-    /* ---- B: { DATA: { "<url>": {...} } } ---- */
     if (raw.DATA && typeof raw.DATA === 'object') {
       var keys = Object.keys(raw.DATA);
       for (var k = 0; k < keys.length; k++) {
@@ -990,7 +965,6 @@ select option{background:#0d1019;color:var(--tx)}
       return out;
     }
 
-    /* ---- C: [ {...}, {...} ] ---- */
     if (Array.isArray(raw)) {
       for (var a = 0; a < raw.length; a++) {
         var rec2 = raw[a] || {};
@@ -1005,7 +979,6 @@ select option{background:#0d1019;color:var(--tx)}
     return out;
   }
 
-  /* ---------------- catalog load ---------------- */
   function loadCatalog() {
     var grid = $('grid');
     var sk = '';
@@ -1033,7 +1006,6 @@ select option{background:#0d1019;color:var(--tx)}
             return;
           }
 
-          console.log('[OptiStore] Loaded ' + catalog.length + ' titles');
           buildStats();
           buildRegionFilter();
           buildKindsBar();
@@ -1046,7 +1018,6 @@ select option{background:#0d1019;color:var(--tx)}
               '<small>' + esc(e.message) + '</small>' +
             '</div>';
           $('count').textContent = '0';
-          console.error('[OptiStore] Parse error:', e);
         }
       } else {
         grid.innerHTML =
@@ -1121,7 +1092,6 @@ select option{background:#0d1019;color:var(--tx)}
     }
   }
 
-  /* ---------------- kind filter ---------------- */
   function kindCounts() {
     var counts = {};
     for (var i = 0; i < catalog.length; i++) {
@@ -1165,7 +1135,6 @@ select option{background:#0d1019;color:var(--tx)}
     });
   }
 
-  /* ---------------- filtering / sorting ---------------- */
   function gameHasRegion(g, r) {
     if (g.region === r) return true;
     for (var i = 0; i < g.files.length; i++) {
@@ -1218,7 +1187,6 @@ select option{background:#0d1019;color:var(--tx)}
     render();
   }
 
-  /* ---------------- grid ---------------- */
   function render() {
     var grid = $('grid');
     $('count').textContent = filtered.length.toLocaleString() + ' title' + (filtered.length === 1 ? '' : 's');
@@ -1301,7 +1269,6 @@ select option{background:#0d1019;color:var(--tx)}
     toast('Filters reset', 'ok');
   }
 
-  /* ---------------- game modal ---------------- */
   function openGame(g) {
     currentGame = g;
     var img = $('gmCover');
@@ -1309,13 +1276,11 @@ select option{background:#0d1019;color:var(--tx)}
     img.src = g.cover || '';
     $('gmTitle').textContent = g.name;
 
-    /* Sub line */
     var subParts = [];
     if (g.titleId) subParts.push(g.titleId);
     if (g.source) subParts.push('Source: ' + g.source);
     $('gmSub').textContent = subParts.join(' · ') || '—';
 
-    /* Tag row */
     var tags = [];
     if (g.region) tags.push({ t: g.region, c: 'b' });
     tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's'), c: '' });
@@ -1324,13 +1289,11 @@ select option{background:#0d1019;color:var(--tx)}
     for (var i = 0; i < g.files.length; i++) if (g.files[i].direct) directCount++;
     if (directCount) tags.push({ t: directCount + ' direct', c: 'g' });
 
-    /* Unique regions */
     var regionSet = {};
     for (var r = 0; r < g.files.length; r++) if (g.files[r].region) regionSet[g.files[r].region] = 1;
     var extraRegions = Object.keys(regionSet).filter(function (x) { return x !== g.region; });
     if (extraRegions.length) tags.push({ t: 'Also ' + extraRegions.join(', '), c: '' });
 
-    /* Kinds present */
     var kindSet = {};
     for (var k = 0; k < g.files.length; k++) {
       if (!kindSet[g.files[k].kind]) {
@@ -1346,7 +1309,6 @@ select option{background:#0d1019;color:var(--tx)}
     }
     $('gmTags').innerHTML = tagsHtml;
 
-    /* Files list, sorted by kind order */
     var sortedFiles = g.files.slice().sort(function (a, b) {
       var ai = KIND_ORDER.indexOf(a.kind);
       var bi = KIND_ORDER.indexOf(b.kind);
@@ -1378,7 +1340,7 @@ select option{background:#0d1019;color:var(--tx)}
         + '</div>'
         + '<div class="btn-group">'
         + (f.direct
-            ? '<a class="btn primary sm" href="rpi.html?url=' + encodeURIComponent(f.url) + '" target="_blank" title="Send package via RPI Linker">📡 Send RPI</a>'
+            ? '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Opens the direct link in a new tab">📥 Download</a>'
             : '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Landing page — opens in a new tab">🔗 Open host</a>')
         + '<button class="btn ghost icon sm" type="button" onclick="navigator.clipboard && navigator.clipboard.writeText(\'' + safeUrl + '\')" title="Copy URL">📋</button>'
         + '</div>'
@@ -1395,7 +1357,6 @@ select option{background:#0d1019;color:var(--tx)}
     document.body.style.overflow = '';
   }
 
-  /* ---------------- help modal ---------------- */
   function openHelp() {
     $('helpModal').classList.add('open');
     document.body.style.overflow = 'hidden';
@@ -1405,7 +1366,6 @@ select option{background:#0d1019;color:var(--tx)}
     if (!$('gameModal').classList.contains('open')) document.body.style.overflow = '';
   }
 
-  /* ---------------- wire ---------------- */
   function wire() {
     var searchEl = $('search');
     var debounce = null;
@@ -1451,7 +1411,6 @@ select option{background:#0d1019;color:var(--tx)}
     });
   }
 
-  /* ---------------- boot ---------------- */
   wire();
   loadCatalog();
 
