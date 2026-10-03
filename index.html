@@ -75,17 +75,21 @@ body{
 .brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
 .topbar-right{display:flex;align-items:center;gap:10px}
 
-.btn-ps4{
+.btn-nav{
   display:inline-flex;align-items:center;gap:8px;
   padding:9px 16px;border-radius:9px;
   font-family:inherit;font-size:12.5px;font-weight:800;
   color:#fff;text-decoration:none;
-  background:linear-gradient(135deg,var(--accent),var(--accent-3));
-  box-shadow:0 10px 26px -10px var(--accent-glow);
-  transition:.18s;letter-spacing:.01em;border:0;cursor:pointer;
+  background:rgba(255,255,255,.05);border:1px solid var(--line);
+  transition:.18s;letter-spacing:.01em;cursor:pointer;
 }
-.btn-ps4:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn-ps4 svg{width:14px;height:14px;flex:none}
+.btn-nav:hover{border-color:var(--accent);background:var(--accent-soft)}
+.btn-nav.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  border:0;box-shadow:0 10px 26px -10px var(--accent-glow);
+}
+.btn-nav.primary:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn-nav svg{width:14px;height:14px;flex:none}
 .help-btn{
   width:36px;height:36px;border-radius:11px;
   border:1px solid var(--line);background:rgba(255,255,255,.035);
@@ -537,7 +541,6 @@ select option{background:#0d1019;color:var(--tx)}
   .gm-cover{max-width:150px}
   .hero h1{font-size:28px}
   .toolbar{top:64px;padding:10px}
-  .btn-ps4 span{display:none}
 }
 </style>
 </head>
@@ -552,12 +555,19 @@ select option{background:#0d1019;color:var(--tx)}
     </div>
   </div>
   <div class="topbar-right">
-    <a class="btn-ps4" href="ps4.html">
+    <a class="btn-nav" href="rpi.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+      </svg>
+      <span>Direct RPI Linker</span>
+    </a>
+    <a class="btn-nav primary" href="ps4.html">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="6" width="20" height="12" rx="2"/>
         <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
       </svg>
-      <span>Install on PS4</span>
+      <span>PS4 Install</span>
     </a>
     <button class="help-btn" id="helpBtn" type="button" title="How it works">?</button>
   </div>
@@ -608,7 +618,7 @@ select option{background:#0d1019;color:var(--tx)}
   <footer class="foot">
     <div>OptiStore · unofficial fan library</div>
     <div>
-      <a href="ps4.html">ps4.html</a> · open on your console to install
+      <a href="ps4.html">ps4.html</a> · <a href="rpi.html">rpi.html</a>
     </div>
   </footer>
 
@@ -646,7 +656,7 @@ select option{background:#0d1019;color:var(--tx)}
         <span class="ico">💡</span>
         <span>
           Install one file at a time — you'll usually want the <b>Base</b> package first, then the latest <b>Update</b>, then any <b>DLC</b>.
-          Open <b>ps4.html</b> on the console's browser to actually send them.
+          Open <b>ps4.html</b> on the console's browser or use <b>rpi.html</b> to send direct package links to Remote Package Installer (port 12800).
         </span>
       </div>
       <div class="sec-title">
@@ -664,7 +674,7 @@ select option{background:#0d1019;color:var(--tx)}
     <button class="modal-close" id="helpClose" type="button">✕</button>
     <div class="set-head">
       <h2>How it works</h2>
-      <p>Two pages, one library</p>
+      <p>Three tools, one library</p>
     </div>
     <div class="set-body">
 
@@ -679,16 +689,16 @@ select option{background:#0d1019;color:var(--tx)}
       <div class="step">
         <div class="num">2</div>
         <div class="txt">
-          <b>Open <code>ps4.html</code> on your PS4</b>
-          In the console's web browser, navigate to the same address but end with <code>ps4.html</code>. It reads <code>games.json</code> and adds a <b>Send to PS4</b> button to every game.
+          <b>Open <code>ps4.html</code> or <code>rpi.html</code></b>
+          Use <code>ps4.html</code> directly on your console or open <code>rpi.html</code> on your PC/phone to send direct package links to your PS4 over local network.
         </div>
       </div>
 
       <div class="step">
         <div class="num">3</div>
         <div class="txt">
-          <b>Make sure your installer is running</b>
-          Either launch <code>Remote Package Installer</code> (RPI) on the PS4, or enable <code>DPIv2</code> in etaHEN. Both listen on port <code>12800</code> and accept the same install payload.
+          <b>Make sure Remote Package Installer (RPI) is running</b>
+          Launch <code>Remote Package Installer</code> on the PS4. It listens on port <code>12800</code> to receive installation requests.
         </div>
       </div>
 
@@ -703,7 +713,7 @@ select option{background:#0d1019;color:var(--tx)}
       <div class="tip" style="margin:0">
         <span class="ico">⚠️</span>
         <span>
-          Both pages must be served over <b>plain HTTP</b> for the install to work. HTTPS will block the request to <code>127.0.0.1</code> due to mixed-content rules.
+          Served over <b>plain HTTP</b> for local console communication to work smoothly.
         </span>
       </div>
 
@@ -1368,7 +1378,7 @@ select option{background:#0d1019;color:var(--tx)}
         + '</div>'
         + '<div class="btn-group">'
         + (f.direct
-            ? '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Opens the direct link in a new tab">📥 Download</a>'
+            ? '<a class="btn primary sm" href="rpi.html?url=' + encodeURIComponent(f.url) + '" target="_blank" title="Send package via RPI Linker">📡 Send RPI</a>'
             : '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Landing page — opens in a new tab">🔗 Open host</a>')
         + '<button class="btn ghost icon sm" type="button" onclick="navigator.clipboard && navigator.clipboard.writeText(\'' + safeUrl + '\')" title="Copy URL">📋</button>'
         + '</div>'

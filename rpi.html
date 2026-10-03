@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OptiStore — PS4 RPI Sender</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070c; --surface:#0d1019; --surface-2:#12151f; --card:#0e121c;
+  --line:#1a1f2e; --line-2:#262d42;
+  --accent:#7c5cff; --accent-2:#22d3ee; --accent-3:#a78bfa;
+  --accent-soft:rgba(124,92,255,.12); --accent-glow:rgba(124,92,255,.32);
+  --ok:#10b981; --ok-2:#34d399; --ok-soft:rgba(16,185,129,.10);
+  --err:#f43f5e; --err-soft:rgba(244,63,94,.10);
+  --tx:#eef1f8; --tx-2:#98a1b8; --tx-3:#5a6379;
+  --f:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --m:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--tx);font-family:var(--f);
+  font-size:15px;line-height:1.55;min-height:100%;
+  -webkit-font-smoothing:antialiased;
+}
+body{
+  background-image:
+    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,.14), transparent 62%),
+    radial-gradient(800px 400px at 95% 5%, rgba(34,211,238,.07), transparent 60%);
+  background-attachment:fixed;
+}
+
+/* topbar */
+.topbar{
+  position:sticky;top:0;z-index:100;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 clamp(16px,3vw,34px);
+  background:rgba(6,7,12,.82);
+  backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0;text-decoration:none;color:inherit}
+.brand-mark{
+  width:36px;height:36px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:#06070c;letter-spacing:-.05em;
+  box-shadow:0 8px 22px -8px var(--accent-glow);
+}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-txt .n{font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.brand-txt .n em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.topbar-right{display:flex;align-items:center;gap:10px}
+
+.btn-nav{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:8px 14px;border-radius:9px;
+  font-family:inherit;font-size:12px;font-weight:700;
+  color:var(--tx-2);text-decoration:none;
+  background:rgba(255,255,255,.035);border:1px solid var(--line);
+  transition:.18s;white-space:nowrap;
+}
+.btn-nav:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+
+.wrap{max-width:800px;margin:0 auto;padding:40px clamp(16px,3vw,34px) 100px}
+
+.card{
+  border-radius:20px;border:1px solid var(--line);
+  background:var(--card);padding:28px;
+  display:flex;flex-direction:column;gap:20px;
+  box-shadow:0 20px 50px -20px rgba(0,0,0,.6);
+}
+.card h1{font-size:24px;font-weight:800;letter-spacing:-.02em}
+.card p{font-size:13.5px;color:var(--tx-2);line-height:1.6}
+
+.field{display:flex;flex-direction:column;gap:8px}
+.field label{
+  font-size:11px;font-weight:800;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--tx-3);
+}
+.field input, .field textarea{
+  width:100%;padding:12px 14px;
+  font-family:var(--m);font-size:13px;
+  background:rgba(0,0,0,.32);border:1px solid var(--line);
+  border-radius:10px;color:var(--tx);outline:none;
+  transition:.18s;
+}
+.field textarea{min-height:120px;resize:vertical}
+.field input:focus, .field textarea:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+}
+
+.row{display:grid;grid-template-columns:2fr 1fr;gap:12px}
+
+.btn-send{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 20px;border-radius:11px;border:0;
+  font-family:inherit;font-size:14px;font-weight:800;
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;cursor:pointer;transition:.18s;
+  box-shadow:0 10px 26px -10px var(--accent-glow);
+}
+.btn-send:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-send[disabled]{opacity:.5;cursor:not-allowed;transform:none}
+
+.status{
+  display:none;padding:14px 16px;border-radius:10px;
+  font-size:13px;font-weight:600;border:1px solid var(--line);
+  line-height:1.5;word-break:break-all;
+}
+.status.show{display:block}
+.status.ok{border-color:rgba(16,185,129,.35);background:var(--ok-soft);color:#6ee7c0}
+.status.err{border-color:rgba(244,63,94,.35);background:var(--err-soft);color:#fca5a5}
+.status.busy{border-color:rgba(34,211,238,.35);background:rgba(34,211,238,.08);color:#67e8f9}
+
+#toasts{
+  position:fixed;right:20px;bottom:20px;z-index:2000;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:min(420px,calc(100vw - 40px));pointer-events:none;
+}
+.toast{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:13px 15px;border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(16,21,34,.97);
+  backdrop-filter:blur(14px);
+  font-size:13px;font-weight:500;
+}
+.toast.ok{border-color:rgba(16,185,129,.4);background:rgba(6,38,30,.97)}
+.toast.err{border-color:rgba(244,63,94,.4);background:rgba(44,12,18,.97)}
+
+@media(max-width:520px){
+  .row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="index.html">
+    <div class="brand-mark">O</div>
+    <div class="brand-txt">
+      <div class="n">OptiTron <em>Store</em></div>
+      <div class="s">RPI Direct Link Sender</div>
+    </div>
+  </a>
+  <div class="topbar-right">
+    <a class="btn-nav" href="index.html">Library</a>
+    <a class="btn-nav" href="ps4.html">PS4 Portal</a>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="card">
+    <div>
+      <h1>PS4 RPI Direct Package Sender</h1>
+      <p>Send direct <code>.pkg</code> URLs to Remote Package Installer running on your console (port 12800).</p>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>PS4 Console IP Address</label>
+        <input type="text" id="ps4Ip" placeholder="192.168.1.X or 127.0.0.1">
+      </div>
+      <div class="field">
+        <label>RPI Port</label>
+        <input type="number" id="ps4Port" value="12800" placeholder="12800">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Package URLs (one per line or single link)</label>
+      <textarea id="pkgUrls" placeholder="http://example.com/game.pkg"></textarea>
+    </div>
+
+    <button class="btn-send" id="sendBtn" type="button">📡 Send to PS4 RPI</button>
+
+    <div class="status" id="statusBox"></div>
+  </div>
+</main>
+
+<div id="toasts"></div>
+
+<script>
+(function() {
+  'use strict';
+
+  var DEFAULT_IP = '127.0.0.1';
+  var DEFAULT_PORT = '12800';
+
+  var $ = function(id) { return document.getElementById(id); };
+
+  var savedIp = localStorage.getItem('opti_ps4_ip') || DEFAULT_IP;
+  var savedPort = localStorage.getItem('opti_ps4_port') || DEFAULT_PORT;
+
+  $('ps4Ip').value = savedIp;
+  $('ps4Port').value = savedPort;
+
+  // Pre-fill URL if passed via query string (?url=...)
+  var urlParams = new URLSearchParams(window.location.search);
+  var initialUrl = urlParams.get('url');
+  if (initialUrl) {
+    $('pkgUrls').value = initialUrl;
+  }
+
+  function setStatus(msg, kind) {
+    var box = $('statusBox');
+    if (!msg) {
+      box.className = 'status';
+      box.textContent = '';
+      return;
+    }
+    box.className = 'status show ' + (kind || '');
+    box.textContent = msg;
+  }
+
+  function sendRpi(ip, port, urls, onResult) {
+    var endpoint = 'http://' + ip + ':' + port + '/server/task';
+    var payload = JSON.stringify({
+      type: 'direct',
+      packages: urls
+    });
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', endpoint, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.timeout = 10000;
+
+    xhr.onload = function() {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          var res = JSON.parse(xhr.responseText);
+          onResult(null, res);
+        } catch(e) {
+          onResult(null, { status: 'sent', raw: xhr.responseText });
+        }
+      } else {
+        onResult(new Error('HTTP ' + xhr.status + ' response from PS4 RPI'));
+      }
+    };
+
+    xhr.onerror = function() {
+      onResult(new Error('Could not connect to PS4 RPI at ' + ip + ':' + port));
+    };
+
+    xhr.ontimeout = function() {
+      onResult(new Error('Request timed out connecting to ' + ip + ':' + port));
+    };
+
+    xhr.send(payload);
+  }
+
+  $('sendBtn').onclick = function() {
+    var ip = ($('ps4Ip').value || '').trim() || DEFAULT_IP;
+    var port = ($('ps4Port').value || '').trim() || DEFAULT_PORT;
+    var rawText = ($('pkgUrls').value || '').trim();
+
+    if (!rawText) {
+      setStatus('Please enter at least one package URL.', 'err');
+      return;
+    }
+
+    var urls = rawText.split('\n').map(function(s) { return s.trim(); }).filter(Boolean);
+
+    localStorage.setItem('opti_ps4_ip', ip);
+    localStorage.setItem('opti_ps4_port', port);
+
+    var btn = this;
+    btn.disabled = true;
+    setStatus('Sending ' + urls.length + ' package link(s) to http://' + ip + ':' + port + '…', 'busy');
+
+    sendRpi(ip, port, urls, function(err, res) {
+      btn.disabled = false;
+      if (err) {
+        setStatus('Error: ' + err.message, 'err');
+      } else {
+        setStatus('Successfully sent task to PS4 RPI! Response: ' + JSON.stringify(res), 'ok');
+      }
+    });
+  };
+
+})();
+</script>
+
+</body>
+</html>
