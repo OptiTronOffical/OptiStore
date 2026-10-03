@@ -209,18 +209,28 @@ FTP and payload servers are enabled in GoldHEN.
 
 ## Disclaimer
 
-This project is provided for educational and personal use only. The author is
-not responsible for how you use it, what you install, or any consequences that
-result.
+**OptiStore is an index, not a source.**
 
-The author has not provided any material that is not already public domain.
-Any catalogs, `.pkg` URLs, metadata, or other content you load into OptiStore
-are supplied by you or by third parties, and you are solely responsible for
-ensuring you have the right to access and use them. Catalog entries link
-directly to the Internet Archive.
+The library is a browsable list of links. The author does not host, upload,
+mirror, or distribute any `.pkg` file, game, or other content, and no files
+are bundled with this project. Every catalog entry points to a third-party
+location — in the case of `ps4.html`, directly to the **Internet Archive**.
 
-The author's only contribution is their time spent building and documenting
-this tool. If it saved you some time, consider supporting them:
+**No copyrighted material is provided here.** The author has not supplied any
+material that is not already public domain. The catalogs
+(`export_with_covers.json`, `games.json`) are supplied by **you** or by third
+parties; OptiStore simply reads and displays them.
+
+**You are responsible for your library.** What you load into the catalog, what
+you choose to install, and how you use the console are entirely your decisions.
+It is your responsibility to ensure you have the right to access and use
+anything you add, and to comply with the laws that apply where you live. The
+author accepts no responsibility or liability for your use of this tool, the
+content you point it at, or any consequences that follow.
+
+**The author's only contribution is their time** — writing the code, assembling
+the browser, and documenting it. If the library saved you some of yours,
+consider supporting that effort:
 
 ```
 ETH: 0x17E1D7f8A9641749A3f6A932Df09D36FE198df86
@@ -230,7 +240,7 @@ ETH: 0x17E1D7f8A9641749A3f6A932Df09D36FE198df86
 
 ## Support
 
-If this saved you some time, donations are appreciated:
+Donations are appreciated and go toward continued work on the tool:
 
 ```
 ETH: 0x17E1D7f8A9641749A3f6A932Df09D36FE198df86
