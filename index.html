@@ -1,0 +1,2309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OptiStore — PS4 Package Library</title>
+
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<meta name="googlebot" content="noindex, nofollow">
+<meta name="bingbot" content="noindex, nofollow">
+<meta name="referrer" content="same-origin">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   TOKENS
+   ============================================================ */
+:root{
+  --bg:        #06070c;
+  --bg-2:      #090b13;
+  --surface:   #0d1019;
+  --surface-2: #12151f;
+  --card:      #0e121c;
+  --line:      #1a1f2e;
+  --line-2:    #262d42;
+
+  --accent:      #7c5cff;
+  --accent-2:    #22d3ee;
+  --accent-3:    #a78bfa;
+  --accent-soft: rgba(124,92,255,.12);
+  --accent-glow: rgba(124,92,255,.32);
+
+  --ok:      #10b981;
+  --ok-2:    #34d399;
+  --ok-soft: rgba(16,185,129,.10);
+
+  --warn:      #f5a524;
+  --warn-soft: rgba(245,165,36,.10);
+
+  --err:      #f43f5e;
+  --err-soft: rgba(244,63,94,.10);
+
+  --tx:   #eef1f8;
+  --tx-2: #98a1b8;
+  --tx-3: #5a6379;
+
+  --f: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --m: 'JetBrains Mono', ui-monospace, monospace;
+
+  --r-xs: 6px;
+  --r-sm: 9px;
+  --r-md: 13px;
+  --r-lg: 18px;
+  --r-xl: 24px;
+
+  --shadow-sm: 0 2px 10px rgba(0,0,0,.35);
+  --shadow-md: 0 14px 34px -14px rgba(0,0,0,.7);
+  --shadow-lg: 0 30px 70px -24px rgba(0,0,0,.9);
+
+  --topbar-h: 64px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html,body{
+  background:var(--bg);
+  color:var(--tx);
+  font-family:var(--f);
+  font-size:15px;
+  line-height:1.55;
+  min-height:100%;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  text-rendering:optimizeLegibility;
+}
+
+body{
+  background-image:
+    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,.14), transparent 62%),
+    radial-gradient(800px 400px at 95% 5%, rgba(34,211,238,.07), transparent 60%);
+  background-attachment:fixed;
+}
+
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#1c2233;border-radius:8px;border:3px solid var(--bg)}
+::-webkit-scrollbar-thumb:hover{background:#2b3550}
+
+::selection{background:var(--accent);color:#fff}
+
+/* ============================================================
+   DONATION STRIP
+   ============================================================ */
+.strip{
+  position:relative;
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;
+  gap:10px 20px;
+  padding:10px 48px 10px 20px;
+  font-size:12.5px;
+  background:linear-gradient(90deg,rgba(124,92,255,.10),rgba(34,211,238,.05) 50%,rgba(124,92,255,.10));
+  border-bottom:1px solid rgba(124,92,255,.16);
+}
+.strip.hide{display:none}
+.strip .s-txt{color:var(--tx-2)}
+.strip .s-txt b{color:#fff;font-weight:700}
+.strip .s-txt .grad{
+  background:linear-gradient(90deg,#a78bfa,#22d3ee);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  font-weight:800;
+}
+.addr{
+  display:inline-flex;align-items:center;gap:8px;
+  background:rgba(0,0,0,.42);
+  border:1px solid var(--line);
+  border-radius:99px;
+  padding:3px 4px 3px 13px;
+}
+.addr code{font-family:var(--m);font-size:11px;color:#a5b4fc;letter-spacing:.2px}
+.addr button{
+  background:var(--ok);color:#04231a;border:0;border-radius:99px;
+  padding:4px 12px;font-size:11px;font-weight:800;cursor:pointer;
+  transition:.18s;font-family:inherit;
+}
+.addr button:hover{filter:brightness(1.1)}
+.addr button.done{background:var(--accent);color:#fff}
+
+.s-links{display:inline-flex;gap:7px}
+.s-links a{
+  display:inline-flex;align-items:center;gap:5px;
+  font-size:11.5px;font-weight:700;color:var(--tx);
+  text-decoration:none;padding:4px 13px;border-radius:99px;
+  border:1px solid var(--line);background:rgba(255,255,255,.035);
+  transition:.18s;
+}
+.s-links a:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-1px)}
+.s-links a.tg{background:#0088cc;border-color:#0088cc;color:#fff}
+.s-links a.tg:hover{background:#0a9ce0}
+
+.strip-x{
+  position:absolute;right:14px;top:50%;transform:translateY(-50%);
+  width:26px;height:26px;border-radius:50%;
+  background:transparent;border:0;color:var(--tx-3);
+  cursor:pointer;font-size:13px;
+  display:flex;align-items:center;justify-content:center;
+  transition:.18s;
+}
+.strip-x:hover{background:rgba(255,255,255,.07);color:#fff}
+
+/* ============================================================
+   TOP BAR
+   ============================================================ */
+.topbar{
+  position:sticky;top:0;z-index:200;
+  height:var(--topbar-h);
+  display:flex;align-items:center;justify-content:space-between;
+  gap:16px;
+  padding:0 clamp(16px,3vw,34px);
+  background:rgba(6,7,12,.82);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
+
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{
+  width:36px;height:36px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:#06070c;
+  box-shadow:0 8px 22px -8px var(--accent-glow);
+  letter-spacing:-.05em;
+}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-txt .n{font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.brand-txt .n em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.brand-txt .s{
+  font-size:10px;color:var(--tx-3);font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;white-space:nowrap;
+}
+
+.topbar-right{display:flex;align-items:center;gap:9px}
+
+.pill{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:11.5px;font-weight:700;
+  padding:7px 14px;border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.035);
+  color:var(--tx-2);
+  cursor:pointer;transition:.18s;
+  white-space:nowrap;font-family:inherit;
+}
+.pill:hover{border-color:var(--line-2);color:var(--tx)}
+.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--tx-3);flex:none;transition:.25s}
+.pill[data-s="ok"]{color:var(--ok-2);border-color:rgba(16,185,129,.32);background:var(--ok-soft)}
+.pill[data-s="ok"] .dot{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
+.pill[data-s="warn"]{color:var(--warn);border-color:rgba(245,165,36,.32);background:var(--warn-soft)}
+.pill[data-s="warn"] .dot{background:var(--warn);box-shadow:0 0 10px var(--warn)}
+.pill[data-s="bad"]{color:var(--err);border-color:rgba(244,63,94,.32);background:var(--err-soft)}
+.pill[data-s="bad"] .dot{background:var(--err);box-shadow:0 0 10px var(--err)}
+
+.icon-btn{
+  width:36px;height:36px;border-radius:11px;
+  border:1px solid var(--line);background:rgba(255,255,255,.035);
+  color:var(--tx-2);cursor:pointer;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+  transition:.18s;
+}
+.icon-btn:hover{border-color:var(--accent);color:#fff;background:var(--accent-soft)}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
+.wrap{
+  max-width:1580px;
+  margin:0 auto;
+  padding:0 clamp(16px,3vw,34px) 100px;
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{padding:52px 0 30px;text-align:center}
+.hero h1{
+  font-size:clamp(32px,5.4vw,54px);
+  font-weight:900;
+  letter-spacing:-.04em;
+  line-height:1.05;
+  color:#fff;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{
+  margin:15px auto 0;
+  max-width:620px;
+  font-size:14.5px;
+  color:var(--tx-2);
+}
+.stats{
+  display:flex;flex-wrap:wrap;justify-content:center;gap:10px;
+  margin-top:28px;
+}
+.stat{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:12px 22px;min-width:108px;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+  transition:.2s;
+}
+.stat:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.stat .v{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.025em;line-height:1.2}
+.stat .v.g{
+  background:linear-gradient(135deg,var(--ok-2),#6ee7b7);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.stat .k{font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--tx-3)}
+
+/* ============================================================
+   DIRECT INSTALL PANEL
+   ============================================================ */
+.loader{
+  position:relative;
+  margin-bottom:28px;
+  border-radius:var(--r-xl);
+  border:1px solid var(--line);
+  background:
+    radial-gradient(600px 300px at 0% 0%, rgba(124,92,255,.10), transparent 60%),
+    radial-gradient(500px 250px at 100% 100%, rgba(34,211,238,.06), transparent 60%),
+    linear-gradient(180deg,var(--surface-2),var(--surface));
+  overflow:hidden;
+  box-shadow:var(--shadow-md);
+  transition:border-color .3s, box-shadow .3s;
+}
+.loader::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(124,92,255,.5) 30%,rgba(34,211,238,.4) 70%,transparent);
+  opacity:.7;
+}
+.loader:focus-within{
+  border-color:rgba(124,92,255,.4);
+  box-shadow:var(--shadow-md), 0 0 0 4px var(--accent-soft);
+}
+
+.loader-head{
+  display:flex;align-items:center;gap:14px;
+  padding:20px 24px 16px;
+  border-bottom:1px solid var(--line);
+}
+.loader-ico{
+  width:44px;height:44px;border-radius:12px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  box-shadow:0 10px 24px -10px var(--accent-glow);
+}
+.loader-head h2{font-size:17px;font-weight:800;color:#fff;letter-spacing:-.015em}
+.loader-head p{font-size:12.5px;color:var(--tx-3);margin-top:2px}
+
+.loader-body{
+  padding:20px 24px 22px;
+  display:flex;flex-direction:column;gap:16px;
+}
+
+.lf-row{display:flex;gap:14px;flex-wrap:wrap}
+.lf{display:flex;flex-direction:column;gap:7px;min-width:0}
+.lf.grow{flex:1 1 340px}
+.lf.fixed{flex:0 1 200px}
+.lf label{
+  font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tx-3);
+}
+.lf input{
+  font-family:inherit;font-size:14px;
+  padding:11px 14px;
+  color:var(--tx);
+  background:rgba(0,0,0,.36);
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  outline:none;transition:.18s;
+  width:100%;
+}
+.lf input.mono{font-family:var(--m);font-size:13px;letter-spacing:.2px}
+.lf input::placeholder{color:var(--tx-3)}
+.lf input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+  background:rgba(0,0,0,.5);
+}
+
+.lf-row-2{
+  display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end;
+}
+.method-box{
+  display:flex;flex-direction:column;gap:7px;
+}
+.method-box > label{
+  font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--tx-3);
+}
+
+.segmented{
+  display:inline-flex;
+  background:rgba(0,0,0,.36);
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  padding:3px;
+  gap:3px;
+}
+.segmented label{cursor:pointer;display:block}
+.segmented input{display:none}
+.segmented .seg-txt{
+  display:block;
+  padding:7px 16px;
+  border-radius:6px;
+  font-size:12.5px;font-weight:700;
+  color:var(--tx-3);
+  transition:.18s;
+  white-space:nowrap;
+}
+.segmented label:hover .seg-txt{color:var(--tx-2)}
+.segmented input:checked + .seg-txt{
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;
+  box-shadow:0 4px 12px -4px var(--accent-glow);
+}
+
+.loader-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  font-family:inherit;font-size:13.5px;font-weight:800;
+  padding:12px 24px;
+  border:0;border-radius:var(--r-sm);
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;cursor:pointer;
+  transition:.2s;
+  letter-spacing:.01em;
+  box-shadow:0 10px 26px -10px var(--accent-glow);
+  white-space:nowrap;
+  flex:none;
+}
+.loader-btn:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 14px 30px -10px var(--accent-glow)}
+.loader-btn:active{transform:translateY(0) scale(.98)}
+.loader-btn:disabled{
+  opacity:.45;cursor:not-allowed;transform:none!important;
+  filter:grayscale(.4);
+}
+.loader-btn svg{width:15px;height:15px;flex:none}
+
+.loader-foot{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  padding:0 24px 20px;
+  font-size:11.5px;color:var(--tx-3);
+}
+.loader-foot .badge-http{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 10px;border-radius:99px;
+  font-weight:700;font-size:10.5px;letter-spacing:.05em;
+  border:1px solid;
+}
+.badge-http.ok{color:var(--ok-2);border-color:rgba(16,185,129,.3);background:var(--ok-soft)}
+.badge-http.warn{color:var(--warn);border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
+.badge-http .d{width:6px;height:6px;border-radius:50%;background:currentColor}
+
+/* ============================================================
+   SEARCH DECK
+   ============================================================ */
+.deck{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  padding:14px;
+  margin-bottom:26px;
+  border-radius:var(--r-lg);
+  border:1px solid var(--line);
+  background:rgba(13,16,25,.7);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  box-shadow:var(--shadow-sm);
+}
+
+.search-box{position:relative;flex:1 1 260px;min-width:200px}
+.search-box .ico{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  color:var(--tx-3);pointer-events:none;
+  display:flex;
+}
+.search-box .ico svg{width:15px;height:15px}
+.search-box .kbd{
+  position:absolute;right:11px;top:50%;transform:translateY(-50%);
+  font-family:var(--m);font-size:10px;font-weight:700;
+  color:var(--tx-3);border:1px solid var(--line);border-radius:5px;
+  padding:2px 7px;background:rgba(0,0,0,.35);pointer-events:none;
+}
+.search-box input{width:100%;padding-left:40px!important;padding-right:46px!important}
+
+input[type=text],select{
+  font-family:inherit;font-size:13.5px;
+  padding:11px 14px;
+  color:var(--tx);
+  background:rgba(0,0,0,.32);
+  border:1px solid var(--line);
+  border-radius:var(--r-sm);
+  outline:none;transition:.18s;
+  -webkit-appearance:none;appearance:none;
+}
+select{
+  padding-right:34px;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6379' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;
+  background-position:right 13px center;
+}
+select option{background:#0d1019;color:var(--tx)}
+input[type=text]:focus,select:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+  background:rgba(0,0,0,.45);
+}
+input::placeholder{color:var(--tx-3)}
+
+.toggle{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:10px 15px;border-radius:var(--r-sm);
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.32);
+  font-size:13px;font-weight:600;color:var(--tx-3);
+  cursor:pointer;user-select:none;transition:.18s;white-space:nowrap;
+}
+.toggle:hover{border-color:var(--line-2);color:var(--tx-2)}
+.toggle input{display:none}
+.toggle .box{
+  width:16px;height:16px;border-radius:5px;
+  border:1.5px solid var(--line-2);
+  display:flex;align-items:center;justify-content:center;
+  transition:.18s;flex:none;
+}
+.toggle .box svg{width:10px;height:10px;color:transparent;transition:.18s}
+.toggle input:checked + .box{background:var(--ok);border-color:var(--ok)}
+.toggle input:checked + .box svg{color:#04231a}
+.toggle input:checked ~ .lbl{color:var(--tx)}
+
+.count{
+  margin-left:auto;
+  font-family:var(--m);font-size:12px;font-weight:700;
+  color:var(--tx-2);
+  padding:9px 16px;border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.32);
+  white-space:nowrap;
+}
+
+/* ============================================================
+   GRID
+   ============================================================ */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:22px;
+}
+
+.card{
+  position:relative;
+  display:flex;flex-direction:column;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:var(--card);
+  overflow:hidden;cursor:pointer;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .22s,box-shadow .3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(124,92,255,.5);
+  box-shadow:0 26px 50px -22px rgba(124,92,255,.45), 0 0 0 1px rgba(124,92,255,.15);
+}
+.card:focus-visible{
+  outline:none;
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px var(--accent-soft);
+}
+
+.cover{
+  position:relative;width:100%;
+  aspect-ratio:3/4;
+  background:linear-gradient(160deg,#0b0e17,#070a11);
+  overflow:hidden;
+}
+.cover img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .5s cubic-bezier(.2,.8,.3,1),opacity .35s;
+  opacity:0;
+}
+.cover img.ready{opacity:1}
+.card:hover .cover img{transform:scale(1.06)}
+
+.cover::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 48%,rgba(6,7,12,.92) 100%);
+  opacity:.9;pointer-events:none;
+}
+
+.ribbons{
+  position:absolute;top:10px;left:10px;right:10px;
+  display:flex;gap:5px;flex-wrap:wrap;
+  z-index:2;pointer-events:none;
+}
+.ribbon{
+  font-family:var(--m);
+  font-size:9.5px;font-weight:700;letter-spacing:.06em;
+  padding:4px 9px;border-radius:99px;
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(8,10,16,.78);
+  color:var(--tx-2);
+  text-transform:uppercase;
+}
+.ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.4);background:rgba(4,35,26,.82)}
+.ribbon.reg{color:#a5b4fc;border-color:rgba(124,92,255,.4);background:rgba(13,10,40,.82)}
+
+.quick{
+  position:absolute;bottom:11px;right:11px;z-index:3;
+  width:36px;height:36px;border-radius:50%;
+  border:0;cursor:pointer;
+  background:linear-gradient(135deg,var(--ok-2),var(--ok));
+  color:#04231a;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:translateY(8px) scale(.85);
+  transition:.28s cubic-bezier(.2,.8,.3,1);
+  box-shadow:0 10px 24px -8px rgba(16,185,129,.7);
+}
+.quick svg{width:15px;height:15px}
+.card:hover .quick{opacity:1;transform:translateY(0) scale(1)}
+.quick:hover{filter:brightness(1.1);transform:translateY(0) scale(1.08)!important}
+
+.info{padding:13px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.info h3{
+  font-size:13px;font-weight:650;line-height:1.38;
+  color:var(--tx);
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;
+  min-height:2.76em;
+  letter-spacing:-.005em;
+}
+.card:hover .info h3{color:#fff}
+
+.info .row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin-top:auto;
+  font-family:var(--m);font-size:10.5px;color:var(--tx-3);
+  font-weight:600;
+}
+.chips{display:flex;gap:5px;flex-wrap:wrap}
+.chip{
+  font-family:var(--m);font-size:9.5px;font-weight:700;letter-spacing:.05em;
+  padding:3px 8px;border-radius:5px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  color:var(--tx-3);
+  text-transform:uppercase;
+}
+.chip.ok{color:#6ee7c0;border-color:rgba(16,185,129,.3);background:var(--ok-soft)}
+.chip.warn{color:#fcd34d;border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
+
+/* Skeletons */
+.sk{border-radius:var(--r-md);border:1px solid var(--line);background:var(--card);overflow:hidden}
+.sk .sk-c{aspect-ratio:3/4;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
+.sk .sk-l{height:11px;margin:14px 14px 0;border-radius:4px;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
+.sk .sk-l.short{width:55%;margin-bottom:16px}
+@keyframes shim{0%{background-position:120% 0}100%{background-position:-120% 0}}
+
+.empty{
+  grid-column:1/-1;
+  text-align:center;
+  padding:90px 24px;
+  border-radius:var(--r-lg);
+  border:1px dashed var(--line-2);
+  background:rgba(255,255,255,.012);
+  color:var(--tx-3);
+}
+.empty .big{font-size:42px;margin-bottom:14px;opacity:.55}
+.empty b{display:block;color:var(--tx-2);font-size:15px;font-weight:700;margin-bottom:5px}
+.empty small{font-size:12.5px;color:var(--tx-3)}
+
+/* ============================================================
+   OVERLAY / MODAL
+   ============================================================ */
+.overlay{
+  display:none;
+  position:fixed;inset:0;z-index:900;
+  padding:24px 16px;
+  overflow-y:auto;
+  background:rgba(3,4,8,.84);
+  backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+}
+.overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.overlay.open .modal{animation:pop .28s cubic-bezier(.16,1,.3,1)}
+
+@keyframes pop{
+  from{opacity:0;transform:translateY(16px) scale(.975)}
+  to{opacity:1;transform:none}
+}
+
+.modal{
+  position:relative;
+  width:100%;
+  max-width:900px;
+  margin:auto;
+  border-radius:var(--r-xl);
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  box-shadow:var(--shadow-lg);
+  overflow:hidden;
+}
+.modal.slim{max-width:600px}
+
+.modal-close{
+  position:absolute;top:16px;right:16px;z-index:5;
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--line);
+  background:rgba(8,10,16,.75);
+  color:var(--tx-2);font-size:14px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:.2s;
+  backdrop-filter:blur(10px);
+}
+.modal-close:hover{background:var(--err);border-color:var(--err);color:#fff;transform:rotate(90deg)}
+
+.gm-head{
+  display:grid;
+  grid-template-columns:170px 1fr;
+  gap:22px;
+  padding:24px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(124,92,255,.08),transparent 60%);
+}
+.gm-cover{
+  width:100%;aspect-ratio:3/4;
+  border-radius:var(--r-md);
+  overflow:hidden;
+  border:1px solid var(--line);
+  background:#080b12;
+}
+.gm-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.gm-meta{padding-top:4px;min-width:0}
+.gm-meta h2{
+  font-size:22px;font-weight:800;letter-spacing:-.028em;line-height:1.22;
+  color:#fff;padding-right:44px;
+}
+.gm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px}
+.gm-tag{
+  font-family:var(--m);font-size:10.5px;font-weight:600;
+  padding:4px 11px;border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.3);
+  color:var(--tx-2);
+}
+.gm-tag.b{color:#a5b4fc;border-color:rgba(124,92,255,.35);background:var(--accent-soft)}
+
+.gm-actions{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  margin-top:20px;
+}
+.gm-note{
+  font-size:12px;color:var(--tx-3);
+  margin-top:12px;line-height:1.55;
+}
+
+.gm-body{padding:22px 24px 26px}
+.sec-title{
+  display:flex;align-items:center;gap:10px;
+  font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tx-3);
+  margin-bottom:16px;
+}
+.sec-title::after{content:'';flex:1;height:1px;background:var(--line)}
+
+.files{display:flex;flex-direction:column;gap:10px;max-height:min(48vh,440px);overflow-y:auto;padding-right:4px}
+
+.frow{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:14px;flex-wrap:wrap;
+  padding:14px 15px;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  border-left:3px solid var(--line-2);
+  background:rgba(0,0,0,.26);
+  transition:.18s;
+}
+.frow:hover{background:rgba(255,255,255,.025);border-color:var(--line-2);border-left-color:var(--line-2)}
+.frow.direct{border-left-color:var(--ok)}
+.frow.direct:hover{border-left-color:var(--ok-2)}
+.frow.redirect{border-left-color:var(--warn)}
+
+.fmain{flex:1 1 260px;min-width:0;display:flex;flex-direction:column;gap:6px}
+.fname{font-size:13.5px;font-weight:650;color:var(--tx);word-break:break-word}
+.facts{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
+.fact{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--m);font-size:10px;font-weight:600;
+  padding:3px 9px;border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.028);
+  color:var(--tx-2);
+}
+.fact.globe{color:#a5b4fc}
+.fact svg{width:10px;height:10px;flex:none}
+
+.tag{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--m);font-size:9.5px;font-weight:800;letter-spacing:.05em;
+  padding:3px 9px;border-radius:5px;text-transform:uppercase;
+}
+.tag.direct{color:#6ee7c0;background:var(--ok-soft);border:1px solid rgba(16,185,129,.32)}
+.tag.redirect{color:#fcd34d;background:var(--warn-soft);border:1px solid rgba(245,165,36,.32)}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:7px;
+  font-family:inherit;font-size:13px;font-weight:700;
+  padding:10px 17px;
+  border:1px solid transparent;
+  border-radius:var(--r-sm);
+  cursor:pointer;text-decoration:none;
+  transition:.18s;white-space:nowrap;line-height:1;
+  letter-spacing:.005em;
+}
+.btn:active{transform:scale(.975)}
+.btn[disabled]{opacity:.4;cursor:not-allowed;transform:none!important}
+.btn svg{width:14px;height:14px;flex:none}
+
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;
+  box-shadow:0 10px 26px -10px var(--accent-glow);
+}
+.btn.primary:hover{filter:brightness(1.08);box-shadow:0 14px 30px -10px var(--accent-glow)}
+
+.btn.ok{
+  background:linear-gradient(135deg,var(--ok-2),var(--ok));
+  color:#04231a;
+  box-shadow:0 10px 26px -12px rgba(16,185,129,.5);
+}
+.btn.ok:hover{filter:brightness(1.08)}
+
+.btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--tx-2)}
+.btn.ghost:hover{border-color:var(--accent);color:#fff;background:var(--accent-soft)}
+
+.btn.sm{font-size:11.5px;padding:8px 13px;border-radius:7px}
+.btn.sm svg{width:12px;height:12px}
+.btn.icon{padding:8px 11px}
+
+.btn-group{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+
+/* ============================================================
+   SETUP / INFO MODAL
+   ============================================================ */
+.set-head{
+  padding:24px 24px 20px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(124,92,255,.1),transparent 60%);
+}
+.set-head h2{font-size:19px;font-weight:800;color:#fff;letter-spacing:-.02em;padding-right:40px}
+.set-head p{font-size:12.5px;color:var(--tx-3);margin-top:4px}
+.set-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:18px}
+
+.set-card{
+  display:flex;align-items:flex-start;gap:14px;
+  padding:16px;border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.28);
+}
+.set-card.ok{border-color:rgba(16,185,129,.3);background:var(--ok-soft)}
+.set-card.warn{border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
+.set-card .ic{
+  width:38px;height:38px;border-radius:10px;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-size:17px;background:rgba(255,255,255,.05);
+}
+.set-card .t{font-size:13.5px;font-weight:700;color:var(--tx)}
+.set-card .d{font-size:12px;color:var(--tx-2);margin-top:4px;line-height:1.6}
+
+.method-card{
+  border:1px solid var(--line);
+  border-radius:var(--r-md);
+  background:rgba(0,0,0,.24);
+  overflow:hidden;
+}
+.method-card .mc-head{
+  display:flex;align-items:center;gap:11px;
+  padding:14px 16px;
+  border-bottom:1px solid var(--line);
+  background:rgba(255,255,255,.02);
+}
+.method-card .mc-head .ic{
+  width:32px;height:32px;border-radius:9px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;
+  background:linear-gradient(135deg,var(--accent-soft),rgba(34,211,238,.08));
+  border:1px solid rgba(124,92,255,.2);
+}
+.method-card .mc-head h3{font-size:13.5px;font-weight:800;color:#fff}
+.method-card .mc-head p{font-size:11px;color:var(--tx-3);margin-top:1px}
+.method-card .mc-body{
+  padding:14px 16px;
+  font-size:12px;color:var(--tx-2);line-height:1.7;
+}
+.method-card .mc-body code{
+  font-family:var(--m);font-size:11px;
+  background:rgba(0,0,0,.5);
+  padding:2px 7px;border-radius:5px;color:#a5b4fc;
+}
+.method-card ol{margin:6px 0 0 18px;display:flex;flex-direction:column;gap:5px}
+.method-card ol li{padding-left:3px}
+
+/* ============================================================
+   TOASTS
+   ============================================================ */
+#toasts{
+  position:fixed;right:20px;bottom:20px;z-index:2000;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:min(420px,calc(100vw - 40px));
+  pointer-events:none;
+}
+.toast{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:14px 17px;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:rgba(16,21,34,.97);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:var(--shadow-md);
+  font-size:13px;font-weight:500;line-height:1.5;
+  color:var(--tx);
+  animation:slideIn .3s cubic-bezier(.16,1,.3,1);
+  pointer-events:auto;
+}
+.toast.out{animation:slideOut .24s ease forwards}
+.toast .ti{flex:none;line-height:1.4;display:flex;margin-top:1px}
+.toast .ti svg{width:16px;height:16px}
+.toast.ok{border-color:rgba(16,185,129,.4);background:rgba(6,38,30,.97)}
+.toast.ok .ti{color:var(--ok-2)}
+.toast.warn{border-color:rgba(245,165,36,.4);background:rgba(43,28,4,.97)}
+.toast.warn .ti{color:var(--warn)}
+.toast.err{border-color:rgba(244,63,94,.4);background:rgba(44,12,18,.97)}
+.toast.err .ti{color:var(--err)}
+.toast.info .ti{color:var(--accent-2)}
+
+@keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.foot{
+  border-top:1px solid var(--line);
+  margin-top:48px;
+  padding:28px 0 0;
+  display:flex;flex-wrap:wrap;gap:16px;
+  align-items:center;justify-content:space-between;
+  font-size:12px;color:var(--tx-3);
+}
+.foot .fl{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+.foot a{color:var(--tx-2);text-decoration:none;transition:.16s}
+.foot a:hover{color:var(--accent-2)}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:860px){
+  .gm-head{grid-template-columns:120px 1fr;gap:16px;padding:20px}
+  .gm-meta h2{font-size:18px;padding-right:36px}
+  .gm-body{padding:18px}
+  .hero{padding:36px 0 24px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
+  .loader-head{padding:18px 20px 14px}
+  .loader-body{padding:18px 20px 20px}
+  .loader-foot{padding:0 20px 18px}
+}
+@media (max-width:620px){
+  .count{margin-left:0;width:100%;text-align:center}
+  .brand-txt .s{display:none}
+  .strip{padding:9px 42px 9px 14px}
+  .strip .db-text{font-size:11.5px;text-align:center}
+  .topbar{padding:0 16px}
+  .wrap{padding:0 16px 80px}
+}
+@media (max-width:460px){
+  .gm-head{grid-template-columns:1fr;gap:16px}
+  .gm-cover{max-width:150px}
+  .hero h1{font-size:30px}
+  .lf-row-2{flex-direction:column;align-items:stretch}
+  .segmented{width:100%}
+  .segmented label{flex:1}
+  .segmented .seg-txt{text-align:center}
+  .loader-btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== DONATION STRIP ==================== -->
+<div class="strip" id="strip">
+  <div class="s-txt">
+    💜 <b>Free forever. No ads. No keys.</b> Help us build the <span class="grad">PS5 PKG Store</span> next.
+  </div>
+
+  <div class="addr">
+    <code id="donateAddr">0x17E1D7f8A9641749A3f6A932Df09D36FE198df86</code>
+    <button id="donateCopyBtn" type="button" title="Copy EVM donation address">Copy</button>
+  </div>
+
+  <div class="s-links">
+    <a href="https://optistore.vercel.app" target="_blank" rel="noopener noreferrer">🌐 Website</a>
+    <a class="tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">💬 Telegram</a>
+  </div>
+
+  <button class="strip-x" id="stripClose" type="button" aria-label="Dismiss">✕</button>
+</div>
+
+<!-- ==================== TOP BAR ==================== -->
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">O</div>
+    <div class="brand-txt">
+      <div class="n">OptiTron <em>Store</em></div>
+      <div class="s">PS4 Package Library</div>
+    </div>
+  </div>
+
+  <div class="topbar-right">
+    <button class="pill" id="connPill" data-s="" type="button" title="Transport status — click for setup help">
+      <span class="dot"></span><span id="connText">Checking…</span>
+    </button>
+    <button class="icon-btn" id="helpBtn" type="button" title="Setup help (S)">?</button>
+  </div>
+</header>
+
+<!-- ==================== MAIN ==================== -->
+<main class="wrap">
+
+  <section class="hero">
+    <h1>Every PS4 package.<br><em>One clean library.</em></h1>
+    <p>Browse the full catalog, filter by region and package type, and push direct <b>.pkg</b> files straight to your console.</p>
+
+    <div class="stats" id="stats">
+      <div class="stat"><span class="v" id="stTitles">—</span><span class="k">Titles</span></div>
+      <div class="stat"><span class="v" id="stFiles">—</span><span class="k">Files</span></div>
+      <div class="stat"><span class="v g" id="stDirect">—</span><span class="k">Direct PKG</span></div>
+      <div class="stat"><span class="v" id="stRegions">—</span><span class="k">Regions</span></div>
+    </div>
+  </section>
+
+  <!-- ==================== DIRECT INSTALL PANEL ==================== -->
+  <section class="loader" id="loaderPanel">
+    <div class="loader-head">
+      <div class="loader-ico">⚡</div>
+      <div>
+        <h2>Direct Install</h2>
+        <p>Push any .pkg URL straight to your PS4 — no download required</p>
+      </div>
+    </div>
+
+    <div class="loader-body">
+      <div class="lf-row">
+        <div class="lf fixed">
+          <label for="loaderIp">PS4 IP Address</label>
+          <input type="text" id="loaderIp" class="mono" placeholder="192.168.1.50" autocomplete="off" spellcheck="false" inputmode="decimal">
+        </div>
+        <div class="lf grow">
+          <label for="loaderUrl">Direct .pkg URL</label>
+          <input type="text" id="loaderUrl" class="mono" placeholder="http://example.com/game.pkg" autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+
+      <div class="lf-row-2">
+        <div class="method-box">
+          <label>Install method</label>
+          <div class="segmented" role="radiogroup">
+            <label>
+              <input type="radio" name="method" value="rpi" checked>
+              <span class="seg-txt">RPI</span>
+            </label>
+            <label>
+              <input type="radio" name="method" value="goldhen">
+              <span class="seg-txt">GoldHEN DPI</span>
+            </label>
+          </div>
+        </div>
+
+        <button class="loader-btn" id="loaderInstall" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12l16-8-6 18-3-7-7-3z"/>
+          </svg>
+          Install to PS4
+        </button>
+      </div>
+    </div>
+
+    <div class="loader-foot">
+      <span class="badge-http" id="httpBadge">
+        <span class="d"></span>
+        <span id="httpBadgeText">Checking transport…</span>
+      </span>
+      <span id="loaderHint">RPI needs the Remote Package Installer app · GoldHEN DPI needs the Direct Package Installer payload loaded</span>
+    </div>
+  </section>
+
+  <!-- ==================== SEARCH DECK ==================== -->
+  <section class="deck">
+    <div class="search-box">
+      <span class="ico">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+        </svg>
+      </span>
+      <input type="text" id="search" placeholder="Search titles…" autocomplete="off" spellcheck="false">
+      <span class="kbd">/</span>
+    </div>
+
+    <select id="regionSel" title="Region"><option value="all">All Regions</option></select>
+    <select id="typeSel" title="Package type"><option value="all">All Types</option></select>
+    <select id="sortSel" title="Sort">
+      <option value="name">Name A–Z</option>
+      <option value="name-desc">Name Z–A</option>
+      <option value="files">Most files</option>
+      <option value="direct">Most direct</option>
+    </select>
+
+    <label class="toggle" title="Show only titles with at least one direct .pkg link">
+      <input type="checkbox" id="directOnly">
+      <span class="box">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M5 13l4 4L19 7"/>
+        </svg>
+      </span>
+      <span class="lbl">Direct only</span>
+    </label>
+
+    <span class="count" id="count">Loading…</span>
+  </section>
+
+  <div class="grid" id="grid"></div>
+
+  <footer class="foot">
+    <div class="fl">
+      <span>OptiStore · unofficial fan library</span>
+      <a href="https://optistore.vercel.app" target="_blank" rel="noopener noreferrer">Website</a>
+      <a href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">Telegram</a>
+    </div>
+    <div class="fl">
+      <span>Donate (EVM): <code style="font-family:var(--m);color:#a5b4fc" id="footAddr">0x17E1…df86</code></span>
+    </div>
+  </footer>
+
+</main>
+
+<!-- ==================== GAME MODAL ==================== -->
+<div class="overlay" id="gameModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" type="button" aria-label="Close">✕</button>
+
+    <div class="gm-head">
+      <div class="gm-cover"><img id="gmCover" alt="" src=""></div>
+      <div class="gm-meta">
+        <h2 id="gmTitle">Game Title</h2>
+        <div class="gm-tags" id="gmTags"></div>
+        <div class="gm-actions">
+          <button class="btn ok" id="sendAllBtn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12l16-8-6 18-3-7-7-3z"/>
+            </svg>
+            Send all direct PKG
+          </button>
+          <button class="btn ghost sm" id="gmCopyAll" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+            </svg>
+            Copy all links
+          </button>
+        </div>
+        <div class="gm-note" id="gmNote"></div>
+      </div>
+    </div>
+
+    <div class="gm-body">
+      <div class="sec-title">Available package files</div>
+      <div class="files" id="gmFiles"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== SETUP HELP MODAL ==================== -->
+<div class="overlay" id="helpModal">
+  <div class="modal slim">
+    <button class="modal-close" id="helpClose" type="button" aria-label="Close">✕</button>
+
+    <div class="set-head">
+      <h2>Direct Install Setup</h2>
+      <p>How to push packages to your console</p>
+    </div>
+
+    <div class="set-body">
+
+      <div class="set-card" id="helpTransport">
+        <div class="ic" id="helpTransportIco">⏳</div>
+        <div>
+          <div class="t" id="helpTransportTitle">Checking transport…</div>
+          <div class="d" id="helpTransportDesc">Detecting how this page can reach your console.</div>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <div class="mc-head">
+          <div class="ic">📦</div>
+          <div>
+            <h3>RPI — Remote Package Installer</h3>
+            <p>Runs as a homebrew app on the PS4</p>
+          </div>
+        </div>
+        <div class="mc-body">
+          The classic approach. Install the <b>Remote Package Installer</b> app on your PS4 and launch it before installing.
+          <ol>
+            <li>Launch <code>Remote Package Installer</code> on the PS4.</li>
+            <li>Note your console's IP address (Settings → Network).</li>
+            <li>Enter the IP above and hit <b>Install to PS4</b>.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="method-card">
+        <div class="mc-head">
+          <div class="ic">🐐</div>
+          <div>
+            <h3>GoldHEN — Direct Package Installer</h3>
+            <p>Payload-based, no separate app needed</p>
+          </div>
+        </div>
+        <div class="mc-body">
+          Load the <b>Direct Package Installer</b> payload through GoldHEN, then send URLs the same way.
+          <ol>
+            <li>Open <code>GoldHEN</code> on the PS4 (via the web browser exploit).</li>
+            <li>Load the <code>DirectPackageInstaller</code> payload through the payload loader.</li>
+            <li>Select <b>GoldHEN DPI</b> above and hit install.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="method-card" id="httpNeededCard">
+        <div class="mc-head">
+          <div class="ic">🔒</div>
+          <div>
+            <h3>HTTP required for direct installs</h3>
+            <p>Why HTTPS blocks the console</p>
+          </div>
+        </div>
+        <div class="mc-body">
+          The PS4's installer only speaks plain <b>HTTP</b>. Browsers forbid an HTTPS page from contacting
+          a plain-HTTP device on your local network (mixed-content policy). To use direct install,
+          open this page over <code>http://</code> instead of <code>https://</code>.
+          <div class="btn-group" style="margin-top:12px">
+            <button class="btn primary sm" id="switchHttpBtn" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 12h16M14 6l6 6-6 6"/>
+              </svg>
+              Switch to HTTP
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<!-- ============================================================
+     APP
+     ============================================================ -->
+<script>
+(function () {
+  'use strict';
+
+  /* ==========================================================
+     CONFIG
+     ========================================================== */
+  var CATALOG_URL = 'export_with_covers.json';
+  var LS_PS4IP    = 'optitron_ps4_ip';
+  var LS_STRIP    = 'optitron_strip_hidden';
+  var RPI_PORT    = 12800;
+
+  /*
+   * Hosts known to serve landing pages / interstitials instead of raw files.
+   * Even when the URL path ends in ".pkg", these must never be classified
+   * as direct — the PS4 would just download an HTML page.
+   */
+  var REDIRECT_HOSTS = [
+    'filekeeper.net','filekeeper.io','filekeeper.org','filekeeper.co',
+    'filecrypt.cc','filecrypt.co','filecrypt.to','filecrypt.link','linkcrypt.ws',
+    'linkvertise.com','linkvertise.net','link-to.net',
+    'ouo.io','ouo.press','safelinking.net','sub2unlock.com',
+    'adf.ly','sh.st','shorte.st','shrinkme.io','shrinkearn.com',
+    'mega.nz','mega.co.nz','1fichier.com','mediafire.com',
+    'drive.google.com','dropbox.com','uptobox.com','racaty.net',
+    'zippyshare.com','anonfiles.com','gofile.io','pixeldrain.com',
+    'file-upload.net','uploadhaven.com'
+  ];
+
+  var PLACEHOLDER_COVER = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(
+    '<svg xmlns="http://www.w3.org/2000/svg" width="300" height="400">' +
+      '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+        '<stop offset="0" stop-color="#0d121d"/><stop offset="1" stop-color="#070a11"/>' +
+      '</linearGradient></defs>' +
+      '<rect width="100%" height="100%" fill="url(#g)"/>' +
+      '<circle cx="150" cy="182" r="30" fill="none" stroke="#1e2637" stroke-width="2"/>' +
+      '<path d="M141 168l24 14-24 14z" fill="#1e2637"/>' +
+      '<text x="50%" y="248" fill="#2b3550" font-family="Inter,sans-serif" font-size="13" font-weight="600" text-anchor="middle">NO COVER</text>' +
+    '</svg>'
+  );
+
+  /* ==========================================================
+     STATE
+     ========================================================== */
+  var state = {
+    catalog: [],
+    filtered: [],
+    query: '',
+    region: 'all',
+    type: 'all',
+    sort: 'name',
+    directOnly: false,
+    current: null,
+    transport: 'unknown'   // 'direct' | 'blocked'
+  };
+
+  function $(id){ return document.getElementById(id); }
+
+  function esc(s){
+    return String(s == null ? '' : s)
+      .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+      .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+  }
+
+  /* ==========================================================
+     TOASTS
+     ========================================================== */
+  var ICONS = {
+    ok:   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>',
+    warn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>',
+    err:  '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9l-6 6M9 9l6 6"/></svg>',
+    info: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg>'
+  };
+
+  function toast(msg, kind, ms){
+    kind = kind || 'info';
+    var box = $('toasts');
+    var el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    el.innerHTML = '<span class="ti">' + (ICONS[kind] || ICONS.info) + '</span><span>' + esc(msg) + '</span>';
+    box.appendChild(el);
+
+    var life = ms || (kind === 'warn' || kind === 'err' ? 7200 : 4200);
+
+    setTimeout(function(){
+      el.classList.add('out');
+      setTimeout(function(){ if (el.parentNode) el.parentNode.removeChild(el); }, 260);
+    }, life);
+  }
+
+  /* ==========================================================
+     LINK CLASSIFICATION  (FileKeeper fix)
+     ========================================================== */
+
+  function hostOf(u){
+    try { return new URL(u, location.href).hostname.toLowerCase().replace(/^www\./,''); }
+    catch(e){
+      var m = String(u).match(/^[a-z]+:\/\/([^\/?#]+)/i);
+      return m ? m[1].toLowerCase().replace(/^www\./,'').split(':')[0] : '';
+    }
+  }
+
+  function pathOf(u){
+    try { return new URL(u, location.href).pathname; }
+    catch(e){
+      var m = String(u).match(/^[a-z]+:\/\/[^\/?#]*([^?#]*)/i);
+      return m ? m[1] : String(u);
+    }
+  }
+
+  function isRedirectHost(host, link){
+    if (!host) return false;
+    if (link && typeof link.direct === 'boolean') return link.direct === false;
+    if (link && link.is_direct === false) return true;
+
+    var k = String((link && (link.kind || link.type)) || '').toLowerCase();
+    if (k === 'redirect' || k === 'host' || k === 'page' || k === 'mirror') return true;
+
+    for (var i = 0; i < REDIRECT_HOSTS.length; i++){
+      var h = REDIRECT_HOSTS[i];
+      if (host === h || host.endsWith('.' + h)) return true;
+    }
+    return false;
+  }
+
+  /**
+   * 'direct'   → genuine raw .pkg URL that RPI/DPI can fetch
+   * 'redirect' → landing page / interstitial
+   * 'none'     → not a usable http(s) URL
+   */
+  function classifyLink(link){
+    if (!link) return 'none';
+    var raw = link.url ? String(link.url).trim() : '';
+    if (!raw) return 'none';
+
+    var proto = '';
+    try { proto = new URL(raw, location.href).protocol; }
+    catch(e){ proto = /^https?:/i.test(raw) ? 'http:' : ''; }
+    if (proto !== 'http:' && proto !== 'https:') return 'none';
+
+    if (isRedirectHost(hostOf(raw), link)) return 'redirect';
+    return /\.pkg$/i.test(pathOf(raw)) ? 'direct' : 'redirect';
+  }
+
+  function isDirect(l){ return classifyLink(l) === 'direct'; }
+
+  /* ==========================================================
+     UTILITIES
+     ========================================================== */
+  function fetchWithTimeout(u, opts, ms){
+    var ctrl = ('AbortController' in window) ? new AbortController() : null;
+    var o = {};
+    for (var k in (opts || {})) o[k] = opts[k];
+    if (ctrl) o.signal = ctrl.signal;
+
+    var timer = setTimeout(function(){ if (ctrl) ctrl.abort(); }, ms || 8000);
+    return fetch(u, o).then(
+      function(r){ clearTimeout(timer); return r; },
+      function(e){ clearTimeout(timer); throw e; }
+    );
+  }
+
+  function copyText(text){
+    if (!text){ toast('Nothing to copy.', 'warn'); return; }
+
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      document.body.removeChild(ta);
+    }
+
+    if (navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text)
+        .then(function(){ toast('Copied to clipboard.', 'ok'); })
+        .catch(function(){ fallback(); toast('Copied to clipboard.', 'ok'); });
+    } else {
+      fallback();
+      toast('Copied to clipboard.', 'ok');
+    }
+  }
+
+  /* ==========================================================
+     PS4 IP STORAGE
+     ========================================================== */
+  function getIp(){ return (localStorage.getItem(LS_PS4IP) || '').trim(); }
+  function setIp(v){ try { localStorage.setItem(LS_PS4IP, v); } catch(e){} }
+
+  function isValidIp(v){
+    if (!v) return false;
+    if (/^(\d{1,3}\.){3}\d{1,3}$/.test(v)){
+      return v.split('.').every(function(n){ var x = +n; return x >= 0 && x <= 255; });
+    }
+    // Also allow hostnames (mDNS .local, etc.)
+    return /^[a-z0-9][a-z0-9.-]*$/i.test(v);
+  }
+
+  /* ==========================================================
+     TRANSPORT
+     ========================================================== */
+
+  function detectTransport(){
+    state.transport = (location.protocol === 'http:') ? 'direct' : 'blocked';
+    renderTransport();
+  }
+
+  function renderTransport(){
+    var pill = $('connPill');
+    var txt  = $('connText');
+    var ip   = getIp();
+
+    if (state.transport === 'direct'){
+      pill.setAttribute('data-s', 'ok');
+      txt.textContent = ip ? ('PS4 · ' + ip) : 'HTTP · ready';
+    } else if (state.transport === 'blocked'){
+      pill.setAttribute('data-s', 'warn');
+      txt.textContent = 'HTTPS · installs off';
+    } else {
+      pill.setAttribute('data-s', '');
+      txt.textContent = 'Checking…';
+    }
+
+    // HTTP badge in loader
+    var badge = $('httpBadge');
+    var btext = $('httpBadgeText');
+    if (badge && btext){
+      if (state.transport === 'direct'){
+        badge.className = 'badge-http ok';
+        btext.textContent = 'HTTP · direct install ready';
+      } else {
+        badge.className = 'badge-http warn';
+        btext.textContent = 'HTTPS · direct install disabled';
+      }
+    }
+
+    // Loader install button
+    var btn = $('loaderInstall');
+    if (btn){
+      var blocked = state.transport !== 'direct';
+      btn.disabled = blocked;
+      btn.title = blocked ? 'Direct install requires this page to be served over HTTP' : '';
+    }
+
+    // Help modal status
+    var hIco   = $('helpTransportIco');
+    var hTitle = $('helpTransportTitle');
+    var hDesc  = $('helpTransportDesc');
+    var hCard  = $('helpTransport');
+    if (hIco && hCard){
+      if (state.transport === 'direct'){
+        hCard.className = 'set-card ok';
+        hIco.textContent = '✅';
+        hTitle.textContent = 'Ready to install';
+        hDesc.textContent = 'This page is served over HTTP, so it can talk directly to ' +
+          (ip ? ip + ':' + RPI_PORT : 'your PS4') + '.';
+      } else {
+        hCard.className = 'set-card warn';
+        hIco.textContent = '🔒';
+        hTitle.textContent = 'HTTPS blocks direct installs';
+        hDesc.textContent = 'Open this page over plain HTTP to enable remote package installs.';
+      }
+    }
+
+    if ($('loaderHint')){
+      $('loaderHint').textContent = (state.transport === 'direct')
+        ? 'RPI needs the Remote Package Installer app · GoldHEN DPI needs the Direct Package Installer payload loaded'
+        : 'Direct installs only work over plain HTTP — click ? for setup steps';
+    }
+  }
+
+  /* ==========================================================
+     SENDING TO THE PS4
+     ========================================================== */
+
+  function buildEndpoint(ip){
+    return 'http://' + ip + ':' + RPI_PORT + '/api/install';
+  }
+
+  function buildPayload(url){
+    return { type: 'direct', packages: [url] };
+  }
+
+  function postInstall(endpoint, payload){
+    var body = JSON.stringify(payload);
+
+    // Try a CORS request first so we can read the response
+    return fetchWithTimeout(endpoint, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-store',
+      headers: { 'Content-Type': 'application/json' },
+      body: body
+    }, 12000)
+    .then(function(res){
+      return res.text().then(function(t){
+        return { sent: true, verified: true, status: res.status, body: t };
+      });
+    })
+    .catch(function(){
+      // Fall back to a simple CORS-safelisted POST (no preflight)
+      return fetchWithTimeout(endpoint, {
+        method: 'POST',
+        mode: 'no-cors',
+        cache: 'no-store',
+        headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
+        body: body
+      }, 12000)
+      .then(function(){ return { sent: true, verified: false }; })
+      .catch(function(e){ return { sent: false, error: e }; });
+    });
+  }
+
+  /**
+   * Push one direct .pkg URL to the console.
+   * Returns a Promise<boolean>.
+   */
+  function pushPackage(pkgUrl, label, quiet){
+    if (state.transport !== 'direct'){
+      if (!quiet) toast('Direct install needs this page served over HTTP.', 'warn');
+      return Promise.resolve(false);
+    }
+
+    var ip = getIp();
+    if (!ip){
+      if (!quiet) toast('Set your PS4 IP address first.', 'warn');
+      openHelp();
+      $('loaderIp').focus();
+      return Promise.resolve(false);
+    }
+
+    if (!quiet) toast('Sending "' + label + '" to ' + ip + '…', 'info', 2600);
+
+    return postInstall(buildEndpoint(ip), buildPayload(pkgUrl)).then(function(r){
+      if (!r.sent){
+        toast('Could not reach ' + ip + '. Is your installer running?', 'err');
+        return false;
+      }
+      if (r.verified && r.status >= 400){
+        toast('PS4 rejected the request (HTTP ' + r.status + ').', 'err');
+        return false;
+      }
+      if (r.verified && r.body){
+        var data = null;
+        try { data = JSON.parse(r.body); } catch(e){}
+        if (data && data.status && String(data.status).toLowerCase() !== 'success'){
+          toast('PS4 error: ' + (data.error || data.status), 'err');
+          return false;
+        }
+      }
+      toast(
+        r.verified ? 'Queued "' + label + '" on the PS4.' : 'Request sent to ' + ip + ' (unverified).',
+        'ok'
+      );
+      return true;
+    }).catch(function(){
+      toast('Unexpected error while contacting the PS4.', 'err');
+      return false;
+    });
+  }
+
+  /** Sequential queue with a small gap so the installer isn't flooded. */
+  function pushAll(links){
+    if (!links.length) return;
+
+    if (state.transport !== 'direct'){
+      toast('Direct install needs this page served over HTTP.', 'warn');
+      return;
+    }
+
+    var ip = getIp();
+    if (!ip){
+      toast('Set your PS4 IP address first.', 'warn');
+      openHelp();
+      return;
+    }
+
+    var chain = Promise.resolve();
+    var ok = 0, fail = 0;
+
+    links.forEach(function(l, i){
+      chain = chain
+        .then(function(){
+          return new Promise(function(res){ setTimeout(res, i === 0 ? 0 : 850); });
+        })
+        .then(function(){
+          return pushPackage(
+            l.url,
+            l.source_label || (l.kind ? String(l.kind).toUpperCase() : 'PKG'),
+            true
+          ).then(function(good){ if (good) ok++; else fail++; });
+        });
+    });
+
+    toast('Queuing ' + links.length + ' package(s)…', 'info', 2600);
+
+    chain.then(function(){
+      if (fail === 0) toast('All ' + ok + ' package(s) queued.', 'ok');
+      else toast(ok + ' queued, ' + fail + ' failed.', 'warn');
+    });
+  }
+
+  /* ==========================================================
+     LOAD FROM URL PANEL
+     ========================================================== */
+
+  function selectedMethod(){
+    var el = document.querySelector('input[name="method"]:checked');
+    return el ? el.value : 'rpi';
+  }
+
+  function methodLabel(v){
+    return v === 'goldhen' ? 'GoldHEN DPI' : 'RPI';
+  }
+
+  function loadFromUrl(){
+    var ip      = $('loaderIp').value.trim().replace(/^https?:\/\//i,'').replace(/\/.*$/,'');
+    var url     = $('loaderUrl').value.trim();
+    var method  = selectedMethod();
+
+    if (state.transport !== 'direct'){
+      toast('Direct install requires this page to be served over HTTP.', 'warn', 8000);
+      openHelp();
+      return;
+    }
+
+    if (!ip){
+      toast('Enter your PS4 IP address.', 'warn');
+      $('loaderIp').focus();
+      return;
+    }
+
+    if (!isValidIp(ip)){
+      toast('That doesn\'t look like a valid IP address.', 'warn');
+      $('loaderIp').focus();
+      return;
+    }
+
+    if (!url){
+      toast('Paste a direct .pkg URL.', 'warn');
+      $('loaderUrl').focus();
+      return;
+    }
+
+    if (!/^https?:\/\//i.test(url)){
+      toast('The URL must start with http:// or https://', 'warn');
+      $('loaderUrl').focus();
+      return;
+    }
+
+    // Confirm the URL looks like a raw .pkg (warn but proceed)
+    if (!/\.pkg(\?|#|$)/i.test(url)){
+      toast('Heads up — that URL doesn\'t end in .pkg. Trying anyway…', 'warn', 4000);
+    }
+
+    if (isRedirectHost(hostOf(url), null)){
+      toast('That host serves landing pages, not raw files. The PS4 may fail to install.', 'warn', 6500);
+    }
+
+    // Save IP so it persists
+    setIp(ip);
+    $('loaderIp').value = ip;
+    renderTransport();
+
+    toast('Sending to ' + ip + ' via ' + methodLabel(method) + '…', 'info', 2400);
+
+    var endpoint = buildEndpoint(ip);
+    var payload  = buildPayload(url);
+
+    // Note: both RPI and GoldHEN DPI accept the same /api/install payload,
+    // which is why the same endpoint works for both — the choice just
+    // reflects what's running on the console.
+    postInstall(endpoint, payload).then(function(r){
+      if (!r.sent){
+        toast('Could not reach ' + ip + '. Is ' + methodLabel(method) + ' running?', 'err');
+        return;
+      }
+      if (r.verified && r.status >= 400){
+        toast('PS4 rejected the request (HTTP ' + r.status + ').', 'err');
+        return;
+      }
+      if (r.verified && r.body){
+        var data = null;
+        try { data = JSON.parse(r.body); } catch(e){}
+        if (data && data.status && String(data.status).toLowerCase() !== 'success'){
+          toast('PS4 error: ' + (data.error || data.status), 'err');
+          return;
+        }
+      }
+      toast(
+        r.verified
+          ? '✅ Queued on PS4 via ' + methodLabel(method) + '.'
+          : 'Request sent to ' + ip + ' (unverified).',
+        'ok'
+      );
+      $('loaderUrl').value = '';
+    }).catch(function(){
+      toast('Unexpected error while contacting the PS4.', 'err');
+    });
+  }
+
+  /* ==========================================================
+     CATALOG
+     ========================================================== */
+
+  function loadCatalog(){
+    var grid = $('grid');
+    var sk = '';
+    for (var i = 0; i < 10; i++){
+      sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
+    }
+    grid.innerHTML = sk;
+
+    fetch(CATALOG_URL + '?t=' + Date.now(), { cache: 'no-store' })
+      .then(function(r){ if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(function(data){
+        state.catalog = (data && data.records) || [];
+        buildStats();
+        populateFilters();
+        applyFilter();
+      })
+      .catch(function(){
+        grid.innerHTML =
+          '<div class="empty">' +
+            '<div class="big">📡</div>' +
+            '<b>Could not load the catalog</b>' +
+            '<small>Make sure <code style="font-family:var(--m)">' + esc(CATALOG_URL) + '</code> sits next to this page.</small>' +
+          '</div>';
+        $('count').textContent = '0 titles';
+      });
+  }
+
+  function buildStats(){
+    var titles = state.catalog.length;
+    var files = 0, direct = 0;
+    var regions = {};
+
+    state.catalog.forEach(function(g){
+      (g.release_links || []).forEach(function(l){
+        files++;
+        if (isDirect(l)) direct++;
+        if (l.region) regions[l.region] = 1;
+      });
+    });
+
+    $('stTitles').textContent  = titles.toLocaleString();
+    $('stFiles').textContent   = files.toLocaleString();
+    $('stDirect').textContent  = direct.toLocaleString();
+    $('stRegions').textContent = Object.keys(regions).length || '—';
+  }
+
+  function populateFilters(){
+    var regSel = $('regionSel'), typeSel = $('typeSel');
+    var regions = {}, types = {};
+
+    state.catalog.forEach(function(item){
+      (item.release_links || []).forEach(function(l){
+        if (l.region) regions[l.region] = true;
+        if (l.kind) types[l.kind] = true;
+      });
+    });
+
+    Object.keys(regions).sort().forEach(function(r){
+      var o = document.createElement('option');
+      o.value = r; o.textContent = r;
+      regSel.appendChild(o);
+    });
+
+    Object.keys(types).sort().forEach(function(t){
+      var o = document.createElement('option');
+      o.value = t; o.textContent = t.toUpperCase();
+      typeSel.appendChild(o);
+    });
+  }
+
+  function applyFilter(){
+    var q = state.query;
+
+    state.filtered = state.catalog.filter(function(g){
+      var links = g.release_links || [];
+      if (!links.length) return false;
+
+      if (q && String(g.name || '').toLowerCase().indexOf(q) < 0) return false;
+
+      if (state.region !== 'all' &&
+          !links.some(function(l){ return l.region === state.region; })) return false;
+
+      if (state.type !== 'all' &&
+          !links.some(function(l){ return l.kind === state.type; })) return false;
+
+      if (state.directOnly && !links.some(isDirect)) return false;
+
+      return true;
+    });
+
+    sortFiltered();
+    renderGrid();
+  }
+
+  function sortFiltered(){
+    var s = state.sort;
+
+    state.filtered.sort(function(a, b){
+      var an = String(a.name || '').toLowerCase();
+      var bn = String(b.name || '').toLowerCase();
+
+      if (s === 'name-desc') return bn.localeCompare(an);
+      if (s === 'files')     return (b.release_links || []).length - (a.release_links || []).length;
+      if (s === 'direct'){
+        var ad = (a.release_links || []).filter(isDirect).length;
+        var bd = (b.release_links || []).filter(isDirect).length;
+        if (bd !== ad) return bd - ad;
+      }
+      return an.localeCompare(bn);
+    });
+  }
+
+  function renderGrid(){
+    var grid = $('grid');
+    grid.innerHTML = '';
+    $('count').textContent = state.filtered.length + ' title' + (state.filtered.length === 1 ? '' : 's');
+
+    if (!state.filtered.length){
+      grid.innerHTML =
+        '<div class="empty">' +
+          '<div class="big">🔍</div>' +
+          '<b>Nothing matches those filters</b>' +
+          '<small>Try clearing the search box or switching region / type.</small>' +
+        '</div>';
+      return;
+    }
+
+    var frag = document.createDocumentFragment();
+
+    state.filtered.forEach(function(g){
+      var links = g.release_links || [];
+      var directCount = links.filter(isDirect).length;
+      var redirectCount = links.length - directCount;
+
+      var card = document.createElement('div');
+      card.className = 'card';
+      card.setAttribute('role', 'button');
+      card.setAttribute('tabindex', '0');
+
+      /* cover */
+      var cover = document.createElement('div');
+      cover.className = 'cover';
+
+      var img = document.createElement('img');
+      img.alt = g.name || 'Cover';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.onload = function(){ this.classList.add('ready'); };
+      img.onerror = function(){
+        this.onerror = null;
+        this.src = PLACEHOLDER_COVER;
+        this.classList.add('ready');
+      };
+      img.src = g.cover_image || PLACEHOLDER_COVER;
+      cover.appendChild(img);
+
+      /* ribbons */
+      var ribbons = document.createElement('div');
+      ribbons.className = 'ribbons';
+
+      if (directCount){
+        var rb = document.createElement('span');
+        rb.className = 'ribbon ok';
+        rb.textContent = directCount + ' direct';
+        ribbons.appendChild(rb);
+      }
+      if (redirectCount){
+        var rr = document.createElement('span');
+        rr.className = 'ribbon';
+        rr.textContent = redirectCount + ' host';
+        ribbons.appendChild(rr);
+      }
+
+      var region = (links.find(function(l){ return l.region; }) || {}).region;
+      if (region){
+        var rg = document.createElement('span');
+        rg.className = 'ribbon reg';
+        rg.textContent = region;
+        ribbons.appendChild(rg);
+      }
+      cover.appendChild(ribbons);
+
+      /* quick send */
+      if (directCount){
+        var q = document.createElement('button');
+        q.className = 'quick';
+        q.type = 'button';
+        q.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 18-3-7-7-3z"/></svg>';
+        q.title = 'Send the first direct .pkg to your PS4';
+        q.onclick = function(e){
+          e.stopPropagation();
+          var first = links.find(isDirect);
+          if (first) pushPackage(first.url, g.name || 'PKG');
+        };
+        cover.appendChild(q);
+      }
+
+      /* info */
+      var info = document.createElement('div');
+      info.className = 'info';
+
+      var h3 = document.createElement('h3');
+      h3.textContent = g.name || 'Untitled';
+      info.appendChild(h3);
+
+      var row = document.createElement('div');
+      row.className = 'row';
+
+      var left = document.createElement('span');
+      left.textContent = links.length + ' file' + (links.length === 1 ? '' : 's');
+      row.appendChild(left);
+
+      var chips = document.createElement('span');
+      chips.className = 'chips';
+
+      if (directCount){
+        var c1 = document.createElement('span');
+        c1.className = 'chip ok';
+        c1.textContent = 'PKG';
+        chips.appendChild(c1);
+      }
+      if (redirectCount && !directCount){
+        var c2 = document.createElement('span');
+        c2.className = 'chip warn';
+        c2.textContent = 'HOST';
+        chips.appendChild(c2);
+      }
+      row.appendChild(chips);
+
+      info.appendChild(row);
+
+      card.appendChild(cover);
+      card.appendChild(info);
+
+      card.onclick = function(){ openGame(g); };
+      card.onkeydown = function(e){
+        if (e.key === 'Enter' || e.key === ' '){ e.preventDefault(); openGame(g); }
+      };
+
+      frag.appendChild(card);
+    });
+
+    grid.appendChild(frag);
+  }
+
+  /* ==========================================================
+     GAME MODAL
+     ========================================================== */
+
+  function openGame(g){
+    state.current = g;
+
+    var links = (g.release_links || []).filter(function(l){ return l && l.url; });
+    var directLinks   = links.filter(isDirect);
+    var redirectLinks = links.filter(function(l){ return classifyLink(l) === 'redirect'; });
+
+    /* cover */
+    var cov = $('gmCover');
+    cov.src = g.cover_image || PLACEHOLDER_COVER;
+    cov.onerror = function(){ this.onerror = null; this.src = PLACEHOLDER_COVER; };
+
+    /* title + tags */
+    $('gmTitle').textContent = g.name || 'Game details';
+
+    var tags = [];
+    if (g.title_id) tags.push({ t: g.title_id, b: true });
+    if (g.source) tags.push({ t: g.source, b: false });
+    tags.push({ t: links.length + ' file' + (links.length === 1 ? '' : 's'), b: false });
+    if (directLinks.length)   tags.push({ t: directLinks.length + ' direct PKG', b: true });
+    if (redirectLinks.length) tags.push({ t: redirectLinks.length + ' host page', b: false });
+
+    var region = (links.find(function(l){ return l.region; }) || {}).region;
+    if (region) tags.push({ t: region, b: false });
+
+    $('gmTags').innerHTML = tags.map(function(x){
+      return '<span class="gm-tag' + (x.b ? ' b' : '') + '">' + esc(x.t) + '</span>';
+    }).join('');
+
+    /* send-all button */
+    var sendAll = $('sendAllBtn');
+    if (directLinks.length){
+      sendAll.style.display = '';
+      sendAll.disabled = (state.transport !== 'direct');
+      sendAll.title = sendAll.disabled ? 'Direct install needs this page served over HTTP' : '';
+      sendAll.innerHTML =
+        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 18-3-7-7-3z"/></svg>' +
+        'Send all ' + directLinks.length + ' direct PKG';
+    } else {
+      sendAll.style.display = 'none';
+    }
+
+    /* note */
+    var note = $('gmNote');
+    var ip = getIp();
+
+    if (state.transport !== 'direct'){
+      note.innerHTML = '🔒 This page is on <b>HTTPS</b> — direct installs are disabled. <a href="#" id="gmHttpLink" style="color:var(--accent-2);text-decoration:none;font-weight:700">Switch to HTTP →</a>';
+    } else if (directLinks.length && !ip){
+      note.innerHTML = 'Set your PS4 IP in the <b>Direct Install</b> panel above to enable remote install.';
+    } else if (directLinks.length){
+      note.innerHTML = 'Target: <code style="font-family:var(--m);color:#a5b4fc">http://' + esc(ip) + ':' + RPI_PORT + '</code>';
+    } else {
+      note.innerHTML = 'No direct <b>.pkg</b> links for this title — the mirrors below are landing pages, so they open in a new tab instead.';
+    }
+
+    /* file list */
+    var list = $('gmFiles');
+    list.innerHTML = '';
+
+    if (!links.length){
+      list.innerHTML = '<div style="color:var(--tx-3);font-size:13px;text-align:center;padding:24px">No package details found for this title.</div>';
+    } else {
+      links.forEach(function(l){
+        var kind   = classifyLink(l);
+        var direct = kind === 'direct';
+        var host   = l.host || hostOf(l.url);
+
+        var row = document.createElement('div');
+        row.className = 'frow ' + (direct ? 'direct' : 'redirect');
+
+        var main = document.createElement('div');
+        main.className = 'fmain';
+
+        var name = document.createElement('div');
+        name.className = 'fname';
+        name.textContent = l.source_label ||
+          (l.kind ? String(l.kind).toUpperCase() + ' package' : (direct ? 'PKG file' : 'Download mirror'));
+        main.appendChild(name);
+
+        var facts = document.createElement('div');
+        facts.className = 'facts';
+
+        var tag = document.createElement('span');
+        tag.className = 'tag ' + (direct ? 'direct' : 'redirect');
+        tag.textContent = direct ? '⬇ direct .pkg' : '↪ redirect';
+        facts.appendChild(tag);
+
+        var hostFact = document.createElement('span');
+        hostFact.className = 'fact globe';
+        hostFact.innerHTML = '🌐 ' + esc(host);
+        hostFact.title = l.url;
+        facts.appendChild(hostFact);
+
+        if (l.kind){
+          var kf = document.createElement('span');
+          kf.className = 'fact';
+          kf.textContent = String(l.kind).toUpperCase();
+          facts.appendChild(kf);
+        }
+        if (l.size){
+          var sf = document.createElement('span');
+          sf.className = 'fact';
+          sf.textContent = l.size;
+          facts.appendChild(sf);
+        }
+        if (l.region){
+          var rf = document.createElement('span');
+          rf.className = 'fact';
+          rf.textContent = l.region;
+          facts.appendChild(rf);
+        }
+
+        main.appendChild(facts);
+        row.appendChild(main);
+
+        /* actions */
+        var actions = document.createElement('div');
+        actions.className = 'btn-group';
+
+        if (direct){
+          var sendBtn = document.createElement('button');
+          sendBtn.className = 'btn ok sm';
+          sendBtn.type = 'button';
+          sendBtn.disabled = (state.transport !== 'direct');
+          sendBtn.title = sendBtn.disabled ? 'Direct install needs HTTP' : 'Install on PS4';
+          sendBtn.innerHTML =
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 18-3-7-7-3z"/></svg>' +
+            'Send';
+          sendBtn.onclick = function(e){
+            e.stopPropagation();
+            pushPackage(l.url, l.source_label || (l.kind ? String(l.kind).toUpperCase() : 'PKG'));
+          };
+          actions.appendChild(sendBtn);
+        } else {
+          var dl = document.createElement('a');
+          dl.className = 'btn primary sm';
+          dl.href = l.url;
+          dl.target = '_blank';
+          dl.rel = 'noopener noreferrer';
+          dl.innerHTML = '📥 Open host';
+          dl.title = 'This is a landing page, not a raw file — opens in a new tab';
+          actions.appendChild(dl);
+        }
+
+        var copyBtn = document.createElement('button');
+        copyBtn.className = 'btn ghost icon sm';
+        copyBtn.type = 'button';
+        copyBtn.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>';
+        copyBtn.title = 'Copy link';
+        copyBtn.onclick = function(e){
+          e.stopPropagation();
+          copyText(l.url);
+        };
+        actions.appendChild(copyBtn);
+
+        row.appendChild(actions);
+        list.appendChild(row);
+      });
+    }
+
+    $('gameModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+
+    // Wire up the "switch to HTTP" inline link
+    var httpLink = $('gmHttpLink');
+    if (httpLink){
+      httpLink.onclick = function(e){ e.preventDefault(); switchToHttp(); };
+    }
+  }
+
+  function closeGame(){
+    $('gameModal').classList.remove('open');
+    if (!$('helpModal').classList.contains('open')) document.body.style.overflow = '';
+  }
+
+  /* ==========================================================
+     HELP MODAL
+     ========================================================== */
+  function openHelp(){
+    renderTransport();
+    $('helpModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeHelp(){
+    $('helpModal').classList.remove('open');
+    if (!$('gameModal').classList.contains('open')) document.body.style.overflow = '';
+  }
+
+  /* ==========================================================
+     SWITCH TO HTTP
+     ========================================================== */
+  function switchToHttp(){
+    if (location.protocol === 'http:'){
+      toast('Already on HTTP.', 'info');
+      return;
+    }
+    var next = 'http://' + location.host + location.pathname + location.search;
+    toast('Switching to ' + next, 'info', 2600);
+    setTimeout(function(){ location.replace(next); }, 550);
+  }
+
+  /* ==========================================================
+     EVENTS
+     ========================================================== */
+  function wire(){
+    /* strip */
+    try { if (localStorage.getItem(LS_STRIP) === '1') $('strip').classList.add('hide'); } catch(e){}
+    $('stripClose').onclick = function(){
+      $('strip').classList.add('hide');
+      try { localStorage.setItem(LS_STRIP, '1'); } catch(e){}
+    };
+
+    /* donation copy */
+    $('donateCopyBtn').onclick = function(){
+      var btn = this;
+      var addr = $('donateAddr').textContent.trim();
+      copyText(addr);
+      btn.textContent = 'Copied!';
+      btn.classList.add('done');
+      setTimeout(function(){
+        btn.textContent = 'Copy';
+        btn.classList.remove('done');
+      }, 2000);
+    };
+
+    /* search + filters */
+    var searchEl = $('search');
+    var searchTimer = null;
+
+    searchEl.oninput = function(){
+      var v = this.value;
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(function(){
+        state.query = v.toLowerCase().trim();
+        applyFilter();
+      }, 130);
+    };
+
+    $('regionSel').onchange  = function(){ state.region = this.value; applyFilter(); };
+    $('typeSel').onchange    = function(){ state.type   = this.value; applyFilter(); };
+    $('sortSel').onchange    = function(){ state.sort   = this.value; applyFilter(); };
+    $('directOnly').onchange = function(){ state.directOnly = this.checked; applyFilter(); };
+
+    /* keyboard */
+    document.addEventListener('keydown', function(e){
+      var tag = (e.target && e.target.tagName) || '';
+      var typing = tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT';
+
+      if (e.key === '/' && !typing){
+        e.preventDefault();
+        searchEl.focus(); searchEl.select();
+        return;
+      }
+      if (e.key === 'Escape'){
+        closeGame(); closeHelp();
+        if (typing && e.target === searchEl){
+          searchEl.value = ''; state.query = ''; applyFilter();
+        }
+        return;
+      }
+      if ((e.key === 's' || e.key === 'S') && !typing && !e.metaKey && !e.ctrlKey){
+        openHelp();
+      }
+    });
+
+    /* topbar */
+    $('helpBtn').onclick = openHelp;
+    $('connPill').onclick = openHelp;
+
+    /* loader panel */
+    $('loaderIp').value = getIp();
+    $('loaderInstall').onclick = loadFromUrl;
+    $('loaderUrl').addEventListener('keydown', function(e){
+      if (e.key === 'Enter') loadFromUrl();
+    });
+    $('loaderIp').addEventListener('keydown', function(e){
+      if (e.key === 'Enter'){ e.preventDefault(); $('loaderUrl').focus(); }
+    });
+
+    /* game modal */
+    $('modalClose').onclick = closeGame;
+    $('gameModal').addEventListener('click', function(e){
+      if (e.target === this) closeGame();
+    });
+
+    $('sendAllBtn').onclick = function(){
+      if (!state.current) return;
+      var directLinks = (state.current.release_links || []).filter(isDirect);
+      pushAll(directLinks);
+    };
+
+    $('gmCopyAll').onclick = function(){
+      if (!state.current) return;
+      var urls = (state.current.release_links || [])
+        .filter(function(l){ return l.url; })
+        .map(function(l){ return l.url; });
+      if (!urls.length){ toast('No links to copy.', 'warn'); return; }
+      copyText(urls.join('\n'));
+    };
+
+    /* help modal */
+    $('helpClose').onclick = closeHelp;
+    $('helpModal').addEventListener('click', function(e){
+      if (e.target === this) closeHelp();
+    });
+    $('switchHttpBtn').onclick = switchToHttp;
+  }
+
+  /* ==========================================================
+     INIT
+     ========================================================== */
+  wire();
+  detectTransport();
+  loadCatalog();
+
+})();
+</script>
+</body>
+</html>
