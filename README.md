@@ -1,3 +1,6 @@
+DONATIONS: ETH: 0x17E1D7f8A9641749A3f6A932Df09D36FE198df86
+
+
 [![Screenshot-2026-10-03-18-30-13.png](https://i.postimg.cc/K87XFdCx/Screenshot-2026-10-03-18-30-13.png)](https://postimg.cc/v4m2tSQN)
 
 
