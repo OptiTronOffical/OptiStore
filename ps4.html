@@ -576,7 +576,8 @@ select option{background:#0d1019;color:var(--tx)}
   /* =====================================================================
      CONFIG
      ===================================================================== */
-  var CATALOG_URL = 'games.json';
+  var CATALOG_URL = 'games.json';                 // PKG links + metadata
+  var COVERS_URL  = 'export_with_covers.json';    // cover_url only
   var LS_IP = 'opti_ps4_ip';
   var DEFAULT_IP = '127.0.0.1';
   var RPI_PORT = 12800;
@@ -665,29 +666,29 @@ select option{background:#0d1019;color:var(--tx)}
   /* =====================================================================
    RPI INSTALL — the ONLY send mechanism used
    ===================================================================== */
-
-
-function rpiInstall(ip, packages, cb) {
-  var x = new XMLHttpRequest();
-  var done = false;
-  function finish(r) { if (!done) { done = true; cb(r); } }
-  try {
-    x.open('POST', 'http://' + ip + ':' + RPI_PORT + '/api/install', true);
-    x.timeout = RPI_TIMEOUT;
-    x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-    x.onload = function () {
-      if (x.status >= 200 && x.status < 300) finish({ state: 'ok', status: x.status, text: x.responseText });
-      else finish({ state: 'rejected', status: x.status, text: x.responseText });
-    };
-    x.onerror   = function () { finish({ state: 'unknown' }); };
-    x.ontimeout = function () { finish({ state: 'timeout' }); };
-    x.send(JSON.stringify({ type: 'direct', packages: packages }));
-  } catch (e) {
-    finish({ state: 'unknown' });
+  function rpiInstall(ip, packages, cb) {
+    var x = new XMLHttpRequest();
+    var done = false;
+    function finish(r) { if (!done) { done = true; cb(r); } }
+    try {
+      x.open('POST', 'http://' + ip + ':' + RPI_PORT + '/api/install', true);
+      x.timeout = RPI_TIMEOUT;
+      x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+      x.onload = function () {
+        if (x.status >= 200 && x.status < 300) finish({ state: 'ok', status: x.status, text: x.responseText });
+        else finish({ state: 'rejected', status: x.status, text: x.responseText });
+      };
+      x.onerror   = function () { finish({ state: 'unknown' }); };
+      x.ontimeout = function () { finish({ state: 'timeout' }); };
+      x.send(JSON.stringify({ type: 'direct', packages: packages }));
+    } catch (e) {
+      finish({ state: 'unknown' });
+    }
   }
-}
 
-  /* ---------------- catalog load ---------------- */
+  /* =====================================================================
+     CATALOG LOAD — games.json (PKG links) + export_with_covers.json (covers)
+     ===================================================================== */
   function normalize(raw) {
     var data = (raw && raw.DATA) || {};
     var keys = Object.keys(data);
@@ -704,10 +705,38 @@ function rpiInstall(ip, packages, cb) {
         release: m.release || '',
         size: Number(m.size) || 0,
         minFw: m.min_fw || '',
-        cover: m.cover_url || ''
+        cover: m.cover_url || m.cover || ''
       });
     }
     return out;
+  }
+
+  /* Accepts either {DATA:{...}} or a flat object; returns {byUrl, byName} */
+  function buildCoverMap(raw) {
+    var data = (raw && raw.DATA) || raw || {};
+    var byUrl = {};
+    var byName = {};
+    var keys = Object.keys(data);
+    for (var i = 0; i < keys.length; i++) {
+      var url = keys[i];
+      var m = data[url] || {};
+      var cover = m.cover_url || m.cover || '';
+      if (!cover) continue;
+      byUrl[url] = cover;
+      if (m.name) {
+        byName[String(m.name).toLowerCase().trim()] = cover;
+      }
+    }
+    return { byUrl: byUrl, byName: byName };
+  }
+
+  function mergeCovers(catalogList, coverMap) {
+    for (var i = 0; i < catalogList.length; i++) {
+      if (catalogList[i].cover) continue;                 // already has one
+      var key = String(catalogList[i].name || '').toLowerCase().trim();
+      var c = coverMap.byUrl[catalogList[i].url] || coverMap.byName[key];
+      if (c) catalogList[i].cover = c;
+    }
   }
 
   function loadCatalog() {
@@ -718,30 +747,54 @@ function rpiInstall(ip, packages, cb) {
     }
     grid.innerHTML = sk;
 
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', CATALOG_URL + '?t=' + Date.now(), true);
-    xhr.onload = function () {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        try {
-          var raw = JSON.parse(xhr.responseText);
-          catalog = normalize(raw);
-          buildStats();
-          buildRegionFilter();
-          apply();
-        } catch (e) {
-          grid.innerHTML = '<div class="empty"><div class="big">⚠️</div><b>Could not parse games.json</b><small>' + esc(e.message) + '</small></div>';
-          $('count').textContent = '0';
-        }
-      } else {
-        grid.innerHTML = '<div class="empty"><div class="big">📡</div><b>Could not load games.json</b><small>HTTP ' + xhr.status + '</small></div>';
+    var t = Date.now();
+    var gamesRaw = null;
+    var coversRaw = null;
+    var pending = 2;
+
+    function finish() {
+      if (--pending > 0) return;
+
+      if (!gamesRaw) {
+        grid.innerHTML = '<div class="empty"><div class="big">📡</div>'
+          + '<b>Could not load games.json</b>'
+          + '<small>Make sure games.json sits next to ps4.html.</small></div>';
         $('count').textContent = '0';
+        return;
       }
+
+      var coverMap = buildCoverMap(coversRaw);
+      catalog = normalize(gamesRaw);
+      mergeCovers(catalog, coverMap);
+
+      buildStats();
+      buildRegionFilter();
+      apply();
+    }
+
+    /* --- games.json --- */
+    var x1 = new XMLHttpRequest();
+    x1.open('GET', CATALOG_URL + '?t=' + t, true);
+    x1.onload = function () {
+      if (x1.status >= 200 && x1.status < 300) {
+        try { gamesRaw = JSON.parse(x1.responseText); } catch (e) { gamesRaw = null; }
+      }
+      finish();
     };
-    xhr.onerror = function () {
-      grid.innerHTML = '<div class="empty"><div class="big">📡</div><b>Could not load games.json</b><small>Make sure games.json sits next to ps4.html.</small></div>';
-      $('count').textContent = '0';
+    x1.onerror = function () { finish(); };
+    x1.send();
+
+    /* --- export_with_covers.json (optional; page still works if missing) --- */
+    var x2 = new XMLHttpRequest();
+    x2.open('GET', COVERS_URL + '?t=' + t, true);
+    x2.onload = function () {
+      if (x2.status >= 200 && x2.status < 300) {
+        try { coversRaw = JSON.parse(x2.responseText); } catch (e) { coversRaw = null; }
+      }
+      finish();
     };
-    xhr.send();
+    x2.onerror = function () { finish(); };
+    x2.send();
   }
 
   function buildStats() {
@@ -842,6 +895,7 @@ function rpiInstall(ip, packages, cb) {
   function openGame(g) {
     currentGame = g;
     var img = $('gmCover');
+    img.style.display = '';
     img.onerror = function () { this.style.display = 'none'; };
     img.src = g.cover || '';
     $('gmTitle').textContent = g.name;
