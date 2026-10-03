@@ -1,6 +1,13 @@
+[![Screenshot-2026-10-03-18-30-13.png](https://i.postimg.cc/K87XFdCx/Screenshot-2026-10-03-18-30-13.png)](https://postimg.cc/v4m2tSQN)
+
+
 ==========================================================
 OptiStore — Deploying over HTTP
 ==========================================================
+
+
+
+[![fix.png](https://i.postimg.cc/GhV3HwMg/fix.png)](https://postimg.cc/w75YGPYD)
 
 FILES
 -----
