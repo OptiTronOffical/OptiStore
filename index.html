@@ -4,14 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OptiStore — PS4 Package Library</title>
-
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
-<meta name="referrer" content="same-origin">
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#06070c; --surface:#0d1019; --surface-2:#12151f; --card:#0e121c;
@@ -20,48 +16,25 @@
   --accent-soft:rgba(124,92,255,.12); --accent-glow:rgba(124,92,255,.32);
   --ok:#10b981; --ok-2:#34d399; --ok-soft:rgba(16,185,129,.10);
   --warn:#f5a524; --warn-soft:rgba(245,165,36,.10);
-  --err:#f43f5e;  --err-soft:rgba(244,63,94,.10);
-  --fav:#facc15;  --fav-soft:rgba(250,204,21,.12);
-
-  /* kind colors */
-  --k-base:#10b981;   --k-base-soft:rgba(16,185,129,.12);   --k-base-line:rgba(16,185,129,.38);
-  --k-update:#f59e0b; --k-update-soft:rgba(245,158,11,.12); --k-update-line:rgba(245,158,11,.38);
-  --k-dlc:#a855f7;    --k-dlc-soft:rgba(168,85,247,.12);    --k-dlc-line:rgba(168,85,247,.38);
-  --k-theme:#06b6d4;  --k-theme-soft:rgba(6,182,212,.12);   --k-theme-line:rgba(6,182,212,.38);
-  --k-avatar:#ec4899; --k-avatar-soft:rgba(236,72,153,.12); --k-avatar-line:rgba(236,72,153,.38);
-  --k-demo:#64748b;   --k-demo-soft:rgba(100,116,139,.14);  --k-demo-line:rgba(100,116,139,.38);
-  --k-app:#3b82f6;    --k-app-soft:rgba(59,130,246,.12);    --k-app-line:rgba(59,130,246,.38);
-  --k-pkg:#7c5cff;    --k-pkg-soft:rgba(124,92,255,.12);    --k-pkg-line:rgba(124,92,255,.38);
-
+  --err:#f43f5e; --err-soft:rgba(244,63,94,.10);
   --tx:#eef1f8; --tx-2:#98a1b8; --tx-3:#5a6379;
   --f:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   --m:'JetBrains Mono',ui-monospace,monospace;
-  --r-sm:9px; --r-md:13px; --r-lg:18px; --r-xl:24px;
-  --shadow-sm:0 2px 10px rgba(0,0,0,.35);
-  --shadow-md:0 14px 34px -14px rgba(0,0,0,.7);
-  --shadow-lg:0 30px 70px -24px rgba(0,0,0,.9);
-  --topbar-h:64px;
-}
-[data-theme="light"]{
-  --bg:#f2f4f9; --surface:#ffffff; --surface-2:#f8f9fc; --card:#ffffff;
-  --line:#e1e5ee; --line-2:#c8cfdf;
-  --tx:#151a26; --tx-2:#4a5468; --tx-3:#8b95ab;
-  --accent-soft:rgba(124,92,255,.10);
-  --shadow-sm:0 1px 3px rgba(20,25,40,.06);
-  --shadow-md:0 12px 30px -14px rgba(20,25,40,.15);
-  --shadow-lg:0 30px 70px -24px rgba(20,25,40,.25);
-}
-[data-theme="light"] body{
-  background-image:
-    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,.10), transparent 62%),
-    radial-gradient(800px 400px at 95% 5%, rgba(34,211,238,.06), transparent 60%);
+  /* kind colors */
+  --k-base:#10b981;   --k-base-soft:rgba(16,185,129,.12);   --k-base-line:rgba(16,185,129,.4);
+  --k-update:#f59e0b; --k-update-soft:rgba(245,158,11,.12); --k-update-line:rgba(245,158,11,.4);
+  --k-dlc:#a855f7;    --k-dlc-soft:rgba(168,85,247,.12);    --k-dlc-line:rgba(168,85,247,.4);
+  --k-theme:#06b6d4;  --k-theme-soft:rgba(6,182,212,.12);   --k-theme-line:rgba(6,182,212,.4);
+  --k-avatar:#ec4899; --k-avatar-soft:rgba(236,72,153,.12); --k-avatar-line:rgba(236,72,153,.4);
+  --k-demo:#64748b;   --k-demo-soft:rgba(100,116,139,.14);  --k-demo-line:rgba(100,116,139,.4);
+  --k-app:#3b82f6;    --k-app-soft:rgba(59,130,246,.12);    --k-app-line:rgba(59,130,246,.4);
+  --k-pkg:#7c5cff;    --k-pkg-soft:rgba(124,92,255,.12);    --k-pkg-line:rgba(124,92,255,.4);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{
-  background:var(--bg); color:var(--tx); font-family:var(--f);
-  font-size:15px; line-height:1.55; min-height:100%;
+  background:var(--bg);color:var(--tx);font-family:var(--f);
+  font-size:15px;line-height:1.55;min-height:100%;
   -webkit-font-smoothing:antialiased;
-  transition:background-color .25s, color .25s;
 }
 body{
   background-image:
@@ -74,66 +47,83 @@ body{
 ::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
 ::selection{background:var(--accent);color:#fff}
 
-.strip{position:relative;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 20px;padding:10px 48px 10px 20px;font-size:12.5px;background:linear-gradient(90deg,rgba(124,92,255,.10),rgba(34,211,238,.05) 50%,rgba(124,92,255,.10));border-bottom:1px solid rgba(124,92,255,.16)}
-.strip.hide{display:none}
-.strip .s-txt{color:var(--tx-2)}
-.strip .s-txt b{color:var(--tx);font-weight:700}
-.strip .s-txt .grad{background:linear-gradient(90deg,#a78bfa,#22d3ee);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;font-weight:800}
-.addr{display:inline-flex;align-items:center;gap:8px;background:rgba(0,0,0,.42);border:1px solid var(--line);border-radius:99px;padding:3px 4px 3px 13px}
-[data-theme="light"] .addr{background:rgba(0,0,0,.05)}
-.addr code{font-family:var(--m);font-size:11px;color:#a5b4fc;letter-spacing:.2px}
-.addr button{background:var(--ok);color:#04231a;border:0;border-radius:99px;padding:4px 12px;font-size:11px;font-weight:800;cursor:pointer;transition:.18s;font-family:inherit}
-.addr button:hover{filter:brightness(1.1)}
-.addr button.done{background:var(--accent);color:#fff}
-.s-links{display:inline-flex;gap:7px}
-.s-links a{display:inline-flex;align-items:center;gap:5px;font-size:11.5px;font-weight:700;color:var(--tx);text-decoration:none;padding:4px 13px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.035);transition:.18s}
-[data-theme="light"] .s-links a{background:rgba(0,0,0,.03)}
-.s-links a:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-1px)}
-.s-links a.tg{background:#0088cc;border-color:#0088cc;color:#fff}
-.strip-x{position:absolute;right:14px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:transparent;border:0;color:var(--tx-3);cursor:pointer;font-size:13px;display:flex;align-items:center;justify-content:center;transition:.18s}
-.strip-x:hover{background:rgba(255,255,255,.07);color:var(--tx)}
-
-.topbar{position:sticky;top:0;z-index:200;height:var(--topbar-h);display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 clamp(16px,3vw,34px);background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid var(--line)}
+/* topbar */
+.topbar{
+  position:sticky;top:0;z-index:100;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 clamp(16px,3vw,34px);
+  background:rgba(6,7,12,.82);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
 .brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand-mark{width:36px;height:36px;border-radius:11px;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:16px;font-weight:900;color:#06070c;box-shadow:0 8px 22px -8px var(--accent-glow);letter-spacing:-.05em;transition:transform .3s}
-.brand-mark:hover{transform:rotate(-8deg) scale(1.05)}
+.brand-mark{
+  width:36px;height:36px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:#06070c;letter-spacing:-.05em;
+  box-shadow:0 8px 22px -8px var(--accent-glow);
+}
 .brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
 .brand-txt .n{font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
-.brand-txt .n em{font-style:normal;background:linear-gradient(90deg,var(--accent-3),var(--accent-2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase;white-space:nowrap}
-.topbar-right{display:flex;align-items:center;gap:8px}
-.pill{display:inline-flex;align-items:center;gap:8px;font-size:11.5px;font-weight:700;padding:7px 14px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--tx-2);cursor:pointer;transition:.18s;white-space:nowrap;font-family:inherit}
-[data-theme="light"] .pill{background:rgba(0,0,0,.03)}
-.pill:hover{border-color:var(--line-2);color:var(--tx)}
-.pill .dot{width:7px;height:7px;border-radius:50%;background:var(--tx-3);flex:none;transition:.25s}
-.pill[data-s="ok"]{color:var(--ok-2);border-color:rgba(16,185,129,.32);background:var(--ok-soft)}
-.pill[data-s="ok"] .dot{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
-.pill[data-s="warn"]{color:var(--warn);border-color:rgba(245,165,36,.32);background:var(--warn-soft)}
-.pill[data-s="warn"] .dot{background:var(--warn);box-shadow:0 0 10px var(--warn)}
-.pill[data-s="bad"]{color:var(--err);border-color:rgba(244,63,94,.32);background:var(--err-soft)}
-.pill[data-s="bad"] .dot{background:var(--err);box-shadow:0 0 10px var(--err)}
-.icon-btn{width:36px;height:36px;border-radius:11px;border:1px solid var(--line);background:rgba(255,255,255,.035);color:var(--tx-2);cursor:pointer;font-size:15px;display:flex;align-items:center;justify-content:center;transition:.18s;position:relative}
-[data-theme="light"] .icon-btn{background:rgba(0,0,0,.03)}
-.icon-btn:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft);transform:translateY(-1px)}
-.icon-btn.act{border-color:var(--accent);background:var(--accent-soft);color:var(--tx)}
+.brand-txt .n em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.topbar-right{display:flex;align-items:center;gap:10px}
 
-.wrap{max-width:1580px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 100px}
-.hero{padding:44px 0 22px;text-align:center}
-.hero h1{font-size:clamp(32px,5.4vw,54px);font-weight:900;letter-spacing:-.04em;line-height:1.05;color:var(--tx)}
-.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.btn-ps4{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:9px;
+  font-family:inherit;font-size:12.5px;font-weight:800;
+  color:#fff;text-decoration:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  box-shadow:0 10px 26px -10px var(--accent-glow);
+  transition:.18s;letter-spacing:.01em;border:0;cursor:pointer;
+}
+.btn-ps4:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.btn-ps4 svg{width:14px;height:14px;flex:none}
+.help-btn{
+  width:36px;height:36px;border-radius:11px;
+  border:1px solid var(--line);background:rgba(255,255,255,.035);
+  color:var(--tx-2);cursor:pointer;font-size:15px;
+  display:flex;align-items:center;justify-content:center;
+  transition:.18s;
+}
+.help-btn:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+
+.wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 100px}
+
+/* hero */
+.hero{padding:52px 0 30px;text-align:center}
+.hero h1{
+  font-size:clamp(32px,5.4vw,54px);font-weight:900;
+  letter-spacing:-.04em;line-height:1.05;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
 .hero p{margin:15px auto 0;max-width:620px;font-size:14.5px;color:var(--tx-2)}
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
-.stat{display:flex;flex-direction:column;align-items:center;gap:2px;padding:12px 22px;min-width:108px;border-radius:var(--r-md);border:1px solid var(--line);background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.008));transition:.2s;cursor:default}
-[data-theme="light"] .stat{background:linear-gradient(180deg,rgba(0,0,0,.02),rgba(0,0,0,.005))}
-.stat:hover{border-color:var(--line-2);transform:translateY(-2px)}
-.stat .v{font-size:20px;font-weight:800;color:var(--tx);letter-spacing:-.025em;line-height:1.2}
-.stat .v.g{background:linear-gradient(135deg,var(--ok-2),#6ee7b7);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.stat .v.f{background:linear-gradient(135deg,#facc15,#f59e0b);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.stat{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:12px 22px;min-width:110px;border-radius:13px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+}
+.stat .v{font-size:22px;font-weight:800;letter-spacing:-.025em;line-height:1.2}
+.stat .v.g{
+  background:linear-gradient(135deg,var(--ok-2),#6ee7b7);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
 .stat .k{font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--tx-3)}
 
-/* ============================================================
-   Kind pills — used everywhere a package kind appears
-   ============================================================ */
+/* kind pills */
 .kind{
   display:inline-flex;align-items:center;gap:4px;
   font-family:var(--m);font-size:9.5px;font-weight:800;
@@ -141,8 +131,7 @@ body{
   padding:3px 8px;border-radius:5px;
   border:1px solid var(--line);
   background:rgba(255,255,255,.03);
-  color:var(--tx-2);
-  white-space:nowrap;line-height:1.35;
+  color:var(--tx-2);white-space:nowrap;line-height:1.35;
 }
 .kind.base  { color:#6ee7b7; background:var(--k-base-soft);   border-color:var(--k-base-line); }
 .kind.update{ color:#fcd34d; background:var(--k-update-soft); border-color:var(--k-update-line); }
@@ -152,35 +141,60 @@ body{
 .kind.demo  { color:#cbd5e1; background:var(--k-demo-soft);   border-color:var(--k-demo-line); }
 .kind.app   { color:#93c5fd; background:var(--k-app-soft);    border-color:var(--k-app-line); }
 .kind.pkg   { color:#c4b5fd; background:var(--k-pkg-soft);    border-color:var(--k-pkg-line); }
-
-[data-theme="light"] .kind.base  { color:#047857; }
-[data-theme="light"] .kind.update{ color:#b45309; }
-[data-theme="light"] .kind.dlc   { color:#7e22ce; }
-[data-theme="light"] .kind.theme { color:#0e7490; }
-[data-theme="light"] .kind.avatar{ color:#be185d; }
-[data-theme="light"] .kind.demo  { color:#475569; }
-[data-theme="light"] .kind.app   { color:#1d4ed8; }
-[data-theme="light"] .kind.pkg   { color:#6d28d9; }
-
 .kind .e{font-size:10px;line-height:1}
 
-/* file row — border-left takes the kind color */
-.frow{position:relative}
-.frow[data-kind="base"]   { border-left-color:var(--k-base) !important; }
-.frow[data-kind="update"] { border-left-color:var(--k-update) !important; }
-.frow[data-kind="dlc"]    { border-left-color:var(--k-dlc) !important; }
-.frow[data-kind="theme"]  { border-left-color:var(--k-theme) !important; }
-.frow[data-kind="avatar"] { border-left-color:var(--k-avatar) !important; }
-.frow[data-kind="demo"]   { border-left-color:var(--k-demo) !important; }
-.frow[data-kind="app"]    { border-left-color:var(--k-app) !important; }
-.frow[data-kind="pkg"]    { border-left-color:var(--k-pkg) !important; }
+/* toolbar */
+.toolbar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  padding:14px;margin-bottom:24px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.7);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  position:sticky;top:64px;z-index:50;
+}
+.search-wrap{position:relative;flex:1 1 260px;min-width:200px}
+.search-wrap .ico{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  color:var(--tx-3);pointer-events:none;
+}
+.search-wrap input{
+  width:100%;padding:11px 14px 11px 40px;
+  font-family:inherit;font-size:14px;
+  background:rgba(0,0,0,.32);border:1px solid var(--line);
+  border-radius:9px;color:var(--tx);outline:none;
+  transition:.18s;
+}
+.search-wrap input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+  background:rgba(0,0,0,.45);
+}
+.search-wrap input::placeholder{color:var(--tx-3)}
+select{
+  padding:11px 34px 11px 14px;
+  font-family:inherit;font-size:13.5px;
+  background:rgba(0,0,0,.32);border:1px solid var(--line);
+  border-radius:9px;color:var(--tx);outline:none;
+  cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6379' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;
+  transition:.18s;
+}
+select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+select option{background:#0d1019;color:var(--tx)}
 
-/* clickable kind filter chips in the deck */
+.count{
+  margin-left:auto;
+  font-family:var(--m);font-size:12px;font-weight:600;
+  color:var(--tx-2);padding:9px 15px;border-radius:99px;
+  border:1px solid var(--line);background:rgba(0,0,0,.32);
+  white-space:nowrap;
+}
+
+/* kind filter row */
 .kinds-bar{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px;
-  width:100%;
-  padding-top:11px;
-  margin-top:2px;
+  width:100%;padding-top:11px;margin-top:2px;
   border-top:1px solid var(--line);
 }
 .kinds-bar .kb-label{
@@ -196,14 +210,13 @@ body{
   color:var(--tx-3);cursor:pointer;transition:.18s;
   white-space:nowrap;user-select:none;
 }
-[data-theme="light"] .kind-btn{background:rgba(0,0,0,.03)}
 .kind-btn:hover{color:var(--tx-2);border-color:var(--line-2)}
 .kind-btn .n{
   font-size:9px;opacity:.7;padding:0 3px;min-width:14px;text-align:center;
 }
-.kind-btn.on{ color:#fff; border-color:transparent; }
+.kind-btn.on{color:#fff;border-color:transparent}
 .kind-btn.on .n{opacity:.85}
-.kind-btn.on[data-kind="all"]{background:linear-gradient(135deg,var(--accent),var(--accent-3));}
+.kind-btn.on[data-kind="all"]{background:linear-gradient(135deg,var(--accent),var(--accent-3))}
 .kind-btn.on[data-kind="base"]  { background:var(--k-base);   color:#04231a; }
 .kind-btn.on[data-kind="update"]{ background:var(--k-update); color:#2a1a02; }
 .kind-btn.on[data-kind="dlc"]   { background:var(--k-dlc);    color:#fff; }
@@ -214,382 +227,339 @@ body{
 .kind-btn.on[data-kind="pkg"]   { background:var(--k-pkg);    color:#fff; }
 .kind-btn .e{font-size:11px;line-height:1}
 
-/* card mini-kinds */
-.mini-kinds{display:flex;gap:4px;flex-wrap:wrap}
-.mini-kind{
-  display:inline-flex;align-items:center;gap:3px;
-  font-family:var(--m);font-size:9px;font-weight:800;
-  letter-spacing:.05em;text-transform:uppercase;
-  padding:2px 6px;border-radius:4px;border:1px solid;
-  line-height:1.35;
+/* grid */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:22px;
 }
-.mini-kind .e{font-size:9px}
-
-/* tabs */
-.tabs-bar{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:20px;border-bottom:1px solid var(--line)}
-.tabs{display:flex;gap:2px;position:relative;overflow-x:auto;scrollbar-width:none}
-.tabs::-webkit-scrollbar{display:none}
-.tab{position:relative;display:inline-flex;align-items:center;gap:9px;padding:13px 18px;font-family:inherit;font-size:13.5px;font-weight:700;color:var(--tx-3);background:transparent;border:0;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:color .18s, border-color .18s;white-space:nowrap;letter-spacing:.005em}
-.tab:hover{color:var(--tx-2)}
-.tab.active{color:var(--tx);border-bottom-color:var(--accent)}
-.tab:focus-visible{outline:none;color:var(--tx);border-bottom-color:var(--accent)}
-.tab svg{width:15px;height:15px;flex:none;transition:transform .2s}
-.tab.active svg{transform:scale(1.05)}
-.tab-badge{font-family:var(--m);font-size:10px;font-weight:700;padding:2px 7px;border-radius:99px;background:rgba(255,255,255,.06);color:var(--tx-3);transition:.18s;min-width:20px;text-align:center;line-height:1.4}
-[data-theme="light"] .tab-badge{background:rgba(0,0,0,.05)}
-.tab.active .tab-badge{background:var(--accent-soft);color:var(--accent-2);border:1px solid rgba(124,92,255,.25)}
-.tabs-right{display:flex;align-items:center;gap:10px;padding-bottom:6px;flex-shrink:0}
-.tab-target{font-family:var(--m);font-size:11px;font-weight:600;color:var(--tx-3);display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:rgba(0,0,0,.3);border:1px solid var(--line);white-space:nowrap}
-[data-theme="light"] .tab-target{background:rgba(0,0,0,.03)}
-.tab-target .d{width:6px;height:6px;border-radius:50%;background:var(--tx-3)}
-.tab-target.ok .d{background:var(--ok-2);box-shadow:0 0 8px var(--ok-2)}
-.tab-target.warn .d{background:var(--warn);box-shadow:0 0 8px var(--warn)}
-
-.tab-panel{display:none;animation:fadeUp .3s cubic-bezier(.16,1,.3,1)}
-.tab-panel.active{display:block}
-@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-
-@media (max-width:620px){
-  .tabs-bar{flex-direction:column;align-items:stretch;gap:0}
-  .tabs-right{padding-bottom:10px;justify-content:center;padding-top:0}
-  .tab{padding:11px 14px;font-size:12.5px;flex:1;justify-content:center}
+.card{
+  position:relative;display:flex;flex-direction:column;
+  border-radius:13px;border:1px solid var(--line);
+  background:var(--card);overflow:hidden;cursor:pointer;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .22s,box-shadow .3s;
 }
-
-.loader{position:relative;border-radius:var(--r-xl);border:1px solid var(--line);background:radial-gradient(600px 300px at 0% 0%, rgba(124,92,255,.10), transparent 60%),radial-gradient(500px 250px at 100% 100%, rgba(34,211,238,.06), transparent 60%),linear-gradient(180deg,var(--surface-2),var(--surface));overflow:hidden;box-shadow:var(--shadow-md);transition:border-color .3s, box-shadow .3s}
-.loader::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(124,92,255,.5) 30%,rgba(34,211,238,.4) 70%,transparent);opacity:.7}
-.loader:focus-within{border-color:rgba(124,92,255,.4);box-shadow:var(--shadow-md), 0 0 0 4px var(--accent-soft)}
-.loader-head{display:flex;align-items:center;gap:14px;padding:20px 24px 16px;border-bottom:1px solid var(--line)}
-.loader-ico{width:44px;height:44px;border-radius:12px;flex:none;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 10px 24px -10px var(--accent-glow);animation:zap 4s ease-in-out infinite}
-@keyframes zap{0%,90%,100%{transform:rotate(0)}93%{transform:rotate(-8deg) scale(1.05)}96%{transform:rotate(8deg) scale(1.05)}}
-.loader-head h2{font-size:17px;font-weight:800;color:var(--tx);letter-spacing:-.015em}
-.loader-head p{font-size:12.5px;color:var(--tx-3);margin-top:2px}
-.loader-head .mini-toggle{margin-left:auto;display:inline-flex;gap:5px}
-.loader-body{padding:20px 24px 22px;display:flex;flex-direction:column;gap:16px}
-.lf-row{display:flex;gap:14px;flex-wrap:wrap}
-.lf{display:flex;flex-direction:column;gap:7px;min-width:0}
-.lf.grow{flex:1 1 340px}
-.lf.fixed{flex:0 1 200px}
-.lf label{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);display:flex;align-items:center;gap:6px}
-.lf label .lk{font-size:9px;color:var(--accent-2);text-transform:none;letter-spacing:0;font-weight:700}
-.lf label .opt{font-size:9px;color:var(--tx-3);text-transform:none;letter-spacing:0;font-weight:600}
-.lf input{font-family:inherit;font-size:14px;padding:11px 14px;color:var(--tx);background:rgba(0,0,0,.36);border:1px solid var(--line);border-radius:var(--r-sm);outline:none;transition:.18s;width:100%}
-[data-theme="light"] .lf input{background:rgba(0,0,0,.03)}
-.lf input.mono{font-family:var(--m);font-size:13px;letter-spacing:.2px}
-.lf input::placeholder{color:var(--tx-3)}
-.lf input:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);background:rgba(0,0,0,.5)}
-[data-theme="light"] .lf input:focus{background:#fff}
-.lf-row-2{display:flex;gap:14px;flex-wrap:wrap;align-items:flex-end}
-.method-box{display:flex;flex-direction:column;gap:7px}
-.method-box > label{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3)}
-.segmented{display:inline-flex;background:rgba(0,0,0,.36);border:1px solid var(--line);border-radius:var(--r-sm);padding:3px;gap:3px}
-[data-theme="light"] .segmented{background:rgba(0,0,0,.03)}
-.segmented label{cursor:pointer;display:block}
-.segmented input{display:none}
-.segmented .seg-txt{display:block;padding:7px 16px;border-radius:6px;font-size:12.5px;font-weight:700;color:var(--tx-3);transition:.18s;white-space:nowrap}
-.segmented label:hover .seg-txt{color:var(--tx-2)}
-.segmented input:checked + .seg-txt{background:linear-gradient(135deg,var(--accent),var(--accent-3));color:#fff;box-shadow:0 4px 12px -4px var(--accent-glow)}
-.loader-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:inherit;font-size:13.5px;font-weight:800;padding:12px 24px;border:0;border-radius:var(--r-sm);background:linear-gradient(135deg,var(--accent),var(--accent-3));color:#fff;cursor:pointer;transition:.2s;letter-spacing:.01em;box-shadow:0 10px 26px -10px var(--accent-glow);white-space:nowrap;flex:none}
-.loader-btn:hover{transform:translateY(-1px);filter:brightness(1.08);box-shadow:0 14px 30px -10px var(--accent-glow)}
-.loader-btn:active{transform:translateY(0) scale(.98)}
-.loader-btn:disabled{opacity:.45;cursor:not-allowed;transform:none!important;filter:grayscale(.4)}
-.loader-btn svg{width:15px;height:15px;flex:none}
-.loader-foot{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:0 24px 20px;font-size:11.5px;color:var(--tx-3)}
-.badge-http{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;font-weight:700;font-size:10.5px;letter-spacing:.05em;border:1px solid}
-.badge-http.ok{color:var(--ok-2);border-color:rgba(16,185,129,.3);background:var(--ok-soft)}
-.badge-http.warn{color:var(--warn);border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
-.badge-http .d{width:6px;height:6px;border-radius:50%;background:currentColor}
-
-.url-tips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:20px}
-.url-tip{flex:1 1 220px;display:flex;align-items:flex-start;gap:11px;padding:13px 15px;border-radius:var(--r-md);border:1px solid var(--line);background:rgba(255,255,255,.02)}
-[data-theme="light"] .url-tip{background:rgba(0,0,0,.02)}
-.url-tip .ti{width:30px;height:30px;border-radius:9px;flex:none;display:flex;align-items:center;justify-content:center;font-size:14px;background:linear-gradient(135deg,var(--accent-soft),rgba(34,211,238,.08));border:1px solid rgba(124,92,255,.2)}
-.url-tip h5{font-size:12px;font-weight:800;color:var(--tx);margin-bottom:2px}
-.url-tip p{font-size:11.5px;color:var(--tx-3);line-height:1.55}
-
-/* kind legend inside the tips row */
-.kind-legend{
-  display:flex;flex-wrap:wrap;gap:5px;margin-top:6px;
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(124,92,255,.5);
+  box-shadow:0 26px 50px -22px rgba(124,92,255,.45),0 0 0 1px rgba(124,92,255,.15);
 }
-
-.probe-log{display:none;border:1px solid var(--line);border-radius:var(--r-md);background:rgba(0,0,0,.32);overflow:hidden}
-[data-theme="light"] .probe-log{background:rgba(0,0,0,.03)}
-.probe-log.show{display:block}
-.probe-log .ph{padding:9px 14px;border-bottom:1px solid var(--line);font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--tx-3);display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.02)}
-.probe-log .ph code{font-family:var(--m);font-size:10px;text-transform:none;letter-spacing:0;color:var(--accent-2);font-weight:600}
-.probe-log .pl{max-height:220px;overflow-y:auto;padding:8px;display:flex;flex-direction:column;gap:5px}
-.probe-row{display:flex;align-items:center;gap:10px;padding:7px 10px;border-radius:6px;font-family:var(--m);font-size:11px;background:rgba(0,0,0,.25);border:1px solid var(--line)}
-[data-theme="light"] .probe-row{background:rgba(0,0,0,.02)}
-.probe-row .pi{flex:none;width:14px;text-align:center;font-weight:800}
-.probe-row.ok .pi{color:var(--ok-2)}
-.probe-row.err .pi{color:var(--err)}
-.probe-row.run .pi{color:var(--accent-2);animation:pulse 1s infinite}
-.probe-row .pu{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--tx-2)}
-.probe-row .ps{flex:none;font-weight:700;letter-spacing:.03em;text-transform:uppercase;font-size:9.5px;color:var(--tx-3)}
-.probe-row.ok .ps{color:var(--ok-2)}
-.probe-row.err .ps{color:var(--err)}
-
-.deck{display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:13px;margin-bottom:22px;border-radius:var(--r-lg);border:1px solid var(--line);background:color-mix(in srgb, var(--surface) 70%, transparent);backdrop-filter:saturate(180%) blur(14px);-webkit-backdrop-filter:saturate(180%) blur(14px);box-shadow:var(--shadow-sm)}
-.search-box{position:relative;flex:1 1 240px;min-width:180px}
-.search-box .ico{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--tx-3);pointer-events:none;display:flex}
-.search-box .ico svg{width:15px;height:15px}
-.search-box .kbd{position:absolute;right:11px;top:50%;transform:translateY(-50%);font-family:var(--m);font-size:10px;font-weight:700;color:var(--tx-3);border:1px solid var(--line);border-radius:5px;padding:2px 7px;background:rgba(0,0,0,.35);pointer-events:none}
-[data-theme="light"] .search-box .kbd{background:rgba(0,0,0,.03)}
-.search-box input{width:100%;padding-left:40px!important;padding-right:46px!important}
-input[type=text],select{font-family:inherit;font-size:13.5px;padding:11px 14px;color:var(--tx);background:rgba(0,0,0,.32);border:1px solid var(--line);border-radius:var(--r-sm);outline:none;transition:.18s;-webkit-appearance:none;appearance:none}
-[data-theme="light"] input[type=text],
-[data-theme="light"] select{background:rgba(0,0,0,.03)}
-select{padding-right:34px;cursor:pointer;background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6379' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 13px center}
-select option{background:var(--surface);color:var(--tx)}
-input[type=text]:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);background:rgba(0,0,0,.45)}
-[data-theme="light"] input[type=text]:focus,
-[data-theme="light"] select:focus{background:#fff}
-input::placeholder{color:var(--tx-3)}
-.chipbtn{display:inline-flex;align-items:center;gap:7px;padding:10px 14px;border-radius:var(--r-sm);border:1px solid var(--line);background:rgba(0,0,0,.32);font-family:inherit;font-size:12.5px;font-weight:600;color:var(--tx-3);cursor:pointer;transition:.18s;white-space:nowrap;user-select:none}
-[data-theme="light"] .chipbtn{background:rgba(0,0,0,.03)}
-.chipbtn:hover{border-color:var(--line-2);color:var(--tx-2)}
-.chipbtn.act{color:var(--accent-2);border-color:rgba(34,211,238,.4);background:rgba(34,211,238,.09)}
-.chipbtn.act.fav{color:var(--fav);border-color:rgba(250,204,21,.4);background:var(--fav-soft)}
-.chipbtn svg{width:13px;height:13px;flex:none}
-.chipbtn .b{background:rgba(255,255,255,.09);font-family:var(--m);font-size:10px;padding:1px 6px;border-radius:99px;font-weight:700}
-[data-theme="light"] .chipbtn .b{background:rgba(0,0,0,.06)}
-.view-toggle{display:inline-flex;padding:3px;gap:2px;border:1px solid var(--line);border-radius:var(--r-sm);background:rgba(0,0,0,.32)}
-[data-theme="light"] .view-toggle{background:rgba(0,0,0,.03)}
-.view-toggle button{width:32px;height:28px;border:0;background:transparent;color:var(--tx-3);cursor:pointer;border-radius:6px;display:flex;align-items:center;justify-content:center;transition:.15s}
-.view-toggle button:hover{color:var(--tx-2)}
-.view-toggle button.on{background:var(--accent);color:#fff;box-shadow:0 4px 12px -4px var(--accent-glow)}
-.view-toggle svg{width:14px;height:14px}
-.count{margin-left:auto;font-family:var(--m);font-size:12px;font-weight:700;color:var(--tx-2);padding:9px 16px;border-radius:99px;border:1px solid var(--line);background:rgba(0,0,0,.32);white-space:nowrap}
-[data-theme="light"] .count{background:rgba(0,0,0,.03)}
-
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(var(--card-min,200px),1fr));gap:var(--grid-gap,22px);transition:gap .25s}
-.grid.view-list{grid-template-columns:1fr;gap:9px;--card-min:100%}
-.grid.view-compact{--card-min:150px;--grid-gap:14px}
-.card{position:relative;display:flex;flex-direction:column;border-radius:var(--r-md);border:1px solid var(--line);background:var(--card);overflow:hidden;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .22s,box-shadow .3s}
-.card:hover{transform:translateY(-6px);border-color:rgba(124,92,255,.5);box-shadow:0 26px 50px -22px rgba(124,92,255,.45), 0 0 0 1px rgba(124,92,255,.15)}
 .card:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
-.card.fav{border-color:rgba(250,204,21,.35)}
-.cover{position:relative;width:100%;aspect-ratio:3/4;background:linear-gradient(160deg,#0b0e17,#070a11);overflow:hidden}
-[data-theme="light"] .cover{background:linear-gradient(160deg,#eef0f7,#e2e6f0)}
-.cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s cubic-bezier(.2,.8,.3,1),opacity .35s;opacity:0}
+.cover{
+  position:relative;width:100%;aspect-ratio:3/4;
+  background:linear-gradient(160deg,#0b0e17,#070a11);
+  overflow:hidden;
+}
+.cover img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:0;
+  transition:transform .5s cubic-bezier(.2,.8,.3,1),opacity .35s;
+}
 .cover img.ready{opacity:1}
 .card:hover .cover img{transform:scale(1.06)}
-.cover::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 48%,rgba(6,7,12,.92) 100%);opacity:.9;pointer-events:none}
-[data-theme="light"] .cover::after{background:linear-gradient(180deg,transparent 55%,rgba(255,255,255,.9) 100%)}
-.fav-btn{position:absolute;top:9px;right:9px;z-index:3;width:30px;height:30px;border-radius:50%;border:1px solid rgba(255,255,255,.15);background:rgba(8,10,16,.72);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;cursor:pointer;font-size:14px;line-height:1;display:flex;align-items:center;justify-content:center;transition:.2s;opacity:.85}
-.fav-btn:hover{opacity:1;transform:scale(1.1);background:rgba(250,204,21,.2);border-color:var(--fav);color:var(--fav)}
-.fav-btn.on{color:var(--fav);border-color:var(--fav);background:rgba(250,204,21,.15);opacity:1}
-.ribbons{position:absolute;top:9px;left:9px;right:48px;display:flex;gap:5px;flex-wrap:wrap;z-index:2;pointer-events:none}
-.ribbon{font-family:var(--m);font-size:9.5px;font-weight:700;letter-spacing:.06em;padding:4px 9px;border-radius:99px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.14);background:rgba(8,10,16,.78);color:#fff;text-transform:uppercase}
-.ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.4);background:rgba(4,35,26,.82)}
+.cover::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 48%,rgba(6,7,12,.92) 100%);
+  opacity:.9;pointer-events:none;
+}
+.ribbons{
+  position:absolute;top:10px;left:10px;right:10px;
+  display:flex;gap:5px;flex-wrap:wrap;z-index:2;pointer-events:none;
+}
+.ribbon{
+  font-family:var(--m);font-size:9.5px;font-weight:700;letter-spacing:.06em;
+  padding:4px 9px;border-radius:99px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(8,10,16,.78);color:#fff;text-transform:uppercase;
+}
 .ribbon.reg{color:#a5b4fc;border-color:rgba(124,92,255,.4);background:rgba(13,10,40,.82)}
-.quick{position:absolute;bottom:11px;right:11px;z-index:3;width:36px;height:36px;border-radius:50%;border:0;cursor:pointer;background:linear-gradient(135deg,var(--ok-2),var(--ok));color:#04231a;font-size:15px;display:flex;align-items:center;justify-content:center;opacity:0;transform:translateY(8px) scale(.85);transition:.28s cubic-bezier(.2,.8,.3,1);box-shadow:0 10px 24px -8px rgba(16,185,129,.7)}
-.card:hover .quick{opacity:1;transform:translateY(0) scale(1)}
-.quick:hover{filter:brightness(1.1);transform:translateY(0) scale(1.08)!important}
-.info{padding:13px 14px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
-.info h3{font-size:13px;font-weight:650;line-height:1.38;color:var(--tx);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:2.76em;letter-spacing:-.005em}
-.info .row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:auto;font-family:var(--m);font-size:10.5px;color:var(--tx-3);font-weight:600}
-.chips{display:flex;gap:5px;flex-wrap:wrap}
-.chip{font-family:var(--m);font-size:9.5px;font-weight:700;letter-spacing:.05em;padding:3px 8px;border-radius:5px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--tx-3);text-transform:uppercase}
-[data-theme="light"] .chip{background:rgba(0,0,0,.03)}
-.chip.ok{color:#6ee7c0;border-color:rgba(16,185,129,.3);background:var(--ok-soft)}
-.chip.warn{color:#fcd34d;border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
-.grid.view-list .card{flex-direction:row;min-height:82px}
-.grid.view-list .cover{width:62px;height:82px;flex:none;aspect-ratio:auto}
-.grid.view-list .cover::after,.grid.view-list .ribbons{display:none}
-.grid.view-list .fav-btn{top:5px;right:5px;width:22px;height:22px;font-size:11px}
-.grid.view-list .info{padding:10px 14px;flex-direction:row;align-items:center;gap:16px}
-.grid.view-list .info h3{min-height:0;-webkit-line-clamp:1;flex:1;font-size:13.5px}
-.grid.view-list .info .row{margin:0;flex:none}
-.grid.view-list .quick{position:static;opacity:1;transform:none;width:34px;height:34px;flex:none;margin-right:6px}
+.ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.4);background:rgba(4,35,26,.82)}
 
-.sk{border-radius:var(--r-md);border:1px solid var(--line);background:var(--card);overflow:hidden}
+.info{padding:13px 14px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
+.info h3{
+  font-size:13px;font-weight:650;line-height:1.38;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;min-height:2.76em;letter-spacing:-.005em;
+}
+.mini-kinds{display:flex;gap:4px;flex-wrap:wrap}
+.info .row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin-top:auto;font-family:var(--m);font-size:10.5px;
+  color:var(--tx-3);font-weight:600;
+}
+
+/* skeletons */
+.sk{border-radius:13px;border:1px solid var(--line);background:var(--card);overflow:hidden}
 .sk .sk-c{aspect-ratio:3/4;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
-[data-theme="light"] .sk .sk-c,[data-theme="light"] .sk .sk-l{background:linear-gradient(100deg,#eef0f7 30%,#e0e4ef 50%,#eef0f7 70%);background-size:220% 100%}
 .sk .sk-l{height:11px;margin:14px 14px 0;border-radius:4px;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
 .sk .sk-l.short{width:55%;margin-bottom:16px}
 @keyframes shim{0%{background-position:120% 0}100%{background-position:-120% 0}}
 
-.empty{grid-column:1/-1;text-align:center;padding:80px 24px;border-radius:var(--r-lg);border:1px dashed var(--line-2);background:rgba(255,255,255,.012);color:var(--tx-3)}
-[data-theme="light"] .empty{background:rgba(0,0,0,.015)}
+/* empty */
+.empty{
+  grid-column:1/-1;text-align:center;padding:90px 24px;
+  border-radius:18px;border:1px dashed var(--line-2);
+  background:rgba(255,255,255,.012);color:var(--tx-3);
+}
 .empty .big{font-size:42px;margin-bottom:14px;opacity:.55}
 .empty b{display:block;color:var(--tx-2);font-size:15px;font-weight:700;margin-bottom:5px}
-.empty small{font-size:12.5px;color:var(--tx-3)}
-.empty .act{display:inline-block;margin-top:14px;padding:8px 18px;background:var(--accent);color:#fff;border-radius:var(--r-sm);font-size:12.5px;font-weight:700;cursor:pointer;border:0;font-family:inherit}
+.empty small{font-size:12.5px}
+.empty .act{
+  display:inline-block;margin-top:14px;padding:8px 18px;
+  background:var(--accent);color:#fff;border-radius:9px;
+  font-size:12.5px;font-weight:700;cursor:pointer;border:0;
+  font-family:inherit;
+}
 
-.overlay{display:none;position:fixed;inset:0;z-index:900;padding:24px 16px;overflow-y:auto;background:rgba(3,4,8,.84);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
-[data-theme="light"] .overlay{background:rgba(20,25,40,.55)}
+/* modal */
+.overlay{
+  display:none;position:fixed;inset:0;z-index:900;
+  padding:24px 16px;overflow-y:auto;
+  background:rgba(3,4,8,.84);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
 .overlay.open{display:flex;align-items:flex-start;justify-content:center}
-.overlay.open .modal{animation:pop .28s cubic-bezier(.16,1,.3,1)}
+.modal{
+  position:relative;width:100%;max-width:860px;margin:auto;
+  border-radius:24px;border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  box-shadow:0 30px 70px -24px rgba(0,0,0,.9);
+  overflow:hidden;
+  animation:pop .28s cubic-bezier(.16,1,.3,1);
+}
 @keyframes pop{from{opacity:0;transform:translateY(16px) scale(.975)}to{opacity:1;transform:none}}
-.modal{position:relative;width:100%;max-width:900px;margin:auto;border-radius:var(--r-xl);border:1px solid var(--line);background:linear-gradient(180deg,var(--surface-2),var(--surface));box-shadow:var(--shadow-lg);overflow:hidden}
-.modal.slim{max-width:640px}
-.modal-close{position:absolute;top:16px;right:16px;z-index:5;width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:rgba(8,10,16,.75);color:var(--tx-2);font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.2s;backdrop-filter:blur(10px)}
-[data-theme="light"] .modal-close{background:rgba(255,255,255,.9)}
-.modal-close:hover{background:var(--err);border-color:var(--err);color:#fff;transform:rotate(90deg)}
+.modal.slim{max-width:600px}
+.modal-close{
+  position:absolute;top:16px;right:16px;z-index:5;
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(8,10,16,.75);
+  color:var(--tx-2);font-size:14px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:.2s;
+}
+.modal-close:hover{background:#f43f5e;border-color:#f43f5e;color:#fff;transform:rotate(90deg)}
 
-.gm-head{display:grid;grid-template-columns:170px 1fr;gap:22px;padding:24px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(124,92,255,.08),transparent 60%)}
-.gm-cover{width:100%;aspect-ratio:3/4;border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);background:#080b12}
+.gm-head{
+  display:grid;grid-template-columns:180px 1fr;gap:22px;padding:24px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(124,92,255,.08),transparent 60%);
+}
+.gm-cover{
+  width:100%;aspect-ratio:3/4;border-radius:13px;
+  overflow:hidden;border:1px solid var(--line);background:#080b12;
+}
 .gm-cover img{width:100%;height:100%;object-fit:cover;display:block}
 .gm-meta{padding-top:4px;min-width:0}
-.gm-meta h2{font-size:22px;font-weight:800;letter-spacing:-.028em;line-height:1.22;color:var(--tx);padding-right:80px}
-.gm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:13px;align-items:center}
-.gm-tag{font-family:var(--m);font-size:10.5px;font-weight:600;padding:4px 11px;border-radius:99px;border:1px solid var(--line);background:rgba(0,0,0,.3);color:var(--tx-2)}
-[data-theme="light"] .gm-tag{background:rgba(0,0,0,.04)}
+.gm-meta h2{
+  font-size:24px;font-weight:800;letter-spacing:-.028em;
+  line-height:1.22;padding-right:44px;
+}
+.gm-meta .sub{
+  font-family:var(--m);font-size:12px;color:var(--tx-3);
+  margin-top:6px;word-break:break-all;
+}
+.gm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;align-items:center}
+.gm-tag{
+  font-family:var(--m);font-size:10.5px;font-weight:600;
+  padding:4px 11px;border-radius:99px;
+  border:1px solid var(--line);background:rgba(0,0,0,.3);
+  color:var(--tx-2);
+}
 .gm-tag.b{color:#a5b4fc;border-color:rgba(124,92,255,.35);background:var(--accent-soft)}
-.gm-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:20px}
-.gm-note{font-size:12px;color:var(--tx-3);margin-top:12px;line-height:1.55}
-.gm-note code{font-family:var(--m);color:var(--accent-2)}
-.gm-notes-wrap{margin:16px 0 0;padding:12px 14px;border:1px solid var(--line);border-radius:var(--r-md);background:rgba(0,0,0,.22)}
-[data-theme="light"] .gm-notes-wrap{background:rgba(0,0,0,.02)}
-.gm-notes-wrap label{display:flex;align-items:center;gap:7px;font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--tx-3);margin-bottom:7px}
-.gm-notes-wrap textarea{width:100%;min-height:56px;max-height:120px;resize:vertical;font-family:inherit;font-size:12.5px;line-height:1.55;padding:9px 11px;border:1px solid var(--line);border-radius:var(--r-sm);background:rgba(0,0,0,.3);color:var(--tx);outline:none;transition:.18s}
-[data-theme="light"] .gm-notes-wrap textarea{background:#fff}
-.gm-notes-wrap textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+.gm-tag.g{color:#6ee7c0;border-color:rgba(16,185,129,.35);background:var(--ok-soft)}
+
+.gm-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+
 .gm-body{padding:20px 24px 24px}
-.sec-title{display:flex;align-items:center;gap:10px;font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;color:var(--tx-3);margin-bottom:14px}
+.sec-title{
+  display:flex;align-items:center;gap:10px;
+  font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--tx-3);margin-bottom:14px;
+}
 .sec-title::after{content:'';flex:1;height:1px;background:var(--line)}
-.sec-title .mini{font-family:var(--m);text-transform:none;letter-spacing:0;font-weight:600;font-size:10.5px;color:var(--tx-3)}
-.files{display:flex;flex-direction:column;gap:9px;max-height:min(48vh,440px);overflow-y:auto;padding-right:4px}
-.frow{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:13px 14px;border-radius:var(--r-md);border:1px solid var(--line);border-left:4px solid var(--line-2);background:rgba(0,0,0,.26);transition:.18s}
-[data-theme="light"] .frow{background:rgba(0,0,0,.02)}
+.sec-title .mini{
+  font-family:var(--m);text-transform:none;letter-spacing:0;
+  font-weight:600;font-size:10.5px;color:var(--tx-3);
+}
+
+/* file list */
+.files{display:flex;flex-direction:column;gap:9px;max-height:min(52vh,520px);overflow-y:auto;padding-right:4px}
+.frow{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:12px;flex-wrap:wrap;padding:13px 14px;
+  border-radius:13px;border:1px solid var(--line);
+  border-left:4px solid var(--line-2);
+  background:rgba(0,0,0,.26);
+  transition:.18s;
+}
 .frow:hover{background:rgba(255,255,255,.025);border-color:var(--line-2)}
+.frow[data-kind="base"]   { border-left-color:var(--k-base); }
+.frow[data-kind="update"] { border-left-color:var(--k-update); }
+.frow[data-kind="dlc"]    { border-left-color:var(--k-dlc); }
+.frow[data-kind="theme"]  { border-left-color:var(--k-theme); }
+.frow[data-kind="avatar"] { border-left-color:var(--k-avatar); }
+.frow[data-kind="demo"]   { border-left-color:var(--k-demo); }
+.frow[data-kind="app"]    { border-left-color:var(--k-app); }
+.frow[data-kind="pkg"]    { border-left-color:var(--k-pkg); }
+
 .fmain{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:6px}
 .fname{font-size:13.5px;font-weight:650;color:var(--tx);word-break:break-word}
 .facts{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
-.fact{display:inline-flex;align-items:center;gap:5px;font-family:var(--m);font-size:10px;font-weight:600;padding:3px 9px;border-radius:99px;border:1px solid var(--line);background:rgba(255,255,255,.028);color:var(--tx-2)}
-[data-theme="light"] .fact{background:rgba(0,0,0,.03)}
+.fact{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--m);font-size:10px;font-weight:600;
+  padding:3px 9px;border-radius:99px;
+  border:1px solid var(--line);background:rgba(255,255,255,.028);
+  color:var(--tx-2);
+}
 .fact.globe{color:#a5b4fc}
-.tag{display:inline-flex;align-items:center;gap:5px;font-family:var(--m);font-size:9.5px;font-weight:800;letter-spacing:.05em;padding:3px 9px;border-radius:5px;text-transform:uppercase}
+.fact.size{color:#6ee7c0;border-color:rgba(16,185,129,.3);background:var(--ok-soft)}
+.fact.version{color:#fcd34d;border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
+
+.tag{
+  display:inline-flex;align-items:center;gap:5px;
+  font-family:var(--m);font-size:9.5px;font-weight:800;letter-spacing:.05em;
+  padding:3px 9px;border-radius:5px;text-transform:uppercase;
+}
 .tag.direct{color:#6ee7c0;background:var(--ok-soft);border:1px solid rgba(16,185,129,.32)}
 .tag.redirect{color:#fcd34d;background:var(--warn-soft);border:1px solid rgba(245,165,36,.32)}
 
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;font-family:inherit;font-size:13px;font-weight:700;padding:10px 17px;border:1px solid transparent;border-radius:var(--r-sm);cursor:pointer;text-decoration:none;transition:.18s;white-space:nowrap;line-height:1;letter-spacing:.005em}
-.btn:active{transform:scale(.975)}
-.btn[disabled]{opacity:.4;cursor:not-allowed;transform:none!important}
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 18px;border-radius:9px;border:1px solid transparent;
+  font-family:inherit;font-size:13px;font-weight:700;
+  cursor:pointer;text-decoration:none;transition:.18s;
+  white-space:nowrap;line-height:1;
+}
 .btn svg{width:14px;height:14px;flex:none}
-.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-3));color:#fff;box-shadow:0 10px 26px -10px var(--accent-glow)}
-.btn.primary:hover{filter:brightness(1.08)}
-.btn.ok{background:linear-gradient(135deg,var(--ok-2),var(--ok));color:#04231a;box-shadow:0 10px 26px -12px rgba(16,185,129,.5)}
-.btn.ok:hover{filter:brightness(1.08)}
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;box-shadow:0 10px 26px -10px var(--accent-glow);
+}
+.btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--tx-2)}
-[data-theme="light"] .btn.ghost{background:rgba(0,0,0,.03)}
 .btn.ghost:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
 .btn.sm{font-size:11.5px;padding:8px 13px;border-radius:7px}
 .btn.sm svg{width:12px;height:12px}
+.btn.icon{padding:8px 11px}
+
 .btn-group{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 
-.set-head{padding:24px 24px 20px;border-bottom:1px solid var(--line);background:linear-gradient(135deg,rgba(124,92,255,.1),transparent 60%)}
+/* tip callout */
+.tip{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:12px 14px;border-radius:11px;
+  background:var(--accent-soft);border:1px solid rgba(124,92,255,.28);
+  font-size:12px;line-height:1.6;color:var(--tx-2);
+  margin-bottom:18px;
+}
+.tip .ico{flex:none;font-size:15px;line-height:1}
+.tip b{color:#c4b5fd;font-weight:700}
+.tip code{
+  font-family:var(--m);font-size:11px;
+  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;
+  color:var(--accent-2);
+}
+
+/* help modal */
+.set-head{
+  padding:24px 24px 20px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(124,92,255,.1),transparent 60%);
+}
 .set-head h2{font-size:19px;font-weight:800;color:var(--tx);letter-spacing:-.02em;padding-right:40px}
 .set-head p{font-size:12.5px;color:var(--tx-3);margin-top:4px}
-.set-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:16px}
-.set-card{display:flex;align-items:flex-start;gap:14px;padding:16px;border-radius:var(--r-md);border:1px solid var(--line);background:rgba(0,0,0,.28)}
-[data-theme="light"] .set-card{background:rgba(0,0,0,.02)}
-.set-card.ok{border-color:rgba(16,185,129,.3);background:var(--ok-soft)}
-.set-card.warn{border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
-.set-card .ic{width:38px;height:38px;border-radius:10px;flex:none;display:flex;align-items:center;justify-content:center;font-size:17px;background:rgba(255,255,255,.05)}
-.set-card .t{font-size:13.5px;font-weight:700;color:var(--tx)}
-.set-card .d{font-size:12px;color:var(--tx-2);margin-top:4px;line-height:1.6}
-.set-card .d code{font-family:var(--m);font-size:11px;background:rgba(0,0,0,.3);padding:2px 6px;border-radius:4px;color:var(--accent-2)}
-.method-card{border:1px solid var(--line);border-radius:var(--r-md);background:rgba(0,0,0,.24);overflow:hidden}
-[data-theme="light"] .method-card{background:rgba(0,0,0,.02)}
-.method-card .mc-head{display:flex;align-items:center;gap:11px;padding:14px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
-.method-card .mc-head .ic{width:32px;height:32px;border-radius:99px;display:flex;align-items:center;justify-content:center;font-size:15px;background:linear-gradient(135deg,var(--accent-soft),rgba(34,211,238,.08));border:1px solid rgba(124,92,255,.2)}
-.method-card .mc-head h3{font-size:13.5px;font-weight:800;color:var(--tx)}
-.method-card .mc-head p{font-size:11px;color:var(--tx-3);margin-top:1px}
-.method-card .mc-body{padding:14px 16px;font-size:12px;color:var(--tx-2);line-height:1.7}
-.method-card .mc-body code{font-family:var(--m);font-size:11px;background:rgba(0,0,0,.5);padding:2px 7px;border-radius:5px;color:#a5b4fc}
-.method-card ol{margin:6px 0 0 18px;display:flex;flex-direction:column;gap:5px}
-.kbd-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 20px}
-.kbd-row{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;border-radius:var(--r-sm);background:rgba(0,0,0,.26);border:1px solid var(--line);font-size:12.5px}
-[data-theme="light"] .kbd-row{background:rgba(0,0,0,.02)}
-.kbd-row .keys{display:flex;gap:4px;flex:none}
-.kbd-row kbd{font-family:var(--m);font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:5px;border:1px solid var(--line-2);background:linear-gradient(180deg,var(--surface-2),var(--surface));box-shadow:0 1px 0 rgba(0,0,0,.4);color:var(--tx-2);min-width:20px;text-align:center;display:inline-block}
+.set-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:14px}
+.step{
+  display:flex;align-items:flex-start;gap:12px;
+  padding:13px 15px;border-radius:11px;
+  border:1px solid var(--line);background:rgba(0,0,0,.24);
+}
+.step .num{
+  width:26px;height:26px;border-radius:50%;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;font-size:12px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.step .txt{flex:1;min-width:0;font-size:13px;line-height:1.55;color:var(--tx-2)}
+.step .txt b{color:var(--tx);font-weight:700;display:block;margin-bottom:3px;font-size:13.5px}
+.step .txt code{
+  font-family:var(--m);font-size:11.5px;
+  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;
+  color:var(--accent-2);
+}
 
-#toasts{position:fixed;right:20px;bottom:20px;z-index:2000;display:flex;flex-direction:column;gap:10px;max-width:min(420px,calc(100vw - 40px));pointer-events:none}
-.toast{display:flex;align-items:flex-start;gap:11px;padding:13px 15px;border-radius:var(--r-md);border:1px solid var(--line);background:color-mix(in srgb, var(--surface) 97%, transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:var(--shadow-md);font-size:13px;font-weight:500;line-height:1.5;color:var(--tx);animation:slideIn .3s cubic-bezier(.16,1,.3,1);pointer-events:auto}
+/* toasts */
+#toasts{
+  position:fixed;right:20px;bottom:20px;z-index:2000;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:min(420px,calc(100vw - 40px));pointer-events:none;
+}
+.toast{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:13px 15px;border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(16,21,34,.97);
+  backdrop-filter:blur(14px);
+  box-shadow:0 14px 34px -14px rgba(0,0,0,.7);
+  font-size:13px;font-weight:500;line-height:1.5;
+  animation:slideIn .3s cubic-bezier(.16,1,.3,1);
+  pointer-events:auto;
+}
 .toast.out{animation:slideOut .24s ease forwards}
-.toast .ti{flex:none;line-height:1.4;display:flex;margin-top:1px;font-size:15px}
-.toast .tmsg{flex:1;min-width:0}
-.toast.ok{border-color:rgba(16,185,129,.4);background:color-mix(in srgb, var(--ok) 12%, var(--surface))}
-.toast.ok .ti{color:var(--ok-2)}
-.toast.warn{border-color:rgba(245,165,36,.4);background:color-mix(in srgb, var(--warn) 12%, var(--surface))}
-.toast.warn .ti{color:var(--warn)}
-.toast.err{border-color:rgba(244,63,94,.4);background:color-mix(in srgb, var(--err) 12%, var(--surface))}
-.toast.err .ti{color:var(--err)}
-.toast.info .ti{color:var(--accent-2)}
+.toast.ok{border-color:rgba(16,185,129,.4);background:rgba(6,38,30,.97)}
+.toast.err{border-color:rgba(244,63,94,.4);background:rgba(44,12,18,.97)}
+.toast.info{border-color:rgba(34,211,238,.4);background:rgba(5,26,34,.97)}
 @keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
 @keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
 
-.foot{border-top:1px solid var(--line);margin-top:48px;padding:26px 0 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;font-size:12px;color:var(--tx-3)}
-.foot .fl{display:flex;flex-wrap:wrap;gap:16px;align-items:center}
+/* footer */
+.foot{
+  border-top:1px solid var(--line);margin-top:48px;padding:26px 0 0;
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  justify-content:space-between;font-size:12px;color:var(--tx-3);
+}
 .foot a{color:var(--tx-2);text-decoration:none;transition:.16s}
 .foot a:hover{color:var(--accent-2)}
-.foot .kbd-hint{font-family:var(--m);font-size:10px;padding:2px 6px;border-radius:4px;border:1px solid var(--line);color:var(--tx-3)}
 
-@media (max-width:860px){
+@media (max-width:760px){
   .gm-head{grid-template-columns:120px 1fr;gap:16px;padding:20px}
   .gm-meta h2{font-size:18px;padding-right:36px}
   .gm-body{padding:18px}
   .hero{padding:36px 0 20px}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:16px}
-  .loader-head,.loader-body{padding:16px 18px}
-  .loader-foot{padding:0 18px 16px}
-}
-@media (max-width:620px){
-  .count{margin-left:0;width:100%;text-align:center}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
   .brand-txt .s{display:none}
-  .strip{padding:9px 42px 9px 14px;font-size:11.5px}
-  .topbar{padding:0 14px}
-  .wrap{padding:0 14px 80px}
-  .view-toggle{order:99}
+  .count{margin-left:0;width:100%;text-align:center}
 }
 @media (max-width:460px){
   .gm-head{grid-template-columns:1fr;gap:16px}
   .gm-cover{max-width:150px}
   .hero h1{font-size:28px}
-  .lf-row-2{flex-direction:column;align-items:stretch}
-  .segmented{width:100%}
-  .segmented label{flex:1}
-  .segmented .seg-txt{text-align:center}
-  .loader-btn{width:100%}
-  .search-box .kbd{display:none}
-}
-@media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+  .toolbar{top:64px;padding:10px}
+  .btn-ps4 span{display:none}
 }
 </style>
 </head>
 <body>
 
-<div class="strip" id="strip">
-  <div class="s-txt">💜 <b>Free forever. No ads. No keys.</b> Help us build the <span class="grad">PS5 PKG Store</span> next.</div>
-  <div class="addr">
-    <code id="donateAddr">0x17E1D7f8A9641749A3f6A932Df09D36FE198df86</code>
-    <button id="donateCopyBtn" type="button">Copy</button>
-  </div>
-  <div class="s-links">
-    <a href="https://optistore.vercel.app" target="_blank" rel="noopener noreferrer">🌐 Website</a>
-    <a class="tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">💬 Telegram</a>
-  </div>
-  <button class="strip-x" id="stripClose" type="button" aria-label="Dismiss">✕</button>
-</div>
-
 <header class="topbar">
   <div class="brand">
-    <div class="brand-mark" id="brandMark">O</div>
+    <div class="brand-mark">O</div>
     <div class="brand-txt">
       <div class="n">OptiTron <em>Store</em></div>
       <div class="s">PS4 Package Library</div>
     </div>
   </div>
   <div class="topbar-right">
-    <button class="pill" id="connPill" data-s="" type="button" title="Transport status — click for setup help">
-      <span class="dot"></span><span id="connText">Checking…</span>
-    </button>
-    <button class="icon-btn" id="themeBtn" type="button" title="Toggle theme (T)">🌙</button>
-    <button class="icon-btn" id="soundBtn" type="button" title="Sound effects on/off">🔇</button>
-    <button class="icon-btn" id="kbdBtn" type="button" title="Keyboard shortcuts (?)">⌘</button>
-    <button class="icon-btn" id="helpBtn" type="button" title="Setup help (S)">?</button>
+    <a class="btn-ps4" href="ps4.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="6" width="20" height="12" rx="2"/>
+        <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
+      </svg>
+      <span>Install on PS4</span>
+    </a>
+    <button class="help-btn" id="helpBtn" type="button" title="How it works">?</button>
   </div>
 </header>
 
@@ -597,371 +567,144 @@ input::placeholder{color:var(--tx-3)}
 
   <section class="hero">
     <h1>Every PS4 package.<br><em>One clean library.</em></h1>
-    <p>Browse the catalog, filter by kind, and push direct <b>.pkg</b> files straight to your console — from any browser.</p>
+    <p>Full catalog with base games, updates, and DLCs — every file, size, region, and firmware requirement listed.</p>
 
-    <div class="stats" id="stats">
-      <div class="stat" title="Total titles in the catalog"><span class="v" id="stTitles">—</span><span class="k">Titles</span></div>
-      <div class="stat" title="Total downloadable files"><span class="v" id="stFiles">—</span><span class="k">Files</span></div>
-      <div class="stat" title="Links ending in .pkg that go straight to the console"><span class="v g" id="stDirect">—</span><span class="k">Direct PKG</span></div>
-      <div class="stat" title="Your starred titles" style="cursor:pointer" id="stFav"><span class="v f" id="stFavVal">0</span><span class="k">Favorites</span></div>
-      <div class="stat" title="Distinct release regions"><span class="v" id="stRegions">—</span><span class="k">Regions</span></div>
+    <div class="stats">
+      <div class="stat"><span class="v" id="statTotal">—</span><span class="k">Titles</span></div>
+      <div class="stat"><span class="v" id="statFiles">—</span><span class="k">Packages</span></div>
+      <div class="stat"><span class="v g" id="statSize">—</span><span class="k">Total Size</span></div>
+      <div class="stat"><span class="v" id="statUSA">—</span><span class="k">USA</span></div>
+      <div class="stat"><span class="v" id="statEUR">—</span><span class="k">EUR</span></div>
     </div>
   </section>
 
-  <div class="tabs-bar">
-    <div class="tabs" role="tablist">
-      <button class="tab active" data-tab="library" role="tab" aria-selected="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="3" width="7" height="7" rx="1.5"/>
-          <rect x="14" y="3" width="7" height="7" rx="1.5"/>
-          <rect x="3" y="14" width="7" height="7" rx="1.5"/>
-          <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+  <section class="toolbar">
+    <div class="search-wrap">
+      <span class="ico">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
         </svg>
-        <span>Library</span>
-        <span class="tab-badge" id="tabLibCount">—</span>
-      </button>
-      <button class="tab" data-tab="url" role="tab" aria-selected="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/>
-          <path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/>
-        </svg>
-        <span>Direct URL</span>
-      </button>
-    </div>
-    <div class="tabs-right">
-      <span class="tab-target" id="tabTarget">
-        <span class="d"></span>
-        <span id="tabTargetText">No PS4 target</span>
       </span>
+      <input type="search" id="search" placeholder="Search by name or title ID…" autocomplete="off" spellcheck="false">
     </div>
-  </div>
+    <select id="regionSel" title="Region"><option value="all">All Regions</option></select>
+    <select id="sortSel" title="Sort">
+      <option value="name">Name A–Z</option>
+      <option value="name-desc">Name Z–A</option>
+      <option value="files">Most packages</option>
+      <option value="size">Largest first</option>
+      <option value="size-asc">Smallest first</option>
+    </select>
+    <span class="count" id="count">Loading…</span>
 
-  <div class="tab-panel active" id="panel-library" role="tabpanel">
-    <section class="deck">
-      <div class="search-box">
-        <span class="ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
-          </svg>
-        </span>
-        <input type="text" id="search" placeholder="Search titles…" autocomplete="off" spellcheck="false">
-        <span class="kbd">/</span>
-      </div>
-
-      <select id="regionSel" title="Region"><option value="all">All Regions</option></select>
-      <select id="sortSel" title="Sort">
-        <option value="name">Name A–Z</option>
-        <option value="name-desc">Name Z–A</option>
-        <option value="files">Most files</option>
-        <option value="direct">Most direct</option>
-      </select>
-
-      <button class="chipbtn" id="favFilter" type="button" title="Show only favorites (F)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 3l2.9 6 6.6.9-4.8 4.7 1.1 6.5L12 18l-5.8 3.1L7.3 14.6 2.5 9.9 9.1 9z"/>
-        </svg>
-        Faves <span class="b" id="favCount">0</span>
-      </button>
-
-      <button class="chipbtn" id="directFilter" type="button" title="Only show titles with a direct .pkg link">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 5v14M5 12l7 7 7-7"/>
-        </svg>
-        Direct only
-      </button>
-
-      <div class="view-toggle" id="viewToggle" role="group" aria-label="View mode">
-        <button data-view="grid" class="on" title="Grid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
-        <button data-view="compact" title="Compact"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="4" height="4"/><rect x="10" y="3" width="4" height="4"/><rect x="17" y="3" width="4" height="4"/><rect x="3" y="10" width="4" height="4"/><rect x="10" y="10" width="4" height="4"/><rect x="17" y="10" width="4" height="4"/><rect x="3" y="17" width="4" height="4"/><rect x="10" y="17" width="4" height="4"/><rect x="17" y="17" width="4" height="4"/></svg></button>
-        <button data-view="list" title="List"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-      </div>
-
-      <button class="chipbtn" id="randomBtn" type="button" title="Random game (R)">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><circle cx="15.5" cy="15.5" r="1.5"/><circle cx="15.5" cy="8.5" r="1.5"/><circle cx="8.5" cy="15.5" r="1.5"/></svg>
-        Surprise me
-      </button>
-
-      <span class="count" id="count">Loading…</span>
-
-      <!-- Kind filter chips -->
-      <div class="kinds-bar" id="kindsBar">
-        <span class="kb-label">Kind</span>
-        <!-- populated by JS -->
-      </div>
-    </section>
-
-    <div class="grid" id="grid"></div>
-  </div>
-
-  <div class="tab-panel" id="panel-url" role="tabpanel">
-
-    <div class="url-tips">
-      <div class="url-tip">
-        <div class="ti">🔗</div>
-        <div>
-          <h5>Direct .pkg URLs only</h5>
-          <p>The <b>Send to PS4</b> button appears when a link ends in <code>.pkg</code> and isn't a known landing-page host.</p>
-        </div>
-      </div>
-      <div class="url-tip">
-        <div class="ti">🎯</div>
-        <div>
-          <h5>Same target as the library</h5>
-          <p>The PS4 IP and install method here are shared with the Library tab.</p>
-        </div>
-      </div>
-      <div class="url-tip">
-        <div class="ti">🎨</div>
-        <div>
-          <h5>Kind colors</h5>
-          <p>Every file is tagged by type so you can spot what it is at a glance.</p>
-          <div class="kind-legend">
-            <span class="kind base">Base</span>
-            <span class="kind update">Update</span>
-            <span class="kind dlc">DLC</span>
-            <span class="kind theme">Theme</span>
-          </div>
-        </div>
-      </div>
+    <div class="kinds-bar" id="kindsBar">
+      <span class="kb-label">Kind</span>
+      <!-- populated by JS -->
     </div>
+  </section>
 
-    <section class="loader" id="loaderPanel">
-      <div class="loader-head">
-        <div class="loader-ico">⚡</div>
-        <div>
-          <h2>Direct Install</h2>
-          <p>Paste a .pkg URL and push it to the console — no PC, no bridge, no downloads</p>
-        </div>
-        <div class="mini-toggle">
-          <button class="chipbtn" id="pickFromClip" type="button" title="Paste URL from clipboard">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg>
-            Paste
-          </button>
-        </div>
-      </div>
-
-      <div class="loader-body">
-        <div class="lf-row">
-          <div class="lf fixed">
-            <label for="loaderIp">PS4 IP <span class="lk" id="ipLink">saved</span></label>
-            <input type="text" id="loaderIp" class="mono" placeholder="192.168.1.50" autocomplete="off" spellcheck="false" inputmode="decimal">
-          </div>
-          <div class="lf grow">
-            <label for="loaderUrl">Direct .pkg URL <span class="lk" id="urlLink"></span></label>
-            <input type="text" id="loaderUrl" class="mono" placeholder="http://example.com/game.pkg" autocomplete="off" spellcheck="false">
-          </div>
-        </div>
-
-        <div class="lf-row" id="dpiExtras" style="display:none">
-          <div class="lf grow">
-            <label for="loaderTitleId">Title ID <span class="opt">— optional</span></label>
-            <input type="text" id="loaderTitleId" class="mono" placeholder="CUSA16261" autocomplete="off" spellcheck="false">
-          </div>
-          <div class="lf grow">
-            <label for="loaderContentName">Content name <span class="opt">— optional</span></label>
-            <input type="text" id="loaderContentName" placeholder="Blasphemous" autocomplete="off" spellcheck="false">
-          </div>
-        </div>
-
-        <div class="lf-row-2">
-          <div class="method-box">
-            <label>Install method</label>
-            <div class="segmented" role="radiogroup">
-              <label title="Remote Package Installer — HTTP API on port 12800">
-                <input type="radio" name="method" value="rpi" checked>
-                <span class="seg-txt">RPI</span>
-              </label>
-              <label title="GoldHEN payloader — POSTs the crafted DPI packet to the console's HTTP port">
-                <input type="radio" name="method" value="goldhen">
-                <span class="seg-txt">GoldHEN Payload</span>
-              </label>
-            </div>
-          </div>
-
-          <button class="loader-btn" id="loaderInstall" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 12l16-8-6 18-3-7-7-3z"/>
-            </svg>
-            Install to PS4
-          </button>
-        </div>
-
-        <div class="probe-log" id="probeLog">
-          <div class="ph">🔎 Sender log <code id="probeTarget">—</code></div>
-          <div class="pl" id="probeList"></div>
-        </div>
-      </div>
-
-      <div class="loader-foot">
-        <span class="badge-http" id="httpBadge">
-          <span class="d"></span>
-          <span id="httpBadgeText">Checking transport…</span>
-        </span>
-        <span id="loaderHint">Both methods use HTTP on the console — no PC required</span>
-      </div>
-    </section>
-  </div>
+  <div class="grid" id="grid"></div>
 
   <footer class="foot">
-    <div class="fl">
-      <span>OptiStore · unofficial fan library</span>
-      <a href="https://optistore.vercel.app" target="_blank" rel="noopener noreferrer">Website</a>
-      <a href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">Telegram</a>
-    </div>
-    <div class="fl">
-      <span class="kbd-hint">?</span> <span>for shortcuts</span>
-      <span>Donate: <code style="font-family:var(--m);color:#a5b4fc">0x17E1…df86</code></span>
+    <div>OptiStore · unofficial fan library</div>
+    <div>
+      <a href="ps4.html">ps4.html</a> · open on your console to install
     </div>
   </footer>
 
 </main>
 
+<!-- game detail modal -->
 <div class="overlay" id="gameModal">
   <div class="modal">
-    <button class="modal-close" id="modalClose" type="button" aria-label="Close">✕</button>
+    <button class="modal-close" id="modalClose" type="button">✕</button>
     <div class="gm-head">
       <div class="gm-cover"><img id="gmCover" alt="" src=""></div>
       <div class="gm-meta">
         <h2 id="gmTitle">Game Title</h2>
+        <div class="sub" id="gmSub">—</div>
         <div class="gm-tags" id="gmTags"></div>
         <div class="gm-actions">
-          <button class="btn ok" id="sendAllBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 18-3-7-7-3z"/></svg>
-            Send all direct
+          <a class="btn primary" href="ps4.html">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="6" width="20" height="12" rx="2"/>
+              <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
+            </svg>
+            Open PS4 Installer
+          </a>
+          <button class="btn ghost" id="gmCopyAll" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+            </svg>
+            Copy all URLs
           </button>
-          <button class="btn ghost sm" id="gmFav" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.9 6 6.6.9-4.8 4.7 1.1 6.5L12 18l-5.8 3.1L7.3 14.6 2.5 9.9 9.1 9z"/></svg>
-            <span id="gmFavTxt">Favorite</span>
-          </button>
-          <button class="btn ghost sm" id="gmShare" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>
-            Share
-          </button>
-          <button class="btn ghost sm" id="gmCopyJson" type="button" title="Copy metadata as JSON">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3H5a2 2 0 0 0-2 2v3M3 16v3a2 2 0 0 0 2 2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3"/></svg>
-            JSON
-          </button>
-        </div>
-        <div class="gm-note" id="gmNote"></div>
-        <div class="gm-notes-wrap">
-          <label for="gmNotes">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>
-            Your notes <span style="text-transform:none;letter-spacing:0;font-weight:600;color:var(--tx-3)">— saved locally</span>
-          </label>
-          <textarea id="gmNotes" placeholder="Backlog? Patched? Region quirks? Whatever you want to remember…"></textarea>
         </div>
       </div>
     </div>
     <div class="gm-body">
-      <div class="sec-title">Package files <span class="mini" id="gmFileCount"></span></div>
+      <div class="tip">
+        <span class="ico">💡</span>
+        <span>
+          Install one file at a time — you'll usually want the <b>Base</b> package first, then the latest <b>Update</b>, then any <b>DLC</b>.
+          Open <b>ps4.html</b> on the console's browser to actually send them.
+        </span>
+      </div>
+      <div class="sec-title">
+        Package files
+        <span class="mini" id="gmFileCount"></span>
+      </div>
       <div class="files" id="gmFiles"></div>
     </div>
   </div>
 </div>
 
+<!-- help modal -->
 <div class="overlay" id="helpModal">
   <div class="modal slim">
-    <button class="modal-close" id="helpClose" type="button" aria-label="Close">✕</button>
+    <button class="modal-close" id="helpClose" type="button">✕</button>
     <div class="set-head">
-      <h2>Direct Install Setup</h2>
-      <p>Push packages from any browser — no PC required</p>
+      <h2>How it works</h2>
+      <p>Two pages, one library</p>
     </div>
     <div class="set-body">
 
-      <div class="set-card ok">
-        <div class="ic">✅</div>
-        <div>
-          <div class="t">No bridge, no scripts, no downloads</div>
-          <div class="d">Both install methods talk to your console over HTTP straight from this page. Nothing runs on your computer.</div>
+      <div class="step">
+        <div class="num">1</div>
+        <div class="txt">
+          <b>Browse here on your PC</b>
+          This page reads <code>export_with_covers.json</code>. Every title expands to show all its packages — base, updates, DLCs — with size, region, and host info.
         </div>
       </div>
 
-      <div class="method-card">
-        <div class="mc-head">
-          <div class="ic">📦</div>
-          <div>
-            <h3>RPI — Remote Package Installer</h3>
-            <p>HTTP API on port 12800</p>
-          </div>
-        </div>
-        <div class="mc-body">
-          Install <b>Remote Package Installer</b> on the PS4 and launch it before installing. The page POSTs <code>{type, packages}</code> directly to it.
-          <ol>
-            <li>Launch <code>Remote Package Installer</code> on the PS4.</li>
-            <li>Note the IP (Settings → Network → View Connection Status).</li>
-            <li>Open the <b>Direct URL</b> tab, paste the IP and a .pkg URL, hit <b>Install</b>.</li>
-          </ol>
+      <div class="step">
+        <div class="num">2</div>
+        <div class="txt">
+          <b>Open <code>ps4.html</code> on your PS4</b>
+          In the console's web browser, navigate to the same address but end with <code>ps4.html</code>. It reads <code>games.json</code> and adds a <b>Send to PS4</b> button to every game.
         </div>
       </div>
 
-      <div class="method-card">
-        <div class="mc-head">
-          <div class="ic">⚡</div>
-          <div>
-            <h3>GoldHEN Payload — HTTP forwarder</h3>
-            <p>Same packet as the binloader, delivered over HTTP</p>
-          </div>
-        </div>
-        <div class="mc-body">
-          GoldHEN's binloader listens for raw TCP on <code>9090</code>, which browsers can't reach. But modern GoldHEN builds also expose an
-          HTTP forwarder on <code>12800</code> that relays the same JSON packet internally. The page tries a list of known endpoints in order
-          and shows you exactly what happened in the sender log.
-          <ol>
-            <li>Ensure <b>GoldHEN</b> is loaded on the PS4.</li>
-            <li>Open the <b>Direct URL</b> tab, pick <b>GoldHEN Payload</b>, hit <b>Install</b>.</li>
-            <li>Watch the sender log — the successful endpoint is highlighted.</li>
-          </ol>
+      <div class="step">
+        <div class="num">3</div>
+        <div class="txt">
+          <b>Make sure your installer is running</b>
+          Either launch <code>Remote Package Installer</code> (RPI) on the PS4, or enable <code>DPIv2</code> in etaHEN. Both listen on port <code>12800</code> and accept the same install payload.
         </div>
       </div>
 
-      <div class="method-card">
-        <div class="mc-head">
-          <div class="ic">🎨</div>
-          <div>
-            <h3>Package kinds</h3>
-            <p>Every file is tagged by type</p>
-          </div>
-        </div>
-        <div class="mc-body">
-          Kinds are pulled from the <code>kind</code> field of each release link and color-coded across the UI.
-          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:10px">
-            <span class="kind base">Base</span>
-            <span class="kind update">Update</span>
-            <span class="kind dlc">DLC</span>
-            <span class="kind theme">Theme</span>
-            <span class="kind avatar">Avatar</span>
-            <span class="kind demo">Demo</span>
-            <span class="kind app">App</span>
-            <span class="kind pkg">Other</span>
-          </div>
+      <div class="step">
+        <div class="num">4</div>
+        <div class="txt">
+          <b>Install in order</b>
+          Base → Update → DLC. Each <code>.pkg</code> is queued separately and the console fetches them in turn.
         </div>
       </div>
 
-      <div class="method-card">
-        <div class="mc-head">
-          <div class="ic">🔗</div>
-          <div>
-            <h3>Which links get the Send button</h3>
-            <p>Direct vs. landing page</p>
-          </div>
-        </div>
-        <div class="mc-body">
-          <b>Send to PS4</b> appears only when a link ends in <code>.pkg</code> and is <b>not</b> hosted on a
-          known landing-page service (FileKeeper, Linkvertise, FileCrypt, and others). Those show an <b>Open</b>
-          button so you can go fetch the real link. The tag next to each file tells you at a glance which it is.
-        </div>
-      </div>
-
-      <div class="sec-title">Keyboard Shortcuts</div>
-      <div class="kbd-grid">
-        <div class="kbd-row"><span class="desc">Library tab</span><div class="keys"><kbd>1</kbd></div></div>
-        <div class="kbd-row"><span class="desc">Direct URL tab</span><div class="keys"><kbd>2</kbd></div></div>
-        <div class="kbd-row"><span class="desc">Search</span><div class="keys"><kbd>/</kbd></div></div>
-        <div class="kbd-row"><span class="desc">Toggle theme</span><div class="keys"><kbd>T</kbd></div></div>
-        <div class="kbd-row"><span class="desc">Favorites</span><div class="keys"><kbd>F</kbd></div></div>
-        <div class="kbd-row"><span class="desc">Random title</span><div class="keys"><kbd>R</kbd></div></div>
-        <div class="kbd-row"><span class="desc">Help</span><div class="keys"><kbd>S</kbd></div></div>
-        <div class="kbd-row"><span class="desc">Close overlay</span><div class="keys"><kbd>Esc</kbd></div></div>
+      <div class="tip" style="margin:0">
+        <span class="ico">⚠️</span>
+        <span>
+          Both pages must be served over <b>plain HTTP</b> for the install to work. HTTPS will block the request to <code>127.0.0.1</code> due to mixed-content rules.
+        </span>
       </div>
 
     </div>
@@ -971,78 +714,95 @@ input::placeholder{color:var(--tx-3)}
 <div id="toasts"></div>
 
 <script>
-(() => {
+(function () {
   'use strict';
 
-  const state = {
-    catalog: [],
-    filtered: [],
-    favorites: new Set(JSON.parse(localStorage.getItem('opti_favs') || '[]')),
-    notes: JSON.parse(localStorage.getItem('opti_notes') || '{}'),
-    ip: localStorage.getItem('opti_ip') || '',
-    method: localStorage.getItem('opti_method') || 'rpi',
-    theme: localStorage.getItem('opti_theme') || 'dark',
-    sound: localStorage.getItem('opti_sound') !== 'false',
-    view: localStorage.getItem('opti_view') || 'grid',
-    tab: localStorage.getItem('opti_tab') || 'library',
-    kind: 'all',
-    activeGame: null
-  };
+  /* =====================================================================
+     CONFIG
+     ===================================================================== */
+  var CATALOG_URL = 'export_with_covers.json';
 
-  const $ = (id) => document.getElementById(id);
+  var catalog = [];
+  var filtered = [];
+  var query = '';
+  var region = 'all';
+  var kind = 'all';
+  var sort = 'name';
+  var currentGame = null;
 
-  /* ============================================================
-     Known landing-page hosts — links here never get the Send button,
-     even if their path ends in .pkg.
-     ============================================================ */
-  const REDIRECT_HOSTS = [
-    'filekeeper.net','filekeeper.io','filekeeper.org','filekeeper.co',
-    'filecrypt.cc','filecrypt.co','filecrypt.to','filecrypt.link','linkcrypt.ws',
-    'linkvertise.com','linkvertise.net','link-to.net',
-    'ouo.io','ouo.press','safelinking.net','sub2unlock.com',
-    'adf.ly','sh.st','shorte.st','shrinkme.io','shrinkearn.com',
-    'mega.nz','mega.co.nz','1fichier.com','mediafire.com',
-    'drive.google.com','dropbox.com','uptobox.com','racaty.net',
-    'zippyshare.com','anonfiles.com','gofile.io','pixeldrain.com',
-    'file-upload.net','uploadhaven.com'
-  ];
+  var $ = function (id) { return document.getElementById(id); };
 
-  function hostOf(url) {
-    try { return new URL(url, location.href).hostname.toLowerCase().replace(/^www\./,''); }
-    catch(e) {
-      const m = String(url).match(/^[a-z]+:\/\/([^\/?#]+)/i);
-      return m ? m[1].toLowerCase().replace(/^www\./,'').split(':')[0] : '';
-    }
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  function isRedirectHost(host) {
-    if (!host) return false;
-    return REDIRECT_HOSTS.some(h => host === h || host.endsWith('.' + h));
+  /* ---------------- toasts ---------------- */
+  function toast(msg, kindT) {
+    kindT = kindT || 'info';
+    var box = $('toasts');
+    var el = document.createElement('div');
+    el.className = 'toast ' + kindT;
+    var icon = kindT === 'ok' ? '✓' : kindT === 'err' ? '✕' : 'ℹ️';
+    el.innerHTML = '<div style="flex:none;font-size:15px">' + icon + '</div><div>' + esc(msg) + '</div>';
+    box.appendChild(el);
+    setTimeout(function () {
+      el.classList.add('out');
+      setTimeout(function () { el.remove(); }, 250);
+    }, 3600);
   }
 
-  /* ============================================================
-     Direct check — must end in .pkg AND not be a known landing host.
-     ============================================================ */
-  function isDirectPkg(url) {
-    if (!url) return false;
-    try {
-      const u = new URL(url, location.href);
-      if (u.protocol !== 'http:' && u.protocol !== 'https:') return false;
-      if (!/\.pkg$/i.test(u.pathname)) return false;
-      if (isRedirectHost(u.hostname.toLowerCase().replace(/^www\./,''))) return false;
-      return true;
-    } catch (e) {
-      const cleaned = String(url).trim().split('?')[0].split('#')[0];
-      if (!/\.pkg$/i.test(cleaned)) return false;
-      if (isRedirectHost(hostOf(cleaned))) return false;
-      return true;
-    }
+  /* ---------------- size helpers ---------------- */
+  function parseSizeToBytes(s) {
+    if (s == null) return 0;
+    if (typeof s === 'number') return s;
+    var m = String(s).match(/([\d.]+)\s*(TB|GB|MB|KB|B)/i);
+    if (!m) return 0;
+    var v = parseFloat(m[1]);
+    var u = m[2].toUpperCase();
+    if (u === 'TB') return v * 1024 * 1024 * 1024 * 1024;
+    if (u === 'GB') return v * 1024 * 1024 * 1024;
+    if (u === 'MB') return v * 1024 * 1024;
+    if (u === 'KB') return v * 1024;
+    return v;
+  }
+  function fmtBytes(bytes) {
+    if (!bytes) return '—';
+    var gb = bytes / (1024 * 1024 * 1024);
+    if (gb >= 1024) return (gb / 1024).toFixed(2) + ' TB';
+    if (gb >= 1) return gb.toFixed(2) + ' GB';
+    var mb = bytes / (1024 * 1024);
+    return mb.toFixed(0) + ' MB';
+  }
+  /* If the string is already human-readable ("45.2 GB"), return it as-is. */
+  function sizeLabel(size) {
+    if (size == null || size === '') return '—';
+    if (typeof size === 'string') return size;
+    return fmtBytes(size);
   }
 
-  /* ============================================================
-     Kind normalization + display metadata
-     ============================================================ */
-  const KIND_META = {
+  /* ---------------- copy ---------------- */
+  function copyText(t) {
+    if (!t) { toast('Nothing to copy', 'err'); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(function () {
+        toast('Copied to clipboard', 'ok');
+      }).catch(function () { fallbackCopy(t); });
+    } else { fallbackCopy(t); }
+  }
+  function fallbackCopy(t) {
+    var ta = document.createElement('textarea');
+    ta.value = t;
+    ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); toast('Copied', 'ok'); }
+    catch (e) { toast('Copy failed', 'err'); }
+    document.body.removeChild(ta);
+  }
+
+  /* ---------------- kind metadata ---------------- */
+  var KIND_META = {
     base:   { label: 'Base',   emoji: '🎮' },
     update: { label: 'Update', emoji: '⬆️' },
     dlc:    { label: 'DLC',    emoji: '📦' },
@@ -1052,9 +812,10 @@ input::placeholder{color:var(--tx-3)}
     app:    { label: 'App',    emoji: '📱' },
     pkg:    { label: 'PKG',    emoji: '📄' }
   };
+  var KIND_ORDER = ['base', 'update', 'dlc', 'theme', 'avatar', 'demo', 'app', 'pkg'];
 
   function normalizeKind(raw) {
-    const k = String(raw || '').toLowerCase().trim();
+    var k = String(raw || '').toLowerCase().trim();
     if (!k) return 'pkg';
     if (k === 'base' || k === 'game' || k === 'full' || k === 'main') return 'base';
     if (k === 'update' || k === 'patch' || k === 'upd' || k === 'fix') return 'update';
@@ -1065,875 +826,624 @@ input::placeholder{color:var(--tx-3)}
     if (k === 'app' || k === 'application' || k === 'tool') return 'app';
     return 'pkg';
   }
+  function kindMeta(k) { return KIND_META[k] || KIND_META.pkg; }
 
-  function kindMeta(kind) {
-    return KIND_META[kind] || KIND_META.pkg;
-  }
-
-  /* ============================================================
-     Sound + Toast
-     ============================================================ */
-  function playSound(type) {
-    if (!state.sound) return;
-    try {
-      const ctx = new (window.AudioContext || window.webkitAudioContext)();
-      const osc = ctx.createOscillator();
-      const gain = ctx.createGain();
-      osc.connect(gain); gain.connect(ctx.destination);
-      if (type === 'click') {
-        osc.frequency.setValueAtTime(400, ctx.currentTime);
-        gain.gain.setValueAtTime(0.05, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.05);
-        osc.start(); osc.stop(ctx.currentTime + 0.05);
-      } else if (type === 'success') {
-        osc.frequency.setValueAtTime(523.25, ctx.currentTime);
-        osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.08);
-        gain.gain.setValueAtTime(0.08, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.25);
-        osc.start(); osc.stop(ctx.currentTime + 0.25);
-      } else if (type === 'error') {
-        osc.type = 'sawtooth';
-        osc.frequency.setValueAtTime(180, ctx.currentTime);
-        gain.gain.setValueAtTime(0.08, ctx.currentTime);
-        gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.2);
-        osc.start(); osc.stop(ctx.currentTime + 0.2);
-      }
-    } catch (e) {}
-  }
-
-  function toast(msg, type = 'info') {
-    const container = $('toasts');
-    const el = document.createElement('div');
-    el.className = `toast ${type}`;
-    let icon = 'ℹ️';
-    if (type === 'ok') icon = '✓';
-    if (type === 'warn') icon = '⚠️';
-    if (type === 'err') icon = '✕';
-    el.innerHTML = `<div class="ti">${icon}</div><div class="tmsg">${msg}</div>`;
-    const dismiss = () => { el.classList.add('out'); setTimeout(() => el.remove(), 250); };
-    container.appendChild(el);
-    setTimeout(dismiss, 4200);
-  }
-
-  /* ============================================================
-     Tabs
-     ============================================================ */
-  function switchTab(name) {
-    if (name !== 'library' && name !== 'url') name = 'library';
-
-    document.querySelectorAll('.tab').forEach(t => {
-      const active = t.dataset.tab === name;
-      t.classList.toggle('active', active);
-      t.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-    document.querySelectorAll('.tab-panel').forEach(p => {
-      p.classList.toggle('active', p.id === 'panel-' + name);
-    });
-
-    state.tab = name;
-    localStorage.setItem('opti_tab', name);
-
-    try {
-      const h = name === 'url' ? '#direct-url' : '#library';
-      if (location.hash !== h) history.replaceState(null, '', h);
-    } catch (e) {}
-
-    if (name === 'url') {
-      setTimeout(() => {
-        if (!state.ip) $('loaderIp').focus();
-        else $('loaderUrl').focus();
-      }, 80);
-    }
-    if (name === 'library') {
-      setTimeout(() => $('search').focus(), 80);
+  /* ---------------- host + link helpers ---------------- */
+  var REDIRECT_HOSTS = [
+    'filekeeper.net','filekeeper.io','filekeeper.org','filekeeper.co',
+    'filecrypt.cc','filecrypt.co','filecrypt.to','filecrypt.link','linkcrypt.ws',
+    'linkvertise.com','linkvertise.net','link-to.net',
+    'ouo.io','ouo.press','safelinking.net','sub2unlock.com',
+    'adf.ly','sh.st','shorte.st','shrinkme.io','shrinkearn.com',
+    'mega.nz','mega.co.nz','1fichier.com','mediafire.com',
+    'drive.google.com','dropbox.com','uptobox.com','racaty.net',
+    'zippyshare.com','anonfiles.com','gofile.io','pixeldrain.com',
+    'file-upload.net','uploadhaven.com'
+  ];
+  function hostOf(u) {
+    try { return new URL(u, location.href).hostname.toLowerCase().replace(/^www\./,''); }
+    catch (e) {
+      var m = String(u).match(/^[a-z]+:\/\/([^\/?#]+)/i);
+      return m ? m[1].toLowerCase().replace(/^www\./,'').split(':')[0] : '';
     }
   }
-
-  /* ============================================================
-     Packet builders
-     ============================================================ */
-  function buildTitleId(cusa) {
-    const raw = (cusa || '').toUpperCase().trim();
-    if (!raw) return 'OPTISTORE_00-PKG0000000000000';
-    if (raw.indexOf('-') > -1) return raw;
-    const cusaClean = raw.replace(/[^A-Z0-9]/g,'');
-    const suffix = (cusaClean + '000000000000000').slice(0, 16);
-    return 'EP4064-' + cusaClean + '_00-' + suffix;
+  function isRedirectHost(host) {
+    if (!host) return false;
+    return REDIRECT_HOSTS.some(function (h) { return host === h || host.endsWith('.' + h); });
+  }
+  function isDirectPkg(url) {
+    if (!url) return false;
+    var cleaned = String(url).split('?')[0].split('#')[0];
+    if (!/\.pkg$/i.test(cleaned)) return false;
+    if (isRedirectHost(hostOf(cleaned))) return false;
+    return true;
   }
 
-  function buildIconPath(pkgUrl) {
-    try {
-      const u = new URL(pkgUrl, location.href);
-      return u.origin + u.pathname + '/icon0.png';
-    } catch (e) {
-      return pkgUrl.replace(/\.pkg(\?.*)?$/i, '') + '/icon0.png';
+  /* =====================================================================
+     CATALOG PARSER
+     ---------------------------------------------------------------------
+     Reads export_with_covers.json's { records: [ ... ] } shape and turns
+     each record into a game with a full `files` array. Also accepts the
+     { DATA: {...} } shape from games.json as a fallback.
+     ===================================================================== */
+
+  function pick(obj, keys) {
+    if (!obj) return '';
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      if (obj[k] != null && obj[k] !== '') return obj[k];
     }
+    return '';
   }
 
-  function buildDpiPacket(pkgUrl, meta) {
-    meta = meta || {};
+  function makeFile(link) {
+    if (!link) return null;
+    var url = pick(link, ['url', 'pkg_url', 'pkg', 'link', 'direct_url', 'download']);
+    if (!url) return null;
+
+    var kind = normalizeKind(pick(link, ['kind', 'type', 'package_type']));
+    var km = kindMeta(kind);
+    var host = pick(link, ['host']) || hostOf(url);
+    var direct = isDirectPkg(url);
+
     return {
-      id: buildTitleId(meta.cusa),
-      contentUrl: pkgUrl,
-      iconPath: buildIconPath(pkgUrl),
-      contentName: meta.contentName || meta.name || 'Package'
+      url: String(url),
+      label: pick(link, ['source_label', 'label', 'name', 'title'])
+          || (km.label + ' Package'),
+      kind: kind,
+      kindLabel: km.label,
+      kindEmoji: km.emoji,
+      size: pick(link, ['size', 'size_human', 'size_bytes']) || '',
+      version: pick(link, ['version', 'ver', 'update_version']) || '',
+      region: pick(link, ['region', 'reg']) || '',
+      minFw: pick(link, ['min_fw', 'minFirmware', 'fw']) || '',
+      host: host,
+      direct: direct
     };
   }
 
-  /* ============================================================
-     Sender log
-     ============================================================ */
-  function logReset() {
-    $('probeList').innerHTML = '';
-    $('probeLog').classList.add('show');
+  function makeGameFromRecord(rec, idx) {
+    if (!rec) return null;
+    var links = Array.isArray(rec.release_links) ? rec.release_links
+              : Array.isArray(rec.files)         ? rec.files
+              : [];
+
+    var files = [];
+    for (var i = 0; i < links.length; i++) {
+      var f = makeFile(links[i]);
+      if (f) files.push(f);
+    }
+    if (!files.length) return null;
+
+    /* Base game details come from the record, plus any missing bits from
+       the primary (base) file when available. */
+    var primary = null;
+    for (var b = 0; b < files.length; b++) {
+      if (files[b].kind === 'base') { primary = files[b]; break; }
+    }
+    if (!primary) primary = files[0];
+
+    var region = pick(rec, ['region', 'reg']) || primary.region || '';
+
+    return {
+      id: (rec.title_id || ('rec_' + idx + '_' + (rec.name || ''))),
+      name: pick(rec, ['name', 'title']) || 'Untitled',
+      titleId: pick(rec, ['title_id', 'titleId', 'cusa']) || '',
+      region: region,
+      source: pick(rec, ['source']) || '',
+      cover: pick(rec, ['cover_image', 'cover_url', 'cover']) || '',
+      files: files
+    };
   }
 
-  function logRow(url, status, note) {
-    const row = document.createElement('div');
-    row.className = 'probe-row ' + status;
-    let icon = '•';
-    if (status === 'ok') icon = '✓';
-    if (status === 'err') icon = '✕';
-    if (status === 'run') icon = '▸';
-    row.innerHTML = `<div class="pi">${icon}</div><div class="pu">${url}</div><div class="ps">${note || status}</div>`;
-    $('probeList').appendChild(row);
-    $('probeList').scrollTop = $('probeList').scrollHeight;
-    return row;
-  }
+  function normalize(raw) {
+    var out = [];
+    if (!raw) return out;
 
-  function logUpdate(row, status, note) {
-    if (!row) return;
-    row.className = 'probe-row ' + status;
-    row.querySelector('.pi').textContent = status === 'ok' ? '✓' : status === 'err' ? '✕' : '•';
-    row.querySelector('.ps').textContent = note || status;
-  }
-
-  function logTarget(ip) {
-    $('probeTarget').textContent = ip ? (ip + ' — ' + state.method.toUpperCase()) : '—';
-  }
-
-  /* ============================================================
-     HTTP POST helper
-     ============================================================ */
-  function postJSON(url, body, timeoutMs) {
-    return new Promise((resolve) => {
-      let settled = false;
-      const controller = ('AbortController' in window) ? new AbortController() : null;
-      const finish = (result) => {
-        if (settled) return;
-        settled = true;
-        resolve(result);
-      };
-      const timer = setTimeout(() => {
-        if (controller) controller.abort();
-        finish({ ok: false, status: 'timeout', note: 'timeout' });
-      }, timeoutMs || 3500);
-
-      fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(body),
-        mode: 'cors',
-        cache: 'no-store',
-        signal: controller ? controller.signal : undefined,
-        targetAddressSpace: 'private'
-      }).then(res => {
-        clearTimeout(timer);
-        res.text().then(text => {
-          finish({ ok: res.ok, status: res.status, note: 'HTTP ' + res.status, body: text });
-        }).catch(() => {
-          finish({ ok: res.ok, status: res.status, note: 'HTTP ' + res.status });
-        });
-      }).catch(err => {
-        clearTimeout(timer);
-        fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain;charset=UTF-8' },
-          body: JSON.stringify(body),
-          mode: 'no-cors',
-          cache: 'no-store',
-          targetAddressSpace: 'private'
-        }).then(() => {
-          finish({ ok: true, status: 0, note: 'opaque (sent)' });
-        }).catch(err2 => {
-          finish({ ok: false, status: 'err', note: (err2 && err2.message) || 'network error' });
-        });
-      });
-    });
-  }
-
-  /* ============================================================
-     Candidate endpoints
-     ============================================================ */
-  function candidateEndpoints(ip, pkgUrl, meta) {
-    const dpiPacket = buildDpiPacket(pkgUrl, meta);
-    const rpiBody = { type: 'direct', packages: [pkgUrl] };
-
-    return [
-      { url: `http://${ip}:12800/api/install`, body: rpiBody,   label: 'RPI/DPIv2 install' },
-      { url: `http://${ip}:12800/api/install`, body: dpiPacket, label: 'DPIv2 packet' },
-      { url: `http://${ip}:12800/upload`,      body: dpiPacket, label: 'GoldHEN upload' },
-      { url: `http://${ip}:12800/payload`,     body: dpiPacket, label: 'payload endpoint' },
-      { url: `http://${ip}:12800/api/payload`, body: dpiPacket, label: 'api/payload' },
-      { url: `http://${ip}:12800/install`,     body: dpiPacket, label: '/install' },
-      { url: `http://${ip}:12800/`,            body: dpiPacket, label: 'root POST' },
-      { url: `http://${ip}:9090/`,             body: dpiPacket, label: 'binloader :9090' }
-    ];
-  }
-
-  async function sendViaGoldHEN(ip, pkgUrl, meta) {
-    logReset();
-    logTarget(ip);
-    const endpoints = candidateEndpoints(ip, pkgUrl, meta);
-    let lastFailure = null;
-
-    for (const ep of endpoints) {
-      const row = logRow(ep.url, 'run', 'trying…');
-      const result = await postJSON(ep.url, ep.body, 3500);
-      if (result.ok && (result.status === 0 || (typeof result.status === 'number' && result.status < 400))) {
-        logUpdate(row, 'ok', result.note || 'ok');
-        return { ok: true, endpoint: ep.url, label: ep.label, response: result.body };
+    /* ---- A: { records: [...] } ---- */
+    if (Array.isArray(raw.records)) {
+      for (var i = 0; i < raw.records.length; i++) {
+        var g = makeGameFromRecord(raw.records[i], i);
+        if (g) out.push(g);
       }
-      logUpdate(row, 'err', result.note || 'failed');
-      lastFailure = result.note || 'failed';
-    }
-    return { ok: false, error: lastFailure || 'all endpoints failed' };
-  }
-
-  async function sendViaRpi(ip, pkgUrl) {
-    const endpoint = `http://${ip}:12800/api/install`;
-    logReset();
-    logTarget(ip);
-    const row = logRow(endpoint, 'run', 'trying…');
-    const result = await postJSON(endpoint, { type: 'direct', packages: [pkgUrl] }, 5000);
-    if (result.ok && (result.status === 0 || result.status < 400)) {
-      logUpdate(row, 'ok', result.note || 'ok');
-      return { ok: true, endpoint };
-    }
-    logUpdate(row, 'err', result.note || 'failed');
-    return { ok: false, error: result.note || 'failed' };
-  }
-
-  async function installOne(pkgUrl, meta) {
-    meta = meta || {};
-    const ip = state.ip;
-    if (!ip) throw new Error('Set your PS4 IP first.');
-    if (!pkgUrl) throw new Error('Missing .pkg URL.');
-
-    if (state.method === 'goldhen') {
-      const r = await sendViaGoldHEN(ip, pkgUrl, meta);
-      if (!r.ok) throw new Error(r.error || 'GoldHEN send failed');
-      return r;
-    }
-    const r = await sendViaRpi(ip, pkgUrl);
-    if (!r.ok) throw new Error(r.error || 'RPI send failed');
-    return r;
-  }
-
-  /* ============================================================
-     Transport status
-     ============================================================ */
-  function checkTransport() {
-    const pill = $('connPill');
-    const txt = $('connText');
-    const badge = $('httpBadge');
-    const badgeTxt = $('httpBadgeText');
-    const tabTarget = $('tabTarget');
-    const tabTargetText = $('tabTargetText');
-
-    logTarget(state.ip);
-
-    if (!state.ip) {
-      txt.textContent = 'No IP';
-      pill.dataset.s = 'warn';
-      badge.className = 'badge-http warn';
-      badgeTxt.textContent = 'IP not set';
-      tabTarget.className = 'tab-target warn';
-      tabTargetText.textContent = 'No PS4 target';
-      return;
+      return out;
     }
 
-    const label = (state.method === 'goldhen' ? 'GoldHEN · ' : 'RPI · ') + state.ip;
-    txt.textContent = label;
-    pill.dataset.s = 'ok';
-    badge.className = 'badge-http ok';
-    badgeTxt.textContent = 'Target: ' + state.ip;
-    tabTarget.className = 'tab-target ok';
-    tabTargetText.textContent = label;
+    /* ---- B: { DATA: { "<url>": {...} } } ---- */
+    if (raw.DATA && typeof raw.DATA === 'object') {
+      var keys = Object.keys(raw.DATA);
+      for (var k = 0; k < keys.length; k++) {
+        var url = keys[k];
+        var m = raw.DATA[url] || {};
+        out.push({
+          id: (m.title_id || ('rec_' + k)),
+          name: m.name || 'Untitled',
+          titleId: m.title_id || '',
+          region: m.region || '',
+          source: m.source || '',
+          cover: m.cover_url || '',
+          files: [{
+            url: url,
+            label: m.name ? (m.name + ' Package') : 'PKG Package',
+            kind: 'base',
+            kindLabel: 'Base',
+            kindEmoji: '🎮',
+            size: m.size || '',
+            version: m.version || '',
+            region: m.region || '',
+            minFw: m.min_fw || '',
+            host: hostOf(url),
+            direct: isDirectPkg(url)
+          }]
+        });
+      }
+      return out;
+    }
+
+    /* ---- C: [ {...}, {...} ] ---- */
+    if (Array.isArray(raw)) {
+      for (var a = 0; a < raw.length; a++) {
+        var rec2 = raw[a] || {};
+        if (Array.isArray(rec2.release_links)) {
+          var g2 = makeGameFromRecord(rec2, a);
+          if (g2) out.push(g2);
+        }
+      }
+      return out;
+    }
+
+    return out;
   }
 
-  /* ============================================================
-     Loader submit
-     ============================================================ */
-  function loadFromUrl() {
-    const ip = $('loaderIp').value.trim().replace(/^https?:\/\//i,'').replace(/\/.*$/,'');
-    const url = $('loaderUrl').value.trim();
-    const titleId = ($('loaderTitleId').value || '').trim();
-    const cname = ($('loaderContentName').value || '').trim();
+  /* ---------------- catalog load ---------------- */
+  function loadCatalog() {
+    var grid = $('grid');
+    var sk = '';
+    for (var i = 0; i < 12; i++) {
+      sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
+    }
+    grid.innerHTML = sk;
 
-    if (!ip) { toast('Enter your PS4 IP', 'warn'); $('loaderIp').focus(); return; }
-    if (!url) { toast('Paste a .pkg URL', 'warn'); $('loaderUrl').focus(); return; }
-    if (!/^https?:\/\//i.test(url)) { toast('URL must start with http:// or https://', 'warn'); $('loaderUrl').focus(); return; }
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', CATALOG_URL + '?t=' + Date.now(), true);
+    xhr.onload = function () {
+      if (xhr.status >= 200 && xhr.status < 300) {
+        try {
+          var raw = JSON.parse(xhr.responseText);
+          catalog = normalize(raw);
 
-    // Must end in .pkg AND not be a known landing host
-    if (!isDirectPkg(url)) {
-      const cleaned = url.split('?')[0].split('#')[0];
-      if (!/\.pkg$/i.test(cleaned)) {
-        toast('That URL doesn\'t end in .pkg — not sending', 'warn', 6000);
+          if (!catalog.length) {
+            grid.innerHTML =
+              '<div class="empty">' +
+                '<div class="big">📭</div>' +
+                '<b>Catalog is empty</b>' +
+                '<small>export_with_covers.json loaded but no usable entries were found.</small>' +
+              '</div>';
+            $('count').textContent = '0';
+            return;
+          }
+
+          console.log('[OptiStore] Loaded ' + catalog.length + ' titles');
+          buildStats();
+          buildRegionFilter();
+          buildKindsBar();
+          apply();
+        } catch (e) {
+          grid.innerHTML =
+            '<div class="empty">' +
+              '<div class="big">⚠️</div>' +
+              '<b>Could not parse export_with_covers.json</b>' +
+              '<small>' + esc(e.message) + '</small>' +
+            '</div>';
+          $('count').textContent = '0';
+          console.error('[OptiStore] Parse error:', e);
+        }
       } else {
-        toast('That host serves landing pages, not raw files — not sending', 'warn', 6000);
+        grid.innerHTML =
+          '<div class="empty">' +
+            '<div class="big">📡</div>' +
+            '<b>Could not load the catalog</b>' +
+            '<small>HTTP ' + xhr.status + ' — is export_with_covers.json in the same folder?</small>' +
+          '</div>';
+        $('count').textContent = '0';
       }
-      return;
-    }
-
-    state.ip = ip;
-    localStorage.setItem('opti_ip', ip);
-    checkTransport();
-
-    const label = cname || url.split('/').pop().split('?')[0] || 'package';
-
-    installOne(url, { name: label, contentName: label, cusa: titleId })
-      .then(() => {
-        playSound('success');
-        toast(`Sent ${label} to ${ip}`, 'ok');
-        $('loaderUrl').value = '';
-      })
-      .catch(err => {
-        playSound('error');
-        toast(`Failed: ${err.message}`, 'err');
-      });
-  }
-
-  /* ============================================================
-     Catalog
-     ============================================================ */
-  function normalizeRecord(rec, index) {
-    const links = rec.release_links || [];
-    const region = (links.find(l => l.region) || {}).region || '';
-    const id = rec.title_id
-      ? String(rec.title_id)
-      : ('rec_' + index + '_' + String(rec.name || '').toLowerCase().replace(/[^a-z0-9]+/g,'_'));
-
-    return {
-      id,
-      name: rec.name || 'Untitled',
-      cusa: rec.title_id || '',
-      region,
-      cover: rec.cover_image || '',
-      note: rec.source ? 'Source: ' + rec.source : '',
-      files: links.map(l => {
-        const host = l.host || hostOf(l.url);
-        const kind = normalizeKind(l.kind);
-        const direct = isDirectPkg(l.url);
-        return {
-          name: l.source_label ||
-                (l.kind ? String(l.kind).toUpperCase() + ' package' : (direct ? 'PKG file' : 'Download link')),
-          url: l.url || '',
-          size: l.size || '',
-          host,
-          region: l.region || '',
-          kind,
-          kindLabel: kindMeta(kind).label,
-          kindEmoji: kindMeta(kind).emoji,
-          direct
-        };
-      })
     };
+    xhr.onerror = function () {
+      grid.innerHTML =
+        '<div class="empty">' +
+          '<div class="big">📡</div>' +
+          '<b>Could not load the catalog</b>' +
+          '<small>Network error. Make sure export_with_covers.json sits next to this page.</small>' +
+        '</div>';
+      $('count').textContent = '0';
+    };
+    xhr.send();
   }
 
-  async function loadData() {
-    $('grid').innerHTML = Array.from({length: 12}).map(() => `
-      <div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>
-    `).join('');
+  function buildStats() {
+    var titles = catalog.length;
+    var files = 0, totalBytes = 0;
+    var regions = {};
 
-    try {
-      const res = await fetch('export_with_covers.json?t=' + Date.now(), { cache: 'no-store' });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-      const records = (data && data.records) || [];
-      state.catalog = records.map(normalizeRecord);
-      if (!state.catalog.length) throw new Error('Catalog empty');
-    } catch (err) {
-      console.warn('[OptiStore] catalog load failed:', err);
-      state.catalog = [];
-      toast('Could not load export_with_covers.json', 'warn');
+    for (var i = 0; i < catalog.length; i++) {
+      var g = catalog[i];
+      for (var j = 0; j < g.files.length; j++) {
+        files++;
+        totalBytes += parseSizeToBytes(g.files[j].size);
+        if (g.files[j].region) regions[g.files[j].region] = 1;
+      }
+      if (g.region) regions[g.region] = 1;
     }
 
-    const regions = [...new Set(state.catalog.map(i => i.region).filter(Boolean))].sort();
-    $('regionSel').innerHTML = '<option value="all">All Regions</option>' +
-      regions.map(r => `<option value="${r}">${r}</option>`).join('');
-
-    $('stTitles').textContent = state.catalog.length;
-    let totalFiles = 0, totalDirect = 0;
-    state.catalog.forEach(item => (item.files || []).forEach(f => {
-      totalFiles++;
-      if (f.direct) totalDirect++;
-    }));
-    $('stFiles').textContent = totalFiles;
-    $('stDirect').textContent = totalDirect;
-    $('stRegions').textContent = regions.length || '—';
-
-    renderKindsBar();
-    applyFilters();
+    $('statTotal').textContent = titles.toLocaleString();
+    $('statFiles').textContent = files.toLocaleString();
+    $('statSize').textContent = fmtBytes(totalBytes);
+    $('statUSA').textContent = (regions.USA ? 1 : 0) ? countRegion('USA').toLocaleString() : '0';
+    $('statEUR').textContent = (regions.EUR ? 1 : 0) ? countRegion('EUR').toLocaleString() : '0';
   }
 
-  /* ============================================================
-     Kind filter chips
-     ============================================================ */
+  function countRegion(r) {
+    var n = 0;
+    for (var i = 0; i < catalog.length; i++) {
+      if (catalog[i].region === r) { n++; continue; }
+      for (var j = 0; j < catalog[i].files.length; j++) {
+        if (catalog[i].files[j].region === r) { n++; break; }
+      }
+    }
+    return n;
+  }
+
+  function buildRegionFilter() {
+    var seen = {};
+    for (var i = 0; i < catalog.length; i++) {
+      if (catalog[i].region) seen[catalog[i].region] = 1;
+      for (var j = 0; j < catalog[i].files.length; j++) {
+        if (catalog[i].files[j].region) seen[catalog[i].files[j].region] = 1;
+      }
+    }
+    var list = Object.keys(seen).sort();
+    var sel = $('regionSel');
+    sel.innerHTML = '<option value="all">All Regions</option>';
+    for (var k = 0; k < list.length; k++) {
+      var o = document.createElement('option');
+      o.value = list[k]; o.textContent = list[k];
+      sel.appendChild(o);
+    }
+  }
+
+  /* ---------------- kind filter ---------------- */
   function kindCounts() {
-    const counts = {};
-    state.catalog.forEach(item => (item.files || []).forEach(f => {
-      counts[f.kind] = (counts[f.kind] || 0) + 1;
-    }));
+    var counts = {};
+    for (var i = 0; i < catalog.length; i++) {
+      for (var j = 0; j < catalog[i].files.length; j++) {
+        var k = catalog[i].files[j].kind;
+        counts[k] = (counts[k] || 0) + 1;
+      }
+    }
     return counts;
   }
 
-  const KIND_ORDER = ['base','update','dlc','theme','avatar','demo','app','pkg'];
-
-  function renderKindsBar() {
-    const bar = $('kindsBar');
+  function buildKindsBar() {
+    var bar = $('kindsBar');
     if (!bar) return;
-    const counts = kindCounts();
-    const total = Object.values(counts).reduce((a,b) => a+b, 0);
+    var counts = kindCounts();
+    var total = 0;
+    for (var k in counts) total += counts[k];
 
-    let html = '<span class="kb-label">Kind</span>';
-    html += `<button class="kind-btn ${state.kind === 'all' ? 'on' : ''}" data-kind="all">
-      <span class="e">🗂️</span>All<span class="n">${total}</span>
-    </button>`;
-
-    KIND_ORDER.forEach(k => {
-      const n = counts[k] || 0;
-      if (!n) return;
-      const meta = kindMeta(k);
-      html += `<button class="kind-btn ${state.kind === k ? 'on' : ''}" data-kind="${k}">
-        <span class="e">${meta.emoji}</span>${meta.label}<span class="n">${n}</span>
-      </button>`;
-    });
-
+    var html = '<span class="kb-label">Kind</span>';
+    html += '<button class="kind-btn on" data-kind="all"><span class="e">🗂️</span>All<span class="n">' + total + '</span></button>';
+    for (var i = 0; i < KIND_ORDER.length; i++) {
+      var kk = KIND_ORDER[i];
+      var n = counts[kk] || 0;
+      if (!n) continue;
+      var km = kindMeta(kk);
+      html += '<button class="kind-btn" data-kind="' + kk + '">' +
+              '<span class="e">' + km.emoji + '</span>' + km.label +
+              '<span class="n">' + n + '</span></button>';
+    }
     bar.innerHTML = html;
 
-    bar.querySelectorAll('.kind-btn').forEach(btn => {
-      btn.onclick = () => {
-        const k = btn.dataset.kind;
-        state.kind = (k === state.kind) ? 'all' : k;
-        bar.querySelectorAll('.kind-btn').forEach(b => {
-          b.classList.toggle('on', b.dataset.kind === state.kind);
+    bar.querySelectorAll('.kind-btn').forEach(function (btn) {
+      btn.onclick = function () {
+        var kk = btn.dataset.kind;
+        kind = (kk === kind) ? 'all' : kk;
+        bar.querySelectorAll('.kind-btn').forEach(function (b) {
+          b.classList.toggle('on', b.dataset.kind === kind);
         });
-        applyFilters();
+        apply();
       };
     });
   }
 
-  /* ============================================================
-     Filters + grid
-     ============================================================ */
-  function applyFilters() {
-    let list = [...state.catalog];
-    const q = $('search').value.trim().toLowerCase();
-
-    if (q) list = list.filter(i => i.name.toLowerCase().includes(q) || (i.cusa && i.cusa.toLowerCase().includes(q)));
-    if ($('regionSel').value !== 'all') list = list.filter(i => i.region === $('regionSel').value);
-    if ($('favFilter').classList.contains('act')) list = list.filter(i => state.favorites.has(i.id));
-    if ($('directFilter').classList.contains('act')) list = list.filter(i => (i.files || []).some(f => f.direct));
-    if (state.kind !== 'all') list = list.filter(i => (i.files || []).some(f => f.kind === state.kind));
-
-    const sort = $('sortSel').value;
-    if (sort === 'name') list.sort((a,b) => a.name.localeCompare(b.name));
-    if (sort === 'name-desc') list.sort((a,b) => b.name.localeCompare(a.name));
-    if (sort === 'files') list.sort((a,b) => (b.files?.length || 0) - (a.files?.length || 0));
-    if (sort === 'direct') list.sort((a,b) => (b.files?.filter(f => f.direct).length || 0) - (a.files?.filter(f => f.direct).length || 0));
-
-    state.filtered = list;
-    renderGrid();
-    updateTabBadge();
-  }
-
-  function updateTabBadge() {
-    const badge = $('tabLibCount');
-    if (!badge) return;
-    if (state.catalog.length === 0) {
-      badge.textContent = '—';
-    } else if (state.filtered.length === state.catalog.length) {
-      badge.textContent = state.catalog.length;
-    } else {
-      badge.textContent = state.filtered.length + '/' + state.catalog.length;
+  /* ---------------- filtering / sorting ---------------- */
+  function gameHasRegion(g, r) {
+    if (g.region === r) return true;
+    for (var i = 0; i < g.files.length; i++) {
+      if (g.files[i].region === r) return true;
     }
+    return false;
+  }
+  function gameHasKind(g, k) {
+    for (var i = 0; i < g.files.length; i++) {
+      if (g.files[i].kind === k) return true;
+    }
+    return false;
+  }
+  function gameTotalBytes(g) {
+    var t = 0;
+    for (var i = 0; i < g.files.length; i++) t += parseSizeToBytes(g.files[i].size);
+    return t;
+  }
+  function gameKinds(g) {
+    var seen = {}, out = [];
+    for (var i = 0; i < g.files.length; i++) {
+      var k = g.files[i].kind;
+      if (!seen[k]) { seen[k] = 1; out.push(k); }
+    }
+    return out;
   }
 
-  function primaryKinds(files) {
-    // Return distinct kinds in a stable order, capped to 3
-    const seen = new Set();
-    const out = [];
-    KIND_ORDER.forEach(k => {
-      if (files.some(f => f.kind === k) && !seen.has(k)) {
-        seen.add(k);
-        out.push(k);
-      }
+  function apply() {
+    var q = query;
+    filtered = catalog.filter(function (g) {
+      if (q && (g.name || '').toLowerCase().indexOf(q) < 0
+              && (g.titleId || '').toLowerCase().indexOf(q) < 0) return false;
+      if (region !== 'all' && !gameHasRegion(g, region)) return false;
+      if (kind !== 'all' && !gameHasKind(g, kind)) return false;
+      return true;
     });
-    return out.slice(0, 3);
+
+    if (sort === 'name') {
+      filtered.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
+    } else if (sort === 'name-desc') {
+      filtered.sort(function (a, b) { return (b.name || '').localeCompare(a.name || ''); });
+    } else if (sort === 'files') {
+      filtered.sort(function (a, b) { return b.files.length - a.files.length; });
+    } else if (sort === 'size') {
+      filtered.sort(function (a, b) { return gameTotalBytes(b) - gameTotalBytes(a); });
+    } else if (sort === 'size-asc') {
+      filtered.sort(function (a, b) { return gameTotalBytes(a) - gameTotalBytes(b); });
+    }
+
+    render();
   }
 
-  function renderGrid() {
-    const grid = $('grid');
+  /* ---------------- grid ---------------- */
+  function render() {
+    var grid = $('grid');
+    $('count').textContent = filtered.length.toLocaleString() + ' title' + (filtered.length === 1 ? '' : 's');
 
-    if (state.filtered.length === 0) {
-      grid.innerHTML = `
-        <div class="empty">
-          <div class="big">🔍</div>
-          <b>No titles found</b>
-          <small>Try loosening your search or clearing filters.</small>
-          <br><button class="act" onclick="window.__resetFilters()">Reset Filters</button>
-        </div>`;
-      $('count').textContent = '0 items';
+    if (!filtered.length) {
+      grid.innerHTML =
+        '<div class="empty">' +
+          '<div class="big">🔍</div>' +
+          '<b>No titles match</b>' +
+          '<small>Try clearing the search or switching region / kind filters.</small>' +
+          '<br><button class="act" id="resetBtn">Reset filters</button>' +
+        '</div>';
+      var rb = $('resetBtn');
+      if (rb) rb.onclick = resetFilters;
       return;
     }
 
-    $('count').textContent = `${state.filtered.length} title${state.filtered.length === 1 ? '' : 's'}`;
-    grid.className = `grid view-${state.view}`;
+    var html = '';
+    for (var i = 0; i < filtered.length; i++) {
+      var g = filtered[i];
+      var coverSrc = g.cover ? esc(g.cover) : '';
+      var directCount = 0;
+      for (var d = 0; d < g.files.length; d++) if (g.files[d].direct) directCount++;
 
-    grid.innerHTML = state.filtered.map(item => {
-      const isFav = state.favorites.has(item.id);
-      const files = item.files || [];
-      const hasDirect = files.some(f => f.direct);
-      const kinds = primaryKinds(files);
+      var kinds = gameKinds(g).slice(0, 3);
+      var kindsHtml = '';
+      for (var kx = 0; kx < kinds.length; kx++) {
+        var km = kindMeta(kinds[kx]);
+        kindsHtml += '<span class="kind ' + kinds[kx] + '"><span class="e">' + km.emoji + '</span>' + km.label + '</span>';
+      }
 
-      const kindsHtml = kinds.map(k => {
-        const meta = kindMeta(k);
-        return `<span class="mini-kind kind ${k}"><span class="e">${meta.emoji}</span>${meta.label}</span>`;
-      }).join('');
+      var total = gameTotalBytes(g);
+      var totalStr = total > 0 ? fmtBytes(total) : (g.files[0] && g.files[0].size ? sizeLabel(g.files[0].size) : '—');
 
-      return `
-        <div class="card ${isFav ? 'fav' : ''}" onclick="window.__openGame('${item.id.replace(/'/g,"\\'")}')">
-          <div class="cover">
-            ${item.cover ? `<img src="${item.cover}" alt="" onload="this.classList.add('ready')" onerror="this.style.display='none'">` : ''}
-            <div class="ribbons">
-              ${item.region ? `<span class="ribbon reg">${item.region}</span>` : ''}
-              ${hasDirect ? `<span class="ribbon ok">Direct</span>` : ''}
-            </div>
-            <button class="fav-btn ${isFav ? 'on' : ''}" onclick="event.stopPropagation(); window.__toggleFav('${item.id.replace(/'/g,"\\'")}')" title="Favorite">★</button>
-            ${hasDirect ? `<button class="quick" onclick="event.stopPropagation(); window.__quickInstall('${item.id.replace(/'/g,"\\'")}')" title="Quick install">⚡</button>` : ''}
-          </div>
-          <div class="info">
-            <h3>${item.name}</h3>
-            <div class="mini-kinds">${kindsHtml || '<span class="mini-kind" style="color:var(--tx-3);border-color:var(--line)">—</span>'}</div>
-            <div class="row">
-              <span>${files.length} file${files.length === 1 ? '' : 's'}</span>
-              <span>${item.cusa || ''}</span>
-            </div>
-          </div>
-        </div>`;
-    }).join('');
+      html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">'
+        + '<div class="cover">'
+        + (coverSrc ? '<img src="' + coverSrc + '" alt="" loading="lazy" onload="this.classList.add(\'ready\')" onerror="this.style.display=\'none\'">' : '')
+        + '<div class="ribbons">'
+        + (g.region ? '<span class="ribbon reg">' + esc(g.region) + '</span>' : '')
+        + (directCount ? '<span class="ribbon ok">' + directCount + ' direct</span>' : '')
+        + '</div>'
+        + '</div>'
+        + '<div class="info">'
+        + '<h3>' + esc(g.name) + '</h3>'
+        + (kindsHtml ? '<div class="mini-kinds">' + kindsHtml + '</div>' : '')
+        + '<div class="row">'
+        + '<span>' + g.files.length + ' file' + (g.files.length === 1 ? '' : 's') + '</span>'
+        + '<span>' + totalStr + '</span>'
+        + '</div>'
+        + '</div>'
+        + '</div>';
+    }
+    grid.innerHTML = html;
+
+    var cards = grid.querySelectorAll('.card');
+    for (var c = 0; c < cards.length; c++) {
+      (function (card) {
+        var idx = Number(card.getAttribute('data-idx'));
+        card.addEventListener('click', function () { openGame(filtered[idx]); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openGame(filtered[idx]);
+          }
+        });
+      })(cards[c]);
+    }
   }
 
-  /* ============================================================
-     Game modal
-     ============================================================ */
-  function openGame(id) {
-    const item = state.catalog.find(g => g.id === id);
-    if (!item) return;
-    state.activeGame = item;
-
-    $('gmCover').src = item.cover || '';
-    $('gmCover').onerror = function(){ this.style.display = 'none'; };
-    $('gmTitle').textContent = item.name;
-
-    // Tag row: title id + region + kind summary
-    const files = item.files || [];
-    const kinds = primaryKinds(files).concat(primaryKinds(files).length < new Set(files.map(f => f.kind)).size ? ['…'] : []);
-    const kindTags = [...new Set(files.map(f => f.kind))].map(k => {
-      const meta = kindMeta(k);
-      return `<span class="kind ${k}"><span class="e">${meta.emoji}</span>${meta.label}</span>`;
-    }).join('');
-
-    $('gmTags').innerHTML = `
-      <span class="gm-tag b">${item.cusa || 'N/A'}</span>
-      ${item.region ? `<span class="gm-tag">${item.region}</span>` : ''}
-      ${kindTags}
-    `;
-
-    $('gmNote').innerHTML = item.note ? `Note: <code>${item.note}</code>` : '';
-    $('gmNotes').value = state.notes[id] || '';
-
-    const directFiles = files.filter(f => f.direct);
-    $('gmFileCount').textContent = `(${files.length} total, ${directFiles.length} direct)`;
-
-    // Sort files: base first, then update, dlc, others
-    const kindRank = (k) => {
-      const i = KIND_ORDER.indexOf(k);
-      return i === -1 ? 99 : i;
-    };
-    const sorted = [...files].sort((a, b) => kindRank(a.kind) - kindRank(b.kind));
-
-    $('gmFiles').innerHTML = sorted.map(f => {
-      const showSend = f.direct; // ends in .pkg AND not a landing host
-      const safeName = item.name.replace(/'/g, "\\'");
-      const safeUrl = (f.url || '').replace(/'/g, "\\'");
-      const meta = kindMeta(f.kind);
-
-      return `
-        <div class="frow" data-kind="${f.kind}">
-          <div class="fmain">
-            <div class="fname">${f.name || 'Package File'}</div>
-            <div class="facts">
-              <span class="kind ${f.kind}"><span class="e">${meta.emoji}</span>${meta.label}</span>
-              <span class="tag ${showSend ? 'direct' : 'redirect'}">${showSend ? '⬇ Direct PKG' : '↪ External'}</span>
-              ${f.size ? `<span class="fact">${f.size}</span>` : ''}
-              ${f.host ? `<span class="fact globe">🌐 ${f.host}</span>` : ''}
-            </div>
-          </div>
-          <div class="btn-group">
-            ${showSend ? `<button class="btn ok sm" onclick="window.__installFile('${safeName}','${safeUrl}')">⚡ Send to PS4</button>` : ''}
-            <a class="btn ghost sm" href="${f.url}" target="_blank" rel="noopener noreferrer">🔗 Open</a>
-            <button class="btn ghost sm" onclick="navigator.clipboard.writeText('${safeUrl}');window.__toast('URL copied','ok')">📋</button>
-          </div>
-        </div>`;
-    }).join('');
-
-    const isFav = state.favorites.has(id);
-    $('gmFavTxt').textContent = isFav ? 'Unfavorite' : 'Favorite';
-    $('gameModal').classList.add('open');
-  }
-
-  function closeGame() { $('gameModal').classList.remove('open'); }
-
-  /* ============================================================
-     Window handlers
-     ============================================================ */
-  window.__openGame = openGame;
-  window.__toast = (m, t) => toast(m, t || 'ok');
-  window.__resetFilters = () => {
+  function resetFilters() {
+    query = ''; region = 'all'; kind = 'all'; sort = 'name';
     $('search').value = '';
     $('regionSel').value = 'all';
     $('sortSel').value = 'name';
-    $('favFilter').classList.remove('act');
-    $('directFilter').classList.remove('act');
-    state.kind = 'all';
-    $('kindsBar').querySelectorAll('.kind-btn').forEach(b => {
+    var bar = $('kindsBar');
+    if (bar) bar.querySelectorAll('.kind-btn').forEach(function (b) {
       b.classList.toggle('on', b.dataset.kind === 'all');
     });
-    applyFilters();
-  };
-  window.__toggleFav = (id) => {
-    if (state.favorites.has(id)) { state.favorites.delete(id); toast('Removed from favorites'); }
-    else { state.favorites.add(id); playSound('click'); toast('Added to favorites', 'ok'); }
-    localStorage.setItem('opti_favs', JSON.stringify([...state.favorites]));
-    $('favCount').textContent = state.favorites.size;
-    $('stFavVal').textContent = state.favorites.size;
-    applyFilters();
-  };
-  window.__quickInstall = (id) => {
-    const item = state.catalog.find(g => g.id === id);
-    if (!item) return;
-    const directFile = (item.files || []).find(f => f.direct);
-    if (!directFile) return;
+    apply();
+    toast('Filters reset', 'ok');
+  }
 
-    if (!state.ip) {
-      toast('Set your PS4 IP first', 'warn');
-      switchTab('url');
-      setTimeout(() => $('loaderIp').focus(), 260);
-      return;
-    }
-    installOne(directFile.url, { name: item.name, contentName: item.name, cusa: item.cusa })
-      .then(() => { playSound('success'); toast('Sent: ' + item.name, 'ok'); })
-      .catch(err => { playSound('error'); toast('Failed: ' + err.message, 'err'); });
-  };
-  window.__installFile = (title, url) => {
-    const g = state.activeGame || {};
-    if (!state.ip) {
-      toast('Set your PS4 IP first', 'warn');
-      closeGame();
-      switchTab('url');
-      setTimeout(() => $('loaderIp').focus(), 260);
-      return;
-    }
-    installOne(url, { name: title, contentName: title, cusa: g.cusa })
-      .then(() => { playSound('success'); toast('Sent: ' + title, 'ok'); })
-      .catch(err => { playSound('error'); toast('Failed: ' + err.message, 'err'); });
-  };
+  /* ---------------- game modal ---------------- */
+  function openGame(g) {
+    currentGame = g;
+    var img = $('gmCover');
+    img.onerror = function () { this.style.display = 'none'; };
+    img.src = g.cover || '';
+    $('gmTitle').textContent = g.name;
 
-  /* ============================================================
-     Events
-     ============================================================ */
-  function setupEvents() {
-    document.querySelectorAll('.tab').forEach(t => {
-      t.onclick = () => switchTab(t.dataset.tab);
-    });
+    /* Sub line */
+    var subParts = [];
+    if (g.titleId) subParts.push(g.titleId);
+    if (g.source) subParts.push('Source: ' + g.source);
+    $('gmSub').textContent = subParts.join(' · ') || '—';
 
-    $('themeBtn').onclick = () => {
-      state.theme = state.theme === 'dark' ? 'light' : 'dark';
-      localStorage.setItem('opti_theme', state.theme);
-      document.documentElement.setAttribute('data-theme', state.theme);
-      $('themeBtn').textContent = state.theme === 'dark' ? '🌙' : '☀️';
-    };
-    $('soundBtn').textContent = state.sound ? '🔊' : '🔇';
-    $('soundBtn').onclick = () => {
-      state.sound = !state.sound;
-      localStorage.setItem('opti_sound', state.sound);
-      $('soundBtn').textContent = state.sound ? '🔊' : '🔇';
-    };
+    /* Tag row */
+    var tags = [];
+    if (g.region) tags.push({ t: g.region, c: 'b' });
+    tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's'), c: '' });
 
-    $('loaderIp').value = state.ip;
-    $('loaderIp').onchange = (e) => {
-      state.ip = e.target.value.trim();
-      localStorage.setItem('opti_ip', state.ip);
-      checkTransport();
-    };
+    var directCount = 0;
+    for (var i = 0; i < g.files.length; i++) if (g.files[i].direct) directCount++;
+    if (directCount) tags.push({ t: directCount + ' direct', c: 'g' });
 
-    document.querySelectorAll('input[name="method"]').forEach(r => {
-      if (r.value === state.method) r.checked = true;
-      r.onchange = (e) => {
-        state.method = e.target.value;
-        localStorage.setItem('opti_method', state.method);
-        $('dpiExtras').style.display = state.method === 'goldhen' ? '' : 'none';
-        checkTransport();
-      };
-    });
-    $('dpiExtras').style.display = state.method === 'goldhen' ? '' : 'none';
+    /* Unique regions */
+    var regionSet = {};
+    for (var r = 0; r < g.files.length; r++) if (g.files[r].region) regionSet[g.files[r].region] = 1;
+    var extraRegions = Object.keys(regionSet).filter(function (x) { return x !== g.region; });
+    if (extraRegions.length) tags.push({ t: 'Also ' + extraRegions.join(', '), c: '' });
 
-    $('loaderInstall').onclick = loadFromUrl;
-
-    $('pickFromClip').onclick = async () => {
-      try {
-        const t = await navigator.clipboard.readText();
-        $('loaderUrl').value = t;
-        toast('Pasted from clipboard', 'ok');
-      } catch (e) { toast('Clipboard access denied', 'err'); }
-    };
-
-    $('search').oninput = applyFilters;
-    $('regionSel').onchange = applyFilters;
-    $('sortSel').onchange = applyFilters;
-
-    $('favFilter').onclick = () => { $('favFilter').classList.toggle('act'); applyFilters(); };
-    $('directFilter').onclick = () => { $('directFilter').classList.toggle('act'); applyFilters(); };
-
-    document.querySelectorAll('#viewToggle button').forEach(btn => {
-      if (btn.dataset.view === state.view) {
-        document.querySelectorAll('#viewToggle button').forEach(b => b.classList.remove('on'));
-        btn.classList.add('on');
+    /* Kinds present */
+    var kindSet = {};
+    for (var k = 0; k < g.files.length; k++) {
+      if (!kindSet[g.files[k].kind]) {
+        kindSet[g.files[k].kind] = 1;
+        var km = kindMeta(g.files[k].kind);
+        tags.push({ t: km.emoji + ' ' + km.label, c: '' });
       }
-      btn.onclick = () => {
-        document.querySelectorAll('#viewToggle button').forEach(b => b.classList.remove('on'));
-        btn.classList.add('on');
-        state.view = btn.dataset.view;
-        localStorage.setItem('opti_view', state.view);
-        renderGrid();
-      };
+    }
+
+    var tagsHtml = '';
+    for (var t = 0; t < tags.length; t++) {
+      tagsHtml += '<span class="gm-tag ' + (tags[t].c || '') + '">' + esc(tags[t].t) + '</span>';
+    }
+    $('gmTags').innerHTML = tagsHtml;
+
+    /* Files list, sorted by kind order */
+    var sortedFiles = g.files.slice().sort(function (a, b) {
+      var ai = KIND_ORDER.indexOf(a.kind);
+      var bi = KIND_ORDER.indexOf(b.kind);
+      if (ai === -1) ai = 99;
+      if (bi === -1) bi = 99;
+      return ai - bi;
     });
 
-    $('randomBtn').onclick = () => {
-      if (!state.filtered.length) return;
-      const r = state.filtered[Math.floor(Math.random() * state.filtered.length)];
-      openGame(r.id);
+    $('gmFileCount').textContent = g.files.length + ' total · ' + directCount + ' direct';
+
+    var filesHtml = '';
+    for (var fi = 0; fi < sortedFiles.length; fi++) {
+      var f = sortedFiles[fi];
+      var fkm = kindMeta(f.kind);
+      var safeUrl = (f.url || '').replace(/'/g, "\\'");
+
+      filesHtml += '<div class="frow" data-kind="' + f.kind + '">'
+        + '<div class="fmain">'
+        + '<div class="fname">' + esc(f.label) + '</div>'
+        + '<div class="facts">'
+        + '<span class="kind ' + f.kind + '"><span class="e">' + fkm.emoji + '</span>' + fkm.label + '</span>'
+        + '<span class="tag ' + (f.direct ? 'direct' : 'redirect') + '">' + (f.direct ? '⬇ Direct .pkg' : '↪ External') + '</span>'
+        + (f.size ? '<span class="fact size">' + esc(sizeLabel(f.size)) + '</span>' : '')
+        + (f.version ? '<span class="fact version">v' + esc(f.version) + '</span>' : '')
+        + (f.region ? '<span class="fact">' + esc(f.region) + '</span>' : '')
+        + (f.minFw ? '<span class="fact">FW ' + esc(f.minFw) + '</span>' : '')
+        + (f.host ? '<span class="fact globe">🌐 ' + esc(f.host) + '</span>' : '')
+        + '</div>'
+        + '</div>'
+        + '<div class="btn-group">'
+        + (f.direct
+            ? '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Opens the direct link in a new tab">📥 Download</a>'
+            : '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Landing page — opens in a new tab">🔗 Open host</a>')
+        + '<button class="btn ghost icon sm" type="button" onclick="navigator.clipboard && navigator.clipboard.writeText(\'' + safeUrl + '\')" title="Copy URL">📋</button>'
+        + '</div>'
+        + '</div>';
+    }
+    $('gmFiles').innerHTML = filesHtml;
+
+    $('gameModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGame() {
+    $('gameModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* ---------------- help modal ---------------- */
+  function openHelp() {
+    $('helpModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeHelp() {
+    $('helpModal').classList.remove('open');
+    if (!$('gameModal').classList.contains('open')) document.body.style.overflow = '';
+  }
+
+  /* ---------------- wire ---------------- */
+  function wire() {
+    var searchEl = $('search');
+    var debounce = null;
+    searchEl.oninput = function () {
+      clearTimeout(debounce);
+      var v = searchEl.value;
+      debounce = setTimeout(function () {
+        query = v.toLowerCase().trim();
+        apply();
+      }, 100);
     };
+
+    $('regionSel').onchange = function () { region = this.value; apply(); };
+    $('sortSel').onchange = function () { sort = this.value; apply(); };
 
     $('modalClose').onclick = closeGame;
-    $('gameModal').addEventListener('click', (e) => { if (e.target === $('gameModal')) closeGame(); });
-    $('helpBtn').onclick = () => $('helpModal').classList.add('open');
-    $('kbdBtn').onclick = () => $('helpModal').classList.add('open');
-    $('helpClose').onclick = () => $('helpModal').classList.remove('open');
-    $('helpModal').addEventListener('click', (e) => { if (e.target === $('helpModal')) $('helpModal').classList.remove('open'); });
-
-    $('gmFav').onclick = () => { if (state.activeGame) window.__toggleFav(state.activeGame.id); };
-
-    $('sendAllBtn').onclick = () => {
-      if (!state.activeGame) return;
-      if (!state.ip) {
-        toast('Set your PS4 IP first', 'warn');
-        closeGame();
-        switchTab('url');
-        setTimeout(() => $('loaderIp').focus(), 260);
-        return;
-      }
-      const files = (state.activeGame.files || []).filter(f => f.direct);
-      if (!files.length) { toast('No direct PKG files for this title', 'warn'); return; }
-      files.forEach(f => {
-        installOne(f.url, { name: state.activeGame.name, contentName: state.activeGame.name, cusa: state.activeGame.cusa })
-          .catch(err => toast('Failed: ' + err.message, 'err'));
-      });
-      toast('Sending ' + files.length + ' package(s)…', 'info');
-    };
-
-    $('gmCopyJson').onclick = () => {
-      if (!state.activeGame) return;
-      navigator.clipboard.writeText(JSON.stringify(state.activeGame, null, 2));
-      toast('JSON copied', 'ok');
-    };
-
-    $('gmShare').onclick = () => {
-      if (!state.activeGame) return;
-      const url = location.origin + location.pathname + '#game=' + encodeURIComponent(state.activeGame.name);
-      if (navigator.share) navigator.share({ title: state.activeGame.name, url }).catch(() => {});
-      else { navigator.clipboard.writeText(url); toast('Share link copied', 'ok'); }
-    };
-
-    $('gmNotes').onchange = (e) => {
-      if (!state.activeGame) return;
-      state.notes[state.activeGame.id] = e.target.value;
-      localStorage.setItem('opti_notes', JSON.stringify(state.notes));
-    };
-
-    $('stripClose').onclick = () => $('strip').classList.add('hide');
-    $('donateCopyBtn').onclick = () => {
-      navigator.clipboard.writeText($('donateAddr').textContent);
-      $('donateCopyBtn').textContent = 'Copied!';
-      $('donateCopyBtn').classList.add('done');
-      setTimeout(() => {
-        $('donateCopyBtn').textContent = 'Copy';
-        $('donateCopyBtn').classList.remove('done');
-      }, 2000);
-    };
-
-    window.addEventListener('keydown', (e) => {
-      const tag = (e.target && e.target.tagName) || '';
-      if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
-
-      if (e.key === '1') { switchTab('library'); return; }
-      if (e.key === '2') { switchTab('url'); return; }
-
-      if (e.key === '/') { e.preventDefault(); switchTab('library'); $('search').focus(); }
-      if (e.key.toLowerCase() === 't') $('themeBtn').click();
-      if (e.key.toLowerCase() === 'f') $('favFilter').click();
-      if (e.key.toLowerCase() === 'r') $('randomBtn').click();
-      if (e.key.toLowerCase() === 's' || e.key === '?') $('helpModal').classList.add('open');
-      if (e.key === 'Escape') {
-        $('gameModal').classList.remove('open');
-        $('helpModal').classList.remove('open');
-      }
+    $('gameModal').addEventListener('click', function (e) {
+      if (e.target === $('gameModal')) closeGame();
     });
 
-    window.addEventListener('hashchange', () => {
-      const h = location.hash;
-      if (h === '#direct-url') switchTab('url');
-      else if (h === '#library') switchTab('library');
+    $('gmCopyAll').onclick = function () {
+      if (!currentGame) return;
+      var urls = [];
+      for (var i = 0; i < currentGame.files.length; i++) urls.push(currentGame.files[i].url);
+      if (!urls.length) { toast('No URLs to copy', 'err'); return; }
+      copyText(urls.join('\n'));
+    };
+
+    $('helpBtn').onclick = openHelp;
+    $('helpClose').onclick = closeHelp;
+    $('helpModal').addEventListener('click', function (e) {
+      if (e.target === $('helpModal')) closeHelp();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeGame(); closeHelp(); }
+      var tag = (e.target && e.target.tagName) || '';
+      if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        e.preventDefault();
+        searchEl.focus();
+        searchEl.select();
+      }
     });
   }
 
-  /* ============================================================
-     Init
-     ============================================================ */
-  function init() {
-    document.documentElement.setAttribute('data-theme', state.theme);
-    $('themeBtn').textContent = state.theme === 'dark' ? '🌙' : '☀️';
-    $('favCount').textContent = state.favorites.size;
-    $('stFavVal').textContent = state.favorites.size;
-
-    setupEvents();
-
-    const h = location.hash;
-    if (h === '#direct-url') state.tab = 'url';
-    else if (h === '#library') state.tab = 'library';
-    switchTab(state.tab);
-
-    checkTransport();
-    loadData();
-  }
-
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', init);
-  } else {
-    init();
-  }
+  /* ---------------- boot ---------------- */
+  wire();
+  loadCatalog();
 
 })();
 </script>
