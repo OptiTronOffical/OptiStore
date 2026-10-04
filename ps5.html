@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>OptiStore — PS5 Library</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06070c; --surface:#0d1019; --surface-2:#12151f; --card:#0e121c;
+  --line:#1a1f2e; --line-2:#262d42;
+  --accent:#7c5cff; --accent-2:#22d3ee; --accent-3:#a78bfa;
+  --accent-soft:rgba(124,92,255,.12); --accent-glow:rgba(124,92,255,.32);
+  --ok:#10b981; --ok-2:#34d399; --ok-soft:rgba(16,185,129,.10);
+  --err:#f43f5e; --err-soft:rgba(244,63,94,.10);
+  --tx:#eef1f8; --tx-2:#98a1b8; --tx-3:#5a6379;
+  --f:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --m:'JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--tx);font-family:var(--f);
+  font-size:15px;line-height:1.55;min-height:100%;
+  -webkit-font-smoothing:antialiased;
+}
+body{
+  background-image:
+    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,.14), transparent 62%),
+    radial-gradient(800px 400px at 95% 5%, rgba(34,211,238,.07), transparent 60%);
+  background-attachment:fixed;
+}
+::-webkit-scrollbar{width:11px;height:11px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
+::selection{background:var(--accent);color:#fff}
+
+.topbar{
+  position:sticky;top:0;z-index:100;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 clamp(16px,3vw,34px);
+  background:rgba(6,7,12,.82);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand-mark{
+  width:36px;height:36px;border-radius:11px;flex:none;
+  background:linear-gradient(135deg,var(--accent),var(--accent-2));
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:#06070c;letter-spacing:-.05em;
+  box-shadow:0 8px 22px -8px var(--accent-glow);
+}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
+.brand-txt .n{font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.brand-txt .n em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.topbar-right{display:flex;align-items:center;gap:10px}
+
+.wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 100px}
+
+.hero{padding:52px 0 30px;text-align:center}
+.hero h1{
+  font-size:clamp(32px,5.4vw,54px);font-weight:900;
+  letter-spacing:-.04em;line-height:1.05;
+}
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{margin:15px auto 0;max-width:620px;font-size:14.5px;color:var(--tx-2)}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.stat{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  padding:12px 22px;min-width:110px;border-radius:13px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+}
+.stat .v{font-size:22px;font-weight:800;letter-spacing:-.025em;line-height:1.2}
+.stat .v.g{
+  background:linear-gradient(135deg,var(--ok-2),#6ee7b7);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+}
+.stat .k{font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--tx-3)}
+
+.toolbar{
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  padding:14px;margin-bottom:24px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.7);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  position:sticky;top:64px;z-index:50;
+}
+.search-wrap{position:relative;flex:1 1 260px;min-width:200px}
+.search-wrap .ico{
+  position:absolute;left:14px;top:50%;transform:translateY(-50%);
+  color:var(--tx-3);pointer-events:none;
+}
+.search-wrap input{
+  width:100%;padding:11px 14px 11px 40px;
+  font-family:inherit;font-size:14px;
+  background:rgba(0,0,0,.32);border:1px solid var(--line);
+  border-radius:9px;color:var(--tx);outline:none;
+  transition:.18s;
+}
+.search-wrap input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+  background:rgba(0,0,0,.45);
+}
+.search-wrap input::placeholder{color:var(--tx-3)}
+select{
+  padding:11px 34px 11px 14px;
+  font-family:inherit;font-size:13.5px;
+  background:rgba(0,0,0,.32);border:1px solid var(--line);
+  border-radius:9px;color:var(--tx);outline:none;
+  cursor:pointer;-webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6379' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;
+  transition:.18s;
+}
+select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
+select option{background:#0d1019;color:var(--tx)}
+
+.count{
+  margin-left:auto;
+  font-family:var(--m);font-size:12px;font-weight:600;
+  color:var(--tx-2);padding:9px 15px;border-radius:99px;
+  border:1px solid var(--line);background:rgba(0,0,0,.32);
+  white-space:nowrap;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
+  gap:22px;
+}
+.card{
+  position:relative;display:flex;flex-direction:column;
+  border-radius:13px;border:1px solid var(--line);
+  background:var(--card);overflow:hidden;cursor:pointer;
+  transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .22s,box-shadow .3s;
+}
+.card:hover{
+  transform:translateY(-6px);
+  border-color:rgba(124,92,255,.5);
+  box-shadow:0 26px 50px -22px rgba(124,92,255,.45),0 0 0 1px rgba(124,92,255,.15);
+}
+.card:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+.cover{
+  position:relative;width:100%;aspect-ratio:3/4;
+  background:linear-gradient(160deg,#0b0e17,#070a11);
+  overflow:hidden;
+}
+.cover .placeholder{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:44px;font-weight:900;color:rgba(255,255,255,.055);
+  letter-spacing:-.05em;pointer-events:none;user-select:none;
+}
+.cover img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;opacity:0;
+  transition:transform .5s cubic-bezier(.2,.8,.3,1),opacity .35s;
+}
+.cover img.ready{opacity:1}
+.card:hover .cover img{transform:scale(1.06)}
+.cover::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 48%,rgba(6,7,12,.92) 100%);
+  opacity:.9;pointer-events:none;
+}
+.ribbons{
+  position:absolute;top:10px;left:10px;right:10px;
+  display:flex;gap:5px;flex-wrap:wrap;z-index:2;pointer-events:none;
+}
+.ribbon{
+  font-family:var(--m);font-size:9.5px;font-weight:700;letter-spacing:.06em;
+  padding:4px 9px;border-radius:99px;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(8,10,16,.78);color:#fff;text-transform:uppercase;
+}
+.ribbon.cat{color:#a5b4fc;border-color:rgba(124,92,255,.4);background:rgba(13,10,40,.82)}
+.ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.4);background:rgba(4,35,26,.82)}
+
+.info{padding:13px 14px 14px;display:flex;flex-direction:column;gap:10px;flex:1}
+.info h3{
+  font-size:13px;font-weight:650;line-height:1.38;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
+  overflow:hidden;min-height:2.76em;letter-spacing:-.005em;
+}
+.info .row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  margin-top:auto;font-family:var(--m);font-size:10.5px;
+  color:var(--tx-3);font-weight:600;
+}
+
+.sk{border-radius:13px;border:1px solid var(--line);background:var(--card);overflow:hidden}
+.sk .sk-c{aspect-ratio:3/4;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
+.sk .sk-l{height:11px;margin:14px 14px 0;border-radius:4px;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
+.sk .sk-l.short{width:55%;margin-bottom:16px}
+@keyframes shim{0%{background-position:120% 0}100%{background-position:-120% 0}}
+
+.empty{
+  grid-column:1/-1;text-align:center;padding:90px 24px;
+  border-radius:18px;border:1px dashed var(--line-2);
+  background:rgba(255,255,255,.012);color:var(--tx-3);
+}
+.empty .big{font-size:42px;margin-bottom:14px;opacity:.55}
+.empty b{display:block;color:var(--tx-2);font-size:15px;font-weight:700;margin-bottom:5px}
+.empty small{font-size:12.5px}
+
+.overlay{
+  display:none;position:fixed;inset:0;z-index:900;
+  padding:24px 16px;overflow-y:auto;
+  background:rgba(3,4,8,.84);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+}
+.overlay.open{display:flex;align-items:flex-start;justify-content:center}
+.modal{
+  position:relative;width:100%;max-width:820px;margin:auto;
+  border-radius:24px;border:1px solid var(--line);
+  background:linear-gradient(180deg,var(--surface-2),var(--surface));
+  box-shadow:0 30px 70px -24px rgba(0,0,0,.9);
+  overflow:hidden;
+  animation:pop .28s cubic-bezier(.16,1,.3,1);
+}
+@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.975)}to{opacity:1;transform:none}}
+.modal-close{
+  position:absolute;top:16px;right:16px;z-index:5;
+  width:34px;height:34px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(8,10,16,.75);
+  color:var(--tx-2);font-size:14px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:.2s;
+}
+.modal-close:hover{background:#f43f5e;border-color:#f43f5e;color:#fff;transform:rotate(90deg)}
+
+.gm-head{
+  display:grid;grid-template-columns:200px 1fr;gap:24px;padding:24px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(135deg,rgba(124,92,255,.08),transparent 60%);
+}
+.gm-cover{
+  width:100%;aspect-ratio:3/4;border-radius:13px;
+  overflow:hidden;border:1px solid var(--line);background:#080b12;
+  display:flex;align-items:center;justify-content:center;
+  font-size:48px;font-weight:900;color:rgba(255,255,255,.08);
+  position:relative;
+}
+.gm-cover img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.gm-meta{padding-top:4px;min-width:0}
+.gm-meta h2{
+  font-size:24px;font-weight:800;letter-spacing:-.028em;
+  line-height:1.22;padding-right:40px;
+}
+.gm-meta .sub{
+  font-family:var(--m);font-size:12px;color:var(--tx-3);
+  margin-top:6px;
+}
+.gm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.gm-tag{
+  font-family:var(--m);font-size:10.5px;font-weight:600;
+  padding:4px 11px;border-radius:99px;
+  border:1px solid var(--line);background:rgba(0,0,0,.3);
+  color:var(--tx-2);
+}
+.gm-tag.b{color:#a5b4fc;border-color:rgba(124,92,255,.35);background:var(--accent-soft)}
+.gm-tag.g{color:#6ee7c0;border-color:rgba(16,185,129,.35);background:var(--ok-soft)}
+
+.gm-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:18px}
+.field{display:flex;flex-direction:column;gap:5px}
+.field label{
+  font-size:10.5px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tx-3);
+}
+
+.gm-desc{
+  white-space:pre-line;
+  font-family:var(--f);
+  font-size:12.5px;
+  color:var(--tx-2);
+  line-height:1.65;
+  padding:12px 14px;
+  border-radius:9px;
+  background:rgba(0,0,0,.3);
+  border:1px solid var(--line);
+  max-height:220px;
+  overflow-y:auto;
+}
+
+.link-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.link-row{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:rgba(0,0,0,.28);
+  border:1px solid var(--line);
+  transition:.18s;
+}
+.link-row:hover{border-color:var(--line-2);background:rgba(0,0,0,.4)}
+.link-info{flex:1;min-width:0}
+.link-name{
+  font-family:var(--m);
+  font-size:12.5px;
+  font-weight:700;
+  color:var(--tx);
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.link-meta{
+  font-family:var(--m);
+  font-size:10px;
+  color:var(--tx-3);
+  margin-top:3px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.link-actions{display:flex;gap:6px;flex:none}
+
+.copy-btn{
+  flex:none;padding:0 10px;height:34px;border-radius:9px;
+  border:1px solid var(--line);background:rgba(0,0,0,.3);
+  color:var(--tx-2);font-family:inherit;font-size:13px;
+  font-weight:700;cursor:pointer;transition:.18s;
+  display:flex;align-items:center;gap:6px;
+}
+.copy-btn:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:11px 18px;border-radius:9px;border:1px solid transparent;
+  font-family:inherit;font-size:13px;font-weight:700;
+  cursor:pointer;text-decoration:none;transition:.18s;
+  white-space:nowrap;line-height:1;
+}
+.btn svg{width:14px;height:14px;flex:none}
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;box-shadow:0 10px 26px -10px var(--accent-glow);
+}
+.btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--tx-2)}
+.btn.ghost:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+.btn.sm{padding:8px 14px;font-size:12px;height:34px}
+
+#toasts{
+  position:fixed;right:20px;bottom:20px;z-index:2000;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:min(420px,calc(100vw - 40px));pointer-events:none;
+}
+.toast{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:13px 15px;border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(16,21,34,.97);
+  backdrop-filter:blur(14px);
+  box-shadow:0 14px 34px -14px rgba(0,0,0,.7);
+  font-size:13px;font-weight:500;line-height:1.5;
+  animation:slideIn .3s cubic-bezier(.16,1,.3,1);
+  pointer-events:auto;
+}
+.toast.out{animation:slideOut .24s ease forwards}
+.toast.ok{border-color:rgba(16,185,129,.4);background:rgba(6,38,30,.97)}
+.toast.err{border-color:rgba(244,63,94,.4);background:rgba(44,12,18,.97)}
+.toast.info{border-color:rgba(34,211,238,.4);background:rgba(5,26,34,.97)}
+@keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
+
+.foot{
+  border-top:1px solid var(--line);margin-top:48px;padding:26px 0 0;
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+  justify-content:space-between;font-size:12px;color:var(--tx-3);
+}
+.foot a{color:var(--tx-2);text-decoration:none;transition:.16s}
+.foot a:hover{color:var(--accent-2)}
+
+@media (max-width:760px){
+  .gm-head{grid-template-columns:120px 1fr;gap:16px;padding:20px}
+  .gm-meta h2{font-size:18px;padding-right:36px}
+  .gm-body{padding:18px}
+  .hero{padding:36px 0 20px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .brand-txt .s{display:none}
+}
+@media (max-width:460px){
+  .gm-head{grid-template-columns:1fr;gap:16px}
+  .gm-cover{max-width:150px}
+  .hero h1{font-size:28px}
+  .toolbar{top:64px;padding:10px}
+  .link-row{flex-direction:column;align-items:stretch}
+  .link-actions{justify-content:flex-end}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">O</div>
+    <div class="brand-txt">
+      <div class="n">OptiTron <em>Store</em></div>
+      <div class="s">PS5 Library</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <h1>Every PS5 package.<br><em>One tap away.</em></h1>
+    <p>Browse the PS5 catalog and grab download links for every game, update, and DLC.</p>
+
+    <div class="stats">
+      <div class="stat"><span class="v" id="statTotal">—</span><span class="k">Packages</span></div>
+      <div class="stat"><span class="v g" id="statSize">—</span><span class="k">Total Size</span></div>
+      <div class="stat"><span class="v" id="statGame">—</span><span class="k">Games</span></div>
+      <div class="stat"><span class="v" id="statUpd">—</span><span class="k">Updates</span></div>
+      <div class="stat"><span class="v" id="statOther">—</span><span class="k">Other</span></div>
+    </div>
+  </section>
+
+  <section class="toolbar">
+    <div class="search-wrap">
+      <span class="ico">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+        </svg>
+      </span>
+      <input type="search" id="search" placeholder="Search by title or title ID…" autocomplete="off" spellcheck="false">
+    </div>
+    <select id="categorySel" title="Category"><option value="all">All Categories</option></select>
+    <select id="sortSel" title="Sort">
+      <option value="name">Name A–Z</option>
+      <option value="name-desc">Name Z–A</option>
+      <option value="size">Largest first</option>
+      <option value="size-asc">Smallest first</option>
+    </select>
+    <span class="count" id="count">Loading…</span>
+  </section>
+
+  <div class="grid" id="grid"></div>
+
+  <footer class="foot">
+    <div>OptiStore · PS5 · unofficial fan library</div>
+    <div>
+      Catalog: <span style="font-family:var(--m);color:#a5b4fc">ps5-catalog.json</span>
+    </div>
+  </footer>
+
+</main>
+
+<div class="overlay" id="gameModal">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" type="button">✕</button>
+    <div class="gm-head">
+      <div class="gm-cover" id="gmCoverWrap">
+        <img id="gmCover" alt="" src="">
+      </div>
+      <div class="gm-meta">
+        <h2 id="gmTitle">Package Title</h2>
+        <div class="sub" id="gmSub">—</div>
+        <div class="gm-tags" id="gmTags"></div>
+      </div>
+    </div>
+    <div class="gm-body">
+      <div class="field" id="gmDescWrap">
+        <label>Description</label>
+        <div class="gm-desc" id="gmDesc">—</div>
+      </div>
+
+      <div class="field">
+        <label>Download links</label>
+        <div class="link-list" id="gmLinks"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toasts"></div>
+
+<script>
+(function () {
+  'use strict';
+
+  /* =====================================================================
+     CONFIG
+     ===================================================================== */
+  var CATALOG_URL = 'ps5-catalog.json';
+
+  var catalog = [];
+  var filtered = [];
+  var query = '';
+  var category = 'all';
+  var sort = 'name';
+  var currentGame = null;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function log() {
+    try { console.log.apply(console, ['[OptiStore PS5]'].concat([].slice.call(arguments))); } catch (e) {}
+  }
+
+  function esc(s) {
+    return String(s == null ? '' : s)
+      .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  function toast(msg, kind) {
+    kind = kind || 'info';
+    var box = $('toasts');
+    var el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : 'ℹ️';
+    el.innerHTML = '<div style="flex:none;font-size:15px">' + icon + '</div><div>' + esc(msg) + '</div>';
+    box.appendChild(el);
+    setTimeout(function () {
+      el.classList.add('out');
+      setTimeout(function () { el.remove(); }, 250);
+    }, 3600);
+  }
+
+  function fmtSize(bytes) {
+    if (!bytes) return '—';
+    var gb = bytes / (1024 * 1024 * 1024);
+    if (gb >= 1024) return (gb / 1024).toFixed(2) + ' TB';
+    return gb.toFixed(2) + ' GB';
+  }
+
+  function copyText(t) {
+    if (!t) { toast('Nothing to copy', 'err'); return; }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(t).then(function () {
+        toast('Copied to clipboard', 'ok');
+      }).catch(function () { fallbackCopy(t); });
+    } else { fallbackCopy(t); }
+  }
+
+  function fallbackCopy(t) {
+    var ta = document.createElement('textarea');
+    ta.value = t;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); toast('Copied', 'ok'); }
+    catch (e) { toast('Copy failed', 'err'); }
+    document.body.removeChild(ta);
+  }
+
+  /* =====================================================================
+     CATALOG
+     ===================================================================== */
+  function normalizeCatalog(raw) {
+    // Expected shape: { name, version, packages: [ {...}, ... ] }
+    // Be defensive: also accept { packages: { url: {...} } } or a bare array.
+    var list = [];
+    if (!raw) return list;
+
+    var src = null;
+    if (Array.isArray(raw)) src = raw;
+    else if (raw && Array.isArray(raw.packages)) src = raw.packages;
+    else if (raw && raw.packages && typeof raw.packages === 'object') {
+      src = [];
+      var kk = Object.keys(raw.packages);
+      for (var i = 0; i < kk.length; i++) src.push(raw.packages[kk[i]]);
+    } else if (raw && raw.DATA && typeof raw.DATA === 'object') {
+      src = [];
+      var dk = Object.keys(raw.DATA);
+      for (var j = 0; j < dk.length; j++) src.push(raw.DATA[dk[j]]);
+    }
+
+    if (!src) return list;
+
+    for (var k = 0; k < src.length; k++) {
+      var m = src[k] || {};
+      var links = Array.isArray(m.downloadLinks) ? m.downloadLinks : [];
+
+      list.push({
+        titleId: m.titleId || m.title_id || '',
+        title: m.title || m.name || 'Untitled',
+        version: m.version || '',
+        category: (m.category || '').toLowerCase(),
+        posterUrl: m.posterUrl || m.poster_url || '',
+        description: m.description || '',
+        downloadLinks: links.map(function (l) {
+          return {
+            name: l.name || '',
+            url: l.url || '',
+            group: l.group || '',
+            version: l.version || '',
+            mirror: l.mirror || ''
+          };
+        }),
+        downloadSource: m.downloadSource || '',
+        fileFormat: Array.isArray(m.fileFormat) ? m.fileFormat : [],
+        sizeBytes: Number(m.sizeBytes) || 0,
+        formatLabel: m.formatLabel || ''
+      });
+    }
+    return list;
+  }
+
+  function loadCatalog() {
+    var grid = $('grid');
+    var sk = '';
+    for (var i = 0; i < 12; i++) {
+      sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
+    }
+    grid.innerHTML = sk;
+
+    var x = new XMLHttpRequest();
+    x.open('GET', CATALOG_URL + '?t=' + Date.now(), true);
+    x.onload = function () {
+      if (x.status >= 200 && x.status < 300) {
+        try {
+          var raw = JSON.parse(x.responseText);
+          catalog = normalizeCatalog(raw);
+          log('catalog loaded:', catalog.length, 'packages');
+          buildStats();
+          buildCategoryFilter();
+          apply();
+        } catch (e) {
+          log('ps5-catalog.json parse failed:', e.message);
+          grid.innerHTML = '<div class="empty"><div class="big">⚠️</div>'
+            + '<b>Could not parse ps5-catalog.json</b><small>' + esc(e.message) + '</small></div>';
+          $('count').textContent = '0';
+        }
+      } else {
+        log('ps5-catalog.json HTTP', x.status);
+        grid.innerHTML = '<div class="empty"><div class="big">📡</div>'
+          + '<b>Could not load ps5-catalog.json</b><small>HTTP ' + x.status + '</small></div>';
+        $('count').textContent = '0';
+      }
+    };
+    x.onerror = function () {
+      log('ps5-catalog.json network error');
+      grid.innerHTML = '<div class="empty"><div class="big">📡</div>'
+        + '<b>Could not load ps5-catalog.json</b><small>Make sure ps5-catalog.json sits next to ps5.html.</small></div>';
+      $('count').textContent = '0';
+    };
+    x.send();
+  }
+
+  function buildStats() {
+    var total = catalog.length;
+    var totalBytes = 0;
+    var cats = {};
+    for (var i = 0; i < catalog.length; i++) {
+      totalBytes += catalog[i].sizeBytes || 0;
+      var c = catalog[i].category || 'other';
+      cats[c] = (cats[c] || 0) + 1;
+    }
+    $('statTotal').textContent = total.toLocaleString();
+    $('statSize').textContent = fmtSize(totalBytes);
+    $('statGame').textContent = (cats.game || 0).toLocaleString();
+    $('statUpd').textContent = (cats.update || cats.upd || 0).toLocaleString();
+    var other = 0;
+    for (var k in cats) if (k !== 'game' && k !== 'update' && k !== 'upd') other += cats[k];
+    $('statOther').textContent = other.toLocaleString();
+  }
+
+  function buildCategoryFilter() {
+    var seen = {};
+    for (var i = 0; i < catalog.length; i++) {
+      if (catalog[i].category) seen[catalog[i].category] = 1;
+    }
+    var list = Object.keys(seen).sort();
+    var sel = $('categorySel');
+    sel.innerHTML = '<option value="all">All Categories</option>';
+    for (var j = 0; j < list.length; j++) {
+      var o = document.createElement('option');
+      o.value = list[j];
+      o.textContent = list[j].charAt(0).toUpperCase() + list[j].slice(1);
+      sel.appendChild(o);
+    }
+  }
+
+  function apply() {
+    var q = query;
+    filtered = catalog.filter(function (g) {
+      if (q && (g.title || '').toLowerCase().indexOf(q) < 0
+              && (g.titleId || '').toLowerCase().indexOf(q) < 0) return false;
+      if (category !== 'all' && g.category !== category) return false;
+      return true;
+    });
+
+    if (sort === 'name') filtered.sort(function (a, b) { return (a.title || '').localeCompare(b.title || ''); });
+    else if (sort === 'name-desc') filtered.sort(function (a, b) { return (b.title || '').localeCompare(a.title || ''); });
+    else if (sort === 'size') filtered.sort(function (a, b) { return (b.sizeBytes || 0) - (a.sizeBytes || 0); });
+    else if (sort === 'size-asc') filtered.sort(function (a, b) { return (a.sizeBytes || 0) - (b.sizeBytes || 0); });
+
+    render();
+  }
+
+  function render() {
+    var grid = $('grid');
+    $('count').textContent = filtered.length.toLocaleString() + ' package' + (filtered.length === 1 ? '' : 's');
+
+    if (!filtered.length) {
+      grid.innerHTML = '<div class="empty"><div class="big">🔍</div><b>No packages match</b><small>Try a different search or category filter.</small></div>';
+      return;
+    }
+
+    var html = '';
+    for (var i = 0; i < filtered.length; i++) {
+      var g = filtered[i];
+      var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
+      var src = g.posterUrl ? esc(g.posterUrl) : '';
+      var cat = g.category ? g.category.charAt(0).toUpperCase() + g.category.slice(1) : '';
+
+      html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">'
+        + '<div class="cover">'
+        + '<div class="placeholder">' + esc(initial) + '</div>'
+        + (src
+            ? '<img src="' + src + '" alt="" loading="lazy" '
+              + 'onload="this.classList.add(\'ready\')" '
+              + 'onerror="this.style.display=\'none\'">'
+            : '')
+        + '<div class="ribbons">'
+        + (cat ? '<span class="ribbon cat">' + esc(cat) + '</span>' : '')
+        + (g.version ? '<span class="ribbon ok">v' + esc(g.version) + '</span>' : '')
+        + '</div>'
+        + '</div>'
+        + '<div class="info">'
+        + '<h3>' + esc(g.title) + '</h3>'
+        + '<div class="row"><span>' + esc(g.titleId || '') + '</span><span>' + fmtSize(g.sizeBytes) + '</span></div>'
+        + '</div>'
+        + '</div>';
+    }
+    grid.innerHTML = html;
+
+    var cards = grid.querySelectorAll('.card');
+    for (var k = 0; k < cards.length; k++) {
+      (function (card) {
+        var idx = Number(card.getAttribute('data-idx'));
+        card.addEventListener('click', function () { openGame(filtered[idx]); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openGame(filtered[idx]);
+          }
+        });
+      })(cards[k]);
+    }
+  }
+
+  /* =====================================================================
+     MODAL
+     ===================================================================== */
+  function setModalCover(g) {
+    var wrap = $('gmCoverWrap');
+    var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
+    wrap.setAttribute('data-initial', initial);
+
+    var oldImg = wrap.querySelector('img');
+    if (oldImg) oldImg.remove();
+
+    if (g.posterUrl) {
+      var img = document.createElement('img');
+      img.alt = '';
+      img.onerror = function () { this.remove(); };
+      img.src = g.posterUrl;
+      wrap.appendChild(img);
+    }
+  }
+
+  function renderLinks(g) {
+    var box = $('gmLinks');
+    var links = g.downloadLinks || [];
+
+    if (!links.length) {
+      box.innerHTML = '<div class="link-row"><div class="link-info">'
+        + '<div class="link-name" style="color:var(--tx-3)">No download links available</div>'
+        + '</div></div>';
+      return;
+    }
+
+    var html = '';
+    for (var i = 0; i < links.length; i++) {
+      var l = links[i];
+      var meta = [];
+      if (l.group) meta.push(l.group);
+      if (l.version) meta.push('v' + l.version);
+      if (l.mirror) meta.push(l.mirror);
+
+      html += '<div class="link-row">'
+        + '<div class="link-info">'
+        + '<div class="link-name">' + esc(l.name || 'Download') + '</div>'
+        + (meta.length ? '<div class="link-meta">' + esc(meta.join(' · ')) + '</div>' : '')
+        + '</div>'
+        + '<div class="link-actions">'
+        + '<button class="copy-btn" type="button" data-copy="' + esc(l.url) + '" title="Copy URL">📋</button>'
+        + '<a class="btn primary sm" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer" '
+        +   'data-name="' + esc(l.name || '') + '">'
+        +   '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">'
+        +     '<path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/>'
+        +   '</svg>'
+        +   'Download'
+        + '</a>'
+        + '</div>'
+        + '</div>';
+    }
+    box.innerHTML = html;
+  }
+
+  function openGame(g) {
+    currentGame = g;
+    setModalCover(g);
+
+    $('gmTitle').textContent = g.title;
+    $('gmSub').textContent = g.titleId || '—';
+
+    var tags = [];
+    if (g.category) tags.push({ t: g.category, c: 'b' });
+    if (g.version) tags.push({ t: 'v' + g.version });
+    if (g.formatLabel) tags.push({ t: g.formatLabel });
+    tags.push({ t: fmtSize(g.sizeBytes) });
+    if (g.downloadLinks && g.downloadLinks.length) {
+      tags.push({ t: g.downloadLinks.length + ' link' + (g.downloadLinks.length === 1 ? '' : 's') });
+    }
+
+    var html = '';
+    for (var i = 0; i < tags.length; i++) {
+      html += '<span class="gm-tag ' + (tags[i].c || '') + '">' + esc(tags[i].t) + '</span>';
+    }
+    $('gmTags').innerHTML = html;
+
+    if (g.description) {
+      $('gmDescWrap').style.display = '';
+      $('gmDesc').textContent = g.description;
+    } else {
+      $('gmDescWrap').style.display = 'none';
+    }
+
+    renderLinks(g);
+
+    $('gameModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeGame() {
+    $('gameModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* =====================================================================
+     WIRE
+     ===================================================================== */
+  function wire() {
+    var searchEl = $('search');
+    var debounce = null;
+    searchEl.oninput = function () {
+      clearTimeout(debounce);
+      var v = searchEl.value;
+      debounce = setTimeout(function () {
+        query = v.toLowerCase().trim();
+        apply();
+      }, 100);
+    };
+
+    $('categorySel').onchange = function () { category = this.value; apply(); };
+    $('sortSel').onchange = function () { sort = this.value; apply(); };
+
+    $('modalClose').onclick = closeGame;
+    $('gameModal').addEventListener('click', function (e) {
+      if (e.target === $('gameModal')) closeGame();
+    });
+
+    /* Delegated handler: copy buttons in the link list */
+    $('gmLinks').addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || t.tagName !== 'BUTTON') return;
+      var copyUrl = t.getAttribute('data-copy');
+      if (copyUrl) { copyText(copyUrl); }
+    });
+
+    /* Toast when a Download button is clicked */
+    $('gmLinks').addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t) return;
+      var a = (t.tagName === 'A') ? t : (t.closest ? t.closest('a') : null);
+      if (!a || !a.getAttribute('data-name')) return;
+      toast('Opening: ' + (currentGame ? currentGame.title : '') + ' — ' + a.getAttribute('data-name'), 'info');
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { closeGame(); }
+      var tag = (e.target && e.target.tagName) || '';
+      if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        e.preventDefault();
+        searchEl.focus();
+        searchEl.select();
+      }
+    });
+  }
+
+  /* =====================================================================
+     BOOT
+     ===================================================================== */
+  wire();
+  loadCatalog();
+
+})();
+</script>
+
+</body>
+</html>
