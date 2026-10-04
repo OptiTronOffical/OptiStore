@@ -1,5 +1,7 @@
 # OptiStore
 
+PS5 Library added, just navigate to your address+ps5 or use web address https://optistore.vercel.app/ps5
+
 A browser-based front end for the PS4's **Remote Package Installer (RPI)**.
 Browse a catalog of `.pkg` files on your PC, then push them straight to your
 console from the PS4 browser.
