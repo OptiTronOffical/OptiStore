@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OptiStore — PS4 Package Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>OptiStore — Package Library</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -45,123 +45,129 @@ body{
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
 ::selection{background:var(--accent);color:#fff}
+button{font-family:inherit}
+a{color:inherit}
 
+/* ---------- TOPBAR ---------- */
 .topbar{
-  position:sticky;top:0;z-index:100;height:64px;
-  display:flex;align-items:center;justify-content:space-between;gap:16px;
-  padding:0 clamp(16px,3vw,34px);
-  background:rgba(6,7,12,.82);
+  position:sticky;top:0;z-index:100;min-height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:0 clamp(14px,2.5vw,28px);
+  background:rgba(6,7,12,.85);
   backdrop-filter:saturate(180%) blur(20px);
   -webkit-backdrop-filter:saturate(180%) blur(20px);
   border-bottom:1px solid var(--line);
 }
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand{display:flex;align-items:center;gap:11px;min-width:0;flex:none}
 .brand-mark{
-  width:36px;height:36px;border-radius:11px;flex:none;
+  width:34px;height:34px;border-radius:10px;flex:none;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
   display:flex;align-items:center;justify-content:center;
-  font-size:16px;font-weight:900;color:#06070c;letter-spacing:-.05em;
+  font-size:15px;font-weight:900;color:#06070c;letter-spacing:-.05em;
   box-shadow:0 8px 22px -8px var(--accent-glow);
 }
-.brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-.brand-txt .n{font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.brand-txt{display:flex;flex-direction:column;line-height:1.12;min-width:0}
+.brand-txt .n{font-size:14.5px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
 .brand-txt .n em{
   font-style:normal;
   background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
-.topbar-right{display:flex;align-items:center;gap:10px}
+.brand-txt .s{font-size:9.5px;color:var(--tx-3);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
 
-.btn-ps4{
+.tabs{
+  display:flex;align-items:center;gap:4px;
+  padding:4px;border-radius:12px;
+  border:1px solid var(--line);background:rgba(0,0,0,.34);
+  overflow-x:auto;scrollbar-width:none;max-width:100%;
+}
+.tabs::-webkit-scrollbar{display:none}
+.tab-btn{
   display:inline-flex;align-items:center;gap:8px;
-  padding:9px 16px;border-radius:9px;
-  font-family:inherit;font-size:12.5px;font-weight:800;
-  color:#fff;text-decoration:none;
+  padding:8px 15px;border-radius:9px;
+  border:1px solid transparent;background:transparent;
+  color:var(--tx-3);font-size:12.5px;font-weight:700;
+  cursor:pointer;transition:.18s;white-space:nowrap;letter-spacing:-.005em;
+}
+.tab-btn svg{width:14px;height:14px;flex:none}
+.tab-btn:hover{color:var(--tx-2);background:rgba(255,255,255,.035)}
+.tab-btn.active{
+  color:#fff;
   background:linear-gradient(135deg,var(--accent),var(--accent-3));
-  box-shadow:0 10px 26px -10px var(--accent-glow);
-  transition:.18s;letter-spacing:.01em;border:0;cursor:pointer;
+  box-shadow:0 8px 22px -10px var(--accent-glow);
 }
-.btn-ps4:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn-ps4 svg{width:14px;height:14px;flex:none}
-.btn-rpi{
+.topbar-right{display:flex;align-items:center;gap:8px;flex:none}
+
+.target-pill{
   display:inline-flex;align-items:center;gap:8px;
-  padding:9px 16px;border-radius:9px;
-  font-family:inherit;font-size:12.5px;font-weight:800;
-  color:#fff;text-decoration:none;
-  background:linear-gradient(135deg,#0ea5e9,#06b6d4);
-  box-shadow:0 10px 26px -10px rgba(6,182,212,.4);
-  transition:.18s;letter-spacing:.01em;border:0;cursor:pointer;
-}
-.btn-rpi:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn-rpi svg{width:14px;height:14px;flex:none}
-.help-btn{
-  width:36px;height:36px;border-radius:11px;
+  font-size:11.5px;font-weight:700;padding:8px 14px;border-radius:99px;
   border:1px solid var(--line);background:rgba(255,255,255,.035);
-  color:var(--tx-2);cursor:pointer;font-size:15px;
+  color:var(--tx-2);cursor:pointer;transition:.18s;
+  white-space:nowrap;font-family:var(--m);
+}
+.target-pill:hover{border-color:var(--line-2);color:var(--tx)}
+.target-pill .dot{
+  width:7px;height:7px;border-radius:50%;background:var(--tx-3);
+  flex:none;transition:.25s;
+}
+.target-pill.ok{color:var(--ok-2);border-color:rgba(16,185,129,.32);background:var(--ok-soft)}
+.target-pill.ok .dot{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
+.target-pill.err{color:#fda4af;border-color:rgba(244,63,94,.32);background:var(--err-soft)}
+.target-pill.err .dot{background:var(--err);box-shadow:0 0 10px var(--err)}
+
+.icon-btn{
+  width:36px;height:36px;border-radius:11px;flex:none;
+  border:1px solid var(--line);background:rgba(255,255,255,.035);
+  color:var(--tx-2);cursor:pointer;font-size:14px;
   display:flex;align-items:center;justify-content:center;
   transition:.18s;
 }
-.help-btn:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+.icon-btn:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+.icon-btn svg{width:15px;height:15px}
 
-.wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 100px}
+/* ---------- LAYOUT ---------- */
+.wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 80px}
+.view{display:none}
+.view.active{display:block}
 
-.hero{padding:52px 0 30px;text-align:center}
+.hero{padding:44px 0 26px;text-align:center}
 .hero h1{
-  font-size:clamp(32px,5.4vw,54px);font-weight:900;
-  letter-spacing:-.04em;line-height:1.05;
+  font-size:clamp(28px,4.6vw,46px);font-weight:900;
+  letter-spacing:-.04em;line-height:1.06;
 }
 .hero h1 em{
   font-style:normal;
   background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.hero p{margin:15px auto 0;max-width:620px;font-size:14.5px;color:var(--tx-2)}
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:28px}
+.hero p{margin:14px auto 0;max-width:620px;font-size:14px;color:var(--tx-2)}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
 .stat{
   display:flex;flex-direction:column;align-items:center;gap:2px;
-  padding:12px 22px;min-width:110px;border-radius:13px;
+  padding:11px 20px;min-width:104px;border-radius:13px;
   border:1px solid var(--line);
   background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
 }
-.stat .v{font-size:22px;font-weight:800;letter-spacing:-.025em;line-height:1.2}
+.stat .v{font-size:21px;font-weight:800;letter-spacing:-.025em;line-height:1.2}
 .stat .v.g{
   background:linear-gradient(135deg,var(--ok-2),#6ee7b7);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.stat .k{font-size:9.5px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--tx-3)}
+.stat .k{font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--tx-3)}
 
-.kind{
-  display:inline-flex;align-items:center;gap:4px;
-  font-family:var(--m);font-size:9.5px;font-weight:800;
-  letter-spacing:.06em;text-transform:uppercase;
-  padding:3px 8px;border-radius:5px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.03);
-  color:var(--tx-2);white-space:nowrap;line-height:1.35;
-}
-.kind.base  { color:#6ee7b7; background:var(--k-base-soft);   border-color:var(--k-base-line); }
-.kind.update{ color:#fcd34d; background:var(--k-update-soft); border-color:var(--k-update-line); }
-.kind.dlc   { color:#d8b4fe; background:var(--k-dlc-soft);    border-color:var(--k-dlc-line); }
-.kind.theme { color:#67e8f9; background:var(--k-theme-soft);  border-color:var(--k-theme-line); }
-.kind.avatar{ color:#f9a8d4; background:var(--k-avatar-soft); border-color:var(--k-avatar-line); }
-.kind.demo  { color:#cbd5e1; background:var(--k-demo-soft);   border-color:var(--k-demo-line); }
-.kind.app   { color:#93c5fd; background:var(--k-app-soft);    border-color:var(--k-app-line); }
-.kind.pkg   { color:#c4b5fd; background:var(--k-pkg-soft);    border-color:var(--k-pkg-line); }
-.kind .e{font-size:10px;line-height:1}
-
+/* ---------- TOOLBAR ---------- */
 .toolbar{
   display:flex;flex-wrap:wrap;align-items:center;gap:10px;
-  padding:14px;margin-bottom:24px;border-radius:18px;
+  padding:14px;margin-bottom:22px;border-radius:18px;
   border:1px solid var(--line);background:rgba(13,16,25,.7);
   backdrop-filter:saturate(180%) blur(14px);
   -webkit-backdrop-filter:saturate(180%) blur(14px);
-  position:sticky;top:64px;z-index:50;
+  position:sticky;top:76px;z-index:50;
 }
-.search-wrap{position:relative;flex:1 1 260px;min-width:200px}
+.search-wrap{position:relative;flex:1 1 240px;min-width:180px}
 .search-wrap .ico{
   position:absolute;left:14px;top:50%;transform:translateY(-50%);
-  color:var(--tx-3);pointer-events:none;
+  color:var(--tx-3);pointer-events:none;display:flex;
 }
 .search-wrap input{
   width:100%;padding:11px 14px 11px 40px;
@@ -188,7 +194,6 @@ select{
 }
 select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
 select option{background:#0d1019;color:var(--tx)}
-
 .count{
   margin-left:auto;
   font-family:var(--m);font-size:12px;font-weight:600;
@@ -216,9 +221,7 @@ select option{background:#0d1019;color:var(--tx)}
   white-space:nowrap;user-select:none;
 }
 .kind-btn:hover{color:var(--tx-2);border-color:var(--line-2)}
-.kind-btn .n{
-  font-size:9px;opacity:.7;padding:0 3px;min-width:14px;text-align:center;
-}
+.kind-btn .n{font-size:9px;opacity:.7;padding:0 3px;min-width:14px;text-align:center}
 .kind-btn.on{color:#fff;border-color:transparent}
 .kind-btn.on .n{opacity:.85}
 .kind-btn.on[data-kind="all"]{background:linear-gradient(135deg,var(--accent),var(--accent-3))}
@@ -232,10 +235,31 @@ select option{background:#0d1019;color:var(--tx)}
 .kind-btn.on[data-kind="pkg"]   { background:var(--k-pkg);    color:#fff; }
 .kind-btn .e{font-size:11px;line-height:1}
 
+/* ---------- KIND BADGES ---------- */
+.kind{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:var(--m);font-size:9.5px;font-weight:800;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:3px 8px;border-radius:5px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  color:var(--tx-2);white-space:nowrap;line-height:1.35;
+}
+.kind.base  { color:#6ee7b7; background:var(--k-base-soft);   border-color:var(--k-base-line); }
+.kind.update{ color:#fcd34d; background:var(--k-update-soft); border-color:var(--k-update-line); }
+.kind.dlc   { color:#d8b4fe; background:var(--k-dlc-soft);    border-color:var(--k-dlc-line); }
+.kind.theme { color:#67e8f9; background:var(--k-theme-soft);  border-color:var(--k-theme-line); }
+.kind.avatar{ color:#f9a8d4; background:var(--k-avatar-soft); border-color:var(--k-avatar-line); }
+.kind.demo  { color:#cbd5e1; background:var(--k-demo-soft);   border-color:var(--k-demo-line); }
+.kind.app   { color:#93c5fd; background:var(--k-app-soft);    border-color:var(--k-app-line); }
+.kind.pkg   { color:#c4b5fd; background:var(--k-pkg-soft);    border-color:var(--k-pkg-line); }
+.kind .e{font-size:10px;line-height:1}
+
+/* ---------- GRID / CARDS ---------- */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(200px,1fr));
-  gap:22px;
+  grid-template-columns:repeat(auto-fill,minmax(196px,1fr));
+  gap:20px;
 }
 .card{
   position:relative;display:flex;flex-direction:column;
@@ -253,6 +277,11 @@ select option{background:#0d1019;color:var(--tx)}
   position:relative;width:100%;aspect-ratio:3/4;
   background:linear-gradient(160deg,#0b0e17,#070a11);
   overflow:hidden;
+}
+.cover .placeholder{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:44px;font-weight:900;color:rgba(255,255,255,.055);
+  letter-spacing:-.05em;pointer-events:none;user-select:none;
 }
 .cover img{
   position:absolute;inset:0;width:100%;height:100%;
@@ -279,6 +308,7 @@ select option{background:#0d1019;color:var(--tx)}
 }
 .ribbon.reg{color:#a5b4fc;border-color:rgba(124,92,255,.4);background:rgba(13,10,40,.82)}
 .ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.4);background:rgba(4,35,26,.82)}
+.ribbon.cat{color:#a5b4fc;border-color:rgba(124,92,255,.4);background:rgba(13,10,40,.82)}
 
 .info{padding:13px 14px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
 .info h3{
@@ -293,6 +323,7 @@ select option{background:#0d1019;color:var(--tx)}
   color:var(--tx-3);font-weight:600;
 }
 
+/* ---------- SKELETON / EMPTY ---------- */
 .sk{border-radius:13px;border:1px solid var(--line);background:var(--card);overflow:hidden}
 .sk .sk-c{aspect-ratio:3/4;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
 .sk .sk-l{height:11px;margin:14px 14px 0;border-radius:4px;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
@@ -300,20 +331,26 @@ select option{background:#0d1019;color:var(--tx)}
 @keyframes shim{0%{background-position:120% 0}100%{background-position:-120% 0}}
 
 .empty{
-  grid-column:1/-1;text-align:center;padding:90px 24px;
+  grid-column:1/-1;text-align:center;padding:76px 24px;
   border-radius:18px;border:1px dashed var(--line-2);
   background:rgba(255,255,255,.012);color:var(--tx-3);
 }
-.empty .big{font-size:42px;margin-bottom:14px;opacity:.55}
+.empty .big{font-size:40px;margin-bottom:14px;opacity:.55}
 .empty b{display:block;color:var(--tx-2);font-size:15px;font-weight:700;margin-bottom:5px}
-.empty small{font-size:12.5px}
+.empty small{font-size:12.5px;display:block;max-width:460px;margin:0 auto;line-height:1.6}
+.empty code{
+  font-family:var(--m);font-size:11.5px;
+  background:rgba(0,0,0,.4);padding:2px 7px;border-radius:4px;color:var(--accent-2);
+}
 .empty .act{
-  display:inline-block;margin-top:14px;padding:8px 18px;
+  display:inline-block;margin-top:16px;padding:9px 20px;
   background:var(--accent);color:#fff;border-radius:9px;
   font-size:12.5px;font-weight:700;cursor:pointer;border:0;
-  font-family:inherit;
+  font-family:inherit;transition:.18s;
 }
+.empty .act:hover{filter:brightness(1.1)}
 
+/* ---------- MODALS ---------- */
 .overlay{
   display:none;position:fixed;inset:0;z-index:900;
   padding:24px 16px;overflow-y:auto;
@@ -323,19 +360,19 @@ select option{background:#0d1019;color:var(--tx)}
 .overlay.open{display:flex;align-items:flex-start;justify-content:center}
 .modal{
   position:relative;width:100%;max-width:860px;margin:auto;
-  border-radius:24px;border:1px solid var(--line);
+  border-radius:22px;border:1px solid var(--line);
   background:linear-gradient(180deg,var(--surface-2),var(--surface));
   box-shadow:0 30px 70px -24px rgba(0,0,0,.9);
   overflow:hidden;
   animation:pop .28s cubic-bezier(.16,1,.3,1);
 }
+.modal.slim{max-width:560px}
 @keyframes pop{from{opacity:0;transform:translateY(16px) scale(.975)}to{opacity:1;transform:none}}
-.modal.slim{max-width:600px}
 .modal-close{
   position:absolute;top:16px;right:16px;z-index:5;
   width:34px;height:34px;border-radius:50%;
   border:1px solid var(--line);background:rgba(8,10,16,.75);
-  color:var(--tx-2);font-size:14px;cursor:pointer;
+  color:var(--tx-2);font-size:13px;cursor:pointer;
   display:flex;align-items:center;justify-content:center;transition:.2s;
 }
 .modal-close:hover{background:#f43f5e;border-color:#f43f5e;color:#fff;transform:rotate(90deg)}
@@ -348,11 +385,14 @@ select option{background:#0d1019;color:var(--tx)}
 .gm-cover{
   width:100%;aspect-ratio:3/4;border-radius:13px;
   overflow:hidden;border:1px solid var(--line);background:#080b12;
+  display:flex;align-items:center;justify-content:center;
+  font-size:44px;font-weight:900;color:rgba(255,255,255,.08);
+  position:relative;
 }
-.gm-cover img{width:100%;height:100%;object-fit:cover;display:block}
+.gm-cover img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
 .gm-meta{padding-top:4px;min-width:0}
 .gm-meta h2{
-  font-size:24px;font-weight:800;letter-spacing:-.028em;
+  font-size:23px;font-weight:800;letter-spacing:-.028em;
   line-height:1.22;padding-right:44px;
 }
 .gm-meta .sub{
@@ -368,8 +408,7 @@ select option{background:#0d1019;color:var(--tx)}
 }
 .gm-tag.b{color:#a5b4fc;border-color:rgba(124,92,255,.35);background:var(--accent-soft)}
 .gm-tag.g{color:#6ee7c0;border-color:rgba(16,185,129,.35);background:var(--ok-soft)}
-
-.gm-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.gm-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
 
 .gm-body{padding:20px 24px 24px}
 .sec-title{
@@ -383,7 +422,23 @@ select option{background:#0d1019;color:var(--tx)}
   font-weight:600;font-size:10.5px;color:var(--tx-3);
 }
 
-.files{display:flex;flex-direction:column;gap:9px;max-height:min(52vh,520px);overflow-y:auto;padding-right:4px}
+.tip{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:12px 14px;border-radius:11px;
+  background:var(--accent-soft);border:1px solid rgba(124,92,255,.28);
+  font-size:12px;line-height:1.6;color:var(--tx-2);
+  margin-bottom:18px;
+}
+.tip .ico{flex:none;font-size:15px;line-height:1}
+.tip b{color:#c4b5fd;font-weight:700}
+.tip code{
+  font-family:var(--m);font-size:11px;
+  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;
+  color:var(--accent-2);
+}
+
+/* ---------- FILE / LINK ROWS ---------- */
+.files{display:flex;flex-direction:column;gap:9px;max-height:min(56vh,540px);overflow-y:auto;padding-right:4px}
 .frow{
   display:flex;align-items:center;justify-content:space-between;
   gap:12px;flex-wrap:wrap;padding:13px 14px;
@@ -424,42 +479,137 @@ select option{background:#0d1019;color:var(--tx)}
 .tag.direct{color:#6ee7c0;background:var(--ok-soft);border:1px solid rgba(16,185,129,.32)}
 .tag.redirect{color:#fcd34d;background:var(--warn-soft);border:1px solid rgba(245,165,36,.32)}
 
+/* ---------- BUTTONS ---------- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
   padding:11px 18px;border-radius:9px;border:1px solid transparent;
   font-family:inherit;font-size:13px;font-weight:700;
   cursor:pointer;text-decoration:none;transition:.18s;
-  white-space:nowrap;line-height:1;
+  white-space:nowrap;line-height:1;color:var(--tx);
 }
 .btn svg{width:14px;height:14px;flex:none}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none!important}
 .btn.primary{
   background:linear-gradient(135deg,var(--accent),var(--accent-3));
   color:#fff;box-shadow:0 10px 26px -10px var(--accent-glow);
 }
 .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ok{
+  background:linear-gradient(135deg,var(--ok-2),var(--ok));
+  color:#04231a;box-shadow:0 10px 26px -12px rgba(16,185,129,.5);
+}
+.btn.ok:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--tx-2)}
 .btn.ghost:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
 .btn.sm{font-size:11.5px;padding:8px 13px;border-radius:7px}
 .btn.sm svg{width:12px;height:12px}
 .btn.icon{padding:8px 11px}
-
 .btn-group{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 
-.tip{
-  display:flex;align-items:flex-start;gap:11px;
-  padding:12px 14px;border-radius:11px;
-  background:var(--accent-soft);border:1px solid rgba(124,92,255,.28);
-  font-size:12px;line-height:1.6;color:var(--tx-2);
-  margin-bottom:18px;
+/* ---------- SENDER PANEL ---------- */
+.panel{
+  display:flex;flex-direction:column;gap:16px;
+  padding:22px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.7);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  margin-bottom:16px;
 }
-.tip .ico{flex:none;font-size:15px;line-height:1}
-.tip b{color:#c4b5fd;font-weight:700}
-.tip code{
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{
+  font-size:10.5px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tx-3);
+}
+.field input{
+  width:100%;padding:13px 15px;
+  font-family:var(--m);font-size:14px;
+  color:var(--tx);background:rgba(0,0,0,.36);
+  border:1px solid var(--line);border-radius:9px;
+  outline:none;transition:.18s;
+  -webkit-appearance:none;appearance:none;
+}
+.field input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+  background:rgba(0,0,0,.5);
+}
+.field input::placeholder{color:var(--tx-3)}
+.ip-row{display:flex;gap:10px;align-items:stretch}
+.ip-row input{flex:1;min-width:0}
+.hint{
+  font-size:11.5px;color:var(--tx-3);line-height:1.55;
+  padding:10px 12px;border-radius:9px;
+  background:rgba(0,0,0,.24);border:1px solid var(--line);
+}
+.hint code{
   font-family:var(--m);font-size:11px;
-  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;
-  color:var(--accent-2);
+  background:rgba(0,0,0,.4);padding:2px 6px;
+  border-radius:4px;color:var(--accent-2);
+}
+.row-actions{display:flex;gap:10px;flex-wrap:wrap}
+.row-actions .btn.ok{flex:1}
+.dot{
+  display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--tx-3);flex:none;transition:.25s;
+}
+.dot.ok{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
+.dot.err{background:var(--err);box-shadow:0 0 10px var(--err)}
+.dot.run{background:var(--accent-3);box-shadow:0 0 10px var(--accent-3)}
+.conn-line{
+  display:flex;align-items:center;gap:10px;
+  font-size:12.5px;color:var(--tx-2);
+  padding:0 4px;
+}
+.status{
+  display:none;align-items:flex-start;gap:12px;
+  padding:14px 16px;border-radius:11px;
+  font-size:13px;font-weight:500;line-height:1.55;
+  border:1px solid var(--line);background:rgba(0,0,0,.3);
+  margin-top:4px;
+}
+.status.show{display:flex}
+.status.ok{border-color:rgba(16,185,129,.4);background:var(--ok-soft);color:#6ee7c0}
+.status.err{border-color:rgba(244,63,94,.4);background:var(--err-soft);color:#fda4af}
+.status.run{border-color:rgba(124,92,255,.4);background:var(--accent-soft);color:#c4b5fd}
+.status .ico{flex:none;font-size:17px;line-height:1.3}
+.status .body{flex:1;min-width:0;word-break:break-word}
+.status .body b{display:block;margin-bottom:2px;font-weight:800;font-size:13.5px}
+.status .body .detail{
+  font-family:var(--m);font-size:11.5px;
+  opacity:.85;margin-top:4px;
+  word-break:break-all;
+}
+.recent{
+  padding:22px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.5);
+  margin-top:16px;
+}
+.recent h3{
+  font-size:11px;font-weight:800;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--tx-3);margin-bottom:12px;
+}
+.recent-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:9px;
+  border:1px solid var(--line);background:rgba(0,0,0,.24);
+  margin-bottom:8px;font-size:12px;
+}
+.recent-item:last-child{margin-bottom:0}
+.recent-item .st{width:8px;height:8px;border-radius:50%;flex:none}
+.recent-item .st.ok{background:var(--ok-2)}
+.recent-item .st.err{background:var(--err)}
+.recent-item .st.unk{background:var(--warn)}
+.recent-item .url{
+  flex:1;min-width:0;
+  font-family:var(--m);font-size:11px;
+  color:var(--tx-2);word-break:break-all;
+}
+.recent-item .when{
+  font-family:var(--m);font-size:10.5px;
+  color:var(--tx-3);flex:none;
 }
 
+/* ---------- HELP STEPS ---------- */
 .set-head{
   padding:24px 24px 20px;
   border-bottom:1px solid var(--line);
@@ -486,7 +636,10 @@ select option{background:#0d1019;color:var(--tx)}
   background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;
   color:var(--accent-2);
 }
+.set-actions{display:flex;gap:8px;margin-top:4px}
+.set-actions .btn{flex:1}
 
+/* ---------- TOASTS ---------- */
 #toasts{
   position:fixed;right:20px;bottom:20px;z-index:2000;
   display:flex;flex-direction:column;gap:10px;
@@ -510,30 +663,43 @@ select option{background:#0d1019;color:var(--tx)}
 @keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
 @keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
 
+/* ---------- FOOTER ---------- */
 .foot{
-  border-top:1px solid var(--line);margin-top:48px;padding:26px 0 0;
+  border-top:1px solid var(--line);margin-top:44px;padding:26px 0 0;
   display:flex;flex-wrap:wrap;gap:14px;align-items:center;
   justify-content:space-between;font-size:12px;color:var(--tx-3);
 }
-.foot a{color:var(--tx-2);text-decoration:none;transition:.16s}
-.foot a:hover{color:var(--accent-2)}
+.foot code{
+  font-family:var(--m);font-size:11.5px;
+  background:rgba(0,0,0,.32);padding:3px 8px;border-radius:5px;
+  color:#a5b4fc;
+}
 
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:900px){
+  .tab-btn span{display:none}
+  .tab-btn{padding:9px 13px}
+  .tab-btn svg{width:15px;height:15px}
+}
 @media (max-width:760px){
   .gm-head{grid-template-columns:120px 1fr;gap:16px;padding:20px}
   .gm-meta h2{font-size:18px;padding-right:36px}
   .gm-body{padding:18px}
-  .hero{padding:36px 0 20px}
-  .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:14px}
+  .hero{padding:32px 0 20px}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:13px}
   .brand-txt .s{display:none}
   .count{margin-left:0;width:100%;text-align:center}
+  .toolbar{top:70px}
 }
 @media (max-width:460px){
   .gm-head{grid-template-columns:1fr;gap:16px}
-  .gm-cover{max-width:150px}
-  .hero h1{font-size:28px}
-  .toolbar{top:64px;padding:10px}
-  .btn-ps4 span{display:none}
-  .btn-rpi span{display:none}
+  .gm-cover{max-width:140px}
+  .hero h1{font-size:26px}
+  .toolbar{padding:10px}
+  .target-pill span:not(.dot){display:none}
+  .target-pill{padding:8px 11px}
+  .panel{padding:16px}
+  .recent{padding:16px}
 }
 </style>
 </head>
@@ -544,101 +710,206 @@ select option{background:#0d1019;color:var(--tx)}
     <div class="brand-mark">O</div>
     <div class="brand-txt">
       <div class="n">OptiTron <em>Store</em></div>
-      <div class="s">PS4 Package Library</div>
+      <div class="s">Package Library</div>
     </div>
   </div>
-  <div class="topbar-right">
-    <a class="btn-ps4" href="ps4.html">
+
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" data-view="library" type="button" title="PS4 Library">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="6" width="20" height="12" rx="2"/>
         <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
       </svg>
-      <span>Install on PS4</span>
-    </a>
-    <a class="btn-rpi" href="rpi.html">
+      <span>PS4 Library</span>
+    </button>
+    <button class="tab-btn" data-view="ps5" type="button" title="PS5 Library">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 17l4-4M20 17l-4-4M12 13v6"/>
+        <path d="M6 8h12a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-1l-2-3h-6l-2 3H6a3 3 0 0 1-3-3v-4a3 3 0 0 1 3-3z"/>
+        <path d="M8 12v2M7 13h2M16 12.5h.01M18 14.5h.01"/>
+      </svg>
+      <span>PS5 Library</span>
+    </button>
+    <button class="tab-btn" data-view="sender" type="button" title="RPI Sender">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12l16-8-6 18-3-7-7-3z"/>
       </svg>
       <span>RPI Sender</span>
-    </a>
-    <button class="help-btn" id="helpBtn" type="button" title="How it works">?</button>
+    </button>
+  </nav>
+
+  <div class="topbar-right">
+    <button class="target-pill" id="targetPill" type="button" title="PS4 endpoint — click to edit">
+      <span class="dot"></span><span id="targetText">127.0.0.1:12800</span>
+    </button>
+    <button class="icon-btn" id="helpBtn" type="button" title="Help">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7v.3"/><path d="M12 17h.01"/>
+      </svg>
+    </button>
   </div>
 </header>
 
 <main class="wrap">
 
-  <section class="hero">
-    <h1>Every PS4 package.<br><em>One clean library.</em></h1>
-    <p>Full catalog with base games, updates, and DLCs — every file, size, region, and firmware requirement listed.</p>
-
-    <div class="stats">
-      <div class="stat"><span class="v" id="statTotal">—</span><span class="k">Titles</span></div>
-      <div class="stat"><span class="v" id="statFiles">—</span><span class="k">Packages</span></div>
-      <div class="stat"><span class="v g" id="statSize">—</span><span class="k">Total Size</span></div>
-      <div class="stat"><span class="v" id="statUSA">—</span><span class="k">USA</span></div>
-      <div class="stat"><span class="v" id="statEUR">—</span><span class="k">EUR</span></div>
+  <!-- ============================= PS4 LIBRARY ============================= -->
+  <section class="view active" data-view="library">
+    <div class="hero">
+      <h1>PS4 <em>package library</em></h1>
+      <p>Every title, every base game, update and DLC — with direct install buttons that push straight to the console.</p>
+      <div class="stats">
+        <div class="stat"><span class="v" id="statTitles">—</span><span class="k">Titles</span></div>
+        <div class="stat"><span class="v" id="statPackages">—</span><span class="k">Packages</span></div>
+        <div class="stat"><span class="v g" id="statLibSize">—</span><span class="k">Total Size</span></div>
+        <div class="stat"><span class="v" id="statUSA">—</span><span class="k">USA</span></div>
+        <div class="stat"><span class="v" id="statEUR">—</span><span class="k">EUR</span></div>
+      </div>
     </div>
+
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="ico">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+          </svg>
+        </span>
+        <input type="search" id="libSearch" placeholder="Search titles or title IDs…" autocomplete="off" spellcheck="false">
+      </div>
+      <select id="libRegion" title="Region"><option value="all">All Regions</option></select>
+      <select id="libSort" title="Sort">
+        <option value="name">Name A–Z</option>
+        <option value="name-desc">Name Z–A</option>
+        <option value="files">Most packages</option>
+        <option value="size">Largest first</option>
+        <option value="size-asc">Smallest first</option>
+      </select>
+      <span class="count" id="libCount">Loading…</span>
+      <div class="kinds-bar" id="libKinds"><span class="kb-label">Kind</span></div>
+    </div>
+
+    <div class="grid" id="libGrid"></div>
   </section>
 
-  <section class="toolbar">
-    <div class="search-wrap">
-      <span class="ico">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
-        </svg>
-      </span>
-      <input type="search" id="search" placeholder="Search by name or title ID…" autocomplete="off" spellcheck="false">
+  <!-- ============================= PS5 LIBRARY ============================= -->
+  <section class="view" data-view="ps5">
+    <div class="hero">
+      <h1>PS5 <em>package library</em></h1>
+      <p>Browse the PS5 catalog and grab download links for every game, update, and DLC.</p>
+      <div class="stats">
+        <div class="stat"><span class="v" id="statPs5Total">—</span><span class="k">Packages</span></div>
+        <div class="stat"><span class="v g" id="statPs5Size">—</span><span class="k">Total Size</span></div>
+        <div class="stat"><span class="v" id="statPs5Game">—</span><span class="k">Games</span></div>
+        <div class="stat"><span class="v" id="statPs5Upd">—</span><span class="k">Updates</span></div>
+        <div class="stat"><span class="v" id="statPs5Other">—</span><span class="k">Other</span></div>
+      </div>
     </div>
-    <select id="regionSel" title="Region"><option value="all">All Regions</option></select>
-    <select id="sortSel" title="Sort">
-      <option value="name">Name A–Z</option>
-      <option value="name-desc">Name Z–A</option>
-      <option value="files">Most packages</option>
-      <option value="size">Largest first</option>
-      <option value="size-asc">Smallest first</option>
-    </select>
-    <span class="count" id="count">Loading…</span>
 
-    <div class="kinds-bar" id="kindsBar">
-      <span class="kb-label">Kind</span>
+    <div class="toolbar">
+      <div class="search-wrap">
+        <span class="ico">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
+          </svg>
+        </span>
+        <input type="search" id="ps5Search" placeholder="Search by title or title ID…" autocomplete="off" spellcheck="false">
+      </div>
+      <select id="ps5Cat" title="Category"><option value="all">All Categories</option></select>
+      <select id="ps5Sort" title="Sort">
+        <option value="name">Name A–Z</option>
+        <option value="name-desc">Name Z–A</option>
+        <option value="size">Largest first</option>
+        <option value="size-asc">Smallest first</option>
+      </select>
+      <span class="count" id="ps5Count">Loading…</span>
     </div>
+
+    <div class="grid" id="ps5Grid"></div>
   </section>
 
-  <div class="grid" id="grid"></div>
+  <!-- ============================= RPI SENDER ============================= -->
+  <section class="view" data-view="sender">
+    <div class="hero">
+      <h1>Send a <em>.pkg</em> straight to your PS4.</h1>
+      <p>Paste any direct .pkg link and push it to the console's Remote Package Installer — no PC required.</p>
+    </div>
+
+    <div class="panel">
+      <div class="field">
+        <label for="ipInput">PS4 IP address</label>
+        <div class="ip-row">
+          <input type="text" id="ipInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="127.0.0.1">
+          <button class="btn ghost" id="testBtn" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+            Test
+          </button>
+        </div>
+      </div>
+      <div class="conn-line">
+        <span class="dot" id="connDot"></span>
+        <span id="connMsg">Not tested</span>
+      </div>
+      <div class="hint">
+        Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Requests go to <code>http://&lt;ip&gt;:12800/api/install</code>.
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="field">
+        <label for="urlInput">Direct PKG URL</label>
+        <input type="text" id="urlInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="http://your-server/game.pkg">
+      </div>
+      <div class="row-actions">
+        <button class="btn ok" id="sendBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 12l16-8-6 18-3-7-7-3z"/>
+          </svg>
+          Send to PS4
+        </button>
+        <button class="btn ghost" id="clearBtn" type="button">Clear</button>
+      </div>
+    </div>
+
+    <div class="status" id="status">
+      <span class="ico" id="statusIco">ℹ️</span>
+      <div class="body">
+        <b id="statusTitle">Ready</b>
+        <span id="statusMsg">Paste a direct .pkg URL above and tap Send.</span>
+        <div class="detail" id="statusDetail" style="display:none;"></div>
+      </div>
+    </div>
+
+    <div class="recent" id="recentBox" style="display:none;">
+      <h3>Recent sends</h3>
+      <div id="recentList"></div>
+    </div>
+  </section>
 
   <footer class="foot">
-    <div>OptiStore · unofficial fan library</div>
-    <div>
-      <a href="ps4.html">ps4.html</a> · <a href="rpi.html">rpi.html</a> · open on your console to install
-    </div>
+    <div>OptiStore · unofficial fan library · run locally over HTTP</div>
+    <div>Endpoint: <code id="footTarget">127.0.0.1:12800</code></div>
   </footer>
 
 </main>
 
-<div class="overlay" id="gameModal">
+<!-- ============================= PS4 GAME MODAL ============================= -->
+<div class="overlay" id="libModal">
   <div class="modal">
-    <button class="modal-close" id="modalClose" type="button">✕</button>
+    <button class="modal-close" type="button" data-close="libModal">✕</button>
     <div class="gm-head">
-      <div class="gm-cover"><img id="gmCover" alt="" src=""></div>
+      <div class="gm-cover" id="libCoverWrap"><img id="libCover" alt=""></div>
       <div class="gm-meta">
-        <h2 id="gmTitle">Game Title</h2>
-        <div class="sub" id="gmSub">—</div>
-        <div class="gm-tags" id="gmTags"></div>
+        <h2 id="libTitle">—</h2>
+        <div class="sub" id="libSub">—</div>
+        <div class="gm-tags" id="libTags"></div>
         <div class="gm-actions">
-          <a class="btn primary" href="ps4.html">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="6" width="20" height="12" rx="2"/>
-              <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
+          <button class="btn ok" id="libSendAll" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 12l16-8-6 18-3-7-7-3z"/>
             </svg>
-            Open PS4 Installer
-          </a>
-          <a class="btn ghost" href="rpi.html">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 17V7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10M4 17l4-4M20 17l-4-4M12 13v6"/>
-            </svg>
-            Open RPI Sender
-          </a>
-          <button class="btn ghost" id="gmCopyAll" type="button">
+            Send all direct to PS4
+          </button>
+          <button class="btn ghost" id="libCopyAll" type="button">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
             </svg>
@@ -651,49 +922,91 @@ select option{background:#0d1019;color:var(--tx)}
       <div class="tip">
         <span class="ico">💡</span>
         <span>
-          Install one file at a time — you'll usually want the <b>Base</b> package first, then the latest <b>Update</b>, then any <b>DLC</b>.
-          Open <b>ps4.html</b> or <b>rpi.html</b> on the console's browser to actually send them.
+          Install in order — <b>Base</b> first, then the latest <b>Update</b>, then any <b>DLC</b>.
+          Direct <b>.pkg</b> files can be pushed to the console in one tap; external host links open in a new tab.
         </span>
       </div>
-      <div class="sec-title">
-        Package files
-        <span class="mini" id="gmFileCount"></span>
-      </div>
-      <div class="files" id="gmFiles"></div>
+      <div class="sec-title">Package files <span class="mini" id="libFileCount"></span></div>
+      <div class="files" id="libFiles"></div>
     </div>
   </div>
 </div>
 
+<!-- ============================= PS5 GAME MODAL ============================= -->
+<div class="overlay" id="ps5Modal">
+  <div class="modal">
+    <button class="modal-close" type="button" data-close="ps5Modal">✕</button>
+    <div class="gm-head">
+      <div class="gm-cover" id="ps5CoverWrap"><img id="ps5Cover" alt=""></div>
+      <div class="gm-meta">
+        <h2 id="ps5Title">—</h2>
+        <div class="sub" id="ps5Sub">—</div>
+        <div class="gm-tags" id="ps5Tags"></div>
+      </div>
+    </div>
+    <div class="gm-body">
+      <div class="sec-title" id="ps5DescTitle" style="display:none">Description</div>
+      <div class="tip" id="ps5Desc" style="display:none"></div>
+      <div class="sec-title">Download links <span class="mini" id="ps5LinkCount"></span></div>
+      <div class="files" id="ps5Links"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= SETTINGS MODAL ============================= -->
+<div class="overlay" id="settingsModal">
+  <div class="modal slim">
+    <button class="modal-close" type="button" data-close="settingsModal">✕</button>
+    <div class="set-head">
+      <h2>Install endpoint</h2>
+      <p>Where packages are sent when you tap install</p>
+    </div>
+    <div class="set-body">
+      <div class="field">
+        <label for="ipInputModal">PS4 IP address</label>
+        <input type="text" id="ipInputModal" spellcheck="false" autocomplete="off" placeholder="127.0.0.1" style="width:100%;padding:12px 14px;font-family:var(--m);font-size:13px;color:var(--tx);background:rgba(0,0,0,.36);border:1px solid var(--line);border-radius:9px;outline:none;">
+      </div>
+      <div class="hint">
+        Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Packages are sent to <code>http://&lt;ip&gt;:12800/api/install</code>.
+      </div>
+      <div class="set-actions">
+        <button class="btn ghost" type="button" data-close="settingsModal">Cancel</button>
+        <button class="btn primary" id="settingsSave" type="button">Save</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================= HELP MODAL ============================= -->
 <div class="overlay" id="helpModal">
   <div class="modal slim">
-    <button class="modal-close" id="helpClose" type="button">✕</button>
+    <button class="modal-close" type="button" data-close="helpModal">✕</button>
     <div class="set-head">
       <h2>How it works</h2>
-      <p>Three pages, one library</p>
+      <p>One page, three tools, zero installs</p>
     </div>
     <div class="set-body">
 
       <div class="step">
         <div class="num">1</div>
         <div class="txt">
-          <b>Browse here on your PC</b>
-          This page reads <code>export_with_covers.json</code>. Every title expands to show all its packages — base, updates, DLCs — with size, region, and host info.
+          <b>Serve this folder over plain HTTP</b>
+          From the folder that contains this file, run <code>python3 -m http.server 8080</code> (or any static server) and open <code>http://&lt;your-ip&gt;:8080/</code>. HTTPS will block requests to <code>127.0.0.1</code> due to mixed-content rules.
         </div>
       </div>
 
       <div class="step">
         <div class="num">2</div>
         <div class="txt">
-          <b>Open <code>ps4.html</code> or <code>rpi.html</code> on your PS4</b>
-          In the console's web browser, navigate to the same address but end with <code>ps4.html</code> or <code>rpi.html</code>.
-          <b>ps4.html</b> is the full catalog with a send button on every game. <b>rpi.html</b> is a lightweight sender for pasting any direct .pkg link.
+          <b>Open it on the PS4's browser</b>
+          Navigate to the same address on the console. Use <code>127.0.0.1</code> if the server runs on the PS4 itself, or the LAN IP of the machine hosting it.
         </div>
       </div>
 
       <div class="step">
         <div class="num">3</div>
         <div class="txt">
-          <b>Make sure Remote Package Installer (RPI) is running</b>
+          <b>Start Remote Package Installer (RPI)</b>
           Launch <code>Remote Package Installer</code> on the PS4. It listens on port <code>12800</code> and accepts a <code>POST</code> to <code>/api/install</code> with a JSON body.
         </div>
       </div>
@@ -707,9 +1020,10 @@ select option{background:#0d1019;color:var(--tx)}
       </div>
 
       <div class="tip" style="margin:0">
-        <span class="ico">⚠️</span>
+        <span class="ico">📁</span>
         <span>
-          Both pages must be served over <b>plain HTTP</b> for the install to work. HTTPS will block the request to <code>127.0.0.1</code> due to mixed-content rules.
+          Catalogs are read from <b>export_with_covers.json</b> (or <b>games.json</b>) for PS4 and <b>ps5-catalog.json</b> for PS5.
+          Drop them next to this file — the page handles missing files gracefully.
         </span>
       </div>
 
@@ -723,30 +1037,38 @@ select option{background:#0d1019;color:var(--tx)}
 (function () {
   'use strict';
 
-  var CATALOG_URL = 'export_with_covers.json';
+  /* =====================================================================
+     CONFIG
+     ===================================================================== */
+  var LIBRARY_CATALOGS = ['export_with_covers.json', 'games.json'];
+  var PS5_CATALOGS     = ['ps5-catalog.json'];
 
-  var catalog = [];
-  var filtered = [];
-  var query = '';
-  var region = 'all';
-  var kind = 'all';
-  var sort = 'name';
-  var currentGame = null;
+  var LS_IP     = 'opti_ps4_ip';
+  var LS_RECENT = 'opti_rpi_recent';
+  var LS_VIEW   = 'opti_view';
+
+  var DEFAULT_IP   = '127.0.0.1';
+  var RPI_PORT     = 12800;
+  var RPI_TIMEOUT  = 20000;
+  var MAX_RECENT   = 8;
 
   var $ = function (id) { return document.getElementById(id); };
 
+  /* =====================================================================
+     UTILITIES
+     ===================================================================== */
   function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  function toast(msg, kindT) {
-    kindT = kindT || 'info';
+  function toast(msg, kind) {
+    kind = kind || 'info';
     var box = $('toasts');
     var el = document.createElement('div');
-    el.className = 'toast ' + kindT;
-    var icon = kindT === 'ok' ? '✓' : kindT === 'err' ? '✕' : 'ℹ️';
+    el.className = 'toast ' + kind;
+    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : 'ℹ️';
     el.innerHTML = '<div style="flex:none;font-size:15px">' + icon + '</div><div>' + esc(msg) + '</div>';
     box.appendChild(el);
     setTimeout(function () {
@@ -774,10 +1096,11 @@ select option{background:#0d1019;color:var(--tx)}
     if (gb >= 1024) return (gb / 1024).toFixed(2) + ' TB';
     if (gb >= 1) return gb.toFixed(2) + ' GB';
     var mb = bytes / (1024 * 1024);
-    return mb.toFixed(0) + ' MB';
+    if (mb >= 1) return mb.toFixed(0) + ' MB';
+    return bytes + ' B';
   }
   function sizeLabel(size) {
-    if (size == null || size === '') return '—';
+    if (size == null || size === '') return '';
     if (typeof size === 'string') return size;
     return fmtBytes(size);
   }
@@ -793,38 +1116,50 @@ select option{background:#0d1019;color:var(--tx)}
   function fallbackCopy(t) {
     var ta = document.createElement('textarea');
     ta.value = t;
-    ta.style.position = 'fixed'; ta.style.opacity = '0';
-    document.body.appendChild(ta); ta.select();
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
     try { document.execCommand('copy'); toast('Copied', 'ok'); }
     catch (e) { toast('Copy failed', 'err'); }
     document.body.removeChild(ta);
   }
 
-  var KIND_META = {
-    base:   { label: 'Base',   emoji: '🎮' },
-    update: { label: 'Update', emoji: '⬆️' },
-    dlc:    { label: 'DLC',    emoji: '📦' },
-    theme:  { label: 'Theme',  emoji: '🎨' },
-    avatar: { label: 'Avatar', emoji: '👤' },
-    demo:   { label: 'Demo',   emoji: '⏱️' },
-    app:    { label: 'App',    emoji: '📱' },
-    pkg:    { label: 'PKG',    emoji: '📄' }
-  };
-  var KIND_ORDER = ['base', 'update', 'dlc', 'theme', 'avatar', 'demo', 'app', 'pkg'];
-
-  function normalizeKind(raw) {
-    var k = String(raw || '').toLowerCase().trim();
-    if (!k) return 'pkg';
-    if (k === 'base' || k === 'game' || k === 'full' || k === 'main') return 'base';
-    if (k === 'update' || k === 'patch' || k === 'upd' || k === 'fix') return 'update';
-    if (k === 'dlc' || k === 'addon' || k === 'add-on' || k === 'expansion') return 'dlc';
-    if (k === 'theme' || k === 'themes' || k === 'skin') return 'theme';
-    if (k === 'avatar' || k === 'avatars' || k === 'pic') return 'avatar';
-    if (k === 'demo' || k === 'trial') return 'demo';
-    if (k === 'app' || k === 'application' || k === 'tool') return 'app';
-    return 'pkg';
+  function fetchJSON(urls, onDone) {
+    var i = 0;
+    function next() {
+      if (i >= urls.length) { onDone(null, null); return; }
+      var url = urls[i++];
+      var x = new XMLHttpRequest();
+      x.open('GET', url + '?t=' + Date.now(), true);
+      x.onload = function () {
+        if (x.status >= 200 && x.status < 300) {
+          try { onDone(JSON.parse(x.responseText), url); }
+          catch (e) { next(); }
+        } else next();
+      };
+      x.onerror = next;
+      x.send();
+    }
+    next();
   }
-  function kindMeta(k) { return KIND_META[k] || KIND_META.pkg; }
+
+  function pick(obj, keys) {
+    if (!obj) return '';
+    for (var i = 0; i < keys.length; i++) {
+      var k = keys[i];
+      if (obj[k] != null && obj[k] !== '') return obj[k];
+    }
+    return '';
+  }
+
+  function hostOf(u) {
+    try { return new URL(u, location.href).hostname.toLowerCase().replace(/^www\./, ''); }
+    catch (e) {
+      var m = String(u).match(/^[a-z]+:\/\/([^\/?#]+)/i);
+      return m ? m[1].toLowerCase().replace(/^www\./, '').split(':')[0] : '';
+    }
+  }
 
   var REDIRECT_HOSTS = [
     'filekeeper.net','filekeeper.io','filekeeper.org','filekeeper.co',
@@ -837,13 +1172,6 @@ select option{background:#0d1019;color:var(--tx)}
     'zippyshare.com','anonfiles.com','gofile.io','pixeldrain.com',
     'file-upload.net','uploadhaven.com'
   ];
-  function hostOf(u) {
-    try { return new URL(u, location.href).hostname.toLowerCase().replace(/^www\./,''); }
-    catch (e) {
-      var m = String(u).match(/^[a-z]+:\/\/([^\/?#]+)/i);
-      return m ? m[1].toLowerCase().replace(/^www\./,'').split(':')[0] : '';
-    }
-  }
   function isRedirectHost(host) {
     if (!host) return false;
     return REDIRECT_HOSTS.some(function (h) { return host === h || host.endsWith('.' + h); });
@@ -855,30 +1183,197 @@ select option{background:#0d1019;color:var(--tx)}
     if (isRedirectHost(hostOf(cleaned))) return false;
     return true;
   }
-
-  function pick(obj, keys) {
-    if (!obj) return '';
-    for (var i = 0; i < keys.length; i++) {
-      var k = keys[i];
-      if (obj[k] != null && obj[k] !== '') return obj[k];
-    }
-    return '';
+  function validUrl(u) { return /^https?:\/\/[^\s]+$/i.test(u); }
+  function isPkgUrl(u) {
+    var p = String(u).split('?')[0].split('#')[0];
+    return /\.pkg$/i.test(p);
   }
 
-  function makeFile(link) {
+  /* =====================================================================
+     IP / ENDPOINT
+     ===================================================================== */
+  function getIp() {
+    try { return localStorage.getItem(LS_IP) || DEFAULT_IP; }
+    catch (e) { return DEFAULT_IP; }
+  }
+  function setIp(v) {
+    try { localStorage.setItem(LS_IP, v); } catch (e) {}
+  }
+  function cleanIp(v) {
+    var s = String(v == null ? '' : v).replace(/^\s+|\s+$/g, '');
+    s = s.replace(/^https?:\/\//, '');
+    s = s.replace(/[:\/].*$/, '');
+    return s || DEFAULT_IP;
+  }
+  function renderEndpoint() {
+    var label = getIp() + ':' + RPI_PORT;
+    $('targetText').textContent = label;
+    $('footTarget').textContent = label;
+  }
+  function setEndpointState(cls) {
+    var pill = $('targetPill');
+    pill.classList.remove('ok', 'err');
+    if (cls) pill.classList.add(cls);
+  }
+
+  /* =====================================================================
+     RPI INSTALL
+     ===================================================================== */
+  function rpiInstall(ip, packages, cb) {
+    var x = new XMLHttpRequest();
+    var done = false;
+    function finish(r) { if (!done) { done = true; cb(r); } }
+    try {
+      x.open('POST', 'http://' + ip + ':' + RPI_PORT + '/api/install', true);
+      x.timeout = RPI_TIMEOUT;
+      x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+      x.onload = function () {
+        if (x.status >= 200 && x.status < 300) finish({ state: 'ok', status: x.status, text: x.responseText });
+        else finish({ state: 'rejected', status: x.status, text: x.responseText });
+      };
+      x.onerror   = function () { finish({ state: 'unknown' }); };
+      x.ontimeout = function () { finish({ state: 'timeout' }); };
+      x.send(JSON.stringify({ type: 'direct', packages: packages }));
+    } catch (e) {
+      finish({ state: 'unknown' });
+    }
+  }
+
+  /* =====================================================================
+     RECENT SENDS
+     ===================================================================== */
+  function loadRecent() {
+    try {
+      var v = JSON.parse(localStorage.getItem(LS_RECENT) || '[]');
+      return Array.isArray(v) ? v : [];
+    } catch (e) { return []; }
+  }
+  function saveRecent(list) {
+    try { localStorage.setItem(LS_RECENT, JSON.stringify(list.slice(0, MAX_RECENT))); } catch (e) {}
+  }
+  function pushRecent(entry) {
+    var list = loadRecent();
+    list.unshift(entry);
+    saveRecent(list);
+    renderRecent();
+  }
+  function renderRecent() {
+    var list = loadRecent();
+    var box = $('recentBox');
+    var out = $('recentList');
+    if (!list.length) { box.style.display = 'none'; return; }
+    box.style.display = 'block';
+    var html = '';
+    for (var i = 0; i < list.length; i++) {
+      var r = list[i];
+      var stClass = r.state === 'ok' ? 'ok' : r.state === 'unknown' ? 'unk' : 'err';
+      var when = new Date(r.ts).toLocaleTimeString();
+      var name = (r.url || '').split('?')[0].split('/').pop() || r.url;
+      html += '<div class="recent-item">'
+        + '<span class="st ' + stClass + '"></span>'
+        + '<span class="url" title="' + esc(r.url) + '">' + esc(name) + '</span>'
+        + '<span class="when">' + esc(when) + '</span>'
+        + '</div>';
+    }
+    out.innerHTML = html;
+  }
+
+  /* =====================================================================
+     KIND META (PS4)
+     ===================================================================== */
+  var KIND_META = {
+    base:   { label: 'Base',   emoji: '🎮' },
+    update: { label: 'Update', emoji: '⬆️' },
+    dlc:    { label: 'DLC',    emoji: '📦' },
+    theme:  { label: 'Theme',  emoji: '🎨' },
+    avatar: { label: 'Avatar', emoji: '👤' },
+    demo:   { label: 'Demo',   emoji: '⏱️' },
+    app:    { label: 'App',    emoji: '📱' },
+    pkg:    { label: 'PKG',    emoji: '📄' }
+  };
+  var KIND_ORDER = ['base', 'update', 'dlc', 'theme', 'avatar', 'demo', 'app', 'pkg'];
+  function kindMeta(k) { return KIND_META[k] || KIND_META.pkg; }
+  function normalizeKind(raw) {
+    var k = String(raw || '').toLowerCase().trim();
+    if (!k) return 'pkg';
+    if (k === 'base' || k === 'game' || k === 'full' || k === 'main') return 'base';
+    if (k === 'update' || k === 'patch' || k === 'upd' || k === 'fix') return 'update';
+    if (k === 'dlc' || k === 'addon' || k === 'add-on' || k === 'expansion') return 'dlc';
+    if (k === 'theme' || k === 'themes' || k === 'skin') return 'theme';
+    if (k === 'avatar' || k === 'avatars' || k === 'pic') return 'avatar';
+    if (k === 'demo' || k === 'trial') return 'demo';
+    if (k === 'app' || k === 'application' || k === 'tool') return 'app';
+    return 'pkg';
+  }
+
+  /* =====================================================================
+     STATE
+     ===================================================================== */
+  var state = {
+    view: 'library',
+    library: {
+      catalog: [], filtered: [],
+      query: '', region: 'all', kind: 'all', sort: 'name',
+      loaded: false, error: null
+    },
+    ps5: {
+      catalog: [], filtered: [],
+      query: '', category: 'all', sort: 'name',
+      loaded: false, error: null
+    },
+    currentLibraryGame: null,
+    currentPs5Game: null
+  };
+
+  /* =====================================================================
+     VIEW SWITCHING
+     ===================================================================== */
+  function setView(v) {
+    state.view = v;
+    var tabs = document.querySelectorAll('.tab-btn');
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].classList.toggle('active', tabs[i].getAttribute('data-view') === v);
+    }
+    var views = document.querySelectorAll('.view');
+    for (var j = 0; j < views.length; j++) {
+      views[j].classList.toggle('active', views[j].getAttribute('data-view') === v);
+    }
+    try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  /* =====================================================================
+     MODAL HELPERS
+     ===================================================================== */
+  function openModal(id) {
+    $(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    $(id).classList.remove('open');
+    var anyOpen = document.querySelector('.overlay.open');
+    if (!anyOpen) document.body.style.overflow = '';
+  }
+  function closeAllModals() {
+    var open = document.querySelectorAll('.overlay.open');
+    for (var i = 0; i < open.length; i++) open[i].classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  /* =====================================================================
+     PS4 LIBRARY — NORMALIZE
+     ===================================================================== */
+  function makeLibraryFile(link) {
     if (!link) return null;
     var url = pick(link, ['url', 'pkg_url', 'pkg', 'link', 'direct_url', 'download']);
     if (!url) return null;
-
     var kind = normalizeKind(pick(link, ['kind', 'type', 'package_type']));
     var km = kindMeta(kind);
     var host = pick(link, ['host']) || hostOf(url);
     var direct = isDirectPkg(url);
-
     return {
       url: String(url),
-      label: pick(link, ['source_label', 'label', 'name', 'title'])
-          || (km.label + ' Package'),
+      label: pick(link, ['source_label', 'label', 'name', 'title']) || (km.label + ' Package'),
       kind: kind,
       kindLabel: km.label,
       kindEmoji: km.emoji,
@@ -891,15 +1386,14 @@ select option{background:#0d1019;color:var(--tx)}
     };
   }
 
-  function makeGameFromRecord(rec, idx) {
+  function makeLibraryGameFromRecord(rec, idx) {
     if (!rec) return null;
     var links = Array.isArray(rec.release_links) ? rec.release_links
               : Array.isArray(rec.files)         ? rec.files
               : [];
-
     var files = [];
     for (var i = 0; i < links.length; i++) {
-      var f = makeFile(links[i]);
+      var f = makeLibraryFile(links[i]);
       if (f) files.push(f);
     }
     if (!files.length) return null;
@@ -910,26 +1404,24 @@ select option{background:#0d1019;color:var(--tx)}
     }
     if (!primary) primary = files[0];
 
-    var region = pick(rec, ['region', 'reg']) || primary.region || '';
-
     return {
-      id: (rec.title_id || ('rec_' + idx + '_' + (rec.name || ''))),
+      id: rec.title_id || ('rec_' + idx + '_' + (rec.name || '')),
       name: pick(rec, ['name', 'title']) || 'Untitled',
       titleId: pick(rec, ['title_id', 'titleId', 'cusa']) || '',
-      region: region,
+      region: pick(rec, ['region', 'reg']) || primary.region || '',
       source: pick(rec, ['source']) || '',
       cover: pick(rec, ['cover_image', 'cover_url', 'cover']) || '',
       files: files
     };
   }
 
-  function normalize(raw) {
+  function normalizeLibrary(raw) {
     var out = [];
     if (!raw) return out;
 
     if (Array.isArray(raw.records)) {
       for (var i = 0; i < raw.records.length; i++) {
-        var g = makeGameFromRecord(raw.records[i], i);
+        var g = makeLibraryGameFromRecord(raw.records[i], i);
         if (g) out.push(g);
       }
       return out;
@@ -941,7 +1433,7 @@ select option{background:#0d1019;color:var(--tx)}
         var url = keys[k];
         var m = raw.DATA[url] || {};
         out.push({
-          id: (m.title_id || ('rec_' + k)),
+          id: m.title_id || ('rec_' + k),
           name: m.name || 'Untitled',
           titleId: m.title_id || '',
           region: m.region || '',
@@ -969,7 +1461,7 @@ select option{background:#0d1019;color:var(--tx)}
       for (var a = 0; a < raw.length; a++) {
         var rec2 = raw[a] || {};
         if (Array.isArray(rec2.release_links)) {
-          var g2 = makeGameFromRecord(rec2, a);
+          var g2 = makeLibraryGameFromRecord(rec2, a);
           if (g2) out.push(g2);
         }
       }
@@ -979,75 +1471,106 @@ select option{background:#0d1019;color:var(--tx)}
     return out;
   }
 
-  function loadCatalog() {
-    var grid = $('grid');
+  /* =====================================================================
+     PS5 LIBRARY — NORMALIZE
+     ===================================================================== */
+  function normalizePs5(raw) {
+    var list = [];
+    if (!raw) return list;
+    var src = null;
+
+    if (Array.isArray(raw)) src = raw;
+    else if (raw && Array.isArray(raw.packages)) src = raw.packages;
+    else if (raw && raw.packages && typeof raw.packages === 'object') {
+      src = [];
+      var kk = Object.keys(raw.packages);
+      for (var i = 0; i < kk.length; i++) src.push(raw.packages[kk[i]]);
+    } else if (raw && raw.DATA && typeof raw.DATA === 'object') {
+      src = [];
+      var dk = Object.keys(raw.DATA);
+      for (var j = 0; j < dk.length; j++) src.push(raw.DATA[dk[j]]);
+    }
+    if (!src) return list;
+
+    for (var k = 0; k < src.length; k++) {
+      var m = src[k] || {};
+      var links = Array.isArray(m.downloadLinks) ? m.downloadLinks : [];
+      list.push({
+        titleId: m.titleId || m.title_id || '',
+        title: m.title || m.name || 'Untitled',
+        version: m.version || '',
+        category: (m.category || '').toLowerCase(),
+        posterUrl: m.posterUrl || m.poster_url || '',
+        description: m.description || '',
+        downloadLinks: links.map(function (l) {
+          return {
+            name: l.name || '',
+            url: l.url || '',
+            group: l.group || '',
+            version: l.version || '',
+            mirror: l.mirror || ''
+          };
+        }),
+        sizeBytes: Number(m.sizeBytes) || 0
+      });
+    }
+    return list;
+  }
+
+  /* =====================================================================
+     PS4 LIBRARY — LOAD / FILTER / RENDER
+     ===================================================================== */
+  function libSkeleton() {
     var sk = '';
     for (var i = 0; i < 12; i++) {
       sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
     }
-    grid.innerHTML = sk;
-
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', CATALOG_URL + '?t=' + Date.now(), true);
-    xhr.onload = function () {
-      if (xhr.status >= 200 && xhr.status < 300) {
-        try {
-          var raw = JSON.parse(xhr.responseText);
-          catalog = normalize(raw);
-
-          if (!catalog.length) {
-            grid.innerHTML =
-              '<div class="empty">' +
-                '<div class="big">📭</div>' +
-                '<b>Catalog is empty</b>' +
-                '<small>export_with_covers.json loaded but no usable entries were found.</small>' +
-              '</div>';
-            $('count').textContent = '0';
-            return;
-          }
-
-          buildStats();
-          buildRegionFilter();
-          buildKindsBar();
-          apply();
-        } catch (e) {
-          grid.innerHTML =
-            '<div class="empty">' +
-              '<div class="big">⚠️</div>' +
-              '<b>Could not parse export_with_covers.json</b>' +
-              '<small>' + esc(e.message) + '</small>' +
-            '</div>';
-          $('count').textContent = '0';
-        }
-      } else {
-        grid.innerHTML =
-          '<div class="empty">' +
-            '<div class="big">📡</div>' +
-            '<b>Could not load the catalog</b>' +
-            '<small>HTTP ' + xhr.status + ' — is export_with_covers.json in the same folder?</small>' +
-          '</div>';
-        $('count').textContent = '0';
-      }
-    };
-    xhr.onerror = function () {
-      grid.innerHTML =
-        '<div class="empty">' +
-          '<div class="big">📡</div>' +
-          '<b>Could not load the catalog</b>' +
-          '<small>Network error. Make sure export_with_covers.json sits next to this page.</small>' +
-        '</div>';
-      $('count').textContent = '0';
-    };
-    xhr.send();
+    $('libGrid').innerHTML = sk;
   }
 
-  function buildStats() {
-    var titles = catalog.length;
+  function loadLibrary() {
+    libSkeleton();
+    fetchJSON(LIBRARY_CATALOGS, function (raw, url) {
+      if (!raw) {
+        state.library.error = 'not-found';
+        $('libGrid').innerHTML =
+          '<div class="empty">' +
+            '<div class="big">📡</div>' +
+            '<b>No PS4 catalog found</b>' +
+            '<small>Place <code>export_with_covers.json</code> (or <code>games.json</code>) next to this file.</small>' +
+          '</div>';
+        $('libCount').textContent = '0';
+        return;
+      }
+      var list = normalizeLibrary(raw);
+      if (!list.length) {
+        state.library.error = 'empty';
+        $('libGrid').innerHTML =
+          '<div class="empty">' +
+            '<div class="big">📭</div>' +
+            '<b>Catalog is empty</b>' +
+            '<small><code>' + esc(url) + '</code> loaded but no usable entries were found.</small>' +
+          '</div>';
+        $('libCount').textContent = '0';
+        return;
+      }
+      state.library.catalog = list;
+      state.library.loaded = true;
+      state.library.error = null;
+      buildLibStats();
+      buildLibRegionFilter();
+      buildLibKindsBar();
+      applyLibrary();
+    });
+  }
+
+  function buildLibStats() {
+    var titles = state.library.catalog.length;
     var files = 0, totalBytes = 0;
     var regions = {};
 
-    for (var i = 0; i < catalog.length; i++) {
-      var g = catalog[i];
+    for (var i = 0; i < state.library.catalog.length; i++) {
+      var g = state.library.catalog[i];
       for (var j = 0; j < g.files.length; j++) {
         files++;
         totalBytes += parseSizeToBytes(g.files[j].size);
@@ -1056,104 +1579,98 @@ select option{background:#0d1019;color:var(--tx)}
       if (g.region) regions[g.region] = 1;
     }
 
-    $('statTotal').textContent = titles.toLocaleString();
-    $('statFiles').textContent = files.toLocaleString();
-    $('statSize').textContent = fmtBytes(totalBytes);
-    $('statUSA').textContent = (regions.USA ? 1 : 0) ? countRegion('USA').toLocaleString() : '0';
-    $('statEUR').textContent = (regions.EUR ? 1 : 0) ? countRegion('EUR').toLocaleString() : '0';
+    $('statTitles').textContent = titles.toLocaleString();
+    $('statPackages').textContent = files.toLocaleString();
+    $('statLibSize').textContent = fmtBytes(totalBytes);
+    $('statUSA').textContent = countLibRegion('USA').toLocaleString();
+    $('statEUR').textContent = countLibRegion('EUR').toLocaleString();
   }
 
-  function countRegion(r) {
+  function countLibRegion(r) {
     var n = 0;
-    for (var i = 0; i < catalog.length; i++) {
-      if (catalog[i].region === r) { n++; continue; }
-      for (var j = 0; j < catalog[i].files.length; j++) {
-        if (catalog[i].files[j].region === r) { n++; break; }
+    for (var i = 0; i < state.library.catalog.length; i++) {
+      var g = state.library.catalog[i];
+      if (g.region === r) { n++; continue; }
+      for (var j = 0; j < g.files.length; j++) {
+        if (g.files[j].region === r) { n++; break; }
       }
     }
     return n;
   }
 
-  function buildRegionFilter() {
+  function buildLibRegionFilter() {
     var seen = {};
-    for (var i = 0; i < catalog.length; i++) {
-      if (catalog[i].region) seen[catalog[i].region] = 1;
-      for (var j = 0; j < catalog[i].files.length; j++) {
-        if (catalog[i].files[j].region) seen[catalog[i].files[j].region] = 1;
+    for (var i = 0; i < state.library.catalog.length; i++) {
+      var g = state.library.catalog[i];
+      if (g.region) seen[g.region] = 1;
+      for (var j = 0; j < g.files.length; j++) {
+        if (g.files[j].region) seen[g.files[j].region] = 1;
       }
     }
     var list = Object.keys(seen).sort();
-    var sel = $('regionSel');
+    var sel = $('libRegion');
     sel.innerHTML = '<option value="all">All Regions</option>';
     for (var k = 0; k < list.length; k++) {
       var o = document.createElement('option');
-      o.value = list[k]; o.textContent = list[k];
+      o.value = list[k];
+      o.textContent = list[k];
       sel.appendChild(o);
     }
   }
 
-  function kindCounts() {
+  function buildLibKindsBar() {
+    var bar = $('libKinds');
     var counts = {};
-    for (var i = 0; i < catalog.length; i++) {
-      for (var j = 0; j < catalog[i].files.length; j++) {
-        var k = catalog[i].files[j].kind;
+    for (var i = 0; i < state.library.catalog.length; i++) {
+      for (var j = 0; j < state.library.catalog[i].files.length; j++) {
+        var k = state.library.catalog[i].files[j].kind;
         counts[k] = (counts[k] || 0) + 1;
       }
     }
-    return counts;
-  }
-
-  function buildKindsBar() {
-    var bar = $('kindsBar');
-    if (!bar) return;
-    var counts = kindCounts();
     var total = 0;
-    for (var k in counts) total += counts[k];
+    for (var kk in counts) total += counts[kk];
 
     var html = '<span class="kb-label">Kind</span>';
-    html += '<button class="kind-btn on" data-kind="all"><span class="e">🗂️</span>All<span class="n">' + total + '</span></button>';
-    for (var i = 0; i < KIND_ORDER.length; i++) {
-      var kk = KIND_ORDER[i];
-      var n = counts[kk] || 0;
+    html += '<button class="kind-btn on" data-kind="all" type="button"><span class="e">🗂️</span>All<span class="n">' + total + '</span></button>';
+    for (var i2 = 0; i2 < KIND_ORDER.length; i2++) {
+      var kind = KIND_ORDER[i2];
+      var n = counts[kind] || 0;
       if (!n) continue;
-      var km = kindMeta(kk);
-      html += '<button class="kind-btn" data-kind="' + kk + '">' +
+      var km = kindMeta(kind);
+      html += '<button class="kind-btn" data-kind="' + kind + '" type="button">' +
               '<span class="e">' + km.emoji + '</span>' + km.label +
               '<span class="n">' + n + '</span></button>';
     }
     bar.innerHTML = html;
 
-    bar.querySelectorAll('.kind-btn').forEach(function (btn) {
-      btn.onclick = function () {
-        var kk = btn.dataset.kind;
-        kind = (kk === kind) ? 'all' : kk;
-        bar.querySelectorAll('.kind-btn').forEach(function (b) {
-          b.classList.toggle('on', b.dataset.kind === kind);
-        });
-        apply();
-      };
-    });
+    var btns = bar.querySelectorAll('.kind-btn');
+    for (var b = 0; b < btns.length; b++) {
+      btns[b].addEventListener('click', function () {
+        var kk2 = this.getAttribute('data-kind');
+        state.library.kind = (kk2 === state.library.kind) ? 'all' : kk2;
+        for (var x = 0; x < btns.length; x++) {
+          btns[x].classList.toggle('on', btns[x].getAttribute('data-kind') === state.library.kind);
+        }
+        applyLibrary();
+      });
+    }
   }
 
-  function gameHasRegion(g, r) {
+  function libGameHasRegion(g, r) {
     if (g.region === r) return true;
-    for (var i = 0; i < g.files.length; i++) {
-      if (g.files[i].region === r) return true;
-    }
+    for (var i = 0; i < g.files.length; i++) if (g.files[i].region === r) return true;
     return false;
   }
-  function gameHasKind(g, k) {
-    for (var i = 0; i < g.files.length; i++) {
-      if (g.files[i].kind === k) return true;
-    }
+  function libGameHasKind(g, k) {
+    for (var i = 0; i < g.files.length; i++) if (g.files[i].kind === k) return true;
     return false;
   }
-  function gameTotalBytes(g) {
+  function libGameBytes(g) {
     var t = 0;
     for (var i = 0; i < g.files.length; i++) t += parseSizeToBytes(g.files[i].size);
     return t;
   }
-  function gameKinds(g) {
+  function libGameKinds(g) {
     var seen = {}, out = [];
     for (var i = 0; i < g.files.length; i++) {
       var k = g.files[i].kind;
@@ -1162,68 +1679,73 @@ select option{background:#0d1019;color:var(--tx)}
     return out;
   }
 
-  function apply() {
-    var q = query;
-    filtered = catalog.filter(function (g) {
+  function applyLibrary() {
+    var L = state.library;
+    var q = L.query;
+    L.filtered = L.catalog.filter(function (g) {
       if (q && (g.name || '').toLowerCase().indexOf(q) < 0
               && (g.titleId || '').toLowerCase().indexOf(q) < 0) return false;
-      if (region !== 'all' && !gameHasRegion(g, region)) return false;
-      if (kind !== 'all' && !gameHasKind(g, kind)) return false;
+      if (L.region !== 'all' && !libGameHasRegion(g, L.region)) return false;
+      if (L.kind !== 'all' && !libGameHasKind(g, L.kind)) return false;
       return true;
     });
 
-    if (sort === 'name') {
-      filtered.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
-    } else if (sort === 'name-desc') {
-      filtered.sort(function (a, b) { return (b.name || '').localeCompare(a.name || ''); });
-    } else if (sort === 'files') {
-      filtered.sort(function (a, b) { return b.files.length - a.files.length; });
-    } else if (sort === 'size') {
-      filtered.sort(function (a, b) { return gameTotalBytes(b) - gameTotalBytes(a); });
-    } else if (sort === 'size-asc') {
-      filtered.sort(function (a, b) { return gameTotalBytes(a) - gameTotalBytes(b); });
+    if (L.sort === 'name') {
+      L.filtered.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
+    } else if (L.sort === 'name-desc') {
+      L.filtered.sort(function (a, b) { return (b.name || '').localeCompare(a.name || ''); });
+    } else if (L.sort === 'files') {
+      L.filtered.sort(function (a, b) { return b.files.length - a.files.length; });
+    } else if (L.sort === 'size') {
+      L.filtered.sort(function (a, b) { return libGameBytes(b) - libGameBytes(a); });
+    } else if (L.sort === 'size-asc') {
+      L.filtered.sort(function (a, b) { return libGameBytes(a) - libGameBytes(b); });
     }
 
-    render();
+    renderLibrary();
   }
 
-  function render() {
-    var grid = $('grid');
-    $('count').textContent = filtered.length.toLocaleString() + ' title' + (filtered.length === 1 ? '' : 's');
+  function renderLibrary() {
+    var L = state.library;
+    var grid = $('libGrid');
+    $('libCount').textContent = L.filtered.length.toLocaleString() + ' title' + (L.filtered.length === 1 ? '' : 's');
 
-    if (!filtered.length) {
+    if (!L.filtered.length) {
       grid.innerHTML =
         '<div class="empty">' +
           '<div class="big">🔍</div>' +
           '<b>No titles match</b>' +
           '<small>Try clearing the search or switching region / kind filters.</small>' +
-          '<br><button class="act" id="resetBtn">Reset filters</button>' +
+          '<br><button class="act" id="libResetBtn" type="button">Reset filters</button>' +
         '</div>';
-      var rb = $('resetBtn');
-      if (rb) rb.onclick = resetFilters;
+      var rb = $('libResetBtn');
+      if (rb) rb.onclick = resetLibraryFilters;
       return;
     }
 
     var html = '';
-    for (var i = 0; i < filtered.length; i++) {
-      var g = filtered[i];
+    for (var i = 0; i < L.filtered.length; i++) {
+      var g = L.filtered[i];
       var coverSrc = g.cover ? esc(g.cover) : '';
       var directCount = 0;
       for (var d = 0; d < g.files.length; d++) if (g.files[d].direct) directCount++;
 
-      var kinds = gameKinds(g).slice(0, 3);
+      var kinds = libGameKinds(g).slice(0, 3);
       var kindsHtml = '';
       for (var kx = 0; kx < kinds.length; kx++) {
         var km = kindMeta(kinds[kx]);
         kindsHtml += '<span class="kind ' + kinds[kx] + '"><span class="e">' + km.emoji + '</span>' + km.label + '</span>';
       }
 
-      var total = gameTotalBytes(g);
-      var totalStr = total > 0 ? fmtBytes(total) : (g.files[0] && g.files[0].size ? sizeLabel(g.files[0].size) : '—');
+      var total = libGameBytes(g);
+      var totalStr = total > 0 ? fmtBytes(total)
+                              : (g.files[0] && g.files[0].size ? sizeLabel(g.files[0].size) : '—');
 
       html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">'
         + '<div class="cover">'
-        + (coverSrc ? '<img src="' + coverSrc + '" alt="" loading="lazy" onload="this.classList.add(\'ready\')" onerror="this.style.display=\'none\'">' : '')
+        + (coverSrc
+            ? '<img src="' + coverSrc + '" alt="" loading="lazy" onload="this.classList.add(\'ready\')" onerror="this.style.display=\'none\'">'
+            : '')
         + '<div class="ribbons">'
         + (g.region ? '<span class="ribbon reg">' + esc(g.region) + '</span>' : '')
         + (directCount ? '<span class="ribbon ok">' + directCount + ' direct</span>' : '')
@@ -1245,45 +1767,61 @@ select option{background:#0d1019;color:var(--tx)}
     for (var c = 0; c < cards.length; c++) {
       (function (card) {
         var idx = Number(card.getAttribute('data-idx'));
-        card.addEventListener('click', function () { openGame(filtered[idx]); });
+        card.addEventListener('click', function () { openLibraryGame(L.filtered[idx]); });
         card.addEventListener('keydown', function (e) {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            openGame(filtered[idx]);
+            openLibraryGame(L.filtered[idx]);
           }
         });
       })(cards[c]);
     }
   }
 
-  function resetFilters() {
-    query = ''; region = 'all'; kind = 'all'; sort = 'name';
-    $('search').value = '';
-    $('regionSel').value = 'all';
-    $('sortSel').value = 'name';
-    var bar = $('kindsBar');
-    if (bar) bar.querySelectorAll('.kind-btn').forEach(function (b) {
-      b.classList.toggle('on', b.dataset.kind === 'all');
-    });
-    apply();
+  function resetLibraryFilters() {
+    state.library.query = '';
+    state.library.region = 'all';
+    state.library.kind = 'all';
+    state.library.sort = 'name';
+    $('libSearch').value = '';
+    $('libRegion').value = 'all';
+    $('libSort').value = 'name';
+    var bar = $('libKinds');
+    var btns = bar.querySelectorAll('.kind-btn');
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].classList.toggle('on', btns[i].getAttribute('data-kind') === 'all');
+    }
+    applyLibrary();
     toast('Filters reset', 'ok');
   }
 
-  function openGame(g) {
-    currentGame = g;
-    var img = $('gmCover');
-    img.onerror = function () { this.style.display = 'none'; };
-    img.src = g.cover || '';
-    $('gmTitle').textContent = g.name;
+  function openLibraryGame(g) {
+    state.currentLibraryGame = g;
 
+    var wrap = $('libCoverWrap');
+    var oldImg = wrap.querySelector('img');
+    if (oldImg) oldImg.remove();
+    wrap.setAttribute('data-initial', (g.name || '?').trim().charAt(0).toUpperCase() || '?');
+    if (!wrap.textContent.trim() && wrap.getAttribute('data-initial')) {
+      wrap.innerHTML = esc(wrap.getAttribute('data-initial'));
+    }
+    if (g.cover) {
+      var img = document.createElement('img');
+      img.alt = '';
+      img.onerror = function () { this.remove(); };
+      img.src = g.cover;
+      wrap.appendChild(img);
+    }
+
+    $('libTitle').textContent = g.name;
     var subParts = [];
     if (g.titleId) subParts.push(g.titleId);
     if (g.source) subParts.push('Source: ' + g.source);
-    $('gmSub').textContent = subParts.join(' · ') || '—';
+    $('libSub').textContent = subParts.join(' · ') || '—';
 
     var tags = [];
     if (g.region) tags.push({ t: g.region, c: 'b' });
-    tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's'), c: '' });
+    tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's') });
 
     var directCount = 0;
     for (var i = 0; i < g.files.length; i++) if (g.files[i].direct) directCount++;
@@ -1292,14 +1830,14 @@ select option{background:#0d1019;color:var(--tx)}
     var regionSet = {};
     for (var r = 0; r < g.files.length; r++) if (g.files[r].region) regionSet[g.files[r].region] = 1;
     var extraRegions = Object.keys(regionSet).filter(function (x) { return x !== g.region; });
-    if (extraRegions.length) tags.push({ t: 'Also ' + extraRegions.join(', '), c: '' });
+    if (extraRegions.length) tags.push({ t: 'Also ' + extraRegions.join(', ') });
 
     var kindSet = {};
     for (var k = 0; k < g.files.length; k++) {
       if (!kindSet[g.files[k].kind]) {
         kindSet[g.files[k].kind] = 1;
         var km = kindMeta(g.files[k].kind);
-        tags.push({ t: km.emoji + ' ' + km.label, c: '' });
+        tags.push({ t: km.emoji + ' ' + km.label });
       }
     }
 
@@ -1307,30 +1845,27 @@ select option{background:#0d1019;color:var(--tx)}
     for (var t = 0; t < tags.length; t++) {
       tagsHtml += '<span class="gm-tag ' + (tags[t].c || '') + '">' + esc(tags[t].t) + '</span>';
     }
-    $('gmTags').innerHTML = tagsHtml;
+    $('libTags').innerHTML = tagsHtml;
 
     var sortedFiles = g.files.slice().sort(function (a, b) {
-      var ai = KIND_ORDER.indexOf(a.kind);
-      var bi = KIND_ORDER.indexOf(b.kind);
-      if (ai === -1) ai = 99;
-      if (bi === -1) bi = 99;
+      var ai = KIND_ORDER.indexOf(a.kind); if (ai === -1) ai = 99;
+      var bi = KIND_ORDER.indexOf(b.kind); if (bi === -1) bi = 99;
       return ai - bi;
     });
 
-    $('gmFileCount').textContent = g.files.length + ' total · ' + directCount + ' direct';
+    $('libFileCount').textContent = g.files.length + ' total · ' + directCount + ' direct';
 
     var filesHtml = '';
     for (var fi = 0; fi < sortedFiles.length; fi++) {
       var f = sortedFiles[fi];
       var fkm = kindMeta(f.kind);
-      var safeUrl = (f.url || '').replace(/'/g, "\\'");
-
       filesHtml += '<div class="frow" data-kind="' + f.kind + '">'
         + '<div class="fmain">'
         + '<div class="fname">' + esc(f.label) + '</div>'
         + '<div class="facts">'
         + '<span class="kind ' + f.kind + '"><span class="e">' + fkm.emoji + '</span>' + fkm.label + '</span>'
-        + '<span class="tag ' + (f.direct ? 'direct' : 'redirect') + '">' + (f.direct ? '⬇ Direct .pkg' : '↪ External') + '</span>'
+        + '<span class="tag ' + (f.direct ? 'direct' : 'redirect') + '">'
+        +   (f.direct ? '⬇ Direct .pkg' : '↪ External') + '</span>'
         + (f.size ? '<span class="fact size">' + esc(sizeLabel(f.size)) + '</span>' : '')
         + (f.version ? '<span class="fact version">v' + esc(f.version) + '</span>' : '')
         + (f.region ? '<span class="fact">' + esc(f.region) + '</span>' : '')
@@ -1340,79 +1875,608 @@ select option{background:#0d1019;color:var(--tx)}
         + '</div>'
         + '<div class="btn-group">'
         + (f.direct
-            ? '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Opens the direct link in a new tab">📥 Download</a>'
-            : '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="Landing page — opens in a new tab">🔗 Open host</a>')
-        + '<button class="btn ghost icon sm" type="button" onclick="navigator.clipboard && navigator.clipboard.writeText(\'' + safeUrl + '\')" title="Copy URL">📋</button>'
+            ? '<button class="btn ok sm" type="button" data-send="' + esc(f.url) + '" data-name="' + esc(f.label) + '">📤 Send</button>'
+            : '')
+        + '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="' +
+            (f.direct ? 'Open the direct .pkg link' : 'Open the host landing page') + '">'
+        +   (f.direct ? '📥 Download' : '🔗 Open host')
+        + '</a>'
+        + '<button class="btn ghost sm icon" type="button" data-copy="' + esc(f.url) + '" title="Copy URL">📋</button>'
         + '</div>'
         + '</div>';
     }
-    $('gmFiles').innerHTML = filesHtml;
+    $('libFiles').innerHTML = filesHtml;
 
-    $('gameModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
+    $('libSendAll').style.display = directCount ? '' : 'none';
+    $('libSendAll').disabled = !directCount;
+
+    openModal('libModal');
   }
 
-  function closeGame() {
-    $('gameModal').classList.remove('open');
-    document.body.style.overflow = '';
+  /* =====================================================================
+     PS5 LIBRARY — LOAD / FILTER / RENDER
+     ===================================================================== */
+  function ps5Skeleton() {
+    var sk = '';
+    for (var i = 0; i < 12; i++) {
+      sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
+    }
+    $('ps5Grid').innerHTML = sk;
   }
 
-  function openHelp() {
-    $('helpModal').classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeHelp() {
-    $('helpModal').classList.remove('open');
-    if (!$('gameModal').classList.contains('open')) document.body.style.overflow = '';
+  function loadPs5() {
+    ps5Skeleton();
+    fetchJSON(PS5_CATALOGS, function (raw, url) {
+      if (!raw) {
+        state.ps5.error = 'not-found';
+        $('ps5Grid').innerHTML =
+          '<div class="empty">' +
+            '<div class="big">📡</div>' +
+            '<b>No PS5 catalog found</b>' +
+            '<small>Place <code>ps5-catalog.json</code> next to this file to populate this view.</small>' +
+          '</div>';
+        $('ps5Count').textContent = '0';
+        return;
+      }
+      var list = normalizePs5(raw);
+      if (!list.length) {
+        state.ps5.error = 'empty';
+        $('ps5Grid').innerHTML =
+          '<div class="empty">' +
+            '<div class="big">📭</div>' +
+            '<b>PS5 catalog is empty</b>' +
+            '<small><code>' + esc(url) + '</code> loaded but no packages were found.</small>' +
+          '</div>';
+        $('ps5Count').textContent = '0';
+        return;
+      }
+      state.ps5.catalog = list;
+      state.ps5.loaded = true;
+      state.ps5.error = null;
+      buildPs5Stats();
+      buildPs5CategoryFilter();
+      applyPs5();
+    });
   }
 
-  function wire() {
-    var searchEl = $('search');
+  function buildPs5Stats() {
+    var total = state.ps5.catalog.length;
+    var totalBytes = 0;
+    var cats = {};
+    for (var i = 0; i < state.ps5.catalog.length; i++) {
+      totalBytes += state.ps5.catalog[i].sizeBytes || 0;
+      var c = state.ps5.catalog[i].category || 'other';
+      cats[c] = (cats[c] || 0) + 1;
+    }
+    $('statPs5Total').textContent = total.toLocaleString();
+    $('statPs5Size').textContent = fmtBytes(totalBytes);
+    $('statPs5Game').textContent = (cats.game || 0).toLocaleString();
+    $('statPs5Upd').textContent = (cats.update || cats.upd || 0).toLocaleString();
+    var other = 0;
+    for (var k in cats) if (k !== 'game' && k !== 'update' && k !== 'upd') other += cats[k];
+    $('statPs5Other').textContent = other.toLocaleString();
+  }
+
+  function buildPs5CategoryFilter() {
+    var seen = {};
+    for (var i = 0; i < state.ps5.catalog.length; i++) {
+      if (state.ps5.catalog[i].category) seen[state.ps5.catalog[i].category] = 1;
+    }
+    var list = Object.keys(seen).sort();
+    var sel = $('ps5Cat');
+    sel.innerHTML = '<option value="all">All Categories</option>';
+    for (var j = 0; j < list.length; j++) {
+      var o = document.createElement('option');
+      o.value = list[j];
+      o.textContent = list[j].charAt(0).toUpperCase() + list[j].slice(1);
+      sel.appendChild(o);
+    }
+  }
+
+  function applyPs5() {
+    var P = state.ps5;
+    var q = P.query;
+    P.filtered = P.catalog.filter(function (g) {
+      if (q && (g.title || '').toLowerCase().indexOf(q) < 0
+              && (g.titleId || '').toLowerCase().indexOf(q) < 0) return false;
+      if (P.category !== 'all' && g.category !== P.category) return false;
+      return true;
+    });
+
+    if (P.sort === 'name') {
+      P.filtered.sort(function (a, b) { return (a.title || '').localeCompare(b.title || ''); });
+    } else if (P.sort === 'name-desc') {
+      P.filtered.sort(function (a, b) { return (b.title || '').localeCompare(a.title || ''); });
+    } else if (P.sort === 'size') {
+      P.filtered.sort(function (a, b) { return (b.sizeBytes || 0) - (a.sizeBytes || 0); });
+    } else if (P.sort === 'size-asc') {
+      P.filtered.sort(function (a, b) { return (a.sizeBytes || 0) - (b.sizeBytes || 0); });
+    }
+
+    renderPs5();
+  }
+
+  function renderPs5() {
+    var P = state.ps5;
+    var grid = $('ps5Grid');
+    $('ps5Count').textContent = P.filtered.length.toLocaleString() + ' package' + (P.filtered.length === 1 ? '' : 's');
+
+    if (!P.filtered.length) {
+      grid.innerHTML =
+        '<div class="empty">' +
+          '<div class="big">🔍</div>' +
+          '<b>No packages match</b>' +
+          '<small>Try a different search or category filter.</small>' +
+          '<br><button class="act" id="ps5ResetBtn" type="button">Reset filters</button>' +
+        '</div>';
+      var rb = $('ps5ResetBtn');
+      if (rb) rb.onclick = resetPs5Filters;
+      return;
+    }
+
+    var html = '';
+    for (var i = 0; i < P.filtered.length; i++) {
+      var g = P.filtered[i];
+      var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
+      var src = g.posterUrl ? esc(g.posterUrl) : '';
+      var cat = g.category ? g.category.charAt(0).toUpperCase() + g.category.slice(1) : '';
+
+      html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">'
+        + '<div class="cover">'
+        + '<div class="placeholder">' + esc(initial) + '</div>'
+        + (src
+            ? '<img src="' + src + '" alt="" loading="lazy" onload="this.classList.add(\'ready\')" onerror="this.style.display=\'none\'">'
+            : '')
+        + '<div class="ribbons">'
+        + (cat ? '<span class="ribbon cat">' + esc(cat) + '</span>' : '')
+        + (g.version ? '<span class="ribbon ok">v' + esc(g.version) + '</span>' : '')
+        + '</div>'
+        + '</div>'
+        + '<div class="info">'
+        + '<h3>' + esc(g.title) + '</h3>'
+        + '<div class="row">'
+        + '<span>' + esc(g.titleId || '') + '</span>'
+        + '<span>' + fmtBytes(g.sizeBytes) + '</span>'
+        + '</div>'
+        + '</div>'
+        + '</div>';
+    }
+    grid.innerHTML = html;
+
+    var cards = grid.querySelectorAll('.card');
+    for (var k = 0; k < cards.length; k++) {
+      (function (card) {
+        var idx = Number(card.getAttribute('data-idx'));
+        card.addEventListener('click', function () { openPs5Game(P.filtered[idx]); });
+        card.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openPs5Game(P.filtered[idx]);
+          }
+        });
+      })(cards[k]);
+    }
+  }
+
+  function resetPs5Filters() {
+    state.ps5.query = '';
+    state.ps5.category = 'all';
+    state.ps5.sort = 'name';
+    $('ps5Search').value = '';
+    $('ps5Cat').value = 'all';
+    $('ps5Sort').value = 'name';
+    applyPs5();
+    toast('Filters reset', 'ok');
+  }
+
+  function openPs5Game(g) {
+    state.currentPs5Game = g;
+
+    var wrap = $('ps5CoverWrap');
+    var oldImg = wrap.querySelector('img');
+    if (oldImg) oldImg.remove();
+    var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
+    wrap.innerHTML = esc(initial);
+    if (g.posterUrl) {
+      var img = document.createElement('img');
+      img.alt = '';
+      img.onerror = function () { this.remove(); };
+      img.src = g.posterUrl;
+      wrap.appendChild(img);
+    }
+
+    $('ps5Title').textContent = g.title;
+    $('ps5Sub').textContent = g.titleId || '—';
+
+    var tags = [];
+    if (g.category) tags.push({ t: g.category, c: 'b' });
+    if (g.version) tags.push({ t: 'v' + g.version });
+    tags.push({ t: fmtBytes(g.sizeBytes) });
+    if (g.downloadLinks && g.downloadLinks.length) {
+      tags.push({ t: g.downloadLinks.length + ' link' + (g.downloadLinks.length === 1 ? '' : 's'), c: 'g' });
+    }
+    var tagsHtml = '';
+    for (var i = 0; i < tags.length; i++) {
+      tagsHtml += '<span class="gm-tag ' + (tags[i].c || '') + '">' + esc(tags[i].t) + '</span>';
+    }
+    $('ps5Tags').innerHTML = tagsHtml;
+
+    if (g.description) {
+      $('ps5DescTitle').style.display = '';
+      $('ps5Desc').style.display = '';
+      $('ps5Desc').innerHTML = '<span class="ico">📝</span><span>' + esc(g.description) + '</span>';
+    } else {
+      $('ps5DescTitle').style.display = 'none';
+      $('ps5Desc').style.display = 'none';
+    }
+
+    var links = g.downloadLinks || [];
+    $('ps5LinkCount').textContent = links.length + ' total';
+
+    if (!links.length) {
+      $('ps5Links').innerHTML =
+        '<div class="frow"><div class="fmain"><div class="fname" style="color:var(--tx-3)">No download links available</div></div></div>';
+    } else {
+      var html = '';
+      for (var li = 0; li < links.length; li++) {
+        var l = links[li];
+        var meta = [];
+        if (l.group) meta.push(l.group);
+        if (l.version) meta.push('v' + l.version);
+        if (l.mirror) meta.push(l.mirror);
+
+        html += '<div class="frow" data-kind="pkg">'
+          + '<div class="fmain">'
+          + '<div class="fname">' + esc(l.name || 'Download') + '</div>'
+          + (meta.length ? '<div class="facts"><span class="fact">' + esc(meta.join(' · ')) + '</span></div>' : '')
+          + '</div>'
+          + '<div class="btn-group">'
+          + '<a class="btn primary sm" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">📥 Download</a>'
+          + '<button class="btn ghost sm icon" type="button" data-copy="' + esc(l.url) + '" title="Copy URL">📋</button>'
+          + '</div>'
+          + '</div>';
+      }
+      $('ps5Links').innerHTML = html;
+    }
+
+    openModal('ps5Modal');
+  }
+
+  /* =====================================================================
+     SEND TO PS4
+     ===================================================================== */
+  function sendUrlsToPs4(urls, label) {
+    if (!urls.length) { toast('No direct .pkg links to send', 'err'); return; }
+    var ip = getIp();
+    toast('Sending ' + urls.length + ' package(s)…', 'info');
+
+    rpiInstall(ip, urls, function (r) {
+      if (r.state === 'ok') {
+        setEndpointState('ok');
+        toast('Sent ' + urls.length + ' package(s) to PS4', 'ok');
+        pushRecent({ url: urls[0] + (urls.length > 1 ? ' (+' + (urls.length - 1) + ')' : ''), ts: Date.now(), state: 'ok' });
+      } else if (r.state === 'rejected') {
+        toast('RPI rejected the request (HTTP ' + r.status + ')', 'err');
+        pushRecent({ url: urls[0], ts: Date.now(), state: 'rejected' });
+      } else if (r.state === 'timeout') {
+        setEndpointState('err');
+        toast('Timed out — is Remote Package Installer open?', 'err');
+        pushRecent({ url: urls[0], ts: Date.now(), state: 'timeout' });
+      } else {
+        toast('Request sent — check the PS4', 'info');
+        pushRecent({ url: urls[0], ts: Date.now(), state: 'unknown' });
+      }
+    });
+  }
+
+  /* =====================================================================
+     SENDER VIEW
+     ===================================================================== */
+  function setConn(cls, msg) {
+    $('connDot').className = 'dot ' + (cls || '');
+    $('connMsg').textContent = msg || 'Not tested';
+  }
+
+  function showStatus(kind, title, msg, detail) {
+    var el = $('status');
+    el.className = 'status show ' + kind;
+    $('statusIco').textContent = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'run' ? '⏳' : 'ℹ️';
+    $('statusTitle').textContent = title;
+    $('statusMsg').textContent = msg;
+    var d = $('statusDetail');
+    if (detail) { d.style.display = 'block'; d.textContent = detail; }
+    else { d.style.display = 'none'; d.textContent = ''; }
+  }
+
+  function testConnection() {
+    var ip = cleanIp($('ipInput').value);
+    setIp(ip);
+    $('ipInput').value = ip;
+    renderEndpoint();
+    setConn('run', 'Testing ' + ip + ':' + RPI_PORT + ' …');
+    rpiInstall(ip, [], function (r) {
+      if (r.state === 'ok' || r.state === 'rejected') {
+        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
+        setEndpointState('ok');
+        toast('Remote Package Installer is answering.', 'ok');
+      } else if (r.state === 'timeout') {
+        setConn('err', 'Timed out — is RPI open?');
+        setEndpointState('err');
+        toast('No answer from ' + ip + ':' + RPI_PORT + '.', 'err');
+      } else {
+        setConn('run', 'Request sent — no readable reply');
+        toast("Sent, but couldn't read a reply. Try sending a package.", 'info');
+      }
+    });
+  }
+
+  function sendCurrent() {
+    var ip = cleanIp($('ipInput').value);
+    var url = String($('urlInput').value || '').replace(/^\s+|\s+$/g, '');
+
+    setIp(ip);
+    $('ipInput').value = ip;
+    renderEndpoint();
+
+    if (!url) { showStatus('err', 'Missing URL', 'Paste a direct .pkg link first.'); toast('Paste a .pkg URL first', 'err'); return; }
+    if (!validUrl(url)) { showStatus('err', 'Invalid URL', 'The URL must start with http:// or https://'); toast('Invalid URL', 'err'); return; }
+    if (!isPkgUrl(url)) {
+      showStatus('err', 'Not a .pkg link', 'The URL must end in .pkg (before any ?query or #fragment).');
+      toast('Only .pkg URLs can be sent', 'err');
+      return;
+    }
+
+    var sendBtn = $('sendBtn');
+    sendBtn.disabled = true;
+    showStatus('run', 'Sending…', 'Posting to http://' + ip + ':' + RPI_PORT + '/api/install', url);
+
+    var fileName = url.split('?')[0].split('/').pop() || 'package.pkg';
+
+    rpiInstall(ip, [url], function (r) {
+      sendBtn.disabled = false;
+      var rec = { url: url, ts: Date.now(), state: 'unknown' };
+
+      if (r.state === 'ok') {
+        rec.state = 'ok';
+        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
+        setEndpointState('ok');
+        showStatus('ok', 'Sent to PS4', 'Queued on the console — check the notification area.',
+          'HTTP ' + r.status + (r.text ? ' — ' + r.text.substring(0, 200) : ''));
+        toast('Sent: ' + fileName, 'ok');
+      } else if (r.state === 'rejected') {
+        rec.state = 'rejected';
+        setConn('run', 'RPI replied with an error');
+        showStatus('err', 'RPI rejected the request', 'HTTP ' + r.status + '. The console refused this URL.',
+          r.text ? r.text.substring(0, 300) : '');
+        toast('RPI rejected the request', 'err');
+      } else if (r.state === 'timeout') {
+        rec.state = 'timeout';
+        setConn('err', 'Timed out');
+        setEndpointState('err');
+        showStatus('err', 'Timed out',
+          'No reply from ' + ip + ':' + RPI_PORT + ' after ' + (RPI_TIMEOUT / 1000) + 's. Is Remote Package Installer running on the PS4?');
+        toast('Timed out', 'err');
+      } else {
+        setConn('run', 'Sent — reply unreadable');
+        showStatus('run', 'Sent (unconfirmed)',
+          "The request went out but the console's reply couldn't be read. If a download starts on the PS4, it worked.", url);
+        toast('Sent — check the PS4', 'info');
+      }
+
+      pushRecent(rec);
+    });
+  }
+
+  /* =====================================================================
+     WIRING
+     ===================================================================== */
+  function wireTabs() {
+    var tabs = document.querySelectorAll('.tab-btn');
+    for (var i = 0; i < tabs.length; i++) {
+      tabs[i].addEventListener('click', function () {
+        setView(this.getAttribute('data-view'));
+      });
+    }
+  }
+
+  function wireLibrary() {
+    var searchEl = $('libSearch');
     var debounce = null;
     searchEl.oninput = function () {
       clearTimeout(debounce);
       var v = searchEl.value;
       debounce = setTimeout(function () {
-        query = v.toLowerCase().trim();
-        apply();
-      }, 100);
+        state.library.query = v.toLowerCase().trim();
+        applyLibrary();
+      }, 110);
     };
 
-    $('regionSel').onchange = function () { region = this.value; apply(); };
-    $('sortSel').onchange = function () { sort = this.value; apply(); };
+    $('libRegion').onchange = function () { state.library.region = this.value; applyLibrary(); };
+    $('libSort').onchange = function () { state.library.sort = this.value; applyLibrary(); };
 
-    $('modalClose').onclick = closeGame;
-    $('gameModal').addEventListener('click', function (e) {
-      if (e.target === $('gameModal')) closeGame();
+    /* Delegated handlers inside the PS4 modal file list */
+    $('libFiles').addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t) return;
+
+      var sendBtn = t.closest ? t.closest('[data-send]') : null;
+      if (sendBtn) {
+        sendUrlsToPs4([sendBtn.getAttribute('data-send')], sendBtn.getAttribute('data-name') || '');
+        return;
+      }
+      var copyBtn = t.closest ? t.closest('[data-copy]') : null;
+      if (copyBtn) {
+        copyText(copyBtn.getAttribute('data-copy'));
+      }
     });
 
-    $('gmCopyAll').onclick = function () {
-      if (!currentGame) return;
+    $('libCopyAll').onclick = function () {
+      if (!state.currentLibraryGame) return;
       var urls = [];
-      for (var i = 0; i < currentGame.files.length; i++) urls.push(currentGame.files[i].url);
+      for (var i = 0; i < state.currentLibraryGame.files.length; i++) {
+        urls.push(state.currentLibraryGame.files[i].url);
+      }
       if (!urls.length) { toast('No URLs to copy', 'err'); return; }
       copyText(urls.join('\n'));
     };
 
-    $('helpBtn').onclick = openHelp;
-    $('helpClose').onclick = closeHelp;
-    $('helpModal').addEventListener('click', function (e) {
-      if (e.target === $('helpModal')) closeHelp();
-    });
+    $('libSendAll').onclick = function () {
+      if (!state.currentLibraryGame) return;
+      var direct = [];
+      for (var i = 0; i < state.currentLibraryGame.files.length; i++) {
+        if (state.currentLibraryGame.files[i].direct) direct.push(state.currentLibraryGame.files[i].url);
+      }
+      sendUrlsToPs4(direct, state.currentLibraryGame.name);
+    };
+  }
 
+  function wirePs5() {
+    var searchEl = $('ps5Search');
+    var debounce = null;
+    searchEl.oninput = function () {
+      clearTimeout(debounce);
+      var v = searchEl.value;
+      debounce = setTimeout(function () {
+        state.ps5.query = v.toLowerCase().trim();
+        applyPs5();
+      }, 110);
+    };
+
+    $('ps5Cat').onchange = function () { state.ps5.category = this.value; applyPs5(); };
+    $('ps5Sort').onchange = function () { state.ps5.sort = this.value; applyPs5(); };
+
+    $('ps5Links').addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t) return;
+      var copyBtn = t.closest ? t.closest('[data-copy]') : null;
+      if (copyBtn) copyText(copyBtn.getAttribute('data-copy'));
+    });
+  }
+
+  function wireSender() {
+    $('ipInput').value = getIp();
+
+    $('testBtn').onclick = testConnection;
+    $('sendBtn').onclick = sendCurrent;
+    $('clearBtn').onclick = function () {
+      $('urlInput').value = '';
+      $('status').className = 'status';
+      $('urlInput').focus();
+    };
+
+    $('ipInput').onchange = function () {
+      var v = cleanIp(this.value);
+      this.value = v;
+      setIp(v);
+      renderEndpoint();
+    };
+
+    $('urlInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendCurrent(); }
+    });
+    $('ipInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); testConnection(); }
+    });
+  }
+
+  function wireSettings() {
+    $('targetPill').onclick = function () {
+      $('ipInputModal').value = getIp();
+      openModal('settingsModal');
+      setTimeout(function () { $('ipInputModal').focus(); $('ipInputModal').select(); }, 60);
+    };
+
+    $('settingsSave').onclick = function () {
+      var v = cleanIp($('ipInputModal').value);
+      setIp(v);
+      $('ipInput').value = v;
+      renderEndpoint();
+      closeModal('settingsModal');
+      toast('PS4 IP saved', 'ok');
+    };
+
+    $('ipInputModal').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); $('settingsSave').click(); }
+    });
+  }
+
+  function wireModals() {
+    /* Close buttons */
+    var closeBtns = document.querySelectorAll('[data-close]');
+    for (var i = 0; i < closeBtns.length; i++) {
+      closeBtns[i].addEventListener('click', function () {
+        closeModal(this.getAttribute('data-close'));
+      });
+    }
+    /* Click outside to close */
+    var overlays = document.querySelectorAll('.overlay');
+    for (var j = 0; j < overlays.length; j++) {
+      overlays[j].addEventListener('click', function (e) {
+        if (e.target === this) closeModal(this.id);
+      });
+    }
+    /* Help */
+    $('helpBtn').onclick = function () { openModal('helpModal'); };
+  }
+
+  function wireKeyboard() {
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') { closeGame(); closeHelp(); }
+      if (e.key === 'Escape') closeAllModals();
+
       var tag = (e.target && e.target.tagName) || '';
       if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
         e.preventDefault();
-        searchEl.focus();
-        searchEl.select();
+        var el = state.view === 'library' ? $('libSearch')
+               : state.view === 'ps5'     ? $('ps5Search')
+               : $('urlInput');
+        if (el) { el.focus(); el.select(); }
       }
     });
   }
 
-  wire();
-  loadCatalog();
+  /* =====================================================================
+     BOOT
+     ===================================================================== */
+  function boot() {
+    wireTabs();
+    wireLibrary();
+    wirePs5();
+    wireSender();
+    wireSettings();
+    wireModals();
+    wireKeyboard();
+
+    renderEndpoint();
+    renderRecent();
+
+    /* Deep link ?url=... into the sender */
+    try {
+      var m = window.location.search.match(/[?&]url=([^&]+)/);
+      if (m) {
+        setView('sender');
+        $('urlInput').value = decodeURIComponent(m[1]);
+        $('urlInput').focus();
+      }
+    } catch (e) {}
+
+    /* Restore last view */
+    try {
+      var lastView = localStorage.getItem(LS_VIEW);
+      if (lastView && !window.location.search.match(/[?&]url=/)) {
+        var exists = document.querySelector('.view[data-view="' + lastView + '"]');
+        if (exists) setView(lastView);
+      }
+    } catch (e) {}
+
+    loadLibrary();
+    loadPs5();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 
 })();
 </script>
