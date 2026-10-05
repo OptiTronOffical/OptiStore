@@ -7,7 +7,7 @@
 <a href="https://postimg.cc/q6dsc2cB" target="_blank"><img src="https://i.postimg.cc/sxMTrcvW/ps4.png" alt="ps4"></a><br><br>
 <a href="https://postimg.cc/5Yz5Fsz6" target="_blank"><img src="https://i.postimg.cc/j5gMm9dQ/ps4pkg.png" alt="ps4pkg"></a><br><br>
 
-PS5 Library added, just navigate to your address+ps5 or use web address https://optistore.vercel.app/ps5
+live store removed, to host your own use vercel and this repos url
 
 A browser-based front end for the PS4's **Remote Package Installer (RPI)**.
 Browse a catalog of `.pkg` files on your PC, then push them straight to your
