@@ -1,5 +1,12 @@
 # OptiStore
 
+## Screenshots
+
+<a href="https://postimg.cc/5QMB5852" target="_blank"><img src="https://i.postimg.cc/0jzVsfbD/ps5.png" alt="ps5"></a><br><br>
+<a href="https://postimg.cc/BLF51mF3" target="_blank"><img src="https://i.postimg.cc/xCx6h7TX/ps5pkg.png" alt="ps5pkg"></a><br><br>
+<a href="https://postimg.cc/q6dsc2cB" target="_blank"><img src="https://i.postimg.cc/sxMTrcvW/ps4.png" alt="ps4"></a><br><br>
+<a href="https://postimg.cc/5Yz5Fsz6" target="_blank"><img src="https://i.postimg.cc/j5gMm9dQ/ps4pkg.png" alt="ps4pkg"></a><br><br>
+
 PS5 Library added, just navigate to your address+ps5 or use web address https://optistore.vercel.app/ps5
 
 A browser-based front end for the PS4's **Remote Package Installer (RPI)**.
@@ -29,13 +36,10 @@ games can be pulled straight from archive.org without any intermediate host.
 
 ---
 
-## Screenshots
 
-<a href="https://postimg.cc/VSKZJJJr" target="_blank"><img src="https://i.postimg.cc/RFBkbf9R/Screenshot-2026-10-04-00-00-44.png" alt="Screenshot-2026-10-04-00-00-44"></a><br><br>
-<a href="https://postimg.cc/HJ6vrrrx" target="_blank"><img src="https://i.postimg.cc/JnLfdJmb/Screenshot-2026-10-04-00-02-25.png" alt="Screenshot-2026-10-04-00-02-25"></a><br><br>
-<a href="https://postimg.cc/d75Nhhh7" target="_blank"><img src="https://i.postimg.cc/76kFQ7DN/Screenshot-2026-10-04-00-02-35.png" alt="Screenshot-2026-10-04-00-02-35"></a><br><br>
-<a href="https://postimg.cc/gwgtxxxx" target="_blank"><img src="https://i.postimg.cc/Y9H5ygkz/Screenshot-2026-10-04-00-02-48.png" alt="Screenshot-2026-10-04-00-02-48"></a><br><br>
-<a href="https://postimg.cc/jWM3DDDq" target="_blank"><img src="https://i.postimg.cc/SshBt8q9/Screenshot-2026-10-04-00-05-02.png" alt="Screenshot-2026-10-04-00-05-02"></a>
+
+
+
 
 ---
 
