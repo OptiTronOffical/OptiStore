@@ -37,6 +37,11 @@
   --err-soft:rgba(244,63,94,.10);
   --tg:#29a9eb;
   --tg-soft:rgba(41,169,235,.12);
+  --coffee:#f5b544;
+  --coffee-2:#e08a2e;
+  --coffee-soft:rgba(245,181,68,.12);
+  --eth:#8a92b2;
+  --eth-soft:rgba(138,146,178,.14);
 
   --tx:#eef1f8;
   --tx-2:#98a1b8;
@@ -81,7 +86,6 @@ body{
   overflow-x:hidden;
 }
 
-/* Decorative gradient layer — painted once, composited separately */
 body::before{
   content:'';
   position:fixed;
@@ -146,7 +150,6 @@ a{color:inherit;text-decoration:none}
   font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);
 }
 
-/* Tabs */
 .tabs{
   display:flex;align-items:center;gap:3px;
   padding:4px;
@@ -178,6 +181,29 @@ a{color:inherit;text-decoration:none}
 
 .topbar-right{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
 
+/* Coffee donation button */
+.coffee-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:0 14px;height:36px;
+  border-radius:11px;
+  border:1px solid rgba(245,181,68,.38);
+  background:var(--coffee-soft);
+  color:#f8d488;
+  font-size:12.5px;font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .18s,border-color .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.coffee-btn svg{width:15px;height:15px;flex:none}
+.coffee-btn:hover{
+  background:rgba(245,181,68,.24);
+  border-color:rgba(245,181,68,.66);
+  color:#ffe6b3;
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px -12px rgba(245,181,68,.65);
+}
+.coffee-btn:active{transform:translateY(0)}
+
 /* Telegram button */
 .tg-btn{
   display:inline-flex;align-items:center;gap:8px;
@@ -199,30 +225,6 @@ a{color:inherit;text-decoration:none}
   transform:translateY(-1px);
 }
 .tg-btn:active{transform:translateY(0)}
-
-.target-pill{
-  display:inline-flex;align-items:center;gap:8px;
-  height:36px;padding:0 14px;
-  border-radius:11px;
-  border:1px solid var(--line);
-  background:rgba(255,255,255,.035);
-  font-family:var(--m);
-  font-size:11.5px;font-weight:500;
-  color:var(--tx-2);
-  cursor:pointer;
-  white-space:nowrap;
-  transition:border-color .18s,color .18s,background .18s;
-}
-.target-pill:hover{border-color:var(--line-2);color:var(--tx)}
-.target-pill .dot{
-  width:7px;height:7px;border-radius:50%;
-  background:var(--tx-3);flex:none;
-  transition:background .25s,box-shadow .25s;
-}
-.target-pill.ok{color:#6ee7c0;border-color:rgba(16,185,129,.34);background:var(--ok-soft)}
-.target-pill.ok .dot{background:var(--ok-2);box-shadow:0 0 9px var(--ok-2)}
-.target-pill.err{color:#fda4af;border-color:rgba(244,63,94,.34);background:var(--err-soft)}
-.target-pill.err .dot{background:var(--err);box-shadow:0 0 9px var(--err)}
 
 .icon-btn{
   width:36px;height:36px;flex:none;
@@ -366,7 +368,6 @@ select option{background:#0b0e16;color:var(--tx)}
   white-space:nowrap;
 }
 
-/* Kind filter bar */
 .kinds-bar{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px;
   width:100%;
@@ -450,7 +451,6 @@ select option{background:#0b0e16;color:var(--tx)}
   background:var(--card);
   overflow:hidden;
   cursor:pointer;
-  /* Rendering isolation: big win on long grids */
   content-visibility:auto;
   contain-intrinsic-size:auto 360px;
   contain:layout style paint;
@@ -611,7 +611,6 @@ select option{background:#0b0e16;color:var(--tx)}
 }
 .modal-close:hover{background:var(--err);border-color:var(--err);color:#fff;transform:rotate(90deg)}
 
-/* Modal header */
 .gm-head{
   display:grid;
   grid-template-columns:180px 1fr;
@@ -765,12 +764,6 @@ select option{background:#0b0e16;color:var(--tx)}
   box-shadow:0 10px 24px -12px var(--accent-glow);
 }
 .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.btn.ok{
-  background:linear-gradient(135deg,var(--ok-2),var(--ok));
-  color:#04231a;
-  box-shadow:0 10px 24px -14px rgba(16,185,129,.55);
-}
-.btn.ok:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.ghost{
   background:rgba(255,255,255,.04);
   border-color:var(--line);
@@ -783,139 +776,19 @@ select option{background:#0b0e16;color:var(--tx)}
   color:#8fd4ff;
 }
 .btn.tg:hover{background:rgba(41,169,235,.22);border-color:rgba(41,169,235,.62);color:#c8e9ff}
+.btn.coffee{
+  background:linear-gradient(135deg,var(--coffee),var(--coffee-2));
+  color:#2a1a02;
+  box-shadow:0 10px 24px -12px rgba(245,181,68,.55);
+}
+.btn.coffee:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.sm{font-size:11.5px;padding:8px 13px;border-radius:7px}
 .btn.sm svg{width:12px;height:12px}
 .btn.icon{padding:8px 11px}
 .btn-group{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 
 /* ==========================================================================
-   13. PANELS (SENDER)
-   ========================================================================== */
-.panel{
-  display:flex;flex-direction:column;gap:16px;
-  margin-bottom:16px;
-  padding:22px;
-  border-radius:var(--r-xl);
-  border:1px solid var(--line);
-  background:#0b0e16;
-}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{
-  font-size:10.5px;font-weight:800;letter-spacing:.11em;
-  text-transform:uppercase;color:var(--tx-3);
-}
-.field input{
-  width:100%;
-  padding:13px 15px;
-  font-family:var(--m);font-size:14px;
-  color:var(--tx);
-  background:rgba(0,0,0,.36);
-  border:1px solid var(--line);
-  border-radius:10px;
-  outline:none;
-  -webkit-appearance:none;appearance:none;
-  transition:border-color .18s,box-shadow .18s,background .18s;
-}
-.field input::placeholder{color:var(--tx-3)}
-.field input:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px var(--accent-soft);
-  background:rgba(0,0,0,.5);
-}
-.ip-row{display:flex;gap:10px;align-items:stretch}
-.ip-row input{flex:1;min-width:0}
-
-.hint{
-  padding:10px 12px;
-  border-radius:9px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.24);
-  font-size:11.5px;line-height:1.55;color:var(--tx-3);
-}
-.hint code{
-  font-family:var(--m);font-size:11px;
-  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;color:var(--accent-2);
-}
-
-.row-actions{display:flex;gap:10px;flex-wrap:wrap}
-.row-actions .btn.ok{flex:1}
-
-.dot{
-  display:inline-block;
-  width:9px;height:9px;border-radius:50%;
-  background:var(--tx-3);flex:none;
-  transition:background .25s,box-shadow .25s;
-}
-.dot.ok{background:var(--ok-2);box-shadow:0 0 9px var(--ok-2)}
-.dot.err{background:var(--err);box-shadow:0 0 9px var(--err)}
-.dot.run{background:var(--accent-3);box-shadow:0 0 9px var(--accent-3)}
-
-.conn-line{
-  display:flex;align-items:center;gap:10px;
-  padding:0 4px;
-  font-size:12.5px;color:var(--tx-2);
-}
-
-.status{
-  display:none;align-items:flex-start;gap:12px;
-  margin-top:4px;
-  padding:14px 16px;
-  border-radius:var(--r-md);
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.3);
-  font-size:13px;font-weight:500;line-height:1.55;
-}
-.status.show{display:flex}
-.status.ok{border-color:rgba(16,185,129,.4);background:var(--ok-soft);color:#6ee7c0}
-.status.err{border-color:rgba(244,63,94,.4);background:var(--err-soft);color:#fda4af}
-.status.run{border-color:rgba(124,92,255,.4);background:var(--accent-soft);color:#c4b5fd}
-.status .ico{flex:none;font-size:17px;line-height:1.3}
-.status .body{flex:1;min-width:0;word-break:break-word}
-.status .body b{display:block;margin-bottom:2px;font-size:13.5px;font-weight:800}
-.status .body .detail{
-  margin-top:4px;
-  font-family:var(--m);font-size:11.5px;
-  opacity:.85;word-break:break-all;
-}
-
-.recent{
-  margin-top:16px;
-  padding:22px;
-  border-radius:var(--r-xl);
-  border:1px solid var(--line);
-  background:rgba(11,14,22,.6);
-}
-.recent h3{
-  margin-bottom:12px;
-  font-size:11px;font-weight:800;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--tx-3);
-}
-.recent-item{
-  display:flex;align-items:center;gap:10px;
-  margin-bottom:8px;
-  padding:10px 12px;
-  border-radius:9px;
-  border:1px solid var(--line);
-  background:rgba(0,0,0,.24);
-  font-size:12px;
-}
-.recent-item:last-child{margin-bottom:0}
-.recent-item .st{width:8px;height:8px;border-radius:50%;flex:none}
-.recent-item .st.ok{background:var(--ok-2)}
-.recent-item .st.err{background:var(--err)}
-.recent-item .st.unk{background:var(--warn)}
-.recent-item .url{
-  flex:1;min-width:0;
-  font-family:var(--m);font-size:11px;color:var(--tx-2);
-  word-break:break-all;
-}
-.recent-item .when{
-  flex:none;
-  font-family:var(--m);font-size:10.5px;color:var(--tx-3);
-}
-
-/* ==========================================================================
-   14. SETTINGS / HELP MODAL
+   13. SETTINGS / HELP MODAL
    ========================================================================== */
 .set-head{
   padding:24px 24px 20px;
@@ -949,8 +822,99 @@ select option{background:#0b0e16;color:var(--tx)}
   font-family:var(--m);font-size:11.5px;
   background:rgba(0,0,0,.42);padding:2px 6px;border-radius:4px;color:var(--accent-2);
 }
-.set-actions{display:flex;gap:8px;margin-top:4px}
-.set-actions .btn{flex:1}
+
+/* Contact card inside help modal */
+.contact-card{
+  display:flex;flex-direction:column;gap:10px;
+  padding:16px;
+  border-radius:var(--r-md);
+  border:1px solid rgba(41,169,235,.34);
+  background:linear-gradient(135deg,rgba(41,169,235,.14),rgba(41,169,235,.05));
+}
+.contact-card .cc-head{
+  display:flex;align-items:center;gap:10px;
+  font-size:13.5px;font-weight:700;color:#c8e9ff;
+}
+.contact-card .cc-head svg{width:20px;height:20px;flex:none}
+.contact-card .cc-body{
+  font-size:12.5px;line-height:1.6;color:#a8d8f5;
+}
+.contact-card .cc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.contact-card .btn{flex:1}
+
+/* ==========================================================================
+   14. DONATE MODAL
+   ========================================================================== */
+.donate-head{
+  padding:26px 24px 22px;
+  border-bottom:1px solid var(--line);
+  text-align:center;
+  background:linear-gradient(135deg,rgba(245,181,68,.14),rgba(245,181,68,.03));
+}
+.donate-head .coffee-mark{
+  width:56px;height:56px;
+  margin:0 auto 14px;
+  border-radius:16px;
+  display:grid;place-items:center;
+  font-size:26px;
+  background:linear-gradient(135deg,var(--coffee),var(--coffee-2));
+  box-shadow:0 14px 30px -12px rgba(245,181,68,.7);
+}
+.donate-head h2{
+  font-size:20px;font-weight:800;letter-spacing:-.02em;
+}
+.donate-head p{
+  margin-top:6px;font-size:13px;color:var(--tx-2);
+}
+
+.donate-body{
+  display:flex;flex-direction:column;gap:14px;
+  padding:22px 24px 24px;
+}
+
+.wallet-box{
+  display:flex;flex-direction:column;gap:10px;
+  padding:16px;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.3);
+}
+.wallet-box .wb-label{
+  display:flex;align-items:center;gap:8px;
+  font-size:10.5px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tx-3);
+}
+.wallet-box .wb-label svg{width:14px;height:14px;color:var(--eth)}
+.wallet-box .wb-addr{
+  display:flex;align-items:center;gap:10px;
+  padding:13px 14px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.4);
+}
+.wallet-box .wb-addr code{
+  flex:1;min-width:0;
+  font-family:var(--m);
+  font-size:12.5px;
+  color:#c8d2ee;
+  word-break:break-all;
+  line-height:1.5;
+  user-select:all;
+}
+
+.donate-note{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:12px 14px;
+  border-radius:var(--r-md);
+  border:1px solid rgba(245,181,68,.28);
+  background:var(--coffee-soft);
+  font-size:12px;line-height:1.6;color:var(--tx-2);
+}
+.donate-note .ico{flex:none;font-size:15px;line-height:1}
+.donate-note b{color:#f8d488;font-weight:700}
+
+.donate-actions{display:flex;gap:8px;flex-wrap:wrap}
+.donate-actions .btn{flex:1}
 
 /* ==========================================================================
    15. TELEGRAM FLOATING BUTTON
@@ -977,10 +941,10 @@ select option{background:#0b0e16;color:var(--tx)}
   overflow:hidden;
   white-space:nowrap;
   opacity:0;
-  transition:max-width .3s var(--ease),opacity .22s,margin .3s var(--ease);
+  transition:max-width .35s var(--ease),opacity .22s,margin .35s var(--ease);
 }
 .tg-fab:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(41,169,235,.85);filter:brightness(1.06)}
-.tg-fab:hover .tg-label{max-width:170px;opacity:1;margin-left:9px}
+.tg-fab:hover .tg-label{max-width:280px;opacity:1;margin-left:9px}
 .tg-fab::after{
   content:'';
   position:absolute;inset:-3px;
@@ -1021,6 +985,7 @@ select option{background:#0b0e16;color:var(--tx)}
 .toast.ok{border-color:rgba(16,185,129,.42);background:rgba(6,36,28,.97)}
 .toast.err{border-color:rgba(244,63,94,.42);background:rgba(42,12,18,.97)}
 .toast.info{border-color:rgba(41,169,235,.42);background:rgba(6,26,36,.97)}
+.toast.coffee{border-color:rgba(245,181,68,.46);background:rgba(38,26,6,.97);color:#f8d488}
 @keyframes slideIn{from{opacity:0;transform:translateX(26px) scale(.97)}to{opacity:1;transform:none}}
 @keyframes slideOut{to{opacity:0;transform:translateX(26px) scale(.97)}}
 
@@ -1039,18 +1004,26 @@ select option{background:#0b0e16;color:var(--tx)}
   background:rgba(0,0,0,.34);padding:3px 8px;border-radius:5px;color:#a5b4fc;
 }
 .foot-links{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.foot-tg{
+.foot-tg,.foot-coffee{
   display:inline-flex;align-items:center;gap:6px;
-  color:#7cc8f0;font-weight:600;
+  font-weight:600;
   transition:color .18s;
 }
+.foot-tg{color:#7cc8f0}
 .foot-tg:hover{color:#b8e3ff}
-.foot-tg svg{width:14px;height:14px}
+.foot-coffee{color:#f0c073}
+.foot-coffee:hover{color:#ffdca0}
+.foot-tg svg,.foot-coffee svg{width:14px;height:14px}
 
 /* ==========================================================================
    18. RESPONSIVE
    ========================================================================== */
-@media (max-width:1000px){
+@media (max-width:1200px){
+  .coffee-btn span{display:none}
+  .coffee-btn{padding:0 11px}
+}
+
+@media (max-width:1100px){
   .tab-btn span{display:none}
   .tab-btn{padding:9px 13px}
   .tab-btn svg{width:15px;height:15px}
@@ -1077,11 +1050,9 @@ select option{background:#0b0e16;color:var(--tx)}
   .gm-cover{max-width:132px}
   .hero h1{font-size:25px}
   .toolbar{padding:10px}
-  .target-pill span:not(.dot){display:none}
-  .target-pill{padding:0 11px}
-  .panel{padding:16px}
-  .recent{padding:16px}
   .btn{padding:10px 14px}
+  .donate-head{padding:22px 18px 18px}
+  .donate-body{padding:18px}
 }
 
 /* ==========================================================================
@@ -1124,24 +1095,23 @@ select option{background:#0b0e16;color:var(--tx)}
       </svg>
       <span>PS5 Library</span>
     </button>
-    <button class="tab-btn" data-view="sender" type="button" title="RPI Sender">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M4 12l16-8-6 18-3-7-7-3z"/>
-      </svg>
-      <span>RPI Sender</span>
-    </button>
   </nav>
 
   <div class="topbar-right">
-    <a class="tg-btn" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Message @OptiTronOffical on Telegram">
+    <button class="coffee-btn" id="coffeeBtn" type="button" title="Donate me a coffee — Ethereum">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+        <path d="M6 2v3M10 2v3M14 2v3"/>
+      </svg>
+      <span>Donate me a coffee</span>
+    </button>
+    <a class="tg-btn" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Issues, questions or custom project requests — message @OptiTronOffical">
       <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
         <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
       </svg>
-      <span>Telegram</span>
+      <span>Support &amp; Requests</span>
     </a>
-    <button class="target-pill" id="targetPill" type="button" title="PS4 endpoint — click to edit">
-      <span class="dot"></span><span id="targetText">127.0.0.1:12800</span>
-    </button>
     <button class="icon-btn" id="helpBtn" type="button" title="Help" aria-label="Help">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7v.3"/><path d="M12 17h.01"/>
@@ -1156,7 +1126,7 @@ select option{background:#0b0e16;color:var(--tx)}
   <section class="view active" data-view="library">
     <div class="hero">
       <h1>PS4 <em>package library</em></h1>
-      <p>Every title, every base game, update and DLC — with direct install buttons that push straight to the console.</p>
+      <p>Every title, every base game, update and DLC — with direct download links and one-tap copy for external tools.</p>
       <div class="stats">
         <div class="stat"><span class="v" id="statTitles">—</span><span class="k">Titles</span></div>
         <div class="stat"><span class="v" id="statPackages">—</span><span class="k">Packages</span></div>
@@ -1226,76 +1196,23 @@ select option{background:#0b0e16;color:var(--tx)}
     <div class="grid" id="ps5Grid"></div>
   </section>
 
-  <!-- ======================= RPI SENDER ======================= -->
-  <section class="view" data-view="sender">
-    <div class="hero">
-      <h1>Send a <em>.pkg</em> straight to your PS4.</h1>
-      <p>Paste any direct .pkg link and push it to the console's Remote Package Installer — no PC required.</p>
-    </div>
-
-    <div class="panel">
-      <div class="field">
-        <label for="ipInput">PS4 IP address</label>
-        <div class="ip-row">
-          <input type="text" id="ipInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="127.0.0.1" inputmode="decimal">
-          <button class="btn ghost" id="testBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-            Test
-          </button>
-        </div>
-      </div>
-      <div class="conn-line">
-        <span class="dot" id="connDot"></span>
-        <span id="connMsg">Not tested</span>
-      </div>
-      <div class="hint">
-        Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Requests go to <code>http://&lt;ip&gt;:12800/api/install</code>.
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="field">
-        <label for="urlInput">Direct PKG URL</label>
-        <input type="text" id="urlInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="http://your-server/game.pkg" inputmode="url">
-      </div>
-      <div class="row-actions">
-        <button class="btn ok" id="sendBtn" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M4 12l16-8-6 18-3-7-7-3z"/>
-          </svg>
-          Send to PS4
-        </button>
-        <button class="btn ghost" id="clearBtn" type="button">Clear</button>
-      </div>
-    </div>
-
-    <div class="status" id="status" role="status" aria-live="polite">
-      <span class="ico" id="statusIco">ℹ️</span>
-      <div class="body">
-        <b id="statusTitle">Ready</b>
-        <span id="statusMsg">Paste a direct .pkg URL above and tap Send.</span>
-        <div class="detail" id="statusDetail" style="display:none;"></div>
-      </div>
-    </div>
-
-    <div class="recent" id="recentBox" style="display:none;">
-      <h3>Recent sends</h3>
-      <div id="recentList"></div>
-    </div>
-  </section>
-
   <footer class="foot">
     <div>OptiStore · unofficial fan library · run locally over HTTP</div>
     <div class="foot-links">
-      <a class="foot-tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">
+      <button class="foot-coffee" id="footCoffee" type="button" title="Donate me a coffee — Ethereum">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+          <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+          <path d="M6 2v3M10 2v3M14 2v3"/>
+        </svg>
+        Donate me a coffee
+      </button>
+      <a class="foot-tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Issues, questions or custom project requests — message @OptiTronOffical">
         <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
           <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
         </svg>
-        @OptiTronOffical
+        Support &amp; Requests · @OptiTronOffical
       </a>
-      <span>Endpoint: <code id="footTarget">127.0.0.1:12800</code></span>
     </div>
   </footer>
 
@@ -1312,23 +1229,17 @@ select option{background:#0b0e16;color:var(--tx)}
         <div class="sub" id="libSub">—</div>
         <div class="gm-tags" id="libTags"></div>
         <div class="gm-actions">
-          <button class="btn ok" id="libSendAll" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M4 12l16-8-6 18-3-7-7-3z"/>
-            </svg>
-            Send all direct to PS4
-          </button>
           <button class="btn ghost" id="libCopyAll" type="button">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
             </svg>
             Copy all URLs
           </button>
-          <a class="btn tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">
+          <a class="btn tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Need help or want a custom project? Message @OptiTronOffical">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
             </svg>
-            Request
+            Help / Request
           </a>
         </div>
       </div>
@@ -1338,7 +1249,7 @@ select option{background:#0b0e16;color:var(--tx)}
         <span class="ico">💡</span>
         <span>
           Install in order — <b>Base</b> first, then the latest <b>Update</b>, then any <b>DLC</b>.
-          Direct <b>.pkg</b> files can be pushed to the console in one tap; external host links open in a new tab.
+          Direct <b>.pkg</b> files can be downloaded straight from the source; external host links open in a new tab.
         </span>
       </div>
       <div class="sec-title">Package files <span class="mini" id="libFileCount"></span></div>
@@ -1368,26 +1279,53 @@ select option{background:#0b0e16;color:var(--tx)}
   </div>
 </div>
 
-<!-- ======================= SETTINGS MODAL ======================= -->
-<div class="overlay" id="settingsModal" role="dialog" aria-modal="true" aria-labelledby="setTitle">
+<!-- ======================= DONATE MODAL ======================= -->
+<div class="overlay" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
   <div class="modal slim">
-    <button class="modal-close" type="button" data-close="settingsModal" aria-label="Close">✕</button>
-    <div class="set-head">
-      <h2 id="setTitle">Install endpoint</h2>
-      <p>Where packages are sent when you tap install</p>
+    <button class="modal-close" type="button" data-close="donateModal" aria-label="Close">✕</button>
+    <div class="donate-head">
+      <div class="coffee-mark" aria-hidden="true">☕</div>
+      <h2 id="donateTitle">Donate me a coffee</h2>
+      <p>Every contribution keeps the library running — thank you!</p>
     </div>
-    <div class="set-body">
-      <div class="field">
-        <label for="ipInputModal">PS4 IP address</label>
-        <input type="text" id="ipInputModal" spellcheck="false" autocomplete="off" placeholder="127.0.0.1" inputmode="decimal">
+    <div class="donate-body">
+
+      <div class="wallet-box">
+        <div class="wb-label">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 1.5 5.5 12 12 15.5 18.5 12 12 1.5zM12 17 5.5 13.5 12 22.5l6.5-9L12 17z"/>
+          </svg>
+          Ethereum (ETH) Wallet
+        </div>
+        <div class="wb-addr">
+          <code id="ethAddress">0x17E1D7f8A9641749A3f6A932Df09D36FE198df86</code>
+        </div>
       </div>
-      <div class="hint">
-        Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Packages are sent to <code>http://&lt;ip&gt;:12800/api/install</code>.
+
+      <div class="donate-note">
+        <span class="ico">💛</span>
+        <span>
+          Send <b>ETH</b> or any <b>ERC-20 token</b> to the address above.
+          Double-check the address before sending — crypto transfers are irreversible.
+        </span>
       </div>
-      <div class="set-actions">
-        <button class="btn ghost" type="button" data-close="settingsModal">Cancel</button>
-        <button class="btn primary" id="settingsSave" type="button">Save</button>
+
+      <div class="donate-actions">
+        <button class="btn coffee" id="copyEth" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+          </svg>
+          Copy wallet address
+        </button>
+        <a class="btn ghost" href="https://etherscan.io/address/0x17E1D7f8A9641749A3f6A932Df09D36FE198df86" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <path d="M15 3h6v6M10 14 21 3"/>
+          </svg>
+          View on Etherscan
+        </a>
       </div>
+
     </div>
   </div>
 </div>
@@ -1398,7 +1336,7 @@ select option{background:#0b0e16;color:var(--tx)}
     <button class="modal-close" type="button" data-close="helpModal" aria-label="Close">✕</button>
     <div class="set-head">
       <h2 id="helpTitle">How it works</h2>
-      <p>One page, three tools, zero installs</p>
+      <p>Browse, search, and download</p>
     </div>
     <div class="set-body">
 
@@ -1406,23 +1344,23 @@ select option{background:#0b0e16;color:var(--tx)}
         <div class="num">1</div>
         <div class="txt">
           <b>Serve this folder over plain HTTP</b>
-          From the folder that contains this file, run <code>python3 -m http.server 8080</code> (or any static server) and open <code>http://&lt;your-ip&gt;:8080/</code>. HTTPS will block requests to <code>127.0.0.1</code> due to mixed-content rules.
+          From the folder that contains this file, run <code>python3 -m http.server 8080</code> (or any static server) and open <code>http://&lt;your-ip&gt;:8080/</code>.
         </div>
       </div>
 
       <div class="step">
         <div class="num">2</div>
         <div class="txt">
-          <b>Open it on the PS4's browser</b>
-          Navigate to the same address on the console. Use <code>127.0.0.1</code> if the server runs on the PS4 itself, or the LAN IP of the machine hosting it.
+          <b>Browse the library</b>
+          Switch between the <b>PS4 Library</b> and <b>PS5 Library</b> tabs. Use the search bar, region / category filters, and sort options to find what you need.
         </div>
       </div>
 
       <div class="step">
         <div class="num">3</div>
         <div class="txt">
-          <b>Start Remote Package Installer (RPI)</b>
-          Launch <code>Remote Package Installer</code> on the PS4. It listens on port <code>12800</code> and accepts a <code>POST</code> to <code>/api/install</code> with a JSON body.
+          <b>Open a title</b>
+          Click any card to see its package files. Direct <b>.pkg</b> links download straight from the source; external host links open in a new tab.
         </div>
       </div>
 
@@ -1430,7 +1368,7 @@ select option{background:#0b0e16;color:var(--tx)}
         <div class="num">4</div>
         <div class="txt">
           <b>Install in order</b>
-          Base → Update → DLC. Each <code>.pkg</code> is queued separately and the console fetches them in turn.
+          Base → Update → DLC. Each <code>.pkg</code> is queued separately on the console. Copy any URL with the 📋 button.
         </div>
       </div>
 
@@ -1442,23 +1380,63 @@ select option{background:#0b0e16;color:var(--tx)}
         </span>
       </div>
 
-      <a class="btn tg" style="justify-content:center" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
-        </svg>
-        Message @OptiTronOffical on Telegram
-      </a>
+      <!-- Donation card -->
+      <div class="contact-card" style="border-color:rgba(245,181,68,.34);background:linear-gradient(135deg,rgba(245,181,68,.14),rgba(245,181,68,.05));">
+        <div class="cc-head" style="color:#f8d488">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+            <path d="M6 2v3M10 2v3M14 2v3"/>
+          </svg>
+          <span>Enjoying the library?</span>
+        </div>
+        <div class="cc-body" style="color:#f0d8a8">
+          If this saved you time, consider buying me a coffee. Every bit helps keep the catalogs updated.
+        </div>
+        <div class="cc-actions">
+          <button class="btn coffee" id="helpCoffee" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+              <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+              <path d="M6 2v3M10 2v3M14 2v3"/>
+            </svg>
+            Donate me a coffee
+          </button>
+        </div>
+      </div>
+
+      <!-- Contact / support card -->
+      <div class="contact-card">
+        <div class="cc-head">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          <span>Need help? Have a question?</span>
+        </div>
+        <div class="cc-body">
+          For any issues, questions, or to request a custom project —
+          message <b>@OptiTronOffical</b> on Telegram and we'll get back to you.
+        </div>
+        <div class="cc-actions">
+          <a class="btn tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            Message @OptiTronOffical
+          </a>
+        </div>
+      </div>
 
     </div>
   </div>
 </div>
 
 <!-- ======================= TELEGRAM FAB ======================= -->
-<a class="tg-fab" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Message @OptiTronOffical" aria-label="Message @OptiTronOffical on Telegram">
+<a class="tg-fab" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Issues, questions, or custom project requests — message @OptiTronOffical" aria-label="Issues, questions, or custom project requests — message @OptiTronOffical on Telegram">
   <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
     <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
   </svg>
-  <span class="tg-label">Chat with us</span>
+  <span class="tg-label">Issues · Questions · Custom Projects</span>
 </a>
 
 <div id="toasts" aria-live="polite" aria-atomic="false"></div>
@@ -1472,34 +1450,25 @@ select option{background:#0b0e16;color:var(--tx)}
      ===================================================================== */
   var LIBRARY_CATALOGS = ['export_with_covers.json', 'games.json'];
   var PS5_CATALOGS     = ['ps5-catalog.json'];
+  var LS_VIEW          = 'opti_view';
 
-  var LS_IP     = 'opti_ps4_ip';
-  var LS_RECENT = 'opti_rpi_recent';
-  var LS_VIEW   = 'opti_view';
+  var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
 
-  var DEFAULT_IP  = '127.0.0.1';
-  var RPI_PORT    = 12800;
-  var RPI_TIMEOUT = 20000;
-  var MAX_RECENT  = 8;
-
-  /* Cached DOM references (avoid repeated lookups) */
   var D = {};
 
   function cacheDom() {
     var ids = [
-      'toasts','targetPill','targetText','footTarget','helpBtn',
+      'toasts','helpBtn','coffeeBtn','footCoffee','helpCoffee',
       'libSearch','libRegion','libSort','libCount','libKinds','libGrid',
       'statTitles','statPackages','statLibSize','statUSA','statEUR',
       'ps5Search','ps5Cat','ps5Sort','ps5Count','ps5Grid',
       'statPs5Total','statPs5Size','statPs5Game','statPs5Upd','statPs5Other',
-      'ipInput','testBtn','sendBtn','clearBtn','urlInput','connDot','connMsg',
-      'status','statusIco','statusTitle','statusMsg','statusDetail',
-      'recentBox','recentList',
       'libModal','libCoverWrap','libTitle','libSub','libTags','libFiles',
-      'libFileCount','libSendAll','libCopyAll',
+      'libFileCount','libCopyAll',
       'ps5Modal','ps5CoverWrap','ps5Title','ps5Sub','ps5Tags','ps5Links',
       'ps5LinkCount','ps5DescTitle','ps5Desc',
-      'settingsModal','ipInputModal','settingsSave','helpModal'
+      'donateModal','ethAddress','copyEth',
+      'helpModal'
     ];
     for (var i = 0; i < ids.length; i++) D[ids[i]] = document.getElementById(ids[i]);
   }
@@ -1519,7 +1488,7 @@ select option{background:#0b0e16;color:var(--tx)}
     if (!box) return;
     var el = document.createElement('div');
     el.className = 'toast ' + kind;
-    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : 'ℹ️';
+    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'coffee' ? '☕' : 'ℹ️';
     el.innerHTML = '<div style="flex:none;font-size:15px" aria-hidden="true">' + icon +
                    '</div><div>' + esc(msg) + '</div>';
     box.appendChild(el);
@@ -1632,10 +1601,7 @@ select option{background:#0b0e16;color:var(--tx)}
     if (!/\.pkg$/i.test(cleaned)) return false;
     return !isRedirectHost(hostOf(cleaned));
   }
-  function validUrl(u) { return /^https?:\/\/[^\s]+$/i.test(u); }
-  function isPkgUrl(u) { return /\.pkg$/i.test(String(u).split('?')[0].split('#')[0]); }
 
-  /* rAF-throttled debounce for search inputs */
   function rafDebounce(fn, delay) {
     var timer = null;
     return function () {
@@ -1645,96 +1611,6 @@ select option{background:#0b0e16;color:var(--tx)}
         requestAnimationFrame(function () { fn.apply(self, args); });
       }, delay);
     };
-  }
-
-  /* =====================================================================
-     IP / ENDPOINT
-     ===================================================================== */
-  function getIp() {
-    try { return localStorage.getItem(LS_IP) || DEFAULT_IP; }
-    catch (e) { return DEFAULT_IP; }
-  }
-  function setIp(v) { try { localStorage.setItem(LS_IP, v); } catch (e) {} }
-
-  function cleanIp(v) {
-    var s = String(v == null ? '' : v).replace(/^\s+|\s+$/g, '');
-    s = s.replace(/^https?:\/\//, '').replace(/[:\/].*$/, '');
-    return s || DEFAULT_IP;
-  }
-  function renderEndpoint() {
-    var label = getIp() + ':' + RPI_PORT;
-    if (D.targetText) D.targetText.textContent = label;
-    if (D.footTarget) D.footTarget.textContent = label;
-  }
-  function setEndpointState(cls) {
-    var pill = D.targetPill;
-    if (!pill) return;
-    pill.classList.remove('ok', 'err');
-    if (cls) pill.classList.add(cls);
-  }
-
-  /* =====================================================================
-     RPI INSTALL
-     ===================================================================== */
-  function rpiInstall(ip, packages, cb) {
-    var x = new XMLHttpRequest();
-    var done = false;
-    function finish(r) { if (!done) { done = true; cb(r); } }
-    try {
-      x.open('POST', 'http://' + ip + ':' + RPI_PORT + '/api/install', true);
-      x.timeout = RPI_TIMEOUT;
-      x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-      x.onload = function () {
-        if (x.status >= 200 && x.status < 300) finish({ state: 'ok', status: x.status, text: x.responseText });
-        else finish({ state: 'rejected', status: x.status, text: x.responseText });
-      };
-      x.onerror   = function () { finish({ state: 'unknown' }); };
-      x.ontimeout = function () { finish({ state: 'timeout' }); };
-      x.send(JSON.stringify({ type: 'direct', packages: packages }));
-    } catch (e) {
-      finish({ state: 'unknown' });
-    }
-  }
-
-  /* =====================================================================
-     RECENT SENDS
-     ===================================================================== */
-  function loadRecent() {
-    try {
-      var v = JSON.parse(localStorage.getItem(LS_RECENT) || '[]');
-      return Array.isArray(v) ? v : [];
-    } catch (e) { return []; }
-  }
-  function saveRecent(list) {
-    try { localStorage.setItem(LS_RECENT, JSON.stringify(list.slice(0, MAX_RECENT))); } catch (e) {}
-  }
-  function pushRecent(entry) {
-    var list = loadRecent();
-    list.unshift(entry);
-    saveRecent(list);
-    renderRecent();
-  }
-  function renderRecent() {
-    var list = loadRecent();
-    var box = D.recentBox, out = D.recentList;
-    if (!box || !out) return;
-    if (!list.length) { box.style.display = 'none'; return; }
-    box.style.display = 'block';
-    var parts = [];
-    for (var i = 0; i < list.length; i++) {
-      var r = list[i];
-      var stClass = r.state === 'ok' ? 'ok' : r.state === 'unknown' ? 'unk' : 'err';
-      var when = new Date(r.ts).toLocaleTimeString();
-      var name = (r.url || '').split('?')[0].split('/').pop() || r.url;
-      parts.push(
-        '<div class="recent-item">' +
-          '<span class="st ' + stClass + '"></span>' +
-          '<span class="url" title="' + esc(r.url) + '">' + esc(name) + '</span>' +
-          '<span class="when">' + esc(when) + '</span>' +
-        '</div>'
-      );
-    }
-    out.innerHTML = parts.join('');
   }
 
   /* =====================================================================
@@ -1820,7 +1696,6 @@ select option{background:#0b0e16;color:var(--tx)}
 
   /* =====================================================================
      PS4 LIBRARY — NORMALIZE
-     (bytes / direct-count / kinds precomputed once, for fast sort+filter)
      ===================================================================== */
   function makeLibraryFile(link) {
     if (!link) return null;
@@ -2199,7 +2074,6 @@ select option{background:#0b0e16;color:var(--tx)}
     grid.innerHTML = html;
   }
 
-  /* Delegated grid click/keydown — one listener instead of N */
   function wireGridDelegation(grid, getList, openFn) {
     grid.addEventListener('click', function (e) {
       var card = e.target.closest ? e.target.closest('.card') : null;
@@ -2255,7 +2129,6 @@ select option{background:#0b0e16;color:var(--tx)}
     if (g.source) subParts.push('Source: ' + g.source);
     D.libSub.textContent = subParts.join(' · ') || '—';
 
-    /* Tags */
     var tags = [];
     if (g.region) tags.push({ t: g.region, c: 'b' });
     tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's') });
@@ -2278,7 +2151,6 @@ select option{background:#0b0e16;color:var(--tx)}
     }
     D.libTags.innerHTML = tagsHtml;
 
-    /* Files, sorted base → update → dlc → … */
     var sorted = g.files.slice().sort(function (a, b) {
       var ai = KIND_ORDER.indexOf(a.kind); if (ai === -1) ai = 99;
       var bi = KIND_ORDER.indexOf(b.kind); if (bi === -1) bi = 99;
@@ -2307,9 +2179,6 @@ select option{background:#0b0e16;color:var(--tx)}
           '</div>' +
         '</div>' +
         '<div class="btn-group">' +
-          (f.direct
-            ? '<button class="btn ok sm" type="button" data-send="' + esc(f.url) + '">📤 Send</button>'
-            : '') +
           '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer">' +
             (f.direct ? '📥 Download' : '🔗 Open host') +
           '</a>' +
@@ -2318,9 +2187,6 @@ select option{background:#0b0e16;color:var(--tx)}
       '</div>';
     }
     D.libFiles.innerHTML = filesHtml;
-
-    D.libSendAll.style.display = g._direct ? '' : 'none';
-    D.libSendAll.disabled = !g._direct;
 
     openModal('libModal');
   }
@@ -2556,144 +2422,6 @@ select option{background:#0b0e16;color:var(--tx)}
   }
 
   /* =====================================================================
-     SEND TO PS4
-     ===================================================================== */
-  function sendUrlsToPs4(urls) {
-    if (!urls.length) { toast('No direct .pkg links to send', 'err'); return; }
-    var ip = getIp();
-    toast('Sending ' + urls.length + ' package(s)…', 'info');
-
-    rpiInstall(ip, urls, function (r) {
-      var rec = { url: urls[0], ts: Date.now(), state: 'unknown' };
-
-      if (r.state === 'ok') {
-        rec.state = 'ok';
-        setEndpointState('ok');
-        toast('Sent ' + urls.length + ' package(s) to PS4', 'ok');
-      } else if (r.state === 'rejected') {
-        rec.state = 'rejected';
-        toast('RPI rejected the request (HTTP ' + r.status + ')', 'err');
-      } else if (r.state === 'timeout') {
-        rec.state = 'timeout';
-        setEndpointState('err');
-        toast('Timed out — is Remote Package Installer open?', 'err');
-      } else {
-        toast('Request sent — check the PS4', 'info');
-      }
-      pushRecent(rec);
-    });
-  }
-
-  /* =====================================================================
-     SENDER VIEW
-     ===================================================================== */
-  function setConn(cls, msg) {
-    D.connDot.className = 'dot ' + (cls || '');
-    D.connMsg.textContent = msg || 'Not tested';
-  }
-
-  function showStatus(kind, title, msg, detail) {
-    var el = D.status;
-    el.className = 'status show ' + kind;
-    D.statusIco.textContent = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'run' ? '⏳' : 'ℹ️';
-    D.statusTitle.textContent = title;
-    D.statusMsg.textContent = msg;
-    var d = D.statusDetail;
-    if (detail) { d.style.display = 'block'; d.textContent = detail; }
-    else { d.style.display = 'none'; d.textContent = ''; }
-  }
-
-  function testConnection() {
-    var ip = cleanIp(D.ipInput.value);
-    setIp(ip);
-    D.ipInput.value = ip;
-    renderEndpoint();
-    setConn('run', 'Testing ' + ip + ':' + RPI_PORT + ' …');
-
-    rpiInstall(ip, [], function (r) {
-      if (r.state === 'ok' || r.state === 'rejected') {
-        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
-        setEndpointState('ok');
-        toast('Remote Package Installer is answering.', 'ok');
-      } else if (r.state === 'timeout') {
-        setConn('err', 'Timed out — is RPI open?');
-        setEndpointState('err');
-        toast('No answer from ' + ip + ':' + RPI_PORT + '.', 'err');
-      } else {
-        setConn('run', 'Request sent — no readable reply');
-        toast("Sent, but couldn't read a reply. Try sending a package.", 'info');
-      }
-    });
-  }
-
-  function sendCurrent() {
-    var ip = cleanIp(D.ipInput.value);
-    var url = String(D.urlInput.value || '').replace(/^\s+|\s+$/g, '');
-
-    setIp(ip);
-    D.ipInput.value = ip;
-    renderEndpoint();
-
-    if (!url) {
-      showStatus('err', 'Missing URL', 'Paste a direct .pkg link first.');
-      toast('Paste a .pkg URL first', 'err');
-      return;
-    }
-    if (!validUrl(url)) {
-      showStatus('err', 'Invalid URL', 'The URL must start with http:// or https://');
-      toast('Invalid URL', 'err');
-      return;
-    }
-    if (!isPkgUrl(url)) {
-      showStatus('err', 'Not a .pkg link', 'The URL must end in .pkg (before any ?query or #fragment).');
-      toast('Only .pkg URLs can be sent', 'err');
-      return;
-    }
-
-    var sendBtn = D.sendBtn;
-    sendBtn.disabled = true;
-    showStatus('run', 'Sending…', 'Posting to http://' + ip + ':' + RPI_PORT + '/api/install', url);
-
-    var fileName = url.split('?')[0].split('/').pop() || 'package.pkg';
-
-    rpiInstall(ip, [url], function (r) {
-      sendBtn.disabled = false;
-      var rec = { url: url, ts: Date.now(), state: 'unknown' };
-
-      if (r.state === 'ok') {
-        rec.state = 'ok';
-        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
-        setEndpointState('ok');
-        showStatus('ok', 'Sent to PS4',
-          'Queued on the console — check the notification area.',
-          'HTTP ' + r.status + (r.text ? ' — ' + r.text.substring(0, 200) : ''));
-        toast('Sent: ' + fileName, 'ok');
-      } else if (r.state === 'rejected') {
-        rec.state = 'rejected';
-        setConn('run', 'RPI replied with an error');
-        showStatus('err', 'RPI rejected the request',
-          'HTTP ' + r.status + '. The console refused this URL.',
-          r.text ? r.text.substring(0, 300) : '');
-        toast('RPI rejected the request', 'err');
-      } else if (r.state === 'timeout') {
-        rec.state = 'timeout';
-        setConn('err', 'Timed out');
-        setEndpointState('err');
-        showStatus('err', 'Timed out',
-          'No reply from ' + ip + ':' + RPI_PORT + ' after ' + (RPI_TIMEOUT / 1000) + 's. Is Remote Package Installer running on the PS4?');
-        toast('Timed out', 'err');
-      } else {
-        setConn('run', 'Sent — reply unreadable');
-        showStatus('run', 'Sent (unconfirmed)',
-          "The request went out but the console's reply couldn't be read. If a download starts on the PS4, it worked.", url);
-        toast('Sent — check the PS4', 'info');
-      }
-
-      pushRecent(rec);
-    });
-  }
-
-  /* =====================================================================
      WIRING
      ===================================================================== */
   function wireTabs() {
@@ -2722,7 +2450,6 @@ select option{background:#0b0e16;color:var(--tx)}
       applyLibrary();
     });
 
-    /* Kind buttons — delegated (bar contents are re-rendered) */
     D.libKinds.addEventListener('click', function (e) {
       var btn = e.target.closest ? e.target.closest('.kind-btn') : null;
       if (!btn) return;
@@ -2735,12 +2462,9 @@ select option{background:#0b0e16;color:var(--tx)}
       applyLibrary();
     });
 
-    /* Modal file actions — delegated */
     D.libFiles.addEventListener('click', function (e) {
       var t = e.target;
       if (!t || !t.closest) return;
-      var sendBtn = t.closest('[data-send]');
-      if (sendBtn) { sendUrlsToPs4([sendBtn.getAttribute('data-send')]); return; }
       var copyBtn = t.closest('[data-copy]');
       if (copyBtn) copyText(copyBtn.getAttribute('data-copy'));
     });
@@ -2752,16 +2476,6 @@ select option{background:#0b0e16;color:var(--tx)}
       for (var i = 0; i < g.files.length; i++) urls.push(g.files[i].url);
       if (!urls.length) { toast('No URLs to copy', 'err'); return; }
       copyText(urls.join('\n'));
-    });
-
-    D.libSendAll.addEventListener('click', function () {
-      var g = state.currentLibraryGame;
-      if (!g) return;
-      var direct = [];
-      for (var i = 0; i < g.files.length; i++) {
-        if (g.files[i].direct) direct.push(g.files[i].url);
-      }
-      sendUrlsToPs4(direct);
     });
 
     wireGridDelegation(
@@ -2801,51 +2515,27 @@ select option{background:#0b0e16;color:var(--tx)}
     );
   }
 
-  function wireSender() {
-    D.ipInput.value = getIp();
+  function wireDonate() {
+    /* Buttons that open the donation modal */
+    var openers = [D.coffeeBtn, D.footCoffee, D.helpCoffee];
+    for (var i = 0; i < openers.length; i++) {
+      if (openers[i]) {
+        openers[i].addEventListener('click', function () {
+          /* Close help modal if we opened from there */
+          var helpOpen = D.helpModal && D.helpModal.classList.contains('open');
+          if (helpOpen) D.helpModal.classList.remove('open');
+          openModal('donateModal');
+        });
+      }
+    }
 
-    D.testBtn.addEventListener('click', testConnection);
-    D.sendBtn.addEventListener('click', sendCurrent);
-    D.clearBtn.addEventListener('click', function () {
-      D.urlInput.value = '';
-      D.status.className = 'status';
-      D.urlInput.focus();
-    });
-
-    D.ipInput.addEventListener('change', function () {
-      var v = cleanIp(this.value);
-      this.value = v;
-      setIp(v);
-      renderEndpoint();
-    });
-
-    D.urlInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); sendCurrent(); }
-    });
-    D.ipInput.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); testConnection(); }
-    });
-  }
-
-  function wireSettings() {
-    D.targetPill.addEventListener('click', function () {
-      D.ipInputModal.value = getIp();
-      openModal('settingsModal');
-      setTimeout(function () { D.ipInputModal.focus(); D.ipInputModal.select(); }, 60);
-    });
-
-    D.settingsSave.addEventListener('click', function () {
-      var v = cleanIp(D.ipInputModal.value);
-      setIp(v);
-      D.ipInput.value = v;
-      renderEndpoint();
-      closeModal('settingsModal');
-      toast('PS4 IP saved', 'ok');
-    });
-
-    D.ipInputModal.addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); D.settingsSave.click(); }
-    });
+    /* Copy wallet address button */
+    if (D.copyEth) {
+      D.copyEth.addEventListener('click', function () {
+        copyText(ETH_ADDRESS);
+        toast('Wallet address copied — thank you! ☕', 'coffee');
+      });
+    }
   }
 
   function wireModals() {
@@ -2873,16 +2563,12 @@ select option{background:#0b0e16;color:var(--tx)}
       var tag = (e.target && e.target.tagName) || '';
       if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
         e.preventDefault();
-        var el = state.view === 'library' ? D.libSearch
-               : state.view === 'ps5'     ? D.ps5Search
-               : D.urlInput;
+        var el = state.view === 'library' ? D.libSearch : D.ps5Search;
         if (el) { el.focus(); el.select(); }
       }
     });
   }
 
-  /* Global delegated image load / error handling.
-     Removes per-image inline handlers from the HTML string. */
   function wireImageHandlers() {
     document.addEventListener('load', function (e) {
       var t = e.target;
@@ -2904,37 +2590,24 @@ select option{background:#0b0e16;color:var(--tx)}
      ===================================================================== */
   function boot() {
     cacheDom();
+
+    /* Ensure displayed address matches config */
+    if (D.ethAddress) D.ethAddress.textContent = ETH_ADDRESS;
+
     wireImageHandlers();
     wireTabs();
     wireLibrary();
     wirePs5();
-    wireSender();
-    wireSettings();
+    wireDonate();
     wireModals();
     wireKeyboard();
 
-    renderEndpoint();
-    renderRecent();
-
-    var deepLinked = false;
     try {
-      var m = window.location.search.match(/[?&]url=([^&]+)/);
-      if (m) {
-        deepLinked = true;
-        setView('sender');
-        D.urlInput.value = decodeURIComponent(m[1]);
-        D.urlInput.focus();
+      var lastView = localStorage.getItem(LS_VIEW);
+      if (lastView && document.querySelector('.view[data-view="' + lastView + '"]')) {
+        setView(lastView);
       }
     } catch (e) {}
-
-    if (!deepLinked) {
-      try {
-        var lastView = localStorage.getItem(LS_VIEW);
-        if (lastView && document.querySelector('.view[data-view="' + lastView + '"]')) {
-          setView(lastView);
-        }
-      } catch (e) {}
-    }
 
     loadLibrary();
     loadPs5();
