@@ -1,247 +1,94 @@
 # OptiStore
 
+OptiStore is a locally hosted web app for browsing the included PS4 and PS5
+catalogs. Its launcher starts a small HTTP server on your computer, opens the
+app in your browser, and shows the local network address so another device on
+the same Wi-Fi/LAN can access it.
+
 ## Screenshots
 
-<a href="https://postimg.cc/5QMB5852" target="_blank"><img src="https://i.postimg.cc/0jzVsfbD/ps5.png" alt="ps5"></a><br><br>
-<a href="https://postimg.cc/BLF51mF3" target="_blank"><img src="https://i.postimg.cc/xCx6h7TX/ps5pkg.png" alt="ps5pkg"></a><br><br>
-<a href="https://postimg.cc/q6dsc2cB" target="_blank"><img src="https://i.postimg.cc/sxMTrcvW/ps4.png" alt="ps4"></a><br><br>
-<a href="https://postimg.cc/5Yz5Fsz6" target="_blank"><img src="https://i.postimg.cc/j5gMm9dQ/ps4pkg.png" alt="ps4pkg"></a><br><br>
+<a href="https://postimg.cc/5QMB5852" target="_blank"><img src="https://i.postimg.cc/0jzVsfbD/ps5.png" alt="PS5 library"></a><br><br>
+<a href="https://postimg.cc/BLF51mF3" target="_blank"><img src="https://i.postimg.cc/xCx6h7TX/ps5pkg.png" alt="PS5 packages"></a><br><br>
+<a href="https://postimg.cc/q6dsc2cB" target="_blank"><img src="https://i.postimg.cc/sxMTrcvW/ps4.png" alt="PS4 library"></a><br><br>
+<a href="https://postimg.cc/5Yz5Fsz6" target="_blank"><img src="https://i.postimg.cc/j5gMm9dQ/ps4pkg.png" alt="PS4 packages"></a>
 
-live store removed, to host your own use vercel and this repos url
+## Run on Windows
 
-A browser-based front end for the PS4's **Remote Package Installer (RPI)**.
-Browse a catalog of `.pkg` files on your PC, then push them straight to your
-console from the PS4 browser.
+Build `OptiStore.exe` using the steps below, then double-click it. The app
+opens at `http://localhost:8000/`. Keep the console
+window open while using the app; close it or press **Ctrl+C** to stop the server.
 
-> [!WARNING]
-> **Serve this over plain HTTP — never HTTPS.**
-> Install requests go to the console's RPI at `http://<PS4-IP>:12800/api/install`.
-> If the page itself is served over HTTPS, the browser blocks that request as
-> mixed content, and nothing will install.
+If port 8000 is already in use, OptiStore tries the next available port and
+prints the address it selected. To use the app from another device, open the
+**local network** address printed in that window. If Windows Firewall asks,
+allow access on your private network.
 
----
+The executable contains the app and catalog files, so Python is not required on
+the computer that runs it. It is built for Windows; use the source instructions
+below on other operating systems.
 
-## Status
+## Build the Windows executable
 
-**The library is complete and functional as of now.** Everything documented
-below works, and the catalogs are ready to use.
+On a Windows machine with Python 3.10 or newer installed:
 
-`ps4.html` ships with **direct Internet Archive links** for its catalog, so
-games can be pulled straight from archive.org without any intermediate host.
+1. Put the project files in one folder.
+2. Double-click `build-windows.bat`.
+3. Find the standalone executable at `dist\OptiStore.exe`.
 
-> [!NOTE]
-> Sending to RPI from the PS4 browser was an oversight on the author's part.
-> Full **GoldHEN** support is being enabled, which is the intended path for
-> installing on console. See [GoldHEN setup](#goldhen-setup) below.
+The build script installs PyInstaller and packages `index.html` and all three
+catalogs into a single-file executable. Copy that executable to another
+Windows machine and run it there.
 
----
+## Run from source
 
-
-
-
-
-
----
-
-## Contents
-
-- [Files](#files)
-- [Requirements](#requirements)
-- [GoldHEN setup](#goldhen-setup)
-- [Quick start](#quick-start)
-- [Deploying to the web](#deploying-to-the-web)
-- [Using the site](#using-the-site)
-- [Troubleshooting](#troubleshooting)
-- [Disclaimer](#disclaimer)
-- [Support](#support)
-
----
-
-## Files
-
-| File | Purpose | Open on |
-| --- | --- | --- |
-| `index.html` | Library browser — filter by region/kind, inspect every `.pkg` URL | PC |
-| `ps4.html` | Full catalog installer with direct Internet Archive links | PS4 |
-| `rpi.html` | Standalone sender for one-off `.pkg` URLs | PS4 or PC |
-| `export_with_covers.json` | Catalog consumed by `index.html` | *(you provide)* |
-| `games.json` | Catalog consumed by `ps4.html` | *(you provide)* |
-| `README.md` | This file | — |
-
----
-
-## Requirements
-
-- **GoldHEN** running on the PS4 (see [GoldHEN setup](#goldhen-setup)).
-- A way to serve static files over **HTTP** (Python 3, Node, or any web host).
-- PC and PS4 on the same LAN (for local hosting).
-
----
-
-## GoldHEN setup
-
-For OptiStore to work end-to-end, enable the following in GoldHEN and the PS4
-debug settings:
-
-1. **Payload server** — enable it in GoldHEN.
-2. **FTP server** — enable it in GoldHEN.
-3. **Background downloads** — enable it in **Debug Settings** on the PS4.
-
-With these three enabled, installs queue properly and can run in the background
-while you keep using the console.
-
----
-
-## Quick start
-
-### 1. Serve the files
-
-Pick whichever you have installed:
-
-**Python 3**
+Python 3.10 or newer is required. From the project folder, run:
 
 ```bash
-cd optistore
-python -m http.server 8000
+python server.py
 ```
 
-**Node**
+Then open the URL printed by the launcher. You can choose a starting port or
+skip opening the browser automatically:
 
 ```bash
-npx serve -p 8000
-# or
-npx http-server -p 8000
+python server.py --port 8080 --no-browser
 ```
 
-### 2. Open it on your PC
+## Build and run on Linux
 
-```
-http://localhost:8000/
-```
-
-### 3. Open it on your PS4
-
-Make sure GoldHEN is running with the settings above applied, then in the PS4
-browser:
-
-```
-http://<PC-LAN-IP>:8000/ps4.html     # full catalog installer
-http://<PC-LAN-IP>:8000/rpi.html     # single .pkg sender
-```
-
-> **Tip:** `ps4.html` uses direct Internet Archive links, so no intermediate
-> host is required for catalog installs. For one-off URLs, use `rpi.html`.
-
----
-
-## Deploying to the web
-
-Because the RPI endpoint is plain HTTP, **your host must allow plain HTTP**.
-
-| Host | Plain HTTP? | Works? |
-| --- | --- | --- |
-| GitHub Pages | HTTPS only | ✗ |
-| Netlify | HTTPS only | ✗ |
-| Vercel | HTTPS only | ✗ |
-| Cloudflare Pages | HTTPS only | ✗ |
-| Your own VPS | Yes | ✓ |
-| LAN / home server | Yes | ✓ |
-| IPFS via HTTP gateway | Yes | ✓ |
-| `ngrok http <port>` | Yes | ✓ |
-
-### Nginx example (VPS)
-
-Put the files in `/var/www/optistore` and use:
-
-```nginx
-server {
-    listen 80;
-    server_name your-host.example;
-    root /var/www/optistore;
-    index index.html;
-
-    location / {
-        try_files $uri $uri/ =404;
-    }
-}
-```
-
----
-
-## Using the site
-
-1. **On your PC**, open `http://your-host/`.
-   Browse the catalog, filter by region or kind, and click a game to see every
-   `.pkg` URL it has.
-
-2. **On your PS4**, confirm GoldHEN is running with payload server, FTP server,
-   and background downloads enabled.
-
-3. Open `http://your-host/ps4.html` in the PS4 browser.
-   - Tap a game, then tap **Send to PS4**.
-   - Catalog entries pull directly from the Internet Archive.
-
-4. For a one-off `.pkg` URL, open `http://your-host/rpi.html` on the PS4,
-   paste the URL, and tap **Send**.
-
----
-
-## Troubleshooting
-
-**"Timed out talking to `<ip>:12800`"**
-RPI isn't running, the IP is wrong, or a firewall is blocking port 12800.
-Verify from a PC:
+On Linux, build a native executable with:
 
 ```bash
-curl http://<ip>:12800/
+./build-linux.sh
 ```
 
-**"Request sent — no readable reply"**
-Almost always means it actually worked. Check the PS4 notifications — the
-download should be queued.
+This creates `dist/OptiStore`. Run it with:
 
-**Card is greyed out in `ps4.html`**
-The IP field is empty. Open the settings pill and set it.
+```bash
+./dist/OptiStore
+```
 
-**Page loads but no games appear**
-`export_with_covers.json` / `games.json` is missing or malformed. Check the
-browser console for parse errors.
+The build script installs PyInstaller in a local `.venv-build` folder. The
+result is for the Linux architecture and system used to build it; build
+separately on Windows for `OptiStore.exe`.
 
-**Downloads don't continue in the background**
-Enable **background downloads** in the PS4's Debug Settings, and confirm the
-FTP and payload servers are enabled in GoldHEN.
+## Catalog files
 
----
+- `export_with_covers.json` and `games.json` provide the PS4 library data.
+- `ps5-catalog.json` provides the PS5 library data.
+
+The launcher bundles the included versions. For a source run, replace these
+files next to `server.py` with your own catalog data before starting it.
+
+## Network use
+
+The server listens on all network interfaces so devices on the same local
+network can reach it. The address printed as `On this computer` is for the
+computer running OptiStore; `On your local network` is for other devices.
+The server is plain HTTP and is intended for trusted local networks.
 
 ## Disclaimer
 
-**OptiStore is an index, not a source.**
-
-The library is a browsable list of links. The author does not host, upload,
-mirror, or distribute any `.pkg` file, game, or other content, and no files
-are bundled with this project. Every catalog entry points to a third-party
-location — in the case of `ps4.html`, directly to the **Internet Archive**.
-
-**No copyrighted material is provided here.** The author has not supplied any
-material that is not already public domain. The catalogs
-(`export_with_covers.json`, `games.json`) are supplied by **Public Scrapes** or by third
-parties; OptiStore simply reads and displays them.
-
-**You are responsible for your library.** What you load into the catalog, what
-you choose to install, and how you use the console are entirely your decisions.
-It is your responsibility to ensure you have the right to access and use
-anything you add, and to comply with the laws that apply where you live. The
-author accepts no responsibility or liability for your use of this tool, the
-content you point it at, or any consequences that follow.
-
-**The author's only contribution is their time** — writing the code, assembling
-the browser, and documenting it. If the library saved you some of yours,
-consider supporting that effort:
-
-```
-ETH: 0x17E1D7f8A9641749A3f6A932Df09D36FE198df86
-```
-
----
-
-
+OptiStore is an index, not a source. It displays links to third-party locations
+and does not host or distribute package files. You are responsible for the
+catalog data you use and for complying with the laws that apply where you live.
