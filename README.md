@@ -4,9 +4,9 @@
 A browser-based front end for browsing PS4 and PS5 package libraries, with direct download links for every base game, update, DLC, and theme.
 
 ## Screenshots
-
-<a href="https://postimg.cc/5QMB5852" target="_blank"><img src="https://i.postimg.cc/0jzVsfbD/ps5.png" alt="ps5"></a><br><br>
-<a href="https://postimg.cc/BLF51mF3" target="_blank"><img src="https://i.postimg.cc/xCx6h7TX/ps5pkg.png" alt="ps5pkg"></a><br><br>
+<a href="https://postimg.cc/5Yg9sWvK" target="_blank"><img src="https://i.postimg.cc/8cQFP1CG/Screenshot-2026-10-07-00-57-29.png" alt="Screenshot-2026-10-07-00-57-29"></a><br><br>
+<a href="https://postimg.cc/7G9PKr7s" target="_blank"><img src="https://i.postimg.cc/Bb98Qqv0/Screenshot-2026-10-07-00-57-41.png" alt="Screenshot-2026-10-07-00-57-41"></a><br><br>
+<a href="https://postimg.cc/vgh80w93" target="_blank"><img src="https://i.postimg.cc/x8DkT0dD/Screenshot-2026-10-07-00-57-52.png" alt="Screenshot-2026-10-07-00-57-52"></a><br><br>
 <a href="https://postimg.cc/q6dsc2cB" target="_blank"><img src="https://i.postimg.cc/sxMTrcvW/ps4.png" alt="ps4"></a><br><br>
 <a href="https://postimg.cc/5Yz5Fsz6" target="_blank"><img src="https://i.postimg.cc/j5gMm9dQ/ps4pkg.png" alt="ps4pkg"></a><br><br>
 
