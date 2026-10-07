@@ -10,7 +10,6 @@ A browser-based front end for browsing PS4 and PS5 package libraries, with direc
 <a href="https://postimg.cc/q6dsc2cB" target="_blank"><img src="https://i.postimg.cc/sxMTrcvW/ps4.png" alt="ps4"></a><br><br>
 <a href="https://postimg.cc/5Yz5Fsz6" target="_blank"><img src="https://i.postimg.cc/j5gMm9dQ/ps4pkg.png" alt="ps4pkg"></a><br><br>
 
-Live store removed — to host your own, deploy with any static host (see [Deploying to the web](#deploying-to-the-web)).
 
 ---
 
