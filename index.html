@@ -2,24 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#05060a">
 <title>OptiStore — Package Library</title>
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* ==========================================================================
+   1. TOKENS
+   ========================================================================== */
 :root{
-  --bg:#06070c; --surface:#0d1019; --surface-2:#12151f; --card:#0e121c;
-  --line:#1a1f2e; --line-2:#262d42;
-  --accent:#7c5cff; --accent-2:#22d3ee; --accent-3:#a78bfa;
-  --accent-soft:rgba(124,92,255,.12); --accent-glow:rgba(124,92,255,.32);
-  --ok:#10b981; --ok-2:#34d399; --ok-soft:rgba(16,185,129,.10);
-  --warn:#f5a524; --warn-soft:rgba(245,165,36,.10);
-  --err:#f43f5e; --err-soft:rgba(244,63,94,.10);
-  --tx:#eef1f8; --tx-2:#98a1b8; --tx-3:#5a6379;
-  --f:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  --m:'JetBrains Mono',ui-monospace,monospace;
+  --bg:#05060a;
+  --surface:#0b0e16;
+  --surface-2:#10131d;
+  --card:#0c0f17;
+  --line:#1b2030;
+  --line-2:#2a3247;
+
+  --accent:#7c5cff;
+  --accent-2:#22d3ee;
+  --accent-3:#a78bfa;
+  --accent-soft:rgba(124,92,255,.12);
+  --accent-glow:rgba(124,92,255,.30);
+
+  --ok:#10b981;
+  --ok-2:#34d399;
+  --ok-soft:rgba(16,185,129,.10);
+  --warn:#f5a524;
+  --warn-soft:rgba(245,165,36,.10);
+  --err:#f43f5e;
+  --err-soft:rgba(244,63,94,.10);
+  --tg:#29a9eb;
+  --tg-soft:rgba(41,169,235,.12);
+  --coffee:#f5b544;
+  --coffee-2:#e08a2e;
+  --coffee-soft:rgba(245,181,68,.12);
+  --eth:#8a92b2;
+  --eth-soft:rgba(138,146,178,.14);
+
+  --tx:#eef1f8;
+  --tx-2:#98a1b8;
+  --tx-3:#5a6379;
+
+  --f:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --m:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
+
+  --r-sm:8px;
+  --r-md:11px;
+  --r-lg:14px;
+  --r-xl:18px;
+
+  --ease:cubic-bezier(.2,.8,.3,1);
+
   --k-base:#10b981;   --k-base-soft:rgba(16,185,129,.12);   --k-base-line:rgba(16,185,129,.4);
   --k-update:#f59e0b; --k-update-soft:rgba(245,158,11,.12); --k-update-line:rgba(245,158,11,.4);
   --k-dlc:#a855f7;    --k-dlc-soft:rgba(168,85,247,.12);    --k-dlc-line:rgba(168,85,247,.4);
@@ -29,442 +66,667 @@
   --k-app:#3b82f6;    --k-app-soft:rgba(59,130,246,.12);    --k-app-line:rgba(59,130,246,.4);
   --k-pkg:#7c5cff;    --k-pkg-soft:rgba(124,92,255,.12);    --k-pkg-line:rgba(124,92,255,.4);
 }
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{
-  background:var(--bg);color:var(--tx);font-family:var(--f);
-  font-size:15px;line-height:1.55;min-height:100%;
-  -webkit-font-smoothing:antialiased;
-}
+
+/* ==========================================================================
+   2. RESET / BASE
+   ========================================================================== */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+html{-webkit-text-size-adjust:100%}
+
 body{
-  background-image:
-    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,.14), transparent 62%),
-    radial-gradient(800px 400px at 95% 5%, rgba(34,211,238,.07), transparent 60%);
-  background-attachment:fixed;
+  background:var(--bg);
+  color:var(--tx);
+  font-family:var(--f);
+  font-size:15px;
+  line-height:1.55;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  overflow-x:hidden;
 }
-::-webkit-scrollbar{width:11px;height:11px}
+
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  background:
+    radial-gradient(900px 520px at 8% -120px, rgba(124,92,255,.16), transparent 65%),
+    radial-gradient(760px 420px at 96% -60px, rgba(34,211,238,.08), transparent 62%),
+    radial-gradient(700px 500px at 50% 110%, rgba(124,92,255,.05), transparent 70%);
+}
+
+img{display:block;max-width:100%}
+button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:0}
+input,select{font-family:inherit;font-size:inherit;color:inherit}
+a{color:inherit;text-decoration:none}
+
+::selection{background:var(--accent);color:#fff}
+
+::-webkit-scrollbar{width:10px;height:10px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
-::selection{background:var(--accent);color:#fff}
-button{font-family:inherit}
-a{color:inherit}
+::-webkit-scrollbar-thumb:hover{background:#39425c}
 
-/* ---------- TOPBAR ---------- */
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ==========================================================================
+   3. TOPBAR
+   ========================================================================== */
 .topbar{
-  position:sticky;top:0;z-index:100;min-height:64px;
-  display:flex;align-items:center;justify-content:space-between;gap:14px;
-  padding:0 clamp(14px,2.5vw,28px);
-  background:rgba(6,7,12,.85);
-  backdrop-filter:saturate(180%) blur(20px);
-  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  min-height:64px;
+  padding:0 clamp(14px,2.4vw,28px);
+  background:rgba(5,6,10,.82);
+  backdrop-filter:saturate(160%) blur(16px);
+  -webkit-backdrop-filter:saturate(160%) blur(16px);
   border-bottom:1px solid var(--line);
 }
-.brand{display:flex;align-items:center;gap:11px;min-width:0;flex:none}
+
+.brand{display:flex;align-items:center;gap:11px;flex:none;min-width:0}
 .brand-mark{
-  width:34px;height:34px;border-radius:10px;flex:none;
+  width:36px;height:36px;flex:none;
+  border-radius:11px;
+  display:grid;place-items:center;
+  font-size:15px;font-weight:800;letter-spacing:-.04em;color:#05060a;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;font-weight:900;color:#06070c;letter-spacing:-.05em;
-  box-shadow:0 8px 22px -8px var(--accent-glow);
+  box-shadow:0 8px 20px -8px var(--accent-glow);
 }
-.brand-txt{display:flex;flex-direction:column;line-height:1.12;min-width:0}
+.brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
 .brand-txt .n{font-size:14.5px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
 .brand-txt .n em{
   font-style:normal;
   background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.brand-txt .s{font-size:9.5px;color:var(--tx-3);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.brand-txt .s{
+  font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3);
+}
 
 .tabs{
-  display:flex;align-items:center;gap:4px;
-  padding:4px;border-radius:12px;
-  border:1px solid var(--line);background:rgba(0,0,0,.34);
-  overflow-x:auto;scrollbar-width:none;max-width:100%;
+  display:flex;align-items:center;gap:3px;
+  padding:4px;
+  border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.36);
+  overflow-x:auto;
+  scrollbar-width:none;
+  max-width:100%;
 }
 .tabs::-webkit-scrollbar{display:none}
 .tab-btn{
   display:inline-flex;align-items:center;gap:8px;
-  padding:8px 15px;border-radius:9px;
-  border:1px solid transparent;background:transparent;
-  color:var(--tx-3);font-size:12.5px;font-weight:700;
-  cursor:pointer;transition:.18s;white-space:nowrap;letter-spacing:-.005em;
+  padding:8px 15px;
+  border-radius:9px;
+  font-size:12.5px;font-weight:700;letter-spacing:-.005em;
+  color:var(--tx-3);
+  white-space:nowrap;
+  cursor:pointer;
+  transition:color .18s,background .18s,box-shadow .18s;
 }
 .tab-btn svg{width:14px;height:14px;flex:none}
-.tab-btn:hover{color:var(--tx-2);background:rgba(255,255,255,.035)}
+.tab-btn:hover{color:var(--tx-2);background:rgba(255,255,255,.04)}
 .tab-btn.active{
   color:#fff;
   background:linear-gradient(135deg,var(--accent),var(--accent-3));
-  box-shadow:0 8px 22px -10px var(--accent-glow);
+  box-shadow:0 8px 20px -10px var(--accent-glow);
 }
-.topbar-right{display:flex;align-items:center;gap:8px;flex:none}
 
-.target-pill{
+.topbar-right{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
+
+/* Coffee donation button */
+.coffee-btn{
   display:inline-flex;align-items:center;gap:8px;
-  font-size:11.5px;font-weight:700;padding:8px 14px;border-radius:99px;
-  border:1px solid var(--line);background:rgba(255,255,255,.035);
-  color:var(--tx-2);cursor:pointer;transition:.18s;
-  white-space:nowrap;font-family:var(--m);
+  padding:0 14px;height:36px;
+  border-radius:11px;
+  border:1px solid rgba(245,181,68,.38);
+  background:var(--coffee-soft);
+  color:#f8d488;
+  font-size:12.5px;font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .18s,border-color .18s,color .18s,transform .18s,box-shadow .18s;
 }
-.target-pill:hover{border-color:var(--line-2);color:var(--tx)}
-.target-pill .dot{
-  width:7px;height:7px;border-radius:50%;background:var(--tx-3);
-  flex:none;transition:.25s;
+.coffee-btn svg{width:15px;height:15px;flex:none}
+.coffee-btn:hover{
+  background:rgba(245,181,68,.24);
+  border-color:rgba(245,181,68,.66);
+  color:#ffe6b3;
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px -12px rgba(245,181,68,.65);
 }
-.target-pill.ok{color:var(--ok-2);border-color:rgba(16,185,129,.32);background:var(--ok-soft)}
-.target-pill.ok .dot{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
-.target-pill.err{color:#fda4af;border-color:rgba(244,63,94,.32);background:var(--err-soft)}
-.target-pill.err .dot{background:var(--err);box-shadow:0 0 10px var(--err)}
+.coffee-btn:active{transform:translateY(0)}
+
+/* Telegram button */
+.tg-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:0 14px;height:36px;
+  border-radius:11px;
+  border:1px solid rgba(41,169,235,.34);
+  background:var(--tg-soft);
+  color:#8fd4ff;
+  font-size:12.5px;font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .18s,border-color .18s,color .18s,transform .18s;
+}
+.tg-btn svg{width:15px;height:15px;flex:none}
+.tg-btn:hover{
+  background:rgba(41,169,235,.22);
+  border-color:rgba(41,169,235,.6);
+  color:#c8e9ff;
+  transform:translateY(-1px);
+}
+.tg-btn:active{transform:translateY(0)}
 
 .icon-btn{
-  width:36px;height:36px;border-radius:11px;flex:none;
-  border:1px solid var(--line);background:rgba(255,255,255,.035);
-  color:var(--tx-2);cursor:pointer;font-size:14px;
-  display:flex;align-items:center;justify-content:center;
-  transition:.18s;
+  width:36px;height:36px;flex:none;
+  border-radius:11px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.035);
+  color:var(--tx-2);
+  display:grid;place-items:center;
+  cursor:pointer;
+  transition:border-color .18s,color .18s,background .18s;
 }
 .icon-btn:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
 .icon-btn svg{width:15px;height:15px}
 
-/* ---------- LAYOUT ---------- */
-.wrap{max-width:1560px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 80px}
+/* ==========================================================================
+   4. LAYOUT
+   ========================================================================== */
+.wrap{
+  max-width:1560px;
+  margin:0 auto;
+  padding:0 clamp(16px,3vw,34px) 96px;
+}
 .view{display:none}
-.view.active{display:block}
+.view.active{display:block;animation:fadeUp .32s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-.hero{padding:44px 0 26px;text-align:center}
+/* ==========================================================================
+   5. HERO
+   ========================================================================== */
+.hero{padding:46px 0 28px;text-align:center}
 .hero h1{
-  font-size:clamp(28px,4.6vw,46px);font-weight:900;
-  letter-spacing:-.04em;line-height:1.06;
+  font-size:clamp(27px,4.4vw,44px);
+  font-weight:800;
+  letter-spacing:-.04em;
+  line-height:1.08;
 }
 .hero h1 em{
   font-style:normal;
   background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.hero p{margin:14px auto 0;max-width:620px;font-size:14px;color:var(--tx-2)}
-.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+.hero p{
+  margin:14px auto 0;
+  max-width:640px;
+  font-size:14px;
+  color:var(--tx-2);
+}
+
+.stats{
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:10px;margin-top:26px;
+}
 .stat{
+  position:relative;
   display:flex;flex-direction:column;align-items:center;gap:2px;
-  padding:11px 20px;min-width:104px;border-radius:13px;
+  min-width:106px;padding:12px 20px;
+  border-radius:var(--r-lg);
   border:1px solid var(--line);
-  background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.008));
+  background:linear-gradient(180deg,rgba(255,255,255,.045),rgba(255,255,255,.008));
+  overflow:hidden;
+}
+.stat::before{
+  content:'';position:absolute;top:0;left:18%;right:18%;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(124,92,255,.55),transparent);
 }
 .stat .v{font-size:21px;font-weight:800;letter-spacing:-.025em;line-height:1.2}
 .stat .v.g{
   background:linear-gradient(135deg,var(--ok-2),#6ee7b7);
   -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.stat .k{font-size:9px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;color:var(--tx-3)}
-
-/* ---------- TOOLBAR ---------- */
-.toolbar{
-  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
-  padding:14px;margin-bottom:22px;border-radius:18px;
-  border:1px solid var(--line);background:rgba(13,16,25,.7);
-  backdrop-filter:saturate(180%) blur(14px);
-  -webkit-backdrop-filter:saturate(180%) blur(14px);
-  position:sticky;top:76px;z-index:50;
+.stat .k{
+  font-size:9px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tx-3);
 }
-.search-wrap{position:relative;flex:1 1 240px;min-width:180px}
+
+/* ==========================================================================
+   6. TOOLBAR
+   ========================================================================== */
+.toolbar{
+  position:sticky;
+  top:76px;
+  z-index:50;
+  display:flex;flex-wrap:wrap;align-items:center;gap:10px;
+  padding:14px;
+  margin-bottom:22px;
+  border-radius:var(--r-xl);
+  border:1px solid var(--line);
+  background:#0b0e16;
+  box-shadow:0 12px 30px -22px rgba(0,0,0,.95);
+}
+.search-wrap{position:relative;flex:1 1 240px;min-width:170px}
 .search-wrap .ico{
   position:absolute;left:14px;top:50%;transform:translateY(-50%);
   color:var(--tx-3);pointer-events:none;display:flex;
 }
 .search-wrap input{
-  width:100%;padding:11px 14px 11px 40px;
-  font-family:inherit;font-size:14px;
-  background:rgba(0,0,0,.32);border:1px solid var(--line);
-  border-radius:9px;color:var(--tx);outline:none;
-  transition:.18s;
+  width:100%;
+  padding:11px 14px 11px 40px;
+  font-size:14px;
+  background:rgba(0,0,0,.34);
+  border:1px solid var(--line);
+  border-radius:10px;
+  color:var(--tx);
+  outline:none;
+  transition:border-color .18s,box-shadow .18s,background .18s;
 }
+.search-wrap input::placeholder{color:var(--tx-3)}
 .search-wrap input:focus{
   border-color:var(--accent);
   box-shadow:0 0 0 3px var(--accent-soft);
-  background:rgba(0,0,0,.45);
+  background:rgba(0,0,0,.46);
 }
-.search-wrap input::placeholder{color:var(--tx-3)}
+
 select{
   padding:11px 34px 11px 14px;
-  font-family:inherit;font-size:13.5px;
-  background:rgba(0,0,0,.32);border:1px solid var(--line);
-  border-radius:9px;color:var(--tx);outline:none;
-  cursor:pointer;-webkit-appearance:none;appearance:none;
+  font-size:13.5px;
+  background:rgba(0,0,0,.34);
+  border:1px solid var(--line);
+  border-radius:10px;
+  color:var(--tx);
+  outline:none;
+  cursor:pointer;
+  -webkit-appearance:none;appearance:none;
   background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6379' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 13px center;
-  transition:.18s;
+  background-repeat:no-repeat;
+  background-position:right 13px center;
+  transition:border-color .18s,box-shadow .18s;
 }
 select:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft)}
-select option{background:#0d1019;color:var(--tx)}
+select option{background:#0b0e16;color:var(--tx)}
+
 .count{
   margin-left:auto;
-  font-family:var(--m);font-size:12px;font-weight:600;
-  color:var(--tx-2);padding:9px 15px;border-radius:99px;
-  border:1px solid var(--line);background:rgba(0,0,0,.32);
+  padding:9px 15px;
+  border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.34);
+  font-family:var(--m);
+  font-size:12px;
+  color:var(--tx-2);
   white-space:nowrap;
 }
 
 .kinds-bar{
   display:flex;flex-wrap:wrap;align-items:center;gap:6px;
-  width:100%;padding-top:11px;margin-top:2px;
+  width:100%;
+  padding-top:11px;
   border-top:1px solid var(--line);
 }
 .kinds-bar .kb-label{
-  font-size:10px;font-weight:800;letter-spacing:.11em;text-transform:uppercase;
-  color:var(--tx-3);padding-right:5px;
+  font-size:10px;font-weight:800;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--tx-3);
+  padding-right:5px;
 }
 .kind-btn{
   display:inline-flex;align-items:center;gap:6px;
-  padding:6px 11px;border-radius:99px;
-  font-family:var(--m);font-size:10.5px;font-weight:800;
+  padding:6px 11px;
+  border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.03);
+  font-family:var(--m);
+  font-size:10.5px;font-weight:500;
   letter-spacing:.05em;text-transform:uppercase;
-  border:1px solid var(--line);background:rgba(255,255,255,.03);
-  color:var(--tx-3);cursor:pointer;transition:.18s;
-  white-space:nowrap;user-select:none;
+  color:var(--tx-3);
+  white-space:nowrap;
+  cursor:pointer;
+  user-select:none;
+  transition:color .18s,border-color .18s,background .18s;
 }
 .kind-btn:hover{color:var(--tx-2);border-color:var(--line-2)}
-.kind-btn .n{font-size:9px;opacity:.7;padding:0 3px;min-width:14px;text-align:center}
+.kind-btn .n{font-size:9px;opacity:.7;min-width:14px;text-align:center}
 .kind-btn.on{color:#fff;border-color:transparent}
 .kind-btn.on .n{opacity:.85}
 .kind-btn.on[data-kind="all"]{background:linear-gradient(135deg,var(--accent),var(--accent-3))}
-.kind-btn.on[data-kind="base"]  { background:var(--k-base);   color:#04231a; }
-.kind-btn.on[data-kind="update"]{ background:var(--k-update); color:#2a1a02; }
-.kind-btn.on[data-kind="dlc"]   { background:var(--k-dlc);    color:#fff; }
-.kind-btn.on[data-kind="theme"] { background:var(--k-theme);  color:#04231a; }
-.kind-btn.on[data-kind="avatar"]{ background:var(--k-avatar); color:#fff; }
-.kind-btn.on[data-kind="demo"]  { background:var(--k-demo);   color:#fff; }
-.kind-btn.on[data-kind="app"]   { background:var(--k-app);    color:#fff; }
-.kind-btn.on[data-kind="pkg"]   { background:var(--k-pkg);    color:#fff; }
+.kind-btn.on[data-kind="base"]  {background:var(--k-base);  color:#04231a}
+.kind-btn.on[data-kind="update"]{background:var(--k-update);color:#2a1a02}
+.kind-btn.on[data-kind="dlc"]   {background:var(--k-dlc)}
+.kind-btn.on[data-kind="theme"] {background:var(--k-theme); color:#04231a}
+.kind-btn.on[data-kind="avatar"]{background:var(--k-avatar)}
+.kind-btn.on[data-kind="demo"]  {background:var(--k-demo)}
+.kind-btn.on[data-kind="app"]   {background:var(--k-app)}
+.kind-btn.on[data-kind="pkg"]   {background:var(--k-pkg)}
 .kind-btn .e{font-size:11px;line-height:1}
 
-/* ---------- KIND BADGES ---------- */
+/* ==========================================================================
+   7. KIND BADGES
+   ========================================================================== */
 .kind{
   display:inline-flex;align-items:center;gap:4px;
-  font-family:var(--m);font-size:9.5px;font-weight:800;
-  letter-spacing:.06em;text-transform:uppercase;
-  padding:3px 8px;border-radius:5px;
+  padding:3px 8px;
+  border-radius:5px;
   border:1px solid var(--line);
   background:rgba(255,255,255,.03);
-  color:var(--tx-2);white-space:nowrap;line-height:1.35;
+  font-family:var(--m);
+  font-size:9.5px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:var(--tx-2);
+  white-space:nowrap;line-height:1.35;
 }
-.kind.base  { color:#6ee7b7; background:var(--k-base-soft);   border-color:var(--k-base-line); }
-.kind.update{ color:#fcd34d; background:var(--k-update-soft); border-color:var(--k-update-line); }
-.kind.dlc   { color:#d8b4fe; background:var(--k-dlc-soft);    border-color:var(--k-dlc-line); }
-.kind.theme { color:#67e8f9; background:var(--k-theme-soft);  border-color:var(--k-theme-line); }
-.kind.avatar{ color:#f9a8d4; background:var(--k-avatar-soft); border-color:var(--k-avatar-line); }
-.kind.demo  { color:#cbd5e1; background:var(--k-demo-soft);   border-color:var(--k-demo-line); }
-.kind.app   { color:#93c5fd; background:var(--k-app-soft);    border-color:var(--k-app-line); }
-.kind.pkg   { color:#c4b5fd; background:var(--k-pkg-soft);    border-color:var(--k-pkg-line); }
+.kind.base  {color:#6ee7b7;background:var(--k-base-soft);  border-color:var(--k-base-line)}
+.kind.update{color:#fcd34d;background:var(--k-update-soft);border-color:var(--k-update-line)}
+.kind.dlc   {color:#d8b4fe;background:var(--k-dlc-soft);   border-color:var(--k-dlc-line)}
+.kind.theme {color:#67e8f9;background:var(--k-theme-soft); border-color:var(--k-theme-line)}
+.kind.avatar{color:#f9a8d4;background:var(--k-avatar-soft);border-color:var(--k-avatar-line)}
+.kind.demo  {color:#cbd5e1;background:var(--k-demo-soft);  border-color:var(--k-demo-line)}
+.kind.app   {color:#93c5fd;background:var(--k-app-soft);   border-color:var(--k-app-line)}
+.kind.pkg   {color:#c4b5fd;background:var(--k-pkg-soft);   border-color:var(--k-pkg-line)}
 .kind .e{font-size:10px;line-height:1}
 
-/* ---------- GRID / CARDS ---------- */
+/* ==========================================================================
+   8. GRID + CARDS
+   ========================================================================== */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fill,minmax(196px,1fr));
   gap:20px;
 }
+
 .card{
-  position:relative;display:flex;flex-direction:column;
-  border-radius:13px;border:1px solid var(--line);
-  background:var(--card);overflow:hidden;cursor:pointer;
-  transition:transform .3s cubic-bezier(.2,.8,.3,1),border-color .22s,box-shadow .3s;
+  position:relative;
+  display:flex;flex-direction:column;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:var(--card);
+  overflow:hidden;
+  cursor:pointer;
+  content-visibility:auto;
+  contain-intrinsic-size:auto 360px;
+  contain:layout style paint;
+  transition:transform .3s var(--ease),border-color .22s,box-shadow .3s;
 }
 .card:hover{
-  transform:translateY(-6px);
+  transform:translate3d(0,-6px,0);
   border-color:rgba(124,92,255,.5);
-  box-shadow:0 26px 50px -22px rgba(124,92,255,.45),0 0 0 1px rgba(124,92,255,.15);
+  box-shadow:0 26px 46px -24px rgba(124,92,255,.5),0 0 0 1px rgba(124,92,255,.14);
 }
 .card:focus-visible{outline:none;border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+
 .cover{
-  position:relative;width:100%;aspect-ratio:3/4;
-  background:linear-gradient(160deg,#0b0e17,#070a11);
+  position:relative;
+  width:100%;
+  aspect-ratio:3/4;
+  background:linear-gradient(160deg,#0a0d15,#06080e);
   overflow:hidden;
 }
 .cover .placeholder{
-  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  font-size:44px;font-weight:900;color:rgba(255,255,255,.055);
-  letter-spacing:-.05em;pointer-events:none;user-select:none;
+  position:absolute;inset:0;
+  display:grid;place-items:center;
+  font-size:44px;font-weight:800;letter-spacing:-.05em;
+  color:rgba(255,255,255,.055);
+  pointer-events:none;user-select:none;
 }
 .cover img{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;opacity:0;
-  transition:transform .5s cubic-bezier(.2,.8,.3,1),opacity .35s;
+  position:absolute;inset:0;
+  width:100%;height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition:transform .5s var(--ease),opacity .35s;
 }
 .cover img.ready{opacity:1}
 .card:hover .cover img{transform:scale(1.06)}
 .cover::after{
-  content:'';position:absolute;inset:0;
-  background:linear-gradient(180deg,transparent 48%,rgba(6,7,12,.92) 100%);
-  opacity:.9;pointer-events:none;
+  content:'';
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 46%,rgba(5,6,10,.94) 100%);
+  pointer-events:none;
 }
+
 .ribbons{
   position:absolute;top:10px;left:10px;right:10px;
-  display:flex;gap:5px;flex-wrap:wrap;z-index:2;pointer-events:none;
+  z-index:2;
+  display:flex;gap:5px;flex-wrap:wrap;
+  pointer-events:none;
 }
 .ribbon{
-  font-family:var(--m);font-size:9.5px;font-weight:700;letter-spacing:.06em;
-  padding:4px 9px;border-radius:99px;
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  padding:4px 9px;
+  border-radius:99px;
   border:1px solid rgba(255,255,255,.14);
-  background:rgba(8,10,16,.78);color:#fff;text-transform:uppercase;
+  background:rgba(8,10,16,.8);
+  font-family:var(--m);
+  font-size:9.5px;font-weight:500;
+  letter-spacing:.06em;text-transform:uppercase;
+  color:#fff;
 }
-.ribbon.reg{color:#a5b4fc;border-color:rgba(124,92,255,.4);background:rgba(13,10,40,.82)}
-.ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.4);background:rgba(4,35,26,.82)}
-.ribbon.cat{color:#a5b4fc;border-color:rgba(124,92,255,.4);background:rgba(13,10,40,.82)}
+.ribbon.reg,.ribbon.cat{color:#a5b4fc;border-color:rgba(124,92,255,.42);background:rgba(13,10,40,.84)}
+.ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.42);background:rgba(4,35,26,.84)}
+.ribbon.updated{color:#67e8f9;border-color:rgba(6,182,212,.42);background:rgba(4,30,38,.84)}
 
-.info{padding:13px 14px 14px;display:flex;flex-direction:column;gap:9px;flex:1}
+.info{
+  display:flex;flex-direction:column;gap:9px;
+  flex:1;
+  padding:13px 14px 14px;
+}
 .info h3{
-  font-size:13px;font-weight:650;line-height:1.38;
+  font-size:13px;font-weight:600;line-height:1.38;letter-spacing:-.005em;
   display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;
-  overflow:hidden;min-height:2.76em;letter-spacing:-.005em;
+  overflow:hidden;min-height:2.76em;
 }
 .mini-kinds{display:flex;gap:4px;flex-wrap:wrap}
 .info .row{
   display:flex;align-items:center;justify-content:space-between;gap:8px;
-  margin-top:auto;font-family:var(--m);font-size:10.5px;
-  color:var(--tx-3);font-weight:600;
+  margin-top:auto;
+  font-family:var(--m);
+  font-size:10.5px;color:var(--tx-3);
 }
 
-/* ---------- SKELETON / EMPTY ---------- */
-.sk{border-radius:13px;border:1px solid var(--line);background:var(--card);overflow:hidden}
-.sk .sk-c{aspect-ratio:3/4;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
-.sk .sk-l{height:11px;margin:14px 14px 0;border-radius:4px;background:linear-gradient(100deg,#0e121c 30%,#161d2e 50%,#0e121c 70%);background-size:220% 100%;animation:shim 1.5s infinite linear}
+/* ==========================================================================
+   9. SKELETON / EMPTY
+   ========================================================================== */
+.sk{
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:var(--card);
+  overflow:hidden;
+}
+.sk .sk-c{aspect-ratio:3/4;background:linear-gradient(100deg,#0c0f17 30%,#141a28 50%,#0c0f17 70%);background-size:220% 100%;animation:shim 1.4s infinite linear}
+.sk .sk-l{height:11px;margin:14px 14px 0;border-radius:4px;background:linear-gradient(100deg,#0c0f17 30%,#141a28 50%,#0c0f17 70%);background-size:220% 100%;animation:shim 1.4s infinite linear}
 .sk .sk-l.short{width:55%;margin-bottom:16px}
 @keyframes shim{0%{background-position:120% 0}100%{background-position:-120% 0}}
 
 .empty{
-  grid-column:1/-1;text-align:center;padding:76px 24px;
-  border-radius:18px;border:1px dashed var(--line-2);
-  background:rgba(255,255,255,.012);color:var(--tx-3);
+  grid-column:1/-1;
+  padding:76px 24px;
+  text-align:center;
+  border-radius:var(--r-xl);
+  border:1px dashed var(--line-2);
+  background:rgba(255,255,255,.012);
+  color:var(--tx-3);
 }
 .empty .big{font-size:40px;margin-bottom:14px;opacity:.55}
 .empty b{display:block;color:var(--tx-2);font-size:15px;font-weight:700;margin-bottom:5px}
-.empty small{font-size:12.5px;display:block;max-width:460px;margin:0 auto;line-height:1.6}
+.empty small{display:block;max-width:470px;margin:0 auto;font-size:12.5px;line-height:1.6}
 .empty code{
   font-family:var(--m);font-size:11.5px;
-  background:rgba(0,0,0,.4);padding:2px 7px;border-radius:4px;color:var(--accent-2);
+  background:rgba(0,0,0,.42);padding:2px 7px;border-radius:4px;color:var(--accent-2);
 }
 .empty .act{
   display:inline-block;margin-top:16px;padding:9px 20px;
-  background:var(--accent);color:#fff;border-radius:9px;
-  font-size:12.5px;font-weight:700;cursor:pointer;border:0;
-  font-family:inherit;transition:.18s;
+  border-radius:9px;background:var(--accent);color:#fff;
+  font-size:12.5px;font-weight:700;cursor:pointer;
+  transition:filter .18s;
 }
 .empty .act:hover{filter:brightness(1.1)}
 
-/* ---------- MODALS ---------- */
+/* ==========================================================================
+   10. MODALS
+   ========================================================================== */
 .overlay{
-  display:none;position:fixed;inset:0;z-index:900;
-  padding:24px 16px;overflow-y:auto;
-  background:rgba(3,4,8,.84);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  display:none;
+  position:fixed;inset:0;z-index:900;
+  padding:24px 16px;
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  background:rgba(3,4,8,.86);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
 }
 .overlay.open{display:flex;align-items:flex-start;justify-content:center}
+
 .modal{
-  position:relative;width:100%;max-width:860px;margin:auto;
-  border-radius:22px;border:1px solid var(--line);
+  position:relative;
+  width:100%;max-width:880px;
+  margin:auto;
+  border-radius:22px;
+  border:1px solid var(--line);
   background:linear-gradient(180deg,var(--surface-2),var(--surface));
-  box-shadow:0 30px 70px -24px rgba(0,0,0,.9);
+  box-shadow:0 30px 70px -26px rgba(0,0,0,.92);
   overflow:hidden;
-  animation:pop .28s cubic-bezier(.16,1,.3,1);
+  animation:pop .26s var(--ease);
 }
-.modal.slim{max-width:560px}
-@keyframes pop{from{opacity:0;transform:translateY(16px) scale(.975)}to{opacity:1;transform:none}}
+.modal.slim{max-width:570px}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+
 .modal-close{
   position:absolute;top:16px;right:16px;z-index:5;
-  width:34px;height:34px;border-radius:50%;
-  border:1px solid var(--line);background:rgba(8,10,16,.75);
-  color:var(--tx-2);font-size:13px;cursor:pointer;
-  display:flex;align-items:center;justify-content:center;transition:.2s;
+  width:34px;height:34px;
+  border-radius:50%;
+  border:1px solid var(--line);
+  background:rgba(8,10,16,.78);
+  color:var(--tx-2);
+  font-size:13px;
+  display:grid;place-items:center;
+  cursor:pointer;
+  transition:background .2s,border-color .2s,color .2s,transform .25s;
 }
-.modal-close:hover{background:#f43f5e;border-color:#f43f5e;color:#fff;transform:rotate(90deg)}
+.modal-close:hover{background:var(--err);border-color:var(--err);color:#fff;transform:rotate(90deg)}
 
 .gm-head{
-  display:grid;grid-template-columns:180px 1fr;gap:22px;padding:24px;
+  display:grid;
+  grid-template-columns:180px 1fr;
+  gap:22px;
+  padding:24px;
   border-bottom:1px solid var(--line);
-  background:linear-gradient(135deg,rgba(124,92,255,.08),transparent 60%);
+  background:linear-gradient(135deg,rgba(124,92,255,.09),transparent 62%);
 }
 .gm-cover{
-  width:100%;aspect-ratio:3/4;border-radius:13px;
-  overflow:hidden;border:1px solid var(--line);background:#080b12;
-  display:flex;align-items:center;justify-content:center;
-  font-size:44px;font-weight:900;color:rgba(255,255,255,.08);
   position:relative;
+  width:100%;
+  aspect-ratio:3/4;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:#07090f;
+  overflow:hidden;
+  display:grid;place-items:center;
+  font-size:44px;font-weight:800;
+  color:rgba(255,255,255,.08);
 }
-.gm-cover img{width:100%;height:100%;object-fit:cover;display:block;position:absolute;inset:0}
+.gm-cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gm-meta{padding-top:4px;min-width:0}
 .gm-meta h2{
-  font-size:23px;font-weight:800;letter-spacing:-.028em;
-  line-height:1.22;padding-right:44px;
+  font-size:23px;font-weight:800;letter-spacing:-.028em;line-height:1.22;
+  padding-right:44px;
 }
 .gm-meta .sub{
+  margin-top:6px;
   font-family:var(--m);font-size:12px;color:var(--tx-3);
-  margin-top:6px;word-break:break-all;
+  word-break:break-all;
 }
 .gm-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;align-items:center}
 .gm-tag{
-  font-family:var(--m);font-size:10.5px;font-weight:600;
-  padding:4px 11px;border-radius:99px;
-  border:1px solid var(--line);background:rgba(0,0,0,.3);
+  padding:4px 11px;
+  border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.32);
+  font-family:var(--m);font-size:10.5px;font-weight:500;
   color:var(--tx-2);
 }
-.gm-tag.b{color:#a5b4fc;border-color:rgba(124,92,255,.35);background:var(--accent-soft)}
-.gm-tag.g{color:#6ee7c0;border-color:rgba(16,185,129,.35);background:var(--ok-soft)}
+.gm-tag.b{color:#a5b4fc;border-color:rgba(124,92,255,.36);background:var(--accent-soft)}
+.gm-tag.g{color:#6ee7c0;border-color:rgba(16,185,129,.36);background:var(--ok-soft)}
 .gm-actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
 
 .gm-body{padding:20px 24px 24px}
+
 .sec-title{
   display:flex;align-items:center;gap:10px;
-  font-size:10.5px;font-weight:800;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--tx-3);margin-bottom:14px;
+  margin-bottom:14px;
+  font-size:10.5px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tx-3);
 }
 .sec-title::after{content:'';flex:1;height:1px;background:var(--line)}
 .sec-title .mini{
-  font-family:var(--m);text-transform:none;letter-spacing:0;
-  font-weight:600;font-size:10.5px;color:var(--tx-3);
+  font-family:var(--m);
+  font-size:10.5px;font-weight:400;
+  letter-spacing:0;text-transform:none;color:var(--tx-3);
 }
 
 .tip{
   display:flex;align-items:flex-start;gap:11px;
-  padding:12px 14px;border-radius:11px;
-  background:var(--accent-soft);border:1px solid rgba(124,92,255,.28);
-  font-size:12px;line-height:1.6;color:var(--tx-2);
   margin-bottom:18px;
+  padding:12px 14px;
+  border-radius:var(--r-md);
+  border:1px solid rgba(124,92,255,.28);
+  background:var(--accent-soft);
+  font-size:12px;line-height:1.6;color:var(--tx-2);
 }
 .tip .ico{flex:none;font-size:15px;line-height:1}
 .tip b{color:#c4b5fd;font-weight:700}
 .tip code{
   font-family:var(--m);font-size:11px;
-  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;
-  color:var(--accent-2);
+  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;color:var(--accent-2);
 }
 
-/* ---------- FILE / LINK ROWS ---------- */
-.files{display:flex;flex-direction:column;gap:9px;max-height:min(56vh,540px);overflow-y:auto;padding-right:4px}
+/* ==========================================================================
+   11. FILE / LINK ROWS
+   ========================================================================== */
+.files{
+  display:flex;flex-direction:column;gap:9px;
+  max-height:min(56vh,540px);
+  overflow-y:auto;
+  overscroll-behavior:contain;
+  padding-right:4px;
+}
 .frow{
   display:flex;align-items:center;justify-content:space-between;
-  gap:12px;flex-wrap:wrap;padding:13px 14px;
-  border-radius:13px;border:1px solid var(--line);
+  gap:12px;flex-wrap:wrap;
+  padding:13px 14px;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
   border-left:4px solid var(--line-2);
   background:rgba(0,0,0,.26);
-  transition:.18s;
+  transition:background .18s,border-color .18s;
 }
-.frow:hover{background:rgba(255,255,255,.025);border-color:var(--line-2)}
-.frow[data-kind="base"]   { border-left-color:var(--k-base); }
-.frow[data-kind="update"] { border-left-color:var(--k-update); }
-.frow[data-kind="dlc"]    { border-left-color:var(--k-dlc); }
-.frow[data-kind="theme"]  { border-left-color:var(--k-theme); }
-.frow[data-kind="avatar"] { border-left-color:var(--k-avatar); }
-.frow[data-kind="demo"]   { border-left-color:var(--k-demo); }
-.frow[data-kind="app"]    { border-left-color:var(--k-app); }
-.frow[data-kind="pkg"]    { border-left-color:var(--k-pkg); }
+.frow:hover{background:rgba(255,255,255,.026);border-color:var(--line-2)}
+.frow[data-kind="base"]  {border-left-color:var(--k-base)}
+.frow[data-kind="update"]{border-left-color:var(--k-update)}
+.frow[data-kind="dlc"]   {border-left-color:var(--k-dlc)}
+.frow[data-kind="theme"] {border-left-color:var(--k-theme)}
+.frow[data-kind="avatar"]{border-left-color:var(--k-avatar)}
+.frow[data-kind="demo"]  {border-left-color:var(--k-demo)}
+.frow[data-kind="app"]   {border-left-color:var(--k-app)}
+.frow[data-kind="pkg"]   {border-left-color:var(--k-pkg)}
 
 .fmain{flex:1 1 240px;min-width:0;display:flex;flex-direction:column;gap:6px}
-.fname{font-size:13.5px;font-weight:650;color:var(--tx);word-break:break-word}
+.fname{font-size:13.5px;font-weight:600;word-break:break-word}
 .facts{display:flex;flex-wrap:wrap;gap:5px;align-items:center}
 .fact{
   display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--m);font-size:10px;font-weight:600;
-  padding:3px 9px;border-radius:99px;
-  border:1px solid var(--line);background:rgba(255,255,255,.028);
+  padding:3px 9px;
+  border-radius:99px;
+  border:1px solid var(--line);
+  background:rgba(255,255,255,.028);
+  font-family:var(--m);font-size:10px;font-weight:500;
   color:var(--tx-2);
 }
 .fact.globe{color:#a5b4fc}
@@ -473,276 +735,386 @@ select option{background:#0d1019;color:var(--tx)}
 
 .tag{
   display:inline-flex;align-items:center;gap:5px;
-  font-family:var(--m);font-size:9.5px;font-weight:800;letter-spacing:.05em;
-  padding:3px 9px;border-radius:5px;text-transform:uppercase;
+  padding:3px 9px;
+  border-radius:5px;
+  font-family:var(--m);font-size:9.5px;font-weight:500;
+  letter-spacing:.05em;text-transform:uppercase;
 }
 .tag.direct{color:#6ee7c0;background:var(--ok-soft);border:1px solid rgba(16,185,129,.32)}
 .tag.redirect{color:#fcd34d;background:var(--warn-soft);border:1px solid rgba(245,165,36,.32)}
 
-/* ---------- BUTTONS ---------- */
+/* ==========================================================================
+   12. BUTTONS
+   ========================================================================== */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:11px 18px;border-radius:9px;border:1px solid transparent;
-  font-family:inherit;font-size:13px;font-weight:700;
-  cursor:pointer;text-decoration:none;transition:.18s;
-  white-space:nowrap;line-height:1;color:var(--tx);
+  padding:11px 18px;
+  border-radius:9px;
+  border:1px solid transparent;
+  font-size:13px;font-weight:700;line-height:1;
+  color:var(--tx);
+  white-space:nowrap;
+  cursor:pointer;
+  transition:filter .18s,transform .18s,background .18s,border-color .18s,color .18s;
 }
 .btn svg{width:14px;height:14px;flex:none}
-.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none!important}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none!important;filter:none!important}
 .btn.primary{
   background:linear-gradient(135deg,var(--accent),var(--accent-3));
-  color:#fff;box-shadow:0 10px 26px -10px var(--accent-glow);
+  color:#fff;
+  box-shadow:0 10px 24px -12px var(--accent-glow);
 }
 .btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.btn.ok{
-  background:linear-gradient(135deg,var(--ok-2),var(--ok));
-  color:#04231a;box-shadow:0 10px 26px -12px rgba(16,185,129,.5);
+.btn.ghost{
+  background:rgba(255,255,255,.04);
+  border-color:var(--line);
+  color:var(--tx-2);
 }
-.btn.ok:hover{filter:brightness(1.08);transform:translateY(-1px)}
-.btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--tx-2)}
 .btn.ghost:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+.btn.tg{
+  background:var(--tg-soft);
+  border-color:rgba(41,169,235,.36);
+  color:#8fd4ff;
+}
+.btn.tg:hover{background:rgba(41,169,235,.22);border-color:rgba(41,169,235,.62);color:#c8e9ff}
+.btn.coffee{
+  background:linear-gradient(135deg,var(--coffee),var(--coffee-2));
+  color:#2a1a02;
+  box-shadow:0 10px 24px -12px rgba(245,181,68,.55);
+}
+.btn.coffee:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.sm{font-size:11.5px;padding:8px 13px;border-radius:7px}
 .btn.sm svg{width:12px;height:12px}
 .btn.icon{padding:8px 11px}
 .btn-group{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
 
-/* ---------- SENDER PANEL ---------- */
-.panel{
-  display:flex;flex-direction:column;gap:16px;
-  padding:22px;border-radius:18px;
-  border:1px solid var(--line);background:rgba(13,16,25,.7);
-  backdrop-filter:saturate(180%) blur(14px);
-  -webkit-backdrop-filter:saturate(180%) blur(14px);
-  margin-bottom:16px;
-}
-.field{display:flex;flex-direction:column;gap:6px}
-.field label{
-  font-size:10.5px;font-weight:800;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--tx-3);
-}
-.field input{
-  width:100%;padding:13px 15px;
-  font-family:var(--m);font-size:14px;
-  color:var(--tx);background:rgba(0,0,0,.36);
-  border:1px solid var(--line);border-radius:9px;
-  outline:none;transition:.18s;
-  -webkit-appearance:none;appearance:none;
-}
-.field input:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 3px var(--accent-soft);
-  background:rgba(0,0,0,.5);
-}
-.field input::placeholder{color:var(--tx-3)}
-.ip-row{display:flex;gap:10px;align-items:stretch}
-.ip-row input{flex:1;min-width:0}
-.hint{
-  font-size:11.5px;color:var(--tx-3);line-height:1.55;
-  padding:10px 12px;border-radius:9px;
-  background:rgba(0,0,0,.24);border:1px solid var(--line);
-}
-.hint code{
-  font-family:var(--m);font-size:11px;
-  background:rgba(0,0,0,.4);padding:2px 6px;
-  border-radius:4px;color:var(--accent-2);
-}
-.row-actions{display:flex;gap:10px;flex-wrap:wrap}
-.row-actions .btn.ok{flex:1}
-.dot{
-  display:inline-block;width:9px;height:9px;border-radius:50%;
-  background:var(--tx-3);flex:none;transition:.25s;
-}
-.dot.ok{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
-.dot.err{background:var(--err);box-shadow:0 0 10px var(--err)}
-.dot.run{background:var(--accent-3);box-shadow:0 0 10px var(--accent-3)}
-.conn-line{
-  display:flex;align-items:center;gap:10px;
-  font-size:12.5px;color:var(--tx-2);
-  padding:0 4px;
-}
-.status{
-  display:none;align-items:flex-start;gap:12px;
-  padding:14px 16px;border-radius:11px;
-  font-size:13px;font-weight:500;line-height:1.55;
-  border:1px solid var(--line);background:rgba(0,0,0,.3);
-  margin-top:4px;
-}
-.status.show{display:flex}
-.status.ok{border-color:rgba(16,185,129,.4);background:var(--ok-soft);color:#6ee7c0}
-.status.err{border-color:rgba(244,63,94,.4);background:var(--err-soft);color:#fda4af}
-.status.run{border-color:rgba(124,92,255,.4);background:var(--accent-soft);color:#c4b5fd}
-.status .ico{flex:none;font-size:17px;line-height:1.3}
-.status .body{flex:1;min-width:0;word-break:break-word}
-.status .body b{display:block;margin-bottom:2px;font-weight:800;font-size:13.5px}
-.status .body .detail{
-  font-family:var(--m);font-size:11.5px;
-  opacity:.85;margin-top:4px;
-  word-break:break-all;
-}
-.recent{
-  padding:22px;border-radius:18px;
-  border:1px solid var(--line);background:rgba(13,16,25,.5);
-  margin-top:16px;
-}
-.recent h3{
-  font-size:11px;font-weight:800;letter-spacing:.13em;
-  text-transform:uppercase;color:var(--tx-3);margin-bottom:12px;
-}
-.recent-item{
-  display:flex;align-items:center;gap:10px;
-  padding:10px 12px;border-radius:9px;
-  border:1px solid var(--line);background:rgba(0,0,0,.24);
-  margin-bottom:8px;font-size:12px;
-}
-.recent-item:last-child{margin-bottom:0}
-.recent-item .st{width:8px;height:8px;border-radius:50%;flex:none}
-.recent-item .st.ok{background:var(--ok-2)}
-.recent-item .st.err{background:var(--err)}
-.recent-item .st.unk{background:var(--warn)}
-.recent-item .url{
-  flex:1;min-width:0;
-  font-family:var(--m);font-size:11px;
-  color:var(--tx-2);word-break:break-all;
-}
-.recent-item .when{
-  font-family:var(--m);font-size:10.5px;
-  color:var(--tx-3);flex:none;
-}
-
-/* ---------- HELP STEPS ---------- */
+/* ==========================================================================
+   13. SETTINGS / HELP MODAL
+   ========================================================================== */
 .set-head{
   padding:24px 24px 20px;
   border-bottom:1px solid var(--line);
-  background:linear-gradient(135deg,rgba(124,92,255,.1),transparent 60%);
+  background:linear-gradient(135deg,rgba(124,92,255,.11),transparent 62%);
 }
-.set-head h2{font-size:19px;font-weight:800;color:var(--tx);letter-spacing:-.02em;padding-right:40px}
-.set-head p{font-size:12.5px;color:var(--tx-3);margin-top:4px}
-.set-body{padding:22px 24px 26px;display:flex;flex-direction:column;gap:14px}
+.set-head h2{font-size:19px;font-weight:800;letter-spacing:-.02em;padding-right:40px}
+.set-head p{margin-top:4px;font-size:12.5px;color:var(--tx-3)}
+
+.set-body{
+  display:flex;flex-direction:column;gap:14px;
+  padding:22px 24px 26px;
+}
 .step{
   display:flex;align-items:flex-start;gap:12px;
-  padding:13px 15px;border-radius:11px;
-  border:1px solid var(--line);background:rgba(0,0,0,.24);
+  padding:13px 15px;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.24);
 }
 .step .num{
-  width:26px;height:26px;border-radius:50%;flex:none;
+  width:26px;height:26px;flex:none;
+  border-radius:50%;
+  display:grid;place-items:center;
   background:linear-gradient(135deg,var(--accent),var(--accent-3));
   color:#fff;font-size:12px;font-weight:800;
-  display:flex;align-items:center;justify-content:center;
 }
 .step .txt{flex:1;min-width:0;font-size:13px;line-height:1.55;color:var(--tx-2)}
-.step .txt b{color:var(--tx);font-weight:700;display:block;margin-bottom:3px;font-size:13.5px}
+.step .txt b{display:block;margin-bottom:3px;font-size:13.5px;font-weight:700;color:var(--tx)}
 .step .txt code{
   font-family:var(--m);font-size:11.5px;
-  background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px;
-  color:var(--accent-2);
+  background:rgba(0,0,0,.42);padding:2px 6px;border-radius:4px;color:var(--accent-2);
 }
-.set-actions{display:flex;gap:8px;margin-top:4px}
-.set-actions .btn{flex:1}
 
-/* ---------- TOASTS ---------- */
-#toasts{
-  position:fixed;right:20px;bottom:20px;z-index:2000;
+/* Contact card inside help modal */
+.contact-card{
   display:flex;flex-direction:column;gap:10px;
-  max-width:min(420px,calc(100vw - 40px));pointer-events:none;
+  padding:16px;
+  border-radius:var(--r-md);
+  border:1px solid rgba(41,169,235,.34);
+  background:linear-gradient(135deg,rgba(41,169,235,.14),rgba(41,169,235,.05));
+}
+.contact-card .cc-head{
+  display:flex;align-items:center;gap:10px;
+  font-size:13.5px;font-weight:700;color:#c8e9ff;
+}
+.contact-card .cc-head svg{width:20px;height:20px;flex:none}
+.contact-card .cc-body{
+  font-size:12.5px;line-height:1.6;color:#a8d8f5;
+}
+.contact-card .cc-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+.contact-card .btn{flex:1}
+
+/* ==========================================================================
+   14. DONATE MODAL
+   ========================================================================== */
+.donate-head{
+  padding:26px 24px 22px;
+  border-bottom:1px solid var(--line);
+  text-align:center;
+  background:linear-gradient(135deg,rgba(245,181,68,.14),rgba(245,181,68,.03));
+}
+.donate-head .coffee-mark{
+  width:56px;height:56px;
+  margin:0 auto 14px;
+  border-radius:16px;
+  display:grid;place-items:center;
+  font-size:26px;
+  background:linear-gradient(135deg,var(--coffee),var(--coffee-2));
+  box-shadow:0 14px 30px -12px rgba(245,181,68,.7);
+}
+.donate-head h2{
+  font-size:20px;font-weight:800;letter-spacing:-.02em;
+}
+.donate-head p{
+  margin-top:6px;font-size:13px;color:var(--tx-2);
+}
+
+.donate-body{
+  display:flex;flex-direction:column;gap:14px;
+  padding:22px 24px 24px;
+}
+
+.wallet-box{
+  display:flex;flex-direction:column;gap:10px;
+  padding:16px;
+  border-radius:var(--r-md);
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.3);
+}
+.wallet-box .wb-label{
+  display:flex;align-items:center;gap:8px;
+  font-size:10.5px;font-weight:800;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--tx-3);
+}
+.wallet-box .wb-label svg{width:14px;height:14px;color:var(--eth)}
+.wallet-box .wb-addr{
+  display:flex;align-items:center;gap:10px;
+  padding:13px 14px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:rgba(0,0,0,.4);
+}
+.wallet-box .wb-addr code{
+  flex:1;min-width:0;
+  font-family:var(--m);
+  font-size:12.5px;
+  color:#c8d2ee;
+  word-break:break-all;
+  line-height:1.5;
+  user-select:all;
+}
+
+.donate-note{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:12px 14px;
+  border-radius:var(--r-md);
+  border:1px solid rgba(245,181,68,.28);
+  background:var(--coffee-soft);
+  font-size:12px;line-height:1.6;color:var(--tx-2);
+}
+.donate-note .ico{flex:none;font-size:15px;line-height:1}
+.donate-note b{color:#f8d488;font-weight:700}
+
+.donate-actions{display:flex;gap:8px;flex-wrap:wrap}
+.donate-actions .btn{flex:1}
+
+/* ==========================================================================
+   15. TELEGRAM FLOATING BUTTON
+   ========================================================================== */
+.tg-fab{
+  position:fixed;
+  right:20px;bottom:20px;
+  z-index:800;
+  display:inline-flex;align-items:center;gap:0;
+  height:52px;
+  padding:0 16px;
+  border-radius:26px;
+  border:1px solid rgba(41,169,235,.4);
+  background:linear-gradient(135deg,#2aabee,#229ed9);
+  color:#fff;
+  font-size:13.5px;font-weight:700;
+  cursor:pointer;
+  box-shadow:0 14px 34px -12px rgba(41,169,235,.7);
+  transition:transform .22s var(--ease),box-shadow .22s,filter .2s;
+}
+.tg-fab svg{width:22px;height:22px;flex:none}
+.tg-fab .tg-label{
+  max-width:0;
+  overflow:hidden;
+  white-space:nowrap;
+  opacity:0;
+  transition:max-width .35s var(--ease),opacity .22s,margin .35s var(--ease);
+}
+.tg-fab:hover{transform:translateY(-3px);box-shadow:0 18px 40px -12px rgba(41,169,235,.85);filter:brightness(1.06)}
+.tg-fab:hover .tg-label{max-width:280px;opacity:1;margin-left:9px}
+.tg-fab::after{
+  content:'';
+  position:absolute;inset:-3px;
+  border-radius:29px;
+  border:2px solid rgba(41,169,235,.55);
+  animation:tgPulse 2.6s ease-out infinite;
+  pointer-events:none;
+}
+@keyframes tgPulse{
+  0%{transform:scale(.96);opacity:.9}
+  70%{transform:scale(1.14);opacity:0}
+  100%{transform:scale(1.14);opacity:0}
+}
+
+/* ==========================================================================
+   16. TOASTS
+   ========================================================================== */
+#toasts{
+  position:fixed;
+  right:20px;bottom:88px;
+  z-index:2000;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:min(400px,calc(100vw - 40px));
+  pointer-events:none;
 }
 .toast{
   display:flex;align-items:flex-start;gap:11px;
-  padding:13px 15px;border-radius:13px;
+  padding:13px 15px;
+  border-radius:var(--r-md);
   border:1px solid var(--line);
-  background:rgba(16,21,34,.97);
-  backdrop-filter:blur(14px);
-  box-shadow:0 14px 34px -14px rgba(0,0,0,.7);
+  background:rgba(14,18,28,.97);
+  box-shadow:0 14px 32px -14px rgba(0,0,0,.75);
   font-size:13px;font-weight:500;line-height:1.5;
-  animation:slideIn .3s cubic-bezier(.16,1,.3,1);
   pointer-events:auto;
+  animation:slideIn .28s var(--ease);
 }
-.toast.out{animation:slideOut .24s ease forwards}
-.toast.ok{border-color:rgba(16,185,129,.4);background:rgba(6,38,30,.97)}
-.toast.err{border-color:rgba(244,63,94,.4);background:rgba(44,12,18,.97)}
-.toast.info{border-color:rgba(34,211,238,.4);background:rgba(5,26,34,.97)}
-@keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
-@keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
+.toast.out{animation:slideOut .22s ease forwards}
+.toast.ok{border-color:rgba(16,185,129,.42);background:rgba(6,36,28,.97)}
+.toast.err{border-color:rgba(244,63,94,.42);background:rgba(42,12,18,.97)}
+.toast.info{border-color:rgba(41,169,235,.42);background:rgba(6,26,36,.97)}
+.toast.coffee{border-color:rgba(245,181,68,.46);background:rgba(38,26,6,.97);color:#f8d488}
+@keyframes slideIn{from{opacity:0;transform:translateX(26px) scale(.97)}to{opacity:1;transform:none}}
+@keyframes slideOut{to{opacity:0;transform:translateX(26px) scale(.97)}}
 
-/* ---------- FOOTER ---------- */
+/* ==========================================================================
+   17. FOOTER
+   ========================================================================== */
 .foot{
-  border-top:1px solid var(--line);margin-top:44px;padding:26px 0 0;
-  display:flex;flex-wrap:wrap;gap:14px;align-items:center;
-  justify-content:space-between;font-size:12px;color:var(--tx-3);
+  display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+  margin-top:48px;
+  padding-top:26px;
+  border-top:1px solid var(--line);
+  font-size:12px;color:var(--tx-3);
 }
 .foot code{
   font-family:var(--m);font-size:11.5px;
-  background:rgba(0,0,0,.32);padding:3px 8px;border-radius:5px;
-  color:#a5b4fc;
+  background:rgba(0,0,0,.34);padding:3px 8px;border-radius:5px;color:#a5b4fc;
+}
+.foot-links{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.foot-tg,.foot-coffee{
+  display:inline-flex;align-items:center;gap:6px;
+  font-weight:600;
+  transition:color .18s;
+}
+.foot-tg{color:#7cc8f0}
+.foot-tg:hover{color:#b8e3ff}
+.foot-coffee{color:#f0c073}
+.foot-coffee:hover{color:#ffdca0}
+.foot-tg svg,.foot-coffee svg{width:14px;height:14px}
+
+/* ==========================================================================
+   18. RESPONSIVE
+   ========================================================================== */
+@media (max-width:1200px){
+  .coffee-btn span{display:none}
+  .coffee-btn{padding:0 11px}
 }
 
-/* ---------- RESPONSIVE ---------- */
-@media (max-width:900px){
+@media (max-width:1100px){
   .tab-btn span{display:none}
   .tab-btn{padding:9px 13px}
   .tab-btn svg{width:15px;height:15px}
+  .tg-btn span{display:none}
+  .tg-btn{padding:0 11px}
 }
+
 @media (max-width:760px){
-  .gm-head{grid-template-columns:120px 1fr;gap:16px;padding:20px}
+  .gm-head{grid-template-columns:118px 1fr;gap:16px;padding:20px}
   .gm-meta h2{font-size:18px;padding-right:36px}
   .gm-body{padding:18px}
   .hero{padding:32px 0 20px}
   .grid{grid-template-columns:repeat(auto-fill,minmax(146px,1fr));gap:13px}
   .brand-txt .s{display:none}
   .count{margin-left:0;width:100%;text-align:center}
-  .toolbar{top:70px}
+  .toolbar{top:72px}
+  #toasts{bottom:84px;right:14px;left:14px;max-width:none}
+  .tg-fab{right:14px;bottom:14px;height:48px;padding:0 14px}
+  .tg-fab svg{width:20px;height:20px}
 }
-@media (max-width:460px){
+
+@media (max-width:480px){
   .gm-head{grid-template-columns:1fr;gap:16px}
-  .gm-cover{max-width:140px}
-  .hero h1{font-size:26px}
+  .gm-cover{max-width:132px}
+  .hero h1{font-size:25px}
   .toolbar{padding:10px}
-  .target-pill span:not(.dot){display:none}
-  .target-pill{padding:8px 11px}
-  .panel{padding:16px}
-  .recent{padding:16px}
+  .btn{padding:10px 14px}
+  .donate-head{padding:22px 18px 18px}
+  .donate-body{padding:18px}
+}
+
+/* ==========================================================================
+   19. ACCESSIBILITY
+   ========================================================================== */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.001ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.001ms!important;
+    scroll-behavior:auto!important;
+  }
 }
 </style>
 </head>
 <body>
 
+<!-- ============================ TOPBAR ============================ -->
 <header class="topbar">
   <div class="brand">
-    <div class="brand-mark">O</div>
+    <div class="brand-mark" aria-hidden="true">O</div>
     <div class="brand-txt">
       <div class="n">OptiTron <em>Store</em></div>
       <div class="s">Package Library</div>
     </div>
   </div>
 
-  <nav class="tabs" id="tabs">
+  <nav class="tabs" id="tabs" aria-label="Sections">
     <button class="tab-btn active" data-view="library" type="button" title="PS4 Library">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <rect x="2" y="6" width="20" height="12" rx="2"/>
         <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
       </svg>
       <span>PS4 Library</span>
     </button>
-    <button class="tab-btn" data-view="ps5" type="button" title="PS5 Library">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <a class="tab-btn" href="ps5.html" title="PS5 Library">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M6 8h12a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-1l-2-3h-6l-2 3H6a3 3 0 0 1-3-3v-4a3 3 0 0 1 3-3z"/>
         <path d="M8 12v2M7 13h2M16 12.5h.01M18 14.5h.01"/>
       </svg>
       <span>PS5 Library</span>
-    </button>
-    <button class="tab-btn" data-view="sender" type="button" title="RPI Sender">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 12l16-8-6 18-3-7-7-3z"/>
-      </svg>
-      <span>RPI Sender</span>
-    </button>
+    </a>
   </nav>
 
   <div class="topbar-right">
-    <button class="target-pill" id="targetPill" type="button" title="PS4 endpoint — click to edit">
-      <span class="dot"></span><span id="targetText">127.0.0.1:12800</span>
+    <button class="coffee-btn" id="coffeeBtn" type="button" title="Donate me a coffee — Ethereum">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+        <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+        <path d="M6 2v3M10 2v3M14 2v3"/>
+      </svg>
+      <span>Donate me a coffee</span>
     </button>
-    <button class="icon-btn" id="helpBtn" type="button" title="Help">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <a class="tg-btn" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Issues, questions or custom project requests — message @OptiTronOffical">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+      </svg>
+      <span>Support &amp; Requests</span>
+    </a>
+    <button class="icon-btn" id="helpBtn" type="button" title="Help" aria-label="Help">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 .9-1 1.7v.3"/><path d="M12 17h.01"/>
       </svg>
     </button>
@@ -751,11 +1123,11 @@ select option{background:#0d1019;color:var(--tx)}
 
 <main class="wrap">
 
-  <!-- ============================= PS4 LIBRARY ============================= -->
+  <!-- ======================= PS4 LIBRARY ======================= -->
   <section class="view active" data-view="library">
     <div class="hero">
       <h1>PS4 <em>package library</em></h1>
-      <p>Every title, every base game, update and DLC — with direct install buttons that push straight to the console.</p>
+      <p>Every title, every base game, update and DLC — with direct download links and one-tap copy for external tools.</p>
       <div class="stats">
         <div class="stat"><span class="v" id="statTitles">—</span><span class="k">Titles</span></div>
         <div class="stat"><span class="v" id="statPackages">—</span><span class="k">Packages</span></div>
@@ -767,15 +1139,16 @@ select option{background:#0d1019;color:var(--tx)}
 
     <div class="toolbar">
       <div class="search-wrap">
-        <span class="ico">
+        <span class="ico" aria-hidden="true">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
           </svg>
         </span>
-        <input type="search" id="libSearch" placeholder="Search titles or title IDs…" autocomplete="off" spellcheck="false">
+        <input type="search" id="libSearch" placeholder="Search titles or title IDs…" autocomplete="off" spellcheck="false" aria-label="Search PS4 library">
       </div>
-      <select id="libRegion" title="Region"><option value="all">All Regions</option></select>
-      <select id="libSort" title="Sort">
+      <select id="libRegion" title="Region" aria-label="Filter by region"><option value="all">All Regions</option></select>
+      <select id="libSort" title="Sort" aria-label="Sort">
+        <option value="updated" selected>Recently updated</option>
         <option value="name">Name A–Z</option>
         <option value="name-desc">Name Z–A</option>
         <option value="files">Most packages</option>
@@ -789,132 +1162,51 @@ select option{background:#0d1019;color:var(--tx)}
     <div class="grid" id="libGrid"></div>
   </section>
 
-  <!-- ============================= PS5 LIBRARY ============================= -->
-  <section class="view" data-view="ps5">
-    <div class="hero">
-      <h1>PS5 <em>package library</em></h1>
-      <p>Browse the PS5 catalog and grab download links for every game, update, and DLC.</p>
-      <div class="stats">
-        <div class="stat"><span class="v" id="statPs5Total">—</span><span class="k">Packages</span></div>
-        <div class="stat"><span class="v g" id="statPs5Size">—</span><span class="k">Total Size</span></div>
-        <div class="stat"><span class="v" id="statPs5Game">—</span><span class="k">Games</span></div>
-        <div class="stat"><span class="v" id="statPs5Upd">—</span><span class="k">Updates</span></div>
-        <div class="stat"><span class="v" id="statPs5Other">—</span><span class="k">Other</span></div>
-      </div>
-    </div>
-
-    <div class="toolbar">
-      <div class="search-wrap">
-        <span class="ico">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
-          </svg>
-        </span>
-        <input type="search" id="ps5Search" placeholder="Search by title or title ID…" autocomplete="off" spellcheck="false">
-      </div>
-      <select id="ps5Cat" title="Category"><option value="all">All Categories</option></select>
-      <select id="ps5Sort" title="Sort">
-        <option value="name">Name A–Z</option>
-        <option value="name-desc">Name Z–A</option>
-        <option value="size">Largest first</option>
-        <option value="size-asc">Smallest first</option>
-      </select>
-      <span class="count" id="ps5Count">Loading…</span>
-    </div>
-
-    <div class="grid" id="ps5Grid"></div>
-  </section>
-
-  <!-- ============================= RPI SENDER ============================= -->
-  <section class="view" data-view="sender">
-    <div class="hero">
-      <h1>Send a <em>.pkg</em> straight to your PS4.</h1>
-      <p>Paste any direct .pkg link and push it to the console's Remote Package Installer — no PC required.</p>
-    </div>
-
-    <div class="panel">
-      <div class="field">
-        <label for="ipInput">PS4 IP address</label>
-        <div class="ip-row">
-          <input type="text" id="ipInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="127.0.0.1">
-          <button class="btn ghost" id="testBtn" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
-            Test
-          </button>
-        </div>
-      </div>
-      <div class="conn-line">
-        <span class="dot" id="connDot"></span>
-        <span id="connMsg">Not tested</span>
-      </div>
-      <div class="hint">
-        Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Requests go to <code>http://&lt;ip&gt;:12800/api/install</code>.
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="field">
-        <label for="urlInput">Direct PKG URL</label>
-        <input type="text" id="urlInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="http://your-server/game.pkg">
-      </div>
-      <div class="row-actions">
-        <button class="btn ok" id="sendBtn" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 12l16-8-6 18-3-7-7-3z"/>
-          </svg>
-          Send to PS4
-        </button>
-        <button class="btn ghost" id="clearBtn" type="button">Clear</button>
-      </div>
-    </div>
-
-    <div class="status" id="status">
-      <span class="ico" id="statusIco">ℹ️</span>
-      <div class="body">
-        <b id="statusTitle">Ready</b>
-        <span id="statusMsg">Paste a direct .pkg URL above and tap Send.</span>
-        <div class="detail" id="statusDetail" style="display:none;"></div>
-      </div>
-    </div>
-
-    <div class="recent" id="recentBox" style="display:none;">
-      <h3>Recent sends</h3>
-      <div id="recentList"></div>
-    </div>
-  </section>
-
   <footer class="foot">
     <div>OptiStore · unofficial fan library · run locally over HTTP</div>
-    <div>Endpoint: <code id="footTarget">127.0.0.1:12800</code></div>
+    <div class="foot-links">
+      <button class="foot-coffee" id="footCoffee" type="button" title="Donate me a coffee — Ethereum">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+          <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+          <path d="M6 2v3M10 2v3M14 2v3"/>
+        </svg>
+        Donate me a coffee
+      </button>
+      <a class="foot-tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Issues, questions or custom project requests — message @OptiTronOffical">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+        </svg>
+        Support &amp; Requests · @OptiTronOffical
+      </a>
+    </div>
   </footer>
 
 </main>
 
-<!-- ============================= PS4 GAME MODAL ============================= -->
-<div class="overlay" id="libModal">
+<!-- ======================= PS4 GAME MODAL ======================= -->
+<div class="overlay" id="libModal" role="dialog" aria-modal="true" aria-labelledby="libTitle">
   <div class="modal">
-    <button class="modal-close" type="button" data-close="libModal">✕</button>
+    <button class="modal-close" type="button" data-close="libModal" aria-label="Close">✕</button>
     <div class="gm-head">
-      <div class="gm-cover" id="libCoverWrap"><img id="libCover" alt=""></div>
+      <div class="gm-cover" id="libCoverWrap"></div>
       <div class="gm-meta">
         <h2 id="libTitle">—</h2>
         <div class="sub" id="libSub">—</div>
         <div class="gm-tags" id="libTags"></div>
         <div class="gm-actions">
-          <button class="btn ok" id="libSendAll" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 12l16-8-6 18-3-7-7-3z"/>
-            </svg>
-            Send all direct to PS4
-          </button>
           <button class="btn ghost" id="libCopyAll" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
             </svg>
             Copy all URLs
           </button>
+          <a class="btn tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Need help or want a custom project? Message @OptiTronOffical">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            Help / Request
+          </a>
         </div>
       </div>
     </div>
@@ -923,7 +1215,7 @@ select option{background:#0d1019;color:var(--tx)}
         <span class="ico">💡</span>
         <span>
           Install in order — <b>Base</b> first, then the latest <b>Update</b>, then any <b>DLC</b>.
-          Direct <b>.pkg</b> files can be pushed to the console in one tap; external host links open in a new tab.
+          Direct <b>.pkg</b> files can be downloaded straight from the source; external host links open in a new tab.
         </span>
       </div>
       <div class="sec-title">Package files <span class="mini" id="libFileCount"></span></div>
@@ -932,58 +1224,64 @@ select option{background:#0d1019;color:var(--tx)}
   </div>
 </div>
 
-<!-- ============================= PS5 GAME MODAL ============================= -->
-<div class="overlay" id="ps5Modal">
-  <div class="modal">
-    <button class="modal-close" type="button" data-close="ps5Modal">✕</button>
-    <div class="gm-head">
-      <div class="gm-cover" id="ps5CoverWrap"><img id="ps5Cover" alt=""></div>
-      <div class="gm-meta">
-        <h2 id="ps5Title">—</h2>
-        <div class="sub" id="ps5Sub">—</div>
-        <div class="gm-tags" id="ps5Tags"></div>
-      </div>
+<!-- ======================= DONATE MODAL ======================= -->
+<div class="overlay" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+  <div class="modal slim">
+    <button class="modal-close" type="button" data-close="donateModal" aria-label="Close">✕</button>
+    <div class="donate-head">
+      <div class="coffee-mark" aria-hidden="true">☕</div>
+      <h2 id="donateTitle">Donate me a coffee</h2>
+      <p>Every contribution keeps the library running — thank you!</p>
     </div>
-    <div class="gm-body">
-      <div class="sec-title" id="ps5DescTitle" style="display:none">Description</div>
-      <div class="tip" id="ps5Desc" style="display:none"></div>
-      <div class="sec-title">Download links <span class="mini" id="ps5LinkCount"></span></div>
-      <div class="files" id="ps5Links"></div>
+    <div class="donate-body">
+
+      <div class="wallet-box">
+        <div class="wb-label">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 1.5 5.5 12 12 15.5 18.5 12 12 1.5zM12 17 5.5 13.5 12 22.5l6.5-9L12 17z"/>
+          </svg>
+          Ethereum (ETH) Wallet
+        </div>
+        <div class="wb-addr">
+          <code id="ethAddress">0x17E1D7f8A9641749A3f6A932Df09D36FE198df86</code>
+        </div>
+      </div>
+
+      <div class="donate-note">
+        <span class="ico">💛</span>
+        <span>
+          Send <b>ETH</b> or any <b>ERC-20 token</b> to the address above.
+          Double-check the address before sending — crypto transfers are irreversible.
+        </span>
+      </div>
+
+      <div class="donate-actions">
+        <button class="btn coffee" id="copyEth" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/>
+          </svg>
+          Copy wallet address
+        </button>
+        <a class="btn ghost" href="https://etherscan.io/address/0x17E1D7f8A9641749A3f6A932Df09D36FE198df86" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+            <path d="M15 3h6v6M10 14 21 3"/>
+          </svg>
+          View on Etherscan
+        </a>
+      </div>
+
     </div>
   </div>
 </div>
 
-<!-- ============================= SETTINGS MODAL ============================= -->
-<div class="overlay" id="settingsModal">
+<!-- ======================= HELP MODAL ======================= -->
+<div class="overlay" id="helpModal" role="dialog" aria-modal="true" aria-labelledby="helpTitle">
   <div class="modal slim">
-    <button class="modal-close" type="button" data-close="settingsModal">✕</button>
+    <button class="modal-close" type="button" data-close="helpModal" aria-label="Close">✕</button>
     <div class="set-head">
-      <h2>Install endpoint</h2>
-      <p>Where packages are sent when you tap install</p>
-    </div>
-    <div class="set-body">
-      <div class="field">
-        <label for="ipInputModal">PS4 IP address</label>
-        <input type="text" id="ipInputModal" spellcheck="false" autocomplete="off" placeholder="127.0.0.1" style="width:100%;padding:12px 14px;font-family:var(--m);font-size:13px;color:var(--tx);background:rgba(0,0,0,.36);border:1px solid var(--line);border-radius:9px;outline:none;">
-      </div>
-      <div class="hint">
-        Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Packages are sent to <code>http://&lt;ip&gt;:12800/api/install</code>.
-      </div>
-      <div class="set-actions">
-        <button class="btn ghost" type="button" data-close="settingsModal">Cancel</button>
-        <button class="btn primary" id="settingsSave" type="button">Save</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ============================= HELP MODAL ============================= -->
-<div class="overlay" id="helpModal">
-  <div class="modal slim">
-    <button class="modal-close" type="button" data-close="helpModal">✕</button>
-    <div class="set-head">
-      <h2>How it works</h2>
-      <p>One page, three tools, zero installs</p>
+      <h2 id="helpTitle">How it works</h2>
+      <p>Browse, search, and download</p>
     </div>
     <div class="set-body">
 
@@ -991,23 +1289,23 @@ select option{background:#0d1019;color:var(--tx)}
         <div class="num">1</div>
         <div class="txt">
           <b>Serve this folder over plain HTTP</b>
-          From the folder that contains this file, run <code>python3 -m http.server 8080</code> (or any static server) and open <code>http://&lt;your-ip&gt;:8080/</code>. HTTPS will block requests to <code>127.0.0.1</code> due to mixed-content rules.
+          From the folder that contains this file, run <code>python3 -m http.server 8080</code> (or any static server) and open <code>http://&lt;your-ip&gt;:8080/</code>.
         </div>
       </div>
 
       <div class="step">
         <div class="num">2</div>
         <div class="txt">
-          <b>Open it on the PS4's browser</b>
-          Navigate to the same address on the console. Use <code>127.0.0.1</code> if the server runs on the PS4 itself, or the LAN IP of the machine hosting it.
+          <b>Browse the library</b>
+          Use the search bar, region filter, kind chips, and sort options to find what you need. The <b>PS5 Library</b> tab opens a separate page.
         </div>
       </div>
 
       <div class="step">
         <div class="num">3</div>
         <div class="txt">
-          <b>Start Remote Package Installer (RPI)</b>
-          Launch <code>Remote Package Installer</code> on the PS4. It listens on port <code>12800</code> and accepts a <code>POST</code> to <code>/api/install</code> with a JSON body.
+          <b>Open a title</b>
+          Click any card to see its package files. Direct <b>.pkg</b> links download straight from the source; external host links open in a new tab.
         </div>
       </div>
 
@@ -1015,23 +1313,78 @@ select option{background:#0d1019;color:var(--tx)}
         <div class="num">4</div>
         <div class="txt">
           <b>Install in order</b>
-          Base → Update → DLC. Each <code>.pkg</code> is queued separately and the console fetches them in turn.
+          Base → Update → DLC. Each <code>.pkg</code> is queued separately on the console. Copy any URL with the 📋 button.
         </div>
       </div>
 
       <div class="tip" style="margin:0">
         <span class="ico">📁</span>
         <span>
-          Catalogs are read from <b>export_with_covers.json</b> (or <b>games.json</b>) for PS4 and <b>ps5-catalog.json</b> for PS5.
-          Drop them next to this file — the page handles missing files gracefully.
+          The catalog is read from <b>export_with_covers.json</b> (or <b>games.json</b>).
+          Drop it next to this file — the page handles a missing file gracefully.
         </span>
+      </div>
+
+      <!-- Donation card -->
+      <div class="contact-card" style="border-color:rgba(245,181,68,.34);background:linear-gradient(135deg,rgba(245,181,68,.14),rgba(245,181,68,.05));">
+        <div class="cc-head" style="color:#f8d488">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+            <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+            <path d="M6 2v3M10 2v3M14 2v3"/>
+          </svg>
+          <span>Enjoying the library?</span>
+        </div>
+        <div class="cc-body" style="color:#f0d8a8">
+          If this saved you time, consider buying me a coffee. Every bit helps keep the catalogs updated.
+        </div>
+        <div class="cc-actions">
+          <button class="btn coffee" id="helpCoffee" type="button">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
+              <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/>
+              <path d="M6 2v3M10 2v3M14 2v3"/>
+            </svg>
+            Donate me a coffee
+          </button>
+        </div>
+      </div>
+
+      <!-- Contact / support card -->
+      <div class="contact-card">
+        <div class="cc-head">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+          </svg>
+          <span>Need help? Have a question?</span>
+        </div>
+        <div class="cc-body">
+          For any issues, questions, or to request a custom project —
+          message <b>@OptiTronOffical</b> on Telegram and we'll get back to you.
+        </div>
+        <div class="cc-actions">
+          <a class="btn tg" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+            </svg>
+            Message @OptiTronOffical
+          </a>
+        </div>
       </div>
 
     </div>
   </div>
 </div>
 
-<div id="toasts"></div>
+<!-- ======================= TELEGRAM FAB ======================= -->
+<a class="tg-fab" href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer" title="Issues, questions, or custom project requests — message @OptiTronOffical" aria-label="Issues, questions, or custom project requests — message @OptiTronOffical on Telegram">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+  </svg>
+  <span class="tg-label">Issues · Questions · Custom Projects</span>
+</a>
+
+<div id="toasts" aria-live="polite" aria-atomic="false"></div>
 
 <script>
 (function () {
@@ -1041,18 +1394,34 @@ select option{background:#0d1019;color:var(--tx)}
      CONFIG
      ===================================================================== */
   var LIBRARY_CATALOGS = ['export_with_covers.json', 'games.json'];
-  var PS5_CATALOGS     = ['ps5-catalog.json'];
+  var LS_VIEW          = 'opti_view';
+  var LS_SORT          = 'opti_sort_v1';
 
-  var LS_IP     = 'opti_ps4_ip';
-  var LS_RECENT = 'opti_rpi_recent';
-  var LS_VIEW   = 'opti_view';
+  var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
 
-  var DEFAULT_IP   = '127.0.0.1';
-  var RPI_PORT     = 12800;
-  var RPI_TIMEOUT  = 20000;
-  var MAX_RECENT   = 8;
+  var TIMESTAMP_FIELDS = [
+    'updated_at','updatedAt','last_updated','lastUpdated',
+    'modified','modifed','date','timestamp','updated',
+    'release_date','released_at','releasedAt'
+  ];
 
-  var $ = function (id) { return document.getElementById(id); };
+  var SORT_VALUES = ['updated','name','name-desc','files','size','size-asc'];
+  var DEFAULT_SORT = 'updated';
+
+  var D = {};
+
+  function cacheDom() {
+    var ids = [
+      'toasts','helpBtn','coffeeBtn','footCoffee','helpCoffee',
+      'libSearch','libRegion','libSort','libCount','libKinds','libGrid',
+      'statTitles','statPackages','statLibSize','statUSA','statEUR',
+      'libModal','libCoverWrap','libTitle','libSub','libTags','libFiles',
+      'libFileCount','libCopyAll',
+      'donateModal','ethAddress','copyEth',
+      'helpModal'
+    ];
+    for (var i = 0; i < ids.length; i++) D[ids[i]] = document.getElementById(ids[i]);
+  }
 
   /* =====================================================================
      UTILITIES
@@ -1065,44 +1434,89 @@ select option{background:#0d1019;color:var(--tx)}
 
   function toast(msg, kind) {
     kind = kind || 'info';
-    var box = $('toasts');
+    var box = D.toasts;
+    if (!box) return;
     var el = document.createElement('div');
     el.className = 'toast ' + kind;
-    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : 'ℹ️';
-    el.innerHTML = '<div style="flex:none;font-size:15px">' + icon + '</div><div>' + esc(msg) + '</div>';
+    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'coffee' ? '☕' : 'ℹ️';
+    el.innerHTML = '<div style="flex:none;font-size:15px" aria-hidden="true">' + icon +
+                   '</div><div>' + esc(msg) + '</div>';
     box.appendChild(el);
     setTimeout(function () {
       el.classList.add('out');
-      setTimeout(function () { el.remove(); }, 250);
+      setTimeout(function () { el.remove(); }, 240);
     }, 3600);
   }
 
+  var SIZE_UNITS = { TB: 1099511627776, GB: 1073741824, MB: 1048576, KB: 1024, B: 1 };
   function parseSizeToBytes(s) {
     if (s == null) return 0;
     if (typeof s === 'number') return s;
     var m = String(s).match(/([\d.]+)\s*(TB|GB|MB|KB|B)/i);
     if (!m) return 0;
-    var v = parseFloat(m[1]);
-    var u = m[2].toUpperCase();
-    if (u === 'TB') return v * 1024 * 1024 * 1024 * 1024;
-    if (u === 'GB') return v * 1024 * 1024 * 1024;
-    if (u === 'MB') return v * 1024 * 1024;
-    if (u === 'KB') return v * 1024;
-    return v;
+    return parseFloat(m[1]) * SIZE_UNITS[m[2].toUpperCase()];
   }
   function fmtBytes(bytes) {
     if (!bytes) return '—';
-    var gb = bytes / (1024 * 1024 * 1024);
+    var gb = bytes / 1073741824;
     if (gb >= 1024) return (gb / 1024).toFixed(2) + ' TB';
     if (gb >= 1) return gb.toFixed(2) + ' GB';
-    var mb = bytes / (1024 * 1024);
+    var mb = bytes / 1048576;
     if (mb >= 1) return mb.toFixed(0) + ' MB';
-    return bytes + ' B';
+    return Math.round(bytes) + ' B';
   }
   function sizeLabel(size) {
     if (size == null || size === '') return '';
     if (typeof size === 'string') return size;
     return fmtBytes(size);
+  }
+
+  /* ── Timestamp helpers ─────────────────────────────────────────── */
+  function pickTimestamp(obj) {
+    if (!obj || typeof obj !== 'object') return null;
+    for (var i = 0; i < TIMESTAMP_FIELDS.length; i++) {
+      var v = obj[TIMESTAMP_FIELDS[i]];
+      if (v != null && v !== '') return v;
+    }
+    return null;
+  }
+
+  function parseTimestamp(ts) {
+    if (ts == null || ts === '') return null;
+    var d;
+    if (typeof ts === 'number') d = new Date(ts < 1e12 ? ts * 1000 : ts);
+    else d = new Date(ts);
+    if (isNaN(d.getTime())) return null;
+    return d;
+  }
+
+  function relTime(d) {
+    if (!d) return '';
+    var diff = Date.now() - d.getTime();
+    if (diff < 0) return 'just now';
+    var mins = Math.floor(diff / 60000);
+    if (mins < 1) return 'just now';
+    if (mins < 60) return mins + 'm ago';
+    var hours = Math.floor(mins / 60);
+    if (hours < 24) return hours + 'h ago';
+    var days = Math.floor(hours / 24);
+    if (days === 1) return 'yesterday';
+    if (days < 30) return days + 'd ago';
+    var months = Math.floor(days / 30);
+    if (months < 12) return months + 'mo ago';
+    return Math.floor(months / 12) + 'y ago';
+  }
+
+  function loadSortPref() {
+    try {
+      var v = localStorage.getItem(LS_SORT);
+      if (v && SORT_VALUES.indexOf(v) !== -1) return v;
+    } catch (e) {}
+    return DEFAULT_SORT;
+  }
+  function saveSortPref(v) {
+    if (SORT_VALUES.indexOf(v) === -1) return;
+    try { localStorage.setItem(LS_SORT, v); } catch (e) {}
   }
 
   function copyText(t) {
@@ -1116,8 +1530,7 @@ select option{background:#0d1019;color:var(--tx)}
   function fallbackCopy(t) {
     var ta = document.createElement('textarea');
     ta.value = t;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
+    ta.style.cssText = 'position:fixed;top:-9999px;opacity:0';
     document.body.appendChild(ta);
     ta.select();
     try { document.execCommand('copy'); toast('Copied', 'ok'); }
@@ -1136,7 +1549,7 @@ select option{background:#0d1019;color:var(--tx)}
         if (x.status >= 200 && x.status < 300) {
           try { onDone(JSON.parse(x.responseText), url); }
           catch (e) { next(); }
-        } else next();
+        } else { next(); }
       };
       x.onerror = next;
       x.send();
@@ -1174,112 +1587,32 @@ select option{background:#0d1019;color:var(--tx)}
   ];
   function isRedirectHost(host) {
     if (!host) return false;
-    return REDIRECT_HOSTS.some(function (h) { return host === h || host.endsWith('.' + h); });
+    for (var i = 0; i < REDIRECT_HOSTS.length; i++) {
+      var h = REDIRECT_HOSTS[i];
+      if (host === h || host.endsWith('.' + h)) return true;
+    }
+    return false;
   }
   function isDirectPkg(url) {
     if (!url) return false;
     var cleaned = String(url).split('?')[0].split('#')[0];
     if (!/\.pkg$/i.test(cleaned)) return false;
-    if (isRedirectHost(hostOf(cleaned))) return false;
-    return true;
+    return !isRedirectHost(hostOf(cleaned));
   }
-  function validUrl(u) { return /^https?:\/\/[^\s]+$/i.test(u); }
-  function isPkgUrl(u) {
-    var p = String(u).split('?')[0].split('#')[0];
-    return /\.pkg$/i.test(p);
+
+  function rafDebounce(fn, delay) {
+    var timer = null;
+    return function () {
+      var args = arguments, self = this;
+      clearTimeout(timer);
+      timer = setTimeout(function () {
+        requestAnimationFrame(function () { fn.apply(self, args); });
+      }, delay);
+    };
   }
 
   /* =====================================================================
-     IP / ENDPOINT
-     ===================================================================== */
-  function getIp() {
-    try { return localStorage.getItem(LS_IP) || DEFAULT_IP; }
-    catch (e) { return DEFAULT_IP; }
-  }
-  function setIp(v) {
-    try { localStorage.setItem(LS_IP, v); } catch (e) {}
-  }
-  function cleanIp(v) {
-    var s = String(v == null ? '' : v).replace(/^\s+|\s+$/g, '');
-    s = s.replace(/^https?:\/\//, '');
-    s = s.replace(/[:\/].*$/, '');
-    return s || DEFAULT_IP;
-  }
-  function renderEndpoint() {
-    var label = getIp() + ':' + RPI_PORT;
-    $('targetText').textContent = label;
-    $('footTarget').textContent = label;
-  }
-  function setEndpointState(cls) {
-    var pill = $('targetPill');
-    pill.classList.remove('ok', 'err');
-    if (cls) pill.classList.add(cls);
-  }
-
-  /* =====================================================================
-     RPI INSTALL
-     ===================================================================== */
-  function rpiInstall(ip, packages, cb) {
-    var x = new XMLHttpRequest();
-    var done = false;
-    function finish(r) { if (!done) { done = true; cb(r); } }
-    try {
-      x.open('POST', 'http://' + ip + ':' + RPI_PORT + '/api/install', true);
-      x.timeout = RPI_TIMEOUT;
-      x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
-      x.onload = function () {
-        if (x.status >= 200 && x.status < 300) finish({ state: 'ok', status: x.status, text: x.responseText });
-        else finish({ state: 'rejected', status: x.status, text: x.responseText });
-      };
-      x.onerror   = function () { finish({ state: 'unknown' }); };
-      x.ontimeout = function () { finish({ state: 'timeout' }); };
-      x.send(JSON.stringify({ type: 'direct', packages: packages }));
-    } catch (e) {
-      finish({ state: 'unknown' });
-    }
-  }
-
-  /* =====================================================================
-     RECENT SENDS
-     ===================================================================== */
-  function loadRecent() {
-    try {
-      var v = JSON.parse(localStorage.getItem(LS_RECENT) || '[]');
-      return Array.isArray(v) ? v : [];
-    } catch (e) { return []; }
-  }
-  function saveRecent(list) {
-    try { localStorage.setItem(LS_RECENT, JSON.stringify(list.slice(0, MAX_RECENT))); } catch (e) {}
-  }
-  function pushRecent(entry) {
-    var list = loadRecent();
-    list.unshift(entry);
-    saveRecent(list);
-    renderRecent();
-  }
-  function renderRecent() {
-    var list = loadRecent();
-    var box = $('recentBox');
-    var out = $('recentList');
-    if (!list.length) { box.style.display = 'none'; return; }
-    box.style.display = 'block';
-    var html = '';
-    for (var i = 0; i < list.length; i++) {
-      var r = list[i];
-      var stClass = r.state === 'ok' ? 'ok' : r.state === 'unknown' ? 'unk' : 'err';
-      var when = new Date(r.ts).toLocaleTimeString();
-      var name = (r.url || '').split('?')[0].split('/').pop() || r.url;
-      html += '<div class="recent-item">'
-        + '<span class="st ' + stClass + '"></span>'
-        + '<span class="url" title="' + esc(r.url) + '">' + esc(name) + '</span>'
-        + '<span class="when">' + esc(when) + '</span>'
-        + '</div>';
-    }
-    out.innerHTML = html;
-  }
-
-  /* =====================================================================
-     KIND META (PS4)
+     KIND META
      ===================================================================== */
   var KIND_META = {
     base:   { label: 'Base',   emoji: '🎮' },
@@ -1311,48 +1644,45 @@ select option{background:#0d1019;color:var(--tx)}
      ===================================================================== */
   var state = {
     view: 'library',
-    library: {
-      catalog: [], filtered: [],
-      query: '', region: 'all', kind: 'all', sort: 'name',
-      loaded: false, error: null
-    },
-    ps5: {
-      catalog: [], filtered: [],
-      query: '', category: 'all', sort: 'name',
-      loaded: false, error: null
-    },
-    currentLibraryGame: null,
-    currentPs5Game: null
+    library: { catalog: [], filtered: [], query: '', region: 'all', kind: 'all', sort: DEFAULT_SORT },
+    currentLibraryGame: null
   };
 
   /* =====================================================================
      VIEW SWITCHING
      ===================================================================== */
+  var tabButtons = null;
+  var viewSections = null;
+
   function setView(v) {
     state.view = v;
-    var tabs = document.querySelectorAll('.tab-btn');
-    for (var i = 0; i < tabs.length; i++) {
-      tabs[i].classList.toggle('active', tabs[i].getAttribute('data-view') === v);
+    if (!tabButtons) tabButtons = document.querySelectorAll('.tab-btn');
+    if (!viewSections) viewSections = document.querySelectorAll('.view');
+
+    for (var i = 0; i < tabButtons.length; i++) {
+      tabButtons[i].classList.toggle('active', tabButtons[i].getAttribute('data-view') === v);
     }
-    var views = document.querySelectorAll('.view');
-    for (var j = 0; j < views.length; j++) {
-      views[j].classList.toggle('active', views[j].getAttribute('data-view') === v);
+    for (var j = 0; j < viewSections.length; j++) {
+      viewSections[j].classList.toggle('active', viewSections[j].getAttribute('data-view') === v);
     }
     try { localStorage.setItem(LS_VIEW, v); } catch (e) {}
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo(0, 0);
   }
 
   /* =====================================================================
      MODAL HELPERS
      ===================================================================== */
   function openModal(id) {
-    $(id).classList.add('open');
+    var el = D[id];
+    if (!el) return;
+    el.classList.add('open');
     document.body.style.overflow = 'hidden';
   }
   function closeModal(id) {
-    $(id).classList.remove('open');
-    var anyOpen = document.querySelector('.overlay.open');
-    if (!anyOpen) document.body.style.overflow = '';
+    var el = D[id];
+    if (!el) return;
+    el.classList.remove('open');
+    if (!document.querySelector('.overlay.open')) document.body.style.overflow = '';
   }
   function closeAllModals() {
     var open = document.querySelectorAll('.overlay.open');
@@ -1361,7 +1691,7 @@ select option{background:#0d1019;color:var(--tx)}
   }
 
   /* =====================================================================
-     PS4 LIBRARY — NORMALIZE
+     LIBRARY — NORMALIZE
      ===================================================================== */
   function makeLibraryFile(link) {
     if (!link) return null;
@@ -1370,7 +1700,6 @@ select option{background:#0d1019;color:var(--tx)}
     var kind = normalizeKind(pick(link, ['kind', 'type', 'package_type']));
     var km = kindMeta(kind);
     var host = pick(link, ['host']) || hostOf(url);
-    var direct = isDirectPkg(url);
     return {
       url: String(url),
       label: pick(link, ['source_label', 'label', 'name', 'title']) || (km.label + ' Package'),
@@ -1382,8 +1711,34 @@ select option{background:#0d1019;color:var(--tx)}
       region: pick(link, ['region', 'reg']) || '',
       minFw: pick(link, ['min_fw', 'minFirmware', 'fw']) || '',
       host: host,
-      direct: direct
+      direct: isDirectPkg(url),
+      updatedAt: pickTimestamp(link) || ''
     };
+  }
+
+  function finalizeGame(g) {
+    var bytes = 0, direct = 0, regions = {}, kinds = [], seen = {};
+    var maxUpdated = parseTimestamp(g.updatedAt);
+
+    for (var i = 0; i < g.files.length; i++) {
+      var f = g.files[i];
+      bytes += parseSizeToBytes(f.size);
+      if (f.direct) direct++;
+      if (f.region) regions[f.region] = 1;
+      if (!seen[f.kind]) { seen[f.kind] = 1; kinds.push(f.kind); }
+
+      var ft = parseTimestamp(f.updatedAt);
+      if (ft && (!maxUpdated || ft > maxUpdated)) maxUpdated = ft;
+    }
+    if (g.region) regions[g.region] = 1;
+
+    g._bytes  = bytes;
+    g._direct = direct;
+    g._kinds  = kinds;
+    g._regions = Object.keys(regions);
+    g._regionMap = regions;
+    g._updated = maxUpdated;
+    return g;
   }
 
   function makeLibraryGameFromRecord(rec, idx) {
@@ -1398,21 +1753,21 @@ select option{background:#0d1019;color:var(--tx)}
     }
     if (!files.length) return null;
 
-    var primary = null;
+    var primary = files[0];
     for (var b = 0; b < files.length; b++) {
       if (files[b].kind === 'base') { primary = files[b]; break; }
     }
-    if (!primary) primary = files[0];
 
-    return {
+    return finalizeGame({
       id: rec.title_id || ('rec_' + idx + '_' + (rec.name || '')),
       name: pick(rec, ['name', 'title']) || 'Untitled',
       titleId: pick(rec, ['title_id', 'titleId', 'cusa']) || '',
       region: pick(rec, ['region', 'reg']) || primary.region || '',
       source: pick(rec, ['source']) || '',
       cover: pick(rec, ['cover_image', 'cover_url', 'cover']) || '',
+      updatedAt: pickTimestamp(rec) || '',
       files: files
-    };
+    });
   }
 
   function normalizeLibrary(raw) {
@@ -1432,13 +1787,14 @@ select option{background:#0d1019;color:var(--tx)}
       for (var k = 0; k < keys.length; k++) {
         var url = keys[k];
         var m = raw.DATA[url] || {};
-        out.push({
+        out.push(finalizeGame({
           id: m.title_id || ('rec_' + k),
           name: m.name || 'Untitled',
           titleId: m.title_id || '',
           region: m.region || '',
           source: m.source || '',
           cover: m.cover_url || '',
+          updatedAt: pickTimestamp(m) || '',
           files: [{
             url: url,
             label: m.name ? (m.name + ' Package') : 'PKG Package',
@@ -1450,9 +1806,10 @@ select option{background:#0d1019;color:var(--tx)}
             region: m.region || '',
             minFw: m.min_fw || '',
             host: hostOf(url),
-            direct: isDirectPkg(url)
+            direct: isDirectPkg(url),
+            updatedAt: pickTimestamp(m) || ''
           }]
-        });
+        }));
       }
       return out;
     }
@@ -1465,98 +1822,46 @@ select option{background:#0d1019;color:var(--tx)}
           if (g2) out.push(g2);
         }
       }
-      return out;
     }
-
     return out;
   }
 
   /* =====================================================================
-     PS5 LIBRARY — NORMALIZE
+     LIBRARY — LOAD / FILTER / RENDER
      ===================================================================== */
-  function normalizePs5(raw) {
-    var list = [];
-    if (!raw) return list;
-    var src = null;
-
-    if (Array.isArray(raw)) src = raw;
-    else if (raw && Array.isArray(raw.packages)) src = raw.packages;
-    else if (raw && raw.packages && typeof raw.packages === 'object') {
-      src = [];
-      var kk = Object.keys(raw.packages);
-      for (var i = 0; i < kk.length; i++) src.push(raw.packages[kk[i]]);
-    } else if (raw && raw.DATA && typeof raw.DATA === 'object') {
-      src = [];
-      var dk = Object.keys(raw.DATA);
-      for (var j = 0; j < dk.length; j++) src.push(raw.DATA[dk[j]]);
+  function skeletonHTML(n) {
+    var out = '';
+    for (var i = 0; i < n; i++) {
+      out += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
     }
-    if (!src) return list;
-
-    for (var k = 0; k < src.length; k++) {
-      var m = src[k] || {};
-      var links = Array.isArray(m.downloadLinks) ? m.downloadLinks : [];
-      list.push({
-        titleId: m.titleId || m.title_id || '',
-        title: m.title || m.name || 'Untitled',
-        version: m.version || '',
-        category: (m.category || '').toLowerCase(),
-        posterUrl: m.posterUrl || m.poster_url || '',
-        description: m.description || '',
-        downloadLinks: links.map(function (l) {
-          return {
-            name: l.name || '',
-            url: l.url || '',
-            group: l.group || '',
-            version: l.version || '',
-            mirror: l.mirror || ''
-          };
-        }),
-        sizeBytes: Number(m.sizeBytes) || 0
-      });
-    }
-    return list;
-  }
-
-  /* =====================================================================
-     PS4 LIBRARY — LOAD / FILTER / RENDER
-     ===================================================================== */
-  function libSkeleton() {
-    var sk = '';
-    for (var i = 0; i < 12; i++) {
-      sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
-    }
-    $('libGrid').innerHTML = sk;
+    return out;
   }
 
   function loadLibrary() {
-    libSkeleton();
+    D.libGrid.innerHTML = skeletonHTML(12);
     fetchJSON(LIBRARY_CATALOGS, function (raw, url) {
       if (!raw) {
-        state.library.error = 'not-found';
-        $('libGrid').innerHTML =
+        D.libGrid.innerHTML =
           '<div class="empty">' +
             '<div class="big">📡</div>' +
-            '<b>No PS4 catalog found</b>' +
+            '<b>No catalog found</b>' +
             '<small>Place <code>export_with_covers.json</code> (or <code>games.json</code>) next to this file.</small>' +
           '</div>';
-        $('libCount').textContent = '0';
+        D.libCount.textContent = '0';
         return;
       }
       var list = normalizeLibrary(raw);
       if (!list.length) {
-        state.library.error = 'empty';
-        $('libGrid').innerHTML =
+        D.libGrid.innerHTML =
           '<div class="empty">' +
             '<div class="big">📭</div>' +
             '<b>Catalog is empty</b>' +
             '<small><code>' + esc(url) + '</code> loaded but no usable entries were found.</small>' +
           '</div>';
-        $('libCount').textContent = '0';
+        D.libCount.textContent = '0';
         return;
       }
       state.library.catalog = list;
-      state.library.loaded = true;
-      state.library.error = null;
       buildLibStats();
       buildLibRegionFilter();
       buildLibKindsBar();
@@ -1565,152 +1870,124 @@ select option{background:#0d1019;color:var(--tx)}
   }
 
   function buildLibStats() {
-    var titles = state.library.catalog.length;
-    var files = 0, totalBytes = 0;
-    var regions = {};
+    var cat = state.library.catalog;
+    var files = 0, totalBytes = 0, usa = 0, eur = 0;
 
-    for (var i = 0; i < state.library.catalog.length; i++) {
-      var g = state.library.catalog[i];
-      for (var j = 0; j < g.files.length; j++) {
-        files++;
-        totalBytes += parseSizeToBytes(g.files[j].size);
-        if (g.files[j].region) regions[g.files[j].region] = 1;
-      }
-      if (g.region) regions[g.region] = 1;
-    }
-
-    $('statTitles').textContent = titles.toLocaleString();
-    $('statPackages').textContent = files.toLocaleString();
-    $('statLibSize').textContent = fmtBytes(totalBytes);
-    $('statUSA').textContent = countLibRegion('USA').toLocaleString();
-    $('statEUR').textContent = countLibRegion('EUR').toLocaleString();
-  }
-
-  function countLibRegion(r) {
-    var n = 0;
-    for (var i = 0; i < state.library.catalog.length; i++) {
-      var g = state.library.catalog[i];
-      if (g.region === r) { n++; continue; }
-      for (var j = 0; j < g.files.length; j++) {
-        if (g.files[j].region === r) { n++; break; }
+    for (var i = 0; i < cat.length; i++) {
+      var g = cat[i];
+      files += g.files.length;
+      totalBytes += g._bytes;
+      for (var r = 0; r < g._regions.length; r++) {
+        if (g._regions[r] === 'USA') usa++;
+        else if (g._regions[r] === 'EUR') eur++;
       }
     }
-    return n;
+
+    D.statTitles.textContent   = cat.length.toLocaleString();
+    D.statPackages.textContent = files.toLocaleString();
+    D.statLibSize.textContent  = fmtBytes(totalBytes);
+    D.statUSA.textContent      = usa.toLocaleString();
+    D.statEUR.textContent      = eur.toLocaleString();
   }
 
   function buildLibRegionFilter() {
     var seen = {};
     for (var i = 0; i < state.library.catalog.length; i++) {
-      var g = state.library.catalog[i];
-      if (g.region) seen[g.region] = 1;
-      for (var j = 0; j < g.files.length; j++) {
-        if (g.files[j].region) seen[g.files[j].region] = 1;
-      }
+      var regs = state.library.catalog[i]._regions;
+      for (var j = 0; j < regs.length; j++) seen[regs[j]] = 1;
     }
     var list = Object.keys(seen).sort();
-    var sel = $('libRegion');
-    sel.innerHTML = '<option value="all">All Regions</option>';
+    var html = '<option value="all">All Regions</option>';
     for (var k = 0; k < list.length; k++) {
-      var o = document.createElement('option');
-      o.value = list[k];
-      o.textContent = list[k];
-      sel.appendChild(o);
+      html += '<option value="' + esc(list[k]) + '">' + esc(list[k]) + '</option>';
     }
+    D.libRegion.innerHTML = html;
+    D.libRegion.value = state.library.region;
   }
 
   function buildLibKindsBar() {
-    var bar = $('libKinds');
-    var counts = {};
-    for (var i = 0; i < state.library.catalog.length; i++) {
-      for (var j = 0; j < state.library.catalog[i].files.length; j++) {
-        var k = state.library.catalog[i].files[j].kind;
+    var cat = state.library.catalog;
+    var counts = {}, total = 0;
+    for (var i = 0; i < cat.length; i++) {
+      var files = cat[i].files;
+      for (var j = 0; j < files.length; j++) {
+        var k = files[j].kind;
         counts[k] = (counts[k] || 0) + 1;
+        total++;
       }
     }
-    var total = 0;
-    for (var kk in counts) total += counts[kk];
 
-    var html = '<span class="kb-label">Kind</span>';
-    html += '<button class="kind-btn on" data-kind="all" type="button"><span class="e">🗂️</span>All<span class="n">' + total + '</span></button>';
-    for (var i2 = 0; i2 < KIND_ORDER.length; i2++) {
-      var kind = KIND_ORDER[i2];
+    var html = '<span class="kb-label">Kind</span>' +
+      '<button class="kind-btn' + (state.library.kind === 'all' ? ' on' : '') + '" data-kind="all" type="button"><span class="e">🗂️</span>All<span class="n">' + total + '</span></button>';
+
+    for (var oi = 0; oi < KIND_ORDER.length; oi++) {
+      var kind = KIND_ORDER[oi];
       var n = counts[kind] || 0;
       if (!n) continue;
       var km = kindMeta(kind);
-      html += '<button class="kind-btn" data-kind="' + kind + '" type="button">' +
+      html += '<button class="kind-btn' + (state.library.kind === kind ? ' on' : '') + '" data-kind="' + kind + '" type="button">' +
               '<span class="e">' + km.emoji + '</span>' + km.label +
               '<span class="n">' + n + '</span></button>';
     }
-    bar.innerHTML = html;
-
-    var btns = bar.querySelectorAll('.kind-btn');
-    for (var b = 0; b < btns.length; b++) {
-      btns[b].addEventListener('click', function () {
-        var kk2 = this.getAttribute('data-kind');
-        state.library.kind = (kk2 === state.library.kind) ? 'all' : kk2;
-        for (var x = 0; x < btns.length; x++) {
-          btns[x].classList.toggle('on', btns[x].getAttribute('data-kind') === state.library.kind);
-        }
-        applyLibrary();
-      });
-    }
-  }
-
-  function libGameHasRegion(g, r) {
-    if (g.region === r) return true;
-    for (var i = 0; i < g.files.length; i++) if (g.files[i].region === r) return true;
-    return false;
-  }
-  function libGameHasKind(g, k) {
-    for (var i = 0; i < g.files.length; i++) if (g.files[i].kind === k) return true;
-    return false;
-  }
-  function libGameBytes(g) {
-    var t = 0;
-    for (var i = 0; i < g.files.length; i++) t += parseSizeToBytes(g.files[i].size);
-    return t;
-  }
-  function libGameKinds(g) {
-    var seen = {}, out = [];
-    for (var i = 0; i < g.files.length; i++) {
-      var k = g.files[i].kind;
-      if (!seen[k]) { seen[k] = 1; out.push(k); }
-    }
-    return out;
+    D.libKinds.innerHTML = html;
   }
 
   function applyLibrary() {
     var L = state.library;
     var q = L.query;
-    L.filtered = L.catalog.filter(function (g) {
-      if (q && (g.name || '').toLowerCase().indexOf(q) < 0
-              && (g.titleId || '').toLowerCase().indexOf(q) < 0) return false;
-      if (L.region !== 'all' && !libGameHasRegion(g, L.region)) return false;
-      if (L.kind !== 'all' && !libGameHasKind(g, L.kind)) return false;
-      return true;
-    });
+    var cat = L.catalog;
+    var out = [];
 
-    if (L.sort === 'name') {
-      L.filtered.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
-    } else if (L.sort === 'name-desc') {
-      L.filtered.sort(function (a, b) { return (b.name || '').localeCompare(a.name || ''); });
-    } else if (L.sort === 'files') {
-      L.filtered.sort(function (a, b) { return b.files.length - a.files.length; });
-    } else if (L.sort === 'size') {
-      L.filtered.sort(function (a, b) { return libGameBytes(b) - libGameBytes(a); });
-    } else if (L.sort === 'size-asc') {
-      L.filtered.sort(function (a, b) { return libGameBytes(a) - libGameBytes(b); });
+    for (var i = 0; i < cat.length; i++) {
+      var g = cat[i];
+      if (q) {
+        var nm = (g.name || '').toLowerCase();
+        var tid = (g.titleId || '').toLowerCase();
+        if (nm.indexOf(q) < 0 && tid.indexOf(q) < 0) continue;
+      }
+      if (L.region !== 'all' && !g._regionMap[L.region]) continue;
+      if (L.kind !== 'all') {
+        var has = false;
+        for (var f = 0; f < g.files.length; f++) {
+          if (g.files[f].kind === L.kind) { has = true; break; }
+        }
+        if (!has) continue;
+      }
+      out.push(g);
     }
 
+    var sort = L.sort;
+    if (sort === 'updated') {
+      out.sort(function (a, b) {
+        var ad = a._updated ? a._updated.getTime() : 0;
+        var bd = b._updated ? b._updated.getTime() : 0;
+        if (bd !== ad) return bd - ad;
+        return (a.name || '').localeCompare(b.name || '');
+      });
+    } else if (sort === 'name') {
+      out.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
+    } else if (sort === 'name-desc') {
+      out.sort(function (a, b) { return (b.name || '').localeCompare(a.name || ''); });
+    } else if (sort === 'files') {
+      out.sort(function (a, b) { return b.files.length - a.files.length; });
+    } else if (sort === 'size') {
+      out.sort(function (a, b) { return b._bytes - a._bytes; });
+    } else if (sort === 'size-asc') {
+      out.sort(function (a, b) { return a._bytes - b._bytes; });
+    }
+
+    L.filtered = out;
     renderLibrary();
   }
 
   function renderLibrary() {
     var L = state.library;
-    var grid = $('libGrid');
-    $('libCount').textContent = L.filtered.length.toLocaleString() + ' title' + (L.filtered.length === 1 ? '' : 's');
+    var grid = D.libGrid;
+    var filtered = L.filtered;
 
-    if (!L.filtered.length) {
+    D.libCount.textContent = filtered.length.toLocaleString() + ' title' + (filtered.length === 1 ? '' : 's');
+
+    if (!filtered.length) {
       grid.innerHTML =
         '<div class="empty">' +
           '<div class="big">🔍</div>' +
@@ -1718,76 +1995,79 @@ select option{background:#0d1019;color:var(--tx)}
           '<small>Try clearing the search or switching region / kind filters.</small>' +
           '<br><button class="act" id="libResetBtn" type="button">Reset filters</button>' +
         '</div>';
-      var rb = $('libResetBtn');
-      if (rb) rb.onclick = resetLibraryFilters;
+      var rb = document.getElementById('libResetBtn');
+      if (rb) rb.addEventListener('click', resetLibraryFilters);
       return;
     }
 
     var html = '';
-    for (var i = 0; i < L.filtered.length; i++) {
-      var g = L.filtered[i];
-      var coverSrc = g.cover ? esc(g.cover) : '';
-      var directCount = 0;
-      for (var d = 0; d < g.files.length; d++) if (g.files[d].direct) directCount++;
-
-      var kinds = libGameKinds(g).slice(0, 3);
+    for (var i = 0; i < filtered.length; i++) {
+      var g = filtered[i];
+      var kinds = g._kinds;
       var kindsHtml = '';
-      for (var kx = 0; kx < kinds.length; kx++) {
+      var limit = kinds.length > 3 ? 3 : kinds.length;
+      for (var kx = 0; kx < limit; kx++) {
         var km = kindMeta(kinds[kx]);
         kindsHtml += '<span class="kind ' + kinds[kx] + '"><span class="e">' + km.emoji + '</span>' + km.label + '</span>';
       }
 
-      var total = libGameBytes(g);
-      var totalStr = total > 0 ? fmtBytes(total)
-                              : (g.files[0] && g.files[0].size ? sizeLabel(g.files[0].size) : '—');
+      var totalStr = g._bytes > 0 ? fmtBytes(g._bytes)
+                    : (g.files[0] && g.files[0].size ? sizeLabel(g.files[0].size) : '—');
 
-      html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">'
-        + '<div class="cover">'
-        + (coverSrc
-            ? '<img src="' + coverSrc + '" alt="" loading="lazy" onload="this.classList.add(\'ready\')" onerror="this.style.display=\'none\'">'
-            : '')
-        + '<div class="ribbons">'
-        + (g.region ? '<span class="ribbon reg">' + esc(g.region) + '</span>' : '')
-        + (directCount ? '<span class="ribbon ok">' + directCount + ' direct</span>' : '')
-        + '</div>'
-        + '</div>'
-        + '<div class="info">'
-        + '<h3>' + esc(g.name) + '</h3>'
-        + (kindsHtml ? '<div class="mini-kinds">' + kindsHtml + '</div>' : '')
-        + '<div class="row">'
-        + '<span>' + g.files.length + ' file' + (g.files.length === 1 ? '' : 's') + '</span>'
-        + '<span>' + totalStr + '</span>'
-        + '</div>'
-        + '</div>'
-        + '</div>';
+      html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">' +
+        '<div class="cover">' +
+          '<div class="placeholder" aria-hidden="true">' +
+            esc((g.name || '?').trim().charAt(0).toUpperCase() || '?') +
+          '</div>' +
+          (g.cover
+            ? '<img class="cover-img" src="' + esc(g.cover) + '" alt="" loading="lazy" decoding="async" fetchpriority="low">'
+            : '') +
+          '<div class="ribbons">' +
+            (g.region ? '<span class="ribbon reg">' + esc(g.region) + '</span>' : '') +
+            (g._updated ? '<span class="ribbon updated">' + esc(relTime(g._updated)) + '</span>' : '') +
+            (g._direct ? '<span class="ribbon ok">' + g._direct + ' direct</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="info">' +
+          '<h3>' + esc(g.name) + '</h3>' +
+          (kindsHtml ? '<div class="mini-kinds">' + kindsHtml + '</div>' : '') +
+          '<div class="row">' +
+            '<span>' + g.files.length + ' file' + (g.files.length === 1 ? '' : 's') + '</span>' +
+            '<span>' + totalStr + '</span>' +
+          '</div>' +
+        '</div>' +
+      '</div>';
     }
     grid.innerHTML = html;
+  }
 
-    var cards = grid.querySelectorAll('.card');
-    for (var c = 0; c < cards.length; c++) {
-      (function (card) {
-        var idx = Number(card.getAttribute('data-idx'));
-        card.addEventListener('click', function () { openLibraryGame(L.filtered[idx]); });
-        card.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openLibraryGame(L.filtered[idx]);
-          }
-        });
-      })(cards[c]);
-    }
+  function wireGridDelegation(grid, getList, openFn) {
+    grid.addEventListener('click', function (e) {
+      var card = e.target.closest ? e.target.closest('.card') : null;
+      if (!card || card.parentNode !== grid) return;
+      var idx = Number(card.getAttribute('data-idx'));
+      var list = getList();
+      if (list[idx]) openFn(list[idx]);
+    });
+    grid.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      var card = e.target.closest ? e.target.closest('.card') : null;
+      if (!card || card.parentNode !== grid) return;
+      e.preventDefault();
+      var idx = Number(card.getAttribute('data-idx'));
+      var list = getList();
+      if (list[idx]) openFn(list[idx]);
+    });
   }
 
   function resetLibraryFilters() {
-    state.library.query = '';
-    state.library.region = 'all';
-    state.library.kind = 'all';
-    state.library.sort = 'name';
-    $('libSearch').value = '';
-    $('libRegion').value = 'all';
-    $('libSort').value = 'name';
-    var bar = $('libKinds');
-    var btns = bar.querySelectorAll('.kind-btn');
+    var L = state.library;
+    L.query = ''; L.region = 'all'; L.kind = 'all'; L.sort = DEFAULT_SORT;
+    D.libSearch.value = '';
+    D.libRegion.value = 'all';
+    D.libSort.value = DEFAULT_SORT;
+    saveSortPref(DEFAULT_SORT);
+    var btns = D.libKinds.querySelectorAll('.kind-btn');
     for (var i = 0; i < btns.length; i++) {
       btns[i].classList.toggle('on', btns[i].getAttribute('data-kind') === 'all');
     }
@@ -1798,473 +2078,87 @@ select option{background:#0d1019;color:var(--tx)}
   function openLibraryGame(g) {
     state.currentLibraryGame = g;
 
-    var wrap = $('libCoverWrap');
-    var oldImg = wrap.querySelector('img');
-    if (oldImg) oldImg.remove();
-    wrap.setAttribute('data-initial', (g.name || '?').trim().charAt(0).toUpperCase() || '?');
-    if (!wrap.textContent.trim() && wrap.getAttribute('data-initial')) {
-      wrap.innerHTML = esc(wrap.getAttribute('data-initial'));
-    }
+    var wrap = D.libCoverWrap;
+    wrap.innerHTML = '';
+    var initial = (g.name || '?').trim().charAt(0).toUpperCase() || '?';
+    wrap.textContent = initial;
     if (g.cover) {
       var img = document.createElement('img');
+      img.className = 'cover-img';
       img.alt = '';
-      img.onerror = function () { this.remove(); };
+      img.decoding = 'async';
       img.src = g.cover;
       wrap.appendChild(img);
     }
 
-    $('libTitle').textContent = g.name;
+    D.libTitle.textContent = g.name;
     var subParts = [];
     if (g.titleId) subParts.push(g.titleId);
     if (g.source) subParts.push('Source: ' + g.source);
-    $('libSub').textContent = subParts.join(' · ') || '—';
+    if (g._updated) subParts.push('Updated ' + relTime(g._updated));
+    D.libSub.textContent = subParts.join(' · ') || '—';
 
     var tags = [];
     if (g.region) tags.push({ t: g.region, c: 'b' });
     tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's') });
+    if (g._direct) tags.push({ t: g._direct + ' direct', c: 'g' });
+    if (g._updated) tags.push({ t: '🕒 ' + relTime(g._updated) });
 
-    var directCount = 0;
-    for (var i = 0; i < g.files.length; i++) if (g.files[i].direct) directCount++;
-    if (directCount) tags.push({ t: directCount + ' direct', c: 'g' });
-
-    var regionSet = {};
-    for (var r = 0; r < g.files.length; r++) if (g.files[r].region) regionSet[g.files[r].region] = 1;
-    var extraRegions = Object.keys(regionSet).filter(function (x) { return x !== g.region; });
+    var extraRegions = [];
+    for (var r = 0; r < g._regions.length; r++) {
+      if (g._regions[r] !== g.region) extraRegions.push(g._regions[r]);
+    }
     if (extraRegions.length) tags.push({ t: 'Also ' + extraRegions.join(', ') });
 
-    var kindSet = {};
-    for (var k = 0; k < g.files.length; k++) {
-      if (!kindSet[g.files[k].kind]) {
-        kindSet[g.files[k].kind] = 1;
-        var km = kindMeta(g.files[k].kind);
-        tags.push({ t: km.emoji + ' ' + km.label });
-      }
+    for (var kk = 0; kk < g._kinds.length; kk++) {
+      var km = kindMeta(g._kinds[kk]);
+      tags.push({ t: km.emoji + ' ' + km.label });
     }
 
     var tagsHtml = '';
     for (var t = 0; t < tags.length; t++) {
       tagsHtml += '<span class="gm-tag ' + (tags[t].c || '') + '">' + esc(tags[t].t) + '</span>';
     }
-    $('libTags').innerHTML = tagsHtml;
+    D.libTags.innerHTML = tagsHtml;
 
-    var sortedFiles = g.files.slice().sort(function (a, b) {
+    var sorted = g.files.slice().sort(function (a, b) {
       var ai = KIND_ORDER.indexOf(a.kind); if (ai === -1) ai = 99;
       var bi = KIND_ORDER.indexOf(b.kind); if (bi === -1) bi = 99;
       return ai - bi;
     });
 
-    $('libFileCount').textContent = g.files.length + ' total · ' + directCount + ' direct';
+    D.libFileCount.textContent = g.files.length + ' total · ' + g._direct + ' direct';
 
     var filesHtml = '';
-    for (var fi = 0; fi < sortedFiles.length; fi++) {
-      var f = sortedFiles[fi];
+    for (var fi = 0; fi < sorted.length; fi++) {
+      var f = sorted[fi];
       var fkm = kindMeta(f.kind);
-      filesHtml += '<div class="frow" data-kind="' + f.kind + '">'
-        + '<div class="fmain">'
-        + '<div class="fname">' + esc(f.label) + '</div>'
-        + '<div class="facts">'
-        + '<span class="kind ' + f.kind + '"><span class="e">' + fkm.emoji + '</span>' + fkm.label + '</span>'
-        + '<span class="tag ' + (f.direct ? 'direct' : 'redirect') + '">'
-        +   (f.direct ? '⬇ Direct .pkg' : '↪ External') + '</span>'
-        + (f.size ? '<span class="fact size">' + esc(sizeLabel(f.size)) + '</span>' : '')
-        + (f.version ? '<span class="fact version">v' + esc(f.version) + '</span>' : '')
-        + (f.region ? '<span class="fact">' + esc(f.region) + '</span>' : '')
-        + (f.minFw ? '<span class="fact">FW ' + esc(f.minFw) + '</span>' : '')
-        + (f.host ? '<span class="fact globe">🌐 ' + esc(f.host) + '</span>' : '')
-        + '</div>'
-        + '</div>'
-        + '<div class="btn-group">'
-        + (f.direct
-            ? '<button class="btn ok sm" type="button" data-send="' + esc(f.url) + '" data-name="' + esc(f.label) + '">📤 Send</button>'
-            : '')
-        + '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer" title="' +
-            (f.direct ? 'Open the direct .pkg link' : 'Open the host landing page') + '">'
-        +   (f.direct ? '📥 Download' : '🔗 Open host')
-        + '</a>'
-        + '<button class="btn ghost sm icon" type="button" data-copy="' + esc(f.url) + '" title="Copy URL">📋</button>'
-        + '</div>'
-        + '</div>';
+      filesHtml += '<div class="frow" data-kind="' + f.kind + '">' +
+        '<div class="fmain">' +
+          '<div class="fname">' + esc(f.label) + '</div>' +
+          '<div class="facts">' +
+            '<span class="kind ' + f.kind + '"><span class="e">' + fkm.emoji + '</span>' + fkm.label + '</span>' +
+            '<span class="tag ' + (f.direct ? 'direct' : 'redirect') + '">' +
+              (f.direct ? '⬇ Direct .pkg' : '↪ External') +
+            '</span>' +
+            (f.size ? '<span class="fact size">' + esc(sizeLabel(f.size)) + '</span>' : '') +
+            (f.version ? '<span class="fact version">v' + esc(f.version) + '</span>' : '') +
+            (f.region ? '<span class="fact">' + esc(f.region) + '</span>' : '') +
+            (f.minFw ? '<span class="fact">FW ' + esc(f.minFw) + '</span>' : '') +
+            (f.host ? '<span class="fact globe">🌐 ' + esc(f.host) + '</span>' : '') +
+          '</div>' +
+        '</div>' +
+        '<div class="btn-group">' +
+          '<a class="btn primary sm" href="' + esc(f.url) + '" target="_blank" rel="noopener noreferrer">' +
+            (f.direct ? '📥 Download' : '🔗 Open host') +
+          '</a>' +
+          '<button class="btn ghost sm icon" type="button" data-copy="' + esc(f.url) + '" title="Copy URL" aria-label="Copy URL">📋</button>' +
+        '</div>' +
+      '</div>';
     }
-    $('libFiles').innerHTML = filesHtml;
-
-    $('libSendAll').style.display = directCount ? '' : 'none';
-    $('libSendAll').disabled = !directCount;
+    D.libFiles.innerHTML = filesHtml;
 
     openModal('libModal');
-  }
-
-  /* =====================================================================
-     PS5 LIBRARY — LOAD / FILTER / RENDER
-     ===================================================================== */
-  function ps5Skeleton() {
-    var sk = '';
-    for (var i = 0; i < 12; i++) {
-      sk += '<div class="sk"><div class="sk-c"></div><div class="sk-l"></div><div class="sk-l short"></div></div>';
-    }
-    $('ps5Grid').innerHTML = sk;
-  }
-
-  function loadPs5() {
-    ps5Skeleton();
-    fetchJSON(PS5_CATALOGS, function (raw, url) {
-      if (!raw) {
-        state.ps5.error = 'not-found';
-        $('ps5Grid').innerHTML =
-          '<div class="empty">' +
-            '<div class="big">📡</div>' +
-            '<b>No PS5 catalog found</b>' +
-            '<small>Place <code>ps5-catalog.json</code> next to this file to populate this view.</small>' +
-          '</div>';
-        $('ps5Count').textContent = '0';
-        return;
-      }
-      var list = normalizePs5(raw);
-      if (!list.length) {
-        state.ps5.error = 'empty';
-        $('ps5Grid').innerHTML =
-          '<div class="empty">' +
-            '<div class="big">📭</div>' +
-            '<b>PS5 catalog is empty</b>' +
-            '<small><code>' + esc(url) + '</code> loaded but no packages were found.</small>' +
-          '</div>';
-        $('ps5Count').textContent = '0';
-        return;
-      }
-      state.ps5.catalog = list;
-      state.ps5.loaded = true;
-      state.ps5.error = null;
-      buildPs5Stats();
-      buildPs5CategoryFilter();
-      applyPs5();
-    });
-  }
-
-  function buildPs5Stats() {
-    var total = state.ps5.catalog.length;
-    var totalBytes = 0;
-    var cats = {};
-    for (var i = 0; i < state.ps5.catalog.length; i++) {
-      totalBytes += state.ps5.catalog[i].sizeBytes || 0;
-      var c = state.ps5.catalog[i].category || 'other';
-      cats[c] = (cats[c] || 0) + 1;
-    }
-    $('statPs5Total').textContent = total.toLocaleString();
-    $('statPs5Size').textContent = fmtBytes(totalBytes);
-    $('statPs5Game').textContent = (cats.game || 0).toLocaleString();
-    $('statPs5Upd').textContent = (cats.update || cats.upd || 0).toLocaleString();
-    var other = 0;
-    for (var k in cats) if (k !== 'game' && k !== 'update' && k !== 'upd') other += cats[k];
-    $('statPs5Other').textContent = other.toLocaleString();
-  }
-
-  function buildPs5CategoryFilter() {
-    var seen = {};
-    for (var i = 0; i < state.ps5.catalog.length; i++) {
-      if (state.ps5.catalog[i].category) seen[state.ps5.catalog[i].category] = 1;
-    }
-    var list = Object.keys(seen).sort();
-    var sel = $('ps5Cat');
-    sel.innerHTML = '<option value="all">All Categories</option>';
-    for (var j = 0; j < list.length; j++) {
-      var o = document.createElement('option');
-      o.value = list[j];
-      o.textContent = list[j].charAt(0).toUpperCase() + list[j].slice(1);
-      sel.appendChild(o);
-    }
-  }
-
-  function applyPs5() {
-    var P = state.ps5;
-    var q = P.query;
-    P.filtered = P.catalog.filter(function (g) {
-      if (q && (g.title || '').toLowerCase().indexOf(q) < 0
-              && (g.titleId || '').toLowerCase().indexOf(q) < 0) return false;
-      if (P.category !== 'all' && g.category !== P.category) return false;
-      return true;
-    });
-
-    if (P.sort === 'name') {
-      P.filtered.sort(function (a, b) { return (a.title || '').localeCompare(b.title || ''); });
-    } else if (P.sort === 'name-desc') {
-      P.filtered.sort(function (a, b) { return (b.title || '').localeCompare(a.title || ''); });
-    } else if (P.sort === 'size') {
-      P.filtered.sort(function (a, b) { return (b.sizeBytes || 0) - (a.sizeBytes || 0); });
-    } else if (P.sort === 'size-asc') {
-      P.filtered.sort(function (a, b) { return (a.sizeBytes || 0) - (b.sizeBytes || 0); });
-    }
-
-    renderPs5();
-  }
-
-  function renderPs5() {
-    var P = state.ps5;
-    var grid = $('ps5Grid');
-    $('ps5Count').textContent = P.filtered.length.toLocaleString() + ' package' + (P.filtered.length === 1 ? '' : 's');
-
-    if (!P.filtered.length) {
-      grid.innerHTML =
-        '<div class="empty">' +
-          '<div class="big">🔍</div>' +
-          '<b>No packages match</b>' +
-          '<small>Try a different search or category filter.</small>' +
-          '<br><button class="act" id="ps5ResetBtn" type="button">Reset filters</button>' +
-        '</div>';
-      var rb = $('ps5ResetBtn');
-      if (rb) rb.onclick = resetPs5Filters;
-      return;
-    }
-
-    var html = '';
-    for (var i = 0; i < P.filtered.length; i++) {
-      var g = P.filtered[i];
-      var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
-      var src = g.posterUrl ? esc(g.posterUrl) : '';
-      var cat = g.category ? g.category.charAt(0).toUpperCase() + g.category.slice(1) : '';
-
-      html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">'
-        + '<div class="cover">'
-        + '<div class="placeholder">' + esc(initial) + '</div>'
-        + (src
-            ? '<img src="' + src + '" alt="" loading="lazy" onload="this.classList.add(\'ready\')" onerror="this.style.display=\'none\'">'
-            : '')
-        + '<div class="ribbons">'
-        + (cat ? '<span class="ribbon cat">' + esc(cat) + '</span>' : '')
-        + (g.version ? '<span class="ribbon ok">v' + esc(g.version) + '</span>' : '')
-        + '</div>'
-        + '</div>'
-        + '<div class="info">'
-        + '<h3>' + esc(g.title) + '</h3>'
-        + '<div class="row">'
-        + '<span>' + esc(g.titleId || '') + '</span>'
-        + '<span>' + fmtBytes(g.sizeBytes) + '</span>'
-        + '</div>'
-        + '</div>'
-        + '</div>';
-    }
-    grid.innerHTML = html;
-
-    var cards = grid.querySelectorAll('.card');
-    for (var k = 0; k < cards.length; k++) {
-      (function (card) {
-        var idx = Number(card.getAttribute('data-idx'));
-        card.addEventListener('click', function () { openPs5Game(P.filtered[idx]); });
-        card.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openPs5Game(P.filtered[idx]);
-          }
-        });
-      })(cards[k]);
-    }
-  }
-
-  function resetPs5Filters() {
-    state.ps5.query = '';
-    state.ps5.category = 'all';
-    state.ps5.sort = 'name';
-    $('ps5Search').value = '';
-    $('ps5Cat').value = 'all';
-    $('ps5Sort').value = 'name';
-    applyPs5();
-    toast('Filters reset', 'ok');
-  }
-
-  function openPs5Game(g) {
-    state.currentPs5Game = g;
-
-    var wrap = $('ps5CoverWrap');
-    var oldImg = wrap.querySelector('img');
-    if (oldImg) oldImg.remove();
-    var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
-    wrap.innerHTML = esc(initial);
-    if (g.posterUrl) {
-      var img = document.createElement('img');
-      img.alt = '';
-      img.onerror = function () { this.remove(); };
-      img.src = g.posterUrl;
-      wrap.appendChild(img);
-    }
-
-    $('ps5Title').textContent = g.title;
-    $('ps5Sub').textContent = g.titleId || '—';
-
-    var tags = [];
-    if (g.category) tags.push({ t: g.category, c: 'b' });
-    if (g.version) tags.push({ t: 'v' + g.version });
-    tags.push({ t: fmtBytes(g.sizeBytes) });
-    if (g.downloadLinks && g.downloadLinks.length) {
-      tags.push({ t: g.downloadLinks.length + ' link' + (g.downloadLinks.length === 1 ? '' : 's'), c: 'g' });
-    }
-    var tagsHtml = '';
-    for (var i = 0; i < tags.length; i++) {
-      tagsHtml += '<span class="gm-tag ' + (tags[i].c || '') + '">' + esc(tags[i].t) + '</span>';
-    }
-    $('ps5Tags').innerHTML = tagsHtml;
-
-    if (g.description) {
-      $('ps5DescTitle').style.display = '';
-      $('ps5Desc').style.display = '';
-      $('ps5Desc').innerHTML = '<span class="ico">📝</span><span>' + esc(g.description) + '</span>';
-    } else {
-      $('ps5DescTitle').style.display = 'none';
-      $('ps5Desc').style.display = 'none';
-    }
-
-    var links = g.downloadLinks || [];
-    $('ps5LinkCount').textContent = links.length + ' total';
-
-    if (!links.length) {
-      $('ps5Links').innerHTML =
-        '<div class="frow"><div class="fmain"><div class="fname" style="color:var(--tx-3)">No download links available</div></div></div>';
-    } else {
-      var html = '';
-      for (var li = 0; li < links.length; li++) {
-        var l = links[li];
-        var meta = [];
-        if (l.group) meta.push(l.group);
-        if (l.version) meta.push('v' + l.version);
-        if (l.mirror) meta.push(l.mirror);
-
-        html += '<div class="frow" data-kind="pkg">'
-          + '<div class="fmain">'
-          + '<div class="fname">' + esc(l.name || 'Download') + '</div>'
-          + (meta.length ? '<div class="facts"><span class="fact">' + esc(meta.join(' · ')) + '</span></div>' : '')
-          + '</div>'
-          + '<div class="btn-group">'
-          + '<a class="btn primary sm" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">📥 Download</a>'
-          + '<button class="btn ghost sm icon" type="button" data-copy="' + esc(l.url) + '" title="Copy URL">📋</button>'
-          + '</div>'
-          + '</div>';
-      }
-      $('ps5Links').innerHTML = html;
-    }
-
-    openModal('ps5Modal');
-  }
-
-  /* =====================================================================
-     SEND TO PS4
-     ===================================================================== */
-  function sendUrlsToPs4(urls, label) {
-    if (!urls.length) { toast('No direct .pkg links to send', 'err'); return; }
-    var ip = getIp();
-    toast('Sending ' + urls.length + ' package(s)…', 'info');
-
-    rpiInstall(ip, urls, function (r) {
-      if (r.state === 'ok') {
-        setEndpointState('ok');
-        toast('Sent ' + urls.length + ' package(s) to PS4', 'ok');
-        pushRecent({ url: urls[0] + (urls.length > 1 ? ' (+' + (urls.length - 1) + ')' : ''), ts: Date.now(), state: 'ok' });
-      } else if (r.state === 'rejected') {
-        toast('RPI rejected the request (HTTP ' + r.status + ')', 'err');
-        pushRecent({ url: urls[0], ts: Date.now(), state: 'rejected' });
-      } else if (r.state === 'timeout') {
-        setEndpointState('err');
-        toast('Timed out — is Remote Package Installer open?', 'err');
-        pushRecent({ url: urls[0], ts: Date.now(), state: 'timeout' });
-      } else {
-        toast('Request sent — check the PS4', 'info');
-        pushRecent({ url: urls[0], ts: Date.now(), state: 'unknown' });
-      }
-    });
-  }
-
-  /* =====================================================================
-     SENDER VIEW
-     ===================================================================== */
-  function setConn(cls, msg) {
-    $('connDot').className = 'dot ' + (cls || '');
-    $('connMsg').textContent = msg || 'Not tested';
-  }
-
-  function showStatus(kind, title, msg, detail) {
-    var el = $('status');
-    el.className = 'status show ' + kind;
-    $('statusIco').textContent = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'run' ? '⏳' : 'ℹ️';
-    $('statusTitle').textContent = title;
-    $('statusMsg').textContent = msg;
-    var d = $('statusDetail');
-    if (detail) { d.style.display = 'block'; d.textContent = detail; }
-    else { d.style.display = 'none'; d.textContent = ''; }
-  }
-
-  function testConnection() {
-    var ip = cleanIp($('ipInput').value);
-    setIp(ip);
-    $('ipInput').value = ip;
-    renderEndpoint();
-    setConn('run', 'Testing ' + ip + ':' + RPI_PORT + ' …');
-    rpiInstall(ip, [], function (r) {
-      if (r.state === 'ok' || r.state === 'rejected') {
-        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
-        setEndpointState('ok');
-        toast('Remote Package Installer is answering.', 'ok');
-      } else if (r.state === 'timeout') {
-        setConn('err', 'Timed out — is RPI open?');
-        setEndpointState('err');
-        toast('No answer from ' + ip + ':' + RPI_PORT + '.', 'err');
-      } else {
-        setConn('run', 'Request sent — no readable reply');
-        toast("Sent, but couldn't read a reply. Try sending a package.", 'info');
-      }
-    });
-  }
-
-  function sendCurrent() {
-    var ip = cleanIp($('ipInput').value);
-    var url = String($('urlInput').value || '').replace(/^\s+|\s+$/g, '');
-
-    setIp(ip);
-    $('ipInput').value = ip;
-    renderEndpoint();
-
-    if (!url) { showStatus('err', 'Missing URL', 'Paste a direct .pkg link first.'); toast('Paste a .pkg URL first', 'err'); return; }
-    if (!validUrl(url)) { showStatus('err', 'Invalid URL', 'The URL must start with http:// or https://'); toast('Invalid URL', 'err'); return; }
-    if (!isPkgUrl(url)) {
-      showStatus('err', 'Not a .pkg link', 'The URL must end in .pkg (before any ?query or #fragment).');
-      toast('Only .pkg URLs can be sent', 'err');
-      return;
-    }
-
-    var sendBtn = $('sendBtn');
-    sendBtn.disabled = true;
-    showStatus('run', 'Sending…', 'Posting to http://' + ip + ':' + RPI_PORT + '/api/install', url);
-
-    var fileName = url.split('?')[0].split('/').pop() || 'package.pkg';
-
-    rpiInstall(ip, [url], function (r) {
-      sendBtn.disabled = false;
-      var rec = { url: url, ts: Date.now(), state: 'unknown' };
-
-      if (r.state === 'ok') {
-        rec.state = 'ok';
-        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
-        setEndpointState('ok');
-        showStatus('ok', 'Sent to PS4', 'Queued on the console — check the notification area.',
-          'HTTP ' + r.status + (r.text ? ' — ' + r.text.substring(0, 200) : ''));
-        toast('Sent: ' + fileName, 'ok');
-      } else if (r.state === 'rejected') {
-        rec.state = 'rejected';
-        setConn('run', 'RPI replied with an error');
-        showStatus('err', 'RPI rejected the request', 'HTTP ' + r.status + '. The console refused this URL.',
-          r.text ? r.text.substring(0, 300) : '');
-        toast('RPI rejected the request', 'err');
-      } else if (r.state === 'timeout') {
-        rec.state = 'timeout';
-        setConn('err', 'Timed out');
-        setEndpointState('err');
-        showStatus('err', 'Timed out',
-          'No reply from ' + ip + ':' + RPI_PORT + ' after ' + (RPI_TIMEOUT / 1000) + 's. Is Remote Package Installer running on the PS4?');
-        toast('Timed out', 'err');
-      } else {
-        setConn('run', 'Sent — reply unreadable');
-        showStatus('run', 'Sent (unconfirmed)',
-          "The request went out but the console's reply couldn't be read. If a download starts on the PS4, it worked.", url);
-        toast('Sent — check the PS4', 'info');
-      }
-
-      pushRecent(rec);
-    });
   }
 
   /* =====================================================================
@@ -2272,7 +2166,10 @@ select option{background:#0d1019;color:var(--tx)}
      ===================================================================== */
   function wireTabs() {
     var tabs = document.querySelectorAll('.tab-btn');
+    tabButtons = tabs;
     for (var i = 0; i < tabs.length; i++) {
+      var dv = tabs[i].getAttribute('data-view');
+      if (!dv) continue;                 /* external links (ps5.html) keep default navigation */
       tabs[i].addEventListener('click', function () {
         setView(this.getAttribute('data-view'));
       });
@@ -2280,200 +2177,156 @@ select option{background:#0d1019;color:var(--tx)}
   }
 
   function wireLibrary() {
-    var searchEl = $('libSearch');
-    var debounce = null;
-    searchEl.oninput = function () {
-      clearTimeout(debounce);
-      var v = searchEl.value;
-      debounce = setTimeout(function () {
-        state.library.query = v.toLowerCase().trim();
-        applyLibrary();
-      }, 110);
-    };
+    var onSearch = rafDebounce(function (v) {
+      state.library.query = v.toLowerCase().trim();
+      applyLibrary();
+    }, 120);
+    D.libSearch.addEventListener('input', function () { onSearch(this.value); });
 
-    $('libRegion').onchange = function () { state.library.region = this.value; applyLibrary(); };
-    $('libSort').onchange = function () { state.library.sort = this.value; applyLibrary(); };
-
-    /* Delegated handlers inside the PS4 modal file list */
-    $('libFiles').addEventListener('click', function (e) {
-      var t = e.target;
-      if (!t) return;
-
-      var sendBtn = t.closest ? t.closest('[data-send]') : null;
-      if (sendBtn) {
-        sendUrlsToPs4([sendBtn.getAttribute('data-send')], sendBtn.getAttribute('data-name') || '');
-        return;
-      }
-      var copyBtn = t.closest ? t.closest('[data-copy]') : null;
-      if (copyBtn) {
-        copyText(copyBtn.getAttribute('data-copy'));
-      }
+    D.libRegion.addEventListener('change', function () {
+      state.library.region = this.value;
+      applyLibrary();
+    });
+    D.libSort.addEventListener('change', function () {
+      state.library.sort = this.value;
+      saveSortPref(this.value);
+      applyLibrary();
     });
 
-    $('libCopyAll').onclick = function () {
-      if (!state.currentLibraryGame) return;
-      var urls = [];
-      for (var i = 0; i < state.currentLibraryGame.files.length; i++) {
-        urls.push(state.currentLibraryGame.files[i].url);
+    D.libKinds.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('.kind-btn') : null;
+      if (!btn) return;
+      var k = btn.getAttribute('data-kind');
+      state.library.kind = (k === state.library.kind) ? 'all' : k;
+      var btns = D.libKinds.querySelectorAll('.kind-btn');
+      for (var x = 0; x < btns.length; x++) {
+        btns[x].classList.toggle('on', btns[x].getAttribute('data-kind') === state.library.kind);
       }
-      if (!urls.length) { toast('No URLs to copy', 'err'); return; }
-      copyText(urls.join('\n'));
-    };
+      applyLibrary();
+    });
 
-    $('libSendAll').onclick = function () {
-      if (!state.currentLibraryGame) return;
-      var direct = [];
-      for (var i = 0; i < state.currentLibraryGame.files.length; i++) {
-        if (state.currentLibraryGame.files[i].direct) direct.push(state.currentLibraryGame.files[i].url);
-      }
-      sendUrlsToPs4(direct, state.currentLibraryGame.name);
-    };
-  }
-
-  function wirePs5() {
-    var searchEl = $('ps5Search');
-    var debounce = null;
-    searchEl.oninput = function () {
-      clearTimeout(debounce);
-      var v = searchEl.value;
-      debounce = setTimeout(function () {
-        state.ps5.query = v.toLowerCase().trim();
-        applyPs5();
-      }, 110);
-    };
-
-    $('ps5Cat').onchange = function () { state.ps5.category = this.value; applyPs5(); };
-    $('ps5Sort').onchange = function () { state.ps5.sort = this.value; applyPs5(); };
-
-    $('ps5Links').addEventListener('click', function (e) {
+    D.libFiles.addEventListener('click', function (e) {
       var t = e.target;
-      if (!t) return;
-      var copyBtn = t.closest ? t.closest('[data-copy]') : null;
+      if (!t || !t.closest) return;
+      var copyBtn = t.closest('[data-copy]');
       if (copyBtn) copyText(copyBtn.getAttribute('data-copy'));
     });
+
+    D.libCopyAll.addEventListener('click', function () {
+      var g = state.currentLibraryGame;
+      if (!g) return;
+      var urls = [];
+      for (var i = 0; i < g.files.length; i++) urls.push(g.files[i].url);
+      if (!urls.length) { toast('No URLs to copy', 'err'); return; }
+      copyText(urls.join('\n'));
+    });
+
+    wireGridDelegation(
+      D.libGrid,
+      function () { return state.library.filtered; },
+      openLibraryGame
+    );
   }
 
-  function wireSender() {
-    $('ipInput').value = getIp();
+  function wireDonate() {
+    var openers = [D.coffeeBtn, D.footCoffee, D.helpCoffee];
+    for (var i = 0; i < openers.length; i++) {
+      if (openers[i]) {
+        openers[i].addEventListener('click', function () {
+          var helpOpen = D.helpModal && D.helpModal.classList.contains('open');
+          if (helpOpen) D.helpModal.classList.remove('open');
+          openModal('donateModal');
+        });
+      }
+    }
 
-    $('testBtn').onclick = testConnection;
-    $('sendBtn').onclick = sendCurrent;
-    $('clearBtn').onclick = function () {
-      $('urlInput').value = '';
-      $('status').className = 'status';
-      $('urlInput').focus();
-    };
-
-    $('ipInput').onchange = function () {
-      var v = cleanIp(this.value);
-      this.value = v;
-      setIp(v);
-      renderEndpoint();
-    };
-
-    $('urlInput').addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); sendCurrent(); }
-    });
-    $('ipInput').addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); testConnection(); }
-    });
-  }
-
-  function wireSettings() {
-    $('targetPill').onclick = function () {
-      $('ipInputModal').value = getIp();
-      openModal('settingsModal');
-      setTimeout(function () { $('ipInputModal').focus(); $('ipInputModal').select(); }, 60);
-    };
-
-    $('settingsSave').onclick = function () {
-      var v = cleanIp($('ipInputModal').value);
-      setIp(v);
-      $('ipInput').value = v;
-      renderEndpoint();
-      closeModal('settingsModal');
-      toast('PS4 IP saved', 'ok');
-    };
-
-    $('ipInputModal').addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') { e.preventDefault(); $('settingsSave').click(); }
-    });
+    if (D.copyEth) {
+      D.copyEth.addEventListener('click', function () {
+        copyText(ETH_ADDRESS);
+        toast('Wallet address copied — thank you! ☕', 'coffee');
+      });
+    }
   }
 
   function wireModals() {
-    /* Close buttons */
     var closeBtns = document.querySelectorAll('[data-close]');
     for (var i = 0; i < closeBtns.length; i++) {
       closeBtns[i].addEventListener('click', function () {
         closeModal(this.getAttribute('data-close'));
       });
     }
-    /* Click outside to close */
+
     var overlays = document.querySelectorAll('.overlay');
     for (var j = 0; j < overlays.length; j++) {
       overlays[j].addEventListener('click', function (e) {
         if (e.target === this) closeModal(this.id);
       });
     }
-    /* Help */
-    $('helpBtn').onclick = function () { openModal('helpModal'); };
+
+    D.helpBtn.addEventListener('click', function () { openModal('helpModal'); });
   }
 
   function wireKeyboard() {
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeAllModals();
+      if (e.key === 'Escape') { closeAllModals(); return; }
 
       var tag = (e.target && e.target.tagName) || '';
-      if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+      if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
         e.preventDefault();
-        var el = state.view === 'library' ? $('libSearch')
-               : state.view === 'ps5'     ? $('ps5Search')
-               : $('urlInput');
-        if (el) { el.focus(); el.select(); }
+        if (D.libSearch) { D.libSearch.focus(); D.libSearch.select(); }
       }
     });
+  }
+
+  function wireImageHandlers() {
+    document.addEventListener('load', function (e) {
+      var t = e.target;
+      if (t && t.tagName === 'IMG' && t.classList.contains('cover-img')) {
+        t.classList.add('ready');
+      }
+    }, true);
+
+    document.addEventListener('error', function (e) {
+      var t = e.target;
+      if (t && t.tagName === 'IMG' && t.classList.contains('cover-img')) {
+        t.remove();
+      }
+    }, true);
   }
 
   /* =====================================================================
      BOOT
      ===================================================================== */
   function boot() {
+    cacheDom();
+
+    /* Ensure displayed address matches config */
+    if (D.ethAddress) D.ethAddress.textContent = ETH_ADDRESS;
+
+    /* Restore preferred sort order (defaults to "Recently updated") */
+    var savedSort = loadSortPref();
+    state.library.sort = savedSort;
+    if (D.libSort) D.libSort.value = savedSort;
+
+    wireImageHandlers();
     wireTabs();
     wireLibrary();
-    wirePs5();
-    wireSender();
-    wireSettings();
+    wireDonate();
     wireModals();
     wireKeyboard();
 
-    renderEndpoint();
-    renderRecent();
-
-    /* Deep link ?url=... into the sender */
-    try {
-      var m = window.location.search.match(/[?&]url=([^&]+)/);
-      if (m) {
-        setView('sender');
-        $('urlInput').value = decodeURIComponent(m[1]);
-        $('urlInput').focus();
-      }
-    } catch (e) {}
-
-    /* Restore last view */
     try {
       var lastView = localStorage.getItem(LS_VIEW);
-      if (lastView && !window.location.search.match(/[?&]url=/)) {
-        var exists = document.querySelector('.view[data-view="' + lastView + '"]');
-        if (exists) setView(lastView);
+      if (lastView && document.querySelector('.view[data-view="' + lastView + '"]')) {
+        setView(lastView);
       }
     } catch (e) {}
 
     loadLibrary();
-    loadPs5();
   }
 
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot);
+    document.addEventListener('DOMContentLoaded', boot, { once: true });
   } else {
     boot();
   }
