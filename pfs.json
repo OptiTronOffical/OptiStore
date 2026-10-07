@@ -3,6 +3,22 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA03671",
+      "title": "Wolverine",
+      "downloadLinks": [
+        {
+          "name": "Download - Backport",
+          "url": "https://vik1ngfile.site/f/HekGA4cnx8"
+        }
+      ],
+      "version": "01.00.005",
+      "category": "game",
+      "description": "Region: USA\nFirmware: 4.xx+\nUpdated: 2026-10-07T00:26:49.895Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 148176371712,
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA03671_a27ab989e8e759c2df77cf29aa935fe18369ce087726a4a8e0086d8542080fca/icon0.webp"
+    },
+    {
       "titleId": "PPSA29035",
       "title": "Forgive Me Father 2",
       "downloadLinks": [
