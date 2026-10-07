@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PS4/PS5 PKG Sender</title>
+  <style>
+    :root {
+      --bg: #0f1115;
+      --card: #1a1d24;
+      --border: #2a2f3a;
+      --text: #e4e6eb;
+      --muted: #8b93a1;
+      --accent: #3b82f6;
+      --accent-hover: #2563eb;
+      --success: #22c55e;
+      --warning: #f59e0b;
+      --radius: 12px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .container {
+      width: 100%;
+      max-width: 820px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    header p {
+      color: var(--muted);
+      margin-top: 0.4rem;
+      font-size: 0.95rem;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .card h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 0.4rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    input[type="url"],
+    input[type="text"],
+    input[type="number"] {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 1rem;
+      transition: border-color 0.15s;
+    }
+    input:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s, opacity 0.15s;
+    }
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: var(--accent-hover);
+    }
+    .btn-send {
+      background: var(--success);
+      color: #fff;
+      width: 100%;
+      margin-top: 1rem;
+    }
+    .btn-send:hover:not(:disabled) {
+      background: #16a34a;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+    .info-item {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+    }
+    .info-item .key {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 0.25rem;
+    }
+    .info-item .value {
+      font-size: 0.95rem;
+      font-weight: 500;
+      word-break: break-all;
+    }
+    .info-item.full {
+      grid-column: 1 / -1;
+    }
+    .status {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      display: none;
+    }
+    .status.visible {
+      display: block;
+    }
+    .status.info {
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #93c5fd;
+    }
+    .status.error {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #fca5a5;
+    }
+    .status.success {
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      color: #86efac;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .spinner {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .progress-bar {
+      width: 100%;
+      height: 8px;
+      background: var(--bg);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-top: 1rem;
+      display: none;
+    }
+    .progress-bar.visible {
+      display: block;
+    }
+    .progress-bar .fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 4px;
+      transition: width 0.2s;
+    }
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 1.5rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 600px) {
+      .row, .info-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📦 PKG Sender</h1>
+      <p>Read PKG information from a link, then deliver it to your PS4 / PS5 over the local network.</p>
+    </header>
+
+    <!-- Step 1: PKG URL -->
+    <div class="card">
+      <h2>1. PKG Source</h2>
+      <label for="pkgUrl">PKG File URL</label>
+      <input
+        type="url"
+        id="pkgUrl"
+        placeholder="https://example.com/game.pkg"
+        autocomplete="off"
+        spellcheck="false"
+      />
+      <button class="btn btn-primary" id="readPkgBtn">
+        <span id="readBtnText">Read PKG Info</span>
+        <span class="spinner hidden" id="readSpinner"></span>
+      </button>
+      <div class="status info" id="readStatus"></div>
+    </div>
+
+    <!-- Step 2: PKG Info -->
+    <div class="card hidden" id="infoCard">
+      <h2>2. PKG Information</h2>
+      <div class="info-grid" id="infoGrid">
+        <div class="info-item">
+          <div class="key">Title</div>
+          <div class="value" id="infoTitle">—</div>
+        </div>
+        <div class="info-item">
+          <div class="key">Title ID</div>
+          <div class="value" id="infoTitleId">—</div>
+        </div>
+        <div class="info-item">
+          <div class="key">Content ID</div>
+          <div class="value" id="infoContentId">—</div>
+        </div>
+        <div class="info-item">
+          <div class="key">Version</div>
+          <div class="value" id="infoVersion">—</div>
+        </div>
+        <div class="info-item">
+          <div class="key">PKG Type</div>
+          <div class="value" id="infoPkgType">—</div>
+        </div>
+        <div class="info-item">
+          <div class="key">File Size</div>
+          <div class="value" id="infoFileSize">—</div>
+        </div>
+        <div class="info-item full">
+          <div class="key">Magic</div>
+          <div class="value" id="infoMagic">—</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3: Console Target -->
+    <div class="card hidden" id="targetCard">
+      <h2>3. Console Target</h2>
+      <div class="row">
+        <div>
+          <label for="consoleIp">Console IP Address</label>
+          <input type="text" id="consoleIp" placeholder="192.168.1.100" autocomplete="off" />
+        </div>
+        <div>
+          <label for="consolePort">Port</label>
+          <input type="number" id="consolePort" value="12800" min="1" max="65535" />
+        </div>
+      </div>
+      <button class="btn btn-send" id="sendBtn" disabled>
+        <span id="sendBtnText">Send to Console</span>
+        <span class="spinner hidden" id="sendSpinner"></span>
+      </button>
+      <div class="progress-bar" id="progressBar">
+        <div class="fill" id="progressFill"></div>
+      </div>
+      <div class="status" id="sendStatus"></div>
+    </div>
+
+    <div class="footer-note">
+      The console must be running a compatible receiver payload.<br />
+      For PS4: <strong>Remote Package Installer</strong> (port 12800) or GoldHEN Payload Server.<br />
+      For PS5: <strong>etaHEN</strong> or equivalent payload with remote install support.
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      // ── DOM references ──────────────────────────────────────────────
+      const pkgUrlInput   = document.getElementById("pkgUrl");
+      const readPkgBtn    = document.getElementById("readPkgBtn");
+      const readBtnText   = document.getElementById("readBtnText");
+      const readSpinner   = document.getElementById("readSpinner");
+      const readStatus    = document.getElementById("readStatus");
+
+      const infoCard      = document.getElementById("infoCard");
+      const infoTitle     = document.getElementById("infoTitle");
+      const infoTitleId   = document.getElementById("infoTitleId");
+      const infoContentId = document.getElementById("infoContentId");
+      const infoVersion   = document.getElementById("infoVersion");
+      const infoPkgType   = document.getElementById("infoPkgType");
+      const infoFileSize  = document.getElementById("infoFileSize");
+      const infoMagic     = document.getElementById("infoMagic");
+
+      const targetCard    = document.getElementById("targetCard");
+      const consoleIp     = document.getElementById("consoleIp");
+      const consolePort   = document.getElementById("consolePort");
+      const sendBtn       = document.getElementById("sendBtn");
+      const sendBtnText   = document.getElementById("sendBtnText");
+      const sendSpinner   = document.getElementById("sendSpinner");
+      const progressBar   = document.getElementById("progressBar");
+      const progressFill  = document.getElementById("progressFill");
+      const sendStatus    = document.getElementById("sendStatus");
+
+      // ── State ───────────────────────────────────────────────────────
+      let parsedPkg = null;   // { url, size, header fields … }
+
+      // ── Helpers ─────────────────────────────────────────────────────
+      function showStatus(el, message, type) {
+        el.textContent = message;
+        el.className = "status visible " + (type || "info");
+      }
+
+      function hideStatus(el) {
+        el.className = "status";
+        el.textContent = "";
+      }
+
+      function setLoading(btn, textEl, spinnerEl, loading, label) {
+        btn.disabled = loading;
+        textEl.textContent = loading ? "Working…" : label;
+        spinnerEl.classList.toggle("hidden", !loading);
+      }
+
+      function formatBytes(bytes) {
+        if (!bytes || bytes === 0) return "0 B";
+        const k = 1024;
+        const sizes = ["B", "KB", "MB", "GB", "TB"];
+        const i = Math.floor(Math.log(bytes) / Math.log(k));
+        return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + " " + sizes[i];
+      }
+
+      /**
+       * Read a big-endian uint32 from a DataView.
+       */
+      function readU32BE(view, offset) {
+        return view.getUint32(offset, false);
+      }
+
+      /**
+       * Read a big-endian uint16 from a DataView.
+       */
+      function readU16BE(view, offset) {
+        return view.getUint16(offset, false);
+      }
+
+      /**
+       * Read an ASCII string of length `len` from a Uint8Array.
+       */
+      function readAscii(bytes, offset, len) {
+        let s = "";
+        for (let i = 0; i < len; i++) {
+          const c = bytes[offset + i];
+          if (c === 0) break;
+          s += String.fromCharCode(c);
+        }
+        return s.trim();
+      }
+
+      /**
+       * Convert a 4-byte magic value to a readable string.
+       */
+      function magicToString(magic) {
+        const bytes = [
+          (magic >>> 24) & 0xff,
+          (magic >>> 16) & 0xff,
+          (magic >>> 8) & 0xff,
+          magic & 0xff
+        ];
+        // Printable ASCII only
+        const printable = bytes.every(b => b >= 0x20 && b <= 0x7e);
+        if (printable) {
+          return bytes.map(b => String.fromCharCode(b)).join("") +
+                 " (0x" + magic.toString(16).padStart(8, "0") + ")";
+        }
+        return "0x" + magic.toString(16).padStart(8, "0");
+      }
+
+      // ── PKG header parser ───────────────────────────────────────────
+      /**
+       * Parse the first 0x1000 (4096) bytes of a PS4 / PS5 PKG.
+       *
+       * PS4 PKG header (big‑endian):
+       *   0x00  u32  magic          (0x7F434E54 = ".CNT")
+       *   0x04  u32  version
+       *   0x08  u16  sdk_type
+       *   0x0A  u16  pkg_type
+       *   0x10  u32  pkg_metadata_offset
+       *   0x14  u32  pkg_metadata_count
+       *   0x18  u32  pkg_file_count
+       *   0x1C  u32  pkg_table_entry_offset
+       *   0x20  u32  pkg_table_entry_count
+       *   0x30  u8[0x24] pkg_content_id  (36‑byte ASCII)
+       *
+       * PS5 PKG header (big‑endian, inside \x7FCNT container):
+       *   0x00  u32  magic          (0x7F434E54)
+       *   0x04  u32  flags
+       *   0x08  u32  entry_count
+       *   0x0C  u32  entry_table_offset
+       *   0x10  u64  body_offset
+       *   0x18  u64  body_size
+       *   0x30  u8[0x30] content_id (36‑byte ASCII)
+       */
+      function parsePkgHeader(bytes, view) {
+        const magic = readU32BE(view, 0x00);
+        const magicStr = magicToString(magic);
+
+        // Sanity check
+        const isCNT = (magic === 0x7F434E54);
+        const isFIH = (magic === 0x7F464948); // PS5 finalized image
+
+        if (!isCNT && !isFIH) {
+          throw new Error(
+            "Unrecognised PKG magic: " + magicStr +
+            ". Expected .CNT (0x7F434E54) or .FIH (0x7F464948)."
+          );
+        }
+
+        // ── Common fields ──
+        const version = readU32BE(view, 0x04);
+
+        // ── PS4‑specific ──
+        let sdkType = null;
+        let pkgType = null;
+        if (isCNT && view.byteLength >= 0x40) {
+          sdkType = readU16BE(view, 0x08);
+          pkgType = readU16BE(view, 0x0A);
+        }
+
+        // ── Content ID (both PS4 & PS5 store it at 0x30) ──
+        const contentId = readAscii(bytes, 0x30, 0x30);
+
+        // Derive Title ID from content ID.
+        // PS4:  Content ID = XXYYYY‑CUSA12345_00‑XXXXXXXX
+        //       Title ID   = CUSA12345  (offset 7, length 9)
+        // PS5:  Content ID = XXYYYY‑PPSA12345_00‑XXXXXXXX
+        //       Title ID   = PPSA12345  (same offset/length)
+        let titleId = "";
+        const dashIdx = contentId.indexOf("-");
+        if (dashIdx !== -1) {
+          const afterDash = contentId.substring(dashIdx + 1);
+          const underscoreIdx = afterDash.indexOf("_");
+          if (underscoreIdx >= 7) {
+            titleId = afterDash.substring(0, underscoreIdx);
+          } else {
+            titleId = afterDash.substring(0, 9);
+          }
+        }
+        // Fallback: try fixed offset 0x47 (0x30 + 7) as documented for PS4
+        if (!titleId && bytes.length >= 0x50) {
+          titleId = readAscii(bytes, 0x47, 9);
+        }
+
+        // Determine type label
+        let typeLabel = "Unknown";
+        if (isFIH) {
+          typeLabel = "PS5 Finalized Image";
+        } else if (isCNT) {
+          if (pkgType === 0x1A) typeLabel = "PS4 Game / App";
+          else if (pkgType === 0x1B) typeLabel = "PS4 Patch";
+          else if (pkgType === 0x1C) typeLabel = "PS4 DLC";
+          else if (pkgType === 0x1D) typeLabel = "PS4 Theme";
+          else if (pkgType === 0x1E) typeLabel = "PS4 Avatar";
+          else typeLabel = "PS4 (type " + pkgType + ")";
+        }
+
+        return {
+          magic: magicStr,
+          version: "0x" + version.toString(16).padStart(8, "0"),
+          contentId: contentId || "—",
+          titleId: titleId || "—",
+          pkgType: typeLabel,
+          sdkType: sdkType !== null ? "0x" + sdkType.toString(16) : null,
+          isPS5: isFIH
+        };
+      }
+
+      // ── Fetch first 4096 bytes of a remote file ─────────────────────
+      async function fetchPkgHeader(url) {
+        // Use a Range request to grab only the first 4 KiB.
+        const response = await fetch(url, {
+          method: "GET",
+          headers: { "Range": "bytes=0-4095" },
+          mode: "cors",
+          redirect: "follow"
+        });
+
+        if (!response.ok && response.status !== 206) {
+          throw new Error(
+            "Failed to fetch PKG header. HTTP " + response.status +
+            " " + response.statusText
+          );
+        }
+
+        const buffer = await response.arrayBuffer();
+
+        if (buffer.byteLength < 0x40) {
+          throw new Error(
+            "Received only " + buffer.byteLength +
+            " bytes — too small to be a PKG header."
+          );
+        }
+
+        // Try to get the full file size from Content‑Range.
+        let totalSize = null;
+        const contentRange = response.headers.get("Content-Range");
+        if (contentRange) {
+          const m = contentRange.match(/\/(\d+)$/);
+          if (m) totalSize = parseInt(m[1], 10);
+        }
+
+        return { buffer, totalSize };
+      }
+
+      // ── Main: read PKG info ─────────────────────────────────────────
+      async function handleReadPkg() {
+        const url = pkgUrlInput.value.trim();
+        if (!url) {
+          showStatus(readStatus, "Please enter a PKG file URL.", "error");
+          return;
+        }
+
+        hideStatus(readStatus);
+        setLoading(readPkgBtn, readBtnText, readSpinner, true, "Read PKG Info");
+        infoCard.classList.add("hidden");
+        targetCard.classList.add("hidden");
+        sendBtn.disabled = true;
+        parsedPkg = null;
+
+        try {
+          showStatus(readStatus, "Fetching PKG header…", "info");
+
+          const { buffer, totalSize } = await fetchPkgHeader(url);
+          const bytes = new Uint8Array(buffer);
+          const view  = new DataView(buffer);
+
+          showStatus(readStatus, "Parsing PKG header…", "info");
+
+          const header = parsePkgHeader(bytes, view);
+
+          // Build the parsed PKG object
+          parsedPkg = {
+            url: url,
+            size: totalSize,
+            ...header
+          };
+
+          // Populate UI
+          infoTitle.textContent     = header.titleId !== "—"
+                                        ? "Title " + header.titleId
+                                        : "Unknown Title";
+          infoTitleId.textContent   = header.titleId;
+          infoContentId.textContent = header.contentId;
+          infoVersion.textContent   = header.version;
+          infoPkgType.textContent   = header.pkgType;
+          infoFileSize.textContent  = totalSize
+                                        ? formatBytes(totalSize)
+                                        : "Unknown (server did not report size)";
+          infoMagic.textContent     = header.magic;
+
+          // Show info + target cards
+          infoCard.classList.remove("hidden");
+          targetCard.classList.remove("hidden");
+
+          showStatus(
+            readStatus,
+            "✅ PKG header parsed successfully. Review the information below, then enter your console’s IP address.",
+            "success"
+          );
+
+          // Pre‑fill console IP from localStorage if available
+          const savedIp = localStorage.getItem("pkgSender_consoleIp");
+          if (savedIp && !consoleIp.value) {
+            consoleIp.value = savedIp;
+          }
+
+          // Enable send button if IP is present
+          updateSendButton();
+
+        } catch (err) {
+          console.error("PKG read error:", err);
+          showStatus(
+            readStatus,
+            "❌ " + err.message +
+            "\n\nTip: the PKG server must allow cross‑origin requests (CORS). " +
+            "If it does not, you can host the PKG on a local server that sends " +
+            "the Access-Control-Allow-Origin header.",
+            "error"
+          );
+        } finally {
+          setLoading(readPkgBtn, readBtnText, readSpinner, false, "Read PKG Info");
+        }
+      }
+
+      // ── Send logic ──────────────────────────────────────────────────
+      function updateSendButton() {
+        const ip = consoleIp.value.trim();
+        const port = parseInt(consolePort.value, 10);
+        const validIp = /^(\d{1,3}\.){3}\d{1,3}$/.test(ip) ||
+                        /^[a-zA-Z0-9.-]+$/.test(ip);
+        const validPort = port > 0 && port <= 65535;
+        sendBtn.disabled = !(parsedPkg && validIp && validPort);
+      }
+
+      /**
+       * Send the PKG to the console.
+       *
+       * The console receiver (e.g. Remote Package Installer on PS4, or
+       * etaHEN on PS5) typically exposes an HTTP endpoint that accepts a
+       * JSON payload with the download URL.  The console then downloads
+       * the PKG directly from the given URL.
+       *
+       * This is the standard approach used by tools such as DirectPackageInstaller
+       * and PKG Sender.  The PC acts as a "URL relay": it tells the console
+       * where to download the PKG from, and the console handles the rest.
+       *
+       * For a purely local file, you would instead run a small HTTP server
+       * on your PC that serves the PKG, and pass that local URL to the console.
+       */
+      async function handleSend() {
+        if (!parsedPkg) return;
+
+        const ip   = consoleIp.value.trim();
+        const port = parseInt(consolePort.value, 10);
+
+        if (!ip || !port) {
+          showStatus(sendStatus, "Please enter a valid console IP and port.", "error");
+          return;
+        }
+
+        // Persist IP for next time
+        localStorage.setItem("pkgSender_consoleIp", ip);
+
+        hideStatus(sendStatus);
+        progressBar.classList.remove("visible");
+        progressFill.style.width = "0%";
+        setLoading(sendBtn, sendBtnText, sendSpinner, true, "Send to Console");
+
+        try {
+          // Build the console API endpoint.
+          // Remote Package Installer on PS4 uses:
+          //   POST http://<ip>:12800/api/install
+          //   Body: { "url": "<pkg-url>" }
+          //
+          // etaHEN on PS5 and other receivers use similar endpoints.
+          // We try a few common paths.
+
+          const endpoints = [
+            `http://${ip}:${port}/api/install`,
+            `http://${ip}:${port}/install`,
+            `http://${ip}:${port}/api/pkg/install`
+          ];
+
+          let lastError = null;
+          let success = false;
+
+          for (const endpoint of endpoints) {
+            try {
+              showStatus(sendStatus, `Trying ${endpoint}…`, "info");
+
+              const response = await fetch(endpoint, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ url: parsedPkg.url }),
+                mode: "cors"
+              });
+
+              if (response.ok) {
+                success = true;
+                showStatus(
+                  sendStatus,
+                  "✅ Install request sent to the console! " +
+                  "The console should now download and install the PKG. " +
+                  "Check the console screen for progress.",
+                  "success"
+                );
+                break;
+              } else {
+                lastError = `HTTP ${response.status} ${response.statusText}`;
+              }
+            } catch (e) {
+              lastError = e.message;
+            }
+          }
+
+          if (!success) {
+            // The console may not support CORS from a browser.
+            // In that case, show the manual command.
+            throw new Error(
+              "Could not reach the console API. " + (lastError || "") +
+              "\n\nMost console receivers do not send CORS headers, so a " +
+              "pure browser page cannot POST to them directly. " +
+              "Use the \"Copy console command\" button below to run the " +
+              "equivalent request from a terminal, or use a desktop tool " +
+              "such as PKG Sender or DirectPackageInstaller."
+            );
+          }
+
+        } catch (err) {
+          console.error("Send error:", err);
+          showStatus(
+            sendStatus,
+            "❌ " + err.message,
+            "error"
+          );
+
+          // Offer a copy‑paste fallback
+          const fallback = document.createElement("button");
+          fallback.className = "btn btn-primary";
+          fallback.style.marginTop = "0.75rem";
+          fallback.textContent = "📋 Copy console command (curl)";
+          fallback.onclick = () => {
+            const cmd =
+              `curl -X POST http://${ip}:${port}/api/install ` +
+              `-H "Content-Type: application/json" ` +
+              `-d '{"url":"${parsedPkg.url}"}'`;
+            navigator.clipboard.writeText(cmd).then(() => {
+              fallback.textContent = "✅ Copied!";
+              setTimeout(() => { fallback.textContent = "📋 Copy console command (curl)"; }, 2000);
+            });
+          };
+          // Remove any previous fallback button
+          const prev = sendStatus.querySelector("button");
+          if (prev) prev.remove();
+          sendStatus.appendChild(fallback);
+
+        } finally {
+          setLoading(sendBtn, sendBtnText, sendSpinner, false, "Send to Console");
+        }
+      }
+
+      // ── Event listeners ─────────────────────────────────────────────
+      readPkgBtn.addEventListener("click", handleReadPkg);
+
+      pkgUrlInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") handleReadPkg();
+      });
+
+      sendBtn.addEventListener("click", handleSend);
+
+      consoleIp.addEventListener("input", updateSendButton);
+      consolePort.addEventListener("input", updateSendButton);
+
+      // Allow pasting a URL and pressing Enter
+      pkgUrlInput.addEventListener("paste", () => {
+        setTimeout(() => {
+          // auto‑read if the pasted content looks like a URL
+          const val = pkgUrlInput.value.trim();
+          if (val.startsWith("http")) handleReadPkg();
+        }, 50);
+      });
+
+    })();
+  </script>
+</body>
+</html>
