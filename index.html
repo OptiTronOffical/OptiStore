@@ -181,6 +181,29 @@ a{color:inherit;text-decoration:none}
 
 .topbar-right{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
 
+/* Sender button — opens sender.html */
+.send-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:0 14px;height:36px;
+  border-radius:11px;
+  border:1px solid rgba(16,185,129,.36);
+  background:var(--ok-soft);
+  color:#6ee7c0;
+  font-size:12.5px;font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:background .18s,border-color .18s,color .18s,transform .18s,box-shadow .18s;
+}
+.send-btn svg{width:15px;height:15px;flex:none}
+.send-btn:hover{
+  background:rgba(16,185,129,.22);
+  border-color:rgba(16,185,129,.62);
+  color:#a7f3d0;
+  transform:translateY(-1px);
+  box-shadow:0 8px 22px -12px rgba(16,185,129,.7);
+}
+.send-btn:active{transform:translateY(0)}
+
 /* Coffee donation button */
 .coffee-btn{
   display:inline-flex;align-items:center;gap:8px;
@@ -1030,6 +1053,8 @@ select option{background:#0b0e16;color:var(--tx)}
   .tab-btn svg{width:15px;height:15px}
   .tg-btn span{display:none}
   .tg-btn{padding:0 11px}
+  .send-btn span{display:none}
+  .send-btn{padding:0 11px}
 }
 
 @media (max-width:760px){
@@ -1054,38 +1079,39 @@ select option{background:#0b0e16;color:var(--tx)}
   .btn{padding:10px 14px}
   .donate-head{padding:22px 18px 18px}
   .donate-body{padding:18px}
-  .pw-banner{font-size:12px}
+  .pw-banner{font-size:11px}
 }
 
 /* ==========================================================================
    19. PASSWORD / LINK NOTICE
    ========================================================================== */
 .pw-banner{
-  display:flex;align-items:center;flex-wrap:wrap;gap:8px;
-  margin:0 0 20px;
-  padding:11px 13px;
-  border-radius:var(--r-md);
-  border:1px solid rgba(245,165,36,.32);
-  background:linear-gradient(135deg,rgba(245,165,36,.13),rgba(245,165,36,.035));
-  font-size:12.5px;line-height:1.5;color:var(--tx-2);
-  box-shadow:0 12px 30px -26px rgba(245,165,36,.9);
+  display:flex;align-items:center;gap:8px;
+  margin:0 0 16px;
+  padding:6px 8px 6px 11px;
+  border-radius:9px;
+  border:1px solid rgba(245,165,36,.24);
+  background:rgba(245,165,36,.06);
+  font-size:11.5px;line-height:1.4;
+  color:var(--tx-3);
+  box-shadow:0 10px 26px -26px rgba(245,165,36,.9);
 }
 .pw-banner.hidden{display:none}
-.pw-banner .pw-ico{flex:none;font-size:15px;line-height:1}
-.pw-banner .pw-txt{flex:1 1 240px;min-width:0}
-.pw-banner b{color:#f8d488;font-weight:700}
+.pw-banner .pw-ico{flex:none;font-size:12px;line-height:1;opacity:.85}
+.pw-banner .pw-txt{flex:1 1 auto;min-width:0}
+.pw-banner b{color:#f8d488;font-weight:600}
 .pw-banner .pw-x{
-  width:26px;height:26px;flex:none;margin-left:auto;
-  border-radius:8px;
-  border:1px solid rgba(245,165,36,.28);
-  background:rgba(0,0,0,.26);
-  color:#d9b378;
-  font-size:11px;
+  width:22px;height:22px;flex:none;margin-left:4px;
+  border-radius:6px;
+  border:1px solid rgba(245,165,36,.2);
+  background:rgba(0,0,0,.18);
+  color:#b8965e;
+  font-size:10px;
   display:grid;place-items:center;
   cursor:pointer;
   transition:background .18s,color .18s,border-color .18s;
 }
-.pw-banner .pw-x:hover{background:rgba(245,165,36,.24);color:#ffe6b3;border-color:rgba(245,165,36,.55)}
+.pw-banner .pw-x:hover{background:rgba(245,165,36,.2);color:#ffe6b3;border-color:rgba(245,165,36,.5)}
 
 .tip.pw{
   border-color:rgba(245,165,36,.34);
@@ -1094,19 +1120,19 @@ select option{background:#0b0e16;color:var(--tx)}
 .tip.pw b{color:#fcd34d}
 
 .pw-chip{
-  display:inline-flex;align-items:center;gap:6px;
+  display:inline-flex;align-items:center;gap:4px;
   margin:0 2px;
-  padding:2px 5px 2px 9px;
-  border-radius:8px;
-  border:1px solid rgba(245,165,36,.44);
-  background:rgba(0,0,0,.38);
+  padding:1px 4px 1px 7px;
+  border-radius:6px;
+  border:1px solid rgba(245,165,36,.36);
+  background:rgba(0,0,0,.3);
   vertical-align:middle;
   white-space:nowrap;
 }
 .pw-chip code{
   font-family:var(--m);
-  font-size:11.5px;font-weight:500;
-  letter-spacing:.05em;
+  font-size:11px;font-weight:500;
+  letter-spacing:.03em;
   background:none;
   padding:0;
   border-radius:0;
@@ -1115,16 +1141,16 @@ select option{background:#0b0e16;color:var(--tx)}
 }
 .pw-copy{
   display:inline-grid;place-items:center;
-  width:21px;height:21px;flex:none;
-  border-radius:6px;
-  border:1px solid rgba(245,165,36,.36);
-  background:rgba(245,165,36,.14);
+  width:18px;height:18px;flex:none;
+  border-radius:5px;
+  border:1px solid rgba(245,165,36,.3);
+  background:rgba(245,165,36,.1);
   color:#fcd34d;
-  font-size:10px;line-height:1;
+  font-size:9px;line-height:1;
   cursor:pointer;
   transition:background .18s,color .18s,border-color .18s,transform .18s;
 }
-.pw-copy:hover{background:rgba(245,165,36,.3);color:#ffe6b3;border-color:rgba(245,165,36,.62)}
+.pw-copy:hover{background:rgba(245,165,36,.26);color:#ffe6b3;border-color:rgba(245,165,36,.56)}
 .pw-copy:active{transform:scale(.94)}
 
 /* ==========================================================================
@@ -1170,6 +1196,13 @@ select option{background:#0b0e16;color:var(--tx)}
   </nav>
 
   <div class="topbar-right">
+    <a class="send-btn" href="sender.html" title="Open the PKG Sender — deliver packages to your console">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M22 2 11 13"/>
+        <path d="M22 2 15 22l-4-9-9-4Z"/>
+      </svg>
+      <span>Sender</span>
+    </a>
     <button class="coffee-btn" id="coffeeBtn" type="button" title="Donate me a coffee — Ethereum">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M17 8h1a4 4 0 1 1 0 8h-1"/>
@@ -1230,11 +1263,11 @@ select option{background:#0b0e16;color:var(--tx)}
       <div class="kinds-bar" id="libKinds"><span class="kb-label">Kind</span></div>
     </div>
 
-    <!-- Password notice -->
+    <!-- Password notice — compact -->
     <div class="pw-banner" id="pwBanner" role="note">
       <span class="pw-ico" aria-hidden="true">🔑</span>
       <span class="pw-txt">
-        If any download link from this catalog asks for a password, it's
+        If a download link asks for a password, use
         <span class="pw-chip">
           <code>SuperPSX</code>
           <button class="pw-copy" type="button" data-copy="SuperPSX" title="Copy password" aria-label="Copy password">📋</button>
@@ -1414,6 +1447,14 @@ select option{background:#0b0e16;color:var(--tx)}
 
       <div class="step">
         <div class="num">5</div>
+        <div class="txt">
+          <b>Send to your console</b>
+          Click <b>Sender</b> in the top bar to open the built-in PKG Sender page — paste a package URL, read its info, and deliver it to your PS4 / PS5 over the local network.
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="num">6</div>
         <div class="txt">
           <b>Password-protected links</b>
           Some external host links may ask for a password. If they do, enter
