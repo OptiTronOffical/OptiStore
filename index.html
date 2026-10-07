@@ -511,6 +511,7 @@ select option{background:#0b0e16;color:var(--tx)}
 }
 .ribbon.reg,.ribbon.cat{color:#a5b4fc;border-color:rgba(124,92,255,.42);background:rgba(13,10,40,.84)}
 .ribbon.ok{color:#6ee7c0;border-color:rgba(16,185,129,.42);background:rgba(4,35,26,.84)}
+.ribbon.updated{color:#67e8f9;border-color:rgba(6,182,212,.42);background:rgba(4,30,38,.84)}
 
 .info{
   display:flex;flex-direction:column;gap:9px;
@@ -1147,6 +1148,7 @@ select option{background:#0b0e16;color:var(--tx)}
       </div>
       <select id="libRegion" title="Region" aria-label="Filter by region"><option value="all">All Regions</option></select>
       <select id="libSort" title="Sort" aria-label="Sort">
+        <option value="updated" selected>Recently updated</option>
         <option value="name">Name A–Z</option>
         <option value="name-desc">Name Z–A</option>
         <option value="files">Most packages</option>
@@ -1393,8 +1395,18 @@ select option{background:#0b0e16;color:var(--tx)}
      ===================================================================== */
   var LIBRARY_CATALOGS = ['export_with_covers.json', 'games.json'];
   var LS_VIEW          = 'opti_view';
+  var LS_SORT          = 'opti_sort_v1';
 
   var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
+
+  var TIMESTAMP_FIELDS = [
+    'updated_at','updatedAt','last_updated','lastUpdated',
+    'modified','modifed','date','timestamp','updated',
+    'release_date','released_at','releasedAt'
+  ];
+
+  var SORT_VALUES = ['updated','name','name-desc','files','size','size-asc'];
+  var DEFAULT_SORT = 'updated';
 
   var D = {};
 
@@ -1457,6 +1469,54 @@ select option{background:#0b0e16;color:var(--tx)}
     if (size == null || size === '') return '';
     if (typeof size === 'string') return size;
     return fmtBytes(size);
+  }
+
+  /* ── Timestamp helpers ─────────────────────────────────────────── */
+  function pickTimestamp(obj) {
+    if (!obj || typeof obj !== 'object') return null;
+    for (var i = 0; i < TIMESTAMP_FIELDS.length; i++) {
+      var v = obj[TIMESTAMP_FIELDS[i]];
+      if (v != null && v !== '') return v;
+    }
+    return null;
+  }
+
+  function parseTimestamp(ts) {
+    if (ts == null || ts === '') return null;
+    var d;
+    if (typeof ts === 'number') d = new Date(ts < 1e12 ? ts * 1000 : ts);
+    else d = new Date(ts);
+    if (isNaN(d.getTime())) return null;
+    return d;
+  }
+
+  function relTime(d) {
+    if (!d) return '';
+    var diff = Date.now() - d.getTime();
+    if (diff < 0) return 'just now';
+    var mins = Math.floor(diff / 60000);
+    if (mins < 1) return 'just now';
+    if (mins < 60) return mins + 'm ago';
+    var hours = Math.floor(mins / 60);
+    if (hours < 24) return hours + 'h ago';
+    var days = Math.floor(hours / 24);
+    if (days === 1) return 'yesterday';
+    if (days < 30) return days + 'd ago';
+    var months = Math.floor(days / 30);
+    if (months < 12) return months + 'mo ago';
+    return Math.floor(months / 12) + 'y ago';
+  }
+
+  function loadSortPref() {
+    try {
+      var v = localStorage.getItem(LS_SORT);
+      if (v && SORT_VALUES.indexOf(v) !== -1) return v;
+    } catch (e) {}
+    return DEFAULT_SORT;
+  }
+  function saveSortPref(v) {
+    if (SORT_VALUES.indexOf(v) === -1) return;
+    try { localStorage.setItem(LS_SORT, v); } catch (e) {}
   }
 
   function copyText(t) {
@@ -1584,7 +1644,7 @@ select option{background:#0b0e16;color:var(--tx)}
      ===================================================================== */
   var state = {
     view: 'library',
-    library: { catalog: [], filtered: [], query: '', region: 'all', kind: 'all', sort: 'name' },
+    library: { catalog: [], filtered: [], query: '', region: 'all', kind: 'all', sort: DEFAULT_SORT },
     currentLibraryGame: null
   };
 
@@ -1651,25 +1711,33 @@ select option{background:#0b0e16;color:var(--tx)}
       region: pick(link, ['region', 'reg']) || '',
       minFw: pick(link, ['min_fw', 'minFirmware', 'fw']) || '',
       host: host,
-      direct: isDirectPkg(url)
+      direct: isDirectPkg(url),
+      updatedAt: pickTimestamp(link) || ''
     };
   }
 
   function finalizeGame(g) {
     var bytes = 0, direct = 0, regions = {}, kinds = [], seen = {};
+    var maxUpdated = parseTimestamp(g.updatedAt);
+
     for (var i = 0; i < g.files.length; i++) {
       var f = g.files[i];
       bytes += parseSizeToBytes(f.size);
       if (f.direct) direct++;
       if (f.region) regions[f.region] = 1;
       if (!seen[f.kind]) { seen[f.kind] = 1; kinds.push(f.kind); }
+
+      var ft = parseTimestamp(f.updatedAt);
+      if (ft && (!maxUpdated || ft > maxUpdated)) maxUpdated = ft;
     }
     if (g.region) regions[g.region] = 1;
+
     g._bytes  = bytes;
     g._direct = direct;
     g._kinds  = kinds;
     g._regions = Object.keys(regions);
     g._regionMap = regions;
+    g._updated = maxUpdated;
     return g;
   }
 
@@ -1697,6 +1765,7 @@ select option{background:#0b0e16;color:var(--tx)}
       region: pick(rec, ['region', 'reg']) || primary.region || '',
       source: pick(rec, ['source']) || '',
       cover: pick(rec, ['cover_image', 'cover_url', 'cover']) || '',
+      updatedAt: pickTimestamp(rec) || '',
       files: files
     });
   }
@@ -1725,6 +1794,7 @@ select option{background:#0b0e16;color:var(--tx)}
           region: m.region || '',
           source: m.source || '',
           cover: m.cover_url || '',
+          updatedAt: pickTimestamp(m) || '',
           files: [{
             url: url,
             label: m.name ? (m.name + ' Package') : 'PKG Package',
@@ -1736,7 +1806,8 @@ select option{background:#0b0e16;color:var(--tx)}
             region: m.region || '',
             minFw: m.min_fw || '',
             host: hostOf(url),
-            direct: isDirectPkg(url)
+            direct: isDirectPkg(url),
+            updatedAt: pickTimestamp(m) || ''
           }]
         }));
       }
@@ -1831,6 +1902,7 @@ select option{background:#0b0e16;color:var(--tx)}
       html += '<option value="' + esc(list[k]) + '">' + esc(list[k]) + '</option>';
     }
     D.libRegion.innerHTML = html;
+    D.libRegion.value = state.library.region;
   }
 
   function buildLibKindsBar() {
@@ -1846,14 +1918,14 @@ select option{background:#0b0e16;color:var(--tx)}
     }
 
     var html = '<span class="kb-label">Kind</span>' +
-      '<button class="kind-btn on" data-kind="all" type="button"><span class="e">🗂️</span>All<span class="n">' + total + '</span></button>';
+      '<button class="kind-btn' + (state.library.kind === 'all' ? ' on' : '') + '" data-kind="all" type="button"><span class="e">🗂️</span>All<span class="n">' + total + '</span></button>';
 
     for (var oi = 0; oi < KIND_ORDER.length; oi++) {
       var kind = KIND_ORDER[oi];
       var n = counts[kind] || 0;
       if (!n) continue;
       var km = kindMeta(kind);
-      html += '<button class="kind-btn" data-kind="' + kind + '" type="button">' +
+      html += '<button class="kind-btn' + (state.library.kind === kind ? ' on' : '') + '" data-kind="' + kind + '" type="button">' +
               '<span class="e">' + km.emoji + '</span>' + km.label +
               '<span class="n">' + n + '</span></button>';
     }
@@ -1885,7 +1957,14 @@ select option{background:#0b0e16;color:var(--tx)}
     }
 
     var sort = L.sort;
-    if (sort === 'name') {
+    if (sort === 'updated') {
+      out.sort(function (a, b) {
+        var ad = a._updated ? a._updated.getTime() : 0;
+        var bd = b._updated ? b._updated.getTime() : 0;
+        if (bd !== ad) return bd - ad;
+        return (a.name || '').localeCompare(b.name || '');
+      });
+    } else if (sort === 'name') {
       out.sort(function (a, b) { return (a.name || '').localeCompare(b.name || ''); });
     } else if (sort === 'name-desc') {
       out.sort(function (a, b) { return (b.name || '').localeCompare(a.name || ''); });
@@ -1945,6 +2024,7 @@ select option{background:#0b0e16;color:var(--tx)}
             : '') +
           '<div class="ribbons">' +
             (g.region ? '<span class="ribbon reg">' + esc(g.region) + '</span>' : '') +
+            (g._updated ? '<span class="ribbon updated">' + esc(relTime(g._updated)) + '</span>' : '') +
             (g._direct ? '<span class="ribbon ok">' + g._direct + ' direct</span>' : '') +
           '</div>' +
         '</div>' +
@@ -1982,10 +2062,11 @@ select option{background:#0b0e16;color:var(--tx)}
 
   function resetLibraryFilters() {
     var L = state.library;
-    L.query = ''; L.region = 'all'; L.kind = 'all'; L.sort = 'name';
+    L.query = ''; L.region = 'all'; L.kind = 'all'; L.sort = DEFAULT_SORT;
     D.libSearch.value = '';
     D.libRegion.value = 'all';
-    D.libSort.value = 'name';
+    D.libSort.value = DEFAULT_SORT;
+    saveSortPref(DEFAULT_SORT);
     var btns = D.libKinds.querySelectorAll('.kind-btn');
     for (var i = 0; i < btns.length; i++) {
       btns[i].classList.toggle('on', btns[i].getAttribute('data-kind') === 'all');
@@ -2014,12 +2095,14 @@ select option{background:#0b0e16;color:var(--tx)}
     var subParts = [];
     if (g.titleId) subParts.push(g.titleId);
     if (g.source) subParts.push('Source: ' + g.source);
+    if (g._updated) subParts.push('Updated ' + relTime(g._updated));
     D.libSub.textContent = subParts.join(' · ') || '—';
 
     var tags = [];
     if (g.region) tags.push({ t: g.region, c: 'b' });
     tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's') });
     if (g._direct) tags.push({ t: g._direct + ' direct', c: 'g' });
+    if (g._updated) tags.push({ t: '🕒 ' + relTime(g._updated) });
 
     var extraRegions = [];
     for (var r = 0; r < g._regions.length; r++) {
@@ -2106,6 +2189,7 @@ select option{background:#0b0e16;color:var(--tx)}
     });
     D.libSort.addEventListener('change', function () {
       state.library.sort = this.value;
+      saveSortPref(this.value);
       applyLibrary();
     });
 
@@ -2218,6 +2302,11 @@ select option{background:#0b0e16;color:var(--tx)}
 
     /* Ensure displayed address matches config */
     if (D.ethAddress) D.ethAddress.textContent = ETH_ADDRESS;
+
+    /* Restore preferred sort order (defaults to "Recently updated") */
+    var savedSort = loadSortPref();
+    state.library.sort = savedSort;
+    if (D.libSort) D.libSort.value = savedSort;
 
     wireImageHandlers();
     wireTabs();
