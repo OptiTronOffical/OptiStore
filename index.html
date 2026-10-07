@@ -1088,13 +1088,13 @@ select option{background:#0b0e16;color:var(--tx)}
       </svg>
       <span>PS4 Library</span>
     </button>
-    <button class="tab-btn" data-view="ps5" type="button" title="PS5 Library">
+    <a class="tab-btn" href="ps5.html" title="PS5 Library">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
         <path d="M6 8h12a3 3 0 0 1 3 3v4a3 3 0 0 1-3 3h-1l-2-3h-6l-2 3H6a3 3 0 0 1-3-3v-4a3 3 0 0 1 3-3z"/>
         <path d="M8 12v2M7 13h2M16 12.5h.01M18 14.5h.01"/>
       </svg>
       <span>PS5 Library</span>
-    </button>
+    </a>
   </nav>
 
   <div class="topbar-right">
@@ -1160,42 +1160,6 @@ select option{background:#0b0e16;color:var(--tx)}
     <div class="grid" id="libGrid"></div>
   </section>
 
-  <!-- ======================= PS5 LIBRARY ======================= -->
-  <section class="view" data-view="ps5">
-    <div class="hero">
-      <h1>PS5 <em>package library</em></h1>
-      <p>Browse the PS5 catalog and grab download links for every game, update, and DLC.</p>
-      <div class="stats">
-        <div class="stat"><span class="v" id="statPs5Total">—</span><span class="k">Packages</span></div>
-        <div class="stat"><span class="v g" id="statPs5Size">—</span><span class="k">Total Size</span></div>
-        <div class="stat"><span class="v" id="statPs5Game">—</span><span class="k">Games</span></div>
-        <div class="stat"><span class="v" id="statPs5Upd">—</span><span class="k">Updates</span></div>
-        <div class="stat"><span class="v" id="statPs5Other">—</span><span class="k">Other</span></div>
-      </div>
-    </div>
-
-    <div class="toolbar">
-      <div class="search-wrap">
-        <span class="ico" aria-hidden="true">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/>
-          </svg>
-        </span>
-        <input type="search" id="ps5Search" placeholder="Search by title or title ID…" autocomplete="off" spellcheck="false" aria-label="Search PS5 library">
-      </div>
-      <select id="ps5Cat" title="Category" aria-label="Filter by category"><option value="all">All Categories</option></select>
-      <select id="ps5Sort" title="Sort" aria-label="Sort">
-        <option value="name">Name A–Z</option>
-        <option value="name-desc">Name Z–A</option>
-        <option value="size">Largest first</option>
-        <option value="size-asc">Smallest first</option>
-      </select>
-      <span class="count" id="ps5Count">Loading…</span>
-    </div>
-
-    <div class="grid" id="ps5Grid"></div>
-  </section>
-
   <footer class="foot">
     <div>OptiStore · unofficial fan library · run locally over HTTP</div>
     <div class="foot-links">
@@ -1254,27 +1218,6 @@ select option{background:#0b0e16;color:var(--tx)}
       </div>
       <div class="sec-title">Package files <span class="mini" id="libFileCount"></span></div>
       <div class="files" id="libFiles"></div>
-    </div>
-  </div>
-</div>
-
-<!-- ======================= PS5 GAME MODAL ======================= -->
-<div class="overlay" id="ps5Modal" role="dialog" aria-modal="true" aria-labelledby="ps5Title">
-  <div class="modal">
-    <button class="modal-close" type="button" data-close="ps5Modal" aria-label="Close">✕</button>
-    <div class="gm-head">
-      <div class="gm-cover" id="ps5CoverWrap"></div>
-      <div class="gm-meta">
-        <h2 id="ps5Title">—</h2>
-        <div class="sub" id="ps5Sub">—</div>
-        <div class="gm-tags" id="ps5Tags"></div>
-      </div>
-    </div>
-    <div class="gm-body">
-      <div class="sec-title" id="ps5DescTitle" style="display:none">Description</div>
-      <div class="tip" id="ps5Desc" style="display:none"></div>
-      <div class="sec-title">Download links <span class="mini" id="ps5LinkCount"></span></div>
-      <div class="files" id="ps5Links"></div>
     </div>
   </div>
 </div>
@@ -1352,7 +1295,7 @@ select option{background:#0b0e16;color:var(--tx)}
         <div class="num">2</div>
         <div class="txt">
           <b>Browse the library</b>
-          Switch between the <b>PS4 Library</b> and <b>PS5 Library</b> tabs. Use the search bar, region / category filters, and sort options to find what you need.
+          Use the search bar, region filter, kind chips, and sort options to find what you need. The <b>PS5 Library</b> tab opens a separate page.
         </div>
       </div>
 
@@ -1375,8 +1318,8 @@ select option{background:#0b0e16;color:var(--tx)}
       <div class="tip" style="margin:0">
         <span class="ico">📁</span>
         <span>
-          Catalogs are read from <b>export_with_covers.json</b> (or <b>games.json</b>) for PS4 and <b>ps5-catalog.json</b> for PS5.
-          Drop them next to this file — the page handles missing files gracefully.
+          The catalog is read from <b>export_with_covers.json</b> (or <b>games.json</b>).
+          Drop it next to this file — the page handles a missing file gracefully.
         </span>
       </div>
 
@@ -1449,7 +1392,6 @@ select option{background:#0b0e16;color:var(--tx)}
      CONFIG
      ===================================================================== */
   var LIBRARY_CATALOGS = ['export_with_covers.json', 'games.json'];
-  var PS5_CATALOGS     = ['ps5-catalog.json'];
   var LS_VIEW          = 'opti_view';
 
   var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
@@ -1461,12 +1403,8 @@ select option{background:#0b0e16;color:var(--tx)}
       'toasts','helpBtn','coffeeBtn','footCoffee','helpCoffee',
       'libSearch','libRegion','libSort','libCount','libKinds','libGrid',
       'statTitles','statPackages','statLibSize','statUSA','statEUR',
-      'ps5Search','ps5Cat','ps5Sort','ps5Count','ps5Grid',
-      'statPs5Total','statPs5Size','statPs5Game','statPs5Upd','statPs5Other',
       'libModal','libCoverWrap','libTitle','libSub','libTags','libFiles',
       'libFileCount','libCopyAll',
-      'ps5Modal','ps5CoverWrap','ps5Title','ps5Sub','ps5Tags','ps5Links',
-      'ps5LinkCount','ps5DescTitle','ps5Desc',
       'donateModal','ethAddress','copyEth',
       'helpModal'
     ];
@@ -1614,7 +1552,7 @@ select option{background:#0b0e16;color:var(--tx)}
   }
 
   /* =====================================================================
-     KIND META (PS4)
+     KIND META
      ===================================================================== */
   var KIND_META = {
     base:   { label: 'Base',   emoji: '🎮' },
@@ -1647,9 +1585,7 @@ select option{background:#0b0e16;color:var(--tx)}
   var state = {
     view: 'library',
     library: { catalog: [], filtered: [], query: '', region: 'all', kind: 'all', sort: 'name' },
-    ps5:     { catalog: [], filtered: [], query: '', category: 'all', sort: 'name' },
-    currentLibraryGame: null,
-    currentPs5Game: null
+    currentLibraryGame: null
   };
 
   /* =====================================================================
@@ -1695,7 +1631,7 @@ select option{background:#0b0e16;color:var(--tx)}
   }
 
   /* =====================================================================
-     PS4 LIBRARY — NORMALIZE
+     LIBRARY — NORMALIZE
      ===================================================================== */
   function makeLibraryFile(link) {
     if (!link) return null;
@@ -1820,56 +1756,7 @@ select option{background:#0b0e16;color:var(--tx)}
   }
 
   /* =====================================================================
-     PS5 LIBRARY — NORMALIZE
-     ===================================================================== */
-  function normalizePs5(raw) {
-    var list = [];
-    if (!raw) return list;
-    var src = null;
-
-    if (Array.isArray(raw)) src = raw;
-    else if (raw && Array.isArray(raw.packages)) src = raw.packages;
-    else if (raw && raw.packages && typeof raw.packages === 'object') {
-      src = [];
-      var kk = Object.keys(raw.packages);
-      for (var i = 0; i < kk.length; i++) src.push(raw.packages[kk[i]]);
-    } else if (raw && raw.DATA && typeof raw.DATA === 'object') {
-      src = [];
-      var dk = Object.keys(raw.DATA);
-      for (var j = 0; j < dk.length; j++) src.push(raw.DATA[dk[j]]);
-    }
-    if (!src) return list;
-
-    for (var k = 0; k < src.length; k++) {
-      var m = src[k] || {};
-      var links = Array.isArray(m.downloadLinks) ? m.downloadLinks : [];
-      var mapped = [];
-      for (var li = 0; li < links.length; li++) {
-        var l = links[li] || {};
-        mapped.push({
-          name: l.name || '',
-          url: l.url || '',
-          group: l.group || '',
-          version: l.version || '',
-          mirror: l.mirror || ''
-        });
-      }
-      list.push({
-        titleId: m.titleId || m.title_id || '',
-        title: m.title || m.name || 'Untitled',
-        version: m.version || '',
-        category: (m.category || '').toLowerCase(),
-        posterUrl: m.posterUrl || m.poster_url || '',
-        description: m.description || '',
-        downloadLinks: mapped,
-        sizeBytes: Number(m.sizeBytes) || 0
-      });
-    }
-    return list;
-  }
-
-  /* =====================================================================
-     PS4 LIBRARY — LOAD / FILTER / RENDER
+     LIBRARY — LOAD / FILTER / RENDER
      ===================================================================== */
   function skeletonHTML(n) {
     var out = '';
@@ -1886,7 +1773,7 @@ select option{background:#0b0e16;color:var(--tx)}
         D.libGrid.innerHTML =
           '<div class="empty">' +
             '<div class="big">📡</div>' +
-            '<b>No PS4 catalog found</b>' +
+            '<b>No catalog found</b>' +
             '<small>Place <code>export_with_covers.json</code> (or <code>games.json</code>) next to this file.</small>' +
           '</div>';
         D.libCount.textContent = '0';
@@ -2192,242 +2079,14 @@ select option{background:#0b0e16;color:var(--tx)}
   }
 
   /* =====================================================================
-     PS5 LIBRARY — LOAD / FILTER / RENDER
-     ===================================================================== */
-  function loadPs5() {
-    D.ps5Grid.innerHTML = skeletonHTML(12);
-    fetchJSON(PS5_CATALOGS, function (raw, url) {
-      if (!raw) {
-        D.ps5Grid.innerHTML =
-          '<div class="empty">' +
-            '<div class="big">📡</div>' +
-            '<b>No PS5 catalog found</b>' +
-            '<small>Place <code>ps5-catalog.json</code> next to this file to populate this view.</small>' +
-          '</div>';
-        D.ps5Count.textContent = '0';
-        return;
-      }
-      var list = normalizePs5(raw);
-      if (!list.length) {
-        D.ps5Grid.innerHTML =
-          '<div class="empty">' +
-            '<div class="big">📭</div>' +
-            '<b>PS5 catalog is empty</b>' +
-            '<small><code>' + esc(url) + '</code> loaded but no packages were found.</small>' +
-          '</div>';
-        D.ps5Count.textContent = '0';
-        return;
-      }
-      state.ps5.catalog = list;
-      buildPs5Stats();
-      buildPs5CategoryFilter();
-      applyPs5();
-    });
-  }
-
-  function buildPs5Stats() {
-    var cat = state.ps5.catalog;
-    var totalBytes = 0, game = 0, upd = 0, other = 0;
-    for (var i = 0; i < cat.length; i++) {
-      totalBytes += cat[i].sizeBytes || 0;
-      var c = cat[i].category;
-      if (c === 'game') game++;
-      else if (c === 'update' || c === 'upd') upd++;
-      else other++;
-    }
-    D.statPs5Total.textContent = cat.length.toLocaleString();
-    D.statPs5Size.textContent  = fmtBytes(totalBytes);
-    D.statPs5Game.textContent  = game.toLocaleString();
-    D.statPs5Upd.textContent   = upd.toLocaleString();
-    D.statPs5Other.textContent = other.toLocaleString();
-  }
-
-  function buildPs5CategoryFilter() {
-    var seen = {};
-    for (var i = 0; i < state.ps5.catalog.length; i++) {
-      var c = state.ps5.catalog[i].category;
-      if (c) seen[c] = 1;
-    }
-    var list = Object.keys(seen).sort();
-    var html = '<option value="all">All Categories</option>';
-    for (var j = 0; j < list.length; j++) {
-      var label = list[j].charAt(0).toUpperCase() + list[j].slice(1);
-      html += '<option value="' + esc(list[j]) + '">' + esc(label) + '</option>';
-    }
-    D.ps5Cat.innerHTML = html;
-  }
-
-  function applyPs5() {
-    var P = state.ps5;
-    var q = P.query;
-    var cat = P.catalog;
-    var out = [];
-
-    for (var i = 0; i < cat.length; i++) {
-      var g = cat[i];
-      if (q) {
-        var t = (g.title || '').toLowerCase();
-        var tid = (g.titleId || '').toLowerCase();
-        if (t.indexOf(q) < 0 && tid.indexOf(q) < 0) continue;
-      }
-      if (P.category !== 'all' && g.category !== P.category) continue;
-      out.push(g);
-    }
-
-    var sort = P.sort;
-    if (sort === 'name') {
-      out.sort(function (a, b) { return (a.title || '').localeCompare(b.title || ''); });
-    } else if (sort === 'name-desc') {
-      out.sort(function (a, b) { return (b.title || '').localeCompare(a.title || ''); });
-    } else if (sort === 'size') {
-      out.sort(function (a, b) { return (b.sizeBytes || 0) - (a.sizeBytes || 0); });
-    } else if (sort === 'size-asc') {
-      out.sort(function (a, b) { return (a.sizeBytes || 0) - (b.sizeBytes || 0); });
-    }
-
-    P.filtered = out;
-    renderPs5();
-  }
-
-  function renderPs5() {
-    var P = state.ps5;
-    var grid = D.ps5Grid;
-    var filtered = P.filtered;
-
-    D.ps5Count.textContent = filtered.length.toLocaleString() + ' package' + (filtered.length === 1 ? '' : 's');
-
-    if (!filtered.length) {
-      grid.innerHTML =
-        '<div class="empty">' +
-          '<div class="big">🔍</div>' +
-          '<b>No packages match</b>' +
-          '<small>Try a different search or category filter.</small>' +
-          '<br><button class="act" id="ps5ResetBtn" type="button">Reset filters</button>' +
-        '</div>';
-      var rb = document.getElementById('ps5ResetBtn');
-      if (rb) rb.addEventListener('click', resetPs5Filters);
-      return;
-    }
-
-    var html = '';
-    for (var i = 0; i < filtered.length; i++) {
-      var g = filtered[i];
-      var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
-      var cat = g.category ? g.category.charAt(0).toUpperCase() + g.category.slice(1) : '';
-
-      html += '<div class="card" data-idx="' + i + '" tabindex="0" role="button">' +
-        '<div class="cover">' +
-          '<div class="placeholder" aria-hidden="true">' + esc(initial) + '</div>' +
-          (g.posterUrl
-            ? '<img class="cover-img" src="' + esc(g.posterUrl) + '" alt="" loading="lazy" decoding="async" fetchpriority="low">'
-            : '') +
-          '<div class="ribbons">' +
-            (cat ? '<span class="ribbon cat">' + esc(cat) + '</span>' : '') +
-            (g.version ? '<span class="ribbon ok">v' + esc(g.version) + '</span>' : '') +
-          '</div>' +
-        '</div>' +
-        '<div class="info">' +
-          '<h3>' + esc(g.title) + '</h3>' +
-          '<div class="row">' +
-            '<span>' + esc(g.titleId || '') + '</span>' +
-            '<span>' + fmtBytes(g.sizeBytes) + '</span>' +
-          '</div>' +
-        '</div>' +
-      '</div>';
-    }
-    grid.innerHTML = html;
-  }
-
-  function resetPs5Filters() {
-    var P = state.ps5;
-    P.query = ''; P.category = 'all'; P.sort = 'name';
-    D.ps5Search.value = '';
-    D.ps5Cat.value = 'all';
-    D.ps5Sort.value = 'name';
-    applyPs5();
-    toast('Filters reset', 'ok');
-  }
-
-  function openPs5Game(g) {
-    state.currentPs5Game = g;
-
-    var wrap = D.ps5CoverWrap;
-    wrap.innerHTML = '';
-    var initial = (g.title || '?').trim().charAt(0).toUpperCase() || '?';
-    wrap.textContent = initial;
-    if (g.posterUrl) {
-      var img = document.createElement('img');
-      img.className = 'cover-img';
-      img.alt = '';
-      img.decoding = 'async';
-      img.src = g.posterUrl;
-      wrap.appendChild(img);
-    }
-
-    D.ps5Title.textContent = g.title;
-    D.ps5Sub.textContent = g.titleId || '—';
-
-    var tags = [];
-    if (g.category) tags.push({ t: g.category, c: 'b' });
-    if (g.version) tags.push({ t: 'v' + g.version });
-    tags.push({ t: fmtBytes(g.sizeBytes) });
-    if (g.downloadLinks && g.downloadLinks.length) {
-      tags.push({ t: g.downloadLinks.length + ' link' + (g.downloadLinks.length === 1 ? '' : 's'), c: 'g' });
-    }
-    var tagsHtml = '';
-    for (var i = 0; i < tags.length; i++) {
-      tagsHtml += '<span class="gm-tag ' + (tags[i].c || '') + '">' + esc(tags[i].t) + '</span>';
-    }
-    D.ps5Tags.innerHTML = tagsHtml;
-
-    if (g.description) {
-      D.ps5DescTitle.style.display = '';
-      D.ps5Desc.style.display = '';
-      D.ps5Desc.innerHTML = '<span class="ico">📝</span><span>' + esc(g.description) + '</span>';
-    } else {
-      D.ps5DescTitle.style.display = 'none';
-      D.ps5Desc.style.display = 'none';
-    }
-
-    var links = g.downloadLinks || [];
-    D.ps5LinkCount.textContent = links.length + ' total';
-
-    if (!links.length) {
-      D.ps5Links.innerHTML =
-        '<div class="frow"><div class="fmain"><div class="fname" style="color:var(--tx-3)">No download links available</div></div></div>';
-    } else {
-      var html = '';
-      for (var li = 0; li < links.length; li++) {
-        var l = links[li];
-        var meta = [];
-        if (l.group) meta.push(l.group);
-        if (l.version) meta.push('v' + l.version);
-        if (l.mirror) meta.push(l.mirror);
-
-        html += '<div class="frow" data-kind="pkg">' +
-          '<div class="fmain">' +
-            '<div class="fname">' + esc(l.name || 'Download') + '</div>' +
-            (meta.length ? '<div class="facts"><span class="fact">' + esc(meta.join(' · ')) + '</span></div>' : '') +
-          '</div>' +
-          '<div class="btn-group">' +
-            '<a class="btn primary sm" href="' + esc(l.url) + '" target="_blank" rel="noopener noreferrer">📥 Download</a>' +
-            '<button class="btn ghost sm icon" type="button" data-copy="' + esc(l.url) + '" title="Copy URL" aria-label="Copy URL">📋</button>' +
-          '</div>' +
-        '</div>';
-      }
-      D.ps5Links.innerHTML = html;
-    }
-
-    openModal('ps5Modal');
-  }
-
-  /* =====================================================================
      WIRING
      ===================================================================== */
   function wireTabs() {
     var tabs = document.querySelectorAll('.tab-btn');
     tabButtons = tabs;
     for (var i = 0; i < tabs.length; i++) {
+      var dv = tabs[i].getAttribute('data-view');
+      if (!dv) continue;                 /* external links (ps5.html) keep default navigation */
       tabs[i].addEventListener('click', function () {
         setView(this.getAttribute('data-view'));
       });
@@ -2485,43 +2144,11 @@ select option{background:#0b0e16;color:var(--tx)}
     );
   }
 
-  function wirePs5() {
-    var onSearch = rafDebounce(function (v) {
-      state.ps5.query = v.toLowerCase().trim();
-      applyPs5();
-    }, 120);
-    D.ps5Search.addEventListener('input', function () { onSearch(this.value); });
-
-    D.ps5Cat.addEventListener('change', function () {
-      state.ps5.category = this.value;
-      applyPs5();
-    });
-    D.ps5Sort.addEventListener('change', function () {
-      state.ps5.sort = this.value;
-      applyPs5();
-    });
-
-    D.ps5Links.addEventListener('click', function (e) {
-      var t = e.target;
-      if (!t || !t.closest) return;
-      var copyBtn = t.closest('[data-copy]');
-      if (copyBtn) copyText(copyBtn.getAttribute('data-copy'));
-    });
-
-    wireGridDelegation(
-      D.ps5Grid,
-      function () { return state.ps5.filtered; },
-      openPs5Game
-    );
-  }
-
   function wireDonate() {
-    /* Buttons that open the donation modal */
     var openers = [D.coffeeBtn, D.footCoffee, D.helpCoffee];
     for (var i = 0; i < openers.length; i++) {
       if (openers[i]) {
         openers[i].addEventListener('click', function () {
-          /* Close help modal if we opened from there */
           var helpOpen = D.helpModal && D.helpModal.classList.contains('open');
           if (helpOpen) D.helpModal.classList.remove('open');
           openModal('donateModal');
@@ -2529,7 +2156,6 @@ select option{background:#0b0e16;color:var(--tx)}
       }
     }
 
-    /* Copy wallet address button */
     if (D.copyEth) {
       D.copyEth.addEventListener('click', function () {
         copyText(ETH_ADDRESS);
@@ -2563,8 +2189,7 @@ select option{background:#0b0e16;color:var(--tx)}
       var tag = (e.target && e.target.tagName) || '';
       if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
         e.preventDefault();
-        var el = state.view === 'library' ? D.libSearch : D.ps5Search;
-        if (el) { el.focus(); el.select(); }
+        if (D.libSearch) { D.libSearch.focus(); D.libSearch.select(); }
       }
     });
   }
@@ -2597,7 +2222,6 @@ select option{background:#0b0e16;color:var(--tx)}
     wireImageHandlers();
     wireTabs();
     wireLibrary();
-    wirePs5();
     wireDonate();
     wireModals();
     wireKeyboard();
@@ -2610,7 +2234,6 @@ select option{background:#0b0e16;color:var(--tx)}
     } catch (e) {}
 
     loadLibrary();
-    loadPs5();
   }
 
   if (document.readyState === 'loading') {
