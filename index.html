@@ -1054,10 +1054,81 @@ select option{background:#0b0e16;color:var(--tx)}
   .btn{padding:10px 14px}
   .donate-head{padding:22px 18px 18px}
   .donate-body{padding:18px}
+  .pw-banner{font-size:12px}
 }
 
 /* ==========================================================================
-   19. ACCESSIBILITY
+   19. PASSWORD / LINK NOTICE
+   ========================================================================== */
+.pw-banner{
+  display:flex;align-items:center;flex-wrap:wrap;gap:8px;
+  margin:0 0 20px;
+  padding:11px 13px;
+  border-radius:var(--r-md);
+  border:1px solid rgba(245,165,36,.32);
+  background:linear-gradient(135deg,rgba(245,165,36,.13),rgba(245,165,36,.035));
+  font-size:12.5px;line-height:1.5;color:var(--tx-2);
+  box-shadow:0 12px 30px -26px rgba(245,165,36,.9);
+}
+.pw-banner.hidden{display:none}
+.pw-banner .pw-ico{flex:none;font-size:15px;line-height:1}
+.pw-banner .pw-txt{flex:1 1 240px;min-width:0}
+.pw-banner b{color:#f8d488;font-weight:700}
+.pw-banner .pw-x{
+  width:26px;height:26px;flex:none;margin-left:auto;
+  border-radius:8px;
+  border:1px solid rgba(245,165,36,.28);
+  background:rgba(0,0,0,.26);
+  color:#d9b378;
+  font-size:11px;
+  display:grid;place-items:center;
+  cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s;
+}
+.pw-banner .pw-x:hover{background:rgba(245,165,36,.24);color:#ffe6b3;border-color:rgba(245,165,36,.55)}
+
+.tip.pw{
+  border-color:rgba(245,165,36,.34);
+  background:var(--warn-soft);
+}
+.tip.pw b{color:#fcd34d}
+
+.pw-chip{
+  display:inline-flex;align-items:center;gap:6px;
+  margin:0 2px;
+  padding:2px 5px 2px 9px;
+  border-radius:8px;
+  border:1px solid rgba(245,165,36,.44);
+  background:rgba(0,0,0,.38);
+  vertical-align:middle;
+  white-space:nowrap;
+}
+.pw-chip code{
+  font-family:var(--m);
+  font-size:11.5px;font-weight:500;
+  letter-spacing:.05em;
+  background:none;
+  padding:0;
+  border-radius:0;
+  color:#fcd34d;
+  user-select:all;
+}
+.pw-copy{
+  display:inline-grid;place-items:center;
+  width:21px;height:21px;flex:none;
+  border-radius:6px;
+  border:1px solid rgba(245,165,36,.36);
+  background:rgba(245,165,36,.14);
+  color:#fcd34d;
+  font-size:10px;line-height:1;
+  cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s,transform .18s;
+}
+.pw-copy:hover{background:rgba(245,165,36,.3);color:#ffe6b3;border-color:rgba(245,165,36,.62)}
+.pw-copy:active{transform:scale(.94)}
+
+/* ==========================================================================
+   20. ACCESSIBILITY
    ========================================================================== */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{
@@ -1159,6 +1230,19 @@ select option{background:#0b0e16;color:var(--tx)}
       <div class="kinds-bar" id="libKinds"><span class="kb-label">Kind</span></div>
     </div>
 
+    <!-- Password notice -->
+    <div class="pw-banner" id="pwBanner" role="note">
+      <span class="pw-ico" aria-hidden="true">🔑</span>
+      <span class="pw-txt">
+        If any download link from this catalog asks for a password, it's
+        <span class="pw-chip">
+          <code>SuperPSX</code>
+          <button class="pw-copy" type="button" data-copy="SuperPSX" title="Copy password" aria-label="Copy password">📋</button>
+        </span>
+      </span>
+      <button class="pw-x" type="button" id="pwBannerClose" aria-label="Dismiss password notice" title="Dismiss">✕</button>
+    </div>
+
     <div class="grid" id="libGrid"></div>
   </section>
 
@@ -1216,6 +1300,17 @@ select option{background:#0b0e16;color:var(--tx)}
         <span>
           Install in order — <b>Base</b> first, then the latest <b>Update</b>, then any <b>DLC</b>.
           Direct <b>.pkg</b> files can be downloaded straight from the source; external host links open in a new tab.
+        </span>
+      </div>
+      <div class="tip pw">
+        <span class="ico">🔑</span>
+        <span>
+          If a download link asks for a password, use
+          <span class="pw-chip">
+            <code>SuperPSX</code>
+            <button class="pw-copy" type="button" data-copy="SuperPSX" title="Copy password" aria-label="Copy password">📋</button>
+          </span>
+          — same password for every link in this catalog.
         </span>
       </div>
       <div class="sec-title">Package files <span class="mini" id="libFileCount"></span></div>
@@ -1317,6 +1412,19 @@ select option{background:#0b0e16;color:var(--tx)}
         </div>
       </div>
 
+      <div class="step">
+        <div class="num">5</div>
+        <div class="txt">
+          <b>Password-protected links</b>
+          Some external host links may ask for a password. If they do, enter
+          <span class="pw-chip">
+            <code>SuperPSX</code>
+            <button class="pw-copy" type="button" data-copy="SuperPSX" title="Copy password" aria-label="Copy password">📋</button>
+          </span>
+          — it's the same password for every link in this catalog.
+        </div>
+      </div>
+
       <div class="tip" style="margin:0">
         <span class="ico">📁</span>
         <span>
@@ -1396,8 +1504,13 @@ select option{background:#0b0e16;color:var(--tx)}
   var LIBRARY_CATALOGS = ['export_with_covers.json', 'games.json'];
   var LS_VIEW          = 'opti_view';
   var LS_SORT          = 'opti_sort_v1';
+  var LS_PW_BANNER     = 'opti_pw_banner_hidden_v1';
+  var LS_PW_TOAST      = 'opti_pw_toast_seen_v1';
 
   var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
+
+  /* Password used by external host links in this catalog */
+  var LINK_PASSWORD = 'SuperPSX';
 
   var TIMESTAMP_FIELDS = [
     'updated_at','updatedAt','last_updated','lastUpdated',
@@ -1418,7 +1531,8 @@ select option{background:#0b0e16;color:var(--tx)}
       'libModal','libCoverWrap','libTitle','libSub','libTags','libFiles',
       'libFileCount','libCopyAll',
       'donateModal','ethAddress','copyEth',
-      'helpModal'
+      'helpModal',
+      'pwBanner','pwBannerClose'
     ];
     for (var i = 0; i < ids.length; i++) D[ids[i]] = document.getElementById(ids[i]);
   }
@@ -1519,21 +1633,23 @@ select option{background:#0b0e16;color:var(--tx)}
     try { localStorage.setItem(LS_SORT, v); } catch (e) {}
   }
 
-  function copyText(t) {
+  function copyText(t, okMsg, okKind) {
     if (!t) { toast('Nothing to copy', 'err'); return; }
+    var msg  = okMsg  || 'Copied to clipboard';
+    var kind = okKind || 'ok';
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(t).then(function () {
-        toast('Copied to clipboard', 'ok');
-      }).catch(function () { fallbackCopy(t); });
-    } else { fallbackCopy(t); }
+        toast(msg, kind);
+      }).catch(function () { fallbackCopy(t, msg, kind); });
+    } else { fallbackCopy(t, msg, kind); }
   }
-  function fallbackCopy(t) {
+  function fallbackCopy(t, okMsg, okKind) {
     var ta = document.createElement('textarea');
     ta.value = t;
     ta.style.cssText = 'position:fixed;top:-9999px;opacity:0';
     document.body.appendChild(ta);
     ta.select();
-    try { document.execCommand('copy'); toast('Copied', 'ok'); }
+    try { document.execCommand('copy'); toast(okMsg || 'Copied', okKind || 'ok'); }
     catch (e) { toast('Copy failed', 'err'); }
     document.body.removeChild(ta);
   }
@@ -2103,6 +2219,7 @@ select option{background:#0b0e16;color:var(--tx)}
     tags.push({ t: g.files.length + ' package' + (g.files.length === 1 ? '' : 's') });
     if (g._direct) tags.push({ t: g._direct + ' direct', c: 'g' });
     if (g._updated) tags.push({ t: '🕒 ' + relTime(g._updated) });
+    tags.push({ t: '🔑 ' + LINK_PASSWORD });
 
     var extraRegions = [];
     for (var r = 0; r < g._regions.length; r++) {
@@ -2139,7 +2256,7 @@ select option{background:#0b0e16;color:var(--tx)}
           '<div class="facts">' +
             '<span class="kind ' + f.kind + '"><span class="e">' + fkm.emoji + '</span>' + fkm.label + '</span>' +
             '<span class="tag ' + (f.direct ? 'direct' : 'redirect') + '">' +
-              (f.direct ? '⬇ Direct .pkg' : '↪ External') +
+              (f.direct ? '⬇ Direct .pkg' : '↪ External · pw: ' + esc(LINK_PASSWORD)) +
             '</span>' +
             (f.size ? '<span class="fact size">' + esc(sizeLabel(f.size)) + '</span>' : '') +
             (f.version ? '<span class="fact version">v' + esc(f.version) + '</span>' : '') +
@@ -2205,13 +2322,6 @@ select option{background:#0b0e16;color:var(--tx)}
       applyLibrary();
     });
 
-    D.libFiles.addEventListener('click', function (e) {
-      var t = e.target;
-      if (!t || !t.closest) return;
-      var copyBtn = t.closest('[data-copy]');
-      if (copyBtn) copyText(copyBtn.getAttribute('data-copy'));
-    });
-
     D.libCopyAll.addEventListener('click', function () {
       var g = state.currentLibraryGame;
       if (!g) return;
@@ -2226,6 +2336,49 @@ select option{background:#0b0e16;color:var(--tx)}
       function () { return state.library.filtered; },
       openLibraryGame
     );
+  }
+
+  /* One global handler for every [data-copy] button (URLs + password chips) */
+  function wireCopyButtons() {
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var btn = t.closest('[data-copy]');
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+
+      var val = btn.getAttribute('data-copy');
+      if (btn.classList.contains('pw-copy')) {
+        copyText(val, 'Password "' + val + '" copied', 'coffee');
+      } else {
+        copyText(val);
+      }
+    });
+  }
+
+  function wirePasswordNotice() {
+    /* Restore banner state */
+    if (D.pwBanner) {
+      try {
+        if (localStorage.getItem(LS_PW_BANNER) === '1') D.pwBanner.classList.add('hidden');
+      } catch (e) {}
+    }
+    if (D.pwBannerClose) {
+      D.pwBannerClose.addEventListener('click', function () {
+        if (D.pwBanner) D.pwBanner.classList.add('hidden');
+        try { localStorage.setItem(LS_PW_BANNER, '1'); } catch (e) {}
+      });
+    }
+
+    /* One-time reminder toast */
+    setTimeout(function () {
+      var seen = false;
+      try { seen = localStorage.getItem(LS_PW_TOAST) === '1'; } catch (e) {}
+      if (seen) return;
+      toast('Heads up: if a download link asks for a password, it is "' + LINK_PASSWORD + '"', 'coffee');
+      try { localStorage.setItem(LS_PW_TOAST, '1'); } catch (e) {}
+    }, 1400);
   }
 
   function wireDonate() {
@@ -2311,6 +2464,8 @@ select option{background:#0b0e16;color:var(--tx)}
     wireImageHandlers();
     wireTabs();
     wireLibrary();
+    wireCopyButtons();
+    wirePasswordNotice();
     wireDonate();
     wireModals();
     wireKeyboard();
