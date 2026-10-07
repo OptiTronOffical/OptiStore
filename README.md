@@ -3,6 +3,8 @@
 
 A browser-based front end for browsing PS4 and PS5 package libraries, with direct download links for every base game, update, DLC, and theme.
 
+Now combined both repos, enjoy
+
 ## Screenshots
 <a href="https://postimg.cc/5Yg9sWvK" target="_blank"><img src="https://i.postimg.cc/8cQFP1CG/Screenshot-2026-10-07-00-57-29.png" alt="Screenshot-2026-10-07-00-57-29"></a><br><br>
 <a href="https://postimg.cc/7G9PKr7s" target="_blank"><img src="https://i.postimg.cc/Bb98Qqv0/Screenshot-2026-10-07-00-57-41.png" alt="Screenshot-2026-10-07-00-57-41"></a><br><br>
