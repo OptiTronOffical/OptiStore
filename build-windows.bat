@@ -12,12 +12,7 @@ if errorlevel 1 (
 py -3 -m pip install --upgrade pyinstaller
 if errorlevel 1 goto :failed
 
-py -3 -m PyInstaller --noconfirm --clean --onefile --name OptiStore ^
-  --add-data "index.html;." ^
-  --add-data "export_with_covers.json;." ^
-  --add-data "games.json;." ^
-  --add-data "ps5-catalog.json;." ^
-  server.py
+py -3 build.py
 if errorlevel 1 goto :failed
 
 echo.
