@@ -860,6 +860,7 @@ a{color:inherit;text-decoration:none}
   var CATALOG_ORDER = ['dlps', 'pippo', 'pfs'];
   var LS_ACTIVE_CATALOG = 'ps5_active_catalog_v2';
   var LS_COUNTS = 'ps5_catalog_counts_v2';
+  var LS_SORT_PREF = 'ps5_sort_pref_v1';
 
   var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
   var TG_URL = 'https://t.me/OptiTronOffical';
@@ -882,13 +883,15 @@ a{color:inherit;text-decoration:none}
   var CATEGORY_ORDER = ['game','dlc','update','app','theme','demo'];
 
   var SORT_OPTIONS = [
+    { id: 'updated',    label: 'Recently updated',icon: '🕒' },
     { id: 'name',       label: 'Name A–Z',        icon: '↑A' },
     { id: 'name-desc',  label: 'Name Z–A',        icon: '↓Z' },
     { id: 'category',   label: 'Category',        icon: '≣' },
     { id: 'links',      label: 'Most links',      icon: '⛓' },
-    { id: 'titleid',    label: 'Title ID',        icon: '#' },
-    { id: 'updated',    label: 'Recently updated',icon: '🕒' }
+    { id: 'titleid',    label: 'Title ID',        icon: '#' }
   ];
+
+  var DEFAULT_SORT = 'updated';
 
   var D = {};
   function cacheDom() {
@@ -1011,6 +1014,16 @@ a{color:inherit;text-decoration:none}
   function loadCounts() { try { var v = JSON.parse(localStorage.getItem(LS_COUNTS)||'{}'); return v && typeof v === 'object' ? v : {}; } catch (e) { return {}; } }
   function saveCounts(c) { try { localStorage.setItem(LS_COUNTS, JSON.stringify(c)); } catch (e) {} }
 
+  function loadSortPref() {
+    try {
+      var v = localStorage.getItem(LS_SORT_PREF);
+      if (!v) return DEFAULT_SORT;
+      for (var i = 0; i < SORT_OPTIONS.length; i++) if (SORT_OPTIONS[i].id === v) return v;
+    } catch (e) {}
+    return DEFAULT_SORT;
+  }
+  function saveSortPref(id) { try { localStorage.setItem(LS_SORT_PREF, id); } catch (e) {} }
+
   function extractTimestamp(raw) {
     if (!raw || typeof raw !== 'object') return null;
     for (var i = 0; i < TIMESTAMP_FIELDS.length; i++) { var v = raw[TIMESTAMP_FIELDS[i]]; if (v != null && v !== '') return v; }
@@ -1082,7 +1095,7 @@ a{color:inherit;text-decoration:none}
       query: '',
       categories: [],
       region: '',
-      sort: 'name',
+      sort: loadSortPref(),
       hasLinks: false,
       hasPippo: false,
       hasUpdates: false,
@@ -1466,6 +1479,22 @@ a{color:inherit;text-decoration:none}
     }
   }
 
+  function sortItems(out, s) {
+    if (s === 'name') out.sort(function(a,b){return (a.title||'').localeCompare(b.title||'')});
+    else if (s === 'name-desc') out.sort(function(a,b){return (b.title||'').localeCompare(a.title||'')});
+    else if (s === 'category') out.sort(function(a,b){var c=(a.category||'').localeCompare(b.category||''); if(c!==0) return c; return (a.title||'').localeCompare(b.title||'')});
+    else if (s === 'links') out.sort(function(a,b){return b.links.length - a.links.length});
+    else if (s === 'titleid') out.sort(function(a,b){return (a.titleId||'').localeCompare(b.titleId||'')});
+    else if (s === 'updated') out.sort(function(a,b){
+      var ad = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
+      var bd = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
+      if (isNaN(ad)) ad = 0;
+      if (isNaN(bd)) bd = 0;
+      return bd - ad;
+    });
+    return out;
+  }
+
   function apply() {
     var f = activeFilters(), q = f.query;
     var cats = f.categories || [];
@@ -1499,17 +1528,7 @@ a{color:inherit;text-decoration:none}
       out.push(it);
     }
 
-    var s = f.sort;
-    if (s === 'name') out.sort(function(a,b){return (a.title||'').localeCompare(b.title||'')});
-    else if (s === 'name-desc') out.sort(function(a,b){return (b.title||'').localeCompare(a.title||'')});
-    else if (s === 'category') out.sort(function(a,b){var c=(a.category||'').localeCompare(b.category||''); if(c!==0) return c; return (a.title||'').localeCompare(b.title||'')});
-    else if (s === 'links') out.sort(function(a,b){return b.links.length - a.links.length});
-    else if (s === 'titleid') out.sort(function(a,b){return (a.titleId||'').localeCompare(b.titleId||'')});
-    else if (s === 'updated') out.sort(function(a,b){
-      var ad = a.updatedAt ? new Date(a.updatedAt).getTime() : 0;
-      var bd = b.updatedAt ? new Date(b.updatedAt).getTime() : 0;
-      return bd - ad;
-    });
+    sortItems(out, f.sort);
 
     state.filtered = out;
     render();
@@ -1566,6 +1585,7 @@ a{color:inherit;text-decoration:none}
     var f = activeFilters();
     var fresh = makeDefaultFilters();
     for (var k in fresh) f[k] = fresh[k];
+    f.sort = loadSortPref();
     D.search.value = '';
     apply();
     buildChips();
@@ -2220,6 +2240,7 @@ a{color:inherit;text-decoration:none}
       if (!btn) return;
       var id = btn.getAttribute('data-sort');
       activeFilters().sort = id;
+      saveSortPref(id);
       updateSortLabel();
       renderSortPopover();
       apply();
