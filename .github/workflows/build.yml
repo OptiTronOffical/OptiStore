@@ -1,0 +1,57 @@
+name: Build executables
+
+# Builds standalone OptiStore executables with PyInstaller and uploads them as
+# workflow artifacts (no releases are published). Run it manually from the
+# Actions tab, or let it run on pushes/PRs that touch the launcher.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - server.py
+      - build.py
+      - .github/workflows/build.yml
+  pull_request:
+    paths:
+      - server.py
+      - build.py
+      - .github/workflows/build.yml
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            artifact: OptiStore-windows
+            binary: dist/OptiStore.exe
+          - os: ubuntu-latest
+            artifact: OptiStore-linux
+            binary: dist/OptiStore
+          - os: macos-latest
+            artifact: OptiStore-macos
+            binary: dist/OptiStore
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install PyInstaller
+        run: python -m pip install --upgrade pip pyinstaller
+
+      - name: Build executable
+        run: python build.py
+
+      - name: Upload executable
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact }}
+          path: ${{ matrix.binary }}
+          if-no-files-found: error

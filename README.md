@@ -31,6 +31,7 @@ The PS4 page links to `ps5.html` from its topbar; both pages are self-contained 
 - [Files](#files)
 - [Requirements](#requirements)
 - [Quick start](#quick-start)
+- [Run as a local app](#run-as-a-local-app)
 - [Deploying to the web](#deploying-to-the-web)
 - [Using the PS4 library](#using-the-ps4-library)
 - [Using the PS5 library](#using-the-ps5-library)
@@ -53,6 +54,9 @@ The PS4 page links to `ps5.html` from its topbar; both pages are self-contained 
 | `dlps.json` | DLPSGAME catalog for `ps5.html` | *(you provide)* |
 | `pippo.json` | `.exfat` catalog for `ps5.html` | *(you provide)* |
 | `pfs.json` | PFS catalog for `ps5.html` (bundled per title ID) | *(you provide)* |
+| `server.py` | Local app launcher — serves the pages and fetches the latest catalogs on start | PC |
+| `build.py`, `build-windows.bat`, `build-linux.sh` | Build a standalone executable with PyInstaller | PC |
+| `.github/workflows/build.yml` | GitHub Actions workflow that builds the executables | — |
 | `README.md` | This file | — |
 
 ---
@@ -69,6 +73,12 @@ The PS4 page links to `ps5.html` from its topbar; both pages are self-contained 
 ## Quick start
 
 ### 1. Serve the folder
+
+**OptiStore launcher** (recommended — fetches the latest catalogs, see [Run as a local app](#run-as-a-local-app))
+
+```bash
+python server.py
+```
 
 **Python 3**
 
@@ -102,6 +112,70 @@ http://<PC-LAN-IP>:8000/ps5.html
 ### 3. Drop in your catalogs
 
 Place `export_with_covers.json` (or `games.json`) next to `index.html`, and `dlps.json` / `pippo.json` / `pfs.json` next to `ps5.html`. The pages handle missing files gracefully — each will show a diagnostic panel with a **Choose JSON file** button so you can load a catalog straight from disk without restarting the server.
+
+---
+
+## Run as a local app
+
+`server.py` is a small launcher that serves OptiStore on your computer, opens it
+in your browser, and prints a LAN address so other devices (e.g. your PS4
+browser) on the same network can use it.
+
+### Run from source
+
+Python 3.10 or newer is required. From the project folder:
+
+```bash
+python server.py
+```
+
+| Option | Effect |
+| --- | --- |
+| `--port 8080` | Starting port (default `8000`; the next free port is used if it's busy) |
+| `--no-browser` | Don't open the browser automatically |
+| `--offline` | Don't fetch catalogs; use the local copies only |
+| `--catalog-source <url>` | Base URL to fetch catalogs from (default: this repo's `main` branch) |
+
+Keep the window open while you use the app; press **Ctrl+C** to stop it. If
+Windows Firewall asks, allow access on your private network.
+
+### Always-fresh catalogs
+
+Every time the launcher starts, it downloads the latest catalogs
+(`export_with_covers.json`, `games.json`, `dlps.json`, `pippo.json`, `pfs.json`)
+from the raw files in this repository:
+
+```
+https://raw.githubusercontent.com/OptiTronOffical/OptiStore/main/<file>.json
+```
+
+So updating a JSON in the repo is all it takes — nobody has to rebuild,
+redeploy, or replace files by hand. Downloads are validated as JSON and cached
+in a per-user folder (`%LOCALAPPDATA%\OptiStore\catalogs` on Windows,
+`~/Library/Caches/OptiStore/catalogs` on macOS, `~/.cache/OptiStore/catalogs`
+on Linux); unchanged files are skipped via ETag. If the network is unavailable,
+the last cached copy is used, then the copy shipped with the app.
+
+### Build an executable yourself
+
+No prebuilt executables are published. You can build one in either of two ways.
+
+**With GitHub Actions (no local Python needed).** The
+[`Build executables`](.github/workflows/build.yml) workflow builds OptiStore for
+Windows, Linux, and macOS with PyInstaller. Fork the repo, open the **Actions**
+tab, pick **Build executables**, and click **Run workflow**. When it finishes,
+download `OptiStore-windows`, `OptiStore-linux`, or `OptiStore-macos` from the
+run's **Artifacts** section. The workflow also runs on pushes and pull requests
+that change the launcher.
+
+**Locally.** With Python 3.10+ installed:
+
+- **Windows:** double-click `build-windows.bat` → `dist\OptiStore.exe`
+- **Linux / macOS:** `./build-linux.sh` → `dist/OptiStore`
+
+Both scripts install PyInstaller and run `build.py`, which bundles `index.html`,
+`ps5.html`, and the catalogs into a single file. An executable only runs on the
+OS (and CPU architecture) it was built on.
 
 ---
 
