@@ -46,8 +46,8 @@ The PS4 page links to `ps5.html` from its topbar; both pages are self-contained 
 
 | File | Purpose | Open on |
 | --- | --- | --- |
-| `index.html` | PS4 library browser — filter by region / kind / size, inspect every `.pkg` URL | PC or PS4 |
-| `ps5.html` | PS5 library browser — three catalogs (DLPSGAME, .exfat, PFS), category filters, password help | PC or PS4 |
+| `index.html` | PS4 library browser — filter by region / kind / size, inspect every `.pkg` URL 
+| `ps5.html` | PS5 library browser — three catalogs (DLPSGAME, .exfat, PFS), category filters, password help
 | `export_with_covers.json` | Primary PS4 catalog consumed by `index.html` | *(you provide)* |
 | `games.json` | Fallback PS4 catalog for `index.html` | *(you provide)* |
 | `dlps.json` | DLPSGAME catalog for `ps5.html` | *(you provide)* |
