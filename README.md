@@ -58,23 +58,9 @@ The PS4 page links to `ps5.html` from its topbar; both pages are self-contained 
 ## Requirements
 
 - A modern desktop or console browser (the pages use `content-visibility`, `aspect-ratio`, and ES2015+).
-- A way to serve static files over **HTTP** — Python 3, Node, or any web host.
-- *Optional:* GoldHEN + Remote Package Installer on the PS4 if you're pushing files directly to a console (see below).
-
-> [!WARNING]
-> **Serve over plain HTTP.** Opening the page from `file://` blocks local JSON loading, so the catalogs will silently fail to appear. Install requests (if you add an RPI sender) also require HTTP.
 
 ---
 
-## GoldHEN setup *(only needed if you also push to PS4)*
-
-The catalog pages themselves don't require GoldHEN — they're just static browsers. If you pair them with an RPI sender:
-
-1. **Payload server** — enable it in GoldHEN.
-2. **FTP server** — enable it in GoldHEN.
-3. **Background downloads** — enable it in the PS4's **Debug Settings**.
-
-With these three enabled, installs queue properly and can run in the background.
 
 ---
 
