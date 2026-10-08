@@ -3,6 +3,136 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA35889",
+      "title": "NBA 2K27",
+      "downloadLinks": [
+        {
+          "name": "USA 13.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/EL73g79A939B/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/vgKGxXELqG8Q/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 3",
+          "url": "https://akirabox.com/Z9dzBP84lmk1/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 4",
+          "url": "https://akirabox.com/RMKGJKaO4m1o/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 5",
+          "url": "https://akirabox.com/b5OzdV4p8mB8/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 6",
+          "url": "https://akirabox.com/E1x3AW1VWGyk/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 7",
+          "url": "https://akirabox.com/qw1zebodVGXy/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 8",
+          "url": "https://akirabox.com/qPez44PA5zOY/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 9",
+          "url": "https://akirabox.com/dkD3YwjZJGLQ/file"
+        },
+        {
+          "name": "USA 13.xx Base - Akirabox part 10",
+          "url": "https://akirabox.com/2bJG8bM0g3OB/file"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/SFnay"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/1auBQe"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 3",
+          "url": "https://www.rootz.so/d/1p8dN2"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 4",
+          "url": "https://www.rootz.so/d/gUFTE"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 5",
+          "url": "https://www.rootz.so/d/1tAUEa"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 6",
+          "url": "https://www.rootz.so/d/1xCL68"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 7",
+          "url": "https://www.rootz.so/d/14fMeW"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 8",
+          "url": "https://www.rootz.so/d/wbevQ"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 9",
+          "url": "https://www.rootz.so/d/10dVmy"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz part 10",
+          "url": "https://www.rootz.so/d/2HLbLk"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/0BBSPm7GhG"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/OfAQkkdabX"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 3",
+          "url": "https://vikingfile.com/f/XWNbMaUB9e"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 4",
+          "url": "https://vikingfile.com/f/IQFJ6oVpOF"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 5",
+          "url": "https://vikingfile.com/f/HBeXEzPnBg"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 6",
+          "url": "https://vikingfile.com/f/gwCdL3LlVe"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 7",
+          "url": "https://vikingfile.com/f/b230xXBDRX"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 8",
+          "url": "https://vikingfile.com/f/7zx5cGbvLf"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 9",
+          "url": "https://vikingfile.com/f/QBZlBI7XVe"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile part 10",
+          "url": "https://vikingfile.com/f/zAS1n5cOlA"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/2913/4a31f711e2ff460cd44ad646983f36533278cea61f639be9.png?w=260",
+      "description": "Region: USA\nRelease note: Works on 13.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/nba-2k27-ps5/"
+    },
+    {
       "titleId": "PPSA05110",
       "title": "Persona 5 Royal",
       "downloadLinks": [
@@ -37,6 +167,22 @@
         {
           "name": "EUR 4.xx Base - Rootz part 4",
           "url": "https://www.rootz.so/d/PL6fI"
+        },
+        {
+          "name": "EUR 4.xx Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/iYHkOZEEbB"
+        },
+        {
+          "name": "EUR 4.xx Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/1tD2EtsRNv"
+        },
+        {
+          "name": "EUR 4.xx Base - Vikingfile part 3",
+          "url": "https://vikingfile.com/f/lepOLtJlut"
+        },
+        {
+          "name": "EUR 4.xx Base - Vikingfile part 4",
+          "url": "https://vikingfile.com/f/hIy6hqFjvg"
         }
       ],
       "category": "game",
@@ -79,6 +225,22 @@
         {
           "name": "ASIA 5.50 Base - Rootz part 4",
           "url": "https://www.rootz.so/d/1yJUxs"
+        },
+        {
+          "name": "ASIA 5.50 Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/WLcshe22N9"
+        },
+        {
+          "name": "ASIA 5.50 Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/DlKtzYWW3Z"
+        },
+        {
+          "name": "ASIA 5.50 Base - Vikingfile part 3",
+          "url": "https://vikingfile.com/f/7jT8G3Jis6"
+        },
+        {
+          "name": "ASIA 5.50 Base - Vikingfile part 4",
+          "url": "https://vikingfile.com/f/ASl0Dwo1WO"
         }
       ],
       "version": "5.50",
@@ -105,7 +267,7 @@
         }
       ],
       "category": "game",
-      "posterUrl": "https://dlpsgame.com/wp-content/uploads/2026/10/2-vdv.jpg",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1520/a10f8e3d0f1c68926ebeab716f8cffcebb2a3f706517f8ad.png?w=260",
       "description": "Region: USA\nRelease note: Works on 5.xx and higher\nPassword: DLPSGAME.COM",
       "downloadSource": "https://dlpsgame.com/grimgrimoire-oncemore-ps5/"
     },
@@ -2287,11 +2449,23 @@
         {
           "name": "USA 11.xx Base - Vikingfile",
           "url": "https://vikingfile.com/f/hFy9dWPWBZ"
+        },
+        {
+          "name": "USA exFAT 02.002.002 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiZWVScVNuOUNjallzYStsOGZIVU5lKzZXRGJQdEdHaFdFV2ZYQkg1bitHRjE0dGxsdis2Q2pHNXlDYkFoWjFVbTJIeHBvZzdENHBGakplYjcrWDByaGx3VGgzTk5pT3BtREo2OVdKZE1rdz09IiwiaSI6InpLeDVYZUlpQmtDRStGcDUiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "USA exFAT 02.002.002 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoieENXMU1TTS8vR0t0UE4wSDd0Mis1YzZlZGJFL2Z2WVhiRHlISEYycTJxSVh5VlROYXNpQjRXMHhldTNwb0hRZzRhTytFaGxnU0dXQnpjNkhEb2FGOVZkNk9KM3lpZTlLR1RYdFpWM1QiLCJpIjoiaGsyVWpieU1EcVo4U21xdSIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "USA exFAT 02.002.002 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiSEpGRnhSS2Y3bmRBRGpYWmcvdEpNM3JtQTA2SERzNlJLZTBvOVlJSU9qb0QxZ2M4NGpYRGdUZWc3LzVVdVRLRXZiSXpBWkNmT2t1V2VBblZyWDZTNXRLMExLOVpsclIzcGZROURxMDliQUU9IiwiaSI6ImRROEtSRHlTTHZTZ0IrL2EiLCJuIjoiVmlraSJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA26578_ce58face576be60dcb7f64c6dda6e4310127f40098a736c6f5d1dfd498dd6dbd/icon0.webp",
-      "description": "Region: USA\nRelease note: Works on 11.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "description": "Variant: USA 11.xx\nRegion: USA\nRelease note: Works on 11.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM\n\nVariant: USA exFAT 02.002.002\nRegion: USA\nRelease note: exFAT format — FW 02.002.002 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/mouse-pi-for-hire-ps5/"
     },
     {
@@ -2661,11 +2835,23 @@
         {
           "name": "EUR 12.xx Base - Vikingfile part 2",
           "url": "https://vikingfile.com/f/FRJ4DKitAB"
+        },
+        {
+          "name": "USA exFAT 01.008 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiZ09kcjkxNVBEOEdtMSs5K1hndXR4TVRRckF5MnJIdkdvMjhNcExycExnNDVzUVRYbWNKMzdqb1IzUTlqWWtvWkoreHlhcHozcjQyTm8vQjE0dTZjYU1zUUZ0d0VUa0t2OEszU2JMVXRGUT09IiwiaSI6Ilo2S2Fva2ZMWXlpcm5TOHUiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "USA exFAT 01.008 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiU3hSSUFyUlJFalhORWxHd1c5REtVN2xRRXgzMTJtWEowL3RXYVZMSXFJcnprRm8vUnYxbFRpWkRJb21QVWFzbm84dmhzUnd6c1ZFTnUyV0E2aWU1b0NmT0dIWFNHZ3ErVkUvMHh1M0wiLCJpIjoiakRLT3NSQmJob3ptNnVGSyIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "USA exFAT 01.008 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiTUhSeWVXVldIdk1jcU5aTkpuZmQvTFFuWXU0cDNBZ3ViODhpNGNSeEp1OHlWNjdkNjBHMFJLV1RXWm5QdjVDTG8xUjF4eXNITm01anBCenFheTlIVlkzYkROS1BNRlNDVG1OOGNhb3cvQXM9IiwiaSI6IlBwY2FldU1ZSG15V3dNWHIiLCJuIjoiVmlraSJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA34501_4a6b213232f020b9f39ca156be89c78fd220814b226da45d5d112d8d94048d72/icon0.webp",
-      "description": "Region: EUR\nRelease note: Works on 12.xx and higher",
+      "description": "Variant: EUR 12.xx\nRegion: EUR\nRelease note: Works on 12.xx and higher\n\nVariant: USA exFAT 01.008\nRegion: USA\nRelease note: exFAT format — FW 01.008 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/call-of-duty-black-ops-ps5/"
     },
     {
@@ -3027,7 +3213,7 @@
     },
     {
       "titleId": "PPSA34502",
-      "title": "Call of Duty Black Ops 2 (DLC)",
+      "title": "Call of Duty Black Ops 2",
       "downloadLinks": [
         {
           "name": "USA 13.60 Game (v01.010.000) (All DLC) - Akirabox part 1",
@@ -3088,11 +3274,23 @@
         {
           "name": "USA 13.60 Game (v01.010.000) (All DLC) - Vikingfile part 5",
           "url": "https://vikingfile.com/f/CYJXgeUKlu"
+        },
+        {
+          "name": "USA exFAT 01.010 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoic2R2b3Z6anhhWFhBbGUyR3VZbXhYWXhFcXZ1QWxnY2srbXd5bGJJSmtGa0x4eEZFMXBDSkFWVFdBNURnVFJ2Sk0wNDY1K2gyYTRNa1VCcDhxRTVxa1hqZElxL1ZDemFEc0lVOE9mVENuZz09IiwiaSI6IkU0V1lYeVVBL2JSZWdLODMiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "USA exFAT 01.010 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiZ2dsOVE0blEwSFBVSDlIU3FXNW5NeklXd25BUTdXTVgvSTJKakIzaThrZFRZaHo1dWx3eFJvUGlQN29HMFdta3U3UC9Uem5HaUVEUWlUWENjdFp5ajBISGZGaWFBb3NSU3M1bUNyMHgiLCJpIjoiRnhQS0ZaVlZiTWxhSjdjRCIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "USA exFAT 01.010 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiTFRLeWJsdGlZRmtLVEllNnErbHV5b1N0TFFkTmdGdzVTRVF3eVJVWlpVZTA5bUtuSUpkamxCdFM3dUJvVG5zN1I4RzB1WHRsbElNNWZxeFlWL1RTajIyZE1zUGRYQXdHV2tQV09WZ1lac0E9IiwiaSI6Iis2cksvY0JXanRmbjVGSTgiLCJuIjoiVmlraSJ9"
         }
       ],
-      "category": "dlc",
+      "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/2619/c4ce7fe379aa05dd3f6ecc11e8fa38dfea03d4b4a8bad73a.png?w=260",
-      "description": "Region: USA\nRelease note: Credited by @DED_FR Works on 13.60 and higher All DLCs included (Season Pass + Camo)\nPassword: DLPSGAME.COM",
+      "description": "Variant: USA 13.60\nRegion: USA\nRelease note: Credited by @DED_FR Works on 13.60 and higher All DLCs included (Season Pass + Camo)\nPassword: DLPSGAME.COM\n\nVariant: USA exFAT 01.010\nRegion: USA\nRelease note: exFAT format — FW 01.010 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/call-of-duty-black-ops-2-ps5/"
     },
     {
@@ -3302,21 +3500,21 @@
           "url": "https://vikingfile.com/f/I8GXQw3yaM"
         },
         {
-          "name": "USA exFAT 01.00.004 Base - DATA (exFAT)",
+          "name": "USA exFAT 01.000.004 Base - DATA (exFAT)",
           "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiQlNOWEMxc1NiNGlRSlJmQ0tvOHB4MFR0Uk0yVmkvUXptT29TaC90TFcxb3Q3VWNpM21ISkhKbGVLd0lTdmt4dHJiSUdHL1RNdXhOYlFPczJvV0ROMzVnVnk1MCtxOFVzM1FrVXdzb1dldz09IiwiaSI6IngwV3hhOGV4UDZMR1loTHciLCJuIjoiRGF0YSJ9"
         },
         {
-          "name": "USA exFAT 01.00.004 Base - AKIA (exFAT)",
+          "name": "USA exFAT 01.000.004 Base - AKIA (exFAT)",
           "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiRkpad3R2V01vUEVjWktXS0hxa3FWc3dCZ3N2a0t2S3h6c1JHVVMzVks1cDQ4aXRyZDZZeU5iSWprSklmMDB5aURqWUZhVW9IUVNjMWhkRGhDcWVpSVZELzVEMXRCMHZFNEp4ZEZUZEkiLCJpIjoiKzc3TElDRWRhSzJNc1lDTCIsIm4iOiJBa2lhIn0="
         },
         {
-          "name": "USA exFAT 01.00.004 Base - VIKI (exFAT)",
+          "name": "USA exFAT 01.000.004 Base - VIKI (exFAT)",
           "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoidUxQRDYrYWI0aSs5NDJ4RmpDSUNsb0ZCcW1FYVd3K21paTl4VVVQWGxIaXhxMGh6eEprclNtd0NUdExjcEZPQnZtNTZRalhFcUNKMHdqT0I2ZWRqc293bENvYkJqMG9weDdLR2xpYTBpbGc9IiwiaSI6Ii9hVlFabXhMUkhrZlZ2MUYiLCJuIjoiVmlraSJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA34015_6a434915290a6abec6c41584108a610be84d7c2f675678dd06732e4343f8cba6/icon0.webp",
-      "description": "Variant: EUR 12.xx\nRegion: EUR\nRelease note: By @notnotzecoxao Works on 12.xx and higher\nPassword: DLPSGAME.COM\n\nVariant: USA exFAT 01.00.004\nRegion: USA\nRelease note: exFAT format — FW 01.00.004 — 4.xx BackPort\nContributor: pippo",
+      "description": "Variant: EUR 12.xx\nRegion: EUR\nRelease note: By @notnotzecoxao Works on 12.xx and higher\nPassword: DLPSGAME.COM\n\nVariant: USA exFAT 01.000.004\nRegion: USA\nRelease note: exFAT format — FW 01.000.004 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/ea-sports-fc-27-ps5/"
     },
     {
@@ -127225,6 +127423,52 @@
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202212/0617/F7z6c9GM1VGoqfYxHorvMjzL.png?w=260",
       "description": "Variant: Release 1\nContributor: pkg.games\n\nVariant: USA exFAT 01.004\nRegion: USA\nRelease note: exFAT format — FW 01.004 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://pkg.games/ps5/greyhill-incident/"
+    },
+    {
+      "titleId": "PPSA28416",
+      "title": "[exFAT] STAR WARS Galactic Racer Deluxe Edition",
+      "downloadLinks": [
+        {
+          "name": "USA exFAT 01.003.001 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiaWlLNkl4UytNNmRmOTljOFZZRlpid2lVeEN2NUk2TlJ5MlVGU0plbmtPem9JcFBYRGN2elVJeDEzeWJIMnZhdmx6SHZmc013YUlIanNLemRManZSYnZMV2NrdWNCWDl6WXQwTVBFQ1ZnQT09IiwiaSI6IkZIbzROZmN2ZERlbUltWUMiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "USA exFAT 01.003.001 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiSGwvOEpyTDVhbEZ0anhENVU2S0lCOXphVHlIWWtIUGV3WE13UG9pVHViRTVGc0RHRndiWnZ2Vlh4aEhxVkMwSG9CbDVqYXdmTjNFUkdDSFM0eHQwQ2F1K0lnOFVaS0tQMC9Gayt6Nk4iLCJpIjoiN1RaUjE3eUVpS2E3MzVmZiIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "USA exFAT 01.003.001 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoia1BxUVEzR21iOGxvV0F6VVRkMkgrZEhnc3BzWmpVNlowcU9GN0RLRldEemVWWkNNbXRZVThxQUM5NElvNlFJQi94TFZsN3oxcWF6RG05SGVhc3NKakFIUjBpK2pZbW5icFJudEF1eC9FUEE9IiwiaSI6Ikp1UzRvUDBCNWlsQVpDWUUiLCJuIjoiVmlraSJ9"
+        }
+      ],
+      "version": "01.003.001",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA28416_c5dceb540dd00725eb4c6669649b61609d89a045787c24c48104a1b3aeece23c/icon0.webp",
+      "description": "Region: USA\nRelease note: exFAT format — FW 01.003.001 — 4.xx BackPort\nContributor: pippo",
+      "downloadSource": "https://pub-d5f4def955404492b20262ad2a0dc12a.r2.dev/games_ps5_cache.json"
+    },
+    {
+      "titleId": "PPSA18054",
+      "title": "[exFAT] Star Wars Zero Company Deluxe Edition",
+      "downloadLinks": [
+        {
+          "name": "USA exFAT 01.000.003 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiR1U2TlFrV09nckFvRDNxRzBsR0ZKWldlbm0yeDNDK3hSL0ZKMGxjbDZOQTVEWFl1SC9Fb3F3K3dJbXlYZmI2ZE01cmo5MTB1N1hGYVY3by82OUlvbEpxZDdFMmM1V3F0LzR1UktZeGhhUT09IiwiaSI6Ikk1dngyNkNaSXcrS04zYnciLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "USA exFAT 01.000.003 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiL0xrNEF0QStkdSsvQWZxZFlQYXoySjFscThjNkdUM2dsZzB5K1lURlY1R3pWU3VaWWFQNTZCaXNKR3gwaWJrWVhtUVNCZDZoQkd0RElhTmFOdDNmQk9OdTM4LzZnbjFxelk2eGV1SXYiLCJpIjoibndtT2ZHbmFVTUN1MFNCMSIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "USA exFAT 01.000.003 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoia1Q5WU1vZyt0VVlFM3h5bks4UkliTHE5a0MwZGF4VnhteVlSNER4OGJyM3lNUWdlTkQwdGFkWHdvYlQzUW04U1pNd3RteHBmTWNjWXBWNkhsR3VSLzAwd1NhNnpFSHliblYzQks4K01TdWc9IiwiaSI6InAwNUlFbWVTUmwxTk01QVgiLCJuIjoiVmlraSJ9"
+        }
+      ],
+      "version": "01.000.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2110/422562f57b88bf0efe97eb9dde23aef5ac80fc4a82d4398d.png?w=260",
+      "description": "Region: USA\nRelease note: exFAT format — FW 01.000.003 — 4.xx BackPort\nContributor: pippo",
+      "downloadSource": "https://pub-d5f4def955404492b20262ad2a0dc12a.r2.dev/games_ps5_cache.json"
     },
     {
       "titleId": "PPSA03671",
