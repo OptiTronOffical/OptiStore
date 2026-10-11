@@ -3,6 +3,226 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA25286",
+      "title": "Crimson Desert Enhanced",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/75mnND4o#DataNodes"
+        },
+        {
+          "name": "Dump - Filek",
+          "url": "https://link-vault.org/c/75mnND4o#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/75mnND4o#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/75mnND4o#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/Kn5G0gJ4#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/Kn5G0gJ4#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/Kn5G0gJ4#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filek",
+          "url": "https://link-vault.org/c/Kn5G0gJ4#FileKeeper"
+        }
+      ],
+      "version": "v01.000.568",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2006/e8f306c89efa555a13e4d3910dafda994a14b2355f342802.png?w=260",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA25286, v01.000.568, USA, 4.xx BackPort\nSize: 190GB\nCredits: Files: Deckerr97 &amp; L3G3ND44; Backport: Deckerr97 &amp; L3G3ND44\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 11.xx, separated BackPort PKG for 4.xx+ included. Might be have problems at launch with ShadowMountPlus 1.7beta4 and beta5, use 1.7beta3.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 204010946560
+    },
+    {
+      "titleId": "PPSA20946",
+      "title": "The Relic First Guardian",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/aXPrQoAG#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/aXPrQoAG#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/aXPrQoAG#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/aXPrQoAG#VikikngFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/E1X4E4Lk#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/E1X4E4Lk#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/E1X4E4Lk#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/E1X4E4Lk#FileDitch"
+        }
+      ],
+      "version": "v01.000.027",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1909/b43f1dcdb2458ac9e058a8b115553aba3d73e20be3a9d939.png?w=260",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA20946, v01.000.027, EUR, 4.xx BackPort\nSize: 58GB\nCredits: Files: DUPLEX; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 11.xx, separated BackPort PKG for 4.xx Only &amp; 5.xx+ included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 62277025792
+    },
+    {
+      "titleId": "PPSA36257",
+      "title": "Luna Abyss",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/ZwnGmEnq#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/ZwnGmEnq#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/ZwnGmEnq#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/ZwnGmEnq#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/3P9ISikT#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/3P9ISikT#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/3P9ISikT#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/3P9ISikT#FileDitch"
+        }
+      ],
+      "version": "v01.00.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1714/5f724656385b54f0c9497fd38c28fc6b08a63fb58be04df8.png?w=260",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA36257, v01.00.005, JPN, 4.xx BackPort\nSize: 16GB\nCredits: Files: DUPLEX; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 11.xx, separated BackPort PKG for 4.xx+ included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 17179869184
+    },
+    {
+      "titleId": "PPSA30839",
+      "title": "MXGP 26 The Official Game",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/ENOLPyW2#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/ENOLPyW2#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/ENOLPyW2#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/ENOLPyW2#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/d_hQkVGb#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/d_hQkVGb#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/d_hQkVGb#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/d_hQkVGb#FileDitch"
+        }
+      ],
+      "version": "v01.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1014/3d8f163859e7f3d6ed0fa8cd48696c8b93f39a1a7bdd05eb.png?w=260",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA30839, v01.003, EUR, 5.xx BackPort + 4.xx BackPort\nSize: 21GB\nCredits: Files: DUPLEX; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 12.xx, separated BackPort PKG for 4.xx Only &amp; 5.xx+ included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 22548578304
+    },
+    {
+      "titleId": "PPSA26223",
+      "title": "The Mound Omen of Cthulhu",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/MnCbLZLg#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/MnCbLZLg#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/MnCbLZLg#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/MnCbLZLg#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/B5TsAJ09#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/B5TsAJ09#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/B5TsAJ09#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/B5TsAJ09#FileDitch"
+        }
+      ],
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/0713/534efd914eb9f889e13e6090781eb26bf6ad76f208aca86b.png?w=260",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA26223, v01.000, EUR, 5.xx BackPort + 4.xx BackPort\nSize: 26GB\nCredits: Files: DUPLEX; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 12.xx, separated BackPort PKG for 4.xx Only &amp; 5.xx+ included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 27917287424
+    },
+    {
       "titleId": "PPSA01317",
       "title": "Gran Turismo 7",
       "downloadLinks": [
@@ -591,7 +811,7 @@
       "sizeBytes": 207232172032
     },
     {
-      "id": 5212249,
+      "id": 5285917,
       "catalogSlug": "",
       "titleId": "PPSA99902",
       "title": "Sonic Unleashed Recompiled Unofficial Port",
@@ -11105,7 +11325,7 @@
       "sizeBytes": 34359738368
     },
     {
-      "id": 5212516,
+      "id": 5286184,
       "catalogSlug": "",
       "titleId": "PPSA22711",
       "title": "Ed 0 Zombie Uprising",
@@ -14671,7 +14891,7 @@
       "sizeBytes": 47244640256
     },
     {
-      "id": 5212619,
+      "id": 5286287,
       "catalogSlug": "",
       "titleId": "PPSA16387",
       "title": "Hitman World of Assassination Deluxe Edition",
@@ -17147,62 +17367,6 @@
       "description": "Tags: PPSA26097, v02.000, EUR, 4.xx BackPort\nSize: 25GB\nCredits: Files: SiESPTA; Backport: DecKerr97",
       "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
       "sizeBytes": 26843545600
-    },
-    {
-      "titleId": "PPSA25286",
-      "title": "Crimson Desert Deluxe Edition",
-      "downloadLinks": [
-        {
-          "name": "Standard 5.xx - AkiraBox",
-          "url": "https://akirabox.com/rk9zKDyEPG0l/file"
-        },
-        {
-          "name": "Standard 5.xx - VikingFile",
-          "url": "https://vikingfile.com/f/X3LWbmegNU"
-        },
-        {
-          "name": "Standard 5.xx - DataNodes",
-          "url": "https://datanodes.to/1pq9ujb786yx"
-        },
-        {
-          "name": "4.xx BackPort - AkiraBox",
-          "url": "https://akirabox.com/dZxG5qM6ZGVj/file"
-        },
-        {
-          "name": "4.xx BackPort - VikingFile",
-          "url": "https://vikingfile.com/f/SUCttg8blI"
-        },
-        {
-          "name": "4.xx BackPort - DataNodes",
-          "url": "https://datanodes.to/ggptl8gb69x6"
-        },
-        {
-          "name": "4.xx BackPort - Filek",
-          "url": "https://filekeeper.net/5ez7muq5c2in"
-        },
-        {
-          "name": "4.xx BackPort - Vault",
-          "url": "https://datavaults.co/uq18a9aw92zr"
-        },
-        {
-          "name": "DLC - AkiraBox",
-          "url": "https://akirabox.com/0rpmvL9vLzRg/file"
-        },
-        {
-          "name": "DLC - DataNodes",
-          "url": "https://datanodes.to/2v5jkll8grdh"
-        },
-        {
-          "name": "DLC - Filek",
-          "url": "https://filekeeper.net/shptgcke5skh"
-        }
-      ],
-      "version": "v01.000.151",
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2006/e8f306c89efa555a13e4d3910dafda994a14b2355f342802.png?w=260",
-      "description": "Builds: Standard 5.xx, 4.xx BackPort, DLC\nTags: PPSA25286, v01.000.151, USA, Standard (5.xx) + 4.xx BackPort\nSize: 154GB\nCredits: Files: DUPLEX; Backport: BestPig &amp; Zhwenx; DLC: DUPLEX\nHow to play: Press START/Options - Add-on right after starting a new game. You can equip them after the prologue.",
-      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
-      "sizeBytes": 165356240896
     },
     {
       "titleId": "PPSA17231",

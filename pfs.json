@@ -3,6 +3,38 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA16645",
+      "title": "7 Days to Die Console Edition",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/oYi7tJJEwn"
+        }
+      ],
+      "version": "01.320.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/1216/9023747aeb28e119f8a8fe3272a67ae5f5e19ba0f658aacd.png?w=260",
+      "description": "This game is still under development. It is subject to future planned updates before its release as a finished product. Please purchase only if you are comfortable with the game in its current state. For a list of known issues visit: https://community.7daystodie.com/ How long will you survive? With over 18 million copies sold, 7 Days has defined the survival genre, with unrivaled crafting and world-building content. Set in a post-apocalyptic world overrun by the undead, 7 Days is an open-world game that is a unique combination of first-person shooter, survival horror, tower defense, and role-playing games. It presents combat, crafting, looting, mining, exploration, and character growth, in a way that has seen a rapturous response from fans worldwide. Play the definitive zombie survival sandbox RPG that came first. Navezgane awaits! GAME FEATURES * Explore – Huge, rich environments, with unique biomes and worlds up to 100 square kilometers in size. * Craft – Handcraft and repair weapons, clothes, armor, tools, vehicles, with hundreds of recipes and schematics. * Build – Design your fort with traps, electricity, auto turrets, and gadgets to survive in a fully destructible and moldable world. * Cooperate or Compete – Work together to build settlements or against each other in a wasteland where zombies and outlaws rule the land. * Create – Unleash your creativity with over 800 in-game items, 1,300 building blocks and a painting system that offers infinite possibilities. * Improve – Increase skills with a multitude of perks and attributes. Gain additional skills by reading over 100 books in the only real survival RPG. * Choose – Play the campaign or randomly-generated worlds with cities, towns, lakes, mountains, valleys, roads, caves and over 700 locations. * Combat – Encounter nearly 60 unique zombie archetypes with unique behaviors progressing in difficulty to provide an infinite challenge. * Survive – Experience hardcore survival mechanics with nearly 50 buffs, boosts and ailments that can both challenge and aid your survival. * Destroy – Buildings and terrain formations can collapse from structural damage or poor building design with real structural stability. * Loot – Scavenge the best weapons, tools, and armor with 6 quality ranges providing thousands of permutations and a multitude of mods. * Quest – Meet Trader NPCs who buy and sell goods and offer quests. Enjoy many unique quest types supported by over 700 unique locations. * Customize – Create your own character and customize your look with a huge selection of clothing and armor you can craft or loot in the world. * Drive – Scavenge for parts, learn recipes, craft and customize bicycles, minibikes, motorcycles, 4x4s or gyrocopters and ride with friends. * Farm or Hunt – Plant gardens for sustainable resources or head out to the wilderness and hunt over a dozen unique animals.\nRegion: USA\nFirmware: 4.xx+\nCredits: Oussama\nUpdated: 2026-10-10T23:12:22.315Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 14925011354
+    },
+    {
+      "titleId": "PPSA34501",
+      "title": "Call of Duty Black Ops",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/bML6o4dawh"
+        }
+      ],
+      "version": "01.008",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/2618/ee7d4a20243804f08a3c4a4eb1b4346dbe29dbce0fb59751.png?w=260",
+      "description": "Experience the original Call of Duty®: Black Ops, first released in 2010, now available on PS4® and PS5® for the first time. Call of Duty®: Black Ops will take you behind enemy lines as a member of an elite special forces unit engaging in covert warfare, classified operations and explosive conflicts across the globe. With access to exclusive weaponry and equipment, your actions will tip the balance during the most dangerous time period mankind has ever known. Call of Duty®: Black Ops features a cinematic single-player campaign, signature Multiplayer and hordes of the undead in Zombies.\nRegion: USA\nFirmware: 4.xx+\nUpdated: 2026-10-10T14:45:29.740Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 20036022436
+    },
+    {
       "titleId": "PPSA13526",
       "title": "GYLT",
       "downloadLinks": [

@@ -3,6 +3,424 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA03912",
+      "title": "Diablo 2 Resurrected Infernal Edition",
+      "downloadLinks": [
+        {
+          "name": "EUR 3.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/2bJG8bnQ03OB/file"
+        },
+        {
+          "name": "EUR 3.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/dkD3Yw95wGLQ/file"
+        },
+        {
+          "name": "EUR 3.xx Base - Akirabox part 3",
+          "url": "https://akirabox.com/LK0G1b1Q4m91/file"
+        },
+        {
+          "name": "EUR 3.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/21uDVw"
+        },
+        {
+          "name": "EUR 3.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/1xsMeO"
+        },
+        {
+          "name": "EUR 3.xx Base - Rootz part 3",
+          "url": "https://www.rootz.so/d/lC7t2"
+        },
+        {
+          "name": "EUR 3.xx Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/rJXtux91aF"
+        },
+        {
+          "name": "EUR 3.xx Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/UiPMEm1Vzo"
+        },
+        {
+          "name": "EUR 3.xx Base - Vikingfile part 3",
+          "url": "https://vikingfile.com/f/gcSPtf58aZ"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/2004/ab9XB7gTauWtV6qMEEIQ4d2G.png?w=260",
+      "description": "Region: EUR\nRelease note: Works on 3.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/diablo-2-resurrected-infernal-edition-ps5/"
+    },
+    {
+      "titleId": "PPSA26012",
+      "title": "Abiotic Factor",
+      "downloadLinks": [
+        {
+          "name": "EUR 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/E1x3AWDnXGyk/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/iXMrQ"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1023/857950e3d659c14025f00df668cc9d853edaa3e0ae592e94.png?w=260",
+      "description": "Region: EUR\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/abiotic-factor-ps5/"
+    },
+    {
+      "titleId": "PPSA27623",
+      "title": "ASTRONEER",
+      "downloadLinks": [
+        {
+          "name": "EUR 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/k0embbqLymVb/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/MFDBw"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/img/rnd/202112/2003/nbujA0GRPoK5H6SXWKVuPMsQ.png?w=260",
+      "description": "Region: EUR\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/astroneer-ps5/"
+    },
+    {
+      "titleId": "PPSA38272",
+      "title": "Onimusha Dawn of Dreams",
+      "downloadLinks": [
+        {
+          "name": "USA 4.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/N2p3DPw283Ma/file"
+        },
+        {
+          "name": "USA 4.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/qLQ36qLREm19/file"
+        },
+        {
+          "name": "USA 4.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/ucvNw"
+        },
+        {
+          "name": "USA 4.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/23HJHk"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/3004/d6b6f2ee4bdb5db2a32928b998f7f26e55e21f8f1b447345.png?w=260",
+      "description": "Region: USA\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/onimusha-dawn-of-dreams-ps5/"
+    },
+    {
+      "titleId": "PPSA17456",
+      "title": "Firefighting Simulator Ignite",
+      "downloadLinks": [
+        {
+          "name": "EUR 4.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/0rpmvpPvJzRg/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/gXeGOAk2N3Aa/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/27JA9I"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/yemFU"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202502/1911/44718863baaf28732bac7f9914aa06a1d7251364d3393f0d.png?w=260",
+      "description": "Region: EUR\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/firefighting-simulator-ignite-ps5/"
+    },
+    {
+      "titleId": "PPSA03706",
+      "title": "My Friend Peppa Pig",
+      "downloadLinks": [
+        {
+          "name": "EUR 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/Pbe3PaRp2zlX/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/QH43U"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202304/1209/6fe8fb982c26a8360ba1ea3f9bc5e6d46eb1a386dbd49a93.png?w=260",
+      "description": "Region: EUR\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/my-friend-peppa-pig-ps5/"
+    },
+    {
+      "titleId": "PPSA35154",
+      "title": "Hello Neighbor",
+      "downloadLinks": [
+        {
+          "name": "EUR 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/rk9zKWjxyz0l/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/1rBkh6"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA10960_00/2/i_5f3957cbc83bf8a4755784e61f44bad551dbcb6890cc3e1b1ce93fe3deae2427/i/icon0.png?w=260",
+      "description": "Region: EUR\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/hello-neighbor-ps5/"
+    },
+    {
+      "titleId": "PPSA14431",
+      "title": "Ratchet Clank Size Matters",
+      "downloadLinks": [
+        {
+          "name": "USA 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/qPez44XnpzOY/file"
+        },
+        {
+          "name": "USA 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/mZDeq"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/2123/c261a0f006b6c663003a793fcccd2903ffc77732d283ea49.png?w=260",
+      "description": "Region: USA\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/ratchet-clank-size-matters-ps5/"
+    },
+    {
+      "titleId": "PPSA14382",
+      "title": "Disney Pixar Buzz Lightyear of Star Command",
+      "downloadLinks": [
+        {
+          "name": "EUR 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/1RgzR9ZbX3bp/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/eVVzs"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA14382_70544a7db90b0bb091103246d5eb1dd45f5725445f39409dfd040567bda57393/icon0.webp",
+      "description": "Region: EUR\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/disney-pixar-buzz-lightyear-of-star-command-ps5/"
+    },
+    {
+      "titleId": "PPSA14325",
+      "title": "Jak and Daxter The Lost Frontier",
+      "downloadLinks": [
+        {
+          "name": "USA 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/XkrzoKlLPzBO/file"
+        },
+        {
+          "name": "USA 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/1vDbYe"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202402/0921/75a933107cc6ba3447e87e42034e823d9cb45643641f0c9f.png?w=260",
+      "description": "Region: USA\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/jak-and-daxter-the-lost-frontier-ps5/"
+    },
+    {
+      "titleId": "PPSA09695",
+      "title": "Daxter",
+      "downloadLinks": [
+        {
+          "name": "USA 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/Y2xm0o9nKGRO/file"
+        },
+        {
+          "name": "USA 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/qb4WO"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0521/d1a30651f70e8bbf7057e36ee40955cc215e450df3c80586.png?w=260",
+      "description": "Region: USA\nRelease note: Dump &amp; backport by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/daxter-ps5/"
+    },
+    {
+      "titleId": "PPSA02429",
+      "title": "Human Fall Flat",
+      "downloadLinks": [
+        {
+          "name": "EUR 4.xx Base - Akirabox",
+          "url": "https://akirabox.com/0Kezk7vLpzD1/file"
+        },
+        {
+          "name": "EUR 4.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/1n9tpY"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2414/cee9b1f4c4e68b0a6a0579eec34888a69a1082194b109a42.png?w=260",
+      "description": "Region: EUR\nRelease note: Dump by Deckerr97 Works on 4.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/human-fall-flat-ps5/"
+    },
+    {
+      "titleId": "PPSA25025",
+      "title": "POOLS",
+      "downloadLinks": [
+        {
+          "name": "USA 13.xx Base - Akirabox",
+          "url": "https://akirabox.com/E9Qz9XjOV3OL/file"
+        },
+        {
+          "name": "USA 13.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/1YgDCq"
+        },
+        {
+          "name": "USA 13.xx Base - Vikingfile",
+          "url": "https://vikingfile.com/f/0GmCfRfb1g"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2422/79e393d0a699650aaefadd637d307869f1c4393df408b257.png?w=260",
+      "description": "Region: USA\nRelease note: Working 13.xx to 11.xx Required PlayStation VR2 Headset to work Also work without PlayStation VR2 Headset\nContributor: @High-Speed007",
+      "downloadSource": "https://dlpsgame.com/pools-ps5/"
+    },
+    {
+      "titleId": "PPSA14240",
+      "title": "Pavlov",
+      "downloadLinks": [
+        {
+          "name": "EUR 13.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/0Kezk7eMgzD1/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/k0embbpB8mVb/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/qLplw"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/2324XI"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/UZmuRPI5p1"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/25OrvBMyYb"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202211/2218/9UflSkyn6ZUATU2VJNcMQ49b.png?w=260",
+      "description": "Region: EUR\nRelease note: Working 13.xx to 6.xx Required PlayStation VR2 Headset to work\nContributor: @High-Speed007\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/pavlov-ps5/"
+    },
+    {
+      "titleId": "PPSA17019",
+      "title": "The 7th Guest VR",
+      "downloadLinks": [
+        {
+          "name": "EUR 13.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/l5YzMZL2YGyO/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/1RgzR972o3bp/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/1z0Dfk"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/SgaOm"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/4z3St4dJUm"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/IcztzgSN2Z"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202308/0408/59095fb4d169c2b0037ad32f149d34bfe01b1c89c6f5e8da.png?w=260",
+      "description": "Region: EUR\nRelease note: Working 13.xx to 6.xx Required PlayStation VR2 Headset to work\nContributor: @High-Speed007\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/the-7th-guest-vr-ps5/"
+    },
+    {
+      "titleId": "PPSA09736",
+      "title": "The Dark Pictures Switchback VR",
+      "downloadLinks": [
+        {
+          "name": "EUR 13.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/l5YzMZLJYGyO/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/l76mZrw4nman/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Akirabox part 3",
+          "url": "https://akirabox.com/rk9zKWXxZz0l/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/1wrKK0"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/g9Eh6"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz part 3",
+          "url": "https://www.rootz.so/d/1spTSS"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/ZogA3MzNlK"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/rf6Fv7yq57"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile part 3",
+          "url": "https://vikingfile.com/f/HkxZIIkybo"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202210/1208/QnpJ8wEibwIeBRmefwYNg5Iv.png?w=260",
+      "description": "Region: EUR\nRelease note: Working 13.xx to 6.xx Required PlayStation VR2 Headset to work\nContributor: @High-Speed007\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/the-dark-pictures-switchback-vr-ps5/"
+    },
+    {
+      "titleId": "PPSA13640",
+      "title": "The Walking Dead Saints and Sinners",
+      "downloadLinks": [
+        {
+          "name": "EUR 13.xx Base - Akirabox",
+          "url": "https://akirabox.com/2bJG8bd6k3OB/file"
+        },
+        {
+          "name": "EUR 13.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/1gjuro"
+        },
+        {
+          "name": "EUR 13.xx Base - Vikingfile",
+          "url": "https://vikingfile.com/f/JBpVkgUJ5j"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1000/74a220e7378308e7403bca55be44c9a578bf8de9ed07ec4e.png?w=260",
+      "description": "Region: EUR\nRelease note: Working 13.xx to 6.xx Required PlayStation VR2 Headset to work\nContributor: @High-Speed007",
+      "downloadSource": "https://dlpsgame.com/the-walking-dead-saints-and-sinners-ps5/"
+    },
+    {
       "titleId": "PPSA06416",
       "title": "Wizard With A Gun",
       "downloadLinks": [
@@ -1132,11 +1550,23 @@
         {
           "name": "JPN 11.xx Base - Vikingfile",
           "url": "https://vikingfile.com/f/fbHxxQeQn6"
+        },
+        {
+          "name": "JPN exFAT 01.00.005 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiMkF4Zk5QT3hLQ0JJQVRGbjFxVXhmM3RoemFGTWFzQjZBVzBOb3pCMVhJclpjS0k4UTdjeUhWN1M2NGhPWCtxN3BlQVlSa3cyVjc1TkY4c210Vk93a0FFbUNOaVYxUis0Ynp6YjZxTjhRUT09IiwiaSI6InhpdGNFUHEwL29EUnlqdUUiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "JPN exFAT 01.00.005 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiZ1Y0cXlVNHN4RFRwSWRzSlhYcWRlRUtYT1BnMVZZUGQxRFVMMUtHYnlXVG4xbTZrd2JVcjZEVWhBczBaaUw2VUgwOFVBa0RCekF3OGRHd2x2YWVwbXVxekxVU3VhcWlQL2VaK0JRU1oiLCJpIjoiNnhtWE1UZ004TTIvRm5MNyIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "JPN exFAT 01.00.005 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiQ0tFK3p4bHcyTGMwRnVWZnc1cHR2bmIrclUzdTJDY0pLMFY1Y1l6NXBwZkFOUVNvOEdJNE50M0FkZlBrcDJtWUlSVFo0ZENBYWM0Z2FGdEtna0JwQkxIN2krV2hndXg5T0dUTENCaEh2dTQ9IiwiaSI6IldBSXNMUlJzN054LzhCRkIiLCJuIjoiVmlraSJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1714/5f724656385b54f0c9497fd38c28fc6b08a63fb58be04df8.png?w=260",
-      "description": "Region: JPN\nRelease note: Works on 11.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "description": "Variant: JPN 11.xx\nRegion: JPN\nRelease note: Works on 11.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM\n\nVariant: JPN exFAT 01.00.005\nRegion: JPN\nRelease note: exFAT format — FW 01.00.005 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/luna-abyss-ps5/"
     },
     {
@@ -1166,11 +1596,23 @@
         {
           "name": "EUR 12.xx Base - Vikingfile part 2",
           "url": "https://vikingfile.com/f/c6t8Bc7TkQ"
+        },
+        {
+          "name": "EUR exFAT 01.003 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoia0laTGFncEJHSTlHc0daSk14b1Nxbk5tekZDd3J1YnEyc2dua01OdDRqUklQZFprZzVSQmk0MjlDc2tDL1VoV3NicVlQMnFCb2I4VGd4VXRIdWM2RWV6QUNvN2lJK3VKSDJGVDM4WllIZz09IiwiaSI6InBQS1Bkay82c2lIemE5bTAiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "EUR exFAT 01.003 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiR0tyb2NzdWwrczFTTWZxSDh0NjgvQTNjQ2tRN0ZkdEVpcHpWb0g2K3M2dmh3eGtFUmg3YmpLTHZwb0hMdlVNbGtFcE8rNlE1c2lzRm1IU1lnM1JMMWpWRlBiSmZ0aG9ibzhXVmxUdCsiLCJpIjoiTjBmTytHd3lhNW5MbTVvcyIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "EUR exFAT 01.003 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiMXB4b3U1RHkrcTZDVmNwVHJhdGlYYWRZOGluVEdIQ0dQS1NwQlJkaVVXcW0rZmo0ckxIUVp4dzVJSWU3d1QrMVlHdEtvY2FIbExXQjRUVk8wUzdSblc1aHp6SG1kbnRjcmowZXJod0YwWlU9IiwiaSI6IjhIRnBobDIwTWt4bFpldG4iLCJuIjoiVmlraSJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1014/3d8f163859e7f3d6ed0fa8cd48696c8b93f39a1a7bdd05eb.png?w=260",
-      "description": "Region: EUR\nRelease note: Works on 12.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "description": "Variant: EUR 12.xx\nRegion: EUR\nRelease note: Works on 12.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM\n\nVariant: EUR exFAT 01.003\nRegion: EUR\nRelease note: exFAT format — FW 01.003 — 5.xx BackPort + 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/mxgp-26-the-official-game-ps5/"
     },
     {
@@ -1224,11 +1666,23 @@
         {
           "name": "EUR 11.xx Base - Vikingfile part 4",
           "url": "https://vikingfile.com/f/l7ejoSO36y"
+        },
+        {
+          "name": "EUR exFAT 01.000.027 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiU0QvZmVNN1Ywc3RUd0xwdmNGY2pIU2k4NlFFbmVMS1k1WUdFZ1BGa0c3MnRoZ3N0eVV3U0NiV0dEbVFKWG1GeEoyUDhZYm1RME9ORithV0FYdSsvR3N5U1JncXYyT2VsQUFFUzZYbW0xQT09IiwiaSI6ImtWVTJaeDRVNmFIVEF5bHciLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "EUR exFAT 01.000.027 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiMmM0b2xlUFM3YWlBS2RXdktTVFJQSjk5MC9Zem5NWHhFUFBPTlNVaTc4cHdKbTNSdER6N0dxcm9MYkM4N1ltS2pIWTAzMDIxdnVjV3g3T05IcWZiL1ZLVEdScW55S0lYR1Z1TEwyTEgiLCJpIjoiSlNwUC9IOERXNjB3eVdqbSIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "EUR exFAT 01.000.027 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiUWZMRlRMQng5WEVlYlVOWGluWVFKQzdWb1c2RTkwYXM2bjZCMG9abmRkdGdQRkNHL1hFK1NRU2pURVhieWxUcEJTR0J0Ri9Cd0l3bnFObnJBM1FFaUVHOGVUOXBaWjNyZTF6RHUydVg4WWI4IiwiaSI6IlN4ZDFheHd2blRBRFVXbk0iLCJuIjoiTXVsdGlQYXJ0cyJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1909/b43f1dcdb2458ac9e058a8b115553aba3d73e20be3a9d939.png?w=260",
-      "description": "Region: EUR\nRelease note: Works on 11.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "description": "Variant: EUR 11.xx\nRegion: EUR\nRelease note: Works on 11.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM\n\nVariant: EUR exFAT 01.000.027\nRegion: EUR\nRelease note: exFAT format — FW 01.000.027 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/the-relic-first-guardian-ps5/"
     },
     {
@@ -1246,11 +1700,23 @@
         {
           "name": "EUR 12.xx Base - Vikingfile",
           "url": "https://vikingfile.com/f/JRp0dz8UgC"
+        },
+        {
+          "name": "EUR exFAT 01.000 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiNGRhZlFPeVA0K3pid3VBYkMxV0lKL2luVEFGajFINW9EalRVSGl3Sit3cGw0bUEzVlRVUFVWcHIvbW4xK0NSSFhZSjhBY05yRDI3ZmxFVXc4ODZsYXFSTUhBaWRxNFhOTXFoK05yUGFoQT09IiwiaSI6InhHUFNoSExLV0FvSVZNV24iLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "EUR exFAT 01.000 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiajh1OEdpUTlzelFMZlJTaG1GQ25hR3RnaG9QSkkwSWpoTUdNZ0tMREZ5WXB6TlN5a2JKem9YLzRyeExXbGt4eGwxT2Q5NzRyM2N4dFM3bkp1a25IWVdBQ25oblY3UWEwWFkvdFlOMTQiLCJpIjoiQisxMHlxbVBhaXRSOG8rNCIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "EUR exFAT 01.000 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiRU1TT1NVeG56YW9oVDlPb1kxcUZHK0VPZE11ektKNXljYktFTFZaRkxFblhybWdxT2l6ZklURjlSWSt5NHFvT1pTN2VnUVRlcUFGd05rMzM3aGcyT3VYY2JURWZMdmlqUVRlRFkzZnMyL0E9IiwiaSI6IkJPUzVuVkxmVURWQVdXRFAiLCJuIjoiVmlraSJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/0713/534efd914eb9f889e13e6090781eb26bf6ad76f208aca86b.png?w=260",
-      "description": "Region: EUR\nRelease note: Works on 12.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "description": "Variant: EUR 12.xx\nRegion: EUR\nRelease note: Works on 12.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM\n\nVariant: EUR exFAT 01.000\nRegion: EUR\nRelease note: exFAT format — FW 01.000 — 5.xx BackPort + 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/the-mound-omen-of-cthulhu-ps5/"
     },
     {
@@ -63056,13 +63522,37 @@
           "url": "https://rootz.so/d/1EzjUm"
         },
         {
+          "name": "v01.013 DLCs (PKG – Pkykzhack) - Akirabox part 1",
+          "url": "https://akirabox.com/Z9dzBPMvEmk1/file"
+        },
+        {
+          "name": "v01.013 DLCs (PKG – Pkykzhack) - Akirabox part 2",
+          "url": "https://akirabox.com/RMKGJK9ZVm1o/file"
+        },
+        {
+          "name": "v01.013 DLCs (PKG – Pkykzhack) - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/RKqCOuRw0b"
+        },
+        {
+          "name": "v01.013 DLCs (PKG – Pkykzhack) - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/89CWvtmYv4"
+        },
+        {
+          "name": "v01.013 DLCs (PKG – Pkykzhack) - Rootz part 1",
+          "url": "https://www.rootz.so/d/FEyhc"
+        },
+        {
+          "name": "v01.013 DLCs (PKG – Pkykzhack) - Rootz part 2",
+          "url": "https://www.rootz.so/d/NIgQi"
+        },
+        {
           "name": "USA exFAT 01.013 Base - DATA (exFAT)",
           "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiWkZ6bjJuaDIvd2FZNGhnZnk3WGpPTG55UnJwbXU1cEsvMlFUd0dqN3MrTXBGUEZ5RXI2VTZNdlRnSlpRclJ5RWIyc3VTdGFmZjErdGo5eFBUclVYemxMZXFTSUsiLCJpIjoiWXlpVUZvTnFPT2Q0R1FvTCIsIm4iOiJEYXRhIn0="
         }
       ],
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202506/2406/1aa1badf590e91360c963cf8b421208002b397dbcb6c9e5b.png?w=260",
-      "description": "Variant: USA 12.xx\nRegion: USA\nRelease note: Working 12.xx to 9.xx\nContributor: @High-Speed007\nPassword: DLPSGAME.COM\n\nVariant: USA exFAT 01.013\nRegion: USA\nRelease note: exFAT format — FW 01.013 — 4.xx BackPort\nContributor: pippo",
+      "description": "Variant: USA 12.xx\nRegion: USA\nRelease note: Working 12.xx to 9.xx\nContributor: @High-Speed007\nPassword: DLPSGAME.COM\n\nVariant: v01.013\nRelease note: Vampire The Masquerade Bloodlines 2 (v01.013) (Premium Edition) – BP 4.xx – PPSA15186 – FPKG LINK (Multi Part) (Game + DLCs (PKG – Pkykzhack): Akia – Viki – Rootz – Data\nContributor: Thanks to High-Speed007 for the Files, Pkykzhack for DLCs and DecKerr97 for the BackPort.\n\nVariant: USA exFAT 01.013\nRegion: USA\nRelease note: exFAT format — FW 01.013 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/vampire-the-masquerade-bloodlines-2-ps5/"
     },
     {
@@ -82912,6 +83402,14 @@
         {
           "name": "EUR 6.xx BackPort 4.xx - Rootz part 2",
           "url": "https://www.rootz.so/d/1tkQFM"
+        },
+        {
+          "name": "EUR 6.xx BackPort 4.xx - Mediafire part 3",
+          "url": "https://www.mediafire.com/file/zv2e4kf4yp3n38z/Backport+4.XX+PPSA06359+%E2%80%93+EUR+Jumping+Flash++By+BADERLINK-[DLPSGAME.COM].zip/file"
+        },
+        {
+          "name": "EUR 6.xx BackPort 4.xx - Mediafire part 4",
+          "url": "https://www.mediafire.com/file/9lgen9bp50r974m/Backport+5.XX+PPSA06359+%E2%80%93+EUR+Jumping+Flash++By+BADERLINK-[DLPSGAME.COM].zip/file"
         },
         {
           "name": "Release 2 Base - Rapidgator",
