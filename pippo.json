@@ -3,6 +3,157 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA25427",
+      "title": "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles 2 Deluxe Edition",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/bcEnNOQo#DataNodes"
+        },
+        {
+          "name": "DLC - Vault",
+          "url": "https://link-vault.org/c/bcEnNOQo#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/PSDqPY7M#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/PSDqPY7M#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/PSDqPY7M#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/PSDqPY7M#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/vkKzkuxJ#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/vkKzkuxJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/vkKzkuxJ#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/vkKzkuxJ#FileDitch"
+        }
+      ],
+      "version": "v02.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png?w=260",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA25427, v02.000.001, ASIA, 4.xx BackPort\nSize: 59GB\nCredits: Files: DecKerr97 &amp; L3G3ND44; Backport: DecKerr97 &amp; L3G3ND44; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional but recommended for 10.xx+.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 63350767616,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png"
+    },
+    {
+      "titleId": "PPSA01494",
+      "title": "Borderlands 4 Super Deluxe Edition",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/oFVQCMpr#DataNodes"
+        },
+        {
+          "name": "DLC - Vault",
+          "url": "https://link-vault.org/c/oFVQCMpr#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/i3xAd7gs#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/i3xAd7gs#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/i3xAd7gs#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/i3xAd7gs#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/Nv3fll3K#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/Nv3fll3K#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/Nv3fll3K#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/Nv3fll3K#FileDitch"
+        }
+      ],
+      "version": "v01.100.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/2900/c256181959227eb346613262ed37b456aad37996829e36ca.png?w=260",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA01494, v01.100.002, USA, 4.xx BackPort\nSize: 83GB\nCredits: Files: DecKerr97 &amp; L3G3ND44; Backport: DecKerr97 &amp; L3G3ND44; DLC: Pippo\nHow to play: Note: Audio English Only with all subtitles, miss Audio Langs .pak. FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 10.xx, separated BackPort PKG for 4.xx+ included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 89120571392,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/2900/c256181959227eb346613262ed37b456aad37996829e36ca.png"
+    },
+    {
+      "titleId": "PPSA07631",
+      "title": "SAROS",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/jlVvxIcL#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/jlVvxIcL#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/jlVvxIcL#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/jlVvxIcL#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/6ODr3eDE#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/6ODr3eDE#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/6ODr3eDE#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/6ODr3eDE#FileDitch"
+        }
+      ],
+      "version": "v01.005.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/78549217df5077bea107700e077d04be6a9a4b0dfbcd821a.png?w=260",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA07631, v01.005.002, EUR, 4.xx BackPort\nSize: 166GB\nCredits: Files: DecKerr97 &amp; L3G3ND44; Backport: DecKerr97 &amp; L3G3ND44\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 11.xx, separated BackPort PKG for 4.xx+ included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 178241142784,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/78549217df5077bea107700e077d04be6a9a4b0dfbcd821a.png"
+    },
+    {
       "titleId": "PPSA38272",
       "title": "Onimusha Dawn of Dreams",
       "downloadLinks": [
@@ -1464,7 +1615,7 @@
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2322/78e0ba12f88a79c454b6b17d1638f2ae0b2943f1dbc98a17.png"
     },
     {
-      "id": 5357768,
+      "id": 5437799,
       "catalogSlug": "",
       "titleId": "PPSA99902",
       "title": "Sonic Unleashed Recompiled Unofficial Port",
@@ -12243,7 +12394,7 @@
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2910/e8146bd54da924d5efd03b8bf5b441646b09a74a7f021f2f.png"
     },
     {
-      "id": 5358035,
+      "id": 5438066,
       "catalogSlug": "",
       "titleId": "PPSA22711",
       "title": "Ed 0 Zombie Uprising",
@@ -19373,47 +19524,6 @@
       "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
       "sizeBytes": 33285996544,
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2820/3ac645931328e4ca5a7775db1164c09fef421589e6a50b88.png"
-    },
-    {
-      "titleId": "PPSA07631",
-      "title": "SAROS",
-      "downloadLinks": [
-        {
-          "name": "Standard 5.xx - AkiraBox",
-          "url": "https://akirabox.com/N2p3DQybxzMa/file"
-        },
-        {
-          "name": "Standard 5.xx - DataNodes",
-          "url": "https://datanodes.to/7hdc71l9khno"
-        },
-        {
-          "name": "4.xx BackPort - AkiraBox",
-          "url": "https://akirabox.com/2bJG80xg0GOB/file"
-        },
-        {
-          "name": "4.xx BackPort - VikingFile",
-          "url": "https://vikingfile.com/f/gsGCnpH5QC"
-        },
-        {
-          "name": "4.xx BackPort - DataNodes",
-          "url": "https://datanodes.to/84zkpa5gu6un"
-        },
-        {
-          "name": "4.xx BackPort - Filek",
-          "url": "https://filekeeper.net/v9lpvffwx4er"
-        },
-        {
-          "name": "4.xx BackPort - Vault",
-          "url": "https://datavaults.co/cxk9y71qyso0"
-        }
-      ],
-      "version": "v01.000",
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/78549217df5077bea107700e077d04be6a9a4b0dfbcd821a.png?w=260",
-      "description": "Builds: Standard 5.xx, 4.xx BackPort\nTags: PPSA07631, v01.000, EUR, Standard (5.xx) + 4.xx BackPort\nSize: 151GB\nCredits: Files: DUPLEX; Backport: BestPig &amp; Zhwenx\nHow to play: English Audio Only. Audio issue fixed by ManwonHp.",
-      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
-      "sizeBytes": 162135015424,
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/78549217df5077bea107700e077d04be6a9a4b0dfbcd821a.png"
     },
     {
       "titleId": "PPSA05991",
@@ -28585,39 +28695,6 @@
       "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
       "sizeBytes": 77309411328,
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202403/0618/5eb7a7431f949782b41e96f098f555ad492c2981d1156f18.png"
-    },
-    {
-      "titleId": "PPSA25428",
-      "title": "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles 2",
-      "downloadLinks": [
-        {
-          "name": "AkiraBox",
-          "url": "https://akirabox.com/2bJG8JXld3OB/file"
-        },
-        {
-          "name": "VikingFile",
-          "url": "https://vikingfile.com/f/0LPYdoJNai"
-        },
-        {
-          "name": "BuzzHeavier",
-          "url": "https://buzzheavier.com/jan3bd0hx3tw"
-        },
-        {
-          "name": "DLC - AkiraBox",
-          "url": "https://akirabox.com/M2BGwWLLOGj4/file"
-        },
-        {
-          "name": "DLC - VikingFile",
-          "url": "https://vikingfile.com/f/mSC7hhp6Ur"
-        }
-      ],
-      "version": "v01.000",
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png?w=260",
-      "description": "Builds: DLC\nTags: PPSA25428, v01.000, ASIA, 4.xx BackPork\nSize: 53GB\nCredits: Files: SiESPta; Backport: BestPig; DLC: Psykzhack",
-      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
-      "sizeBytes": 56908316672,
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png"
     },
     {
       "titleId": "PPSA22322",
