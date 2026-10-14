@@ -3,6 +3,137 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA07247",
+      "title": "Warhammer 40000 Boltgun",
+      "downloadLinks": [
+        {
+          "name": "EUR 8.xx Base - Akirabox",
+          "url": "https://akirabox.com/jJD3VeR60ma5/file"
+        },
+        {
+          "name": "EUR 8.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/mZZEe"
+        },
+        {
+          "name": "EUR 8.xx Base - Vikingfile",
+          "url": "https://vikingfile.com/f/imlCYzIoVM"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202303/2314/c5e10e76ff39458aba617e8c889c22ad12f3b495bbee2af4.png?w=260",
+      "description": "Region: EUR\nRelease note: Works on 8.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/warhammer-40000-boltgun-ps5/",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202303/2314/c5e10e76ff39458aba617e8c889c22ad12f3b495bbee2af4.png"
+    },
+    {
+      "titleId": "PPSA19969",
+      "title": "Turbo Overkill",
+      "downloadLinks": [
+        {
+          "name": "USA 9.xx Base - Akirabox",
+          "url": "https://akirabox.com/2WVGrWQ2qmkx/file"
+        },
+        {
+          "name": "USA 9.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/1HxA36"
+        },
+        {
+          "name": "USA 9.xx Base - Vikingfile",
+          "url": "https://vikingfile.com/f/BbvnW06w6c"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2814/95e0bf2847489e24f136324cbd9ea0ca1f9284d52d512446.png?w=260",
+      "description": "Region: USA\nRelease note: Works on 9.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/turbo-overkill-ps5/",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2814/95e0bf2847489e24f136324cbd9ea0ca1f9284d52d512446.png"
+    },
+    {
+      "titleId": "PPSA36167",
+      "title": "Romance of The Three Kingdoms XIV Complete Edition",
+      "downloadLinks": [
+        {
+          "name": "JPN 12.xx Base - Akirabox",
+          "url": "https://akirabox.com/Z9dzBBjaxzk1/file"
+        },
+        {
+          "name": "JPN 12.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/udGxk"
+        },
+        {
+          "name": "JPN 12.xx Base - Vikingfile",
+          "url": "https://vikingfile.com/f/mWem4Uvjc9"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18004_00/2/i_2bd4d604346796d42a3a43418137fb7897e03db7353b9fb7a793282f0c8943ef/i/icon0.png?w=260",
+      "description": "Region: JPN\nRelease note: Works on 12.xx and higher",
+      "downloadSource": "https://dlpsgame.com/romance-of-the-three-kingdoms-xiv-complete-edition-ps5/",
+      "originalPosterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA18004_00/2/i_2bd4d604346796d42a3a43418137fb7897e03db7353b9fb7a793282f0c8943ef/i/icon0.png"
+    },
+    {
+      "titleId": "PPSA08087",
+      "title": "Mordhau",
+      "downloadLinks": [
+        {
+          "name": "EUR 6.xx Base - Akirabox part 1",
+          "url": "https://akirabox.com/0JgG7a0OK3oY/file"
+        },
+        {
+          "name": "EUR 6.xx Base - Akirabox part 2",
+          "url": "https://akirabox.com/0PdzyMWgdzeA/file"
+        },
+        {
+          "name": "EUR 6.xx Base - Rootz part 1",
+          "url": "https://www.rootz.so/d/2JP4Fc"
+        },
+        {
+          "name": "EUR 6.xx Base - Rootz part 2",
+          "url": "https://www.rootz.so/d/12gyci"
+        },
+        {
+          "name": "EUR 6.xx Base - Vikingfile part 1",
+          "url": "https://vikingfile.com/f/guYqfRv0F6"
+        },
+        {
+          "name": "EUR 6.xx Base - Vikingfile part 2",
+          "url": "https://vikingfile.com/f/5nAxYCyk3u"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1509/823903c5a84f386f467fbec8022f302a3cd76835f020efae.png?w=260",
+      "description": "Region: EUR\nRelease note: Works on 6.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/mordhau-ps5/",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202302/1509/823903c5a84f386f467fbec8022f302a3cd76835f020efae.png"
+    },
+    {
+      "titleId": "PPSA35399",
+      "title": "Castlevania Belmonts Curse",
+      "downloadLinks": [
+        {
+          "name": "JPN 11.xx Base - Akirabox",
+          "url": "https://akirabox.com/l76mZvRpkman/file"
+        },
+        {
+          "name": "JPN 11.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/1Qs5o0"
+        },
+        {
+          "name": "JPN 11.xx Base - Vikingfile",
+          "url": "https://vikingfile.com/f/gu1JSlkj1r"
+        },
+        {
+          "name": "JPN 11.xx Base - 1fichier",
+          "url": "https://1fichier.com/?ypgu0i3x299m4ly1dq3a"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2005/4074e46383e491ab25df83141a556f69aa7c005fa92ffa4b.png?w=260",
+      "description": "Region: JPN\nRelease note: Works on 11.xx and higher\nContributor: @DUPLEX\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/castlevania-belmonts-curse-ps5/",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2005/4074e46383e491ab25df83141a556f69aa7c005fa92ffa4b.png"
+    },
+    {
       "titleId": "PPSA24779",
       "title": "Captain Blood",
       "downloadLinks": [
@@ -447,6 +578,25 @@
       "description": "Region: EUR\nRelease note: Works on 10.xx and higher\nPassword: DLPSGAME.COM",
       "downloadSource": "https://dlpsgame.com/saborus-ps5/",
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/0100/49ce2f360e00ebf5d15f7a79c3700daa768b3223fba9ad15.png"
+    },
+    {
+      "titleId": "PPSA37318",
+      "title": "Mewgenics",
+      "downloadLinks": [
+        {
+          "name": "USA 12.xx Base - Akirabox",
+          "url": "https://akirabox.com/9AqGQZMyNmMn/file"
+        },
+        {
+          "name": "USA 12.xx Base - Rootz",
+          "url": "https://www.rootz.so/d/lhzd2"
+        }
+      ],
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/3119/174f42937183e1265fc2be306dfd57228ec278aeb5c69d22.png?w=260",
+      "description": "Region: USA\nRelease note: Works on 12.xx and higher\nPassword: DLPSGAME.COM",
+      "downloadSource": "https://dlpsgame.com/mewgenics-ps5/",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/3119/174f42937183e1265fc2be306dfd57228ec278aeb5c69d22.png"
     },
     {
       "titleId": "PPSA29043",
@@ -989,25 +1139,6 @@
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/2123/c261a0f006b6c663003a793fcccd2903ffc77732d283ea49.png"
     },
     {
-      "titleId": "PPSA37318",
-      "title": "Mewgenics",
-      "downloadLinks": [
-        {
-          "name": "USA 12.xx Base - Akirabox",
-          "url": "https://akirabox.com/9AqGQZMyNmMn/file"
-        },
-        {
-          "name": "USA 12.xx Base - Rootz",
-          "url": "https://www.rootz.so/d/lhzd2"
-        }
-      ],
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/3119/174f42937183e1265fc2be306dfd57228ec278aeb5c69d22.png?w=260",
-      "description": "Region: USA\nRelease note: Works on 12.xx and higher\nPassword: DLPSGAME.COM",
-      "downloadSource": "https://dlpsgame.com/mewgenics-ps5/",
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/3119/174f42937183e1265fc2be306dfd57228ec278aeb5c69d22.png"
-    },
-    {
       "titleId": "PPSA14382",
       "title": "Disney Pixar Buzz Lightyear of Star Command",
       "downloadLinks": [
@@ -1524,11 +1655,23 @@
         {
           "name": "EUR 7.xx Base - 1fichier part 7",
           "url": "https://1fichier.com/?hcnufr0hliwria64mdbe"
+        },
+        {
+          "name": "EUR exFAT 01.000.053 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiTGJ1ZlBlditRWWw2cjRQc0FFaG9MOGdhOFdQcVhObG5QcXF2bXlDS3JTSHE5bStqQnl2QU11QlFjUEVnd2lFMWFGUERGRnNwTHBOeDZGZUZkV00wUjNkUUxWV0xQMEFhUjZGeUV6UVpzQT09IiwiaSI6ImpnOFJ5c29DaXVYTG5BeTgiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "EUR exFAT 01.000.053 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiWHNaSmdwL3Y4Y0Q0alFqV0Q5RWFxa1lwdWcyazRkTEJMYzgvSHZoT2RnOW9kRFZpb2tOaHRzanBjNk9kV1VKbU01K2ZSSHVyQ3c1MEdtZVNRS1JBYUx3RkQ2RHMxOGJzbzJ3SVV2TXAiLCJpIjoiQldheEVPcElrcWpyRkI0MiIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "EUR exFAT 01.000.053 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoibjFoaWZUYnc3RFpoRE9mQm5HblBWNVhtWWF2MUduemtOcDJHenE3Ukgxa3pwbDF3bDQrUWZBNTlMdGtaU3FMY1R3ZHZ6NUtpVnBYTUpJUzE5V1R4VHdjT0FIaU05OVBDbTc1enFyWnlWWDg9IiwiaSI6InAvVlY0cWVieXY2NkZxZGkiLCJuIjoiVmlraSJ9"
         }
       ],
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0813/81ab4b5e5fc8aeba84d3ce3fb7aeede9f00bbab93d9c9c60.png?w=260",
-      "description": "Region: EUR\nRelease note: Works on 7.xx and higher\nPassword: DLPSGAME.COM",
+      "description": "Variant: EUR 7.xx\nRegion: EUR\nRelease note: Works on 7.xx and higher\nPassword: DLPSGAME.COM\n\nVariant: EUR exFAT 01.000.053\nRegion: EUR\nRelease note: exFAT format — FW 01.000.053 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://dlpsgame.com/cricket-24-ps5/",
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0813/81ab4b5e5fc8aeba84d3ce3fb7aeede9f00bbab93d9c9c60.png"
     },
@@ -66372,23 +66515,11 @@
         {
           "name": "ASIA 10.xx BackPort 4.xx - Rootz",
           "url": "https://rootz.so/d/u3czw"
-        },
-        {
-          "name": "ASIA exFAT 01.000 Base - AKIA (exFAT)",
-          "url": "https://pippo26442999.github.io/link-lock-pippo/#eyJ2IjoiMC4wLjEiLCJlIjoiZDQ0dWU3SEt0VE8vd2JMdFNLOEJ2L2hJSjFKOWNvUXhFSDNYeEdHaS9iMXdpVnpCUGRQdlNaQW1wUU1xS1BIeEIwZGpDbWQxIiwicyI6Imp2OG5MdnR1eFptbUgva2cxQzh5QkE9PSIsImkiOiI1SUR2cStFRVkzRTRCemY2In0="
-        },
-        {
-          "name": "ASIA exFAT 01.000 Base - VIKI (exFAT)",
-          "url": "https://pippo26442999.github.io/link-lock-pippo/#eyJ2IjoiMC4wLjEiLCJlIjoibWFheU5qQW9UUXpiU2FQYzJuSVhEM0x6Y25JNHlFeUJ5T3ZQMk5Vbm1pV25qeG1YdUI3THZ6UkoxNDVjTm8wY1BFRXMiLCJzIjoiSHNRWit1THpQbXFVRTc0ZjREM2pMUT09IiwiaSI6IllzRm1EUnJWd3ZmUjJ5V3EifQ=="
-        },
-        {
-          "name": "ASIA exFAT 01.000 Base - Buzz (exFAT)",
-          "url": "https://pippo26442999.github.io/link-lock-pippo/#eyJ2IjoiMC4wLjEiLCJlIjoiRi9jRy85eEdpRlVuQ0p4Uks5RUxVVWVkYVcranZrQnVQSENOTUJjdmY0U3JNWjcwRm5zMUN2cnpsQWYrS3kxWDd0bjRvdz09IiwicyI6Ik56TDFacy9xazM4ZVVCVUV2OUJUd2c9PSIsImkiOiJWRzZ5SzZzQkVUckJDNk9KIn0="
         }
       ],
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png?w=260",
-      "description": "Variant: ASIA 10.xx\nRegion: ASIA\nRelease note: Works on 10.xx and higher\nContributor: @ SiESPta Team\nPassword: DLPSGAME.COM\n\nVariant: ASIA exFAT 01.000\nRegion: ASIA\nRelease note: exFAT format — FW 01.000\nContributor: pippo",
+      "description": "Region: ASIA\nRelease note: Works on 10.xx and higher\nContributor: @ SiESPta Team\nPassword: DLPSGAME.COM",
       "downloadSource": "https://dlpsgame.com/demon-slayer-kimetsu-no-yaiba-the-hinokami-chronicles-2-ps5/",
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png"
     },
@@ -131150,6 +131281,30 @@
       "description": "Variant: Release 1\nContributor: pkg.games\n\nVariant: USA exFAT 01.004\nRegion: USA\nRelease note: exFAT format — FW 01.004 — 4.xx BackPort\nContributor: pippo",
       "downloadSource": "https://pkg.games/ps5/greyhill-incident/",
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202212/0617/F7z6c9GM1VGoqfYxHorvMjzL.png"
+    },
+    {
+      "titleId": "PPSA25427",
+      "title": "[exFAT] Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles 2 Deluxe Edition",
+      "downloadLinks": [
+        {
+          "name": "ASIA exFAT 02.000.001 Base - DATA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoidWJOMzNQMWJucGpJUVk2MnMvQTd6OWhncWhOamllTUdwajg5YnU0L2YvUzVRNDQycmJxNHBjdTQ1eFMzK2YxMks0TG9JZjlEZEVrVEVRdDlkaUVTL3dJMGhJdng1MDNFL2pLZ2M1VHVpQT09IiwiaSI6Im15RkpIRHlSQUNVZ0N0KysiLCJuIjoiRGF0YSJ9"
+        },
+        {
+          "name": "ASIA exFAT 02.000.001 Base - AKIA (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiTUFIVlRwTlc0MnRDaktrRW5QeHh0K0toM0RzUDhzQmVKUEt6cEo2YmprTWhKazdVVGZYUVoyc2doMHBhY1FJNlR1NHpyaXJ5Sm1xVXV1R0dJWng0VHJmMm4yZHk1SnVMTUdxUnE3VHQiLCJpIjoiS0ZBcmJJUEw3akpER0xEdCIsIm4iOiJBa2lhIn0="
+        },
+        {
+          "name": "ASIA exFAT 02.000.001 Base - VIKI (exFAT)",
+          "url": "https://pippo26442999.github.io/library-decrypt/decrypt-public.html#eyJ2IjoiMC4wLjEiLCJlIjoiKytrd3EyanM5Q2RDUHlDLzExZmRwdXgrTU5MTDNoaXFYdmxESWZuQmMxZFBMWGwrRklaNUx2bnRVb1ZDSXZIdXZHT05Qd0I2VmxZVksybXZGL21XZHpZN0tydjhicmEzMTBlcnlRYmttaTA9IiwiaSI6IldRYUc1cnRiTFlyWUJZTFMiLCJuIjoiVmlraSJ9"
+        }
+      ],
+      "version": "02.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png?w=260",
+      "description": "Region: ASIA\nRelease note: exFAT format — FW 02.000.001 — 4.xx BackPort\nContributor: pippo",
+      "downloadSource": "https://pub-d5f4def955404492b20262ad2a0dc12a.r2.dev/games_ps5_cache.json",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png"
     },
     {
       "titleId": "PPSA01494",

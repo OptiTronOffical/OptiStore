@@ -3,6 +3,51 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA16342",
+      "title": "Cricket 24",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/BsJzAVqy#DataNodes"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/BsJzAVqy#AkiraBox"
+        },
+        {
+          "name": "Dump - Filed",
+          "url": "https://link-vault.org/c/BsJzAVqy#FileDitch"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/BsJzAVqy#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/fvmulD5j#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/fvmulD5j#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/fvmulD5j#DataNodes"
+        },
+        {
+          "name": "Fpkg - Filed",
+          "url": "https://link-vault.org/c/fvmulD5j#FileDitch"
+        }
+      ],
+      "version": "v01.000.053",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0813/81ab4b5e5fc8aeba84d3ce3fb7aeede9f00bbab93d9c9c60.png?w=260",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA16342, v01.000.053, EUR, 4.xx BackPort\nSize: 251GB\nCredits: Files: DecKerr97; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 7.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "sizeBytes": 269509197824,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202309/0813/81ab4b5e5fc8aeba84d3ce3fb7aeede9f00bbab93d9c9c60.png"
+    },
+    {
       "titleId": "PPSA25427",
       "title": "Demon Slayer Kimetsu no Yaiba The Hinokami Chronicles 2 Deluxe Edition",
       "downloadLinks": [
@@ -50,7 +95,7 @@
       "version": "v02.000.001",
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png?w=260",
-      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA25427, v02.000.001, ASIA, 4.xx BackPort\nSize: 59GB\nCredits: Files: DecKerr97 &amp; L3G3ND44; Backport: DecKerr97 &amp; L3G3ND44; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional but recommended for 10.xx+.",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA25427, v02.000.001, ASIA, 4.xx BackPort\nSize: 59GB\nCredits: Files: DecKerr97 &amp; L3G3ND44; Backport: DecKerr97 &amp; L3G3ND44; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
       "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
       "sizeBytes": 63350767616,
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1707/5838807383baec8d94aaad989ca3f7c654e1efc2a1da66c2.png"
@@ -1615,7 +1660,7 @@
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2322/78e0ba12f88a79c454b6b17d1638f2ae0b2943f1dbc98a17.png"
     },
     {
-      "id": 5437799,
+      "id": 5492392,
       "catalogSlug": "",
       "titleId": "PPSA99902",
       "title": "Sonic Unleashed Recompiled Unofficial Port",
@@ -12394,7 +12439,7 @@
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2910/e8146bd54da924d5efd03b8bf5b441646b09a74a7f021f2f.png"
     },
     {
-      "id": 5438066,
+      "id": 5492659,
       "catalogSlug": "",
       "titleId": "PPSA22711",
       "title": "Ed 0 Zombie Uprising",
