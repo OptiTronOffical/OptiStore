@@ -459,13 +459,9 @@ The library is a browsable list of links. The author does not host, upload, mirr
 
 **The author's only contribution is their time** — writing the code, assembling the browser, and documenting it. If the library saved you some of yours, consider supporting that effort:
 
-```
-ETH: 0x17E1D7f8A9641749A3f6A932Df09D36FE198df86
-```
 
 
 ## Support
 
 - **Telegram:** [@OptiTronOffical](https://t.me/OptiTronOffical) — issues, questions, or custom project requests.
-- **Coffee:** the Ethereum address above, or the **Donate me a coffee** button in the topbar of either page.
-```
+
