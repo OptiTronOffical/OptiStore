@@ -2,358 +2,258 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#05060a">
-<title>PKG Sender — Console Delivery</title>
-<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>RPI Sender — Send PKG to PS4</title>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#05060a; --surface:#0b0e16; --surface-2:#10131d; --card:#0c0f17;
-  --line:#1b2030; --line-2:#2a3247;
+  --bg:#06070c; --surface:#0d1019; --surface-2:#12151f; --card:#0e121c;
+  --line:#1a1f2e; --line-2:#262d42;
   --accent:#7c5cff; --accent-2:#22d3ee; --accent-3:#a78bfa;
-  --accent-soft:rgba(124,92,255,.12); --accent-glow:rgba(124,92,255,.30);
+  --accent-soft:rgba(124,92,255,.12); --accent-glow:rgba(124,92,255,.32);
   --ok:#10b981; --ok-2:#34d399; --ok-soft:rgba(16,185,129,.10);
-  --warn:#f5a524; --warn-soft:rgba(245,165,36,.10);
   --err:#f43f5e; --err-soft:rgba(244,63,94,.10);
-  --tg:#29a9eb; --tg-soft:rgba(41,169,235,.12);
   --tx:#eef1f8; --tx-2:#98a1b8; --tx-3:#5a6379;
-  --f:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  --m:'JetBrains Mono',ui-monospace,SFMono-Regular,monospace;
-  --r-sm:8px; --r-md:11px; --r-lg:14px; --r-xl:18px;
-  --ease:cubic-bezier(.2,.8,.3,1);
+  --f:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --m:'JetBrains Mono',ui-monospace,monospace;
 }
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  background:var(--bg);color:var(--tx);font-family:var(--f);
+  font-size:15px;line-height:1.55;min-height:100%;
+  -webkit-font-smoothing:antialiased;
+}
 body{
-  background:var(--bg); color:var(--tx); font-family:var(--f);
-  font-size:15px; line-height:1.55; min-height:100vh;
-  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
-  overflow-x:hidden;
+  background-image:
+    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,.14), transparent 62%),
+    radial-gradient(800px 400px at 95% 5%, rgba(34,211,238,.07), transparent 60%);
+  background-attachment:fixed;
 }
-body::before{
-  content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;
-  background:
-    radial-gradient(900px 520px at 8% -120px, rgba(124,92,255,.16), transparent 65%),
-    radial-gradient(760px 420px at 96% -60px, rgba(34,211,238,.08), transparent 62%),
-    radial-gradient(700px 500px at 50% 110%, rgba(124,92,255,.05), transparent 70%);
-}
-button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:0}
-input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
-a{color:inherit;text-decoration:none}
-::selection{background:var(--accent);color:#fff}
-::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar{width:11px;height:11px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:var(--line-2);border-radius:8px;border:3px solid var(--bg)}
-::-webkit-scrollbar-thumb:hover{background:#39425c}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+::selection{background:var(--accent);color:#fff}
 
-/* Topbar */
 .topbar{
-  position:sticky;top:0;z-index:100;display:flex;align-items:center;
-  gap:14px;min-height:64px;padding:0 clamp(14px,2.4vw,28px);
-  background:rgba(5,6,10,.82);backdrop-filter:saturate(160%) blur(16px);
-  -webkit-backdrop-filter:saturate(160%) blur(16px);border-bottom:1px solid var(--line);
+  position:sticky;top:0;z-index:100;height:64px;
+  display:flex;align-items:center;justify-content:space-between;gap:16px;
+  padding:0 clamp(16px,3vw,34px);
+  background:rgba(6,7,12,.82);
+  backdrop-filter:saturate(180%) blur(20px);
+  -webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid var(--line);
 }
-.brand{display:flex;align-items:center;gap:11px;flex:none;min-width:0}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
 .brand-mark{
-  width:36px;height:36px;flex:none;border-radius:11px;display:grid;place-items:center;
-  font-size:15px;font-weight:800;letter-spacing:-.04em;color:#05060a;
+  width:36px;height:36px;border-radius:11px;flex:none;
   background:linear-gradient(135deg,var(--accent),var(--accent-2));
-  box-shadow:0 8px 20px -8px var(--accent-glow);
+  display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:900;color:#06070c;letter-spacing:-.05em;
+  box-shadow:0 8px 22px -8px var(--accent-glow);
 }
 .brand-txt{display:flex;flex-direction:column;line-height:1.15;min-width:0}
-.brand-txt .n{font-size:14.5px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
-.brand-txt .n em{font-style:normal;background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.brand-txt .s{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx-3)}
-.topbar-right{display:flex;align-items:center;gap:8px;flex:none;margin-left:auto}
-.watchdog{
-  display:inline-flex;align-items:center;gap:7px;padding:0 12px;height:36px;border-radius:11px;
-  border:1px solid var(--line);background:rgba(255,255,255,.03);
-  font-family:var(--m);font-size:11px;font-weight:600;color:var(--tx-3);
-  transition:border-color .25s,color .25s,background .25s;
+.brand-txt .n{font-size:15px;font-weight:800;letter-spacing:-.02em;white-space:nowrap}
+.brand-txt .n em{
+  font-style:normal;
+  background:linear-gradient(90deg,var(--accent-3),var(--accent-2));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-.watchdog .led{width:8px;height:8px;border-radius:50%;background:var(--line-2);
-  box-shadow:0 0 0 0 rgba(16,185,129,0);transition:background .25s,box-shadow .25s}
-.watchdog.live{border-color:rgba(16,185,129,.4);color:#6ee7c0;background:var(--ok-soft)}
-.watchdog.live .led{background:var(--ok-2);box-shadow:0 0 0 4px rgba(16,185,129,.14);
-  animation:ledPulse 2s ease-in-out infinite}
-.watchdog.down{border-color:rgba(244,63,94,.4);color:#fda4af;background:var(--err-soft)}
-.watchdog.down .led{background:var(--err)}
-@keyframes ledPulse{0%,100%{box-shadow:0 0 0 3px rgba(16,185,129,.14)}50%{box-shadow:0 0 0 6px rgba(16,185,129,0)}}
-.back-btn{
-  display:inline-flex;align-items:center;gap:7px;padding:0 13px;height:36px;border-radius:11px;
-  border:1px solid var(--line);background:rgba(255,255,255,.03);
-  font-size:12.5px;font-weight:700;color:var(--tx-2);cursor:pointer;
-  transition:border-color .18s,color .18s,background .18s;
-}
-.back-btn:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
-.back-btn svg{width:14px;height:14px;flex:none}
+.brand-txt .s{font-size:10px;color:var(--tx-3);font-weight:700;letter-spacing:.09em;text-transform:uppercase}
+.topbar-right{display:flex;align-items:center;gap:10px}
 
-/* Layout */
-.wrap{max-width:1180px;margin:0 auto;padding:24px clamp(14px,2.4vw,28px) 80px}
-.hero{text-align:center;padding:14px 0 24px}
-.hero h1{font-size:clamp(24px,4vw,38px);font-weight:800;letter-spacing:-.04em;line-height:1.1}
-.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--accent-3),var(--accent-2));
-  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{margin:12px auto 0;max-width:620px;font-size:14px;color:var(--tx-2)}
+.btn-nav{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:9px 16px;border-radius:9px;
+  font-family:inherit;font-size:12.5px;font-weight:800;
+  color:var(--tx-2);text-decoration:none;
+  background:rgba(255,255,255,.035);
+  border:1px solid var(--line);
+  transition:.18s;letter-spacing:.01em;cursor:pointer;
+}
+.btn-nav:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
+.btn-nav svg{width:14px;height:14px;flex:none}
 
-/* Card */
-.card{
-  background:var(--card);border:1px solid var(--line);border-radius:var(--r-xl);
-  padding:20px;margin-bottom:18px;position:relative;transition:border-color .22s;
-}
-.card.hidden{display:none}
-.card-head{display:flex;align-items:center;gap:11px;margin-bottom:16px}
-.card-num{
-  width:30px;height:30px;flex:none;border-radius:50%;display:grid;place-items:center;
-  font-size:12.5px;font-weight:800;color:#fff;
-  background:linear-gradient(135deg,var(--accent),var(--accent-3));
-  box-shadow:0 6px 16px -8px var(--accent-glow);
-}
-.card-head h2{font-size:15.5px;font-weight:700;letter-spacing:-.01em}
-.card-head .sub{margin-left:auto;font-family:var(--m);font-size:11px;color:var(--tx-3);white-space:nowrap}
+.wrap{max-width:780px;margin:0 auto;padding:0 clamp(16px,3vw,34px) 100px}
 
-/* Inputs */
-label{display:block;font-size:10.5px;font-weight:700;color:var(--tx-3);
-  text-transform:uppercase;letter-spacing:.11em;margin-bottom:6px}
-input[type="text"],input[type="url"],input[type="number"],select,textarea{
-  width:100%;padding:10px 13px;background:rgba(0,0,0,.36);
-  border:1px solid var(--line);border-radius:10px;color:var(--tx);
-  font-size:14px;outline:none;transition:border-color .18s,box-shadow .18s,background .18s;
+.hero{padding:52px 0 26px;text-align:center}
+.hero h1{
+  font-size:clamp(30px,5vw,46px);font-weight:900;
+  letter-spacing:-.04em;line-height:1.05;
 }
-input::placeholder{color:var(--tx-3)}
-input:focus,select:focus,textarea:focus{
-  border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft);background:rgba(0,0,0,.48);
+.hero h1 em{
+  font-style:normal;
+  background:linear-gradient(100deg,var(--accent-3) 0%,var(--accent-2) 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
 }
-input.mono,select.mono{font-family:var(--m);font-size:13px}
-select{-webkit-appearance:none;appearance:none;
-  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%235a6379' stroke-width='1.7' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
-  background-repeat:no-repeat;background-position:right 13px center;padding-right:34px;cursor:pointer;
-}
-select option{background:#0b0e16;color:var(--tx)}
-.field{margin-bottom:14px}
-.field:last-child{margin-bottom:0}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.row-3{display:grid;grid-template-columns:1fr 130px 130px;gap:12px}
-@media (max-width:600px){.row,.row-3{grid-template-columns:1fr}}
+.hero p{margin:15px auto 0;max-width:540px;font-size:14.5px;color:var(--tx-2)}
 
-/* Buttons */
+.panel{
+  display:flex;flex-direction:column;gap:16px;
+  padding:22px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.7);
+  backdrop-filter:saturate(180%) blur(14px);
+  -webkit-backdrop-filter:saturate(180%) blur(14px);
+  margin-bottom:16px;
+}
+
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{
+  font-size:10.5px;font-weight:800;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--tx-3);
+}
+.field input{
+  width:100%;padding:13px 15px;
+  font-family:var(--m);font-size:14px;
+  color:var(--tx);background:rgba(0,0,0,.36);
+  border:1px solid var(--line);border-radius:9px;
+  outline:none;transition:.18s;
+  -webkit-appearance:none;appearance:none;
+}
+.field input:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px var(--accent-soft);
+  background:rgba(0,0,0,.5);
+}
+.field input::placeholder{color:var(--tx-3)}
+
+.ip-row{display:flex;gap:10px;align-items:stretch}
+.ip-row input{flex:1;min-width:0}
+
+.hint{
+  font-size:11.5px;color:var(--tx-3);line-height:1.55;
+  padding:10px 12px;border-radius:9px;
+  background:rgba(0,0,0,.24);border:1px solid var(--line);
+}
+.hint code{
+  font-family:var(--m);font-size:11px;
+  background:rgba(0,0,0,.4);padding:2px 6px;
+  border-radius:4px;color:var(--accent-2);
+}
+
+.row-actions{display:flex;gap:10px;flex-wrap:wrap}
+
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:8px;
-  padding:11px 18px;border-radius:10px;border:1px solid transparent;
-  font-size:13.5px;font-weight:700;line-height:1;color:var(--tx);
-  white-space:nowrap;cursor:pointer;
-  transition:filter .18s,transform .18s,background .18s,border-color .18s,color .18s,opacity .18s;
+  padding:12px 20px;border-radius:9px;border:1px solid transparent;
+  font-family:inherit;font-size:13.5px;font-weight:700;
+  cursor:pointer;text-decoration:none;transition:.18s;
+  white-space:nowrap;line-height:1;
 }
 .btn svg{width:15px;height:15px;flex:none}
-.btn[disabled]{opacity:.4;cursor:not-allowed;transform:none!important;filter:none!important}
-.btn.primary{background:linear-gradient(135deg,var(--accent),var(--accent-3));color:#fff;
-  box-shadow:0 10px 24px -12px var(--accent-glow)}
-.btn.primary:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px)}
-.btn.ok{background:linear-gradient(135deg,var(--ok),var(--ok-2));color:#04231a;
-  box-shadow:0 10px 24px -12px rgba(16,185,129,.55)}
-.btn.ok:hover:not(:disabled){filter:brightness(1.08);transform:translateY(-1px)}
+.btn[disabled]{opacity:.5;cursor:not-allowed;transform:none!important}
+.btn.primary{
+  background:linear-gradient(135deg,var(--accent),var(--accent-3));
+  color:#fff;box-shadow:0 10px 26px -10px var(--accent-glow);
+}
+.btn.primary:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn.ok{
+  background:linear-gradient(135deg,var(--ok-2),var(--ok));
+  color:#04231a;box-shadow:0 10px 26px -12px rgba(16,185,129,.5);
+  flex:1;
+}
+.btn.ok:hover{filter:brightness(1.08);transform:translateY(-1px)}
 .btn.ghost{background:rgba(255,255,255,.04);border-color:var(--line);color:var(--tx-2)}
-.btn.ghost:hover:not(:disabled){border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
-.btn.danger{background:var(--err-soft);border-color:rgba(244,63,94,.32);color:#fda4af}
-.btn.danger:hover:not(:disabled){background:rgba(244,63,94,.2);border-color:rgba(244,63,94,.62)}
-.btn.sm{font-size:11.5px;padding:8px 12px;border-radius:8px}
-.btn.sm svg{width:12px;height:12px}
-.btn.icon{padding:8px 10px;border-radius:8px}
-.btn.wide{width:100%;margin-top:12px}
-.btn-group{display:flex;gap:8px;flex-wrap:wrap}
-.btn-group.stack{flex-direction:column}
-.btn-group.stack .btn{width:100%}
+.btn.ghost:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
 
-/* Spinner */
-.spinner{display:inline-block;width:14px;height:14px;border:2px solid rgba(255,255,255,.3);
-  border-top-color:#fff;border-radius:50%;animation:spin .6s linear infinite}
-@keyframes spin{to{transform:rotate(360deg)}}
-.hidden{display:none!important}
-
-/* Status */
-.status{margin-top:12px;padding:12px 14px;border-radius:10px;font-size:13px;line-height:1.55;display:none}
-.status.show{display:block;animation:fadeUp .25s var(--ease)}
-.status.info{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.3);color:#93c5fd}
-.status.ok{background:var(--ok-soft);border:1px solid rgba(16,185,129,.32);color:#6ee7c0}
-.status.warn{background:var(--warn-soft);border:1px solid rgba(245,165,36,.32);color:#fcd34d}
-.status.err{background:var(--err-soft);border:1px solid rgba(244,63,94,.32);color:#fda4af}
-.status b{font-weight:700}
-.status code{font-family:var(--m);font-size:11.5px;background:rgba(0,0,0,.4);padding:2px 6px;border-radius:4px}
-@keyframes fadeUp{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
-
-/* Queue */
-.queue{display:flex;flex-direction:column;gap:8px;margin-top:14px}
-.qitem{display:flex;align-items:center;gap:12px;padding:11px 13px;border-radius:10px;
-  border:1px solid var(--line);background:rgba(0,0,0,.26);
-  transition:border-color .18s,background .18s}
-.qitem:hover{background:rgba(255,255,255,.026);border-color:var(--line-2)}
-.qitem.pending{border-left:3px solid var(--warn)}
-.qitem.sending{border-left:3px solid var(--accent)}
-.qitem.done{border-left:3px solid var(--ok)}
-.qitem.failed{border-left:3px solid var(--err)}
-.qmain{flex:1;min-width:0;display:flex;flex-direction:column;gap:4px}
-.qname{font-size:13px;font-weight:600;word-break:break-all}
-.qmeta{display:flex;gap:6px;flex-wrap:wrap;font-family:var(--m);font-size:10.5px;color:var(--tx-3)}
-.qmeta .sep{opacity:.4}
-.qactions{display:flex;gap:6px;flex:none}
-.qbadge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:99px;
-  font-family:var(--m);font-size:9.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
-.qbadge.pending{color:#fcd34d;background:var(--warn-soft);border:1px solid rgba(245,165,36,.32)}
-.qbadge.sending{color:#a5b4fc;background:var(--accent-soft);border:1px solid rgba(124,92,255,.32)}
-.qbadge.done{color:#6ee7c0;background:var(--ok-soft);border:1px solid rgba(16,185,129,.32)}
-.qbadge.failed{color:#fda4af;background:var(--err-soft);border:1px solid rgba(244,63,94,.32)}
-
-/* Receivers */
-.receivers{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px;margin-bottom:14px}
-.rcv{display:flex;flex-direction:column;gap:4px;padding:11px 12px;border-radius:10px;
-  border:1px solid var(--line);background:rgba(255,255,255,.02);cursor:pointer;text-align:left;
-  transition:border-color .18s,background .18s,transform .18s}
-.rcv:hover{border-color:var(--accent);background:var(--accent-soft);transform:translateY(-1px)}
-.rcv.on{border-color:var(--accent);background:var(--accent-soft);box-shadow:0 0 0 1px rgba(124,92,255,.25)}
-.rcv .t{font-size:12.5px;font-weight:700;color:var(--tx);display:flex;align-items:center;gap:6px}
-.rcv .t .dot{width:7px;height:7px;border-radius:50%;background:var(--line-2)}
-.rcv.on .t .dot{background:var(--accent);box-shadow:0 0 8px var(--accent-glow)}
-.rcv .d{font-family:var(--m);font-size:10px;color:var(--tx-3);letter-spacing:.02em}
-.rcv .p{font-family:var(--m);font-size:10px;color:var(--accent-3);font-weight:600}
-.rcv.bg .t::after{content:'BG';font-size:8px;font-weight:800;padding:1px 5px;border-radius:4px;
-  background:var(--warn-soft);color:#fcd34d;border:1px solid rgba(245,165,36,.3);margin-left:4px}
-
-/* Background toggle */
-.bg-toggle{
-  display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:10px;
-  border:1px solid var(--line);background:rgba(0,0,0,.26);margin-bottom:14px;
-  cursor:pointer;user-select:none;transition:border-color .18s,background .18s;
+.dot{
+  display:inline-block;width:9px;height:9px;border-radius:50%;
+  background:var(--tx-3);flex:none;transition:.25s;
 }
-.bg-toggle:hover{border-color:var(--line-2)}
-.bg-toggle.on{border-color:rgba(245,165,36,.4);background:var(--warn-soft)}
-.bg-toggle input{display:none}
-.bg-toggle .switch{
-  width:38px;height:22px;flex:none;border-radius:11px;background:var(--line-2);
-  position:relative;transition:background .2s;
+.dot.ok{background:var(--ok-2);box-shadow:0 0 10px var(--ok-2)}
+.dot.err{background:var(--err);box-shadow:0 0 10px var(--err)}
+.dot.run{background:var(--accent-3);box-shadow:0 0 10px var(--accent-3)}
+
+.conn-line{
+  display:flex;align-items:center;gap:10px;
+  font-size:12.5px;color:var(--tx-2);
+  padding:0 4px;
 }
-.bg-toggle .switch::after{
-  content:'';position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;
-  background:#fff;transition:transform .2s var(--ease);
+
+.status{
+  display:none;align-items:flex-start;gap:12px;
+  padding:14px 16px;border-radius:11px;
+  font-size:13px;font-weight:500;line-height:1.55;
+  border:1px solid var(--line);background:rgba(0,0,0,.3);
 }
-.bg-toggle input:checked + .switch{background:var(--warn)}
-.bg-toggle input:checked + .switch::after{transform:translateX(16px)}
-.bg-toggle .txt{flex:1;min-width:0}
-.bg-toggle .txt b{font-size:13px;font-weight:700;color:var(--tx);display:block}
-.bg-toggle .txt span{font-size:11px;color:var(--tx-3);display:block;line-height:1.5}
-.bg-toggle.on .txt b{color:#fcd34d}
-
-/* Scanner */
-.scanner{border:1px solid var(--line);border-radius:var(--r-lg);background:rgba(0,0,0,.26);
-  padding:16px;margin-bottom:14px}
-.scanner-head{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-.radar{position:relative;width:52px;height:52px;flex:none;border-radius:50%;
-  border:1px solid rgba(124,92,255,.28);overflow:hidden;
-  background:radial-gradient(circle, rgba(124,92,255,.08), transparent 70%)}
-.radar::before{content:'';position:absolute;inset:11px;border-radius:50%;border:1px solid rgba(124,92,255,.22)}
-.radar::after{content:'';position:absolute;inset:21px;border-radius:50%;border:1px solid rgba(124,92,255,.18)}
-.radar .sweep{position:absolute;top:50%;left:50%;width:50%;height:50%;transform-origin:0 0;
-  background:conic-gradient(from 0deg,transparent 0deg,rgba(124,92,255,.55) 40deg,transparent 60deg);
-  animation:radarSweep 1.4s linear infinite}
-.radar.paused .sweep{animation-play-state:paused;opacity:.25}
-@keyframes radarSweep{to{transform:rotate(360deg)}}
-.scanner-txt{flex:1;min-width:0}
-.scanner-txt b{font-size:13.5px;font-weight:700;display:block}
-.scanner-txt span{font-size:11.5px;color:var(--tx-3);font-family:var(--m);display:block;
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.scan-progress{height:4px;border-radius:2px;background:rgba(0,0,0,.5);overflow:hidden;margin-top:8px}
-.scan-progress .fill{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));
-  transition:width .25s linear}
-.scan-stats{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;
-  font-family:var(--m);font-size:10.5px;color:var(--tx-3)}
-.scan-stats b{color:var(--accent-3);font-weight:600}
-.scan-results{display:flex;flex-direction:column;gap:6px;margin-top:12px;max-height:280px;overflow-y:auto}
-.scan-result{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:9px;
-  border:1px solid var(--line);background:rgba(0,0,0,.26);
-  transition:border-color .18s,background .18s}
-.scan-result:hover{border-color:var(--accent);background:var(--accent-soft)}
-.scan-result .r-ip{font-family:var(--m);font-size:12.5px;font-weight:600;color:var(--tx);flex:1;min-width:0}
-.scan-result .r-meta{display:flex;gap:6px;align-items:center;font-family:var(--m);
-  font-size:10.5px;color:var(--tx-3);flex:none}
-.scan-result .r-tag{padding:2px 7px;border-radius:5px;font-size:9.5px;font-weight:600;
-  letter-spacing:.04em;text-transform:uppercase}
-.scan-result .r-tag.ok{color:#6ee7c0;background:var(--ok-soft);border:1px solid rgba(16,185,129,.3)}
-.scan-result .r-tag.guess{color:#a5b4fc;background:var(--accent-soft);border:1px solid rgba(124,92,255,.3)}
-.scan-empty{text-align:center;padding:18px 12px;font-size:12.5px;color:var(--tx-3)}
-
-/* Log */
-.log{background:rgba(0,0,0,.4);border:1px solid var(--line);border-radius:10px;padding:12px;
-  max-height:280px;overflow-y:auto;font-family:var(--m);font-size:11.5px;line-height:1.7;color:var(--tx-2)}
-.log .line{display:flex;gap:10px}
-.log .t{color:var(--tx-3);flex:none}
-.log .m{flex:1;min-width:0;word-break:break-word;white-space:pre-wrap}
-.log .m.ok{color:#6ee7c0}
-.log .m.err{color:#fda4af}
-.log .m.warn{color:#fcd34d}
-.log .m.dim{color:var(--tx-3)}
-.log .m.accent{color:var(--accent-3)}
-.log:empty::before{content:'No activity yet.';color:var(--tx-3);font-family:var(--f);font-size:12.5px}
-
-/* Tip */
-.tip{display:flex;align-items:flex-start;gap:11px;padding:11px 13px;border-radius:10px;
-  border:1px solid rgba(124,92,255,.28);background:var(--accent-soft);
-  font-size:12px;line-height:1.6;color:var(--tx-2);margin-bottom:14px}
-.tip:last-child{margin-bottom:0}
-.tip .ico{flex:none;font-size:14px;line-height:1}
-.tip b{color:#c4b5fd;font-weight:700}
-.tip code{font-family:var(--m);font-size:11px;background:rgba(0,0,0,.4);padding:2px 6px;
-  border-radius:4px;color:var(--accent-2)}
-.tip.warn{border-color:rgba(245,165,36,.3);background:var(--warn-soft)}
-.tip.warn b{color:#fcd34d}
-
-.divider{height:1px;background:var(--line);margin:16px 0}
-
-pre.code{background:rgba(0,0,0,.5);border:1px solid var(--line);border-radius:10px;
-  padding:13px 14px;font-family:var(--m);font-size:11.5px;line-height:1.7;color:#c8d2ee;
-  overflow-x:auto;white-space:pre-wrap;word-break:break-all;position:relative}
-pre.code .copy{position:absolute;top:8px;right:8px;padding:4px 9px;border-radius:6px;
-  border:1px solid var(--line);background:rgba(255,255,255,.04);
-  font-size:10px;font-weight:700;color:var(--tx-2);cursor:pointer;
-  transition:border-color .18s,color .18s,background .18s}
-pre.code .copy:hover{border-color:var(--accent);color:var(--tx);background:var(--accent-soft)}
-
-#toasts{position:fixed;right:20px;bottom:20px;z-index:2000;display:flex;flex-direction:column;
-  gap:10px;max-width:min(400px,calc(100vw - 40px));pointer-events:none}
-.toast{display:flex;align-items:flex-start;gap:11px;padding:13px 15px;border-radius:var(--r-md);
-  border:1px solid var(--line);background:rgba(14,18,28,.97);
-  box-shadow:0 14px 32px -14px rgba(0,0,0,.75);font-size:13px;font-weight:500;line-height:1.5;
-  pointer-events:auto;animation:slideIn .28s var(--ease)}
-.toast.out{animation:slideOut .22s ease forwards}
-.toast.ok{border-color:rgba(16,185,129,.42);background:rgba(6,36,28,.97)}
-.toast.err{border-color:rgba(244,63,94,.42);background:rgba(42,12,18,.97)}
-.toast.info{border-color:rgba(41,169,235,.42);background:rgba(6,26,36,.97)}
-.toast.warn{border-color:rgba(245,165,36,.46);background:rgba(38,26,6,.97);color:#fcd34d}
-@keyframes slideIn{from{opacity:0;transform:translateX(26px) scale(.97)}to{opacity:1;transform:none}}
-@keyframes slideOut{to{opacity:0;transform:translateX(26px) scale(.97)}}
-
-.foot{text-align:center;margin-top:40px;padding-top:22px;border-top:1px solid var(--line);
-  font-size:12px;color:var(--tx-3);line-height:1.7}
-.foot a{color:#7cc8f0;font-weight:600}
-.foot a:hover{color:#b8e3ff}
-
-@media (max-width:760px){
-  .card{padding:16px}
-  .row-3{grid-template-columns:1fr}
-  .receivers{grid-template-columns:1fr 1fr}
-  .brand-txt .s{display:none}
-  .back-btn span{display:none}
-  .back-btn{padding:0 11px}
-  .watchdog .label{display:none}
+.status.show{display:flex}
+.status.ok{border-color:rgba(16,185,129,.4);background:var(--ok-soft);color:#6ee7c0}
+.status.err{border-color:rgba(244,63,94,.4);background:var(--err-soft);color:#fda4af}
+.status.run{border-color:rgba(124,92,255,.4);background:var(--accent-soft);color:#c4b5fd}
+.status .ico{flex:none;font-size:17px;line-height:1.3}
+.status .body{flex:1;min-width:0;word-break:break-word}
+.status .body b{display:block;margin-bottom:2px;font-weight:800;font-size:13.5px}
+.status .body .detail{
+  font-family:var(--m);font-size:11.5px;
+  opacity:.85;margin-top:4px;
+  word-break:break-all;
 }
-@media (max-width:480px){.receivers{grid-template-columns:1fr}}
-@media (prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;
-    transition-duration:.001ms!important;scroll-behavior:auto!important}
+
+.recent{
+  padding:22px;border-radius:18px;
+  border:1px solid var(--line);background:rgba(13,16,25,.5);
+  margin-top:16px;
+}
+.recent h3{
+  font-size:11px;font-weight:800;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--tx-3);margin-bottom:12px;
+}
+.recent .empty-small{
+  font-size:12.5px;color:var(--tx-3);padding:10px 0;
+}
+.recent-item{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:9px;
+  border:1px solid var(--line);background:rgba(0,0,0,.24);
+  margin-bottom:8px;font-size:12px;
+}
+.recent-item:last-child{margin-bottom:0}
+.recent-item .st{
+  width:8px;height:8px;border-radius:50%;flex:none;
+}
+.recent-item .st.ok{background:var(--ok-2)}
+.recent-item .st.err{background:var(--err)}
+.recent-item .st.unk{background:#f5a524}
+.recent-item .url{
+  flex:1;min-width:0;
+  font-family:var(--m);font-size:11px;
+  color:var(--tx-2);word-break:break-all;
+}
+.recent-item .when{
+  font-family:var(--m);font-size:10.5px;
+  color:var(--tx-3);flex:none;
+}
+
+#toasts{
+  position:fixed;right:20px;bottom:20px;z-index:2000;
+  display:flex;flex-direction:column;gap:10px;
+  max-width:min(420px,calc(100vw - 40px));pointer-events:none;
+}
+.toast{
+  display:flex;align-items:flex-start;gap:11px;
+  padding:13px 15px;border-radius:13px;
+  border:1px solid var(--line);
+  background:rgba(16,21,34,.97);
+  backdrop-filter:blur(14px);
+  box-shadow:0 14px 34px -14px rgba(0,0,0,.7);
+  font-size:13px;font-weight:500;line-height:1.5;
+  animation:slideIn .3s cubic-bezier(.16,1,.3,1);
+  pointer-events:auto;
+}
+.toast.out{animation:slideOut .24s ease forwards}
+.toast.ok{border-color:rgba(16,185,129,.4);background:rgba(6,38,30,.97)}
+.toast.err{border-color:rgba(244,63,94,.4);background:rgba(44,12,18,.97)}
+.toast.info{border-color:rgba(34,211,238,.4);background:rgba(5,26,34,.97)}
+@keyframes slideIn{from{opacity:0;transform:translateX(30px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes slideOut{to{opacity:0;transform:translateX(30px) scale(.96)}}
+
+@media (max-width:460px){
+  .hero h1{font-size:26px}
+  .btn-nav span{display:none}
+  .panel{padding:16px}
+  .recent{padding:16px}
 }
 </style>
 </head>
@@ -361,20 +261,24 @@ pre.code .copy:hover{border-color:var(--accent);color:var(--tx);background:var(-
 
 <header class="topbar">
   <div class="brand">
-    <div class="brand-mark" aria-hidden="true">◈</div>
+    <div class="brand-mark">O</div>
     <div class="brand-txt">
-      <div class="n">PKG <em>Sender</em></div>
-      <div class="s">Console Delivery</div>
+      <div class="n">OptiTron <em>Store</em></div>
+      <div class="s">RPI Sender</div>
     </div>
   </div>
   <div class="topbar-right">
-    <div class="watchdog" id="watchdog" title="Console connection status">
-      <span class="led"></span>
-      <span class="label" id="watchdogLabel">No target</span>
-    </div>
-    <a class="back-btn" href="index.html">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M19 12H5M12 19l-7-7 7-7"/>
+    <a class="btn-nav" href="ps4.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="6" width="20" height="12" rx="2"/>
+        <path d="M6 12h2M8 10v4M15 11h.01M17 13h.01M13 13l-2 3M16 8l-2 3"/>
+      </svg>
+      <span>Catalog</span>
+    </a>
+    <a class="btn-nav" href="index.html">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 10l9-7 9 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V10z"/>
+        <path d="M9 22V12h6v10"/>
       </svg>
       <span>Library</span>
     </a>
@@ -383,1412 +287,334 @@ pre.code .copy:hover{border-color:var(--accent);color:var(--tx);background:var(-
 
 <main class="wrap">
 
-  <div class="hero">
-    <h1>Deliver a <em>PKG</em> to your console</h1>
-    <p>Read the package header, auto-detect your PS4 / PS5 across 22 common subnets, and hand the URL to the receiver of your choice — including GoldHEN background installs.</p>
+  <section class="hero">
+    <h1>Send a <em>.pkg</em> straight<br>to your PS4.</h1>
+    <p>Paste any direct <b>.pkg</b> link and push it to the console's Remote Package Installer — one tap, no PC needed.</p>
+  </section>
+
+  <div class="panel">
+    <div class="field">
+      <label for="ipInput">PS4 IP address</label>
+      <div class="ip-row">
+        <input type="text" id="ipInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="127.0.0.1">
+        <button class="btn ghost" id="testBtn" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+          </svg>
+          Test
+        </button>
+      </div>
+    </div>
+    <div class="conn-line">
+      <span class="dot" id="connDot"></span>
+      <span id="connMsg">Not tested</span>
+    </div>
+    <div class="hint">
+      Use <code>127.0.0.1</code> if this page is open on the PS4 itself, or the console's LAN IP (e.g. <code>192.168.1.42</code>) from another device. Requests go to <code>http://&lt;ip&gt;:12800/api/install</code>.
+    </div>
   </div>
 
-  <!-- STEP 1: PKG SOURCE -->
-  <section class="card" id="cardSource">
-    <div class="card-head">
-      <div class="card-num">1</div>
-      <h2>PKG Source</h2>
-      <span class="sub" id="queueCount">Queue empty</span>
+  <div class="panel">
+    <div class="field">
+      <label for="urlInput">Direct PKG URL</label>
+      <input type="text" id="urlInput" spellcheck="false" autocomplete="off" autocapitalize="off" autocorrect="off" placeholder="http://your-server/game.pkg">
     </div>
-
-    <label for="pkgUrl">PKG File URL</label>
-    <input type="url" id="pkgUrl" class="mono"
-           placeholder="http://192.168.1.50:8080/game.pkg"
-           autocomplete="off" spellcheck="false">
-
-    <div class="btn-group" style="margin-top:12px">
-      <button class="btn primary" id="addBtn" style="flex:1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 5v14M5 12h14"/>
+    <div class="row-actions">
+      <button class="btn ok" id="sendBtn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12l16-8-6 18-3-7-7-3z"/>
         </svg>
-        <span id="addBtnText">Read &amp; Add to Queue</span>
-        <span class="spinner hidden" id="addSpinner"></span>
+        Send to PS4
       </button>
-      <button class="btn ghost" id="clearQueueBtn" title="Clear the queue">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M3 6h18M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
-        </svg>
-        Clear
-      </button>
+      <button class="btn ghost" id="clearBtn" type="button">Clear</button>
     </div>
+  </div>
 
-    <div class="status" id="readStatus"></div>
-    <div class="queue" id="queue"></div>
-  </section>
-
-  <!-- STEP 2: CONSOLE TARGET -->
-  <section class="card" id="cardTarget">
-    <div class="card-head">
-      <div class="card-num">2</div>
-      <h2>Console Target</h2>
-      <span class="sub" id="receiverHint">—</span>
+  <div class="status" id="status">
+    <span class="ico" id="statusIco">ℹ️</span>
+    <div class="body">
+      <b id="statusTitle">Ready</b>
+      <span id="statusMsg">Paste a direct .pkg URL above and tap Send.</span>
+      <div class="detail" id="statusDetail" style="display:none;"></div>
     </div>
+  </div>
 
-    <label>Receiver / Payload</label>
-    <div class="receivers" id="receivers"></div>
-
-    <!-- Background install toggle -->
-    <label class="bg-toggle" id="bgToggle" for="bgInstall">
-      <input type="checkbox" id="bgInstall">
-      <span class="switch" aria-hidden="true"></span>
-      <span class="txt">
-        <b>Background Installation</b>
-        <span>GoldHEN 2.4b14+ — install while playing. Enable <em>Debug Settings → Package Installer → Background Installation</em> on the console first. Disables "Install all", so packages are sent one at a time.</span>
-      </span>
-    </label>
-
-    <!-- Auto-detect scanner -->
-    <div class="scanner" id="scanner">
-      <div class="scanner-head">
-        <div class="radar paused" id="radar"><div class="sweep"></div></div>
-        <div class="scanner-txt">
-          <b>Auto-detect on local network</b>
-          <span id="scanSubtitle">Ready to scan 22 common subnets × 254 hosts</span>
-        </div>
-        <button class="btn primary sm" id="scanBtn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M21 12a9 9 0 1 1-3-6.7"/>
-            <path d="M21 3v6h-6"/>
-          </svg>
-          <span id="scanBtnText">Scan</span>
-        </button>
-        <button class="btn ghost sm" id="stopScanBtn" style="display:none">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="6" y="6" width="12" height="12" rx="1"/>
-          </svg>
-          Stop
-        </button>
-      </div>
-
-      <div class="scan-progress" id="scanProgressWrap" style="display:none">
-        <div class="fill" id="scanProgressFill"></div>
-      </div>
-
-      <div class="scan-stats" id="scanStats" style="display:none">
-        <span>subnet <b id="scanSubnet">—</b></span>
-        <span>host <b id="scanHost">0</b></span>
-        <span>probed <b id="scanProbed">0</b></span>
-        <span>found <b id="scanFound">0</b></span>
-        <span>elapsed <b id="scanElapsed">0s</b></span>
-      </div>
-
-      <div class="scan-results" id="scanResults" style="display:none"></div>
-    </div>
-
-    <div class="divider"></div>
-
-    <label>Manual Entry</label>
-    <div class="row-3">
-      <div>
-        <label for="consoleIp" style="font-size:10px;letter-spacing:.08em;margin-bottom:5px">Console IP</label>
-        <input type="text" id="consoleIp" class="mono"
-               placeholder="192.168.1.248" autocomplete="off" spellcheck="false">
-      </div>
-      <div>
-        <label for="consolePort" style="font-size:10px;letter-spacing:.08em;margin-bottom:5px">Port</label>
-        <input type="number" id="consolePort" class="mono" value="9090" min="1" max="65535">
-      </div>
-      <div>
-        <label for="consoleTimeout" style="font-size:10px;letter-spacing:.08em;margin-bottom:5px">Timeout</label>
-        <input type="number" id="consoleTimeout" class="mono" value="5000" min="1000" max="30000" step="500">
-      </div>
-    </div>
-
-    <div class="btn-group" style="margin-top:12px">
-      <button class="btn ghost" id="testBtn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-        </svg>
-        <span id="testBtnText">Test Connection</span>
-        <span class="spinner hidden" id="testSpinner"></span>
-      </button>
-      <button class="btn ghost" id="saveTargetBtn" title="Save this target as default">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/>
-          <path d="M17 21v-8H7v8M7 3v5h8"/>
-        </svg>
-        Save
-      </button>
-    </div>
-
-    <div class="status" id="testStatus"></div>
-  </section>
-
-  <!-- STEP 3: DELIVER -->
-  <section class="card" id="cardDeliver">
-    <div class="card-head">
-      <div class="card-num">3</div>
-      <h2>Deliver</h2>
-      <span class="sub" id="deliverTarget">—</span>
-    </div>
-
-    <div class="btn-group">
-      <button class="btn ok" id="sendAllBtn" disabled style="flex:1">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/>
-        </svg>
-        <span id="sendAllBtnText">Send All to Console</span>
-        <span class="spinner hidden" id="sendAllSpinner"></span>
-      </button>
-      <button class="btn ghost" id="sendOneBtn" disabled>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-        Send Next
-      </button>
-    </div>
-
-    <div class="status" id="sendStatus"></div>
-
-    <div class="divider"></div>
-
-    <div class="tip">
-      <span class="ico">💡</span>
-      <span>
-        Browsers cannot read the console's JSON reply across origins and some
-        receivers reject <code>fetch()</code> outright. If the buttons above
-        fail, use the <b>curl</b> command below — it bypasses all browser
-        restrictions and returns the exact error code.
-      </span>
-    </div>
-
-    <div style="margin-top:8px">
-      <label>curl (auto-generated)</label>
-      <pre class="code" id="curlCmd"><button class="copy" data-copy-target="curlCmd" type="button">Copy</button>—</pre>
-    </div>
-
-    <div style="margin-top:12px">
-      <label>JSON payload</label>
-      <pre class="code" id="jsonPayload"><button class="copy" data-copy-target="jsonPayload" type="button">Copy</button>—</pre>
-    </div>
-  </section>
-
-  <!-- ACTIVITY LOG -->
-  <section class="card">
-    <div class="card-head">
-      <div class="card-num" style="background:var(--line-2);color:var(--tx-2)">≡</div>
-      <h2>Activity Log</h2>
-      <span class="sub" id="logCount">0 entries</span>
-    </div>
-    <div class="log" id="log"></div>
-  </section>
-
-  <!-- HELP -->
-  <section class="card">
-    <div class="card-head">
-      <div class="card-num" style="background:var(--line-2);color:var(--tx-2)">?</div>
-      <h2>How it works</h2>
-    </div>
-
-    <div class="tip warn">
-      <span class="ico">⚙️</span>
-      <span>
-        <b>Background Installation (GoldHEN 2.4b14+)</b><br>
-        On the console: <b>Settings → GoldHEN → Debug Settings → Package Installer</b>,
-        then enable <b>Background Installation</b>[reference:5]. Once on, packages you
-        send from this page install in the background — you can keep playing while
-        the console downloads and installs. Note that enabling this <b>disables
-        "Install all"</b>, so this tool sends packages one at a time[reference:6].
-      </span>
-    </div>
-
-    <div class="tip">
-      <span class="ico">🧩</span>
-      <span>
-        <b>Receiver payloads:</b>
-        GoldHEN takes <code>{id, contentUrl, contentName, iconPath}</code> ·
-        GoldHEN Background takes <code>{type:"direct", packages:[url]}</code> (the
-        embedded RPI protocol) ·
-        RPI takes <code>{type:"direct", packages:[url]}</code> ·
-        etaHEN / generic takes <code>{url}</code>.
-      </span>
-    </div>
-
-    <div class="tip warn">
-      <span class="ico">🔑</span>
-      <span>
-        <b>Common error codes:</b>
-        <code>2157510677</code> already installed ·
-        <code>2157510660</code> uninstall target missing ·
-        <code>2157510681</code> task not found ·
-        <code>2157510789</code> not enough storage ·
-        <code>0x80990033</code> URL isn't a <code>.pkg</code> or the console
-        couldn't reach the file server
-      </span>
-    </div>
-
-    <div class="tip">
-      <span class="ico">📡</span>
-      <span>
-        <b>Auto-detect</b> uses two parallel workers to walk 22 common home
-        subnets in 32-address chunks. Your own subnet is probed first. IPs already
-        stored from a previous session are tried before the sweep begins.
-      </span>
-    </div>
-
-    <div class="tip">
-      <span class="ico">📺</span>
-      <span>
-        <b>On-console mode:</b> if you open this page from the PS4 browser, the
-        user agent is detected and <code>127.0.0.1</code> is used automatically —
-        no network scan needed.
-      </span>
-    </div>
-
-    <div class="tip">
-      <span class="ico">💓</span>
-      <span>
-        <b>Watchdog:</b> once you pick a target, the top bar pings it every
-        15&nbsp;s. Green = reachable, red = connection lost.
-      </span>
-    </div>
-
-    <div class="tip">
-      <span class="ico">⌨️</span>
-      <span>
-        <b>Shortcuts:</b>
-        <code>Enter</code> in URL field → read &amp; add ·
-        <code>Ctrl/Cmd + K</code> → focus URL ·
-        <code>Ctrl/Cmd + Enter</code> → send all ·
-        <code>Esc</code> → clear the URL field.
-      </span>
-    </div>
-  </section>
-
-  <footer class="foot">
-    PKG Sender · works with GoldHEN (foreground &amp; background), Remote Package Installer, and etaHEN<br>
-    <a href="https://t.me/OptiTronOffical" target="_blank" rel="noopener noreferrer">@OptiTronOffical</a> · for issues, questions &amp; custom projects
-  </footer>
+  <div class="recent" id="recentBox" style="display:none;">
+    <h3>Recent sends</h3>
+    <div id="recentList"></div>
+  </div>
 
 </main>
 
-<div id="toasts" aria-live="polite" aria-atomic="false"></div>
+<div id="toasts"></div>
 
 <script>
 (function () {
   'use strict';
 
+  /* =====================================================================
+     CONFIG
+     ===================================================================== */
+  var LS_IP = 'opti_rpi_ip';
+  var LS_RECENT = 'opti_rpi_recent';
+  var DEFAULT_IP = '127.0.0.1';
+  var RPI_PORT = 12800;
+  var RPI_TIMEOUT = 20000;
+  var MAX_RECENT = 8;
+
   var $ = function (id) { return document.getElementById(id); };
 
-  /* ==================================================================
-     CONFIG
-     ================================================================== */
-  var SCAN_SUBNETS = [
-    '192.168.0','192.168.1','192.168.15','192.168.100','192.168.8',
-    '192.168.10','192.168.2','192.168.3','192.168.50','192.168.68',
-    '192.168.31','192.168.254','192.168.20','192.168.30','192.168.40',
-    '192.168.88','192.168.11','192.168.55','192.168.85','192.168.86',
-    '192.168.188','192.168.178'
-  ];
-
-  var SCAN_CHUNK = 32;
-  var SCAN_WORKERS = 2;
-  var SCAN_PROBE_MS = 1500;
-  var SCAN_CHUNK_DELAY = 25;
-  var WATCHDOG_INTERVAL_MS = 15000;
-
-  /* Receiver definitions. `background: true` marks receivers that queue via
-     GoldHEN's embedded RPI and honour the Background Installation setting. */
-  var RECEIVERS = {
-    'goldhen-bg': {
-      name: 'GoldHEN · Background',
-      port: 9090,
-      endpoint: '/',
-      desc: 'Embedded RPI · queue & play',
-      icon: '🌙',
-      background: true,
-      buildPayload: function (pkg) {
-        return { type: 'direct', packages: [pkg.url] };
-      }
-    },
-    'goldhen5': {
-      name: 'GoldHEN · PS5',
-      port: 9090,
-      endpoint: '/',
-      desc: 'Embedded RPI, extended payload',
-      icon: '🎮',
-      buildPayload: function (pkg) {
-        return {
-          id: pkg.contentId || '',
-          contentUrl: pkg.url,
-          contentName: pkg.contentName || pkg.titleId || '',
-          iconPath: ''
-        };
-      }
-    },
-    'goldhen4': {
-      name: 'GoldHEN · PS4',
-      port: 9090,
-      endpoint: '/',
-      desc: 'Embedded RPI on PS4',
-      icon: '🎮',
-      buildPayload: function (pkg) {
-        return {
-          id: pkg.contentId || '',
-          contentUrl: pkg.url,
-          contentName: pkg.contentName || pkg.titleId || '',
-          iconPath: ''
-        };
-      }
-    },
-    'rpi12800': {
-      name: 'RPI · 12800',
-      port: 12800,
-      endpoint: '/api/install',
-      desc: 'Remote Package Installer (original)',
-      icon: '📦',
-      buildPayload: function (pkg) {
-        return { type: 'direct', packages: [pkg.url] };
-      }
-    },
-    'rpi12801': {
-      name: 'RPI · 12801',
-      port: 12801,
-      endpoint: '/api/install',
-      desc: 'RPI.pkg build (path/space support)',
-      icon: '📦',
-      buildPayload: function (pkg) {
-        return { type: 'direct', packages: [pkg.url] };
-      }
-    },
-    'etahen': {
-      name: 'etaHEN · PS5',
-      port: 9090,
-      endpoint: '/api/install',
-      desc: 'etaHEN remote install',
-      icon: '⚡',
-      buildPayload: function (pkg) {
-        return { url: pkg.url };
-      }
-    },
-    'custom': {
-      name: 'Custom',
-      port: 9090,
-      endpoint: '/',
-      desc: 'Manual endpoint & payload',
-      icon: '⚙️',
-      buildPayload: function (pkg) {
-        return { url: pkg.url };
-      }
-    }
-  };
-
-  var ERROR_CODES = {
-    2157510681: "task doesn't exist",
-    2157510660: "uninstall target doesn't exist",
-    2157510663: "already installed",
-    2157510677: "already installed",
-    2157510789: "not enough storage",
-    2157973555: "URL not a .pkg / file server unreachable (0x80990033)"
-  };
-
-  var LS = {
-    receiver:  'pkgSender_receiver_v4',
-    ip:        'pkgSender_ip_v4',
-    port:      'pkgSender_port_v4',
-    timeout:   'pkgSender_timeout_v4',
-    bg:        'pkgSender_bg_v4'
-  };
-
-  /* ==================================================================
-     STATE
-     ================================================================== */
-  var state = {
-    receiver: 'goldhen-bg',
-    background: false,
-    queue: [],
-    logCount: 0,
-    scanning: false,
-    scanId: 0,
-    foundIp: null,
-    watchdog: { timer: null, ip: null, port: null, lastOk: 0, running: false },
-    localIp: null
-  };
-
-  /* ==================================================================
-     TOASTS / LOG / HELPERS
-     ================================================================== */
-  function toast(msg, kind, ms) {
-    kind = kind || 'info';
-    ms = ms || 3600;
-    var box = $('toasts');
-    var el = document.createElement('div');
-    el.className = 'toast ' + kind;
-    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'warn' ? '⚠' : 'ℹ';
-    el.innerHTML = '<div style="flex:none;font-size:15px;line-height:1.2" aria-hidden="true">' + icon +
-                   '</div><div>' + escapeHtml(msg) + '</div>';
-    box.appendChild(el);
-    setTimeout(function () {
-      el.classList.add('out');
-      setTimeout(function () { el.remove(); }, 240);
-    }, ms);
-  }
-
-  function log(message, kind) {
-    kind = kind || 'dim';
-    var box = $('log');
-    var line = document.createElement('div');
-    line.className = 'line';
-    var t = new Date();
-    var ts = ('0' + t.getHours()).slice(-2) + ':' +
-             ('0' + t.getMinutes()).slice(-2) + ':' +
-             ('0' + t.getSeconds()).slice(-2);
-    line.innerHTML = '<span class="t">' + ts + '</span>' +
-                     '<span class="m ' + kind + '">' + escapeHtml(message) + '</span>';
-    box.appendChild(line);
-    box.scrollTop = box.scrollHeight;
-    state.logCount++;
-    $('logCount').textContent = state.logCount + ' entr' + (state.logCount === 1 ? 'y' : 'ies');
-  }
-
-  function escapeHtml(s) {
+  function esc(s) {
     return String(s == null ? '' : s)
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  function showStatus(el, msg, kind) {
-    el.className = 'status show ' + (kind || 'info');
-    el.innerHTML = msg;
-  }
-  function hideStatus(el) {
-    el.className = 'status';
-    el.innerHTML = '';
-  }
-  function setLoading(btn, textEl, spinnerEl, loading, label) {
-    btn.disabled = loading;
-    textEl.textContent = loading ? 'Working…' : label;
-    spinnerEl.classList.toggle('hidden', !loading);
-  }
-  function sleep(ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
-
-  /* ==================================================================
-     LOCAL IP + UA DETECTION
-     ================================================================== */
-  function detectLocalIP() {
-    return new Promise(function (resolve) {
-      if (state.localIp) { resolve(state.localIp); return; }
-      try {
-        var pc = new RTCPeerConnection({ iceServers: [] });
-        var done = false;
-        pc.createDataChannel('');
-        pc.onicecandidate = function (e) {
-          if (!e.candidate) return;
-          var m = e.candidate.candidate.match(/(\d+\.\d+\.\d+\.\d+)/);
-          if (m && m[1] && !/^0\.|^127\.|^169\.254\./.test(m[1])) {
-            done = true;
-            try { pc.close(); } catch (x) {}
-            state.localIp = m[1];
-            resolve(m[1]);
-          }
-        };
-        pc.createOffer().then(function (o) { return pc.setLocalDescription(o); }).catch(function () {});
-        setTimeout(function () {
-          if (done) return;
-          try { pc.close(); } catch (x) {}
-          resolve(null);
-        }, 1500);
-      } catch (e) { resolve(null); }
-    });
+  /* ---------------- toasts ---------------- */
+  function toast(msg, kind) {
+    kind = kind || 'info';
+    var box = $('toasts');
+    var el = document.createElement('div');
+    el.className = 'toast ' + kind;
+    var icon = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : 'ℹ️';
+    el.innerHTML = '<div style="flex:none;font-size:15px">' + icon + '</div><div>' + esc(msg) + '</div>';
+    box.appendChild(el);
+    setTimeout(function () {
+      el.classList.add('out');
+      setTimeout(function () { el.remove(); }, 250);
+    }, 3600);
   }
 
-  function isOnPlayStation() {
-    var ua = navigator.userAgent || '';
-    return /PlayStation 4/i.test(ua) ||
-           (/PlayStation/i.test(ua) && /Mozilla/i.test(ua));
+  /* ---------------- IP ---------------- */
+  function getIp() {
+    try { return localStorage.getItem(LS_IP) || DEFAULT_IP; }
+    catch (e) { return DEFAULT_IP; }
+  }
+  function setIp(v) {
+    try { localStorage.setItem(LS_IP, v); } catch (e) {}
+  }
+  function cleanIp(v) {
+    var s = String(v == null ? '' : v).replace(/^\s+|\s+$/g, '');
+    s = s.replace(/^https?:\/\//, '');
+    s = s.replace(/[:\/].*$/, '');
+    return s || DEFAULT_IP;
   }
 
-  /* ==================================================================
-     NETWORK PROBE
-     ================================================================== */
-  function probeHost(ip, port, timeoutMs) {
-    var controller = new AbortController();
-    var t0 = Date.now();
-    var timer = setTimeout(function () { controller.abort(); }, timeoutMs);
-    return fetch('http://' + ip + ':' + port + '/', {
-      method: 'GET', mode: 'no-cors', signal: controller.signal,
-      cache: 'no-store', redirect: 'follow'
-    })
-    .then(function () { clearTimeout(timer); return { ok: true, ms: Date.now() - t0 }; })
-    .catch(function (err) {
-      clearTimeout(timer);
-      return { ok: false, ms: Date.now() - t0,
-        reason: err && err.name === 'AbortError' ? 'timeout' : 'refused' };
-    });
-  }
-
-  /* ==================================================================
-     SCANNER
-     ================================================================== */
-  function buildOrderedSubnets(localIp, extraIps) {
-    var seen = {}, out = [];
-    function add(sub) {
-      if (!sub || seen[sub]) return;
-      seen[sub] = 1; out.push(sub);
-    }
-    if (localIp) {
-      var m = localIp.match(/^(\d+\.\d+\.\d+)\./);
-      if (m) add(m[1]);
-    }
-    (extraIps || []).forEach(function (ip) {
-      var mm = String(ip).match(/^(\d+\.\d+\.\d+)\./);
-      if (mm) add(mm[1]);
-    });
-    SCAN_SUBNETS.forEach(add);
-    return out;
-  }
-
-  function handleScan() {
-    if (state.scanning) return;
-
-    var port = getTargetPort();
-    var storedIp = '';
-    try { storedIp = localStorage.getItem(LS.ip) || ''; } catch (e) {}
-
-    detectLocalIP().then(function (localIp) {
-      var subnets = buildOrderedSubnets(localIp, [storedIp, getTargetIp()]);
-      var totalSubnets = subnets.length;
-      var totalHosts = totalSubnets * 254;
-      var probed = 0;
-      var found = [];
-      var elapsedStart = Date.now();
-      var myScanId = ++state.scanId;
-      var stopped = false;
-      var subnetCursor = 0;
-
-      state.scanning = true;
-      state.foundIp = null;
-
-      $('radar').classList.remove('paused');
-      $('scanBtn').style.display = 'none';
-      $('stopScanBtn').style.display = '';
-      $('scanProgressWrap').style.display = 'block';
-      $('scanStats').style.display = 'flex';
-      $('scanResults').style.display = 'block';
-      $('scanResults').innerHTML = '<div class="scan-empty">Scanning…</div>';
-      $('scanProgressFill').style.width = '0%';
-      $('scanSubnet').textContent = '—';
-      $('scanHost').textContent = '0';
-      $('scanProbed').textContent = '0';
-      $('scanFound').textContent = '0';
-
-      $('scanSubtitle').textContent = localIp
-        ? 'Your IP: ' + localIp + ' · own subnet probed first'
-        : 'Scanning ' + totalSubnets + ' common subnets';
-
-      log('Scan start · ' + totalSubnets + ' subnets × 254 hosts · port ' + port, 'accent');
-
-      var tickElapsed = setInterval(function () {
-        if (myScanId !== state.scanId || !state.scanning) return;
-        var s = Math.floor((Date.now() - elapsedStart) / 1000);
-        $('scanElapsed').textContent = s + 's';
-      }, 500);
-
-      function isAborted() {
-        return stopped || state.scanId !== myScanId || !state.scanning;
-      }
-
-      function addResult(ip, ms) {
-        if (found.some(function (f) { return f.ip === ip; })) return;
-        found.push({ ip: ip, ms: ms, port: port });
-        $('scanFound').textContent = String(found.length);
-        renderScanResults(found);
-        log('Found host: ' + ip + ':' + port + ' (' + ms + ' ms)', 'ok');
-      }
-
-      async function worker() {
-        while (!isAborted()) {
-          var idx = subnetCursor++;
-          if (idx >= subnets.length) return;
-          var subnet = subnets[idx];
-          if (myScanId !== state.scanId) return;
-          $('scanSubnet').textContent = subnet;
-
-          for (var chunk = 1; chunk <= 254; chunk += SCAN_CHUNK) {
-            if (isAborted()) return;
-            var ips = [];
-            for (var i = 0; i < SCAN_CHUNK && (chunk + i) <= 254; i++) {
-              ips.push(subnet + '.' + (chunk + i));
-            }
-            $('scanHost').textContent = String(chunk);
-
-            var results = await Promise.all(ips.map(function (ip) {
-              return probeHost(ip, port, SCAN_PROBE_MS).then(function (r) {
-                return { ip: ip, ok: r.ok, ms: r.ms };
-              });
-            }));
-
-            if (isAborted()) return;
-            probed += ips.length;
-            $('scanProbed').textContent = String(probed);
-            $('scanProgressFill').style.width =
-              Math.min(100, Math.round((probed / totalHosts) * 100)) + '%';
-
-            var firstHit = null;
-            for (var r of results) {
-              if (r.ok) { addResult(r.ip, r.ms); if (!firstHit) firstHit = r.ip; }
-            }
-            if (firstHit) { stopped = true; state.foundIp = firstHit; return; }
-            if (SCAN_CHUNK_DELAY > 0) await sleep(SCAN_CHUNK_DELAY);
-          }
-        }
-      }
-
-      var workers = [];
-      for (var w = 0; w < SCAN_WORKERS; w++) workers.push(worker());
-
-      Promise.all(workers).then(function () {
-        clearInterval(tickElapsed);
-        if (myScanId !== state.scanId) return;
-
-        state.scanning = false;
-        $('radar').classList.add('paused');
-        $('scanBtn').style.display = '';
-        $('stopScanBtn').style.display = 'none';
-        $('scanBtnText').textContent = 'Scan again';
-        $('scanProgressWrap').style.display = 'none';
-
-        var secs = Math.floor((Date.now() - elapsedStart) / 1000);
-        $('scanSubtitle').textContent = 'Finished in ' + secs + 's · ' + probed + ' hosts probed';
-
-        if (!found.length) {
-          $('scanResults').innerHTML = '<div class="scan-empty">No consoles found. Use manual entry below.</div>';
-          toast('No consoles found on the network.', 'warn');
-          log('Scan finished — no hosts found.', 'warn');
-        } else {
-          renderScanResults(found);
-          log('Scan finished — ' + found.length + ' host(s) found.', 'ok');
-          toast('Found ' + found.length + ' console' + (found.length === 1 ? '' : 's'), 'ok');
-        }
-      });
-
-      $('stopScanBtn').onclick = function () {
-        stopped = true;
-        state.scanId++;
-        state.scanning = false;
-        clearInterval(tickElapsed);
-        $('radar').classList.add('paused');
-        $('scanBtn').style.display = '';
-        $('stopScanBtn').style.display = 'none';
-        $('scanProgressWrap').style.display = 'none';
-        $('scanSubtitle').textContent = 'Scan stopped by user';
-        log('Scan stopped by user.', 'warn');
-      };
-    });
-  }
-
-  function renderScanResults(results) {
-    if (!results.length) {
-      $('scanResults').innerHTML = '<div class="scan-empty">Scanning…</div>';
-      return;
-    }
-    var html = '';
-    results.forEach(function (r) {
-      var guess = guessReceiverLabel(r.port);
-      html += '<div class="scan-result" data-ip="' + r.ip + '" data-port="' + r.port + '">' +
-        '<span class="r-ip">' + r.ip + ':' + r.port + '</span>' +
-        '<span class="r-meta">' +
-          '<span class="r-tag ok">' + r.ms + ' ms</span>' +
-          (guess ? '<span class="r-tag guess">' + guess + '</span>' : '') +
-        '</span>' +
-        '<button class="btn primary sm" data-use="1">Use</button>' +
-      '</div>';
-    });
-    $('scanResults').innerHTML = html;
-
-    $('scanResults').querySelectorAll('[data-use]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var card = this.closest('.scan-result');
-        var ip = card.getAttribute('data-ip');
-        var p = parseInt(card.getAttribute('data-port'), 10);
-        $('consoleIp').value = ip;
-        $('consolePort').value = p;
-        var key = guessReceiverKey(p);
-        if (key && !state.background) setReceiver(key);
-        updateSendButtons();
-        updateFallbacks();
-        startWatchdog(ip, p);
-        toast('Selected ' + ip + ':' + p, 'ok');
-        log('Target selected from scan: ' + ip + ':' + p, 'accent');
-      });
-    });
-  }
-
-  function guessReceiverLabel(port) {
-    if (port === 9090)  return 'GoldHEN / etaHEN';
-    if (port === 12800) return 'RPI';
-    if (port === 12801) return 'RPI.pkg';
-    return '';
-  }
-  function guessReceiverKey(port) {
-    if (port === 9090)  return state.background ? 'goldhen-bg' : 'goldhen5';
-    if (port === 12800) return 'rpi12800';
-    if (port === 12801) return 'rpi12801';
-    return null;
-  }
-
-  /* ==================================================================
-     WATCHDOG
-     ================================================================== */
-  function stopWatchdog() {
-    if (state.watchdog.timer) { clearInterval(state.watchdog.timer); state.watchdog.timer = null; }
-    state.watchdog.running = false;
-    state.watchdog.ip = null;
-    state.watchdog.port = null;
-    setWatchdogUI('idle', 'No target');
-  }
-
-  function setWatchdogUI(kind, label) {
-    var el = $('watchdog');
-    el.classList.remove('live', 'down');
-    if (kind === 'live') el.classList.add('live');
-    if (kind === 'down') el.classList.add('down');
-    $('watchdogLabel').textContent = label;
-  }
-
-  function pingWatchdog(ip, port) {
-    var t0 = Date.now();
-    var ctrl = new AbortController();
-    var timer = setTimeout(function () { ctrl.abort(); }, 3000);
-    return fetch('http://' + ip + ':' + port + '/', {
-      method: 'GET', mode: 'no-cors', signal: ctrl.signal,
-      cache: 'no-store', redirect: 'follow'
-    })
-    .then(function () { clearTimeout(timer); return { ok: true, ms: Date.now() - t0 }; })
-    .catch(function () { clearTimeout(timer); return { ok: false }; });
-  }
-
-  function startWatchdog(ip, port) {
-    if (state.watchdog.timer) clearInterval(state.watchdog.timer);
-    if (!ip) { stopWatchdog(); return; }
-    state.watchdog.ip = ip;
-    state.watchdog.port = port;
-    state.watchdog.running = true;
-    state.watchdog.lastOk = 0;
-
-    pingWatchdog(ip, port).then(function (r) {
-      if (!state.watchdog.running) return;
-      if (r.ok) {
-        state.watchdog.lastOk = Date.now();
-        setWatchdogUI('live', ip + ':' + port + ' · ' + r.ms + ' ms');
-      } else {
-        setWatchdogUI('down', 'Unreachable');
-      }
-    });
-
-    state.watchdog.timer = setInterval(function () {
-      if (!state.watchdog.running) return;
-      var curIp = state.watchdog.ip, curPort = state.watchdog.port;
-      pingWatchdog(curIp, curPort).then(function (r) {
-        if (!state.watchdog.running) return;
-        if (r.ok) {
-          state.watchdog.lastOk = Date.now();
-          setWatchdogUI('live', curIp + ':' + curPort + ' · ' + r.ms + ' ms');
-        } else {
-          setWatchdogUI('down', 'Connection lost');
-          if (state.watchdog.lastOk && Date.now() - state.watchdog.lastOk < WATCHDOG_INTERVAL_MS * 3) {
-            toast('Console ' + curIp + ':' + curPort + ' unreachable', 'warn', 2400);
-            state.watchdog.lastOk = 0;
-          }
-        }
-      });
-    }, WATCHDOG_INTERVAL_MS);
-  }
-
-  /* ==================================================================
-     PKG HEADER PARSER
-     ================================================================== */
-  var MAGIC_CNT = 0x7F434E54;
-  var MAGIC_FIH = 0x7F464948;
-
-  function magicToString(m) {
-    var b = [(m >>> 24) & 0xff, (m >>> 16) & 0xff, (m >>> 8) & 0xff, m & 0xff];
-    var printable = b.every(function (x) { return x >= 0x20 && x <= 0x7e; });
-    var hex = '0x' + m.toString(16).padStart(8, '0').toUpperCase();
-    return printable
-      ? b.map(function (x) { return String.fromCharCode(x); }).join('') + ' (' + hex + ')'
-      : hex;
-  }
-  function readAscii(bytes, off, len) {
-    var s = '';
-    for (var i = 0; i < len; i++) {
-      var c = bytes[off + i];
-      if (c === 0) break;
-      s += String.fromCharCode(c);
-    }
-    return s.trim();
-  }
-  function parsePkgHeader(bytes) {
-    if (bytes.byteLength < 0x40) throw new Error('Only ' + bytes.byteLength + ' bytes — too small to be a PKG header.');
-    var view = new DataView(bytes.buffer, bytes.byteOffset, bytes.byteLength);
-    var magic = view.getUint32(0x00, false);
-    if (magic !== MAGIC_CNT && magic !== MAGIC_FIH) {
-      throw new Error('Unrecognised PKG magic ' + magicToString(magic) + '. Expected .CNT or .FIH.');
-    }
-    var isPS5 = magic === MAGIC_FIH;
-    var version = view.getUint32(0x04, false);
-    var contentId = readAscii(bytes, 0x30, 0x30);
-    var titleId = '';
-    var dash = contentId.indexOf('-');
-    if (dash !== -1) {
-      var after = contentId.substring(dash + 1);
-      var us = after.indexOf('_');
-      titleId = us > 0 ? after.substring(0, us) : after.substring(0, 9);
-    }
-    var typeLabel = isPS5 ? 'PS5 Package' : 'PS4 Package';
-    if (!isPS5 && bytes.byteLength >= 0x0C) {
-      var pkgType = view.getUint16(0x0A, false);
-      switch (pkgType) {
-        case 0x1A: typeLabel = 'PS4 Game / App'; break;
-        case 0x1B: typeLabel = 'PS4 Patch';      break;
-        case 0x1C: typeLabel = 'PS4 DLC';        break;
-        case 0x1D: typeLabel = 'PS4 Theme';      break;
-        case 0x1E: typeLabel = 'PS4 Avatar';     break;
-        default:   typeLabel = 'PS4 (0x' + pkgType.toString(16) + ')';
-      }
-    }
-    return {
-      magic: magicToString(magic),
-      version: '0x' + version.toString(16).padStart(8, '0').toUpperCase(),
-      contentId: contentId || '',
-      titleId: titleId || '',
-      typeLabel: typeLabel,
-      isPS5: isPS5
-    };
-  }
-
-  function formatBytes(b) {
-    if (b == null || b === 0) return b === 0 ? '0 B' : '—';
-    var k = 1024, u = ['B', 'KB', 'MB', 'GB', 'TB'];
-    var i = Math.floor(Math.log(b) / Math.log(k));
-    return parseFloat((b / Math.pow(k, i)).toFixed(2)) + ' ' + u[i];
-  }
-
-  function fetchPkgHeader(url, timeoutMs) {
-    timeoutMs = timeoutMs || 10000;
-    var controller = new AbortController();
-    var timer = setTimeout(function () { controller.abort(); }, timeoutMs);
-    return fetch(url, {
-      method: 'GET', headers: { 'Range': 'bytes=0-4095' },
-      mode: 'cors', redirect: 'follow', signal: controller.signal, cache: 'no-store'
-    })
-    .then(function (res) {
-      clearTimeout(timer);
-      if (!res.ok && res.status !== 206) throw new Error('HTTP ' + res.status + ' ' + res.statusText);
-      var totalSize = null;
-      var cr = res.headers.get('Content-Range');
-      if (cr) { var m = cr.match(/\/(\d+)\s*$/); if (m) totalSize = parseInt(m[1], 10); }
-      return res.arrayBuffer().then(function (buf) { return { buf: buf, totalSize: totalSize }; });
-    })
-    .catch(function (err) {
-      clearTimeout(timer);
-      if (err.name === 'AbortError') throw new Error('Timed out after ' + timeoutMs + ' ms fetching the header.');
-      throw err;
-    });
-  }
-
-  /* ==================================================================
-     QUEUE
-     ================================================================== */
-  function renderQueue() {
-    var box = $('queue');
-    var q = state.queue;
-    $('queueCount').textContent = q.length ? q.length + ' package' + (q.length === 1 ? '' : 's') : 'Queue empty';
-    if (!q.length) { box.innerHTML = ''; updateSendButtons(); return; }
-
-    var html = '';
-    q.forEach(function (item, i) {
-      var statusClass = item.status || 'pending';
-      var badgeText = { pending: 'Pending', sending: 'Sending…', done: '✓ Sent', failed: '✕ Failed' }[statusClass] || 'Pending';
-      var meta = [];
-      if (item.titleId)   meta.push(item.titleId);
-      if (item.contentId) meta.push(item.contentId);
-      if (item.size)      meta.push(formatBytes(item.size));
-
-      html += '<div class="qitem ' + statusClass + '" data-idx="' + i + '">' +
-        '<div class="qmain">' +
-          '<div class="qname">' + escapeHtml(item.titleId || item.contentName || shortenUrl(item.url)) + '</div>' +
-          '<div class="qmeta">' +
-            meta.map(escapeHtml).join('<span class="sep">·</span>') +
-            '<span class="sep">·</span>' +
-            '<span>' + escapeHtml(shortenUrl(item.url)) + '</span>' +
-          '</div>' +
-        '</div>' +
-        '<span class="qbadge ' + statusClass + '">' + badgeText + '</span>' +
-        '<div class="qactions">' +
-          '<button class="btn ghost sm icon" data-remove="' + i + '" title="Remove">✕</button>' +
-        '</div>' +
-      '</div>';
-    });
-    box.innerHTML = html;
-
-    box.querySelectorAll('[data-remove]').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var idx = parseInt(this.getAttribute('data-remove'), 10);
-        state.queue.splice(idx, 1);
-        renderQueue();
-        updateFallbacks();
-        log('Removed package from queue.', 'dim');
-      });
-    });
-
-    updateSendButtons();
-    updateFallbacks();
-  }
-
-  function shortenUrl(u) {
-    if (!u) return '';
-    var s = String(u);
-    if (s.length <= 60) return s;
-    return s.slice(0, 28) + '…' + s.slice(-28);
-  }
-
-  function updateSendButtons() {
-    var hasQueue = state.queue.length > 0;
-    var hasTarget = !!getTargetIp();
-    var hasPending = state.queue.some(function (i) { return i.status !== 'done'; });
-    $('sendAllBtn').disabled = !(hasQueue && hasTarget && hasPending);
-    $('sendOneBtn').disabled = !(hasQueue && hasTarget && hasPending);
-    if (hasTarget) {
-      var r = RECEIVERS[state.receiver];
-      $('deliverTarget').textContent = getTargetIp() + ':' + getTargetPort() + ' · ' + r.name;
-    } else {
-      $('deliverTarget').textContent = '—';
-    }
-  }
-
-  /* ==================================================================
-     ADD PKG
-     ================================================================== */
-  function handleAdd() {
-    var url = $('pkgUrl').value.trim();
-    if (!url) { showStatus($('readStatus'), 'Please enter a PKG URL.', 'err'); return; }
-    if (!/^https?:\/\//i.test(url)) {
-      showStatus($('readStatus'), 'URL must start with http:// or https://', 'err'); return;
-    }
-    hideStatus($('readStatus'));
-    setLoading($('addBtn'), $('addBtnText'), $('addSpinner'), true, 'Read & Add to Queue');
-    log('Fetching PKG header: ' + url, 'dim');
-
-    fetchPkgHeader(url).then(function (result) {
-      var bytes = new Uint8Array(result.buf);
-      var header = parsePkgHeader(bytes);
-      var item = {
-        url: url, size: result.totalSize,
-        contentId: header.contentId, titleId: header.titleId,
-        contentName: header.titleId || header.contentId || '',
-        typeLabel: header.typeLabel, magic: header.magic,
-        version: header.version, isPS5: header.isPS5, status: 'pending'
-      };
-      state.queue.push(item);
-      renderQueue();
-      log('Added: ' + (header.titleId || header.contentId || url), 'ok');
-      toast('Added to queue: ' + (header.titleId || 'PKG'), 'ok');
-      $('pkgUrl').value = '';
-      $('pkgUrl').focus();
-      showStatus($('readStatus'),
-        '✅ <b>' + escapeHtml(header.titleId || 'PKG') + '</b> added to queue · ' +
-        escapeHtml(header.typeLabel) + ' · ' +
-        (result.totalSize ? formatBytes(result.totalSize) : 'size unknown'),
-        'ok');
-    })
-    .catch(function (err) {
-      log('Read failed: ' + err.message, 'err');
-      showStatus($('readStatus'),
-        '<b>❌ Could not read PKG header.</b><br>' + escapeHtml(err.message) +
-        '<br><br>The PKG server must allow CORS. If it does not, host the file ' +
-        'on a local server (e.g. <code>python3 -m http.server 8080</code>).',
-        'err');
-      toast('Failed to read PKG: ' + err.message, 'err');
-    })
-    .finally(function () {
-      setLoading($('addBtn'), $('addBtnText'), $('addSpinner'), false, 'Read & Add to Queue');
-    });
-  }
-
-  /* ==================================================================
-     TARGET / RECEIVER
-     ================================================================== */
-  function getTargetIp()   { return $('consoleIp').value.trim(); }
-  function getTargetPort() { return parseInt($('consolePort').value, 10) || 9090; }
-  function getTimeout()    { return parseInt($('consoleTimeout').value, 10) || 5000; }
-
-  function setReceiver(key, opts) {
-    opts = opts || {};
-    if (!RECEIVERS[key]) key = 'goldhen-bg';
-    state.receiver = key;
-    var r = RECEIVERS[key];
-    if (!opts.keepPort) $('consolePort').value = r.port;
-    $('receiverHint').textContent = r.name;
-    renderReceivers();
-    updateFallbacks();
-    updateSendButtons();
-    try { localStorage.setItem(LS.receiver, key); } catch (e) {}
-    if (r.background) {
-      log('Receiver: ' + r.name + ' — expects Background Installation enabled on console.', 'accent');
-    }
-  }
-
-  function renderReceivers() {
-    var box = $('receivers');
-    var html = '';
-    Object.keys(RECEIVERS).forEach(function (key) {
-      var r = RECEIVERS[key];
-      var on = key === state.receiver ? ' on' : '';
-      var bg = r.background ? ' bg' : '';
-      html += '<button class="rcv' + on + bg + '" data-key="' + key + '" type="button">' +
-        '<div class="t"><span class="dot"></span>' + r.icon + ' ' + escapeHtml(r.name) + '</div>' +
-        '<div class="d">' + escapeHtml(r.desc) + '</div>' +
-        '<div class="p">:' + r.port + '  →  ' + escapeHtml(r.endpoint) + '</div>' +
-      '</button>';
-    });
-    box.innerHTML = html;
-
-    box.querySelectorAll('.rcv').forEach(function (el) {
-      el.addEventListener('click', function () {
-        var key = this.getAttribute('data-key');
-        var isBg = RECEIVERS[key] && RECEIVERS[key].background;
-        $('bgInstall').checked = isBg;
-        state.background = isBg;
-        $('bgToggle').classList.toggle('on', isBg);
-        setReceiver(key);
-      });
-    });
-  }
-
-  function handleBackgroundToggle() {
-    var on = $('bgInstall').checked;
-    state.background = on;
-    $('bgToggle').classList.toggle('on', on);
-    try { localStorage.setItem(LS.bg, on ? '1' : '0'); } catch (e) {}
-
-    if (on) {
-      setReceiver('goldhen-bg');
-      log('Background Installation enabled — sending via GoldHEN embedded RPI.', 'warn');
-      toast('Background install on — one package at a time', 'warn', 3000);
-    } else {
-      if (state.receiver === 'goldhen-bg') setReceiver('goldhen5');
-      log('Background Installation disabled — foreground install.', 'dim');
-    }
-    updateSendButtons();
-    updateFallbacks();
-  }
-
-  /* ==================================================================
-     TEST CONNECTION
-     ================================================================== */
-  function handleTest() {
-    var ip = getTargetIp(), port = getTargetPort();
-    if (!ip) { showStatus($('testStatus'), 'Enter a console IP first.', 'err'); return; }
-    hideStatus($('testStatus'));
-    setLoading($('testBtn'), $('testBtnText'), $('testSpinner'), true, 'Test Connection');
-    log('Testing ' + ip + ':' + port, 'dim');
-
-    probeHost(ip, port, 3000).then(function (r) {
-      if (r.ok) {
-        log('Reachable in ' + r.ms + ' ms', 'ok');
-        showStatus($('testStatus'),
-          '✅ Console responded in <b>' + r.ms + ' ms</b> — reachable at <code>' + ip + ':' + port + '</code>.' +
-          (state.background ? '<br><br>🌙 Background mode is on. Make sure <b>Background Installation</b> is enabled in GoldHEN Debug Settings.' : ''),
-          'ok');
-        toast('Console reachable', 'ok');
-        startWatchdog(ip, port);
-      } else {
-        log('Test failed: ' + (r.reason || 'unreachable'), 'err');
-        showStatus($('testStatus'),
-          '<b>❌ No response from ' + ip + ':' + port + '</b><br>' +
-          (r.reason === 'timeout' ? 'Timed out after 3 seconds.' : 'Connection refused.') +
-          '<br><br>Check: (1) receiver is running · (2) port matches ' +
-          '(PS5 <code>9090</code>, RPI <code>12800/12801</code>) · ' +
-          '(3) same Wi-Fi / LAN.',
-          'err');
-      }
-    }).finally(function () {
-      setLoading($('testBtn'), $('testBtnText'), $('testSpinner'), false, 'Test Connection');
-    });
-  }
-
-  /* ==================================================================
-     SEND
-     ================================================================== */
-  function sendPkg(item, ip, port) {
-    var r = RECEIVERS[state.receiver];
-    var body = r.buildPayload(item);
-    var url = 'http://' + ip + ':' + port + r.endpoint;
-    var jsonBody = JSON.stringify(body);
-
-    item.status = 'sending';
-    renderQueue();
-
-    log('POST ' + url, 'dim');
-    log('Body: ' + jsonBody, 'dim');
-    if (r.background) log('🌙 Background install — console will queue this package.', 'warn');
-
-    var timeoutMs = getTimeout();
-    var controller = new AbortController();
-    var timer = setTimeout(function () { controller.abort(); }, timeoutMs);
-
-    return fetch(url, {
-      method: 'POST', mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
-      body: jsonBody, signal: controller.signal, cache: 'no-store'
-    })
-    .then(function () {
-      clearTimeout(timer);
-      item.status = 'done';
-      renderQueue();
-      log('Sent: ' + (item.titleId || item.url), 'ok');
-      return { ok: true };
-    })
-    .catch(function (err) {
-      clearTimeout(timer);
-      var isAbort = err.name === 'AbortError';
-      item.status = 'failed';
-      renderQueue();
-      log('Send failed: ' + (isAbort ? 'timeout' : err.message), 'err');
-      throw new Error(isAbort ? 'Timed out after ' + timeoutMs + ' ms' : err.message);
-    });
-  }
-
-  function handleSendAll() {
-    var ip = getTargetIp(), port = getTargetPort();
-    if (!ip) { showStatus($('sendStatus'), 'Enter a console IP first.', 'err'); return; }
-    var pending = state.queue.filter(function (i) { return i.status !== 'done'; });
-    if (!pending.length) { showStatus($('sendStatus'), 'No pending packages in the queue.', 'warn'); return; }
-
-    hideStatus($('sendStatus'));
-    setLoading($('sendAllBtn'), $('sendAllBtnText'), $('sendAllSpinner'), true, 'Send All to Console');
-
-    var results = { ok: 0, fail: 0 };
-    var i = 0;
-    var gap = state.background ? 1500 : 300;
-
-    function next() {
-      if (i >= pending.length) {
-        setLoading($('sendAllBtn'), $('sendAllBtnText'), $('sendAllSpinner'), false, 'Send All to Console');
-        var kind = results.fail === 0 ? 'ok' : (results.ok > 0 ? 'warn' : 'err');
-        showStatus($('sendStatus'),
-          '<b>' + (results.fail === 0 ? '✅ All packages sent' : '⚠️ Completed with errors') + '</b><br>' +
-          results.ok + ' sent · ' + results.fail + ' failed.<br><br>' +
-          (state.background
-            ? '🌙 Background mode: the console will install each package in turn while you play. '
-            : '') +
-          'Browsers cannot read the console\'s JSON reply, so if you need the ' +
-          'exact error code use the <code>curl</code> command below.',
-          kind);
-        return;
-      }
-      var item = pending[i++];
-      sendPkg(item, ip, port)
-        .then(function () { results.ok++; })
-        .catch(function () { results.fail++; })
-        .then(function () { setTimeout(next, gap); });
-    }
-    next();
-  }
-
-  function handleSendOne() {
-    var ip = getTargetIp(), port = getTargetPort();
-    if (!ip) { showStatus($('sendStatus'), 'Enter a console IP first.', 'err'); return; }
-    var item = state.queue.find(function (i) { return i.status !== 'done'; });
-    if (!item) { showStatus($('sendStatus'), 'No pending packages.', 'warn'); return; }
-
-    hideStatus($('sendStatus'));
-    $('sendOneBtn').disabled = true;
-
-    sendPkg(item, ip, port)
-      .then(function () {
-        showStatus($('sendStatus'),
-          '✅ Sent <b>' + escapeHtml(item.titleId || shortenUrl(item.url)) + '</b>. ' +
-          (state.background
-            ? '🌙 The console will install this in the background — keep playing.'
-            : 'Check the console screen for install progress.'),
-          'ok');
-      })
-      .catch(function (err) {
-        showStatus($('sendStatus'),
-          '❌ Send failed: ' + escapeHtml(err.message) +
-          '<br><br>Try the <code>curl</code> command below — it bypasses browser limits.',
-          'err');
-      })
-      .finally(function () { updateSendButtons(); });
-  }
-
-  /* ==================================================================
-     CURL FALLBACK
-     ================================================================== */
-  function updateFallbacks() {
-    if (!state.queue.length) {
-      $('curlCmd').innerHTML = '<button class="copy" data-copy-target="curlCmd" type="button">Copy</button>—';
-      $('jsonPayload').innerHTML = '<button class="copy" data-copy-target="jsonPayload" type="button">Copy</button>—';
-      return;
-    }
-    var ip = getTargetIp() || '<console-ip>';
-    var port = getTargetPort();
-    var r = RECEIVERS[state.receiver];
-    var item = state.queue[0];
-    var body = r.buildPayload(item);
-    var json = JSON.stringify(body);
-    var url = 'http://' + ip + ':' + port + r.endpoint;
-
-    var cmd = 'curl -X POST ' + url + ' \\\n' +
-              '  -H "Content-Type: application/json" \\\n' +
-              "  --data '" + json.replace(/'/g, "'\\''") + "'";
-
-    $('curlCmd').innerHTML =
-      '<button class="copy" data-copy-target="curlCmd" type="button">Copy</button>' + escapeHtml(cmd);
-    $('jsonPayload').innerHTML =
-      '<button class="copy" data-copy-target="jsonPayload" type="button">Copy</button>' +
-      escapeHtml(JSON.stringify(body, null, 2));
-  }
-
-  /* ==================================================================
-     COPY
-     ================================================================== */
-  function copyToClipboard(text, okMsg, okKind) {
-    if (!text) { toast('Nothing to copy', 'err'); return; }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(text).then(function () {
-        if (okMsg) toast(okMsg, okKind || 'ok');
-      }).catch(function () { fallbackCopy(text, okMsg, okKind); });
-    } else { fallbackCopy(text, okMsg, okKind); }
-  }
-  function fallbackCopy(text, okMsg, okKind) {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.cssText = 'position:fixed;top:-9999px;opacity:0';
-    document.body.appendChild(ta);
-    ta.select();
-    try { document.execCommand('copy'); if (okMsg) toast(okMsg, okKind || 'ok'); }
-    catch (e) { toast('Copy failed', 'err'); }
-    document.body.removeChild(ta);
-  }
-
-  /* ==================================================================
-     BOOT
-     ================================================================== */
-  function boot() {
+  /* ---------------- recent ---------------- */
+  function loadRecent() {
     try {
-      var savedBg = localStorage.getItem(LS.bg);
-      if (savedBg === '1') state.background = true;
-      var saved = localStorage.getItem(LS.receiver);
-      if (saved && RECEIVERS[saved]) state.receiver = saved;
-      var ip = localStorage.getItem(LS.ip);   if (ip) $('consoleIp').value = ip;
-      var pt = localStorage.getItem(LS.port); if (pt) $('consolePort').value = pt;
-      var to = localStorage.getItem(LS.timeout); if (to) $('consoleTimeout').value = to;
-    } catch (e) {}
+      var v = JSON.parse(localStorage.getItem(LS_RECENT) || '[]');
+      return Array.isArray(v) ? v : [];
+    } catch (e) { return []; }
+  }
+  function saveRecent(list) {
+    try { localStorage.setItem(LS_RECENT, JSON.stringify(list.slice(0, MAX_RECENT))); } catch (e) {}
+  }
+  function pushRecent(entry) {
+    var list = loadRecent();
+    list.unshift(entry);
+    saveRecent(list);
+    renderRecent();
+  }
+  function renderRecent() {
+    var list = loadRecent();
+    var box = $('recentBox');
+    var out = $('recentList');
+    if (!list.length) { box.style.display = 'none'; return; }
+    box.style.display = 'block';
+    var html = '';
+    for (var i = 0; i < list.length; i++) {
+      var r = list[i];
+      var stClass = r.state === 'ok' ? 'ok' : r.state === 'unknown' ? 'unk' : 'err';
+      var when = new Date(r.ts).toLocaleTimeString();
+      var name = (r.url || '').split('?')[0].split('/').pop() || r.url;
+      html += '<div class="recent-item">'
+        + '<span class="st ' + stClass + '"></span>'
+        + '<span class="url" title="' + esc(r.url) + '">' + esc(name) + '</span>'
+        + '<span class="when">' + esc(when) + '</span>'
+        + '</div>';
+    }
+    out.innerHTML = html;
+  }
 
-    $('bgInstall').checked = state.background;
-    $('bgToggle').classList.toggle('on', state.background);
+  /* =====================================================================
+     RPI INSTALL  (uses the exact implementation from the reference file)
+     ===================================================================== */
+  function rpiInstall(ip, packages, cb) {
+    var x = new XMLHttpRequest();
+    var done = false;
+    function finish(r) { if (!done) { done = true; cb(r); } }
+    try {
+      x.open('POST', 'http://' + ip + ':' + RPI_PORT + '/api/install', true);
+      x.timeout = RPI_TIMEOUT;
+      x.setRequestHeader('Content-Type', 'text/plain;charset=UTF-8');
+      x.onload = function () {
+        if (x.status >= 200 && x.status < 300) finish({ state: 'ok', status: x.status, text: x.responseText });
+        else finish({ state: 'rejected', status: x.status, text: x.responseText });
+      };
+      x.onerror   = function () { finish({ state: 'unknown' }); };
+      x.ontimeout = function () { finish({ state: 'timeout' }); };
+      x.send(JSON.stringify({ type: 'direct', packages: packages }));
+    } catch (e) {
+      finish({ state: 'unknown' });
+    }
+  }
 
-    renderReceivers();
-    setReceiver(state.background ? 'goldhen-bg' : state.receiver, { keepPort: true });
-    renderQueue();
+  /* ---------------- UI helpers ---------------- */
+  function setConn(cls, msg) {
+    var d = $('connDot');
+    d.className = 'dot ' + (cls || '');
+    $('connMsg').textContent = msg || 'Not tested';
+  }
 
-    if (isOnPlayStation()) {
-      $('consoleIp').value = '127.0.0.1';
-      $('consolePort').value = '9090';
-      if (state.background) {
-        setReceiver('goldhen-bg');
+  function showStatus(kind, title, msg, detail) {
+    var el = $('status');
+    el.className = 'status show ' + kind;
+    $('statusIco').textContent = kind === 'ok' ? '✓' : kind === 'err' ? '✕' : kind === 'run' ? '⏳' : 'ℹ️';
+    $('statusTitle').textContent = title;
+    $('statusMsg').textContent = msg;
+    var d = $('statusDetail');
+    if (detail) {
+      d.style.display = 'block';
+      d.textContent = detail;
+    } else {
+      d.style.display = 'none';
+      d.textContent = '';
+    }
+  }
+
+  function validUrl(u) { return /^https?:\/\/[^\s]+$/i.test(u); }
+  function isPkgUrl(u) {
+    var p = String(u).split('?')[0].split('#')[0];
+    return /\.pkg$/i.test(p);
+  }
+
+  /* ---------------- actions ---------------- */
+  function testConnection() {
+    var ip = cleanIp($('ipInput').value);
+    setIp(ip);
+    $('ipInput').value = ip;
+    setConn('run', 'Testing ' + ip + ':' + RPI_PORT + ' …');
+    rpiInstall(ip, [], function (r) {
+      if (r.state === 'ok' || r.state === 'rejected') {
+        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
+        toast('Remote Package Installer is answering.', 'ok');
+      } else if (r.state === 'timeout') {
+        setConn('err', 'Timed out — is RPI open?');
+        toast('No answer from ' + ip + ':' + RPI_PORT + '.', 'err');
       } else {
-        setReceiver('goldhen4');
+        setConn('run', 'Request sent — no readable reply');
+        toast('Sent, but couldn\'t read a reply. Try sending a package.', 'info');
       }
-      log('Detected PlayStation browser — using loopback 127.0.0.1:9090', 'accent');
-      toast('Running on PS4 — using loopback', 'ok');
+    });
+  }
+
+  function sendCurrent() {
+    var ip = cleanIp($('ipInput').value);
+    var url = String($('urlInput').value || '').replace(/^\s+|\s+$/g, '');
+
+    setIp(ip);
+    $('ipInput').value = ip;
+
+    if (!url) {
+      showStatus('err', 'Missing URL', 'Paste a direct .pkg link first.');
+      toast('Paste a .pkg URL first', 'err');
+      return;
+    }
+    if (!validUrl(url)) {
+      showStatus('err', 'Invalid URL', 'The URL must start with http:// or https://');
+      toast('Invalid URL', 'err');
+      return;
+    }
+    if (!isPkgUrl(url)) {
+      showStatus('err', 'Not a .pkg link', 'The URL must end in .pkg (before any ?query or #fragment).');
+      toast('Only .pkg URLs can be sent', 'err');
+      return;
     }
 
-    $('addBtn').addEventListener('click', handleAdd);
-    $('pkgUrl').addEventListener('keydown', function (e) {
-      if (e.key === 'Enter') handleAdd();
-      if (e.key === 'Escape') { this.value = ''; }
+    var sendBtn = $('sendBtn');
+    sendBtn.disabled = true;
+    showStatus('run', 'Sending…', 'Posting to http://' + ip + ':' + RPI_PORT + '/api/install', url);
+
+    var fileName = url.split('?')[0].split('/').pop() || 'package.pkg';
+
+    rpiInstall(ip, [url], function (r) {
+      sendBtn.disabled = false;
+      var rec = { url: url, ts: Date.now(), state: 'unknown' };
+
+      if (r.state === 'ok') {
+        rec.state = 'ok';
+        setConn('ok', 'RPI reachable on ' + ip + ':' + RPI_PORT);
+        showStatus('ok', 'Sent to PS4', 'Queued on the console — check the notification area.', 'HTTP ' + r.status + (r.text ? ' — ' + r.text.substring(0, 200) : ''));
+        toast('Sent: ' + fileName, 'ok');
+      } else if (r.state === 'rejected') {
+        rec.state = 'rejected';
+        setConn('run', 'RPI replied with an error');
+        showStatus('err', 'RPI rejected the request', 'HTTP ' + r.status + '. The console refused this URL.', r.text ? r.text.substring(0, 300) : '');
+        toast('RPI rejected the request', 'err');
+      } else if (r.state === 'timeout') {
+        rec.state = 'timeout';
+        setConn('err', 'Timed out');
+        showStatus('err', 'Timed out', 'No reply from ' + ip + ':' + RPI_PORT + ' after ' + (RPI_TIMEOUT / 1000) + 's. Is Remote Package Installer running on the PS4?');
+        toast('Timed out', 'err');
+      } else {
+        setConn('run', 'Sent — reply unreadable');
+        showStatus('run', 'Sent (unconfirmed)', 'The request went out but the console\'s reply couldn\'t be read. If a download starts on the PS4, it worked.', url);
+        toast('Sent — check the PS4', 'info');
+      }
+
+      pushRecent(rec);
     });
-    $('clearQueueBtn').addEventListener('click', function () {
-      if (!state.queue.length) return;
-      if (!confirm('Clear all ' + state.queue.length + ' package(s) from the queue?')) return;
-      state.queue = [];
-      renderQueue();
-      log('Queue cleared.', 'dim');
+  }
+
+  /* ---------------- wire ---------------- */
+  function wire() {
+    $('ipInput').value = getIp();
+
+    $('testBtn').onclick = testConnection;
+    $('sendBtn').onclick = sendCurrent;
+    $('clearBtn').onclick = function () {
+      $('urlInput').value = '';
+      $('status').className = 'status';
+      $('urlInput').focus();
+    };
+
+    $('ipInput').onchange = function () {
+      var v = cleanIp(this.value);
+      this.value = v;
+      setIp(v);
+    };
+
+    $('urlInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); sendCurrent(); }
     });
 
-    $('bgInstall').addEventListener('change', handleBackgroundToggle);
-
-    $('consoleIp').addEventListener('input', function () {
-      try { localStorage.setItem(LS.ip, this.value.trim()); } catch (e) {}
-      updateSendButtons();
-      updateFallbacks();
-    });
-    $('consoleIp').addEventListener('blur', function () {
-      if (this.value.trim()) startWatchdog(this.value.trim(), getTargetPort());
-      else stopWatchdog();
-    });
-    $('consolePort').addEventListener('input', function () {
-      try { localStorage.setItem(LS.port, this.value); } catch (e) {}
-      updateSendButtons();
-      updateFallbacks();
-      if (getTargetIp()) startWatchdog(getTargetIp(), getTargetPort());
-    });
-    $('consoleTimeout').addEventListener('input', function () {
-      try { localStorage.setItem(LS.timeout, this.value); } catch (e) {}
-    });
-    $('testBtn').addEventListener('click', handleTest);
-    $('saveTargetBtn').addEventListener('click', function () {
-      try {
-        localStorage.setItem(LS.receiver, state.receiver);
-        localStorage.setItem(LS.ip, getTargetIp());
-        localStorage.setItem(LS.port, String(getTargetPort()));
-        localStorage.setItem(LS.timeout, String(getTimeout()));
-        localStorage.setItem(LS.bg, state.background ? '1' : '0');
-        toast('Target saved as default', 'ok');
-        log('Saved target: ' + getTargetIp() + ':' + getTargetPort() +
-            (state.background ? ' (background)' : ''), 'ok');
-      } catch (e) { toast('Save failed', 'err'); }
-    });
-    $('scanBtn').addEventListener('click', handleScan);
-
-    $('sendAllBtn').addEventListener('click', handleSendAll);
-    $('sendOneBtn').addEventListener('click', handleSendOne);
-
-    document.addEventListener('click', function (e) {
-      var btn = e.target.closest ? e.target.closest('[data-copy-target]') : null;
-      if (!btn) return;
-      var target = btn.getAttribute('data-copy-target');
-      var el = $(target);
-      if (!el) return;
-      var text = el.textContent.replace(/^Copy/, '').trim();
-      if (!text || text === '—') return;
-      copyToClipboard(text, 'Copied to clipboard');
+    $('ipInput').addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') { e.preventDefault(); testConnection(); }
     });
 
     document.addEventListener('keydown', function (e) {
       var tag = (e.target && e.target.tagName) || '';
-      if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault(); $('pkgUrl').focus(); $('pkgUrl').select();
-      } else if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-        e.preventDefault(); if (!$('sendAllBtn').disabled) handleSendAll();
-      } else if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA' && tag !== 'SELECT') {
-        e.preventDefault(); $('pkgUrl').focus(); $('pkgUrl').select();
+      if (e.key === '/' && tag !== 'INPUT' && tag !== 'TEXTAREA') {
+        e.preventDefault();
+        $('urlInput').focus();
+        $('urlInput').select();
       }
     });
-
-    var initialIp = getTargetIp();
-    if (initialIp) startWatchdog(initialIp, getTargetPort());
-    else setWatchdogUI('idle', 'No target');
-
-    log('Ready. Paste a PKG URL to begin.' + (state.background ? ' Background mode is ON.' : ''), 'ok');
-    updateFallbacks();
-    updateSendButtons();
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', boot, { once: true });
-  } else {
-    boot();
-  }
+  wire();
+  renderRecent();
+
+  /* Optional: pre-fill URL from ?url= query param (handy for deep links from index/ps4) */
+  try {
+    var m = window.location.search.match(/[?&]url=([^&]+)/);
+    if (m) {
+      $('urlInput').value = decodeURIComponent(m[1]);
+      $('urlInput').focus();
+    }
+  } catch (e) {}
+
 })();
 </script>
 
