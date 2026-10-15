@@ -3,21 +3,109 @@
   "version": 1,
   "packages": [
     {
-      "titleId": "PPSA34547",
-      "title": "CONTROL Resonant",
+      "titleId": "PPSA30601",
+      "title": "Resonance A Plague Tale Legacy",
       "downloadLinks": [
         {
-          "name": "Viki (+Arabic Lang)",
-          "url": "https://vik1ngfile.site/f/rgFSdoeNDi"
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/990SXm4Vcn"
+        },
+        {
+          "name": "Viki - Backport",
+          "url": "https://vik1ngfile.site/f/6IINnHFw8m"
         }
       ],
-      "version": "01.300",
+      "version": "01.002",
       "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2212/9fedf57ea1649249a0e3ac24770ea9afa6f4bfa795b5fd05.png?w=260",
-      "description": "After years in confinement at the hands of the Federal Bureau of Control (FBC), Dylan Faden’s former captors are deploying him at the peak of a paranatural crisis. Charged with combating a mysterious cosmic entity as it alters fundamental aspects of our reality, Dylan must harness his new-found powers to take the fight to the myriad threats overwhelming Manhattan. Join Dylan in this sequel to the multi-award-winning CONTROL to explore the expansive zones of a city overrun by the corrupting influences of the chaotic Hiss and invasive micro-organism, the Mold, and other twisted paranatural threats. On the path to unlocking the full potential of his paranatural abilities Dylan will also seek out his sister, FBC Director Jesse Faden, as he bids to comprehend and contain the dangers that have spilled beyond the confines of the Oldest House to tear our world apart. STEP INTO A WARPED REALITY Explore multiple areas of a ravaged Manhattan in an expansive, unfamiliar, and exciting world. Traverse perception-bending locations and grapple with gravity anomalies that distort the vertical and horizontal plane, adding additional dimensions to puzzles and new tactical decisions to combat. Meet faces old and new on a path fraught with risk but rich in opportunity as the cityscape is reshaped and reality is redefined by a godlike force. MASTER THE PARANATURAL Channel the raw experiences of Dylan’s past to help understand his present and dig deeper into the inner workings of the FBC and reveal the horrors threatening humankind. Tap into power he must learn to master and take choices to shape how his abilities manifest and grow. Explore a deep progression system to define how Dylan adapts to emerging dangers. Forge connections crucial to Dylan’s fight to retain his humanity as he journeys from former test subject to paranatural superweapon. THE FIGHT SHIFTS. YOUR WEAPON SHIFTS WITH IT. Meet constantly evolving threats head-on, utilizing the environment, deploying elemental abilities and using the raw force Dylan’s shapeshifting melee weapon, the Aberrant. Wield the Aberrant in its many deadly forms. Deliver bone-crunching blows with a two-handed hammer and flow seamlessly into the swift precision of dual-wielded blades as this paranatural weapon morphs on demand to meet each new challenge. SHARED LEGACY. NEW THREAT FBC Director Jesse Faden’s lockdown is no longer holding. A paranatural catastrophe has spilled beyond the Oldest House and onto the streets of Manhattan, and the Bureau’s grip on containment is failing. Jesse Faden walked into the Oldest House to confront the threat within. Now Dylan must walk out of it to contain the threat beyond.\nRegion: EUR\nFirmware: 4.xx+\nNotes: To enable the Arabic language, you must select the Polish language.\nCredits: Oussama\nUpdated: 2026-10-13T16:17:05.759Z",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1510/346857c01378e194d77def3f3029d79489509c541aa761d6.png?w=260",
+      "description": "Set 15 years before A Plague Tale: Requiem, play as Sophia, a fierce young plunderer, on the run and determined to uncover the secrets of her past. Dive into an original story blending combat, myth and fate with a brand new take in the universe of A Plague Tale. Sophia’s journey leads to the Minotaur’ Island, where she faces deadly trials, navigates treacherous trails, solves puzzles, all while fighting and staying one step ahead of the army chasing her. But the true challenge awaits, as the terrifying creature hidden behind the myth will soon resonate with her… As you journey deeper into the island’s heart, you’ll confront the truth behind a long-buried curse. • Followed by many enemies, each drawn to the Island to reclaim a mysterious treasure, you must navigate a treacherous maze. Rely on your agility, tricks and sharp reflexes to outsmart enemies, perfect your parries, and unleash powerful strikes to survive deadly encounters. • Shift between the Middle Age of Sophia and ancient Minoan times, where echoes of the past shape the battles of the present. Unfold a new story in the universe of A Plague Tale, through the entwined destinies of two heroes linked by fate and the Macula’s mysterious legacy. • Guided by the knowledge safeguarded in your notebook, follow in your crew’s footsteps to explore a richly detailed world, unravel its secrets, and face deadly trials. Use a stolen Minoan sphere to solve ingenious puzzles by manipulating light – a force woven by Daedalus into the island’s very heart. • It is said that only a few came back from the island. Lurking in the shadows lives a restless presence. It follows you around, seemingly knowing your every move, as it hunts through the island’s depths. Every step is a risk. Every pause, a potential end. You can’t stop, only hide, outsmart, and push forward. Can you survive each trial and every step or will you join those who never came back?\nRegion: EUR\nFirmware: 4.xx+\nUpdated: 2026-10-14T16:33:53.035Z",
       "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
-      "sizeBytes": 85899345920,
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2212/9fedf57ea1649249a0e3ac24770ea9afa6f4bfa795b5fd05.png"
+      "sizeBytes": 64424509440,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1510/346857c01378e194d77def3f3029d79489509c541aa761d6.png"
+    },
+    {
+      "titleId": "PPSA20946",
+      "title": "The Relic First Guardian",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/8Hu8HUPIMb"
+        }
+      ],
+      "version": "01.00",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1909/b43f1dcdb2458ac9e058a8b115553aba3d73e20be3a9d939.png?w=260",
+      "description": "Since its launch, Project Cloud Games have been working round the clock to improve the game, with the current focus fully on fixing technical issues and performance. We have already released 17 patches, but we are not stopping there. The next patch is being worked on. You have our time, dedication, determination, and word that we will continue to do everything in our power to be worthy of your support. Created by a small and passionate core team of a dozen people, Project Cloud Games has created a fresh new take on combat, with a heavy emphasis on balancing action and vulnerability, their unique, dark, and gritty spin on classic Korean stories has been in the making for six years. “The Relic: First Guardian tells an epic story through stunning visuals, spread across a vast fantasy RPG landscape.” – Screenrant “It has a unique art style and combat that looks spectacular” – Dualshockers “An ambitious action RPG that takes its share of chances rather than just sticking to the status quo” – GameRant Fast Paced Brutal Combat The Relic approaches combat differently – delivering freedom in attack, intensity in survival. Unleash an unstoppable onslaught with attacks that cost zero resources, allowing you to strike continuously with relentless creativity and consistency. Your stamina gauge is reserved strictly for high-stakes defence like dodging and blocking, while high-power magic operates on cooldowns and a dedicated meter. Attack without limits, defend with absolute precision. Explore a Shattered, Semi-Open World Traverse a vast, interconnected realm filled with forgotten ruins, hidden dungeons, and atmospheric landscapes. The world of Arsilthus rewards curious Guardians who venture off the beaten path with ancient artifacts, secret encounters, and pieces of lost lore buried deep within its ruined regions. Confront Up to 80 Tragic Bosses Step into battle against up to 80 mythic encounters – each a dark, standalone folktale brought to life, bound to a tragic lore that can only be laid to rest through ultimate victory. Adapt or perish: no two legends fight alike, and a strategy that slays one nightmare offers no guarantee of surviving the next. Weapons Woven with Narrative Command five distinct weapon masteries: Sword &amp; Shield, Battle Staff, Daggers, Two-Handed Weapons, or the Longsword. Without a single duplicate weapon to be found – every single item is a bespoke, one-of-a-kind creation with its own tragic history. Discovering a new blade means uncovering a piece of the world’s past, transforming your arsenal into a personal collection of living legends. Master Ancient Weapon Skill Trees Forge a deeper bond with your chosen armoury through specialised skill trees powered by relic energy. Channel forgotten power into game-changing passives alongside awe-striking, visually spectacular ultimate abilities. Unbound Build Freedom Forget traditional levelling – your power is forged entirely through the gear and Relics you discover. Collecting and equipping relics is as much about augmenting your character as it is about uncovering the world’s past. With over 70 unique passive effects scattered that alter combat tempo and skill, the relic system encourages you to experiment endlessly. Freely swap game-changing passives, manipulate attack tempos, and tailor your build on the fly – giving you complete freedom to adapt.\nRegion: EUR\nFirmware: 4.xx+\nUpdated: 2026-10-14T16:30:17.383Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 46170898432,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1909/b43f1dcdb2458ac9e058a8b115553aba3d73e20be3a9d939.png"
+    },
+    {
+      "titleId": "PPSA36257",
+      "title": "Luna Abyss",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/dYiDiOoEvI"
+        }
+      ],
+      "version": "01.00",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1714/5f724656385b54f0c9497fd38c28fc6b08a63fb58be04df8.png?w=260",
+      "description": "Luna Abyss is a single player story driven action-adventure with fluid platforming and bullet hell combat. Follow the journey of Fawkes, a prisoner of Luna caught between a cryptic prophecy and their prison sentence. You are a prisoner sentenced to explore a derelict megastructure that sprawls deep beneath the surface of the mimic moon Luna. You are tasked with recovering forgotten technology from within the Abyss and the lost colony it consumed. Every move you make will be overseen by your artificial prison guard named Aylin. These centuries-old ruins are alive with maddening echoes, insinuating secrets of the once prosperous city of Greymont and its terrible fate. The Scourge. The tenets of the All-Father. The choir of the Collective. The voices of the Abyss call to you; they whisper strange missives…\nRegion: JPN\nFirmware: 4.xx+\nUpdated: 2026-10-14T16:25:55.411Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 6442450944,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1714/5f724656385b54f0c9497fd38c28fc6b08a63fb58be04df8.png"
+    },
+    {
+      "titleId": "PPSA08755",
+      "title": "Pinball FX",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/eueRdsN2F0"
+        }
+      ],
+      "version": "01.035",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA08755_2585e927631eb2bb396a26100be6e88efb47d9ae9b4ba658fe25156a3ac4c2db/icon0.webp",
+      "description": "Play for free Download Pinball FX for the first time and make use of the complimentary 1 day Play Pass which lets you access most tables for free! Continue honing your pinball skills on our 3 free tables available for unlimited play – Wild West Rampage, Fish Tales and Sorcerer’s Lair Biggest brands in pinball form Discover brand new exclusive tables created for Pinball FX, or find your favorites among more than 100 unique and visually enhanced favorites from Zen’s extensive digital pinball library. Relive the most iconic moments from entertainment powerhouses like Indiana Jones, Star Wars, Marvel, Universal Studios, and many more. Enjoy accurate re-creations of the most famous pinball machines of all time with Williams Pinball, or have fun with Zen’s original creations. New tables arrive frequently! Build your dream game room Build up your own customizable 3D playroom with collectible items unlocked by playing. The ultimate simulation Enjoy digital pinball at its finest as Pinball FX brings you the most advanced simulation in pinball with Pro Physics for every table in the library, 4K HDR visuals, and ray tracing.\nRegion: USA\nFirmware: 4.xx+\nUpdated: 2026-10-14T16:22:55.634Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 8589934592
+    },
+    {
+      "titleId": "PPSA21185",
+      "title": "Motorcycle Mechanic Simulator 2021",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/5fFRy78qDn"
+        }
+      ],
+      "version": "01.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202405/1620/0b0c536695895c3a010b874a83c1e1e4a8f568006fa6a410.png?w=260",
+      "description": "Become the head of a motorcycle mechanic empire in a realistic simulation game. Start with a small garage, upgrade and buy bigger ones with new possibilities. Take orders from customers, find old bikes and breathe new life into it. While playing Motorcycle Mechanic Simulator: – enjoy unlimited timed gameplay with many types of motorcycles – try not to get lost among the 400 parts that make up each of the motorcycles – explore a huge library of additional parts – refurbish old and build new bikes – accept orders from customers, earn money and gain experience points – choose a garage that suits you and furnish it – test bikes while driving on test tracks – explore landfills in search of unique parts – check what the store has to offer in parts, appliances and furniture – personalize motorcycle parts by painting and applying stickers\nRegion: USA\nFirmware: 4.xx+\nUpdated: 2026-10-14T16:19:47.672Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 8589934592,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202405/1620/0b0c536695895c3a010b874a83c1e1e4a8f568006fa6a410.png"
+    },
+    {
+      "titleId": "PPSA23126",
+      "title": "Palworld",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/sGwHRgM5SS"
+        }
+      ],
+      "version": "01.102",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1002/585fa2ede4c88fa20a773ec44b110e0c84c4a5baeb51ed5b.png?w=260",
+      "description": "Q. What kind of game is this? A. In this game, you can peacefully live alongside mysterious creatures known as Pals or risk your life to drive off a ruthless poaching syndicate. Pals can be used to fight and breed, or they can be made to work on farms or factories. You can even sell them or eat them. ▼Survival In a harsh environment where food is scarce and vicious poachers roam, danger waits around every corner. To survive, you must tread carefully and make difficult choices…even if that means eating your own Pals when the time comes. ▼Mounts &amp; Exploration Pals can be mounted to traverse the land, sea and sky—allowing you to traverse all kinds of environment as you explore the world. ▼Building Structures Want to build a pyramid? Put an army of Pals on the job. There are no labor laws for Pals, so exploit them to your heart’s content. ▼Production Find a variety of useful Pals to make fire, generate electricity, or mine ore so that you can live a life of comfort. ▼Farming Some Pals are good at planting seeds, while others are skilled at watering or harvesting crops. Work together with your Pals to create an idyllic farmstead. ▼Factories &amp; Automation Letting Pals do the work is the key to automation. Build a factory, place a Pal in it, and they’ll keep working as long as they’re fed—until they’re dead, that is. ▼Dungeon Exploration With Pals on your side you can tackle even the most dangerous areas. When the time comes, you might have to sacrifice one to save your skin. They’ll protect your life—even if it costs their own. ▼Breeding &amp; Genetics Breed a Pal and it will inherit the characteristics of its parents. Combine rare pals to create the strongest Pal of them all! ▼Poaching &amp; Crime Endangered Pals live in wildlife sanctuaries. Sneak in and capture rare Pals to get rich quick! It’s not a crime if you don’t get caught, after all. ▼Multiplayer Multiplayer is supported, so invite a friend and go on an adventure together! And of course you can battle your friends and trade Pals, too. Collect all kinds of exciting Pals to fight, farm, build, and work for you in this completely new multiplayer, open world survival and crafting game!\nRegion: USA\nFirmware: 4.xx+\nUpdated: 2026-10-14T16:16:25.366Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "sizeBytes": 16106127360,
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1002/585fa2ede4c88fa20a773ec44b110e0c84c4a5baeb51ed5b.png"
     },
     {
       "titleId": "PPSA28000",
@@ -81,12 +169,16 @@
         {
           "name": "Viki",
           "url": "https://vik1ngfile.site/f/YfSY9cn31J"
+        },
+        {
+          "name": "Viki (+Arabic Lang)",
+          "url": "https://vik1ngfile.site/f/rgFSdoeNDi"
         }
       ],
       "version": "01.300",
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2212/9fedf57ea1649249a0e3ac24770ea9afa6f4bfa795b5fd05.png?w=260",
-      "description": "After years in confinement at the hands of the Federal Bureau of Control (FBC), Dylan Faden’s former captors are deploying him at the peak of a paranatural crisis. Charged with combating a mysterious cosmic entity as it alters fundamental aspects of our reality, Dylan must harness his new-found powers to take the fight to the myriad threats overwhelming Manhattan. Join Dylan in this sequel to the multi-award-winning CONTROL to explore the expansive zones of a city overrun by the corrupting influences of the chaotic Hiss and invasive micro-organism, the Mold, and other twisted paranatural threats. On the path to unlocking the full potential of his paranatural abilities Dylan will also seek out his sister, FBC Director Jesse Faden, as he bids to comprehend and contain the dangers that have spilled beyond the confines of the Oldest House to tear our world apart. STEP INTO A WARPED REALITY Explore multiple areas of a ravaged Manhattan in an expansive, unfamiliar, and exciting world. Traverse perception-bending locations and grapple with gravity anomalies that distort the vertical and horizontal plane, adding additional dimensions to puzzles and new tactical decisions to combat. Meet faces old and new on a path fraught with risk but rich in opportunity as the cityscape is reshaped and reality is redefined by a godlike force. MASTER THE PARANATURAL Channel the raw experiences of Dylan’s past to help understand his present and dig deeper into the inner workings of the FBC and reveal the horrors threatening humankind. Tap into power he must learn to master and take choices to shape how his abilities manifest and grow. Explore a deep progression system to define how Dylan adapts to emerging dangers. Forge connections crucial to Dylan’s fight to retain his humanity as he journeys from former test subject to paranatural superweapon. THE FIGHT SHIFTS. YOUR WEAPON SHIFTS WITH IT. Meet constantly evolving threats head-on, utilizing the environment, deploying elemental abilities and using the raw force Dylan’s shapeshifting melee weapon, the Aberrant. Wield the Aberrant in its many deadly forms. Deliver bone-crunching blows with a two-handed hammer and flow seamlessly into the swift precision of dual-wielded blades as this paranatural weapon morphs on demand to meet each new challenge. SHARED LEGACY. NEW THREAT FBC Director Jesse Faden’s lockdown is no longer holding. A paranatural catastrophe has spilled beyond the Oldest House and onto the streets of Manhattan, and the Bureau’s grip on containment is failing. Jesse Faden walked into the Oldest House to confront the threat within. Now Dylan must walk out of it to contain the threat beyond.\nRegion: EUR\nFirmware: 4.xx+\nCredits: Oussama\nUpdated: 2026-10-11T18:15:24.021Z",
+      "description": "After years in confinement at the hands of the Federal Bureau of Control (FBC), Dylan Faden’s former captors are deploying him at the peak of a paranatural crisis. Charged with combating a mysterious cosmic entity as it alters fundamental aspects of our reality, Dylan must harness his new-found powers to take the fight to the myriad threats overwhelming Manhattan. Join Dylan in this sequel to the multi-award-winning CONTROL to explore the expansive zones of a city overrun by the corrupting influences of the chaotic Hiss and invasive micro-organism, the Mold, and other twisted paranatural threats. On the path to unlocking the full potential of his paranatural abilities Dylan will also seek out his sister, FBC Director Jesse Faden, as he bids to comprehend and contain the dangers that have spilled beyond the confines of the Oldest House to tear our world apart. STEP INTO A WARPED REALITY Explore multiple areas of a ravaged Manhattan in an expansive, unfamiliar, and exciting world. Traverse perception-bending locations and grapple with gravity anomalies that distort the vertical and horizontal plane, adding additional dimensions to puzzles and new tactical decisions to combat. Meet faces old and new on a path fraught with risk but rich in opportunity as the cityscape is reshaped and reality is redefined by a godlike force. MASTER THE PARANATURAL Channel the raw experiences of Dylan’s past to help understand his present and dig deeper into the inner workings of the FBC and reveal the horrors threatening humankind. Tap into power he must learn to master and take choices to shape how his abilities manifest and grow. Explore a deep progression system to define how Dylan adapts to emerging dangers. Forge connections crucial to Dylan’s fight to retain his humanity as he journeys from former test subject to paranatural superweapon. THE FIGHT SHIFTS. YOUR WEAPON SHIFTS WITH IT. Meet constantly evolving threats head-on, utilizing the environment, deploying elemental abilities and using the raw force Dylan’s shapeshifting melee weapon, the Aberrant. Wield the Aberrant in its many deadly forms. Deliver bone-crunching blows with a two-handed hammer and flow seamlessly into the swift precision of dual-wielded blades as this paranatural weapon morphs on demand to meet each new challenge. SHARED LEGACY. NEW THREAT FBC Director Jesse Faden’s lockdown is no longer holding. A paranatural catastrophe has spilled beyond the Oldest House and onto the streets of Manhattan, and the Bureau’s grip on containment is failing. Jesse Faden walked into the Oldest House to confront the threat within. Now Dylan must walk out of it to contain the threat beyond.\nRegion: EUR\nFirmware: 4.xx+\nNotes: To enable the Arabic language, you must select Polish.\nUpdated: 2026-10-11T18:15:24.021Z",
       "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
       "sizeBytes": 85899345920,
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2212/9fedf57ea1649249a0e3ac24770ea9afa6f4bfa795b5fd05.png"
