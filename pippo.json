@@ -3,6 +3,3898 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA38510",
+      "title": "The Walking Dead Streets of Survival Deluxe Edition",
+      "createdAt": "2026-11-08T10:32:00.309Z",
+      "version": "v01.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0911/35622ecb4b2eb940502896b11e7d1ece85f5eb9f88d0cb40.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0911/35622ecb4b2eb940502896b11e7d1ece85f5eb9f88d0cb40.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA38510, v01.000.001, USA, 4.xx BackPort\nSize: 2GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI; DLC: DUPLEX\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 13.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://datanodes.to/jg12436muanv/DLCs_Pippo_DUPLEX.rar"
+        },
+        {
+          "name": "DLC - Vault",
+          "url": "https://datavaults.co/r1t8k891v7wx/DLCs_Pippo_DUPLEX.rar"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Het_u9Xp#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Het_u9Xp#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Het_u9Xp#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Het_u9Xp#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/ViCEOKdI#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/ViCEOKdI#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/ViCEOKdI#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/ViCEOKdI#FileKeeper"
+        }
+      ],
+      "sizeBytes": 2147483648
+    },
+    {
+      "titleId": "PPSA38010",
+      "title": "Suika Game",
+      "createdAt": "2026-11-08T10:32:00.309Z",
+      "version": "v01.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/0307/d3fc2a1e25305d3c8fdb6e1482dd9910aab38d92f5313cd0.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/0307/d3fc2a1e25305d3c8fdb6e1482dd9910aab38d92f5313cd0.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA38010, v01.002, USA, 4.xx BackPort\nSize: 1GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/QDgesnLd#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/QDgesnLd#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/QDgesnLd#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/QDgesnLd#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/qsFVNrLb#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/qsFVNrLb#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/qsFVNrLb#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/qsFVNrLb#FileKeeper"
+        }
+      ],
+      "sizeBytes": 1073741824
+    },
+    {
+      "titleId": "PPSA37001",
+      "title": "Is This Seat Taken?",
+      "createdAt": "2026-11-08T10:32:00.309Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2712/cab44e3c3094dfeffdfcd62d733010dc47eafc9913f388e8.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2712/cab44e3c3094dfeffdfcd62d733010dc47eafc9913f388e8.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA37001, v01.000, JPN, 4.xx BackPort\nSize: 480MB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/d-fRKM1c#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/d-fRKM1c#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/d-fRKM1c#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/d-fRKM1c#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/Wpk9JM2E#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/Wpk9JM2E#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/Wpk9JM2E#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/Wpk9JM2E#FileKeeper"
+        }
+      ],
+      "sizeBytes": 503316480
+    },
+    {
+      "titleId": "PPSA26136",
+      "title": "Avowed",
+      "createdAt": "2026-11-08T10:32:00.309Z",
+      "version": "v02.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2510/eec2078ddc4a341c2c300315d91a15b0820decb74e58c300.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2510/eec2078ddc4a341c2c300315d91a15b0820decb74e58c300.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA26136, v02.001, USA, 4.xx BackPort\nSize: 112GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Bz-OzfkJ#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Bz-OzfkJ#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Bz-OzfkJ#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Bz-OzfkJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/zEjRDSHp#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/zEjRDSHp#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/zEjRDSHp#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/zEjRDSHp#FileKeeper"
+        }
+      ],
+      "sizeBytes": 120259084288
+    },
+    {
+      "titleId": "PPSA23767",
+      "title": "Bionic Bay",
+      "createdAt": "2026-11-07T12:09:37.286Z",
+      "version": "v01.000.008",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA23767_a07448bed1dd7afc8f71ce21f368a1dcd3eef5cecc509b68f17a2b46dfc138af/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA23767, v01.000.008, EUR, 4.xx BackPort\nSize: 2GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/FxuGaJ8v#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/FxuGaJ8v#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/FxuGaJ8v#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/FxuGaJ8v#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/8SF1itpV#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/8SF1itpV#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/8SF1itpV#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/8SF1itpV#FileKeeper"
+        }
+      ],
+      "sizeBytes": 2147483648
+    },
+    {
+      "titleId": "PPSA21755",
+      "title": "Iron Lung",
+      "createdAt": "2026-11-07T12:09:37.286Z",
+      "version": "v01.000.100",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA21755_6fe02e645bf3e935bc9565e4c9014fdeae1c2b2402716efe71f6d492c98521f9/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA21755, v01.000.100, EUR, 4.xx BackPort\nSize: 253MB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Dcb7pRX0#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Dcb7pRX0#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Dcb7pRX0#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Dcb7pRX0#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/DlAUk6G7#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/DlAUk6G7#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/DlAUk6G7#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/DlAUk6G7#FileKeeper"
+        }
+      ],
+      "sizeBytes": 265289728
+    },
+    {
+      "titleId": "PPSA21349",
+      "title": "HOTEL BARCELONA",
+      "createdAt": "2026-11-07T12:09:37.286Z",
+      "version": "v02.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/0110/5b7c8b684f8be3f787edb30a1dec1017f6111ae833b081f4.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/0110/5b7c8b684f8be3f787edb30a1dec1017f6111ae833b081f4.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA21349, v02.000, JPN, 4.xx BackPort\nSize: 9GB\nCredits: Files: Scene; Backport: DecKerr97 GUI\nHow to play: Note: Own Lizard Extractor. FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/A_umI2IO#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/A_umI2IO#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/A_umI2IO#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/A_umI2IO#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/yVIJI8ez#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/yVIJI8ez#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/yVIJI8ez#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/yVIJI8ez#FileKeeper"
+        }
+      ],
+      "sizeBytes": 9663676416
+    },
+    {
+      "titleId": "PPSA09826",
+      "title": "Gothic 1 Remake",
+      "createdAt": "2026-11-07T12:09:37.286Z",
+      "version": "v01.000.015",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2610/16aadf49a4274d8dfb12049e6478e587ced71ccbc10ae96a.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2610/16aadf49a4274d8dfb12049e6478e587ced71ccbc10ae96a.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA09826, v01.000.015, USA, 4.xx BackPort\nSize: 73GB\nCredits: Files: b0mba1992; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/1M42z5cQ#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/1M42z5cQ#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/1M42z5cQ#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/1M42z5cQ#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/s-Tl5Iux#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/s-Tl5Iux#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/s-Tl5Iux#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/s-Tl5Iux#FileKeeper"
+        }
+      ],
+      "sizeBytes": 78383153152
+    },
+    {
+      "titleId": "PPSA32193",
+      "title": "The Adventures of Elliot The Millennium Tales Deluxe Edition",
+      "createdAt": "2026-11-06T09:44:18.146Z",
+      "version": "v01.100",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA32193_29407b630b59eadf2cfaa8b58e74f30920b43cafe4eb70eed79dfcf657f8691e/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA32193, v01.100, USA, DLCs Merged, 4.xx BackPort + 5.xx BackPort\nSize: 41GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI; DLC: DUPLEX\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: 5.xx BackPort already included on Base, 4.xx BackPort Only &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/woceccjb#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/woceccjb#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/woceccjb#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/woceccjb#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/B3tVdH9P#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/B3tVdH9P#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/B3tVdH9P#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/B3tVdH9P#FileKeeper"
+        }
+      ],
+      "sizeBytes": 44023414784
+    },
+    {
+      "titleId": "PPSA22408",
+      "title": "HOT WHEELS Infinite Rush",
+      "createdAt": "2026-11-06T09:44:18.146Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2509/b304ac4fea73474605efb22161edd7943565533ec3dab802.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2509/b304ac4fea73474605efb22161edd7943565533ec3dab802.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA22408, v01.000, EUR, 4.xx BackPort + 5.xx BackPort\nSize: 38GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI; DLC: DUPLEX\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: 5.xx BackPort already included on Base, 4.xx BackPort Only &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/mY3cU_VM#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/mY3cU_VM#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/XGUwI-7o#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/XGUwI-7o#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/XGUwI-7o#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/XGUwI-7o#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/d2biniIg#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/d2biniIg#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/d2biniIg#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/d2biniIg#FileKeeper"
+        }
+      ],
+      "sizeBytes": 40802189312
+    },
+    {
+      "titleId": "PPSA16280",
+      "title": "Ultros",
+      "createdAt": "2026-11-06T09:44:18.146Z",
+      "version": "v01.380",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA16280_9f0027dad0e0860f53af456c58c7bf06a2b6e0a1541f83cf8c7e46ef9a029bd3/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA16280, v01.380, USA, 4.xx BackPort\nSize: 3GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 8.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/frMlvCuJ#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/frMlvCuJ#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/frMlvCuJ#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/frMlvCuJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/J0o5sw1B#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/J0o5sw1B#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/J0o5sw1B#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/J0o5sw1B#FileKeeper"
+        }
+      ],
+      "sizeBytes": 3221225472
+    },
+    {
+      "titleId": "PPSA13225",
+      "title": "Venba",
+      "createdAt": "2026-11-06T09:44:18.146Z",
+      "version": "v02.000",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA13225_1e4356d5e16cf984fb6dee106c5200e717de8f4e68eebdd5f7c724b9ca996c9e/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA13225, v02.000, USA, 4.xx BackPort\nSize: 1GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 6.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Vw9GYzdb#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Vw9GYzdb#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Vw9GYzdb#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Vw9GYzdb#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/p6O_DX24#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/p6O_DX24#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/p6O_DX24#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/p6O_DX24#FileKeeper"
+        }
+      ],
+      "sizeBytes": 1073741824
+    },
+    {
+      "titleId": "PPSA13446",
+      "title": "Aphelion",
+      "createdAt": "2026-11-05T12:22:50.876Z",
+      "version": "v01.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2416/cd0d25d0c9ed2f762493c7d64513d9cb9e38b537c4787b05.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2416/cd0d25d0c9ed2f762493c7d64513d9cb9e38b537c4787b05.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA13446, v01.003, USA, 4.xx BackPort\nSize: 52GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: Note: Own ZSTD Extractor. FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/ZEF1DhvA#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/ZEF1DhvA#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/ZEF1DhvA#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/ZEF1DhvA#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/JOZKZrf0#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/JOZKZrf0#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/JOZKZrf0#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/JOZKZrf0#FileKeeper"
+        }
+      ],
+      "sizeBytes": 55834574848
+    },
+    {
+      "titleId": "PPSA10720",
+      "title": "The Beast Inside",
+      "createdAt": "2026-11-05T12:22:50.876Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202211/2315/md7GEzGKdqbjcFRMhIQa4Uge.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202211/2315/md7GEzGKdqbjcFRMhIQa4Uge.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA10720, v01.000, USA, 4.xx BackPort\nSize: 22GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 5.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/pTMXS-Ml#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/pTMXS-Ml#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/pTMXS-Ml#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/pTMXS-Ml#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/ViVM0mSv#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/ViVM0mSv#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/ViVM0mSv#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/ViVM0mSv#FileKeeper"
+        }
+      ],
+      "sizeBytes": 23622320128
+    },
+    {
+      "titleId": "PPSA10122",
+      "title": "Return To Monkey Island",
+      "createdAt": "2026-11-05T12:22:50.876Z",
+      "version": "v01.101",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1822/9EgpieO87hFjIvMIxiUtLPnr.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202211/1822/9EgpieO87hFjIvMIxiUtLPnr.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA10122, v01.101, USA, 4.xx BackPort + 5.xx BackPort\nSize: 4GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: 5.xx BackPort already included on Base, 4.xx BackPort Only &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/fMVHQmmL#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/fMVHQmmL#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/fMVHQmmL#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/fMVHQmmL#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/ScHBmd36#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/ScHBmd36#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/ScHBmd36#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/ScHBmd36#FileKeeper"
+        }
+      ],
+      "sizeBytes": 4294967296
+    },
+    {
+      "titleId": "PPSA06081",
+      "title": "Totally Accurate Battle Simulator",
+      "createdAt": "2026-11-05T12:22:50.876Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202308/1512/a800dc5a941af33b5f7b7371f907a0fe26f3c435e4c20f60.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202308/1512/a800dc5a941af33b5f7b7371f907a0fe26f3c435e4c20f60.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA06081, v01.000, USA, 4.xx BackPort\nSize: 5GB\nCredits: Files: vincenzoz85; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 7.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/UJHwesUG#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/UJHwesUG#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/UJHwesUG#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/UJHwesUG#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/AdxcBqdJ#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/AdxcBqdJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/AdxcBqdJ#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/AdxcBqdJ#FileKeeper"
+        }
+      ],
+      "sizeBytes": 5368709120
+    },
+    {
+      "titleId": "PPSA30391",
+      "title": "Alien Rogue Incursion Evolved Part One Deluxe Edition",
+      "createdAt": "2026-11-04T10:57:58.145Z",
+      "version": "v01.000.009",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/0600/a26b8088b4213fcfafdf3f435350b91c12a0efca1621016f.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/0600/a26b8088b4213fcfafdf3f435350b91c12a0efca1621016f.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA30391, v01.000.009, EUR, 4.xx BackPort\nSize: 58GB\nCredits: Files: Desesperado3; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: Note: Own ZSTD Extractor. FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/70y_qlsU#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/70y_qlsU#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/9hI_iNwf#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/9hI_iNwf#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/9hI_iNwf#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/9hI_iNwf#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/o2_k93cr#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/o2_k93cr#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/o2_k93cr#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/o2_k93cr#FileKeeper"
+        }
+      ],
+      "sizeBytes": 62277025792
+    },
+    {
+      "titleId": "PPSA25212",
+      "title": "RetroRealms",
+      "createdAt": "2026-11-04T10:57:58.145Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2700/dd8410b7f1569b2c14a43e5d2ea306475cae338d7eb49a16.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2700/dd8410b7f1569b2c14a43e5d2ea306475cae338d7eb49a16.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA25212, v01.000, EUR, 4.xx BackPort\nSize: 1GB\nCredits: Files: Scene; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 9.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/9EL-foKn#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/9EL-foKn#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/pMITxfAk#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/pMITxfAk#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/pMITxfAk#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/pMITxfAk#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/tsmXWDAq#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/tsmXWDAq#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/tsmXWDAq#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/tsmXWDAq#FileKeeper"
+        }
+      ],
+      "sizeBytes": 1073741824
+    },
+    {
+      "titleId": "PPSA21120",
+      "title": "White Day 2 The Flower That Tells Lies Complete Edition",
+      "createdAt": "2026-11-04T10:57:58.145Z",
+      "version": "v01.000.103",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202402/1215/cd7e3c252e5ebcba5ecbc583f8ace7a8095ad79fdf97dbc3.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202402/1215/cd7e3c252e5ebcba5ecbc583f8ace7a8095ad79fdf97dbc3.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA21120, v01.000.103, USA, DLCs Merged, 4.xx BackPort\nSize: 19GB\nCredits: Files: ChestCakes; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 8.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/mphRWqAu#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/mphRWqAu#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/mphRWqAu#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/mphRWqAu#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/nwtY1Lg9#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/nwtY1Lg9#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/nwtY1Lg9#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/nwtY1Lg9#FileKeeper"
+        }
+      ],
+      "sizeBytes": 20401094656
+    },
+    {
+      "titleId": "PPSA18543",
+      "title": "The Sinking City 2 Premium Edition",
+      "createdAt": "2026-11-04T10:57:58.145Z",
+      "version": "v01.000.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0514/ce9a6b7632e0f12a14a33b2b08fb43da30f15b5378cedaed.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0514/ce9a6b7632e0f12a14a33b2b08fb43da30f15b5378cedaed.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA18543, v01.000.003, EUR, 4.xx BackPort + 5.xx BackPort\nSize: 90GB\nCredits: Files: b0mba1992; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: 5.xx BackPort already included on Base, 4.xx BackPort Only, Pro Fix &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/Xr9AT7Be#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/Xr9AT7Be#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/NroMVpmb#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/NroMVpmb#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/NroMVpmb#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/NroMVpmb#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/p1akcGa6#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/p1akcGa6#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/p1akcGa6#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/p1akcGa6#FileKeeper"
+        }
+      ],
+      "sizeBytes": 96636764160
+    },
+    {
+      "titleId": "PPSA01772",
+      "title": "The Sinking City Remastered Deluxe Edition",
+      "createdAt": "2026-11-04T10:57:58.145Z",
+      "version": "v01.004",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202101/2210/YHU2PikhEppyFiralnrJxiCI.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202101/2210/YHU2PikhEppyFiralnrJxiCI.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA01772, v01.004, EUR, 4.xx BackPort\nSize: 66GB\nCredits: Files: Scene; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, Pro Fix &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/cCnI1qc7#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/cCnI1qc7#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/stILoX0N#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/stILoX0N#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/stILoX0N#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/stILoX0N#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/6lGsLf0u#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/6lGsLf0u#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/6lGsLf0u#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/6lGsLf0u#FileKeeper"
+        }
+      ],
+      "sizeBytes": 70866960384
+    },
+    {
+      "titleId": "PPSA36082",
+      "title": "Hades 2",
+      "createdAt": "2026-11-03T12:35:55.454Z",
+      "version": "v01.006",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2318/cabc65dfd2ab1ffa31f51b20b7128ac69491ea9858c0daa3.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/2318/cabc65dfd2ab1ffa31f51b20b7128ac69491ea9858c0daa3.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA36082, v01.006, EUR, 4.xx BackPort\nSize: 9GB\nCredits: Files: DUPLEX; Backport: PSVIETHOA\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/7fNNq0dJ#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/7fNNq0dJ#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/7fNNq0dJ#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/7fNNq0dJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/lNcXDrfJ#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/lNcXDrfJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/lNcXDrfJ#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/lNcXDrfJ#FileKeeper"
+        }
+      ],
+      "sizeBytes": 9663676416
+    },
+    {
+      "titleId": "PPSA28511",
+      "title": "Out of Sight Complete Edition",
+      "createdAt": "2026-11-03T12:35:55.454Z",
+      "version": "v01.006",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1410/96c38df49bf680bdcf4dcb90d68e5a98c40c04e64e640383.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/1410/96c38df49bf680bdcf4dcb90d68e5a98c40c04e64e640383.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA28511, v01.006, EUR, 4.xx BackPort\nSize: 9GB\nCredits: Files: Scene; Backport: DecKerr97 GUI; DLC: Pippo &amp; Scene\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/82IPPZ5L#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/82IPPZ5L#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/SLzN53MJ#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/SLzN53MJ#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/SLzN53MJ#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/SLzN53MJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/n66INTJs#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/n66INTJs#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/n66INTJs#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/n66INTJs#FileKeeper"
+        }
+      ],
+      "sizeBytes": 9663676416
+    },
+    {
+      "titleId": "PPSA22207",
+      "title": "INAZUMA ELEVEN Victory Road Deluxe Edition",
+      "createdAt": "2026-11-03T12:35:55.454Z",
+      "version": "v07.012",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/0110/3d28e402cf4409f5cfc6b5277d83317f25b7e77799ba607d.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/0110/3d28e402cf4409f5cfc6b5277d83317f25b7e77799ba607d.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA22207, v07.012, JPN, 4.xx BackPort\nSize: 114GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/fPNPZvfz#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/fPNPZvfz#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/MSKP3rIV#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/MSKP3rIV#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/MSKP3rIV#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/MSKP3rIV#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/BxcJpHZi#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/BxcJpHZi#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/BxcJpHZi#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/BxcJpHZi#FileKeeper"
+        }
+      ],
+      "sizeBytes": 122406567936
+    },
+    {
+      "titleId": "PPSA07247",
+      "title": "Warhammer 40000 Boltgun Forges of Corruption Edition",
+      "createdAt": "2026-11-03T12:35:55.454Z",
+      "version": "v01.007",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202303/2314/c5e10e76ff39458aba617e8c889c22ad12f3b495bbee2af4.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202303/2314/c5e10e76ff39458aba617e8c889c22ad12f3b495bbee2af4.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA07247, v01.007, EUR, 4.xx BackPort\nSize: 13GB\nCredits: Files: zXRomlx2; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 8.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/oTyJVyVU#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/oTyJVyVU#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/DJrtCg-5#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/DJrtCg-5#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/DJrtCg-5#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/DJrtCg-5#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/xdMeeQ-W#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/xdMeeQ-W#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/xdMeeQ-W#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/xdMeeQ-W#FileKeeper"
+        }
+      ],
+      "sizeBytes": 13958643712
+    },
+    {
+      "titleId": "PPSA31544",
+      "title": "FINAL FANTASY RESONANCE Deluxe Edition",
+      "createdAt": "2026-11-02T15:14:30.449Z",
+      "version": "v01.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2403/8e22140956f5980e5a33a0f6fa22ced64c3597cfdf20bc0e.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2403/8e22140956f5980e5a33a0f6fa22ced64c3597cfdf20bc0e.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA31544, v01.000.001, USA, 4.xx BackPort + 5.xx BackPort\nSize: 46GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI; DLC: Pippo &amp; DUPLEX\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPorts Folder included. About FPKG: 5.xx BackPort already included on Base, 4.xx BackPort Only &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/av4n2pC1#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/av4n2pC1#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/XA7EcLDR#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/XA7EcLDR#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/XA7EcLDR#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/XA7EcLDR#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/cbZutkVg#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/cbZutkVg#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/cbZutkVg#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/cbZutkVg#FileKeeper"
+        }
+      ],
+      "sizeBytes": 49392123904
+    },
+    {
+      "titleId": "PPSA30630",
+      "title": "MLB The Show 26",
+      "createdAt": "2026-11-02T15:14:30.449Z",
+      "version": "v01.018",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA30630_f1ab1bdea7b8bd74c5db439da8ff3d9bf234eff706178e10e8902b9db2b3ede1/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA30630, v01.018, USA, 4.xx BackPort\nSize: 310GB\nCredits: Files: DecKerr97; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/1s90btBA#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/1s90btBA#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/1s90btBA#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/1s90btBA#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/e8TbixfM#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/e8TbixfM#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/e8TbixfM#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/e8TbixfM#FileKeeper"
+        }
+      ],
+      "sizeBytes": 332859965440
+    },
+    {
+      "titleId": "PPSA25843",
+      "title": "WARRIORS Abyss",
+      "createdAt": "2026-11-02T15:14:30.449Z",
+      "version": "v01.008",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA25843_dc179dfcd9eb73ffbe49c79088b337d25d2a1213982673f5bd37b68de3c5ae8f/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA25843, v01.008, USA, 4.xx BackPort\nSize: 3GB\nCredits: Files: High-Speed007; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/sEZIx9-V#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/sEZIx9-V#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/sEZIx9-V#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/sEZIx9-V#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/Rw0_sO7j#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/Rw0_sO7j#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/Rw0_sO7j#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/Rw0_sO7j#FileKeeper"
+        }
+      ],
+      "sizeBytes": 3221225472
+    },
+    {
+      "titleId": "PPSA07973",
+      "title": "White Day A Labyrinth Named School",
+      "createdAt": "2026-11-02T15:14:30.449Z",
+      "version": "v01.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08253_00/3/i_0379149326fe7810bb89f1d38bbc5e307545b1c3f61c3b6a6c330c39d20f9698/i/icon0_01.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA08253_00/3/i_0379149326fe7810bb89f1d38bbc5e307545b1c3f61c3b6a6c330c39d20f9698/i/icon0_01.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA07973, v01.000.001, USA, 4.xx and beyond\nSize: 11GB\nCredits: Files: ChestCakes\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/3bwnX9uE#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/3bwnX9uE#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/3bwnX9uE#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/3bwnX9uE#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/bAd2IV3R#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/bAd2IV3R#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/bAd2IV3R#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/bAd2IV3R#FileKeeper"
+        }
+      ],
+      "sizeBytes": 11811160064
+    },
+    {
+      "titleId": "PPSA30363",
+      "title": "Shadow Tactics Blades of the Shogun",
+      "createdAt": "2026-11-01T12:48:24.245Z",
+      "version": "v01.000.004",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07792_00/4/i_ffd583d536ebc8765f1e26edf9015eab18cba2ed7649e8fdb823f6ec617e7bfd/i/icon0.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA07792_00/4/i_ffd583d536ebc8765f1e26edf9015eab18cba2ed7649e8fdb823f6ec617e7bfd/i/icon0.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA30363, v01.000.004, EUR, 4.xx BackPort\nSize: 8GB\nCredits: Files: b0mba1992; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/wNc09pmW#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/wNc09pmW#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/wNc09pmW#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/wNc09pmW#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/GUynGM9Y#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/GUynGM9Y#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/GUynGM9Y#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/GUynGM9Y#FileKeeper"
+        }
+      ],
+      "sizeBytes": 8589934592
+    },
+    {
+      "titleId": "PPSA28038",
+      "title": "Halo Campaign Evolved Premium Edition",
+      "createdAt": "2026-11-01T12:48:24.245Z",
+      "version": "v17.661.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/1321/a0d52445fcb5d96d66a361b6759d1b8b959c4644cea70714.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/1321/a0d52445fcb5d96d66a361b6759d1b8b959c4644cea70714.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA28038, v17.661.002, USA, 4.xx BackPort\nSize: 127GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI; DLC: Pippo &amp; DUPLEX\nHow to play: Note: Account must be activated, if play Split Screen then the 2nd need to be activated or cant join (offact -&gt; np-fake-signin). FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort + Coop Fix already included on Base, Pro Fix &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/nI1ITNY2#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/nI1ITNY2#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/bUGLi7fz#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/bUGLi7fz#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/bUGLi7fz#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/bUGLi7fz#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/mjxjEL_4#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/mjxjEL_4#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/mjxjEL_4#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/mjxjEL_4#FileKeeper"
+        }
+      ],
+      "sizeBytes": 136365211648
+    },
+    {
+      "titleId": "PPSA23559",
+      "title": "Anno 117 Pax Romana Gold Edition",
+      "createdAt": "2026-11-01T12:48:24.245Z",
+      "version": "v02.100",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/29d08d5a0713f278cc887198dff4ac1a35d7ba0aaefb9b89.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/2119/29d08d5a0713f278cc887198dff4ac1a35d7ba0aaefb9b89.jpg",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA23559, v02.100, EUR, 4.xx BackPort\nSize: 130GB\nCredits: Files: Karner; Backport: DecKerr97 GUI; DLC: Karner\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/FwVOwygH#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/FwVOwygH#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/6vd88f2i#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/6vd88f2i#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/6vd88f2i#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/6vd88f2i#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/jWpSSJUL#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/jWpSSJUL#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/jWpSSJUL#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/jWpSSJUL#FileKeeper"
+        }
+      ],
+      "sizeBytes": 139586437120
+    },
+    {
+      "titleId": "PPSA23126",
+      "title": "Palworld",
+      "createdAt": "2026-11-01T12:48:24.245Z",
+      "version": "v01.102.999",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1002/585fa2ede4c88fa20a773ec44b110e0c84c4a5baeb51ed5b.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1002/585fa2ede4c88fa20a773ec44b110e0c84c4a5baeb51ed5b.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA23126, v01.102.999, USA, 4.xx BackPort\nSize: 37GB\nCredits: Files: b0mba1992; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 9.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/0tFcH7I5#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/0tFcH7I5#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/0tFcH7I5#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/0tFcH7I5#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/WCI8-b8P#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/WCI8-b8P#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/WCI8-b8P#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/WCI8-b8P#FileKeeper"
+        }
+      ],
+      "sizeBytes": 39728447488
+    },
+    {
+      "titleId": "PPSA29340",
+      "title": "Halloween The Game",
+      "createdAt": "2026-10-31T12:24:48.299Z",
+      "version": "v01.011",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0218/c79d2df71166c94b212ec45d070938ded570acb357b00d8f.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202606/0218/c79d2df71166c94b212ec45d070938ded570acb357b00d8f.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA29340, v01.011, USA, 4.xx BackPort + 5.xx BackPort\nSize: 56GB\nCredits: Files: Grim Doe; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPorts Folder included. About FPKG: 5.xx BackPort already included on Base, 4.xx BackPort Only &amp; separated Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/y2YvG1kA#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/y2YvG1kA#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/y2YvG1kA#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/y2YvG1kA#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/QbEsjB4E#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/QbEsjB4E#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/QbEsjB4E#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/QbEsjB4E#FileKeeper"
+        }
+      ],
+      "sizeBytes": 60129542144
+    },
+    {
+      "titleId": "PPSA29043",
+      "title": "Anger Foot",
+      "createdAt": "2026-10-31T12:24:48.299Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202506/0423/6ce230165dbee2f6e08b44598bed4cb9f94872c87bf289b7.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202506/0423/6ce230165dbee2f6e08b44598bed4cb9f94872c87bf289b7.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA29043, v01.000, USA, 4.xx BackPort\nSize: 15GB\nCredits: Files: b0mba1992; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 9.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/gk43JKm0#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/gk43JKm0#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/gk43JKm0#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/gk43JKm0#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/nJFBsk-f#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/nJFBsk-f#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/nJFBsk-f#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/nJFBsk-f#FileKeeper"
+        }
+      ],
+      "sizeBytes": 16106127360
+    },
+    {
+      "titleId": "PPSA16263",
+      "title": "V Rising",
+      "createdAt": "2026-10-31T12:24:48.299Z",
+      "version": "v01.113.001",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA16263_873d785d13879812e9c86c0f98f0b330c2b04602199deba808b9d6f1843efa06/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA16263, v01.113.001, USA, 4.xx BackPort\nSize: 16GB\nCredits: Files: High-Speed007; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/nXnUH1P3#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/nXnUH1P3#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/nXnUH1P3#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/nXnUH1P3#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/d3-EAVDf#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/d3-EAVDf#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/d3-EAVDf#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/d3-EAVDf#FileKeeper"
+        }
+      ],
+      "sizeBytes": 17179869184
+    },
+    {
+      "titleId": "PPSA02070",
+      "title": "Dont Starve Together Console Edition",
+      "createdAt": "2026-10-31T12:24:48.299Z",
+      "version": "v02.009.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04282_00/4/i_460817da44f45dcfb85c1da2d9136a5d33022c91bb004a11241cd3749189de0e/i/icon0.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA04282_00/4/i_460817da44f45dcfb85c1da2d9136a5d33022c91bb004a11241cd3749189de0e/i/icon0.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA02070, v02.009.002, EUR, 4.xx BackPort\nSize: 5GB\nCredits: Files: b0mba1992; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/NFz_McCC#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/NFz_McCC#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/NFz_McCC#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/NFz_McCC#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/K4ug-ABl#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/K4ug-ABl#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/K4ug-ABl#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/K4ug-ABl#FileKeeper"
+        }
+      ],
+      "sizeBytes": 5368709120
+    },
+    {
+      "titleId": "PPSA32793",
+      "title": "Valor Mortis Deluxe Edition",
+      "createdAt": "2026-10-30T14:02:20.789Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/1815/96fbe904b245c74b7cbd85f2ed33c1b3d2e60186ce56b51a.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/1815/96fbe904b245c74b7cbd85f2ed33c1b3d2e60186ce56b51a.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA32793, v01.000, EUR, 4.xx BackPort + 5.xx BackPort\nSize: 42GB\nCredits: Files: Biogames; Backport: DecKerr97 GUI; DLC: Pippo &amp; Biogames\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPorts Folder included. About FPKG: 5.xx BackPort already included on Base, 4.xx BackPort Only, Pro Fix &amp; separated Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/TAHtQrkX#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/TAHtQrkX#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/pAY5dhJT#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/pAY5dhJT#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/pAY5dhJT#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/pAY5dhJT#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/emMnacB5#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/emMnacB5#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/emMnacB5#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/emMnacB5#FileKeeper"
+        }
+      ],
+      "sizeBytes": 45097156608
+    },
+    {
+      "titleId": "PPSA26362",
+      "title": "TERRIFIER The ArtCade Game",
+      "createdAt": "2026-10-30T14:02:20.789Z",
+      "version": "v01.000.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202410/0209/24a04dd6b0d6f14ce227d67afbd7444fea6e13ad631c860c.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202410/0209/24a04dd6b0d6f14ce227d67afbd7444fea6e13ad631c860c.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA26362, v01.000.005, EUR, 4.xx BackPort\nSize: 1GB\nCredits: Files: Biogames; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/H38DR-b4#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/H38DR-b4#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/H38DR-b4#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/H38DR-b4#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/DHqWF3Gg#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/DHqWF3Gg#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/DHqWF3Gg#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/DHqWF3Gg#FileKeeper"
+        }
+      ],
+      "sizeBytes": 1073741824
+    },
+    {
+      "titleId": "PPSA25972",
+      "title": "CarX Street",
+      "createdAt": "2026-10-30T14:02:20.789Z",
+      "version": "v01.000.029",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/0212/20c0c83fa588e0cb240362718248e2c27a6d2fdf90016e27.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/0212/20c0c83fa588e0cb240362718248e2c27a6d2fdf90016e27.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA25972, v01.000.029, EUR, 4.xx BackPort\nSize: 37GB\nCredits: Files: High-Speed007; Backport: DecKerr97 GUI\nHow to play: Must be use: 45.56.67.85 as DNS or you will get Connection Error at launch. FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/a90AzG54#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/a90AzG54#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/a90AzG54#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/a90AzG54#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/Phy3daOX#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/Phy3daOX#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/Phy3daOX#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/Phy3daOX#FileKeeper"
+        }
+      ],
+      "sizeBytes": 39728447488
+    },
+    {
+      "titleId": "PPSA25286",
+      "title": "Crimson Desert Enhanced",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "v01.000.568",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2006/e8f306c89efa555a13e4d3910dafda994a14b2355f342802.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2006/e8f306c89efa555a13e4d3910dafda994a14b2355f342802.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA25286, v01.000.568, USA, 4.xx BackPort\nSize: 190GB\nCredits: Files: DecKerr97 &amp; L3G3ND44; Backport: DecKerr97 &amp; L3G3ND44 &amp; Dmitry\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPorts Folder included. About FPKG: BackPort already included on Base (Fixed for 4.xx), separated Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://datanodes.to/0zzycyoc6dp1"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://filekeeper.net/i2lodmuhoipw"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://akirabox.com/BnkmWvoe2GR0/file"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://vikingfile.com/f/dCFwopLLh7"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/1RhV1n0w#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/1RhV1n0w#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/1RhV1n0w#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/1RhV1n0w#FileKeeper"
+        }
+      ],
+      "sizeBytes": 204010946560
+    },
+    {
+      "titleId": "PPSA34619",
+      "title": "Sudden Strike 5 Deluxe Edition",
+      "createdAt": "2026-10-29T14:39:43.151Z",
+      "version": "v01.090",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/0908/a27f4958bd931a2c2220fef56f62d463df96252f09604dff.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/0908/a27f4958bd931a2c2220fef56f62d463df96252f09604dff.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA34619, v01.090, EUR, 4.xx BackPort\nSize: 24GB\nCredits: Files: Karner; Backport: DecKerr97 GUI; DLC: Karner\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/c6Jbu1Yg#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/c6Jbu1Yg#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/8fwuq-GM#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/8fwuq-GM#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/8fwuq-GM#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/8fwuq-GM#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/cDltuLhb#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/cDltuLhb#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/cDltuLhb#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/cDltuLhb#FileKeeper"
+        }
+      ],
+      "sizeBytes": 25769803776
+    },
+    {
+      "titleId": "PPSA27581",
+      "title": "Hellblade Senuas Sacrifice",
+      "createdAt": "2026-10-29T14:39:43.151Z",
+      "version": "v01.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/0511/9223539f9adf5f4fd9d77790908d2d017bf69f28d68aad04.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/0511/9223539f9adf5f4fd9d77790908d2d017bf69f28d68aad04.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA27581, v01.003, USA, 4.xx BackPort\nSize: 20GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Ua2ClK5u#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Ua2ClK5u#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Ua2ClK5u#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Ua2ClK5u#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/1-vmbRhQ#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/1-vmbRhQ#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/1-vmbRhQ#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/1-vmbRhQ#FileKeeper"
+        }
+      ],
+      "sizeBytes": 21474836480
+    },
+    {
+      "titleId": "PPSA25991",
+      "title": "Senuas Saga Hellblade 2",
+      "createdAt": "2026-10-29T14:39:43.151Z",
+      "version": "v01.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/2009/936e8ddd93d816ad2a81b40269ae8bf0e42d1771b0e5db79.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/2009/936e8ddd93d816ad2a81b40269ae8bf0e42d1771b0e5db79.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA25991, v01.002, EUR, 4.xx BackPort\nSize: 73GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/GpBstd2T#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/GpBstd2T#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/GpBstd2T#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/GpBstd2T#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/9MLrSi6U#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/9MLrSi6U#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/9MLrSi6U#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/9MLrSi6U#FileKeeper"
+        }
+      ],
+      "sizeBytes": 78383153152
+    },
+    {
+      "titleId": "PPSA20142",
+      "title": "Survival Fountain of Youth",
+      "createdAt": "2026-10-29T14:39:43.151Z",
+      "version": "v01.007",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA20142_6bb35a8d1387924399375f6112f292d043ef338933e584ca0553001fe1f99336/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA20142, v01.007, EUR, 4.xx BackPort\nSize: 23GB\nCredits: Files: Karner; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 9.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/aXmsYB-b#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/aXmsYB-b#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/aXmsYB-b#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/aXmsYB-b#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/RKBONh-d#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/RKBONh-d#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/RKBONh-d#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/RKBONh-d#FileKeeper"
+        }
+      ],
+      "sizeBytes": 24696061952
+    },
+    {
+      "titleId": "PPSA26392",
+      "title": "The Legend of Heroes Trails beyond the Horizon",
+      "createdAt": "2026-10-28T12:13:39.969Z",
+      "version": "v01.006",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA26392_d4acd8ad1449a390b06ac9520c726cf0459e2af247857db8675ecbb6189c4800/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA26392, v01.006, EUR, 4.xx BackPort\nSize: 51GB\nCredits: Files: god_d_usopp8126; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/UsewqpEu#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/UsewqpEu#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/UsewqpEu#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/UsewqpEu#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/UtWOpOXd#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/UtWOpOXd#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/UtWOpOXd#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/UtWOpOXd#FileKeeper"
+        }
+      ],
+      "sizeBytes": 54760833024
+    },
+    {
+      "titleId": "PPSA25642",
+      "title": "Clive Barkers Hellraiser Revival Deluxe Edition",
+      "createdAt": "2026-10-28T12:13:39.969Z",
+      "version": "v01.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/1809/519956b48e154b9614439f012e7a7bb05130ddbdabf600e7.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/1809/519956b48e154b9614439f012e7a7bb05130ddbdabf600e7.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA25642, v01.005, EUR, 4.xx BackPort\nSize: 97GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI; DLC: Pippo &amp; DUPLEX\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPorts Folder included. About FPKG: 5.xx+ (No Pro Fix) BackPort already included on Base, separated 4.xx Only, Pro Fix &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/VQOyfu8P#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/VQOyfu8P#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/DvSmmh-V#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/DvSmmh-V#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/DvSmmh-V#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/DvSmmh-V#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/uBJ4bPFv#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/uBJ4bPFv#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/uBJ4bPFv#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/uBJ4bPFv#FileKeeper"
+        }
+      ],
+      "sizeBytes": 104152956928
+    },
+    {
+      "titleId": "PPSA22715",
+      "title": "STORY OF SEASONS Grand Bazaar",
+      "createdAt": "2026-10-28T12:13:39.969Z",
+      "version": "v01.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1204/10563b56ef8893b7eaf21a2d6be70779362ab277c8156e6a.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/1204/10563b56ef8893b7eaf21a2d6be70779362ab277c8156e6a.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA22715, v01.005, JPN, 4.xx BackPort\nSize: 15GB\nCredits: Files: UchihaDareNial; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/wYrxnUNg#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/wYrxnUNg#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/wYrxnUNg#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/wYrxnUNg#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/zgx5aDEC#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/zgx5aDEC#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/zgx5aDEC#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/zgx5aDEC#FileKeeper"
+        }
+      ],
+      "sizeBytes": 16106127360
+    },
+    {
+      "titleId": "PPSA04075",
+      "title": "River City Girls",
+      "createdAt": "2026-10-28T12:13:39.969Z",
+      "version": "v02.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA15834_00/1/i_44254c8aff753e0147cf6f5b15086ff311923651fa43944308a576ae768ccc2f/i/icon0.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA15834_00/1/i_44254c8aff753e0147cf6f5b15086ff311923651fa43944308a576ae768ccc2f/i/icon0.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA04075, v02.000, USA, 3.xx and beyond\nSize: 5GB\nCredits: Files: Biogames; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/F8yEZfER#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/F8yEZfER#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/F8yEZfER#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/F8yEZfER#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/qcbszgRR#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/qcbszgRR#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/qcbszgRR#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/qcbszgRR#FileKeeper"
+        }
+      ],
+      "sizeBytes": 5368709120
+    },
+    {
+      "titleId": "PPSA27836",
+      "title": "Onimusha Way of The Sword",
+      "createdAt": "2026-10-27T17:55:11.146Z",
+      "version": "v01.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1308/79a186e6a055909cfeb66264230ad3d76915587b0269cd0d.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1308/79a186e6a055909cfeb66264230ad3d76915587b0269cd0d.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA27836, v01.000.001, USA, 4.xx BackPort\nSize: 77GB\nCredits: Files: DUPLEX; Backport: ManwonHp\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/cX81wB35#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/cX81wB35#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/cX81wB35#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/cX81wB35#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/CC9LN7Fb#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/CC9LN7Fb#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/CC9LN7Fb#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/CC9LN7Fb#FileKeeper"
+        }
+      ],
+      "sizeBytes": 82678120448
+    },
+    {
+      "titleId": "PPSA24249",
+      "title": "1348 Ex Voto",
+      "createdAt": "2026-10-27T10:48:10.375Z",
+      "version": "v01.000.008",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA24249_16f6978ace1bb1247be8ebd750ee6f0ef9cb2c4f9b76cb0a25d9033cd5700ca2/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA24249, v01.000.008, EUR, 4.xx BackPort\nSize: 50GB\nCredits: Files: ChestCakes; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/XaCXztl5#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/XaCXztl5#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/XaCXztl5#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/XaCXztl5#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/zzoWqMKY#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/zzoWqMKY#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/zzoWqMKY#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/zzoWqMKY#FileKeeper"
+        }
+      ],
+      "sizeBytes": 53687091200
+    },
+    {
+      "titleId": "PPSA06094",
+      "title": "GigaBash Ultimate Edition",
+      "createdAt": "2026-10-27T10:48:10.375Z",
+      "version": "v01.092",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202208/0410/Id9doKW1xf7bFXIvKLWZYhqG.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202208/0410/Id9doKW1xf7bFXIvKLWZYhqG.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA06094, v01.092, USA, 4.xx BackPort\nSize: 28GB\nCredits: Files: UchihaDareNial; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 6.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/PRv38Cs0#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/PRv38Cs0#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/fb6uXKcX#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/fb6uXKcX#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/fb6uXKcX#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/fb6uXKcX#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/VPRUyWHN#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/VPRUyWHN#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/VPRUyWHN#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/VPRUyWHN#FileKeeper"
+        }
+      ],
+      "sizeBytes": 30064771072
+    },
+    {
+      "titleId": "PPSA34971",
+      "title": "Hollow Knight Voidheart Edition",
+      "createdAt": "2026-10-27T10:48:10.375Z",
+      "version": "v01.000.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA13285_00/4/i_876f3770382038e9d18271fce2008c6adfaf17c471f3eb01ee0d98e75b8d7885/i/icon0.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/gs2-sec/appkgo/prod/CUSA13285_00/4/i_876f3770382038e9d18271fce2008c6adfaf17c471f3eb01ee0d98e75b8d7885/i/icon0.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA34971, v01.000.002, EUR, DLCs Merged, 4.xx BackPort\nSize: 5GB\nCredits: Files: Scene; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/UMXntYoB#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/UMXntYoB#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/UMXntYoB#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/UMXntYoB#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/sh_cIZYf#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/sh_cIZYf#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/sh_cIZYf#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/sh_cIZYf#FileKeeper"
+        }
+      ],
+      "sizeBytes": 5368709120
+    },
+    {
+      "titleId": "PPSA19115",
+      "title": "DAVE THE DIVER Complete Edition",
+      "createdAt": "2026-10-27T10:48:10.375Z",
+      "version": "v01.041",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA19115_8eef40812e21f816cb4d374f7f204b217c764d1ec715b7ff0d8ed6810fd31df3/icon0.webp",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA19115, v01.041, USA, 4.xx BackPort\nSize: 5GB\nCredits: Files: Scene; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/Gwd3Ai08#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/Gwd3Ai08#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/jP4xFBmJ#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/jP4xFBmJ#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/jP4xFBmJ#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/jP4xFBmJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/Ev3PXQm9#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/Ev3PXQm9#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/Ev3PXQm9#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/Ev3PXQm9#FileKeeper"
+        }
+      ],
+      "sizeBytes": 5368709120
+    },
+    {
+      "titleId": "PPSA33627",
+      "title": "Toy Story Retro Roundup!",
+      "createdAt": "2026-10-26T12:26:08.425Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2922/eaae208fc85bd70cd2281b2638e2f4d70917146c719a7075.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2922/eaae208fc85bd70cd2281b2638e2f4d70917146c719a7075.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA33627, v01.000, USA, 4.xx BackPort\nSize: 13GB\nCredits: Files: Biogames; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/2xqd7_4Y#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/2xqd7_4Y#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/2xqd7_4Y#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/2xqd7_4Y#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/joc9vN71#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/joc9vN71#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/joc9vN71#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/joc9vN71#FileKeeper"
+        }
+      ],
+      "sizeBytes": 13958643712
+    },
+    {
+      "titleId": "PPSA33626",
+      "title": "Toy Story 3 Complete Edition",
+      "createdAt": "2026-10-26T12:26:08.425Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1114/86b2651fcc61e74da44a7949263a63f43fee87911bd4c411.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/1114/86b2651fcc61e74da44a7949263a63f43fee87911bd4c411.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA33626, v01.000, USA, 4.xx BackPort\nSize: 8GB\nCredits: Files: Biogames; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/1SrbJJFs#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/1SrbJJFs#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/1SrbJJFs#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/1SrbJJFs#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/aZ3XQY73#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/aZ3XQY73#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/aZ3XQY73#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/aZ3XQY73#FileKeeper"
+        }
+      ],
+      "sizeBytes": 8589934592
+    },
+    {
+      "titleId": "PPSA27597",
+      "title": "Stellaris Console Edition",
+      "createdAt": "2026-10-26T12:26:08.425Z",
+      "version": "v02.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/2908/01ab7f27291c71c588c21923205b859f14e4ac442e833c77.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/2908/01ab7f27291c71c588c21923205b859f14e4ac442e833c77.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA27597, v02.002, USA, 4.xx BackPort\nSize: 17GB\nCredits: Files: b0mba1992; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/BxVR-A1k#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/BxVR-A1k#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/BxVR-A1k#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/BxVR-A1k#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/JN_NxmId#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/JN_NxmId#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/JN_NxmId#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/JN_NxmId#FileKeeper"
+        }
+      ],
+      "sizeBytes": 18253611008
+    },
+    {
+      "titleId": "PPSA21703",
+      "title": "Vampire Survivors",
+      "createdAt": "2026-10-26T12:26:08.425Z",
+      "version": "v01.016.107",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202404/1109/a331284fd9dc56ec526e49afd7ee41d7aafa697e947816cf.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202404/1109/a331284fd9dc56ec526e49afd7ee41d7aafa697e947816cf.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA21703, v01.016.107, EUR, 4.xx BackPort\nSize: 1GB\nCredits: Files: SyrenRemix; Backport: DecKerr97 GUI; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/ocKIVHKs#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/ocKIVHKs#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/CVMrINUq#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/CVMrINUq#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/CVMrINUq#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/CVMrINUq#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/1Q6-SdXY#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/1Q6-SdXY#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/1Q6-SdXY#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/1Q6-SdXY#FileKeeper"
+        }
+      ],
+      "sizeBytes": 1073741824
+    },
+    {
+      "titleId": "PPSA35999",
+      "title": "KINGDOM HEARTS 3 + Re Mind",
+      "createdAt": "2026-10-25T22:12:06.478Z",
+      "version": "v01.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1305/28ad47102bb7db9d6a8feb8ec79870abeb130429afef5cc6.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1305/28ad47102bb7db9d6a8feb8ec79870abeb130429afef5cc6.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA35999, v01.001, USA, 4.xx BackPort\nSize: 55GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/uA233eqY#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/uA233eqY#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/uA233eqY#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/uA233eqY#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/NH_P7yb4#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/NH_P7yb4#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/NH_P7yb4#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/NH_P7yb4#FileKeeper"
+        }
+      ],
+      "sizeBytes": 59055800320
+    },
+    {
+      "titleId": "PPSA35909",
+      "title": "KINGDOM HEARTS HD 2.8 FINAL CHAPTER PROLOGUE",
+      "createdAt": "2026-10-25T22:12:06.478Z",
+      "version": "v01.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1305/28ad47102bb7db9d6a8feb8ec79870abeb130429afef5cc6.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1305/28ad47102bb7db9d6a8feb8ec79870abeb130429afef5cc6.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA35909, v01.001, USA, 4.xx BackPort\nSize: 35GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Gj0_i_5V#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Gj0_i_5V#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Gj0_i_5V#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Gj0_i_5V#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/8wBXcp20#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/8wBXcp20#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/8wBXcp20#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/8wBXcp20#FileKeeper"
+        }
+      ],
+      "sizeBytes": 37580963840
+    },
+    {
+      "titleId": "PPSA35901",
+      "title": "KINGDOM HEARTS HD 1.5+2.5 ReMIX",
+      "createdAt": "2026-10-25T22:12:06.478Z",
+      "version": "v01.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1305/28ad47102bb7db9d6a8feb8ec79870abeb130429afef5cc6.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/1305/28ad47102bb7db9d6a8feb8ec79870abeb130429afef5cc6.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA35901, v01.001, USA, 4.xx BackPort\nSize: 74GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/RjbrOLhk#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/RjbrOLhk#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/RjbrOLhk#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/RjbrOLhk#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/EpfN5nW9#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/EpfN5nW9#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/EpfN5nW9#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/EpfN5nW9#FileKeeper"
+        }
+      ],
+      "sizeBytes": 79456894976
+    },
+    {
+      "titleId": "PPSA12544",
+      "title": "Hollow Knight Silksong",
+      "createdAt": "2026-10-25T22:12:06.478Z",
+      "version": "v01.000.010",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/2505/66f43d82a3d31493a2b3edec5359872e45c0c097115a9fbd.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/2505/66f43d82a3d31493a2b3edec5359872e45c0c097115a9fbd.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA12544, v01.000.010, USA, 4.xx BackPort\nSize: 8GB\nCredits: Files: DUPLEX; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/DZG-IYnJ#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/DZG-IYnJ#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/DZG-IYnJ#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/DZG-IYnJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/1FndSrjQ#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/1FndSrjQ#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/1FndSrjQ#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/1FndSrjQ#FileKeeper"
+        }
+      ],
+      "sizeBytes": 8589934592
+    },
+    {
+      "titleId": "PPSA25636",
+      "title": "Echoes of the End Enhanced Edition",
+      "createdAt": "2026-10-24T16:43:06.936Z",
+      "version": "v01.012",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2815/700a1331c6df2182e0e42ff907b749c4fd6975570a90e874.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2815/700a1331c6df2182e0e42ff907b749c4fd6975570a90e874.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA25636, v01.012, EUR, 4.xx BackPort\nSize: 37GB\nCredits: Files: DecKerr97; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/1uTZm9IG#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/1uTZm9IG#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/1uTZm9IG#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/1uTZm9IG#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/h6vCX7nF#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/h6vCX7nF#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/h6vCX7nF#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/h6vCX7nF#FileKeeper"
+        }
+      ],
+      "sizeBytes": 39728447488
+    },
+    {
+      "titleId": "PPSA31291",
+      "title": "TEKKEN 3",
+      "createdAt": "2026-10-24T16:43:06.936Z",
+      "version": "v01.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/0208/f832ce6011c9e2abd9b23e1e2ef90c7f8b93524280fc4dd8.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/0208/f832ce6011c9e2abd9b23e1e2ef90c7f8b93524280fc4dd8.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA31291, v01.000.001, USA, 4.xx BackPort\nSize: 1GB\nCredits: Files: DecKerr97; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Ex3NJnEV#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Ex3NJnEV#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Ex3NJnEV#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Ex3NJnEV#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/gX9kk-FJ#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/gX9kk-FJ#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/gX9kk-FJ#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/gX9kk-FJ#FileKeeper"
+        }
+      ],
+      "sizeBytes": 1073741824
+    },
+    {
+      "titleId": "PPSA99903",
+      "title": "Sonic the Hedgehog 2006 (Unofficial Port)",
+      "createdAt": "2026-10-24T11:38:02.697Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://raw.githubusercontent.com/Pippo26442999/decode-encode/refs/heads/main/exFAT/Sonic_the_Hedgehog_2006.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA99903, v01.000, USA, 4.xx and beyond\nSize: 5GB\nCredits: Files: Nazky\nHow to play: Use ShadowMountPlus 1.7beta4+. FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "AkiraBox",
+          "url": "https://link-vault.org/c/pteMEMRM#AkiraBox"
+        },
+        {
+          "name": "VikingFile",
+          "url": "https://link-vault.org/c/pteMEMRM#VikingFile"
+        },
+        {
+          "name": "DataNodes",
+          "url": "https://link-vault.org/c/pteMEMRM#DataNodes"
+        },
+        {
+          "name": "FileKeeper",
+          "url": "https://link-vault.org/c/pteMEMRM#FileKeeper"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Qx6UKRd5#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Qx6UKRd5#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Qx6UKRd5#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Qx6UKRd5#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/nHGmxael#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/nHGmxael#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/nHGmxael#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/nHGmxael#FileKeeper"
+        }
+      ],
+      "sizeBytes": 5368709120
+    },
+    {
+      "titleId": "PPSA29642",
+      "title": "South of Midnight",
+      "createdAt": "2026-10-24T11:38:02.697Z",
+      "version": "v01.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/2822/ee41c702e3b4d9a76c1918e829a7191c9b1fb5b7a3d1e416.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202601/2822/ee41c702e3b4d9a76c1918e829a7191c9b1fb5b7a3d1e416.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA29642, v01.001, USA, 4.xx BackPort\nSize: 59GB\nCredits: Files: DUPLEX; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/tRKwxA-J#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/tRKwxA-J#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/tRKwxA-J#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/tRKwxA-J#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/oSWWf0PL#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/oSWWf0PL#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/oSWWf0PL#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/oSWWf0PL#FileKeeper"
+        }
+      ],
+      "sizeBytes": 63350767616
+    },
+    {
+      "titleId": "PPSA24913",
+      "title": "Ace Combat 8 Wings of Theve Deluxe Edition",
+      "createdAt": "2026-10-24T00:27:13.025Z",
+      "version": "v01.001.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1823/5929543b280b7ff4707431f09bd5e9e5a4396a1dde269986.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1823/5929543b280b7ff4707431f09bd5e9e5a4396a1dde269986.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA24913, v01.001.001, JPN, 4.xx BackPort + 5.xx BackPort\nSize: 232GB\nCredits: Files: DUPLEX; Backport: DecKerr97; DLC: DUPLEX\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 12.xx, separated BackPorts Folder included. About FPKG: 5.xx BackPort already included on Base, separated 4.xx BackPort &amp; Original Files PKG included.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/pMZubagv#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/pMZubagv#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/ETOEEHlq#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/ETOEEHlq#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/ETOEEHlq#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/ETOEEHlq#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/MspceXMi#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/MspceXMi#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/MspceXMi#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/MspceXMi#FileKeeper"
+        }
+      ],
+      "sizeBytes": 249108103168
+    },
+    {
+      "titleId": "PPSA24662",
+      "title": "F1 25 Season 2026 Edition",
+      "createdAt": "2026-10-22T22:00:56.746Z",
+      "version": "v01.026",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2009/15a5c2ccc34262d0b9c780f7b81c7d95816a0516dc05daaf.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2009/15a5c2ccc34262d0b9c780f7b81c7d95816a0516dc05daaf.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA24662, v01.026, USA, 4.xx BackPort\nSize: 93GB\nCredits: Files: DecKerr97; Backport: DecKerr97; DLC: Pippo &amp; DecKerr97\nHow to play: Using HEN can cause crash. FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/NoSZYnz6#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/NoSZYnz6#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/tGB4bZlI#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/tGB4bZlI#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/tGB4bZlI#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/tGB4bZlI#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/oiDtd6bU#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/oiDtd6bU#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/oiDtd6bU#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/oiDtd6bU#FileKeeper"
+        }
+      ],
+      "sizeBytes": 99857989632
+    },
+    {
+      "titleId": "PPSA38474",
+      "title": "Samson A Tyndalston Story",
+      "createdAt": "2026-10-22T22:00:56.746Z",
+      "version": "v01.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2408/619d09fd9e82617c0d3207bee7a4d7055c4181b7b4496c50.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2408/619d09fd9e82617c0d3207bee7a4d7055c4181b7b4496c50.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA38474, v01.002, ASIA, 4.xx BackPort\nSize: 24GB\nCredits: Files: Scene; Backport: DecKerr97 GUI\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 13.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/txmrKbB2#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/txmrKbB2#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/txmrKbB2#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/txmrKbB2#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/42k3OflD#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/42k3OflD#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/42k3OflD#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/42k3OflD#FileKeeper"
+        }
+      ],
+      "sizeBytes": 25769803776
+    },
+    {
+      "titleId": "PPSA19644",
+      "title": "Farming Simulator 25",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "v01.400",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/1221/5e7b5321408d56da66ffbb45abae3d2f812b0a1dd03cee5d.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/1221/5e7b5321408d56da66ffbb45abae3d2f812b0a1dd03cee5d.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA19644, v01.400, EUR, 4.xx BackPort\nSize: 39GB\nCredits: Files: DecKerr97; Backport: DecKerr97\nHow to play: 40% FOV is recommended for playing or maybe can be laggy sometimes, this can be applied on Settings. FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 11.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/AqGGQVqM#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/AqGGQVqM#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/AqGGQVqM#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/AqGGQVqM#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/Ktwt5_XD#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/Ktwt5_XD#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/Ktwt5_XD#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/Ktwt5_XD#FileKeeper"
+        }
+      ],
+      "sizeBytes": 41875931136
+    },
+    {
+      "titleId": "PPSA18026",
+      "title": "Planet Zoo Ultimate Edition",
+      "createdAt": "2026-10-22T22:00:56.746Z",
+      "version": "v01.009.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202401/1212/3e9face5939ff74cb52fc44508cd42d0481d85f3612a09e9.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202401/1212/3e9face5939ff74cb52fc44508cd42d0481d85f3612a09e9.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA18026, v01.009.002, EUR, 4.xx BackPort\nSize: 38GB\nCredits: Files: DecKerr97; Backport: DecKerr97; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 7.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/uCIurgUy#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/uCIurgUy#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/WcK71Gjp#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/WcK71Gjp#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/WcK71Gjp#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/WcK71Gjp#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/uUKXt36x#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/uUKXt36x#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/uUKXt36x#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/uUKXt36x#FileKeeper"
+        }
+      ],
+      "sizeBytes": 40802189312
+    },
+    {
+      "titleId": "PPSA99305",
+      "title": "Guitar Hero 5 (Unofficial Port)",
+      "createdAt": "2026-10-22T12:51:58.131Z",
+      "version": "v01.000",
+      "category": "game",
+      "posterUrl": "https://raw.githubusercontent.com/Pippo26442999/decode-encode/refs/heads/main/exFAT/GH5_Port.jpg",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA99305, v01.000, USA, 4.xx and beyond\nSize: 5GB\nCredits: Files: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DataNodes",
+          "url": "https://link-vault.org/c/nNDVfoLJ#DataNodes"
+        },
+        {
+          "name": "FileKeeper",
+          "url": "https://link-vault.org/c/nNDVfoLJ#FileKeeper"
+        },
+        {
+          "name": "AkiraBox",
+          "url": "https://link-vault.org/c/nNDVfoLJ#AkiraBox"
+        },
+        {
+          "name": "VikingFile",
+          "url": "https://link-vault.org/c/nNDVfoLJ#VikingFile"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/07Jzf5dL#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/07Jzf5dL#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/07Jzf5dL#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/07Jzf5dL#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/J2t81rqg#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/J2t81rqg#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/J2t81rqg#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/J2t81rqg#FileKeeper"
+        }
+      ],
+      "sizeBytes": 5368709120
+    },
+    {
+      "titleId": "PPSA29802",
+      "title": "Plants vs. Zombies Replanted",
+      "createdAt": "2026-10-22T12:51:58.131Z",
+      "version": "v01.510",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA29802_8a2ba380c37d5be7546e0954a43884e0395b498f4e0ba58a5a1f9db446b57ce3/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA29802, v01.510, USA, 4.xx BackPort\nSize: 4GB\nCredits: Files: High-Speed007; Backport: DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 10.xx, separated BackPort Folder included. About FPKG: BackPort already included on Base, separated Original Files PKG included, optional.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/tNrqNQb2#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/tNrqNQb2#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/tNrqNQb2#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/tNrqNQb2#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/xYX1qBDp#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/xYX1qBDp#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/xYX1qBDp#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/xYX1qBDp#FileKeeper"
+        }
+      ],
+      "sizeBytes": 4294967296
+    },
+    {
+      "titleId": "PPSA06929",
+      "title": "DEADCRAFT Deluxe Edition",
+      "createdAt": "2026-10-22T12:51:58.131Z",
+      "version": "v01.004",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0701/tUNDOJQF99Pc9iRbXfIYU9mc.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202204/0701/tUNDOJQF99Pc9iRbXfIYU9mc.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA06929, v01.004, USA, 3.xx and beyond\nSize: 4GB\nCredits: Files: High-Speed007; DLC: Pippo\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/uhFJcwrd#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/uhFJcwrd#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/k4ot8bog#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/k4ot8bog#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/k4ot8bog#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/k4ot8bog#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/XlQ0UI9c#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/XlQ0UI9c#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/XlQ0UI9c#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/XlQ0UI9c#FileKeeper"
+        }
+      ],
+      "sizeBytes": 4294967296
+    },
+    {
+      "titleId": "PPSA03766",
+      "title": "FAR Changing Tides",
+      "createdAt": "2026-10-22T12:51:58.131Z",
+      "version": "v01.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202107/2813/Os6biEZBZHzt6GU8qqo5eSMT.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202107/2813/Os6biEZBZHzt6GU8qqo5eSMT.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA03766, v01.002, USA, 3.xx and beyond\nSize: 2GB\nCredits: Files: High-Speed007\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Muk9Lz0z#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Muk9Lz0z#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Muk9Lz0z#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Muk9Lz0z#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/uzCtXuhl#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/uzCtXuhl#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/uzCtXuhl#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/uzCtXuhl#FileKeeper"
+        }
+      ],
+      "sizeBytes": 2147483648
+    },
+    {
+      "titleId": "PPSA03663",
+      "title": "Arcade Paradise",
+      "createdAt": "2026-10-22T12:51:58.131Z",
+      "version": "v01.910",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202207/2509/R820g5SsJMLm5Zw95QPvZLTp.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202207/2509/R820g5SsJMLm5Zw95QPvZLTp.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA03663, v01.910, USA, 4.xx and beyond\nSize: 4GB\nCredits: Files: High-Speed007\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/Wa0PnkIf#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/Wa0PnkIf#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/Wa0PnkIf#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/Wa0PnkIf#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/rQ4yQJRK#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/rQ4yQJRK#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/rQ4yQJRK#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/rQ4yQJRK#FileKeeper"
+        }
+      ],
+      "sizeBytes": 4294967296
+    },
+    {
+      "titleId": "PPSA03446",
+      "title": "Pumpkin Jack",
+      "createdAt": "2026-10-22T12:51:58.131Z",
+      "version": "v02.000",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA03446_1bc3390fb30e7a0c0b9557c6865087769b5d6731f96f82ea9e8e9d4ff47a6bca/icon0.webp",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA03446, v02.000, USA, 2.xx and beyond\nSize: 1GB\nCredits: Files: Biogames\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/2D40foQU#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/2D40foQU#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/2D40foQU#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/2D40foQU#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/gWeQJIy7#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/gWeQJIy7#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/gWeQJIy7#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/gWeQJIy7#FileKeeper"
+        }
+      ],
+      "sizeBytes": 1073741824
+    },
+    {
+      "titleId": "PPSA30568",
+      "title": "Invincible VS Deluxe Edition",
+      "createdAt": "2026-10-21T17:33:08.289Z",
+      "version": "v01.016",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202512/0223/1914db8ba62ff41798d0a89159d4028d927fe5b1e492dc67.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202512/0223/1914db8ba62ff41798d0a89159d4028d927fe5b1e492dc67.png",
+      "description": "Builds: DLC, Dump, Fpkg\nTags: PPSA30568, v01.016, USA, 4.xx BackPort\nSize: 23GB\nCredits: Files: DecKerr97; Backport: DecKerr97; DLC: Pippo &amp; DecKerr97\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. About Dump: SDK is 4.xx, BackPort already included. About FPKG: BackPort already included on Base.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/XIiS9Ay4#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/XIiS9Ay4#DataVaults"
+        },
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/DGzfnNDt#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/DGzfnNDt#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/DGzfnNDt#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/DGzfnNDt#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/sfiM0AE1#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/sfiM0AE1#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/sfiM0AE1#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/sfiM0AE1#FileKeeper"
+        }
+      ],
+      "sizeBytes": 24696061952
+    },
+    {
+      "titleId": "PPSA03912",
+      "title": "Diablo 2 Resurrected Infernal Edition",
+      "createdAt": "2026-10-21T16:31:53.171Z",
+      "version": "v01.039",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/2004/ab9XB7gTauWtV6qMEEIQ4d2G.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202102/2004/ab9XB7gTauWtV6qMEEIQ4d2G.png",
+      "description": "Builds: Dump, Fpkg\nTags: PPSA03912, v01.039, EUR, DLCs Merged, 3.xx and beyond\nSize: 49GB\nCredits: Files: DUPLEX; DLC: DUPLEX\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "Dump - DataNodes",
+          "url": "https://link-vault.org/c/6TQ__3h2#DataNodes"
+        },
+        {
+          "name": "Dump - FileKeeper",
+          "url": "https://link-vault.org/c/6TQ__3h2#FileKeeper"
+        },
+        {
+          "name": "Dump - AkiraBox",
+          "url": "https://link-vault.org/c/6TQ__3h2#AkiraBox"
+        },
+        {
+          "name": "Dump - VikingFile",
+          "url": "https://link-vault.org/c/6TQ__3h2#VikingFile"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/1hyfaRqa#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/1hyfaRqa#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/1hyfaRqa#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/1hyfaRqa#FileKeeper"
+        }
+      ],
+      "sizeBytes": 52613349376
+    },
+    {
+      "titleId": "PPSA01575",
+      "title": "Avatar Frontiers of Pandora Complete Edition",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "v01.020",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0113/38ad0cc5b92af440d46ccebf5d1f271213d656684fce3385.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0113/38ad0cc5b92af440d46ccebf5d1f271213d656684fce3385.png",
+      "description": "Builds: DLC, Fpkg\nTags: PPSA01575, v01.020, EUR, 4.xx BackPort\nSize: 319GB\nCredits: Files: DUPLEX; Backport: DecKerr97; DLC: Pippo &amp; DUPLEX\nHow to play: Need account with offact + np-fake-signin for unlock DLCs. FPKG atm is only working up to 11.60, use exFAT if you are above, DLCs Merged. About exFAT: SDK is 4.xx, BackPort already included. About FPKG: BackPort already included on Base, DLCs PKG separated.",
+      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
+      "downloadLinks": [
+        {
+          "name": "DataNodes",
+          "url": "https://link-vault.org/c/vgcW719i#DataNodes"
+        },
+        {
+          "name": "FileKeeper",
+          "url": "https://link-vault.org/c/vgcW719i#FileKeeper"
+        },
+        {
+          "name": "AkiraBox",
+          "url": "https://link-vault.org/c/vgcW719i#AkiraBox"
+        },
+        {
+          "name": "DataVaults",
+          "url": "https://link-vault.org/c/vgcW719i#DataVaults"
+        },
+        {
+          "name": "VikingFile",
+          "url": "https://link-vault.org/c/vgcW719i#VikingFile"
+        },
+        {
+          "name": "DLC - DataNodes",
+          "url": "https://link-vault.org/c/Y1hOFkaW#DataNodes"
+        },
+        {
+          "name": "DLC - DataVaults",
+          "url": "https://link-vault.org/c/Y1hOFkaW#DataVaults"
+        },
+        {
+          "name": "Fpkg - AkiraBox",
+          "url": "https://link-vault.org/c/6d_Okeon#AkiraBox"
+        },
+        {
+          "name": "Fpkg - VikingFile",
+          "url": "https://link-vault.org/c/6d_Okeon#VikingFile"
+        },
+        {
+          "name": "Fpkg - DataNodes",
+          "url": "https://link-vault.org/c/6d_Okeon#DataNodes"
+        },
+        {
+          "name": "Fpkg - FileKeeper",
+          "url": "https://link-vault.org/c/6d_Okeon#FileKeeper"
+        }
+      ],
+      "sizeBytes": 342523641856
+    },
+    {
       "titleId": "PPSA07642",
       "title": "The Last of Us Part I Deluxe Edition",
       "createdAt": "2026-10-21T01:16:53.594Z",
@@ -3340,52 +7232,6 @@
       "sizeBytes": 2147483648
     },
     {
-      "titleId": "PPSA25286",
-      "title": "Crimson Desert Enhanced",
-      "createdAt": "2026-10-16T21:48:35.923Z",
-      "version": "v01.000.568",
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2006/e8f306c89efa555a13e4d3910dafda994a14b2355f342802.png?w=260",
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202608/2006/e8f306c89efa555a13e4d3910dafda994a14b2355f342802.png",
-      "description": "Builds: Dump, Fpkg\nTags: PPSA25286, v01.000.568, USA, 4.xx BackPort\nSize: 190GB\nCredits: Files: DecKerr97 &amp; L3G3ND44; Backport: DecKerr97 &amp; L3G3ND44\nHow to play: FPKG atm is only working up to 11.60, use Dump if you are above. Base FPKG &amp; Dump are 11.xx, separated BackPort PKG for 4.xx+ included. Might be have problems at launch with ShadowMountPlus 1.7beta4 and beta5, use 1.7beta3.",
-      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
-      "downloadLinks": [
-        {
-          "name": "Dump - DataNodes",
-          "url": "https://datanodes.to/0zzycyoc6dp1"
-        },
-        {
-          "name": "Dump - FileKeeper",
-          "url": "https://filekeeper.net/i2lodmuhoipw"
-        },
-        {
-          "name": "Dump - AkiraBox",
-          "url": "https://akirabox.com/BnkmWvoe2GR0/file"
-        },
-        {
-          "name": "Dump - VikingFile",
-          "url": "https://vikingfile.com/f/dCFwopLLh7"
-        },
-        {
-          "name": "Fpkg - AkiraBox",
-          "url": "https://akirabox.com/RMKGJKdL2m1o/file"
-        },
-        {
-          "name": "Fpkg - VikingFile",
-          "url": "https://vikingfile.com/f/X1dq39HQJp"
-        },
-        {
-          "name": "Fpkg - DataNodes",
-          "url": "https://datanodes.to/gkck7z0vm6m0"
-        },
-        {
-          "name": "Fpkg - FileKeeper",
-          "url": "https://filekeeper.net/j1wrgdhife22"
-        }
-      ],
-      "sizeBytes": 204010946560
-    },
-    {
       "titleId": "PPSA20946",
       "title": "The Relic First Guardian",
       "createdAt": "2026-10-16T21:48:35.923Z",
@@ -6410,60 +10256,6 @@
         }
       ],
       "sizeBytes": 235149459456
-    },
-    {
-      "titleId": "PPSA24662",
-      "title": "F1 25",
-      "createdAt": "2026-10-16T21:48:35.923Z",
-      "version": "v01.018",
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2009/15a5c2ccc34262d0b9c780f7b81c7d95816a0516dc05daaf.png?w=260",
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2009/15a5c2ccc34262d0b9c780f7b81c7d95816a0516dc05daaf.png",
-      "description": "Builds: Fpkg\nTags: PPSA24662, v01.018, USA, 4.xx BackPort\nSize: 75GB\nCredits: Files: DUPLEX; Backport: DecKerr97\nHow to play: Using HEN can cause crash. FPKG atm is only working up to 11.60, use exFAT if you are above.",
-      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
-      "downloadLinks": [
-        {
-          "name": "AkiraBox",
-          "url": "https://akirabox.com/QN9mEqjoom6d/file"
-        },
-        {
-          "name": "VikingFile",
-          "url": "https://vikingfile.com/f/4LAPTl7DtM"
-        },
-        {
-          "name": "DataNodes",
-          "url": "https://datanodes.to/g237n7wu4in5"
-        },
-        {
-          "name": "Filek",
-          "url": "https://filekeeper.net/ug25lfcag2xo"
-        },
-        {
-          "name": "Vault",
-          "url": "https://datavaults.co/160fyetpz3wy"
-        },
-        {
-          "name": "Fpkg - AkiraBox",
-          "url": "https://akirabox.com/dZxG5oQwP3Vj/file"
-        },
-        {
-          "name": "Fpkg - VikingFile",
-          "url": "https://vikingfile.com/f/fjy2epRz6X"
-        },
-        {
-          "name": "Fpkg - DataNodes",
-          "url": "https://datanodes.to/vtoottg335ho"
-        },
-        {
-          "name": "Fpkg - Filek",
-          "url": "https://filekeeper.net/xns3zabxiowh"
-        },
-        {
-          "name": "Fpkg - Vault",
-          "url": "https://datavaults.co/z1f4anuzbu73"
-        }
-      ],
-      "sizeBytes": 80530636800
     },
     {
       "titleId": "PPSA01631",
@@ -16379,40 +20171,6 @@
       "sizeBytes": 25769803776
     },
     {
-      "titleId": "PPSA19644",
-      "title": "Farming Simulator 25",
-      "createdAt": "2026-10-16T21:48:35.923Z",
-      "version": "v01.310",
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/1221/5e7b5321408d56da66ffbb45abae3d2f812b0a1dd03cee5d.png?w=260",
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/1221/5e7b5321408d56da66ffbb45abae3d2f812b0a1dd03cee5d.png",
-      "description": "Tags: PPSA19644, v01.310, EUR, 4.xx BackPort\nSize: 43GB\nCredits: Files: MettMowgli &amp; DLPS Team; Backport: DecKerr97\nHow to play: 40% FOV is recommended for playing or maybe can be laggy sometimes, this can be applied on Settings.",
-      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
-      "downloadLinks": [
-        {
-          "name": "AkiraBox",
-          "url": "https://akirabox.com/EL73g7bQj39B/file"
-        },
-        {
-          "name": "VikingFile",
-          "url": "https://vikingfile.com/f/8vzd8T3H0v"
-        },
-        {
-          "name": "DataNodes",
-          "url": "https://datanodes.to/4i3qxnwoxhkc"
-        },
-        {
-          "name": "Filek",
-          "url": "https://filekeeper.net/6jvo9r37r1z6"
-        },
-        {
-          "name": "Vault",
-          "url": "https://datavaults.co/7vm1fvrtxypd"
-        }
-      ],
-      "sizeBytes": 46170898432
-    },
-    {
       "titleId": "PPSA16306",
       "title": "WWE 2K24 Forty Years of WrestleMania Edition",
       "createdAt": "2026-10-16T21:48:35.923Z",
@@ -19655,40 +23413,6 @@
         }
       ],
       "sizeBytes": 173946175488
-    },
-    {
-      "titleId": "PPSA01575",
-      "title": "Avatar Frontiers of Pandora Complete Edition",
-      "createdAt": "2026-10-16T21:48:35.923Z",
-      "version": "v01.020",
-      "category": "game",
-      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0113/38ad0cc5b92af440d46ccebf5d1f271213d656684fce3385.png?w=260",
-      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0113/38ad0cc5b92af440d46ccebf5d1f271213d656684fce3385.png",
-      "description": "Tags: PPSA01575, v01.020, EUR, DLCs Merged, 4.xx BackPort\nSize: 319GB\nCredits: Files: DUPLEX; Backport: DecKerr97; DLC: DUPLEX\nHow to play: Need account with offact + np-fake-signin for unlock DLCs.",
-      "downloadSource": "https://pippo26442999.github.io/.exFAT/exFAT.json?v=1780302680008",
-      "downloadLinks": [
-        {
-          "name": "AkiraBox",
-          "url": "https://akirabox.com/APVma0LW5GXo/file"
-        },
-        {
-          "name": "VikingFile",
-          "url": "https://vikingfile.com/f/wgsTbjs5E6"
-        },
-        {
-          "name": "DataNodes",
-          "url": "https://datanodes.to/6b9oetjifhbd"
-        },
-        {
-          "name": "Filek",
-          "url": "https://filekeeper.net/usxsuvylusc3"
-        },
-        {
-          "name": "Vault",
-          "url": "https://datavaults.co/snxd0zd9ixoz"
-        }
-      ],
-      "sizeBytes": 342523641856
     },
     {
       "titleId": "PPSA03233",
