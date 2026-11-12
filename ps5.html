@@ -798,6 +798,39 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
+<div class="overlay" id="donateModal" role="dialog" aria-modal="true" aria-labelledby="donateTitle">
+  <div class="modal slim">
+    <button class="modal-close" type="button" data-close="donateModal" aria-label="Close">✕</button>
+    <div class="donate-head">
+      <div class="coffee-mark" aria-hidden="true">☕</div>
+      <h2 id="donateTitle">Donate me a coffee</h2>
+      <p>Every contribution keeps the library running — thank you!</p>
+    </div>
+    <div class="donate-body">
+      <div class="wallet-box">
+        <div class="wb-label">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 1.5 5.5 12 12 15.5 18.5 12 12 1.5zM12 17 5.5 13.5 12 22.5l6.5-9L12 17z"/></svg>
+          Ethereum (ETH) Wallet
+        </div>
+        <div class="wb-addr"><code id="ethAddress">ignore</code></div>
+      </div>
+      <div class="donate-note">
+        <span class="ico">💛</span>
+        <span>Send <b>ETH</b> or any <b>ERC-20 token</b> to the address above. Double-check the address before sending — crypto transfers are irreversible.</span>
+      </div>
+      <div class="donate-actions">
+        <button class="btn coffee" id="copyEth" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg>
+          Copy wallet address
+        </button>
+        <a class="btn ghost" href="https://etherscan.io/address/0x17E1D7f8A9641749A3f6A932Df09D36FE198df86" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6M10 14 21 3"/></svg>
+          View on Etherscan
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div id="toasts" aria-live="polite" aria-atomic="false"></div>
 <div class="drop-overlay" id="dropOverlay" aria-hidden="true">
@@ -829,7 +862,7 @@ a{color:inherit;text-decoration:none}
   var LS_COUNTS = 'ps5_catalog_counts_v2';
   var LS_SORT_PREF = 'ps5_sort_pref_v1';
 
-  var ETH_ADDRESS = 'ignore';
+  var ETH_ADDRESS = '0x17E1D7f8A9641749A3f6A932Df09D36FE198df86';
   var TG_URL = 'https://t.me/OptiTronOffical';
 
   var PASSWORDS_ARCHIVE = ['DLPSGAME.COM','downloadgameps3.com','hako','[DLPSGAME.COM]'];
