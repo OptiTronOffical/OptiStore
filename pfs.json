@@ -3,6 +3,2505 @@
   "version": 1,
   "packages": [
     {
+      "titleId": "PPSA03977",
+      "title": "The Witcher 3: Wildhunt - Complete Edition",
+      "createdAt": "2026-11-14T21:47:33.348Z",
+      "version": "4.040.100",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1711/d851895118a16d07706b91e7b69b53ce27531269cad5e968.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202609/1711/d851895118a16d07706b91e7b69b53ce27531269cad5e968.png",
+      "description": "The Witcher 3: Wild Hunt — Remastered modernizes the generation-defining RPG with a range of upgrades and enhancements to visuals, performance, gameplay, and more. Become monster slayer for hire Geralt of Rivia and journey across the war-torn Northern Kingdoms to find your adopted daughter, Ciri, before the spectral forces of the Wild Hunt take her incredible power for their own. Included in Remastered are two critically acclaimed expansions — Hearts of Stone and Blood and Wine — to expand the legendary story even further. Explore a Dark Fantasy World — Journey through the war-torn Northern Kingdoms and explore richly detailed regions, from bustling cities to forgotten ancient ruins and superstitious villages. Experience an Unforgettable Story — Traverse the Continent in search of Geralt’s adopted daughter Ciri, the Child of Prophecy, who is being ruthlessly hunted by the spectral Wild Hunt. Master a Witcher’s Arsenal — Embody the White Wolf and show your foes what it means to be a witcher with a variety of swords, potions, bombs, combat magic, and more. Modernized and Upgraded — Refined with an upgraded skill system, revamped combat, improved visuals, and more, Remastered is the definitive way to enjoy this acclaimed RPG. Includes Two Acclaimed Expansions — Discover unforgettable adventures in both Hearts of Stone and Blood and Wine expansions. Travel across the wilds of the Continent and the noble realm of Toussaint as new stories, characters, and choices await.\nRegion: EUR\nFirmware: 5.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount! It's NOT the remastered version! I couldn't find the cover for the\nUpdated: 2026-11-14T21:30:42.299Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/honcwnul7wkg"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/057ieesvd6mq"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/8gi7w4vsswgv"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/f85hbff0bfo1"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/ko3161b8bfhr"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/5y5ofls1b7ku"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/vrx7ukuksyms"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/hxtny3d8ltms"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/hdqy7mkwczt0"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/3CXqe2h7S3"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/VJPagOYDs3"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/e3IIwaPP46"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/XYNRATlx6F"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/1teNGOy4G1"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/ETr03ylNTt"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/jTyAnkqAFl"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/kxd0hyR5OA"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/uMRm2jx34z"
+        }
+      ],
+      "sizeBytes": 85899345920
+    },
+    {
+      "titleId": "PPSA05684",
+      "title": "Uncharted Legacy of Thieves",
+      "createdAt": "2026-11-14T21:47:33.348Z",
+      "version": "1.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202111/2000/gTUWTlvPHzxFJ2JAxtDyI2eS.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202111/2000/gTUWTlvPHzxFJ2JAxtDyI2eS.png",
+      "description": "Players who purchased UNCHARTED 4: A Thief’s End, UNCHARTED: The Lost Legacy, or UNCHARTED 4: A Thief’s End &amp; UNCHARTED: The Lost Legacy Digital Bundle have the option to pay $10 USD to upgrade to UNCHARTED: Legacy of Thieves Collection. The upgrade will be available starting at launch on 28 January 2022. Leave your mark on the map in UNCHARTED: Legacy of Thieves Collection. In an experience delivered by award winning developer Naughty Dog, UNCHARTED: Legacy of Thieves Collection includes the two critically acclaimed, single player adventures: UNCHARTED 4: A Thief’s End and UNCHARTED: The Lost Legacy. Discover lost history with the charismatic yet complex thieves, Nathan Drake and Chloe Frazer, as they travel the world with a sense of wonder, pursuing extraordinary adventures and lost lore – remastered in stunning detail for the PS5™ console with improved visuals and frame rate. Unmissable PlayStation®5 console features: • DualSense™ wireless controller features: Feel the action unfold with the DualSense™ wireless controller's haptic feedback through punches, vaults, and vehicular traversal. Experience the tension in rope swings via dynamic adaptive triggers. • Fast loading: Jump back into the adventure quickly with the PS5™ console’s ultra-high speed SSD and near-instant load times. • 3D Audio: Hear the world of UNCHARTED™: Legacy of Thieves Collection come to life around you with 3D Audio.¹ • Fidelity mode: Play in a super sharp native 4K resolution with a 30fps target frame rate.² • Performance mode: Play with a smooth 60fps target frame rate. o 4K TV players will experience a 4K resolution upscaled from a 1440p base resolution. o 1080p HD TV players will experience a 1080p resolution super sampled from a 1440p base with improved anti-aliasing. • Performance+ mode: Play with a high impact 120fps target frame rate³ and a 1080p resolution. Owners of PS4 disc copies must insert them into the PS5 every time they want to download or play the PS5 digital versions. PS4 game disc owners who buy the PS5 Digital Edition disc-free console will not be able to get the PS5 version for the discounted price. PlayStation®Plus members who claimed UNCHARTED 4: A Thief’s End via their PlayStation Plus subscription are not eligible for the $10 digital PS5 upgrade. ¹ 3D Audio via built-in TV speakers (setup and update to the latest system software required) or analogue/USB stereo headphones. ² Requires a 4K compatible TV or display. ³ Requires a compatible 120hz display.\nRegion: EUR\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T20:45:22.187Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/8of2blp1w5sb"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/h0qw0bjwqapr"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/mvl3kldnau34"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/hd80oq42k5oe"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/hviokvonsbfw"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/ek031q6omeb9"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/thr3ufp24n1d"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/4glmxqfr8ste"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/i8qg7l1fk85p"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/B47cJd16R3"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/yT9T0EQoTb"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/JVAAZb2o0C"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/dccAbSgikm"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/CrbNOLmm2P"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/8wp3s0aUvG"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/2mnLZSGYvJ"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/EZN9P6lWKo"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/W0J2yyBzE0"
+        }
+      ],
+      "sizeBytes": 90086939034
+    },
+    {
+      "titleId": "PPSA03396",
+      "title": "The Last of Us Part I",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "2.0",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0720/eEczyEMDd2BLa3dtkGJVE9Id.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0720/eEczyEMDd2BLa3dtkGJVE9Id.png",
+      "description": "- Celebrated prequel chapter, Left Behind, which explores the events that changed the lives of Ellie and her best friend Riley forever. Experience the emotional storytelling and unforgettable characters in The Last of Us, winner of over 200 Game of the Year awards, now rebuilt from the ground up for the PlayStation®5 console. In a ravaged civilization, where infected and hardened survivors run rampant, Joel, a weary protagonist, is hired to smuggle 14-year-old Ellie out of a military quarantine zone. However, what starts as a small job soon transforms into a brutal cross-country journey. - Completely rebuilt using Naughty Dog’s latest PS5 engine technology with advanced visual fidelity, fully integrated DualSense™ wireless controller features and more. - A total overhaul of the original experience, faithfully reproduced but incorporating modernized gameplay mechanics, improved controls and expanded accessibility options. - Feel immersed in improved environmental storytelling, effects, facial animations and enhanced exploration and combat.\nRegion: USA\nFirmware: 9.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T20:11:50.322Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/htl3dqp11g3r"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/r11vw42unbx9"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/atf1mlgnifre"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/wse9m4gkkh6x"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/ehtd4w7wp0nc"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/1i6zhqywthl1"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/tuw6j3b5ljyf"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/08zz6sfnlcue"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/q6lhD9bjE3"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/IjQ1oiHAAN"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/OiiPK7L3MF"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/XP1fxi9rLh"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/LeTFUotL3T"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/03lhCG8RAo"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/ATYI57jPC0"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/dbBskv3Hjn"
+        }
+      ],
+      "sizeBytes": 84396107366
+    },
+    {
+      "titleId": "PPSA34008",
+      "title": "Mortal Shell 2",
+      "createdAt": "2026-11-14T19:45:31.547Z",
+      "version": "1.000.010",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1509/1d0b85f713fa47d73f2a649a9e12a940361ec51d0b2cefb5.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1509/1d0b85f713fa47d73f2a649a9e12a940361ec51d0b2cefb5.png",
+      "description": "Mortal Shell II is a standalone sequel to Mortal Shell that significantly expands on the original with faster and unforgiving combat, deeper weapon design with extensive upgrade options, and an emphasis on free exploration within a compact open-world. The corpses of exceptional warriors are scattered throughout Mortal Shell II’s destroyed world. Once discovered, each warrior can be possessed, awakening their innate strengths and mastered abilities. Evolve your own style of combat by harnessing the unique abilities of each warrior, and unlock their secrets through the discovery of lost memories. Mortal Shell II’s compact open-world connects over winding footpaths guarded by desperate and fanatical adversaries. Players who wander are rewarded with new warriors to possess, additional story elements, powerful and strange weaponry, upgrades, curiosities and more. Step through derelict temples of ancient deities, across forbidden forests and icy graves, into citadels carved out of bone. Scattered between these lost landmarks are more than 80 dungeons, each providing a challenging test of the talents and weaponry you have collected on your journey. You control the Harbinger, a being that must reclaim the Undermether’s stolen eggs that are now ruthlessly guarded by grotesque, dangerous creatures. Mortal Shell II’s combat system is agile and expressive. Stamina gauges are removed, and execution options have been enhanced, delivering a kinetic and chaotic dark power fantasy. Precision meets intensity in high-stakes combat.\nRegion: USA to EUR Langs\nFirmware: 12.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T19:26:54.046Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/37mdnmoxu037"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/k22azp95tcwi"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/btnb6vzzhlkr"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/dgv7atjlvwur"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/XWUHsQI8hP"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/yfxwAuAp6M"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/kj4KhTTLm8"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/UO7GS5gt4V"
+        }
+      ],
+      "sizeBytes": 34789235098
+    },
+    {
+      "titleId": "PPSA32785",
+      "title": "Nioh 3",
+      "createdAt": "2026-11-14T19:45:31.547Z",
+      "version": "1.040.020",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/0401/835b207c01d1b02c29229e73fba0da13b914148c8b8bd4ed.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/0401/835b207c01d1b02c29229e73fba0da13b914148c8b8bd4ed.png",
+      "description": "Conquer the Crucible, Become Shogun Nioh 3 is the eagerly anticipated continuation of the dark samurai action RPG series Nioh. A deadly struggle unfolds amidst the devastation of an alternate Warring States period where bandits run rampant and yokai skulk about. Key Elements of the Game: • An open field that challenges you to the fullest This game features an open field filled with the sense of tension characteristic of the Nioh series while also allowing you to explore to your heart's content. In this dark samurai world, you will encounter formidable yokai, explore menacing villages where darkness lurks, and struggle against the ominous presence of \"the Crucible.\" • Samurai and Ninja combat styles You can enjoy an instantaneous and seamless switch between two combat styles during battle, facing your enemies head-on with Samurai Style and using quick movements and Ninjutsu techniques with Ninja Style. Note: The product Nioh 3 Digital Deluxe Edition is also being sold. Please confirm that you have selected the correct product before making your purchase. - Demo save data will be automatically carried over upon launching the full game. (The demo save data must be saved on the same device used to play the full game.) - If the full game is started even once and save data is created, you will no longer be able to play the demo. - The demo completion bonus Twin-Snake Helmet, which can be obtained upon completing the demo by February 15, 2026, can also be obtained as a guaranteed item drop upon defeating Jakotsu-baba in the full game by February 15, 2026. Starting February 16, 2026, the item will become a rare drop from Jakotsu-baba.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T18:58:33.168Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/iird65w1celi"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/3my8w4prb7mw"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/z9kwz3mw8usk"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/aghjcqcor4x5"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/qwp3s78j5vla"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/xlb61l46mwqd"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/xnae3yl9p92p"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/d9j2clm9d5ps"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/6n2nn11t4i29"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/jYUWAdyyi9"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/77oWmPlSWd"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/CgC3c127In"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/IpbxFgbkrM"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/LIFShkxHCP"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/CTitCg2tVO"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/XTaWMbY3GW"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/5DmWg7WglZ"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/XIm9FZx9QP"
+        }
+      ],
+      "sizeBytes": 87080461926
+    },
+    {
+      "titleId": "PPSA21159",
+      "title": "Silent hill F",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/0704/e81b1e0b80b2001d8a5070c5c465cbc7246e02d1da39fe76.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202505/0704/e81b1e0b80b2001d8a5070c5c465cbc7246e02d1da39fe76.png",
+      "description": "未練。葛藤。後悔。避けられぬ選択。そして己の罪。 それに向き合えぬ者たちは、深き霧の世界にて彷徨う……。 おぞましき心象風景が具現化した世界とクリーチャーが特徴の、 恐怖と狂気のサイコロジカルホラー「SILENT HILL」シリーズ最新作。 日本を舞台とした新たな“サイコロジカルホラー”が始まる。 ＜あらすじ＞ 昭和の古い時代。とある地方の山間部にある寂れた田舎町、戎ヶ丘に住む高校生、深水雛子（しみず ひなこ）。 彼女の日常は、ぼんやりとした灰色ではあっても、思春期相応の平凡なものだった。 だが、そのいつもの日常は唐突に崩れ去る。 見慣れた町は霧に包まれ、おぞましく変貌していく。 人の気配は消え、代わって、霧の中に奇怪な何かが蠢く。 変貌していく町を探索し、謎を解き、身を守る為に戦い、生き残れ。 向かい合わなければならなかった選択と、向き合う為に。 そして、殺さなければならない者を、殺す為に。 彼女が選ぶのは、美しき選択か。 それとも、おぞましき選択か。 美しくも、おぞましい選択の、物語。\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T18:20:17.222Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/796v1rq1yca4"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/wyhzmwpcs2tn"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/zpkgq9uxq147"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/vunjf735siin"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/EWWp7vZIq2"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/GszJfds7RC"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/A9ecXjkwQj"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/GbHErmT50c"
+        }
+      ],
+      "sizeBytes": 38547331482
+    },
+    {
+      "titleId": "PPSA02100",
+      "title": "Stray",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0300/E2vZwVaDJbhLZpJo7Q10IyYo.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202206/0300/E2vZwVaDJbhLZpJo7Q10IyYo.png",
+      "description": "Lost, alone and separated from family, a stray cat must untangle an ancient mystery to escape a long-forgotten city. Stray is a third-person cat adventure game set amidst the detailed, neon-lit alleys of a decaying cybercity and the murky environments of its seedy underbelly. Roam surroundings high and low, defend against unforeseen threats and solve the mysteries of this unwelcoming place inhabited by curious droids and dangerous creatures. See the world through the eyes of a cat and interact with the environment in playful ways. Be stealthy, nimble, silly, and sometimes as annoying as possible with the strange inhabitants of this mysterious world. Along the way, the cat befriends a small flying drone, known only as B-12. With the help of this newfound companion, the duo must find a way out. Stray is developed by BlueTwelve Studio, a small team from the south of France mostly made up of cats and a handful of humans.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T18:18:00.845Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data",
+          "url": "https://datanodes.to/dsu93gblutfx"
+        },
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/PuuVNHWgyo"
+        }
+      ],
+      "sizeBytes": 7730941133
+    },
+    {
+      "titleId": "PPSA25258",
+      "title": "NINJA GAIDEN 4",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "01.004",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202501/2115/cadb8f4c0e96d1f406a81cda594e290c86bf283722d04aa5.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202501/2115/cadb8f4c0e96d1f406a81cda594e290c86bf283722d04aa5.png",
+      "description": "The definitive ninja hack &amp; slash franchise returns with NINJA GAIDEN 4! Embark on a cutting-edge adventure where legacy meets innovation in this high-octane blend of style and no-holds-barred combat. Return of the Legend Experience a return to the intense, high-speed combat that established NINJA GAIDEN as a premier action game series. Prepare for a legacy reborn with captivating style for a new generation of players. Epic Hack and Slash Combat, Evolved NINJA GAIDEN 4 fuses Team NINJA’s tempered combat philosophy with the stylish, dynamic action gameplay of PlatinumGames. Engage in visually stunning combat that rewards precision and strategy. Use Bloodbind Ninjutsu to transform your weapons and unleash devastation upon your enemies, alongside legacy techniques like the Izuna Drop and Flying Swallow. The legendary Ryu Hayabusa also returns with a revamped yet familiar set of tools to master. With a customizable player experience, NINJA GAIDEN 4 will push action game veterans to their limits while allowing newcomers to enjoy a heart-pounding adventure full of twists and turns. An Ancient Enemy Returns An endless rain of miasma hangs over a near-future Tokyo in the wake of an ancient enemy’s resurrection. The fate of the city lies in the hands of young ninja prodigy, Yakumo. Fighting his way through cybernetic ninja soldiers and otherworldly creatures, Yakumo must reconcile a destiny he shares with the legendary Ryu Hayabusa himself and free Tokyo from the ancient curse that brought the city to its knees.\nRegion: USA\nFirmware: 10.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nCredits: This one has ampr emu ng 0.3.4\nUpdated: 2026-11-14T18:15:44.249Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/GxKTUxK8IG"
+        },
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/ydmgjsyl1t51"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/nj7o2hcvclg3"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/8oz8hgnyio46"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/rkpn6izfqiy1"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/A5ska6P3VV"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/2MaX70XdYQ"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/gR6yPghFD0"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/R4q0e2t0GK"
+        }
+      ],
+      "sizeBytes": 32212254720
+    },
+    {
+      "titleId": "PPSA23372",
+      "title": "REANIMAL",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.000.012",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2010/3574955c64a46d1405b273ce98314c3e29b699be4ad12812.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202408/2010/3574955c64a46d1405b273ce98314c3e29b699be4ad12812.png",
+      "description": "WHAT IS REANIMAL? The original creators of Little Nightmares™ &amp; Little Nightmares™ II have returned to take you on a more terrifying journey than ever before. In this co-op horror adventure game, you play as a brother &amp; sister who go through hell to rescue their missing friends. Exploring by boat and on land, you must use your wits to survive, work together to escape the hellish island, and the dark secret that haunts you. HORROR WITH HOPE In this unsettling tale, the emphasis is on tension and thick atmosphere, as you join the two orphans on a desperate search for hope and redemption in the direst of circumstances. ACROSS A DARK AND TWISTED WORLD Traverse an intriguing but terrifying world, where the main path is only one part of the fragmented story. Discover all sorts of mysterious locations on your perilous journey, each with its own story to tell. A DREAD-FILLED ADVENTURE Tarsier Studios is bringing their unique visual style to bear on a whole host of new twisted monsters and broken, yet resilient, child characters. Fragments of the children's troubled past have been used as inspiration for their character design, and for the monsters that now torment them. SHARE THE SCARE Nobody should be forced to go through hell alone! Fully playable in single player and local &amp; online co-op, REANIMAL has a shared, directed camera, designed to maximise claustrophobia and tension. FRIEND'S PASS Download the Trial and play the entire game with your bestie FOR FREE! REANIMAL's Trial feature is your Friend's Pass. As long as one of you owns the full game, you can share the scare together in both Online AND Couch Co-op! So grab someone you love, turn the lights down low, and go through hell together!\nRegion: EUR\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nCredits: This one has ampr emu ng 0.3.4\nUpdated: 2026-11-14T18:13:34.975Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/CQSX7B7Ybv"
+        },
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/quje7td11nol"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/jkemxprx2qo5"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/bHuk0CnUe9"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/w9KkwAbXe9"
+        }
+      ],
+      "sizeBytes": 15139759718
+    },
+    {
+      "titleId": "PPSA03643",
+      "title": "Mighty Goose",
+      "createdAt": "2026-11-14T15:41:45.361Z",
+      "version": "2.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202105/2104/SCd9sftxfuO29CjaqwJbKyy4.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202105/2104/SCd9sftxfuO29CjaqwJbKyy4.jpg",
+      "description": "Assume the role of Mighty Goose and bring the fight to the Void King. This galaxy conquering monarch commands a vast army of minions and mechanised monsters. Dealing with these baddies means traveling to distant worlds and facing all kinds of dangers. But not to worry, this is no problem for the legendary Mighty Goose! Mighty Goose is a fast paced run &amp; gun shooter starring a bounty hunter Goose. Use epic weapons and devastating warmachines to battle against screen filling bosses and hordes of enemies! Apart from that solid arcade formula, the game has a ton of crazy weapons, companions, upgrades and secrets for you to discover. ・Fast-paced run-and-gun experience with tight controls. ・Battle against screen filling bosses that will test your skill, timing, and dodging ・Customize your playing style using a combination of upgrade chips, secondary weapons and assist characters. ・Pilot devastating war-machine vehicles to decimate large groups of enemies. ・Beautifully crafted vibrant pixel art worlds, vehicles and characters. ・An amazing soundtrack featuring crunchy synth-rock and funky jazz-fusion melodies. Composed by Dominic Ninmark (Moonrider, Blazing Chrome, Gravity Circuit).\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T15:34:30.797Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data",
+          "url": "https://datanodes.to/jleyn5be69av"
+        },
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/CnSv0yFUOR"
+        }
+      ],
+      "sizeBytes": 252329329
+    },
+    {
+      "titleId": "PPSA03463",
+      "title": "Laika Aged Through Blood",
+      "createdAt": "2026-11-14T15:41:45.361Z",
+      "version": "4.0",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202311/1707/6e3b9bbaebd2393a3f892abb8095578853b22ef19fe98198.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202311/1707/6e3b9bbaebd2393a3f892abb8095578853b22ef19fe98198.jpg",
+      "description": "Laika: Aged Through Blood is a thrilling action-adventure Metroidvania set in a dystopian, post-apocalyptic western world. Take on the role of Laika, a coyote mother and relentless warrior on a quest to avenge her fallen people from the tyrannical Birds, who have claimed superiority and conquered the land. Fueled by vengeance, Laika rides out on her motorbike on a perilous and emotional journey. Carve and shred through rugged, hand-painted landscapes as you uncover the dark secrets of a fractured world ravaged by power, betrayal, and loss. Engage in breakneck vehicular combat mechanics that demand precision, strategy, and skill. Utilize a variety of weapons, master close-range tactics, and unlock deadly abilities to defeat your enemies, upgrade your gear, and take back what your people have lost. Key Features: - Fast-paced 2D motorbike combat in the first ever “Motorvania”. - Challenging gameplay that rewards precision and strategic thinking. - Emotional and thought-provoking narrative about vengeance and loss. - Striking hand-drawn landscapes teeming with danger and hidden secrets to explore. - A hauntingly beautiful ambient soundtrack.\nRegion: USA to EUR Langs\nFirmware: 7.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-14T15:33:09.756Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data",
+          "url": "https://datanodes.to/gm5r794cmpuf"
+        },
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/6uISleAFm0"
+        }
+      ],
+      "sizeBytes": 1224065679
+    },
+    {
+      "titleId": "PPSA17905",
+      "title": "Horizon Forbidden West Complete Edition",
+      "createdAt": "2026-11-14T00:26:30.682Z",
+      "version": "1.030",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202010/2915/kifM3lnke5lExwRd96mIDojQ.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202010/2915/kifM3lnke5lExwRd96mIDojQ.png",
+      "description": "Buy the Horizon Forbidden West™ digital version for PS4™ from PlayStation™Store to get the Horizon Forbidden West digital version for PS5™ at no extra cost. Edition includes: - Full game (PS5 and PS4). Join Aloy as she braves the Forbidden West, a deadly frontier that conceals mysterious new threats. PlayStation®5 features: - Fast-travel and get back into the game almost instantly with the PS5 console’s ultra-high-speed SSD and fast load times. - Play in stunning 4K, HDR and with a Performance Mode targeting 60FPS.* - Feel impact from attacks with the DualSense™ wireless controller’s haptic feedback and feel the resistance of your bow, grappling tool and other weapons with the DualSense wireless controller’s adaptive triggers. - Hear sounds from all around you with the PS5 console’s Tempest 3D AudioTech with stereo headphones (analogue or USB). *4K and HDR require a 4K and HDR compatible TV or display. If you already own the PS4 version of this game, you can get the PS5 digital version at no extra cost and you do not need to purchase this product. Owners of a PS4 disc copy must insert it into the PS5 every time they want to download or play the PS5 digital version. PS4 game disc owners who buy the PS5 Digital Edition disc-free console will not be able to get the PS5 version at no extra cost.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.4 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-13T23:43:17.756Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/zl6ekxbj36je"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/t5pr0ekwvemf"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/xf5ndak7knby"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/2cplu0gocwa1"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/hfpru52uy6xa"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/0yllgfgq14e7"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/jft4hne1jvph"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/av0pn1eyx6gx"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/apoji9ccwvvx"
+        },
+        {
+          "name": "Data - pt.10",
+          "url": "https://datanodes.to/j1t48j2fmihx"
+        },
+        {
+          "name": "Data - pt.11",
+          "url": "https://datanodes.to/q6est2a5mtyd"
+        },
+        {
+          "name": "Data - pt.12",
+          "url": "https://datanodes.to/a4lv8q60h7j4"
+        },
+        {
+          "name": "Data - pt.13",
+          "url": "https://datanodes.to/exr217wb2dtc"
+        },
+        {
+          "name": "Data - pt.14",
+          "url": "https://datanodes.to/m5fx7qipiaqz"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/ZXephHj2LO"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/FbYIjl0kBv"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/RyFcsiyKda"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/a8ZFs6FGa3"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/pnjXzuccNA"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/rVI1FstOON"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/n5OUP2xy1w"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/4xKnrOtFiV"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/sTABQFw9UC"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/bdY7b30Gm9"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/Nf61OHCiu0"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/0Svx13Tkfe"
+        },
+        {
+          "name": "Viki - pt.13",
+          "url": "https://vikingfile.com/f/DMb5YPepC7"
+        },
+        {
+          "name": "Viki - pt.14",
+          "url": "https://vikingfile.com/f/waqNBwAWOA"
+        }
+      ],
+      "sizeBytes": 139371688755
+    },
+    {
+      "titleId": "PPSA26679",
+      "title": "NINJA GAIDEN 2 Black",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "01.003.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202412/1202/5b7b5dbfb349815652339c30b2f35cb565934be85ecdc188.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202412/1202/5b7b5dbfb349815652339c30b2f35cb565934be85ecdc188.png",
+      "description": "伝説の刀“龍剣”を継承した忍者のリュウ・ハヤブサとなり、世界各地で戦いに挑むハイスピード忍者アクションが好評を博した一作が、15年の時を経てグラフィックリマスターでよみがえる！ ①『NINJA GAIDEN 2』の世界をリッチなビジュアル表現でリマスター！ ステージ、キャラクター、エフェクトとライティングを一新し、リアリティ溢れるビジュアル表現でリマスター。 ゲームエンジン「Unreal Engine 5」を採用した現世代の美しいグラフィックで、 より物語の世界に没入できるように進化しています。 ②最新グラフィック表現でさらに進化した、ハイスピード×バイオレンスアクション！ 肢体の欠損（※）や血などのゴア表現もリマスターされ、アクション体験がさらに進化。 日本刀や手裏剣など忍者らしい武器はもちろん、鎖鎌（くさりがま）やトンファーなど、 多種多様な武器や技を用いた、ハイスピード×バイオレンスアクションが楽しめます。 （※欠損表現は、オプションで表現の有無を切り替えることが可能です） ③追加キャラクターや難易度など、後続の派生作品の追加要素も収録！ 原作以降に発売された派生作品の追加要素も収録しています。 「紅葉」「あやね」「レイチェル」の追加キャラクター3名が操作できるほか、 ピンチのときにオートでサポートしてくれる難易度「最強の忍」も選択可能。どなたでもアクションの楽しさを体験できます。\nRegion: USA\nFirmware: 9.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-13T14:25:46.399Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Gofile",
+          "url": "https://gofile.io/d/sJ1RkNZW"
+        },
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/fdccs23hzsr9"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/8gs07paym3ad"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/t1niw1jq8p4h"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/exp8vv0kxm5k"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/mxr4bv7exg2r"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/h6m4oqz6pp15"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/zyj552x50n98"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/0ra0lkrivsqy"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/7jr1ekg6a1ak"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/595wC15JUo"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/W1nhRfazvi"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/oOG2ebpvnQ"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/5tcyrbR3Hr"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/YHaEp6XXcw"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/2ItCYa66v0"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/tpmKPw8vtv"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/cQnC3F33Z0"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/VcJ8BGS2Ax"
+        }
+      ],
+      "sizeBytes": 92889405194
+    },
+    {
+      "titleId": "PPSA15304",
+      "title": "METAL GEAR SOLID Δ: SNAKE EATER",
+      "createdAt": "2026-11-13T14:52:30.775Z",
+      "version": "01.002.004",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0513/d35b305652ee922a72b4020bd5d6ef36675cf526dd4945d1.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0513/d35b305652ee922a72b4020bd5d6ef36675cf526dd4945d1.png",
+      "description": "The Beginning of it All. A remake of the 2004 game METAL GEAR SOLID 3: SNAKE EATER, with the same gripping story and engrossing world, now with all new graphics and 3D audio that enhance the jungle atmosphere. Get ready for the ultimate survival stealth action experience. Everything you love, and more The story, characters, voice acting, gameplay, and music that made the original a sensation return, remade for modern consoles. This evolutionary leap breathes new life into every cutscene, and rebuilds every corner of the world. Authentic to life portrayals The battle damage system has been upgraded, with the wear and tear of Snake's clothes, as well as bruises and bullet wounds on his body, reflected in real time. Injuries will leave their mark on Snake's body permanently, telling a story of each player's unique journey through the game. Deeply immersive experiences Players can elect for a newly added, more modern control style. These intuitive controls let you focus entirely on the game, and the immersive thrills of the survival stealth experience. You can also choose to play with a classic control style that more closely recreates the feel of the original game. Additional Game Modes: ・SNAKE VS MONKEY In this mode, you'll play as Snake, and round up all the escaped apes running amok in each stage! ・FOX HUNT An all-new online multiplayer mode, set in the same world as the main story. This new mode makes use of stealth and survival elements to deliver exciting hide-and-seek-style back-and-forth gameplay. ・Secret Theater Find 8mm film canisters, secretly carried by enemy soldiers, to unlock these humorous takes on certain scenes. You can find scenes from the original Secret Theater, as well as newly created videos. *Secret Theater will be unlocked after finishing the game. *Film canisters carried by soldiers can be collected during initial playthrough. ・GUY SAVAGE Δ The \"Guy Savage\" nightmare game returns in a fully reimagined version that captures the essence of the original while providing a fresh new look from PlatinumGames. Trigger the nightmare sequence during gameplay or clear the entire story mode to unlock it as a bonus mode. *GUY SAVAGE Δ will be unlocked after finishing the game. *A Digital Deluxe Edition of the game is also available, listed separately. Please take care to avoid unintended duplicate transactions.\nRegion: USA\nFirmware: 8.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and Emu updates in shadowmount!\nUpdated: 2026-11-13T13:52:38.399Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Gofile",
+          "url": "https://gofile.io/d/CxdDLuEN"
+        },
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/iq2od54bahgb"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/3jlt0g3c4npb"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/smhwg2iq2d1p"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/4r62nue5rq54"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/0b2ld326mkkr"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/btldak9jbf44"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/1wlukj9fd4wg"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/7fxodi0vmac5"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/kxuixy6rn3c2"
+        },
+        {
+          "name": "Data - pt.10",
+          "url": "https://datanodes.to/76v6682qk1sl"
+        },
+        {
+          "name": "Data - pt.11",
+          "url": "https://datanodes.to/1rp6atebdci3"
+        },
+        {
+          "name": "Data - pt.12",
+          "url": "https://datanodes.to/dvzqnvsc6u79"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/1OQ5WKEWYG"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/H3AbPCP5ij"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/72x0v47cIP"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/eWo2COcdz2"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/sVYBx35KC3"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/cKk3M3eMFz"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/vmlpyZ9mbP"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/siYCkspVF9"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/82zS2zPxRh"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/NZ1D7hiFCm"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/23Xu7quEmn"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/47LTcAYyVm"
+        }
+      ],
+      "sizeBytes": 125488206971
+    },
+    {
+      "titleId": "PPSA08329 & PPSA08330",
+      "title": "God of War Ragnarok",
+      "createdAt": "2026-11-13T13:51:30.373Z",
+      "version": "6.006",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202503/2016/1e48e3b7d11fc2da3de62ad8a2a2d3c2882e1bb4ce6caadb.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202503/2016/1e48e3b7d11fc2da3de62ad8a2a2d3c2882e1bb4ce6caadb.jpg",
+      "description": "From Santa Monica Studio comes the sequel to the critically acclaimed God of War (2018). Join Kratos and Atreus on a mythic journey for answers before Ragnarök arrives. Together, father and son must put everything on the line as they journey to each of the Nine Realms. Throughout stunning mythological landscapes, they’ll face fearsome enemies – from Norse gods to wild beasts – as they prepare for the showdown of their lives. Armed with his trusty weapons of war – including the Leviathan Axe and the Blades of Chaos – Kratos’ deadly skills will be tested like never before as he fights to protect his family. A host of new abilities for him and Atreus also await, leaving room for fluid, expressive and customizable combat in this epic and unflinching tale. All the while, Asgardian forces assemble… - Feel your journey through the Norse realms, made possible by immersive haptic feedback and adaptive trigger functionality. - Bask in the beautiful worlds you travel through, brought to life by stunning art direction and arresting attention to detail. - Take advantage of multidirectional 3D Audio; hear enemies approaching from any direction.¹ ¹ 3D Audio with stereo headphones (analog or USB).\nRegion: USA to EUR Langs\nFirmware: 7.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nCredits: European!\nUpdated: 2026-11-13T12:57:55.641Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/wi9aczgqqhw6"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/47iagmmimixq"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/6w5u8yjerjzb"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/t8da1j0tw1rf"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/szdb5vwkxdiy"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/h5jmus0mc7ux"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/e2oapacfla0i"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/6712ax7bgtk8"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/kc5beetyxwvx"
+        },
+        {
+          "name": "Data - pt.10",
+          "url": "https://datanodes.to/w3093f93ex68"
+        },
+        {
+          "name": "Data - pt.11",
+          "url": "https://datanodes.to/ocvwsbzoeura"
+        },
+        {
+          "name": "Data - pt.12",
+          "url": "https://datanodes.to/9z93iaz9tek0"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/LyoAY1LxcX"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/gcIVZ8B47A"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/NgQp69Pjex"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/ouHh9CxRvq"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/VSdmPlUhGC"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/apcQM7HwAE"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/QyAuL0Wjxz"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/oLxEoydcaS"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/4SwQfU28RR"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/9zqp5eC1sI"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/F8ggQyodOI"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/TGBPgmPACV"
+        },
+        {
+          "name": "Gofile",
+          "url": "https://gofile.io/d/qJIMwlCu"
+        }
+      ],
+      "sizeBytes": 118218974822
+    },
+    {
+      "titleId": "PPSA24662",
+      "title": "F1 25",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.018",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2009/15a5c2ccc34262d0b9c780f7b81c7d95816a0516dc05daaf.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2009/15a5c2ccc34262d0b9c780f7b81c7d95816a0516dc05daaf.png",
+      "description": "This Story is Yours. Leave your mark on the world of racing in F1® 25, the official video game of the 2025 FIA Formula One World Championship™ ● My Team 2.0: Create your own F1® stories as you take control as the Owner of a Formula 1® team. The new gameplay systems allow you to specialize in your preferred areas of team Management, then get behind the wheel of either of your two F1® drivers on race weekends ● Braking Point 3: The legacy of Konnersport is at stake. Can you fight back and finally put yourself in contention for the World Championship? ● Konnersport's Legacy: For the first time ever, extend your Konnersport experience in Career &amp; My Team Modes ● Design your own Team: Enhance both My Team and F1® World cars and create liveries that are more reflective of Formula One® as you customise driver numbers and move, scale, or rotate logos ● Accurate LIDAR Circuits: Experience 5 rebuilt tracks, including fan favourite Suzuka with laser scanned models of the real venues ● New Online Co-op Events: Brand new multiplayer mode in F1® World, where you and your friends race as a squad against AI drivers ● &amp; More: New cinematics, updated podium scenes, and Reverse Tracks on select circuits This game includes optional in-game purchases of virtual currency that can be used to acquire virtual in-game items.\nRegion: EUR\nFirmware: 10.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-13T12:01:47.255Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/ym5f0p4vu5g7"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/jwh6u5jdgy8o"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/bwlso68f1r6h"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/tozffc3u19go"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/wr8ffbxzc345"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/2kz1n22sagbe"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/i8gcgce17ysb"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/gNtIOL34U7"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/vD2xbQnjnR"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/zf346C0leh"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/1rAttxgg3n"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/tIxZjjgdra"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/gfBXlX1h6N"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/fwIYyATkJ6"
+        },
+        {
+          "name": "Viki - DLC",
+          "url": "https://vikingfile.com/f/0W1XxaHx6M"
+        },
+        {
+          "name": "Data - DLC",
+          "url": "https://datanodes.to/fpmdrb0yqbnq"
+        }
+      ],
+      "sizeBytes": 74517682586
+    },
+    {
+      "titleId": "PPSA24913",
+      "title": "Ace Combat 8: Wings of Theve",
+      "createdAt": "2026-11-12T22:36:27.644Z",
+      "version": "1.001.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1823/5929543b280b7ff4707431f09bd5e9e5a4396a1dde269986.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/1823/5929543b280b7ff4707431f09bd5e9e5a4396a1dde269986.png",
+      "description": "※本商品は「STANDARD EDITION」です。他に「DELUXE EDITION」がございます。重複購入にご注意ください。 本製品をプレイするには、ゲーム内に表示されるサービス利用規約に同意する必要があります。 詳しくはhttps://bandainamcoent.co.jp/cs/kiyaku/eula/をご確認ください。 「ACE COMBAT」シリーズは、プレイヤーがエースパイロットとなり、リアルな空を追求したグラフィック空間を戦闘機で自由自在に飛び回る爽快感、自身の状況判断で敵を次々と撃墜・破壊・一掃する快感、そして課せられた難局を打破する達成感を楽しめる、ドラマティックフライトシューティングです。 開発は歴代シリーズを手掛けてきた「PROJECT ACES」が担当。 ■最高峰のグラフィックで体感するフライトシューティング キャンペーンモードでは、精細なグラフィックに加えて、立体的かつ多層構造の雲によって自然現象の美しさや情緒あふれる空を実現。 アーケードライクな操作で臨場感ある世界を自由自在に飛び回り、様々な種類の兵装を使い分けながら敵機・敵兵器を次々に撃墜・破壊・一掃するフライトシューティング体験を提供します。 ■圧倒的な没入感で描かれるエースパイロットの物語 空でのパイロット体験に加え、一人称視点で展開される没入感の高いシネマティックシーンでは、地上でのパイロット体験を新たに提供。 個性豊かな仲間たちと絆を育み、難局を乗り越えて本物のエースパイロットとなっていく達成感を味わえます。 ■シリーズ最大規模のオンラインモード オンラインモード「ACE COMBAT ONLINE」では、 シリーズ初のオンラインビジュアルロビーを導入。航空基地を模したロビーにアバターの姿で降り立ち、世界中のプレイヤーとともにマルチプレイミッションに出撃します。\nRegion: EUR\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount.\nUpdated: 2026-11-12T22:00:23.481Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "viking",
+          "url": "https://vikingfile.com/f/dW37NrxX2r"
+        },
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/o6j7a3jcc0qw"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/butphhejfkyq"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/s2e1rpyi6gqx"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/iz38zhjeq92a"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/m1nsycqr7elb"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/xlmnqvukseh7"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/fw5wlpsocsv2"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/tybnit2q1zxv"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/yaj36wc7m1g3"
+        },
+        {
+          "name": "Data - pt.10",
+          "url": "https://datanodes.to/v87o0msnfzb0"
+        },
+        {
+          "name": "Data - pt.11",
+          "url": "https://datanodes.to/vgmtmfrpxmf6"
+        },
+        {
+          "name": "Data - pt.12",
+          "url": "https://datanodes.to/36te3dnbhdv6"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/VMy0dleca3"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/tLj4Ccq6dq"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/yr4kqmejf4"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/F5CsKWzJFY"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/Xn2lF7TFRN"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/rRe8qtaY6H"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/9WpA7izIMM"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/6NO2uAOKsD"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/oAv2cN2EP2"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/1zFcwhjOuv"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/M1eMEXm6Al"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/CklE3L9zsu"
+        }
+      ],
+      "sizeBytes": 118004226458
+    },
+    {
+      "titleId": "PPSA03671",
+      "title": "Wolverine",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.001.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/0721/e54995d925972b21f0092d0f27a4884f2c883c439514dede.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/0721/e54995d925972b21f0092d0f27a4884f2c883c439514dede.png",
+      "description": "Created in collaboration with Marvel Games, it delivers an all-new original story based on the legendary comic book character. Logan thought he was finished being Wolverine, but the past wasn’t finished with him yet. Three years after walking out on his team, Wolverine rejoins the mutant task force, Team X, in their darkest hour. Driven by his fanatical belief in human superiority, Bolivar Trask is kidnapping mutants. Only Wolverine has what it takes to save them. In his fight for the future, Wolverine must team up with fellow mutants across the globe through locations like Canada, Japan, and the Marvel island nation of Madripoor. With the fate of humans and mutants hanging in the balance, Logan knows the world needs a hero; however, they’ll have to settle for Wolverine. Play as Wolverine Ravage enemies with explosive brutality and unleash razor-sharp adamantium claws to deploy fast, fluid attacks and overcome impossible odds. Evolve with unique, swappable Techniques and Adaptations to stalk, ambush, or overpower foes from Bolivar Trask’s guns-for-hire Reavers to iconic villains like the boorish Omega Red. Build aggressive momentum to gain Rage and eviscerate the opposition, because what he does isn’t very nice. An Original, Emotionally Charged Story Beneath Wolverine’s gruff exterior and violent temperament is a man fighting for a cause greater than himself. Mutants face the threat of annihilation and he’s the best chance they’ve got. Confront a dark past and experience an emotionally charged story driven by identity, loyalty, and the struggle within to uncover the truth of Wolverine’s forgotten past. A Global, Adrenaline-Fueled Journey Slice into enemies across detailed locales such as the frosted Canadian Wilderness, the narrow streets of Tokyo, and the high and low districts of the island nation of Madripoor. Experience thrilling set pieces throughout Wolverine’s journey in this global fight for mutant survival.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-12T21:08:30.368Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/xnw3p7nk7qer"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/kkgru4th3rhx"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/1uj8vnjy7eoi"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/sjcq0mm9wdd8"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/jkkkh0qspqcb"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/sj8e5nkysh3k"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/eo0hzy9azekx"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/q5rwt6n1a04s"
+        },
+        {
+          "name": "Data - pt.9",
+          "url": "https://datanodes.to/nlsnj25ovvbh"
+        },
+        {
+          "name": "Data - pt.10",
+          "url": "https://datanodes.to/aduthx5s2sow"
+        },
+        {
+          "name": "Data - pt.11",
+          "url": "https://datanodes.to/nw0y7mm8imiq"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/qAT88ZHOZk"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/6igtVsGGJm"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/wCO01DfhDR"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/1AgiNPSmzs"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/jv2YDd4ZEC"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/zu0JffW0Tn"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/0Pevwow6Cd"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/LM7waaVB3T"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/zwr441OuIA"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/37ecnMfNTo"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/O5oRpzgPto"
+        }
+      ],
+      "sizeBytes": 109521666048
+    },
+    {
+      "titleId": "PPSA34015",
+      "title": "FC 27",
+      "createdAt": "2026-11-12T14:26:29.381Z",
+      "version": "1.000.004",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2322/78e0ba12f88a79c454b6b17d1638f2ae0b2943f1dbc98a17.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202607/2322/78e0ba12f88a79c454b6b17d1638f2ae0b2943f1dbc98a17.png",
+      "description": "EA SPORTS FC™ 27 includes PS4 &amp; PS5 versions. Welcome to The World’s Game in EA SPORTS FC™ 27. Step into The Grounds‡‡, a social football playground where the streets meet the stadium. From Kickabouts and 1v1s to teaming up with friends in Clubs, connect with renowned football mentors, improve your abilities, and express yourself on and off the pitch. Feel greater control in every game mode with more fluid, true-to-life gameplay, featuring dynamic corners, enhanced attacking awareness, player-focused defending tailored for competitive play, and more community-driven innovations. Sign your next star in Manager Career through a rebuilt Transfer Market with realistic player values and active club bidding. Master new negotiation tactics, including performance and buy-back clauses, as Dynamic OVRs reflect player form, morale, and fitness across every club. Immortalise your dream club in Football Ultimate Team™ with the brand-new FUT Gallery. Curate your favourite Player Items to grow your Gallery Level, earn rewards, and build your Club’s identity throughout the new football season. Experience unrivalled authenticity in EA SPORTS FC™ 27, with match data from the world’s top leagues powering 21,000+ licensed players. ‡‡The Grounds mode, including Clubs, only available on PlayStation 5 version.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Install the unlocker before launching the game. It installs like any other pkg. Technically, squad updates can also be installed, although I haven't tested it.\nCredits: This is the unlocker\nUpdated: 2026-11-12T14:19:01.835Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Data - pt.1",
+          "url": "https://datanodes.to/rgmba81fofww"
+        },
+        {
+          "name": "Data - pt.2",
+          "url": "https://datanodes.to/2oyrhglzxbnh"
+        },
+        {
+          "name": "Data - pt.3",
+          "url": "https://datanodes.to/z5ryav7en1cl"
+        },
+        {
+          "name": "Data - pt.4",
+          "url": "https://datanodes.to/ebl06zv4jdob"
+        },
+        {
+          "name": "Data - pt.5",
+          "url": "https://datanodes.to/aa2ejamnorxk"
+        },
+        {
+          "name": "Data - pt.6",
+          "url": "https://datanodes.to/p3sp8oybt1de"
+        },
+        {
+          "name": "Data - pt.7",
+          "url": "https://datanodes.to/36uxnxazcv9x"
+        },
+        {
+          "name": "Data - pt.8",
+          "url": "https://datanodes.to/7vgxlj3j7prw"
+        },
+        {
+          "name": "Data - DLC",
+          "url": "https://datanodes.to/ka0g7rups4vx"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/QAZASyo3ir"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/r1MTM2bLhN"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/wBFOTi725I"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/6KnJxJS3G7"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/UYeU0awT4U"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/OyXyPAvtks"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/ufV7VFXc3w"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/fpa0QZl7D1"
+        },
+        {
+          "name": "Viki - DLC",
+          "url": "https://vikingfile.com/f/ZAUbdaL7sJ"
+        }
+      ],
+      "sizeBytes": 74839805133
+    },
+    {
+      "titleId": "PPSA19534",
+      "title": "Battlefield 6",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.000.016",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/2217/7fb7a918a4b9dd1c98de342ec3adfe1421d06627f60397b9.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/2217/7fb7a918a4b9dd1c98de342ec3adfe1421d06627f60397b9.png",
+      "description": "The ultimate all-out warfare experience. Fight in high-intensity infantry combat. Rip through the skies in aerial dogfights. Demolish your environment for a strategic advantage. Harness complete control over every action and movement using the Kinesthetic Combat System. In a war of tanks, fighter jets, and massive combat arsenals—the deadliest weapon is your squad. This is Battlefield 6. MULTIPLAYER Victory, however you envision it. Battlefield 6 has more ways to win than ever before. Seize glory in iconic massive maps or jump into fast-paced close quarters combat. Change the rules of war with the revamped and refined Battlefield Portal. Fight in iconic locations all over the world including Cairo, Brooklyn, Gibraltar, Japan, and more. More ways to play. More paths to victory. GLOBAL SCALE CAMPAIGN Drive tanks across the Sahara. Storm the beaches of Gibraltar. Defend New York from invasion. Join an elite squad of Marine Raiders fighting relentlessly to save a world on the edge of collapse. PORTAL Redraw the lines of battle. Battlefield Portal is a massive sandbox where creators and players can push Battlefield to the limit. Take unprecedented control of your environment by moving, scaling, and duplicating objects. Create a completely unique game mode using NPC scripting and a customizable UI. Legendary Battlefield experiences are waiting to be created—show ‘em what you’re made of. This game includes optional in-game purchases of virtual currency that can be used to acquire virtual in-game items.\nRegion: USA to EUR Langs\nFirmware: 10.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nUpdated: 2026-11-11T23:05:03.512Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/elGLrPBpxg"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/ocGBtNPgJ5"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/4Eit7b5Zai"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/lLxZa2Js2G"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/uCTTiEQgjc"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/6QA2RAuo3k"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/DkZZVBPemQ"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/Ya9iMsjlIG"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/nmSYpXAKmm"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/s5aFtPWP7n"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/GDfepq40dP"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/p270RXgGj8"
+        },
+        {
+          "name": "Viki - pt.13",
+          "url": "https://vikingfile.com/f/myB3pFUaYY"
+        }
+      ],
+      "sizeBytes": 133143986176
+    },
+    {
+      "titleId": "PPSA24884",
+      "title": "Starfield",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.000.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2416/936885b92da764db51a40d174c4d36453f7a2581aa495ffd.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/2416/936885b92da764db51a40d174c4d36453f7a2581aa495ffd.png",
+      "description": "Starfield is the first new universe in over 25 years from Bethesda Game Studios, the award-winning creators of The Elder Scrolls V: Skyrim and Fallout 4. In this next generation role-playing game set amongst the stars, create any character you want and explore with unparalleled freedom as you embark on an epic journey to answer humanity’s greatest mystery. In the year 2330, humanity has ventured beyond our solar system, settling new planets, and living as a spacefaring people. You will join Constellation – the last group of space explorers seeking rare artifacts throughout the galaxy – and navigate the vast expanse of space in Bethesda Game Studios’ biggest and most ambitious game. TELL YOUR STORY In Starfield the most important story is the one you tell with your character. Start your journey by customizing your appearance and deciding your Background and Traits. Will you be an experienced explorer, a charming diplomat, a stealthy cyber runner, or something else entirely? The choice is yours. Decide who you will be and what you will become. EXPLORE OUTER SPACE Venture through the stars and explore more than 1000 planets. Navigate bustling cities, explore dangerous bases, and traverse wild landscapes. Meet and recruit a memorable cast of characters, join in the adventures of various factions, and embark on quests across the Settled Systems. A new story or experience is always waiting to be discovered. CAPTAIN THE SHIP OF YOUR DREAMS Pilot and command the ship of your dreams. Personalize the look of your ship, modify critical systems including weapons and shields, and assign crew members to provide unique bonuses. In deep space you will engage in high-stakes dogfights, encounter random missions, dock at star stations, and even board and commandeer enemy ships to add to your collection. DISCOVER, COLLECT, BUILD Explore planets and discover the fauna, flora, and resources needed to craft everything from medicine and food to equipment and weapons. Build outposts and hire a crew to passively extract materials and establish cargo links to transfer resources between them. Invest these raw materials into research projects to unlock unique crafting recipes. LOCK AND LOAD Space can be a dangerous place. A refined combat system gives you the tools to deal with any situation. Whether you prefer long-range rifles, laser weapons, or demolitions, each weapon type can be modified to complement your playstyle. Zero G environments add a chaotic spectacle to combat, while boost packs give players freedom to maneuver like never before.\nRegion: USA to EUR Langs\nFirmware: 11.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-11T22:24:20.856Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/2rq9sAWGbB"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/Fokp08qTj7"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/IORxk8MWXp"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/0vMUEtuyOL"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/iMJwitxAzn"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/aj6GxbWwev"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/yVBazMxCTV"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/5ogthWsEOg"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/3tiAZ63IDL"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/zPCBEVpwL7"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/TtrmZhkIkP"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/jToCyzjK2v"
+        },
+        {
+          "name": "Viki - pt.13",
+          "url": "https://vikingfile.com/f/ZfMloBvWyh"
+        }
+      ],
+      "sizeBytes": 129063767245
+    },
+    {
+      "titleId": "PPSA24096",
+      "title": "Cronos The New Dawn",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.010",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202410/1511/3775082b58945a3e9659f576feb92e0102332ac42f87ec24.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202410/1511/3775082b58945a3e9659f576feb92e0102332ac42f87ec24.png",
+      "description": "Set in a grim world where Eastern European brutalism meets retro-futurist technology, Cronos: The New Dawn lets you experience a gripping story that straddles the line between past and future. In the past, you will witness a world in the throes of The Change, a cataclysmic event that forever altered humanity. Meanwhile, in the ravaged wastelands of the future, every moment is a fight for survival against dangerous abominations that will test both your reflexes and your tactical thinking. You are a Traveler acting as an agent for the enigmatic Collective, tasked with scouring the wastelands of the future in search of specific time rifts that will transport you back to 1980s-era Poland. Harvester of Souls Your mission is to locate key people from the past who perished in the ensuing apocalypse. Using your all-powerful Harvester, you can extract their Essences and have them accompany you into the future. Plan Every Move In a desolate world filled with ever-present danger, your survival hinges on your ability to strategize and plan ahead. The enemies you’ll encounter are nightmarish creatures, born from the remnants of humanity – defeating them will require you to make full use of your arsenal. During battle, quick decisions can mean the difference between life and death.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-11T21:47:18.928Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/yrNgUAjwkD"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/WZbjT7mMVL"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/0Ej7py2Cn5"
+        }
+      ],
+      "sizeBytes": 22226455757
+    },
+    {
+      "titleId": "PPSA35399",
+      "title": "Castlevania Beltmon's Curse",
+      "createdAt": "2026-11-11T22:10:23.148Z",
+      "version": "1.0",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2005/4074e46383e491ab25df83141a556f69aa7c005fa92ffa4b.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2005/4074e46383e491ab25df83141a556f69aa7c005fa92ffa4b.png",
+      "description": "Medieval Paris, Where the Tolling Bells Herald the End 1499. Paris is engulfed in flames as monstrous creatures suddenly emerge from the shadows. Trevor Belmont, the hero who defeated Dracula, ventures into the burning streets with his daughter, Rose Belmont. Armed with the legendary holy whip, the Vampire Killer, they hunt down the beasts bleeding from the looming castle. Rose is soon swept up in the dark conspiracy that lurks beneath. Will she succeed in saving Paris from devastation? Satisfying Whip Action Castlevania's iconic whip action is more satisfying than ever! Crack your whip to move around freely like a trapeze artist! Master the whip mechanics and be creative to pounce on your prey like a wolf in fast-paced combat! Diverse Bosses and the Arcana System Face-off against legendary bosses including Death, Medusa and Carmilla in addition to enigmatic new bosses such as Joan of Arc. Once defeated, bosses are sealed into Rose's tarot cards, turning them into Arcana - use their skills to cast spells and obtain unique special actions Customize Your Battle Style with Weapons and Relics Customize Rose’s battle style by using a variety of equipment, including weapons spanning seven distinct categories and Relics that trigger powerful effects through both offense and defense. Combine equipment you discover through exploration to create your own playstyle! Iconic Castlevania Atmosphere, Reimagined in New Stages From iconic Gothic aesthetics to vivid, refined visuals, the game presents a fresh take on the world of Castlevania. Explore maps filled with both new features and familiar elements inspired by classic Castlevania titles.\nRegion: USA to EUR Langs\nFirmware: 11.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nUpdated: 2026-11-11T21:40:35.301Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/jTIQU73eG8"
+        }
+      ],
+      "sizeBytes": 4155380859
+    },
+    {
+      "titleId": "PPSA21567",
+      "title": "Astro Bot",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.019",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/8f15268257b878597757fcc5f2c9545840867bc71fc863b1.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/0500/8f15268257b878597757fcc5f2c9545840867bc71fc863b1.png",
+      "description": "JOIN ASTRO ON A SUPERSIZED SPACE ADVENTURE When the PS5® mothership is attacked by ASTRO’s long-standing galactic nemesis, scrambling its wires and scattering the crew throughout space, only ASTRO can make things right! Setting off on his biggest mission yet, he needs your help to rescue the stranded crew and rebuild the mothership. Make the most of ASTRO’s new power-ups, handcrafted to level up your immersion: from springy punches and rockets all the way to a giant sponge! Buckle up for some epic PlayStation® camaraderie, join forces with your favourite PlayStation icons and show the universe that small is mighty in this fresh new ASTRO adventure, exclusive to PS5 consoles! - Embark on a galactic quest and explore more than 50 planets in search of ASTRO’s lost crew. - Dash, swing, and rocket-punch your way through this journey, with all-new power-ups. - Feel the world come to life via your DualSense® wireless controller. - Team up with iconic PlayStation heroes to save the galaxy!\nRegion: USA to EUR Langs\nFirmware: 4.xx+, 9.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-11T21:33:46.937Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/3tivgyPMVf"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/663yKkRW37"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/GyIXeWnbdO"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/e17u9Dj6Jt"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/im1b0w2Kzs"
+        }
+      ],
+      "sizeBytes": 46278272614
+    },
+    {
+      "titleId": "PPSA14175",
+      "title": "Taxi Life: A City Driving Simulator",
+      "createdAt": "2026-11-11T21:09:25.603Z",
+      "version": "1.018",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202310/3014/3f1302454b41ea3a463c1cfdb51cb167e435214707d53a56.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202310/3014/3f1302454b41ea3a463c1cfdb51cb167e435214707d53a56.jpg",
+      "description": "Take control of both your car and your business, transporting passengers across Barcelona while building up your transport empire! After arriving in Barcelona with nothing but a car and a dream, tackle this iconic city’s bustling streets, taking your customers wherever they need to go while offering an impeccable service. You will need to follow the rules of the road, deal with impatient tourists, the changing weather conditions and rush hours, adapt your routes to avoid traffic jams and accidents… and, most of all, ensure your customers are pleased with your service to earn the best ratings and the most generous tips! EXPLORE BARCELONA • Transport your passengers across 286 miles (460 km) of roads in the game’s 1:1 scale reproduction of a large part of Barcelona • Unwind between two fares by exploring the city, discovering its hidden features and points of interest • Earn experience points by driving, exploring and interacting with your customers, and use them to unlock new skills, such as the ability to accept longer fares DRIVE • Pick up customers and take them to their destination • Follow the rules of the road and avoid collisions with vehicles and pedestrians • Adapt your route based on random events (accidents, roadworks, parades, etc.) • Increase your braking distance when the road surface is wet to avoid collisions • Monitor your dashboard warning lights and refuel or recharge your vehicle, or have it serviced whenever necessary MANAGE YOUR BUSINESS • Buy new cars with the profits from your fares • Hire employees based on their profile and assign them to cars, neighbourhoods and time slots • Make the right decisions to maximise your profits! CHALLENGE YOURSELF If you like a challenge, you can accept special missions under two categories: • Drive as fast as possible (with no speeding fines issued) • Avoid breaking any traffic rules KEEP YOUR CLIENTS HAPPY • Meet your passengers' requests: chat, change the radio station, open the window, etc. • Provide impeccable service to earn tips and excellent reviews PERSONALISE YOUR CARS • Select your driving style and car models, such as electric or petrol vehicles, and automatic, semi-automatic or manual gearbox • Customise your vehicles: size, colour, driver's cab, wheels, accessories, etc. • Upgrade your vehicles using your profits and experience!\nRegion: EUR\nFirmware: 11.xx+\nAPR: apr-emu-v0.4.2.1\nUpdated: 2026-11-11T21:03:26.132Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/c8RC82mnqz"
+        }
+      ],
+      "sizeBytes": 17501991731
+    },
+    {
+      "titleId": "PPSA22327",
+      "title": "Forza Horizon 5",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.685.672",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202501/2717/42b3ee6b1b2094212231b0b0a82824f687fc5c4dc9bde31c.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202501/2717/42b3ee6b1b2094212231b0b0a82824f687fc5c4dc9bde31c.png",
+      "description": "Your Ultimate Horizon Adventure awaits! Explore the vibrant and ever-evolving open world landscapes of Mexico with limitless, fun driving action in hundreds of the world’s greatest cars.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Run ps5-account-tools first before playing the game. It's a payload. You'll need to do that only once, and you'll be fake signed and activated forever. Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-11T16:43:02.425Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/Zx28Umn6tQ"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/1jmPKiGnsi"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/QuBk44mxab"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/sMLgQ4oIfh"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/z4nkOxRgG0"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/IjLoLabCMV"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/ajmy9NG7kG"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/JdgYI0ot9s"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/6GW3SBB6KG"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/YsenO85tse"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/gYghp2f7UU"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/D114YOmjXs"
+        },
+        {
+          "name": "Viki - pt.13",
+          "url": "https://vikingfile.com/f/aHVLUqUZkL"
+        },
+        {
+          "name": "Viki - pt.14",
+          "url": "https://vikingfile.com/f/W38jlIdF33"
+        },
+        {
+          "name": "Viki - pt.15",
+          "url": "https://vikingfile.com/f/tU98MhPW8i"
+        },
+        {
+          "name": "Viki - pt.16",
+          "url": "https://vikingfile.com/f/tRSleCwNkC"
+        }
+      ],
+      "sizeBytes": 163208757248
+    },
+    {
+      "titleId": "PPSA28997",
+      "title": "God of War - Sons of Sparta",
+      "createdAt": "2026-11-11T17:05:25.892Z",
+      "version": "01.008.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/0519/7260437aae9056d5bd34225e4fce98ca8bb0ef1cd8e6471f.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202602/0519/7260437aae9056d5bd34225e4fce98ca8bb0ef1cd8e6471f.png",
+      "description": "Join young Kratos and Deimos, sons of Sparta, on a Greek odyssey as they discover the meaning of duty and honor. BEFORE THE LEGEND Every legend has a beginning – before he was a God, before he was a father, Kratos was a young Spartan! Experience an untold chapter in Kratos’ journey set during the harsh years of Spartan training alongside his brother Deimos. Through endless trials, their minds, bodies, and hearts have been molded to become Spartan soldiers for whom duty and honor mean everything. After a fellow cadet goes missing, Kratos and Deimos vow to find him and embark on an adventure that will put their training and Spartan spirit to the test. DUTY AND HONOR Guide Kratos and Deimos through vibrant and varied 2D levels that will test your combat prowess and cleverness as you search for their missing friend. Solve environmental puzzles, face down enemies both new and familiar, and topple mythological bosses that will test the limits of your Spartan training. Through adversity and cooperation, they’ll learn what it means to be a true Spartan, brother, and friend. RETRO MEETS GOD OF WAR An engaging and exciting 2D action-adventure brought to life from the talented pixel superstars at Mega Cat Studios. Experience retro classic gameplay with God of War’s signature spectacle, action, and heartfelt storytelling. Single Player or 2 Player Couch Co-Op mode\nRegion: USA to EUR Languages\nFirmware: 4.xx+\nAPR: Yes\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-11T16:06:25.527Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Gofile",
+          "url": "https://gofile.io/d/nzIJ2JCB"
+        },
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/GaQJwUeC41"
+        }
+      ],
+      "sizeBytes": 14066017894
+    },
+    {
+      "titleId": "PPSA29161",
+      "title": "Tales of Eternia Remastered",
+      "createdAt": "2026-11-11T16:04:25.514Z",
+      "version": "02.000.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2219/2fe0d5ccf1429d2e1792f0c76f2ff3e4cdc9605b3a621c47.png",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/2219/2fe0d5ccf1429d2e1792f0c76f2ff3e4cdc9605b3a621c47.png",
+      "description": "Experience Tales of Eternia, remastered for the first time ever. • An Epic Journey with Two Worlds at Stake Journey to Eternia, a world split into two isolated realms, Inferia and Celestia. In the remote Inferian village of Rasheans, Reid Hershel and his childhood friend Farah Oersted meet a mysterious girl named Meredy. During their journey to discover Meredy's origins, the group discovers that a collision called the \"Great Fall\" threatens both Inferia and Celesita. Harnessing the power of elemental spirits known as the Greater Craymels, Reid and his companions embark on an epic journey to save the two realms from catastrophe. • Exhilarating Battle Action with Speed and Freedom Featuring the Aggressive Linear Motion Battle System (A-LMBS), which enables diverse Arte usage, continued combos, and coordination with each unique party member. Experience thrilling combat as you outmaneuver enemies and defeat them one after another with fast-paced, dynamic 2D battle action. • The Same Moving Experience, Now Easier to Play Gameplay is better than ever with the quality-of-life features that have been added, including destination markers, the ability to disable enemy encounters, and high-speed mode during auto-battle. Additionally, graphics and SFX can be toggled between modes, allowing you to experience the nostalgic atmosphere of the original game.\nRegion: JPN to EUR Languages\nFirmware: 12.xx+\nAPR: apr-emu-v0.4.2.1\nNotes: North American version has JP region game\nUpdated: 2026-11-11T15:56:44.853Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/yuSpcGuzC7"
+        }
+      ],
+      "sizeBytes": 7902739825
+    },
+    {
+      "titleId": "PPSA26344",
+      "title": "Ghost of Yotei Complete Edition + DLC",
+      "createdAt": "2026-11-11T15:03:24.995Z",
+      "version": "2.002",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/050bb77f895515e0b0e906b0b9d75b6174b37eece097b462.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202504/2116/050bb77f895515e0b0e906b0b9d75b6174b37eece097b462.png",
+      "description": "The Echoes of Sekigahara and Most Wanted in-game content will be included as part of an update (patch v.2.0). This standalone experience follows Atsu, a haunted and lone mercenary, as she sets out to hunt down those who killed her family many years prior. Her quest across Ezo takes her to unexplored lands as she seeks out a gang of six outlaws. Along the way, help her find unlikely allies, forge lasting bonds and build a path towards healing and redemption. Engage in fluid and dynamic combat, go beyond the bloodshed and piece together Atsu’s unconventional tale living at the periphery of 1600s Northern Japan, obscured by the shadows of Mount Yōtei. Included in this version: Echoes of Sekigahara• • Delve into a new story expansion into Atsu’s past, explore a whole new area of Ezo, learn more of the Battle of Sekigahara and master a type of new weapon in combat. Most Wanted Game Mode• • Tackle a brand-new combat survival mode, in which you fight off waves of new enemies and challenging boss encounters – while unlocking new weapons, cosmetics and even new playable characters. Ghost of Yōtei™ Legends• • Team up with friends in this co-op multiplayer game mode and challenge monstruous, supernatural versions of the Yōtei Six.² Its core game modes include: Survival, Story and Incursion.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-11T14:04:49.219Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/mWCgeRC2B9"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/AwEvUI4oJc"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/tFYqgB7bkf"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/nEdWTaLHwa"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/QdnQvfJvux"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/MGBEOPUzDS"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/rh6Ac0hSHn"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/GYmeOWVXQh"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/zrTljPUKzz"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/xE7ErKxtfI"
+        },
+        {
+          "name": "Viki - pt.11",
+          "url": "https://vikingfile.com/f/eMwGUdb7Jg"
+        },
+        {
+          "name": "Viki - pt.12",
+          "url": "https://vikingfile.com/f/3joL6BXXON"
+        },
+        {
+          "name": "Viki - pt.13",
+          "url": "https://vikingfile.com/f/1AoYeKZTUM"
+        },
+        {
+          "name": "Viki - pt.14",
+          "url": "https://vikingfile.com/f/XjlmmW3sFr"
+        },
+        {
+          "name": "Viki - DLC",
+          "url": "https://vikingfile.com/f/SUFpiBjwU4"
+        }
+      ],
+      "sizeBytes": 141733920768
+    },
+    {
+      "titleId": "PPSA16833",
+      "title": "LEGO® Batman™: Legacy of the Dark Knight",
+      "createdAt": "2026-11-11T13:01:24.559Z",
+      "version": "01.010.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/1316/3302f35b66691aa405aee31624c0c95fe73081be8e0c75bb.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202508/1316/3302f35b66691aa405aee31624c0c95fe73081be8e0c75bb.png",
+      "description": "Full base game includes: • Main Story - Bruce Wayne’s journey from origin to legend as he trains with The League of Shadows, becomes the hero of Gotham City, and forges a new family of allies with Jim Gordon, Catwoman, Robin, Nightwing, and Batgirl. Confront an ever-growing threat from across Batman’s Rogues Gallery as you face The Joker, The Penguin, Mr. Freeze, Poison Ivy, Bane, and more. • 7 Playable Characters - Batman, Jim Gordon, Robin, Nightwing, Batgirl, Catwoman, and Talia al Ghul each bring unique skills and signature gadgets as you uncover crimes, complete challenges, and explore an immersive Gotham City full of secrets and surprises. • 100 Suits - Inspired by Batman’s 86-year legacy, you’ll find an array of Batsuits alongside individual outfits for every playable character. • 20+ Vehicles - A range of Batmobiles and Batcycles to drive around Gotham City's open world in style. Including iconic rides like the legendary Tumbler. • 250+ Batcave Props &amp; Trophies - Customize and display a wide range of items to personalize your Batcave and celebrate your achievements. Are you ready to build the legacy of the Dark Knight?\nRegion: USA\nFirmware: 5.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and ampr emu in shadowmount!\nUpdated: 2026-11-11T12:49:40.294Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Gofile",
+          "url": "https://gofile.io/d/IdriyqKJ"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/LSpI2JrCWT"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/oSf04q2yT4"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/ND4awV1ZJa"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/noloo0UdfP"
+        }
+      ],
+      "sizeBytes": 41263898296
+    },
+    {
+      "titleId": "PPSA33286",
+      "title": "Silent Hill Townfall",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "2.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1407/420dcf45979ace1b7c97122a2dc0eb479428590ecab89c2b.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1407/420dcf45979ace1b7c97122a2dc0eb479428590ecab89c2b.png",
+      "description": "脅威から身を潜める緊張、死と隣り合わせの戦闘、そして物語に密接に絡みつくパズルが、霧に沈んだ真実を静かに暴き出していく。 全編を通して一人称視点で描かれる本作では、不安定に信号を拾うポケットテレビをはじめ、限られたアイテムや武器を駆使しながら生き延びることが求められる。 スコットランドの冷たい海に浮かぶ架空の孤島を舞台とした、新たなサイコロジカルホラー。 【あらすじ】 灰色の海に流され、冷たい海に浮かぶ孤島セントアメリアへ漂着したサイモン・オーデル。 しかし町に人の姿はなく、深い霧と静寂に支配されていた。「状況を正す」という目的だけを頼りに、町や住民と自身との繋がりを探しながら彷徨うサイモンは、やがて町の深淵へと足を踏み入れていく。 散りばめられた謎と断片的な物語が結び付き、徐々に明かされていく凄惨な過去。 だが、町の深淵を覗くことは、皮肉にもサイモン自身の覚悟と向き合うことだった......。 1996年のセントアメリアでの探索 霧に沈んだ通り、人が消えた憩いの場、忘れ去られた町角。町が持つ空気と歴史が、静かに物語を紡ぎ出します。 真実と虚構が曖昧に混ざり合う、まるで現実に息づいているかのようなセントアメリアの町がプレイヤーを深みへと誘(いざな)います。 脳裏に深く刻まれる新しいSILENT HILL 美しく霧に包まれたスコットランドの町並みを舞台に、忘れがたい物語が紡がれます。本作は単なる恐怖演出にとどまらず、喪失や内省、そしてその陰に潜む代償を描く物語です。静かなひとときや些細な違和感、サイモンの過去が落とす長い影から、恐怖がじわりと滲み出していきます。 判断が試されるステルスとコンバット体験 近接武器による攻撃とガードを駆使して立ち向かうか、距離を保ち、銃火器を用いて応戦するか。状況に応じた判断が求められるコンバット体験となっています。 プレイヤーは、手持ちの装備や周囲の環境を活かしながら、敵にどのように対峙するかを選択できます。 CRTVが導く、ナラティブに紐づいた謎解き体験 シリーズの定番であったラジオは、「CRTV」というポケットテレビに生まれ変わります。周囲に潜む脅威や物語の断片、そして謎解きのヒントは、不安定なアナログ信号となって漂い、CRTVをチューニングすることで拾うことができます。 一人称視点で描かれる「SILENT HILL」 本作は「SILENT HILL」シリーズのフルレングス作品として初めて、一人称視点を採用しています。プレイヤーは主人公サイモンの視点を通して、霧に包まれた町や迫り来る異変を、より間近に体験することになります。 マルチエンディング プレイヤーの取ってきた行動が反映されたエンディングは、クリア後もなおプレイヤーの心に長い余韻を刻み込みます。 緊張を高めるサウンド 軋む音や歪んだ信号、遠くで響く呻き声。創意工夫に富んだサウンドデザインが、濃密で恐ろしい音の世界を描き出します。Pilotpriestが手がける本作のダイナミックなサウンドトラックは、プレイヤーや敵の挙動に応じて変化し、アクションとステルスの緩急に合わせて緊張と解放感を演出します。\nRegion: USA\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nUpdated: 2026-11-11T00:42:15.110Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/cB48RPevu5"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/X4jXE6U6fi"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/0m5AHX6wAS"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/k3lCzsnbHb"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/8PX6eYxopy"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/hX9WWSCg7x"
+        }
+      ],
+      "sizeBytes": 61310658150
+    },
+    {
+      "titleId": "PPSA07370",
+      "title": "Madison",
+      "createdAt": "2026-11-11T00:49:23.351Z",
+      "version": "1.0",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0516/f7oW1UcdrCvZZ3Vfb1DZySY8.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202205/0516/f7oW1UcdrCvZZ3Vfb1DZySY8.png",
+      "description": "Science does not lie. ‘The Science of Scare Project’ confirmed the award winning MADiSON is the scariest game EVER. What would you do if you woke up locked in a dark room, with your hands covered in blood – your sister and mother massacred? MADiSON is an immersive and terrifying first-person psychological horror game, featuring disturbing gameplay and an unsettling and compelling narrative. With the help of an ‘possessed’ instant camera, connect the human world with the beyond. Solve puzzles, explore your surroundings and most importantly, survive. Throughout your journey you are haunted by MADiSON, the ghost of an evil murderer, who is forcing you to continue a gory ritual started decades ago and commit abominable acts. She wants you to finish her sinister ceremony. Do you have the strength to resist? It’s not just her that you need to worry about. There is more than one evil entity in MADiSON and every character has a disturbing story that blends seamlessly into the main narrative. Use the instant camera to survive this torture. Develop the photos you take manually and face the fear of unveiling the truth. Search everything, pick up elements and interact with them to survive the entities. Randomly activated events and changing puzzles throughout the game assures a higher level of replayability as you get lost in this immersive and terrifying experience. Watch every step you make and be careful not to attract any unwanted attention. You won’t be alone.\nRegion: EUR\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nUpdated: 2026-11-11T00:15:58.532Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/igtBQ4Y5Ti"
+        }
+      ],
+      "sizeBytes": 4155380859
+    },
+    {
+      "titleId": "PPSA01288",
+      "title": "Sackboy A Big Adventure",
+      "createdAt": "2026-11-11T00:49:23.351Z",
+      "version": "01.14",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/img/rnd/202010/1614/TJiBEQMJ9qa93lWBu4sKScY9.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/img/rnd/202010/1614/TJiBEQMJ9qa93lWBu4sKScY9.png",
+      "description": "Face thrilling, unpredictable challenges as you explore distinctive hand-crafted lands through deeply immersive and expressive controls. Go solo in an epic race against time stuffed with danger and peril — or create teams of two to four adventurers for fun-packed party play as you work together to overcome nefarious tasks however you can imagine. Can you save Craftworld from the dastardly Vex and his nightmarish Topsy Turver device... and become the Knitted Knight of legend? • PERILOUS PLATFORMING EXPERIENCE Explore here, there and everywhere as you utilize Sackboy's cool, diverse moveset to face a huge variety of thrilling challenges, fierce enemies and startling surprises. • COLLABORATIVE, CHAOTIC AND JOYFUL MULTIPLAYER Take on side-splitting challenges in local and online party play. Parties can play through the whole game — including unmissable co-op-only levels. • RE-STUFFED. RE-STITCHED. RE-ZIPPED. Sackboy returns to the big time, stuffed with fresh moves and game-changing gadgets in an awe-inspiring and downright fun 3D adventure in this new but familiar world. If you already own the PS4™ version of this game, you can get the PS5™ digital version at no extra cost and you do not need to purchase this product. Owners of a PS4™ disc copy must insert it into the PS5™ every time they want to download or play the PS5™ digital version. PS4™-game-disc owners who buy the PS5™ Digital Edition disc-free console will not be able to get the PS5™ version at no extra cost.\nRegion: EUR\nFirmware: 1.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nUpdated: 2026-11-11T00:09:34.110Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/0voNsQqm6r"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/w2elsoMeLo"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/F74iKp1cbb"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/1NpAAP2sSE"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/Y9HphXQg4H"
+        }
+      ],
+      "sizeBytes": 34467112550
+    },
+    {
+      "titleId": "PPSA07230",
+      "title": "Assassin's Creed Mirage",
+      "createdAt": "2026-11-10T23:48:34.221Z",
+      "version": "01.012.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1718/phwiQjbJddEg979YucUoP3Vr.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1718/phwiQjbJddEg979YucUoP3Vr.png",
+      "description": "VALLEY OF MEMORY Enjoy 6 hours of new gameplay in Valley of Memory, a free major update that expands Basim’s story and introduces the breathtaking new region of AlUla, with gameplay improvements across the full game. THE ULTIMATE ASSASSIN Become the most versatile and resourceful Assassin in franchise history. Parkour seamlessly through the city and leverage the largest assortment of tools to date. Get contracts and upgrades at the Assassin’s bureaus, collect vital clues, and stealthily take down targets with more visceral assassinations than ever before. A TRIBUTE TO AN ORIGINAL Experience a modern take on the iconic features and gameplay that have defined the franchise. Journey to Alamut, the legendary home of the Assassins who laid the foundations of the Creed, in this heartfelt homage to the game that started it all. AN IMMERSIVE, REACTIVE CITY Explore an incredibly dense and vibrant city whose inhabitants react to your every move. Uncover the secrets of four unique districts, from the industrial Karkh to the lush gardens of the Round City. Discover surprising world events and interact with historical figures that shaped the Golden Age of Baghdad. A POWERFUL COMING-OF-AGE STORY Follow Basim’s journey in this tightly crafted, narrative-driven action-adventure experience. Witness his transformation from a defiant young thief to a Master Assassin as he meets allies, mentors, and foes who shape his destiny. If you already own the PS4® version of this game, you can get the PS5® digital version at no extra cost and you do not need to purchase this product. Owners of a PS4® disc copy must insert it into the PS5® every time they want to download or play the PS5® digital version. PS4® game disc owners who buy the PS5® Digital Edition disc-free console will not be able to get the PS5® version at no extra cost. Internet connection, Ubisoft Account and PlayStation™Network account required to access online features.\nRegion: USA\nFirmware: 9.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: The game is provided as a compressed .zip file to speed up the download; once the download is complete, extract the .zip file to play.\nUpdated: 2026-11-10T22:57:54.276Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/CjhsT3EEwI"
+        },
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/JTx7JMEEBP"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/a7uc02SboT"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/rh4SdZrvqH"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/HXji804G2g"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/XwmhYrEd4u"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/iNRXgzEgKD"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/NPodXzUumi"
+        }
+      ],
+      "sizeBytes": 65390877082
+    },
+    {
+      "titleId": "2026",
+      "title": "Avowed",
+      "createdAt": "2026-11-10T12:37:22.362Z",
+      "version": "02.001",
+      "category": "game",
+      "posterUrl": "https://cdn.prosperopatches.com/titles/PPSA33985_b97da818fc155f2f8daeecd9b2efe8e665b5cac2ab274338a3dae920fbe0700e/icon0.webp",
+      "description": "Welcome to the Living Lands, a mysterious island filled with adventure and danger. Set in the fictional world of Eora first introduced in the Pillars of Eternity franchise, Avowed is a first-person fantasy action RPG from the award-winning team at Obsidian Entertainment. As an envoy of Aedyr, you are sent to the Living Lands to investigate a mysterious plague. But what begins as a mission of duty soon becomes deeply personal—you feel as though the land recognizes you and is pulling you toward something greater. The choices you make will ripple across the Living Lands, shaping the fates of its people, its creatures, your companions, and even yourself. Anniversary Update Even more to do in the game! This update brings New Game Plus, a Photo Mode, a brand new weapon type with two-handed staves, the ability to change character appearance whenever you’d like, new character creation presets, additional Godlike presets, custom game difficulty settings, and the addition of three new playable races: Dwarf, Aumaua, and Orlan. The Weird and Wonderful Living Lands The Living Lands is a place that feels foreign yet strangely intrinsic to you, as though the island itself is calling out for help. Explore a vibrant frontier home to diverse environments, creatures, factions, and mysteries—each with its own unique ecosystem and stories to uncover. Combat and Character Building Your Way Fight with fluid, visceral combat that lets you mix swords, spells, guns, and shields in whatever combination fits your style. Craft your own build by drawing from four distinct skill trees—Fighter, Ranger, Wizard, and Godlike—and layer a companion skillset on top of your own to create powerful synergies. Experiment with new abilities, refine your strategy, and reshape your approach as you master the challenges ahead. Companions as Part of Your Journey A spread of companions from different species and backgrounds will fight alongside you, each with their own personalities, goals, and abilities. From a former mercenary to an eccentric wizard, these allies will grow and change based on the choices you make—and the quests you help them complete.\nRegion: USA\nFirmware: 4.xx+\nCredits: Oussama\nUpdated: 2026-11-10T12:15:52.413Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/syZ5Vy0IpV"
+        }
+      ],
+      "sizeBytes": 66571993088
+    },
+    {
+      "titleId": "PPSA13446",
+      "title": "Aphelion",
+      "createdAt": "2026-11-07T16:30:55.453Z",
+      "version": "01.003",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2416/cd0d25d0c9ed2f762493c7d64513d9cb9e38b537c4787b05.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202510/2416/cd0d25d0c9ed2f762493c7d64513d9cb9e38b537c4787b05.png",
+      "description": "A SCI-FI ACTION-ADVENTURE ON THE EDGE OF OUR SOLAR SYSTEM By 2060, Earth will be uninhabitable. The discovery of a 9th planet – Persephone – at the edge of the solar system, is humanity’s best hope. The European Space Agency is dispatching the Hope-01 scientific mission, consisting of 2 of their accomplished astronauts, Ariane and Thomas. Their mission: to survey the planet and determine whether humanity can prosper anew here. Your adventure begins in chaos, as the crash landing of their ship scatters them across the planet, launching them on a desperate quest to find one another. Aphelion is a cinematic third-person action-adventure set on the planet Persephone, an uncharted, frozen world. Stranded and isolated, you must survive the truly unknown, find each other, and complete the mission. Traverse stunning alien landscapes, avoid lurking threats, and discover the haunting secrets buried beneath the ice. EXPLORE AN UNCHARTED PLANET Explore the surreal beauty of Persephone, a vast frozen world shaped by deadly weather and ever-changing terrain. Armed only with your explorational tools – pathfinder, oxygen tank, grappling hook, and more – you must face the unknown, traverse treacherous terrain, and gather clues about the strange, reality-bending phenomenon threatening your existence. Ariane must persevere and push forward to save Thomas. Her Pathfinder tool helps her find the way through the shifting expanse. She faces desperate swings over dark chasms and tricky climbs up melting ice – risking her life with every step. Thomas, injured in the crash, must rely on ingenuity and observation, piecing together what surrounds him to survive. As both characters explore and investigate, they will uncover secrets and clues as to the planet’s strange conditions and what caused the crash of their ship. HIDE TO SURVIVE You are not alone. There is a hostile lifeform stalking you. Avoid detection in tense, thrilling stealth sequences; use the environment to your advantage, and stay one step ahead of whatever hunts you. Explore Persephone and complete the mission, all while trying to survive in the terrifying presence of an unknown enemy. FIND EACH OTHER Helpless on the edge of the solar system, the Hope-01 crew faces a brutal new world and the echoes of a complicated past. Ariane Montclair and Thomas Cross share a deep connection, a relationship left unresolved by the demands of their careers and their mission. Facing overwhelming odds, their fractured bond becomes a lifeline as they grasp in the dark for one another. Key Features: – Grounded sci-fi exploration: a realistic depiction of near-future space exploration – Dual-perspective survival: experience both Thomas’s resourceful investigation and Ariane’s high stakes parkour gameplay – Cinematic third-person action: gripping traversal mechanics, with grappling, sliding, and momentum-driven movement – Tense stealth encounters: face an alien threat in tense and exciting stealth-based sequences – An emotional core: two astronauts bound by a complicated past, fighting to find each other A game in collaboration with: European Space Agency (ESA)\nRegion: USA\nFirmware: 4.xx+\nCredits: Oussama\nUpdated: 2026-11-10T10:35:58.263Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/hpBjvJj3nb"
+        }
+      ],
+      "sizeBytes": 25769803776
+    },
+    {
+      "titleId": "PPSA24326",
+      "title": "The Legend of Heroes: Trails through Daybreak II",
+      "createdAt": "2026-11-09T23:24:21.584Z",
+      "version": "01.002.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/2500/91941944c2b6e59bf80434d498646306c5482f7817a06910.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202406/2500/91941944c2b6e59bf80434d498646306c5482f7817a06910.jpg",
+      "description": "Return to the Calvard Republic and unravel the mystery of the crimson beast in Trails through Daybreak II! One day, a shocking series of murders set the wheels of fate into motion once again. Chaos looming on the horizon, the spriggan Van Arkride receives an unexpected visitor. Who is behind the murders, and what is their goal? Time may be the only key to unlocking the secrets lurking beneath the shadows.\nRegion: USA\nFirmware: 5.xx+\nAPR: Yes\nUpdated: 2026-11-09T23:10:11.338Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Vik1",
+          "url": "https://vik1ngfile.site/f/lCohN5iDjw"
+        }
+      ],
+      "sizeBytes": 20347407565
+    },
+    {
+      "titleId": "PPSA26391",
+      "title": "The Legend of Heroes: Trails beyond the Horizon",
+      "createdAt": "2026-11-09T23:24:21.584Z",
+      "version": "01.006.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202404/1121/fb5ed299042a77fed5d95b006b3de83e80f5cb2e5e3a03c0.png",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202404/1121/fb5ed299042a77fed5d95b006b3de83e80f5cb2e5e3a03c0.png",
+      "description": "Includes the full The Legend of Heroes: Trails beyond the Horizon game and the following DLC: - Trails beyond the Horizon - Costumes &amp; Colors Vol. 1 - Trails beyond the Horizon - Costumes &amp; Colors Vol. 2 - Trails beyond the Horizon - Costumes &amp; Colors Vol. 3 - Trails beyond the Horizon - Accessories Pack - Trails beyond the Horizon - 4SPG UNITED Attire Set - Trails beyond the Horizon - BGM Pack - Trails beyond the Horizon - Zemuria BGM Collection - Trails beyond the Horizon - Marduk Survival Kit - Trails beyond the Horizon - Rean Schwarzer's Instructor Apparel - Trails beyond the Horizon - Silver Xiongshou Garb - Trails beyond the Horizon - Black Mask &amp; Rosenberg Dress - Trails beyond the Horizon - Altina's Travel Outfit - Trails beyond the Horizon - Agnès' Pink Lapine Attire\nRegion: USA\nFirmware: 12.xx+\nAPR: apr-emu-v0.4.2.1\nUpdated: 2026-11-09T23:06:15.460Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Vik1",
+          "url": "https://vik1ngfile.site/f/QidThcLBXp"
+        }
+      ],
+      "sizeBytes": 25576530248
+    },
+    {
+      "titleId": "PPSA17672",
+      "title": "The Legend of Heroes: Trails of Cold Steel III",
+      "createdAt": "2026-11-09T23:24:21.584Z",
+      "version": "01.001.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202312/0422/9727643af12edfb5708157b87a5d12a31561d483f4b268bd.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202312/0422/9727643af12edfb5708157b87a5d12a31561d483f4b268bd.jpg",
+      "description": "Following the Erebonian Civil War, war hero Rean Schwarzer begins life anew as an instructor at Thors Military Academy’s branch campus. Join him as a brand new Trails adventure unfolds in The Legend of Heroes: Trails of Cold Steel III / The Legend of Heroes: Trails of Cold Steel IV! Experience the full story of Rean and the new Class VII as they deal with the aftermath of war and the appearance of new threats in this dynamic combo pack! Dive into the world of Trails and enjoy in-depth RPG gameplay that performs better than ever on PlayStationⓇ5. These iterations of the Trails series include bonus cosmetic DLC that will have your party members looking their best! Discover the wonders of Erebonia today!\nRegion: USA\nFirmware: 7.xx+\nUpdated: 2026-11-09T22:58:18.734Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Vik1",
+          "url": "https://vikingfile.com/f/PW4sfnym8S"
+        }
+      ],
+      "sizeBytes": 17104707256
+    },
+    {
+      "titleId": "PPSA17675",
+      "title": "The Legend of Heroes: Trails of Cold Steel IV",
+      "createdAt": "2026-11-09T23:24:21.584Z",
+      "version": "01.001.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202008/1900/1rlfGz7pHsEEKkzsHbNlw0V7.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202008/1900/1rlfGz7pHsEEKkzsHbNlw0V7.jpg",
+      "description": "The long awaited finale to the epic engulfing a continent comes to a head in the final chapter of the Trails of Cold Steel saga! IT'S WAR! The continent of Zemuria is dragged into conflict as the Erebonian Empire mobilizes the full force of its military. The heroes of Class VII old and new must unite to end the conflict before it consumes the continent.\nRegion: USA\nFirmware: 7.xx+\nUpdated: 2026-11-09T22:55:11.773Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Vik1",
+          "url": "https://vik1ngfile.site/f/diKquCA1Bk"
+        }
+      ],
+      "sizeBytes": 17008070492
+    },
+    {
+      "titleId": "PPSA26145",
+      "title": "EVERYBODY'S GOLF: Hot Shots",
+      "createdAt": "2026-11-09T23:24:21.584Z",
+      "version": "01.017.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202503/2120/dbbc17e8ff0335b87aacd426fab16dbd8773c9891f8fe9bc.png",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202503/2120/dbbc17e8ff0335b87aacd426fab16dbd8773c9891f8fe9bc.png",
+      "description": "Everybody’s favorite golf game series finally returns to the fairway! Hit the green with a variety of unique characters and courses in online and offline play, and try out new game modes that will have you and your friends scrambling for another round! • The Classic Gameplay You Love! The controls are as simple and intuitive as ever. Just aim and press the button 3 times at the right moment to master the perfect shot! • Hone Your Skills in Single Player Mode Test the waters with Stroke Play or test your skills by aiming for the gold in over 100 tournaments implemented in Challenge mode. Take your golf skills to the next level by customizing the rules to your liking by changing the weather and time of day, and face off against a colorful cast of characters! • Grab Your Friends and Hit the Green Enjoy local Multiplayer Mode with up to 4 players on a single controller, or test your skills by competing online against golfers worldwide. For even more excitement, try Wacky Golf - a unique twist on golf that everybody can enjoy together. Grab your clubs and hit the green with EVERYBODY'S GOLF HOT SHOTS. Let's PAR-TEE!\nRegion: USA\nFirmware: 13.xx+\nAPR: apr-emu-v0.4.2.1\nUpdated: 2026-11-09T22:48:28.359Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Vik1",
+          "url": "https://vik1ngfile.site/f/SThlFhSiXg"
+        }
+      ],
+      "sizeBytes": 45226005627
+    },
+    {
+      "titleId": "PPSA02530",
+      "title": "PRAGMATA",
+      "createdAt": "2026-11-09T23:24:21.584Z",
+      "version": "01.300.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2605/3d57b6ae9b22a4982f0272ef1c716ebbfee59b7ea1fe60af.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202511/2605/3d57b6ae9b22a4982f0272ef1c716ebbfee59b7ea1fe60af.png",
+      "description": "\"Wherever you go, I'll be there.\" Pragmata is a unique, sci-fi action-adventure game from Capcom. Follow Hugh, a member of an ill-fated investigation team, and Diana, a young android, as they navigate a lunar facility taken over by rogue AI in search of a way to Earth. ONE TRAGIC ACCIDENT. AN UNLIKELY DUO. At a remote lunar research facility, humanity discovers a new ore—one that, when properly refined, can be used to create almost anything using 3D printers. When the facility suddenly falls silent, Hugh and his team are dispatched to investigate...but then disaster strikes. Hugh is saved by Diana, a lone android wandering the complex. The two of them must join forces to find a way off the moon while working their way through an AI-controlled facility bent on stopping them. Half-realized replicas of human civilization sprawl across the lunar surface, while inside, only scattered traces of the facility's vanished inhabitants remain. What buried truth awaits at the end of Hugh and Diana's journey? TAKE CONTROL OF TWO CHARACTERS—AT THE SAME TIME. Guide both Hugh as he moves, shoots, and jumps, and Diana, who hacks at the same time. Enjoy a fresh, new blend of gameplay in this truly unique system that will push your brain to its limits.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Edit: Not working. Trying to fix this.\nUpdated: 2026-11-09T22:32:43.648Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/4x3G4SocFy"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/yjOVz108Yf"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/b2pjCyagoH"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/Z6i1EBXTEG"
+        }
+      ],
+      "sizeBytes": 38010460570
+    },
+    {
+      "titleId": "PPSA26391",
+      "title": "The Legend of Heroes: Trails through Daybreak",
+      "createdAt": "2026-11-09T22:23:19.087Z",
+      "version": "01.002.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202404/1121/fb5ed299042a77fed5d95b006b3de83e80f5cb2e5e3a03c0.png",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202404/1121/fb5ed299042a77fed5d95b006b3de83e80f5cb2e5e3a03c0.png",
+      "description": "The spriggan known as Van Arkride is an underground professional that accepts work from any client and acts as a detective, negotiator or bounty hunter with no allegiance. However, the course of his life will change forever when he takes on a strange case that threatens the entire nation. Slash your way through intense combat that springs to life with beautiful visuals, and craft your own gameplay experience in Calvard with features such as high-speed mode and a new alignment system!\nRegion: USA\nFirmware: 4.xx+\nAPR: apr-emu-v0.4.2.1\nUpdated: 2026-11-09T21:58:58.161Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Vik1",
+          "url": "https://vik1ngfile.site/f/atfuIPOh0E"
+        }
+      ],
+      "sizeBytes": 34359738368
+    },
+    {
+      "titleId": "PPSA36140",
+      "title": "The Legend Of Heroes Trails to Azure",
+      "createdAt": "2026-11-09T22:23:19.087Z",
+      "version": "01.002.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202301/0401/nz0LF6wasKsf9T7pGqIjlrAS.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202301/0401/nz0LF6wasKsf9T7pGqIjlrAS.jpg",
+      "description": "Following the events of Trails from Zero, the Special Support Section find themselves with new members and new duties. However, rising tensions in Crossbell along with pressure from two neighboring political powers threaten both the safety of their home, as well as the integrity of their team.\nRegion: USA\nFirmware: 12.xx+\nUpdated: 2026-11-09T21:51:33.740Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/sI6KOIThsI"
+        }
+      ],
+      "sizeBytes": 7097433457
+    },
+    {
+      "titleId": "PPSA36136",
+      "title": "The Legend of Heroes Trails From Zero",
+      "createdAt": "2026-11-09T22:23:19.087Z",
+      "version": "01.005.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1119/mf0k9jlnC3mMwggEjz3sfkGp.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202208/1119/mf0k9jlnC3mMwggEjz3sfkGp.jpg",
+      "description": "Lloyd Bannings returns to his hometown to follow his late brother's footsteps and join the Crossbell Police Department. However, he finds himself assigned to a ragtag new division called the Special Support Section, which performs odd jobs and helps people in need. But he and his new teammates slowly discover that their vibrant city hides a dark criminal underbelly...as well as a few terrible secrets.\nRegion: USA\nFirmware: 12.xx+\nAPR: apr-emu-v0.4.2.1\nNotes: You will need to create a fakelib folder with libsceAMPR.sprx in it to play on 12.xx!\nUpdated: 2026-11-09T21:42:45.951Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/A0k07pFVWy"
+        }
+      ],
+      "sizeBytes": 4209067950
+    },
+    {
+      "titleId": "PPSA36301",
+      "title": "TCG Card Shop Simulator",
+      "createdAt": "2026-11-09T22:23:19.087Z",
+      "version": "01.300.000",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1923/86dc3c8f50a2697d2b6cfaa6f7e3ddb68cac7e54b1419892.png",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1923/86dc3c8f50a2697d2b6cfaa6f7e3ddb68cac7e54b1419892.png",
+      "description": "TCG Card Shop Simulator is a trading card shop simulation where you sell card booster packs to earn money and build your card shop business. Manage Your Shop: Design your own TCG shop. Organize shelves and card packs to make customer shopping experience smooth and easy. Card Collection: Open the booster packs yourself and collect the cards. Find rare cards and sell them to make a fortune, or keep them to complete your card collection. Host Game: Set your card game format and fee, invite players to play card games in your shop. Be sure to keep your store clean and hygienic for the players or they might leave! Order Products: Stock up on different booster card packs and card game products. Keep track of popular trends and adjust your inventory to cater to the ever-changing demands of your customers. Expand Your Business: Earn profits to reinvest in your shop. Expand your space, unlock new card sets, and upgrade your facilities to attract even more customers and increase revenue.\nRegion: USA\nFirmware: 12.xx+\nAPR: apr-emu-v0.4.2.1\nUpdated: 2026-11-09T21:26:35.377Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vik1ngfile.site/f/moGf4V9YLu"
+        }
+      ],
+      "sizeBytes": 5153960755
+    },
+    {
+      "titleId": "PPSA04610",
+      "title": "Elden Ring",
+      "createdAt": "2026-11-09T13:14:23.870Z",
+      "version": "1.017",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202107/0902/8ew9QqHI1eLFFq5XdIOhN2Q2.jpg",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202107/0902/8ew9QqHI1eLFFq5XdIOhN2Q2.jpg",
+      "description": "THE NEW FANTASY ACTION RPG. Rise, Tarnished, and be guided by grace to brandish the power of the Elden Ring and become an Elden Lord in the Lands Between. • A Vast World Full of Excitement A vast world where open fields with a variety of situations and huge dungeons with complex and three-dimensional designs are seamlessly connected. As you explore, the joy of discovering unknown and overwhelming threats await you, leading to a high sense of accomplishment. • Create your Own Character In addition to customizing the appearance of your character, you can freely combine the weapons, armor, and magic that you equip. You can develop your character according to your play style, such as increasing your muscle strength to become a strong warrior, or mastering magic. • An Epic Drama Born from a Myth A multilayered story told in fragments. An epic drama in which the various thoughts of the characters intersect in the Lands Between. • Unique Online Play that Loosely Connects You to Others In addition to multiplayer, where you can directly connect with other players and travel together, the game supports a unique asynchronous online element that allows you to feel the presence of others. If you already own the PS4™ version of this game, you can get the PS5™ digital version at no extra cost and you do not need to purchase this product. Owners of a PS4™ disc copy must insert it into the PS5™ every time they want to download or play the PS5™ digital version. PS4™ game disc owners who buy the PS5™ Digital Edition disc-free console will not be able to get the PS5™ version at no extra cost.\nRegion: USA\nFirmware: 3.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-09T13:06:20.890Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/571yTQG7Q8"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/mCD3RxMvty"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/qbzlviXvIt"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/PBfMtsWWz1"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/IJv6ztcDU3"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/qXz8ivqCzH"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/eGUi0ksM99"
+        },
+        {
+          "name": "Viki - pt.8",
+          "url": "https://vikingfile.com/f/S1hHqEsPbs"
+        },
+        {
+          "name": "Viki - pt.9",
+          "url": "https://vikingfile.com/f/NUETUWyvTi"
+        },
+        {
+          "name": "Viki - pt.10",
+          "url": "https://vikingfile.com/f/52Jg72xRHw"
+        }
+      ],
+      "sizeBytes": 96851512525
+    },
+    {
+      "titleId": "PPSA17599",
+      "title": "Clair Obscur Expedition 33",
+      "createdAt": "2026-11-09T13:14:23.870Z",
+      "version": "1.500.300",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202501/2217/e5833a53529ff9879e87689f1e8b04d45ba7e6c97fa791e2.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202501/2217/e5833a53529ff9879e87689f1e8b04d45ba7e6c97fa791e2.png",
+      "description": "“Year by year, She erases us.” Once a year, the Paintress wakes and paints upon her monolith. Paints her cursed number. And everyone past that age turns to smoke and fades away. Year by year, that number ticks down and more of us are erased. Tomorrow she’ll wake and paint “33.” And tomorrow we depart on our final mission - Destroy the Paintress, so she can never paint death again. We are Expedition 33. Clair Obscur: Expedition 33 is a ground-breaking turn-based RPG with unique real-time mechanics, making battles more immersive and addictive than ever. Explore a fantasy world inspired by Belle Époque France in which you battle devastating enemies. Reactive Turn-based Combat In this evolution of JRPGs, real-time actions enhance the heart of turn-based combat. Craft unique builds for your Expeditioners that fit your playstyle via gear, stats, skills, and character synergies. Open an active dimension in combat - dodge, parry, and counter in real time, chain combos by mastering attack rhythms, and target enemy weak points using a free aim system. “Tomorrow Comes” With only one year left to live, join Gustave, Maelle, and their fellow Expeditioners as they embark upon a desperate quest to break the Paintress’ cycle of death. Follow the trail of previous expeditions and discover their fate. Get to know the members of Expedition 33 as they learn to work together against impossible odds. A Hauntingly Beautiful World Explore an enchanting realm populated by surreal adversaries. Wander through breathtaking landscapes, from the Island of Visages to the Forgotten Battlefield, discovering secrets and hidden quests along the way. Find allies of fortune in creatures of legend. Recruit special companions to access new travel methods and discover secret areas in the World Map. Experience the debut game from Sandfall Interactive, fully realized in Unreal Engine 5 with stunning graphics and a heartbreaking soundtrack.\nRegion: EUR\nFirmware: 9.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-09T12:34:34.617Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/HNWM5NWOE7"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/EATQaN8ocL"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/wfq9uIhVry"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/B6PYQEhifp"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/6lW770fWcg"
+        }
+      ],
+      "sizeBytes": 44775034061
+    },
+    {
+      "titleId": "PPSA28183",
+      "title": "Assassin's Creed Black Flag Resynced",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.006.038",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/1215/0962bc91a4952e6433367fcfec38b7e0655c6bd29b431712.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202603/1215/0962bc91a4952e6433367fcfec38b7e0655c6bd29b431712.png",
+      "description": "BECOME A FEARSOME PIRATE Strike fear in your foes as you board and sink enemy vessels as Edward Kenway, captain of the Jackdaw. Whether blending into crowds or leading daring assaults, switch between silent takedowns and fierce brawls as you effortlessly wield swords, pistols, and the Hidden Blade. With a cast of historical pirate legends at your side, defy empires amidst the age-old conflict opposing Assassins and Templars. A CLASSIC REBUILT FOR AN ENHANCED EXPERIENCE Combat has been rebuilt for more dynamic encounters, emphasizing parries and takedowns, while stealth and parkour have been improved for smoother escapes and assassinations. Continuously upgrade the Jackdaw to face powerful enemy ships with enhanced naval mechanics featuring new alternate fire modes. Quality-of-life additions also address previous pain points, ensuring your experience is improved. THE CARIBBEAN LIKE NEVER BEFORE Whether you’re sailing the open seas or journeying across untamed lands, discover a seamless open world built with the latest Anvil engine. Take in sweeping vistas as you brave stormy waters, dive into underwater shipwrecks, or push through dense tropical jungles. Enhanced by features such as Dolby Atmos and ray tracing, every scene feels more immersive, bringing the world’s beauty to life. EXPANDING EDWARD’S ADVENTURE Building on top of the original story, Assassin’s Creed Black Flag Resynced introduces exclusive new content. Familiar faces will return, with new storylines dedicated to fan-favorite characters such as Blackbeard and Stede Bonnet. Unexpected allies will also cross your path, as three officers join you on your journey as part of the main narrative. More surprises await such as new sea shanties, pets, a photo mode, and more. Internet connection, Ubisoft Account and PlayStation™Network account required to access online features.\nRegion: EUR\nFirmware: 12.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-09T12:31:51.027Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/eUHaHiJOgy"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/VRjlkxBTQQ"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/31Yoq6AoU4"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/V6jc39yNoM"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/WSVgwLxZNP"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/4rxTcX5PTC"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/phi918xaZg"
+        }
+      ],
+      "sizeBytes": 70544837837
+    },
+    {
+      "titleId": "PPSA27836",
+      "title": "Onimusha Way of the Sword",
+      "createdAt": "2026-10-16T21:48:35.923Z",
+      "version": "1.000.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1308/79a186e6a055909cfeb66264230ad3d76915587b0269cd0d.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202605/1308/79a186e6a055909cfeb66264230ad3d76915587b0269cd0d.png",
+      "description": "An all-new entry in the Onimusha series! Fight through bloodstained battlefields of intense swordplay action. Explore the historic Japanese capital of Edo-period Kyoto, twisted by malevolent clouds of Malice. With every stage cloaked in mystery, danger and intrigue. Battle against monstrosities from the underworld known as Genma in a tale of dark fantasy. Follow the tale of a samurai who wields the Oni Gauntlet, a mystical artifact that grants its bearer the power to slay Genma. Through gritty, blood-soaked brawls, he searches for his reason to fight. What fate awaits at the end of his path? The Protagonist, Miyamoto Musashi An ardent samurai who arrives in Kyoto looking to prove that he is unmatched in the way of the sword. However, the path before him takes a strange and unexpected turn. The protagonist of this game is a fierce young samurai, constantly moving from one bloody and gritty fight to the next. To cement this image of a striking samurai, Capcom has turned to none other than the late, iconic Japanese samurai movie legend Toshiro Mifune to star as the face model for this rendition of Miyamoto Musashi. Action Equipped with an Oni Gauntlet, Musashi is granted power beyond human limits. Besides giving him the strength needed to cut down the Genma, it also holds numerous other abilities, such as being able to absorb Genma souls and convert them into a power source to further enhance its wearer. But who is behind the voice that rings out from the gauntlet? Genma Usually found dwelling in the lowest depths of hell, the Malice enveloping Kyoto has brought these fiends into the world of the living. Their ceaseless atrocities have plunged the capital into a state of dread and panic. Formidable Foes In his battle against the Genma threat, Musashi will face powerful opponents whose martial prowess rivals his own. Will he triumph, or die trying? Bloody duels to the death await in the capital. Setting The game is set in Kyoto, home to countless shrines and temples, such as Kiyomizu-dera Temple. Twisted by Malice, the face of the capital starts to take on an eerie and foreboding appearance. Agreement to the End User License Agreement is required to play this title. (https://manual.capcom.com/eula/game/) *This content is also available as part of one or more bundles. Please check your previous purchases to avoid duplication.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to disable global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-09T12:29:03.948Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/SBEVY9Ezvo"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/e36wN4p5z7"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/TGIXwraUpE"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/rcG98s1a98"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/P8jPssbRtE"
+        }
+      ],
+      "sizeBytes": 45311904973
+    },
+    {
+      "titleId": "PPSA01575",
+      "title": "Avatar: Frontiers of Pandora™",
+      "createdAt": "2026-10-30T22:38:32.141Z",
+      "version": "01.020",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0113/38ad0cc5b92af440d46ccebf5d1f271213d656684fce3385.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202306/0113/38ad0cc5b92af440d46ccebf5d1f271213d656684fce3385.png",
+      "description": "Avatar: Frontiers of Pandora™ is a first-person, action-adventure game set in the open world of the never-before-seen Western Frontier of Pandora. Abducted by the human militaristic corporation known as the RDA, you, a Na’vi, were trained and molded to serve their purpose. Fifteen years later, you are free, but find yourself a stranger in your birthplace. Reconnect with your lost heritage, discover what it truly means to be Na’vi, and join other clans to protect Pandora from the RDA.\nRegion: EUR\nFirmware: 4.xx+\nCredits: Oussama\nUpdated: 2026-11-09T12:09:55.101Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/in5QYGhzvK"
+        }
+      ],
+      "sizeBytes": 147102629888
+    },
+    {
+      "titleId": "PPSA23566",
+      "title": "UFC 6",
+      "createdAt": "2026-11-09T02:03:43.618Z",
+      "version": "1.005",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2216/83baec5746075ec3e379c096dfe68111095c91cb7139a633.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202604/2216/83baec5746075ec3e379c096dfe68111095c91cb7139a633.png",
+      "description": "Limited Time Offer: Purchase* EA SPORTS™ UFC® 6 and redeem the Championship Fighter Skin Collection in-game until Nov. 16, 2026. Fighter Skins include: - Conor McGregor - UFC 205 - Jon Jones - UFC 309 - Sean O'Malley - UFC 299 - Alex Pereira - UFC 320 - Ilia Topuria - UFC 317 EA SPORTS™ UFC® 6 is powered by fighters. Evolved striking and motion systems bring those UFC stars to life in the Octagon, while new game modes introduce immersive storytelling that makes every fight feel personal. That starts with Markerless Capture, which delivers unprecedented fighter fidelity with authentic locomotion and Signature Strikes, complemented by new fighter bodies built with Sapien Technology that make your favorite UFC superstars truly look, move, and fight like themselves. Real-Time Contact brings the impact to the Octagon with Frostbite™ powered ragdoll physics and damage reactions that hurt so good. When you really start dishing out the damage, enter Flow State, which engages an athlete's standout skills in punishing fashion. Finally, all-new game modes like Hall of Legends and The Legacy let you experience the stories of UFC greats or carve your own path, from backrooms to the bright lights. Square up and fight your fight. This game includes optional in-game purchases of virtual currency that can be used to acquire virtual in-game items.\nRegion: USA to EUR Langs\nFirmware: 12.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nUpdated: 2026-11-09T01:06:30.363Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/4AWSpm4w12"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/3Nnj6cmzPa"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/9nckmH6C0X"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/Z3HitoMfcT"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/mFEhwq0Zkj"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/4blieJ0cqV"
+        },
+        {
+          "name": "Viki - pt.7",
+          "url": "https://vikingfile.com/f/Wg1lpBTUVB"
+        }
+      ],
+      "sizeBytes": 74195560038
+    },
+    {
+      "titleId": "PPSA23226",
+      "title": "Black Myth Wukong",
+      "createdAt": "2026-11-08T20:58:43.141Z",
+      "version": "1.000.021",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2117/bd406f42e9352fdb398efcf21a4ffe575b2306ac40089d21.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202405/2117/bd406f42e9352fdb398efcf21a4ffe575b2306ac40089d21.png",
+      "description": "Included in the edition: Black Myth: Wukong full game for PS5®. Black Myth: Wukong is an action RPG rooted in Chinese mythology. The story is based on Journey to the West, one of the Four Great Classical Novels of Chinese literature. You shall set out as the Destined One to venture into the challenges and marvels ahead, to uncover the obscured truth beneath the veil of a glorious legend from the past. • Explore a Land of Vast Wonders \"A world unseen, where wonders gleam, And with each stride, a new scene streams.\" Enter a fascinating realm filled with the wonders and discoveries of ancient Chinese mythology! As the Destined One, you shall traverse an array of breathtaking and distinctive landscapes from the classic tale, composing an epic of adventure that is seen anew. • Confront Mighty Foes, Old and New \"Heroic Monkey, might and fame, Adversaries rise, to test his name. \" One of the major highlights of Journey to the West is its diverse cast of adversaries, each with their unique strengths. As the Destined One, you will encounter powerful foes and worthy rivals throughout your journey. Fearlessly engage them in epic battles where surrender is not an option. • Temper Your Mastery of Varied Spells \"Spells unbound, talents in play, Unleashed abilities seize the day.\" Spells, transformations, and magic vessels of all manifestations, in which some counteract while others amplify, have long been iconic combat elements of Chinese mythology. As the Destined One, aside from mastering various staff techniques, you can also freely combine different spells, abilities, weapons, and equipment to find a winning strategy that best suits your combat style. • Discover Heartfelt Tales Behind Every Facade \"Within all souls, both wild and tame, There thrives a tale of life's fierce flame.\" Beneath the ferocity and craftiness of your foes lies an engaging tapestry of their origins, personalities, and motivations waiting to be revealed. As the Destined One, you will uncover the stories behind a variety of characters, delving beyond your battles with them to taste the love, hate, greed, and fury they once held and still carry within.\nRegion: USA to EUR Langs\nFirmware: 4.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nUpdated: 2026-11-08T20:46:58.709Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki - pt.1",
+          "url": "https://vikingfile.com/f/S5VglpUj5k"
+        },
+        {
+          "name": "Viki - pt.2",
+          "url": "https://vikingfile.com/f/kWFkeNcQM5"
+        },
+        {
+          "name": "Viki - pt.3",
+          "url": "https://vikingfile.com/f/f1EAmO5je1"
+        },
+        {
+          "name": "Viki - pt.4",
+          "url": "https://vikingfile.com/f/6TZ8S5iBgK"
+        },
+        {
+          "name": "Viki - pt.5",
+          "url": "https://vikingfile.com/f/AzfJVJoWKg"
+        },
+        {
+          "name": "Viki - pt.6",
+          "url": "https://vikingfile.com/f/W1sVq1g32E"
+        }
+      ],
+      "sizeBytes": 113816633344
+    },
+    {
+      "titleId": "PPSA29952",
+      "title": "Denshattack",
+      "createdAt": "2026-11-08T20:58:43.141Z",
+      "version": "1.001",
+      "category": "game",
+      "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/2810/344c29e9cf02f3adb1c18c44ca163e7df3af5d2ad30e8955.png?w=260",
+      "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202507/2810/344c29e9cf02f3adb1c18c44ca163e7df3af5d2ad30e8955.png",
+      "description": "Flip, trick and grind your train in a fast-paced, off-the-rails ride through a colourful Japanese dystopia. Outmatch rival gangs, wreck a shady megacorp, and take back the tracks with nothing but skill, speed, and style. Ollie, kickflip, and combo your way through Japan's biggest cities, as well a world of meadows, volcanoes and oceans. Rack up points and chase that sweet high score as you flip, trick and stick the landing in your customisable ride.\nRegion: USA to EUR Langs\nFirmware: 10.xx+\nAPR: ampr-emu ng 0.3 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to turn off global fakelib and emu updates in Shadowmount!\nUpdated: 2026-11-08T20:44:50.435Z",
+      "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
+      "downloadLinks": [
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/RmlLyZhSrr"
+        }
+      ],
+      "sizeBytes": 8053063680
+    },
+    {
       "titleId": "PPSA29343",
       "title": "Beast of Reincarnation Deluxe Edition",
       "createdAt": "2026-11-08T02:40:40.576Z",
@@ -532,12 +3031,16 @@
       "category": "game",
       "posterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/78549217df5077bea107700e077d04be6a9a4b0dfbcd821a.png?w=260",
       "originalPosterUrl": "https://image.api.playstation.com/vulcan/ap/rnd/202509/2318/78549217df5077bea107700e077d04be6a9a4b0dfbcd821a.png",
-      "description": "Master electrifying bullet ballet combat – intense projectile-focused gameplay with a unique, neon-infused esthetic – to overcome ferocious enemies and spectacular boss fights. Housemarque returns With decades of experience crafting adrenaline-fueled, arcade-inspired mechanics, Housemarque is back with the next evolution of the award-winning, third-person action seen in Returnal. Bullet Ballet Unleash a high-tech arsenal as you dodge, shield and parry enemy attacks in a fluid, flow-state-inducing dance. Combine abilities and learn enemy bullet patterns to gain the upper hand when the odds seem stacked against you. Permanent Progression Augment your loadout using an evolving set of weapons and upgrades. After every run you’ll face a changed world, but the resources you gain will ensure Carcosa yields to you. With Second Chance you’ll be revived instantly on your first death, getting you straight back into the action. Lost Carcosa Fight through mysterious biomes and dreamlike landscapes littered with ancient ruins and alien technology. Come back stronger after every death to break free of the shackles of your past as you uncover the true cost of your power. Otherworldly sound design and musical score Carcosa is brought to life by atmospheric, sci-fi-inspired 3D audio soundscapes – all punctuated by a dark, electronic-meets-drone-metal musical score from multi award-winning composer, Sam Slater.1 Who can you trust? Between runs, return to the Passage to track your progression and meet the crew of Echelon IV. But beware: the Eclipse distorts more than physical spaces. As hallucinations and paranoia take hold, even your closest allies may become your greatest threat… PS5® features - Thrive in the chaos of Carcosa’s Eclipse with near-instant loading speeds of the PS5® console letting you rapidly start over. - Track threats and more with precision Tempest 3D Audio.1 - Seize control of Arjun’s fate; feel every texture in your hands with the detailed input of haptic feedback. - Feel the influence of the Eclipse on Arjun’s suit and weaponry via adaptive triggers, as capabilities augment and evolve… 1 3D Audio via built-in TV speakers or analog/USB stereo headphones. Setup required.\nRegion: USA to EUR Langs\nFirmware: 11.xx+\nAPR: apr_emu ng 0.1 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to turn off global fakelib and emu updates in shadowmount!\nUpdated: 2026-11-07T16:02:03.639Z",
+      "description": "Master electrifying bullet ballet combat – intense projectile-focused gameplay with a unique, neon-infused esthetic – to overcome ferocious enemies and spectacular boss fights. Housemarque returns With decades of experience crafting adrenaline-fueled, arcade-inspired mechanics, Housemarque is back with the next evolution of the award-winning, third-person action seen in Returnal. Bullet Ballet Unleash a high-tech arsenal as you dodge, shield and parry enemy attacks in a fluid, flow-state-inducing dance. Combine abilities and learn enemy bullet patterns to gain the upper hand when the odds seem stacked against you. Permanent Progression Augment your loadout using an evolving set of weapons and upgrades. After every run you’ll face a changed world, but the resources you gain will ensure Carcosa yields to you. With Second Chance you’ll be revived instantly on your first death, getting you straight back into the action. Lost Carcosa Fight through mysterious biomes and dreamlike landscapes littered with ancient ruins and alien technology. Come back stronger after every death to break free of the shackles of your past as you uncover the true cost of your power. Otherworldly sound design and musical score Carcosa is brought to life by atmospheric, sci-fi-inspired 3D audio soundscapes – all punctuated by a dark, electronic-meets-drone-metal musical score from multi award-winning composer, Sam Slater.1 Who can you trust? Between runs, return to the Passage to track your progression and meet the crew of Echelon IV. But beware: the Eclipse distorts more than physical spaces. As hallucinations and paranoia take hold, even your closest allies may become your greatest threat… PS5® features - Thrive in the chaos of Carcosa’s Eclipse with near-instant loading speeds of the PS5® console letting you rapidly start over. - Track threats and more with precision Tempest 3D Audio.1 - Seize control of Arjun’s fate; feel every texture in your hands with the detailed input of haptic feedback. - Feel the influence of the Eclipse on Arjun’s suit and weaponry via adaptive triggers, as capabilities augment and evolve… 1 3D Audio via built-in TV speakers or analog/USB stereo headphones. Setup required.\nRegion: USA to EUR Langs\nFirmware: 11.xx+\nAPR: apr_emu ng 0.1 (latest: apr-emu-v0.4.2.1)\nNotes: Remember to turn off global fakelib and emu updates in shadowmount! If you guys have trouble with sound, use the second link (props to Lineker for it on Telegram!)\nUpdated: 2026-11-07T16:02:03.639Z",
       "downloadSource": "https://catalog.gfs-dlps.workers.dev/api/packages",
       "downloadLinks": [
         {
           "name": "Viki",
           "url": "https://vikingfile.com/f/FflO4M8bW1"
+        },
+        {
+          "name": "Viki",
+          "url": "https://vikingfile.com/f/FoLOfSQGoR"
         }
       ],
       "sizeBytes": 85899345920
